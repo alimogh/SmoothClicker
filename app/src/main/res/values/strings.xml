@@ -1,0 +1,52 @@
+<!--
+    Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- Apps -->
+    <string name="app_name">Smooth Clicker</string>
+
+    <!-- Menus -->
+    <string name="action_about">About</string>
+
+    <!-- Messages -->
+    <string name="info_message_start">Saves the configuration and starts the click(s) process</string>
+    <string name="info_message_stop">Stops the click(s) process</string>
+    <string name="info_message_new_point">Defines a new point to click on</string>
+    <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
+    <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
+
+    <!-- Widgets -->
+    <string name="widget_type_of_start">Delayed start</string>
+    <string name="widget_delay">Delay</string>
+    <string name="widget_delay_hint">...in seconds</string>
+    <string name="widget_speed">Time before each click</string>
+    <string name="widget_speed_hint">...in seconds</string>
+    <string name="widget_repeat">Repeat</string>
+    <string name="widget_repeat_hint">...in seconds</string>
+    <string name="widget_vibrate_on_start">Vibrate on start</string>
+    <string name="widget_vibrate_on_click">Vibrate on click</string>
+    <string name="widget_delayed_starts">Delayed</string>
+    <string name="widget_immediate_starts">Now</string>
+    <string name="widget_click_coordinates">Select the point on the screen</string>
+    <string name="widget_x_coordinate">Coordinate X</string>
+    <string name="widget_y_coordinate">Coordinate Y</string>
+
+    <!-- Misc. -->
+    <string name="error_not_implemented">Not implemented yet !</string>
+
+</resources>

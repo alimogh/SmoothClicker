@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pylapp.smoothclicker">
+
+    <!-- *********** -->
+    <!-- Permissions -->
+    <!-- *********** -->
+
+    <!-- To be SU -->
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"></uses-permission>
+
+
+    <!-- ********************* -->
+    <!-- The SmoothClicker app -->
+    <!-- ********************* -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_512"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- The main activity of the app -->
+        <activity
+            android:name=".view.ClickerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
