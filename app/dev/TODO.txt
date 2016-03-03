@@ -1,0 +1,37 @@
+<!--
+    Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+LAST TASK : #25
+
+TO DO
+    Task #13 : Display the credits for third party libs :
+                    logo by Freepik http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey&page=1&position=11, and material arc menu
+    Task #22 : Select the point to click on
+    Task #6 : Vibrate on each action (click, play, etc).
+    Task #14 : Splash screen
+    Task #18 : Animations
+    Task #19 : Use "Tooleap" to have a smooth and flexible GUI
+    Task #20 : Make a Service reachable from third parties which will launch the process instead of using the main activity
+    Task #2 : Movable floating action button
+    Task #10 : Select several points to click on
+    Task #15 : Material Designed components
+    Task #16 : Handle swipes, long presses, ...
+    Task #24 : Generated the Javadoc as HTML
+    Task #25 : French language support
+
+
+
