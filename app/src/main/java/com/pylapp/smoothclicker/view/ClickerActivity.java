@@ -17,6 +17,8 @@
 
 package com.pylapp.smoothclicker.view;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -54,7 +56,7 @@ import java.io.IOException;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.1.0
+ * @version 2.2.0
  * @since 02/03/2016
  */
 public class ClickerActivity extends AppCompatActivity {
@@ -204,6 +206,9 @@ public class ClickerActivity extends AppCompatActivity {
             case R.id.action_credit:
                 startCreditsActivity();
                 break;
+            case R.id.action_exit:
+                handleExit();
+                break;
             default:
                 break;
         }
@@ -335,6 +340,70 @@ public class ClickerActivity extends AppCompatActivity {
     }
 
     /**
+     * Displays a message in the snackbar and the logger
+     * @param mt - The type of the message to display
+     */
+    private void displayMessage( MessageTypes mt ){
+        String m = null;
+        switch ( mt ){
+            case START_PROCESS:
+                m = ClickerActivity.this.getString(R.string.info_message_start);
+                Logger.d("SmoothClicker", m);
+                break;
+            case STOP_PROCESS:
+                m = ClickerActivity.this.getString(R.string.info_message_stop);
+                Logger.d("SmoothClicker", m);
+                break;
+            case SU_GRANTED:
+                m = ClickerActivity.this.getString(R.string.info_message_su_granted);
+                Logger.i("SmoothClicker", m);
+                break;
+            case SU_NOT_GRANTED:
+                m = ClickerActivity.this.getString(R.string.error_message_su_not_granted);
+                Logger.e("SmoothClicker", m);
+                break;
+            case NOT_IMPLEMENTED:
+                m = ClickerActivity.this.getString(R.string.error_not_implemented);
+                Logger.e("SmoothClicker", m);
+                break;
+            case SU_GRANT:
+                m = ClickerActivity.this.getString(R.string.info_message_request_su);
+                Logger.d("SmoothClicker", m);
+                break;
+            default:
+                m = null;
+                break;
+        }
+        if ( m == null || m.length() <= 0 ) return;
+        showInSnackbarWithoutAction(m);
+    }
+
+    /**
+     * Displays a "do you want to exit" pop-up, and if the user clicks on OK, will stop all clicks process and finish.
+     */
+    private void handleExit(){
+
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.message_confirm_exit_label))
+                .setMessage(getString(R.string.message_confirm_exit_content))
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick( DialogInterface dialog, int which ){
+                        SplashScreenActivity.sIsFirstLaunch = true;
+                        stopClickingProcess();
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick( DialogInterface dialog, int which ){
+                        // Do nothing
+                        return;
+                    }
+                })
+                .show();
+
+    }
+
+    /**
      * Starts the activity which displays the credits / third-parties licences
      */
     private void startCreditsActivity(){
@@ -347,7 +416,7 @@ public class ClickerActivity extends AppCompatActivity {
      */
     private void showInSnackbarWithoutAction( String message ){
         if ( message == null || message.length() <= 0 ) return;
-        View v = findViewById(R.id.mainView);
+        View v = findViewById(R.id.myMainLayout);
         Snackbar.make(v, message, Snackbar.LENGTH_LONG).setAction("", null).show();
     }
 
@@ -433,45 +502,6 @@ public class ClickerActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    /**
-     * Displays a message in the snackbar and the logger
-     * @param mt - The type of the message to display
-     */
-    private void displayMessage( MessageTypes mt ){
-        String m = null;
-        switch ( mt ){
-            case START_PROCESS:
-                m = ClickerActivity.this.getString(R.string.info_message_start);
-                Logger.d("SmoothClicker", m);
-                break;
-            case STOP_PROCESS:
-                m = ClickerActivity.this.getString(R.string.info_message_stop);
-                Logger.d("SmoothClicker", m);
-                break;
-            case SU_GRANTED:
-                m = ClickerActivity.this.getString(R.string.info_message_su_granted);
-                Logger.i("SmoothClicker", m);
-                break;
-            case SU_NOT_GRANTED:
-                m = ClickerActivity.this.getString(R.string.error_message_su_not_granted);
-                Logger.e("SmoothClicker", m);
-                break;
-            case NOT_IMPLEMENTED:
-                m = ClickerActivity.this.getString(R.string.error_not_implemented);
-                Logger.e("SmoothClicker", m);
-                break;
-            case SU_GRANT:
-                m = ClickerActivity.this.getString(R.string.info_message_request_su);
-                Logger.d("SmoothClicker", m);
-                break;
-            default:
-                m = null;
-                break;
-        }
-        if ( m == null || m.length() <= 0 ) return;
-        showInSnackbarWithoutAction(m);
     }
 
 

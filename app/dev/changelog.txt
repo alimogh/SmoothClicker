@@ -65,6 +65,53 @@ What..........
 ________________________________________________
 
 
+Date..........  15/03/2016
+What..........
+                Clicks
+                   - X and Y fields automatically filled
+                Buttons
+                   - The "add a point" button has been replaced by a "request SU grant" button
+                   - The "stop" button has been modified
+                SU
+                   - A feature has been implemented to get SU grant without having to trigger a clicking process
+
+________________________________________________
+
+
+Date..........   15/03/2016 19h10
+What..........
+                UI
+                   - Changed colors
+                   - Refactored the main UI
+                   - Cleared focus
+                   - Fixed verbatims
+                Feature
+                   - Implemented an exit feature which will prevent then splash screen to be displayed each time, etc.
+
+________________________________________________
+
+
+Date..........   /  /
+What..........
+
+
+________________________________________________
+
+
+Date..........   /  /
+What..........
+
+
+________________________________________________
+
+
+Date..........   /  /
+What..........
+
+
+________________________________________________
+
+
 Date..........   /  /
 What..........
 
