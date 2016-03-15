@@ -26,4 +26,11 @@
         android:title="@string/action_about"
         app:showAsAction="never" />
 
+    <!-- The "credits" menu -->
+    <item
+        android:id="@+id/action_credit"
+        android:orderInCategory="100"
+        android:title="@string/action_credit"
+        app:showAsAction="never" />
+
 </menu>

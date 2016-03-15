@@ -12,8 +12,7 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
--->
-<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+--><!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
 
@@ -22,6 +21,7 @@
 
     <!-- Menus -->
     <string name="action_about">About</string>
+    <string name="action_credit">Credits</string>
 
     <!-- Messages -->
     <string name="info_message_start">Saves the configuration and starts the click(s) process</string>
@@ -45,6 +45,17 @@
     <string name="widget_click_coordinates">Select the point on the screen</string>
     <string name="widget_x_coordinate">Coordinate X</string>
     <string name="widget_y_coordinate">Coordinate Y</string>
+
+    <!-- Credits -->
+    <string name="credits_logo_label">Application logo</string>
+    <string name="credits_logo_desc">Icon made by Freepik from www.flaticon.com</string>
+    <string name="credits_logo_url">Get it at : http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
+    <string name="credits_logo_license">Under Flaticon Basic License</string>
+    <string name="credits_mam_label">Material Arc Menu</string>
+    <string name="credits_mam_desc">Library made by Saurabh Arora</string>
+    <string name="credits_mam_url">Get it at : https://github.com/saurabharora90/MaterialArcMenu</string>
+    <string name="credits_mam_license">Under License Apache v2</string>
+
 
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet !</string>

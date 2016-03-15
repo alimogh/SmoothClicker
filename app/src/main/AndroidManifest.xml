@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,9 +12,7 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
--->
-<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
-
+--><!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pylapp.smoothclicker">
 
@@ -23,14 +20,13 @@
     <!-- Permissions -->
     <!-- *********** -->
 
-    <!-- To be SU -->
-    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"></uses-permission>
 
+    <!-- To be SU -->
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
 
     <!-- ********************* -->
     <!-- The SmoothClicker app -->
     <!-- ********************* -->
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_512"
@@ -42,13 +38,21 @@
         <activity
             android:name=".view.ClickerActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- The credits activity displaying the licenses etc. -->
+        <activity
+            android:name=".view.CreditsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
 
     </application>

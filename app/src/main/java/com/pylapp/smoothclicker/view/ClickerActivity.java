@@ -17,6 +17,7 @@
 
 package com.pylapp.smoothclicker.view;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -47,7 +48,7 @@ import com.pylapp.smoothclicker.utils.Logger;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 02/03/2016
  */
 public class ClickerActivity extends AppCompatActivity {
@@ -178,6 +179,9 @@ public class ClickerActivity extends AppCompatActivity {
             case R.id.action_about:
                 displayAboutInfo();
                 break;
+            case R.id.action_credit:
+                startCreditsActivity();
+                break;
             default:
                 break;
         }
@@ -306,6 +310,13 @@ public class ClickerActivity extends AppCompatActivity {
         sb.append(tag).append(" - Version code : ").append(code).append(" - Version : ").append(name);
         showInSnackbarWithoutAction(sb.toString());
 
+    }
+
+    /**
+     * Starts the activity which displays the credits / third-parties licences
+     */
+    private void startCreditsActivity(){
+        startActivity( new Intent(ClickerActivity.this, CreditsActivity.class) );
     }
 
     /**

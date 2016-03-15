@@ -18,8 +18,6 @@
 LAST TASK : #25
 
 TO DO
-    Task #13 : Display the credits for third party libs :
-                    logo by Freepik http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey&page=1&position=11, and material arc menu
     Task #22 : Select the point to click on
     Task #6 : Vibrate on each action (click, play, etc).
     Task #14 : Splash screen
