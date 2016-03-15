@@ -19,7 +19,6 @@ LAST TASK : #25
 
 TO DO
     Task #22 : Select the point to click on
-    Task #6 : Vibrate on each action (click, play, etc).
     Task #14 : Splash screen
     Task #18 : Animations
     Task #19 : Use "Tooleap" to have a smooth and flexible GUI
