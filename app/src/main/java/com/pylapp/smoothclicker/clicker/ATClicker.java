@@ -22,6 +22,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Vibrator;
 import android.widget.Toast;
 
 import com.pylapp.smoothclicker.utils.Config;
@@ -34,7 +35,7 @@ import java.io.IOException;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -99,6 +100,20 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
      * The singleton of this class
      */
     private static ATClicker sInstance; // FIXME Dirty, heavy...
+
+
+    /* ********* *
+     * CONSTANTS *
+     * ********* */
+
+    /**
+     * The duration of a vibration in ms if the device must vibrate on start
+     */
+    private static final int VIBRATE_ON_START_DURATION = 1000;
+    /**
+     * The duration of a vibration in ms if the device must vibrate on each click
+     */
+    private static final int VIBRATE_ON_CLICK_DURATION = 500;
 
     private static final String LOG_TAG = "ATClicker";
 
@@ -184,6 +199,8 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
                 $ input tap XXX YYY
          */
 
+        if ( mVibrateOnStart ) vibrate(VIBRATE_ON_START_DURATION);
+
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
             Logger.d(LOG_TAG, "The start is delayed, will sleep : "+mDelay);
@@ -255,7 +272,6 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
         }
         if ( ! sInstance.isCancelled() ) sInstance.cancel(true);
         else Logger.w(LOG_TAG, "The ATClicker has been canceled previously");
-        sInstance.
         sInstance = null;
     }
 
@@ -268,11 +284,21 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
         try {
             if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
             mOutputStream.writeBytes(shellCmd);
+            if ( mVibrateOnClick ) vibrate(VIBRATE_ON_CLICK_DURATION);
         } catch ( IOException ioe ){
             Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
             ioe.printStackTrace();
             displayToast("An error occurs during tap execution: " + ioe.getMessage());
         }
+    }
+
+    /**
+     * Makes the device vibrate during an amount of ms
+     * @param duration - The time in ms to vibrate
+     */
+    private void vibrate( int duration ){
+        Vibrator v = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(duration);
     }
 
     /**

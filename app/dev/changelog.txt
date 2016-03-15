@@ -38,13 +38,16 @@ ________________________________________________
 
 Date..........  15/03/2016
 What..........  Credits
-                 - Added credits / licences in the GUI
+                    - Added credits / licences in the GUI
 
 ________________________________________________
 
 
 Date..........   /  /
-What..........
+What..........  Credits
+                    - Improve the cardviews
+                Vibrations
+                    - Now the device can vibrate on starts or on each click
 
 
 ________________________________________________
