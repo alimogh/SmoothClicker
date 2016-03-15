@@ -19,7 +19,7 @@ ________________________________________________
 
 
 Date.......... 02/03/2016 21h30
-What.......... Initialized theproject
+What.......... Initialized the project
                 - light GUI
                 - Apache v2 licence
                 - Click with SU shell commands
@@ -36,9 +36,9 @@ What.......... Clean up
 ________________________________________________
 
 
-Date..........   /  /
-What..........
-
+Date..........  15/03/2016
+What..........  Credits
+                 - Added credits / licences in the GUI
 
 ________________________________________________
 
