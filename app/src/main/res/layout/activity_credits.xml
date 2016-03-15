@@ -16,113 +16,229 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimary">
 
-    <!-- The application logo -->
-
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cv_credits_application_logo"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="5dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
+        <!-- FIXME Too heavy, populate the linear layout programmatically ? -->
+
+        <!-- The app -->
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv_credits_app"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/activity_horizontal_margin">
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorAccent"
-                android:text="@string/credits_logo_label"
-                android:paddingBottom="@dimen/activity_vertical_margin"/>
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_horizontal_margin">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/credits_logo_desc"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/credits_app_label"
+                    android:paddingBottom="@dimen/activity_vertical_margin"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/credits_logo_url"/>
+                <TextView
+                    android:id="@+id/tvCreditsAppDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_app_desc"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/credits_logo_license"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tvCreditsAppUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_app_url"/>
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_app_license"
+                    android:textStyle="bold"/>
 
-    </android.support.v7.widget.CardView>
+            </LinearLayout>
 
-    <!-- The Material Arc Menu -->
+        </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cv_credits_application_mam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="5dp">
+        <!-- The application logo -->
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv_credits_application_logo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/activity_horizontal_margin">
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorAccent"
-                android:text="@string/credits_mam_label"
-                android:paddingBottom="@dimen/activity_vertical_margin"/>
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_horizontal_margin">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/credits_mam_desc"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/credits_logo_label"
+                    android:paddingBottom="@dimen/activity_vertical_margin"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/credits_mam_url"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_logo_desc"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/credits_mam_license"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tvCreditsApplicationLogoUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_logo_url"/>
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_logo_license"
+                    android:textStyle="bold"/>
 
-    </android.support.v7.widget.CardView>
+            </LinearLayout>
 
-</LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <!-- The Material Arc Menu -->
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv_credits_application_mam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/credits_mam_label"
+                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_mam_desc"/>
+
+                <TextView
+                    android:id="@+id/tvCreditsMamUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_mam_url"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_mam_license"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!-- The enhanced text view -->
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv_credits_htextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/credits_htextview_label"
+                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_htextview_desc"/>
+
+                <TextView
+                    android:id="@+id/tvCreditsHtextviewUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_htextview_url"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_htextview_license"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

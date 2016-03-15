@@ -15,11 +15,10 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #25
+LAST TASK : #26
 
 TO DO
     Task #22 : Select the point to click on
-    Task #14 : Splash screen
     Task #18 : Animations
     Task #19 : Use "Tooleap" to have a smooth and flexible GUI
     Task #20 : Make a Service reachable from third parties which will launch the process instead of using the main activity
