@@ -30,10 +30,20 @@ import com.pylapp.smoothclicker.R;
  * The splash screen activity
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 15/03/2016
  */
 public class SplashScreenActivity extends AppCompatActivity {
+
+
+    /* ********** *
+     * ATTRIBUTES *
+     * ********** */
+
+    /**
+     * Flag indicating if the app is starting for the first time or not
+     */
+    public static boolean sIsFirstLaunch = true;
 
 
     /* ********* *
@@ -57,6 +67,12 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState ){
         super.onCreate(savedInstanceState);
+        if ( ! sIsFirstLaunch) {
+            Intent i = new Intent(SplashScreenActivity.this, ClickerActivity.class);
+            startActivity(i);
+            finish();
+        }
+        sIsFirstLaunch = false;
         setContentView(R.layout.activity_splash_screen);
     }
 

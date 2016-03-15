@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_vertical_margin"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo_256" />
+        android:src="@drawable/logo_128" />
 
     <!-- A description -->
     <com.hanks.htextview.HTextView

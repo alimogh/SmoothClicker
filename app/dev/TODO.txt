@@ -15,19 +15,21 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #26
+LAST TASK : #29
 
 TO DO
-    Task #22 : Select the point to click on
-    Task #18 : Animations
-    Task #19 : Use "Tooleap" to have a smooth and flexible GUI
-    Task #20 : Make a Service reachable from third parties which will launch the process instead of using the main activity
+    Task #20 : [v1.5.2] Make a Service reachable from third parties which will launch the process instead of using the main activity
+    Task #24 : [v1.5.0] Generated the Javadoc as HTML
+    Task #25 : [v1.5.1] French language support
+
     Task #2 : Movable floating action button
+    Task #27 : Set up a system allowing to click on the screen with any app started (i.e. select that point which is on that component of that app)
+    Task #19 : Use "Tooleap" to have a smooth and flexible GUI ?
     Task #10 : Select several points to click on
     Task #15 : Material Designed components
     Task #16 : Handle swipes, long presses, ...
-    Task #24 : Generated the Javadoc as HTML
-    Task #25 : French language support
+
+
 
 
 

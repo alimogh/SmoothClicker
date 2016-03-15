@@ -20,10 +20,18 @@ package com.pylapp.smoothclicker.utils;
 import android.content.Context;
 
 /**
- * Just a configuration class with usefull values
+ * Just a configuration class with useful values
+ *
+ * A version of an app should be found by three things : the version code, the version name and the version tag.
+ * The version code is incremented each time a new version is released.
+ * The version name is the "user-friendly" version, i.e. with a schema like XX.YY.ZZ.
+ * The XX is incremented for very important upgrades, major updates.
+ * The YY is incremented or common upgrades, medium.
+ * The ZZ is incremented for minor upgrades, i.e. updates for refactoring or cleaning facts.
+ * The version tag is a code name, easy to remember. It should be changed each time the XX or YY aprt is modified.
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 02/03/2016
  */
 public final class Config {
@@ -33,7 +41,9 @@ public final class Config {
      */
     public static final String VERSION_TAG_1_0_0 = "Astonishing Ant";
     public static final String VERSION_TAG_1_3_0 = "Blazing Buffalo";
-    public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_3_0;
+    public static final String VERSION_TAG_1_4_0 = "Crazy Crane";
+    //public static final String VERSION_TAG_1_5_0 = "Dumb Dodo"; // Next version ;)
+    public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_4_0;
 
     /*
      * Default values

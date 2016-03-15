@@ -29,6 +29,7 @@
     <!-- ********************* -->
     <!-- The SmoothClicker app -->
     <!-- ********************* -->
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_512"
@@ -48,13 +49,13 @@
             </intent-filter>
         </activity>
 
-
         <!-- The main activity of the app -->
         <activity
             android:name=".view.ClickerActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
         </activity>
 
         <!-- The credits activity displaying the licenses etc. -->

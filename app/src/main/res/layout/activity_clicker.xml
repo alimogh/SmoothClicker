@@ -21,8 +21,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".view.ClickerActivity"
-    android:id="@+id/myMainLayout">
+    tools:context=".view.ClickerActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -38,7 +37,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_clicker" />
+    <include layout="@layout/content_clicker_cards" />
 
     <!-- The floating action button which displays the "start" button" and the "new click" button" -->
     <com.sa90.materialarcmenu.ArcMenu
