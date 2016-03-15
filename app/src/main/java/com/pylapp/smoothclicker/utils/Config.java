@@ -23,15 +23,17 @@ import android.content.Context;
  * Just a configuration class with usefull values
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 02/03/2016
  */
 public final class Config {
 
-    /**
-     * A tag / code for this version of the app
+    /*
+     * Version tags
      */
-    public static final String VERSION_TAG_1 = "Astonishing Ant";
+    public static final String VERSION_TAG_1_0_0 = "Astonishing Ant";
+    public static final String VERSION_TAG_1_3_0 = "Blazing Buffalo";
+    public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_3_0;
 
     /*
      * Default values

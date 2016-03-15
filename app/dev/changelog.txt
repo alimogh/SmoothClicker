@@ -53,9 +53,14 @@ What..........  Credits
 ________________________________________________
 
 
-Date..........   /  /
+Date..........  15/03/2016
 What..........
-
+                Credits
+                    - Now the URL of third-party contents are clickable
+                    - Refactored verbatims
+                    - Added new entries
+                Splash screen
+                    - It is here !
 
 ________________________________________________
 

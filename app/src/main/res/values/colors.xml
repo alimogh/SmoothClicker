@@ -17,6 +17,7 @@
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
+    <color name="colorBlack">#000000</color>
     <color name="colorPrimary">#9c27b0</color>
     <color name="colorPrimaryDark">#7b1fa2</color>
     <color name="colorAccent">#01579b</color>

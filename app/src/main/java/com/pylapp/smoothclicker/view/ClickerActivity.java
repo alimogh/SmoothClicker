@@ -48,7 +48,7 @@ import com.pylapp.smoothclicker.utils.Logger;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 2.0.0
  * @since 02/03/2016
  */
 public class ClickerActivity extends AppCompatActivity {
@@ -302,7 +302,7 @@ public class ClickerActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String tag = Config.VERSION_TAG_1;
+        String tag = Config.VERSION_TAG_CURRENT;
         String code = pi.versionCode+"";
         String name = pi.versionName;
 
@@ -345,7 +345,7 @@ public class ClickerActivity extends AppCompatActivity {
         });
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick( View v ){
+            public void onClick(View v) {
                 updateConfig();
                 startClickingProcess();
             }
