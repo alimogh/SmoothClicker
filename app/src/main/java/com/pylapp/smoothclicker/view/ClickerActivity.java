@@ -22,6 +22,10 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,13 +46,15 @@ import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.utils.ConfigStatus;
 import com.pylapp.smoothclicker.utils.Logger;
 
+import java.io.IOException;
+
 
 /**
  * The main activity of this SmoothClicker app.
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.0.0
+ * @version 2.1.0
  * @since 02/03/2016
  */
 public class ClickerActivity extends AppCompatActivity {
@@ -91,6 +97,22 @@ public class ClickerActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_clicker);
+
+        // A a touch listener filling the dedicated X and Y fields on click
+        View v = findViewById(R.id.myMainLayout);
+        v.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int X = (int) event.getX();
+                final int Y = (int) event.getY();
+                EditText et = (EditText) findViewById(R.id.etXcoord);
+                et.setText(X+"");
+                et = (EditText) findViewById(R.id.etYcoord);
+                et.setText(Y+"");
+                return false;
+            }
+        });
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -285,7 +307,7 @@ public class ClickerActivity extends AppCompatActivity {
         et = (EditText) findViewById(R.id.etXcoord);
         et.setText(Config.DEFAULT_X_CLICK+"");
         et = (EditText) findViewById(R.id.etYcoord);
-        et.setText(Config.DEFAULT_Y_CLICK+"");
+        et.setText(Config.DEFAULT_Y_CLICK + "");
 
     }
 
@@ -316,7 +338,7 @@ public class ClickerActivity extends AppCompatActivity {
      * Starts the activity which displays the credits / third-parties licences
      */
     private void startCreditsActivity(){
-        startActivity( new Intent(ClickerActivity.this, CreditsActivity.class) );
+        startActivity(new Intent(ClickerActivity.this, CreditsActivity.class));
     }
 
     /**
@@ -327,6 +349,22 @@ public class ClickerActivity extends AppCompatActivity {
         if ( message == null || message.length() <= 0 ) return;
         View v = findViewById(R.id.mainView);
         Snackbar.make(v, message, Snackbar.LENGTH_LONG).setAction("", null).show();
+    }
+
+    /**
+     * Requests the SU grant by starting a SU process which will trigger
+     * the "SU grant" system window
+     */
+    private void requestSuGrant(){
+        try {
+            Logger.d(LOG_TAG, "Get 'su' process...");
+            Runtime.getRuntime().exec("su");
+        } catch ( IOException e ){
+            Logger.e(LOG_TAG, "Exception thrown during 'su' : " + e.getMessage());
+            e.printStackTrace();
+            Toast.makeText(this, "An error occurs during SU grant : "+e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Did you root your Android before using this app? It is mandatory", Toast.LENGTH_LONG).show();
+        }
     }
 
     /**
@@ -367,19 +405,19 @@ public class ClickerActivity extends AppCompatActivity {
             }
         });
 
-        // The button to add a new point to click
-        fab = (FloatingActionButton) findViewById(R.id.fabAddPointToClick);
+        // The button to request SU grant
+        fab = (FloatingActionButton) findViewById(R.id.fabRequestSuGrant);
         fab.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                displayMessage(MessageTypes.NEW_CLICK);
+                displayMessage(MessageTypes.SU_GRANT);
                 return true;
             }
         });
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayMessage(MessageTypes.NOT_IMPLEMENTED);
+                requestSuGrant();
             }
         });
 
@@ -404,10 +442,6 @@ public class ClickerActivity extends AppCompatActivity {
     private void displayMessage( MessageTypes mt ){
         String m = null;
         switch ( mt ){
-            case NEW_CLICK:
-                m = ClickerActivity.this.getString(R.string.info_message_new_point);
-                Logger.d("SmoothClicker", m);
-                break;
             case START_PROCESS:
                 m = ClickerActivity.this.getString(R.string.info_message_start);
                 Logger.d("SmoothClicker", m);
@@ -427,6 +461,10 @@ public class ClickerActivity extends AppCompatActivity {
             case NOT_IMPLEMENTED:
                 m = ClickerActivity.this.getString(R.string.error_not_implemented);
                 Logger.e("SmoothClicker", m);
+                break;
+            case SU_GRANT:
+                m = ClickerActivity.this.getString(R.string.info_message_request_su);
+                Logger.d("SmoothClicker", m);
                 break;
             default:
                 m = null;
@@ -450,7 +488,8 @@ public class ClickerActivity extends AppCompatActivity {
         START_PROCESS,
         STOP_PROCESS,
         NEW_CLICK,
-        NOT_IMPLEMENTED
+        NOT_IMPLEMENTED,
+        SU_GRANT
     } // private enum MESSAGE_TYPE
 
 }
