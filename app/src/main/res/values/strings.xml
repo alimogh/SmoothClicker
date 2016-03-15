@@ -26,7 +26,7 @@
     <!-- Messages -->
     <string name="info_message_start">Saves the configuration and starts the click(s) process</string>
     <string name="info_message_stop">Stops the click(s) process</string>
-    <string name="info_message_new_point">Defines a new point to click on</string>
+    <string name="info_message_request_su">Requests the SU grant</string>
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
 

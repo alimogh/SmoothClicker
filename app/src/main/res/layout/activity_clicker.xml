@@ -21,7 +21,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".view.ClickerActivity">
+    tools:context=".view.ClickerActivity"
+    android:id="@+id/myMainLayout">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -61,14 +62,14 @@
             android:id="@+id/fabStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_delete"/>
+            android:src="@android:drawable/ic_input_delete"/>
 
-        <!-- Add a new point to click on-->
+        <!-- Requests SU grant -->
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fabAddPointToClick"
+            android:id="@+id/fabRequestSuGrant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_input_add"/>
+            android:src="@android:drawable/ic_lock_idle_low_battery"/>
 
     </com.sa90.materialarcmenu.ArcMenu>
 
