@@ -18,12 +18,12 @@
 LAST TASK : #33
 
 TO DO
-    Task #20 : [v1.6.0] Make a Service reachable from third parties which will launch the process instead of using the main activity
+    Task #27 : [v1.6.0] Set up a system allowing to click on the screen with any app started (i.e. select that point which is on that component of that app)
+    Task #20 : [v1.7.0] Make a Service reachable from third parties which will launch the process instead of using the main activity
     Task #33 : Unit Tests and Instrumented tests
 
-    Task #2 : Movable floating action button
     Task #10 : Select several points to click on
-    Task #27 : Set up a system allowing to click on the screen with any app started (i.e. select that point which is on that component of that app)
+    Task #2  : Movable floating action button
     Task #19 : Use "Tooleap" to have a smooth and flexible GUI ?
     Task #16 : Handle swipes, long presses, ...
 
