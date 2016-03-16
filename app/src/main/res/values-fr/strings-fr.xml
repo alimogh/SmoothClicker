@@ -32,6 +32,8 @@
     <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
 
+    <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
+
     <string name="warning_hazard_repeat_endless_title">Operation risquée</string>
     <string name="warning_hazard_repeat_endless_content">Êtes-vous sûr de vouloir faire une répétition infinie ? Cette opération peut être risquée pour votre appareil.</string>
     <string name="warning_hazard_repeat_endless_no">J\'abandonne !</string>
