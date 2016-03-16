@@ -15,7 +15,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package com.pylapp.smoothclicker.view;
+package com.pylapp.smoothclicker.views;
 
 import android.content.Intent;
 import android.os.Handler;

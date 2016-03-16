@@ -28,7 +28,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:background="@color/colorMisterGrey"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".view.ClickerActivity"
+        tools:context=".views.ClickerActivity"
         android:id="@+id/myMainLayout">
 
     <!-- FIXME Too heavy, populate the linear layout programmatically ? -->

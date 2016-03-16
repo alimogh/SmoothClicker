@@ -22,9 +22,10 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Vibrator;
 import android.widget.Toast;
 
+import com.pylapp.smoothclicker.notifiers.NotificationsManager;
+import com.pylapp.smoothclicker.notifiers.VibrationNotifier;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.utils.Logger;
 
@@ -35,10 +36,11 @@ import java.io.IOException;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 2.0.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
+// FIXME Use the Observer/Observable design pattern with NotificationsManager as Observer and ATClicker as observable
 public class ATClicker extends AsyncTask< Void, Void, Void >{
 
 
@@ -87,14 +89,6 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
      * The amount of repeat to do
      */
     private int mRepeat;
-    /**
-     * If we have to vibrate on start
-     */
-    private boolean mVibrateOnStart;
-    /**
-     * If we have ti vibrate on each click
-     */
-    private boolean mVibrateOnClick;
 
     /**
      * The singleton of this class
@@ -105,15 +99,6 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
     /* ********* *
      * CONSTANTS *
      * ********* */
-
-    /**
-     * The duration of a vibration in ms if the device must vibrate on start
-     */
-    private static final int VIBRATE_ON_START_DURATION = 1000;
-    /**
-     * The duration of a vibration in ms if the device must vibrate on each click
-     */
-    private static final int VIBRATE_ON_CLICK_DURATION = 500;
 
     private static final String LOG_TAG = "ATClicker";
 
@@ -148,12 +133,13 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
         SharedPreferences sp = mContext.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
         mCoordX = sp.getInt(Config.SP_KEY_COORD_X, Config.DEFAULT_X_CLICK);
         mCoordY = sp.getInt(Config.SP_KEY_COORD_Y, Config.DEFAULT_Y_CLICK);
-        mIsStartDelayed = sp.getBoolean(Config.SP_START_TYPE_DELAYED, Config.DEFAULT_START_TYPE);
+        mIsStartDelayed = sp.getBoolean(Config.SP_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);
         mDelay = sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
         mTimeGap = sp.getInt(Config.SP_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP));
         mRepeat = sp.getInt(Config.SP_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT));
-        mVibrateOnStart = sp.getBoolean(Config.SP_KEY_VIBRATE_ON_START, Config.DEFAULT_VIBRATE_ON_START);
-        mVibrateOnClick = sp.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, Config.DEFAULT_VIBRATE_ON_CLICK);
+
+        NotificationsManager.getInstance(mContext).stopAllNotifications();
+        NotificationsManager.getInstance(mContext).makeStartNotification();
 
     }
 
@@ -165,7 +151,11 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
     @Override
     protected Void doInBackground( Void... params ){
 
-        if ( checkIfCancelled() ) return null;
+        if ( checkIfCancelled() ){
+            NotificationsManager.getInstance(mContext).stopAllNotifications();
+            NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
+            return null;
+        }
 
         /*
          * Step 1 : Get the process as "su"
@@ -181,7 +171,11 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
             return null;
         }
 
-        if ( checkIfCancelled() ) return null;
+        if ( checkIfCancelled() ){
+            NotificationsManager.getInstance(mContext).stopAllNotifications();
+            NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
+            return null;
+        }
 
         /*
          * Step 2 : Fet the process output stream
@@ -189,7 +183,11 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
         Logger.d(LOG_TAG, "Get 'su' process data output stream...");
         mOutputStream = new DataOutputStream(mProcess.getOutputStream());
 
-        if ( checkIfCancelled() ) return null;
+        if ( checkIfCancelled() ){
+            NotificationsManager.getInstance(mContext).stopAllNotifications();
+            NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
+            return null;
+        }
 
         /*
          * Step 3 : Execute the command, the same we can execute from ADB within a terminal and deal with the configuration
@@ -199,7 +197,7 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
                 $ input tap XXX YYY
          */
 
-        if ( mVibrateOnStart ) vibrate(VIBRATE_ON_START_DURATION);
+        NotificationsManager.getInstance(mContext).makeClicksOnGoingNotification();
 
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
@@ -211,9 +209,13 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
 
         // Should we repeat the execution ?
         if ( mRepeat > 1 ){
-            Logger.d(LOG_TAG, "Should repeat the process : "+mRepeat);
+            Logger.d(LOG_TAG, "Should repeat the process : " + mRepeat);
             for ( int i = 0; i < mRepeat; i++ ){
-                if ( checkIfCancelled() ) return null;
+                if ( checkIfCancelled() ){
+                    NotificationsManager.getInstance(mContext).stopAllNotifications();
+                    NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
+                    return null;
+                }
                 executeTap();
                 // Should be wait before the next action ?
                 if ( mTimeGap > 0 ){
@@ -226,11 +228,16 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
                 }
             }
         } else {
-            if ( checkIfCancelled() ) return null;
-            Logger.d(LOG_TAG, "Should NOT repeat the process : "+mRepeat);
+            if ( checkIfCancelled() ){
+                NotificationsManager.getInstance(mContext).stopAllNotifications();
+                NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
+                return null;
+            }            Logger.d(LOG_TAG, "Should NOT repeat the process : "+mRepeat);
             executeTap();
         }
 
+        NotificationsManager.getInstance(mContext).stopAllNotifications();
+        NotificationsManager.getInstance(mContext).makeClicksOverNotification();
         Logger.d(LOG_TAG, "The input event seems to be triggered");
 
         return null;
@@ -280,25 +287,16 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
      */
     private void executeTap(){
         String shellCmd = "/system/bin/input tap " + mCoordX+ " " + mCoordY + "\n";
-        Logger.d(LOG_TAG, "The system command will be executed : "+shellCmd);
+        Logger.d(LOG_TAG, "The system command will be executed : " + shellCmd);
         try {
             if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
             mOutputStream.writeBytes(shellCmd);
-            if ( mVibrateOnClick ) vibrate(VIBRATE_ON_CLICK_DURATION);
+            NotificationsManager.getInstance(mContext).makeNewClickNotifications();
         } catch ( IOException ioe ){
             Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
             ioe.printStackTrace();
             displayToast("An error occurs during tap execution: " + ioe.getMessage());
         }
-    }
-
-    /**
-     * Makes the device vibrate during an amount of ms
-     * @param duration - The time in ms to vibrate
-     */
-    private void vibrate( int duration ){
-        Vibrator v = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(duration);
     }
 
     /**

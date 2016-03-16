@@ -12,7 +12,8 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
---><!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
 
@@ -68,6 +69,14 @@
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
+
+    <!-- Notifications -->
+    <string name="notif_content_title">Smooth Clicker</string>
+    <string name="notif_content_text_click_made">New click !</string>
+    <string name="notif_content_text_clicks_on_going">The clicking process is running...</string>
+    <string name="notif_content_text_clicks_stop">The clicking process has been stopped</string>
+    <string name="notif_content_text_clicks_over">The clicking process is over</string>
+    <string name="notif_content_text_su_granted">The super-user permission has been granted</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>
