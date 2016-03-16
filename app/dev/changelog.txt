@@ -91,14 +91,16 @@ What..........
 ________________________________________________
 
 
-Date..........   /  /
+Date..........   16/03/2016
 What..........
                 State notifications
                     - Refactored notifications by vibrations
                     - The state of the app is notified by light and notifications
+                    - Updated the GUI
                 Misc
                     - Now the back button is for exit, press home to put the app in background / hide it
                     - Refactoring of some constants
+                    - Fixed verbatims
 
 
 ________________________________________________

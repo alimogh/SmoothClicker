@@ -54,6 +54,7 @@ public final class Config {
     public static final String DEFAULT_REPEAT            = "10";
     public static final boolean DEFAULT_VIBRATE_ON_START = false;
     public static final boolean DEFAULT_VIBRATE_ON_CLICK = true;
+    public static final boolean DEFAULT_NOTIF_ON_CLICK   = true;
     public static final int DEFAULT_X_CLICK              = 502;
     public static final int DEFAULT_Y_CLICK              = 797;
 
@@ -69,6 +70,7 @@ public final class Config {
     public static final String SP_KEY_VIBRATE_ON_CLICK               = "0x000006";
     public static final String SP_KEY_COORD_X                        = "0x000007";
     public static final String SP_KEY_COORD_Y                        = "0x000008";
+    public static final String SP_KEY_NOTIF_ON_CLICK                 = "0x000009";
 
     public static final int SP_ACCESS_MODE                           = Context.MODE_PRIVATE;
 

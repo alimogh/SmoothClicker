@@ -54,7 +54,7 @@ import java.io.IOException;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.2.0
+ * @version 2.3.0
  * @since 02/03/2016
  */
 public class ClickerActivity extends AppCompatActivity {
@@ -167,6 +167,9 @@ public class ClickerActivity extends AppCompatActivity {
         cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
         boolean vibrateOnClick = cb.isChecked();
 
+        cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
+        boolean notifOnClick = cb.isChecked();
+
         et = (EditText) findViewById(R.id.etXcoord);
         int xCoord = Integer.parseInt(et.getText().toString());
 
@@ -181,6 +184,7 @@ public class ClickerActivity extends AppCompatActivity {
         savedInstanceState.putInt(Config.SP_KEY_REPEAT, repeatEach);
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_START, vibrateOnStart);
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK , vibrateOnClick);
+        savedInstanceState.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK , notifOnClick);
         savedInstanceState.putInt(Config.SP_KEY_COORD_X, xCoord);
         savedInstanceState.putInt(Config.SP_KEY_COORD_Y, yCoord);
 
@@ -239,7 +243,7 @@ public class ClickerActivity extends AppCompatActivity {
      * ************* */
 
     /**
-     * Gets the configuration from the widget and back it up
+     * Gets the configuration from the widgets and backs it up
      * @return ConfigStatus - The state of the config
      */
     private ConfigStatus updateConfig(){
@@ -268,11 +272,15 @@ public class ClickerActivity extends AppCompatActivity {
         cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
         boolean vibrateOnClick = cb.isChecked();
 
+        cb = ( CheckBox) findViewById(R.id.cbNotifOnClick);
+        boolean displayNotifs = cb.isChecked();
+
         et = (EditText) findViewById(R.id.etXcoord);
         int xCoord = Integer.parseInt(et.getText().toString());
 
         et = (EditText) findViewById(R.id.etYcoord);
         int yCoord = Integer.parseInt(et.getText().toString());
+
 
         // Update the shared preferences
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
@@ -283,6 +291,7 @@ public class ClickerActivity extends AppCompatActivity {
         editor.putInt(Config.SP_KEY_REPEAT, repeatEach);
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, vibrateOnStart);
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, vibrateOnClick);
+        editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, displayNotifs);
         editor.putInt(Config.SP_KEY_COORD_X, xCoord);
         editor.putInt(Config.SP_KEY_COORD_Y, yCoord);
 
@@ -470,6 +479,7 @@ public class ClickerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateConfig();
+                NotificationsManager.getInstance(ClickerActivity.this).refresh(ClickerActivity.this);
                 startClickingProcess();
             }
         });
@@ -514,7 +524,8 @@ public class ClickerActivity extends AppCompatActivity {
             public void onCheckedChanged( CompoundButton buttonView, boolean isChecked ){
                 EditText etDelay = (EditText) findViewById(R.id.etDelay);
                 etDelay.setEnabled(isChecked);
-                if ( "666".equals(etDelay.getText().toString()) ) Toast.makeText(ClickerActivity.this, "✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 Hotter Than Hell !", Toast.LENGTH_SHORT).show();
+                EditText etR = (EditText) findViewById(R.id.etRepeat);
+                if ( "666".equals(etR.getText().toString()) ) Toast.makeText(ClickerActivity.this, "✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 Hotter Than Hell !", Toast.LENGTH_SHORT).show();
             }
         });
 
