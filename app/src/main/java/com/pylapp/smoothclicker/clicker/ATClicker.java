@@ -24,6 +24,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
+import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.notifiers.NotificationsManager;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.utils.Logger;
@@ -35,7 +36,7 @@ import java.io.IOException;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.1.0
+ * @version 2.1.1
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -165,7 +166,7 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
             Logger.e(LOG_TAG, "Exception thrown during 'su' : " + e.getMessage());
             e.printStackTrace();
             displayToast("An error occurs during super-user process retrieve: "+e.getMessage());
-            displayToast("Did you root your Android before using this app? It is mandatory.");
+            displayToast(mContext.getString(R.string.error_su_missing));
             return null;
         }
 

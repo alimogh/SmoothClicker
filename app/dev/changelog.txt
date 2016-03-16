@@ -120,9 +120,10 @@ What..........
 ________________________________________________
 
 
-Date..........   /  /
+Date..........   16/03/2016
 What..........
-
+                Languages
+                    - The error message about SU missing is displayed according to i18n
 
 ________________________________________________
 
