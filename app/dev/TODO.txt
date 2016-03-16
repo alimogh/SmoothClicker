@@ -15,18 +15,20 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #29
+LAST TASK : #33
 
 TO DO
-    Task #20 : [v1.5.2] Make a Service reachable from third parties which will launch the process instead of using the main activity
-    Task #24 : [v1.5.0] Generated the Javadoc as HTML
+    Task #30 : [v1.5.0] Light notification : notifications very where and has new entry in config (notify each click)
     Task #25 : [v1.5.1] French language support
+    Task #32 : [v1.5.1] Repeat click endless
+    Task #24 : [v1.5.2] Generated the Javadoc as HTML
+    Task #20 : [v1.5.2] Make a Service reachable from third parties which will launch the process instead of using the main activity
+    Task #33 : Unit Tests and Instrumented tests
 
     Task #2 : Movable floating action button
+    Task #10 : Select several points to click on
     Task #27 : Set up a system allowing to click on the screen with any app started (i.e. select that point which is on that component of that app)
     Task #19 : Use "Tooleap" to have a smooth and flexible GUI ?
-    Task #10 : Select several points to click on
-    Task #15 : Material Designed components
     Task #16 : Handle swipes, long presses, ...
 
 

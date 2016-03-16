@@ -31,7 +31,7 @@ import android.content.Context;
  * The version tag is a code name, easy to remember. It should be changed each time the XX or YY aprt is modified.
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 02/03/2016
  */
 public final class Config {
@@ -42,16 +42,16 @@ public final class Config {
     public static final String VERSION_TAG_1_0_0 = "Astonishing Ant";
     public static final String VERSION_TAG_1_3_0 = "Blazing Buffalo";
     public static final String VERSION_TAG_1_4_0 = "Crazy Crane";
-    //public static final String VERSION_TAG_1_5_0 = "Dumb Dodo"; // Next version ;)
-    public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_4_0;
+    public static final String VERSION_TAG_1_5_0 = "Dumb Dodo";
+    public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_5_0;
 
     /*
      * Default values
      */
-    public static final boolean DEFAULT_START_TYPE       = true;
-    public static final String DEFAULT_DELAY             = "3";
-    public static final String DEFAULT_TIME_GAP          = "3";
-    public static final String DEFAULT_REPEAT            = "3";
+    public static final boolean DEFAULT_START_DELAYED    = true;
+    public static final String DEFAULT_DELAY             = "1";
+    public static final String DEFAULT_TIME_GAP          = "1";
+    public static final String DEFAULT_REPEAT            = "10";
     public static final boolean DEFAULT_VIBRATE_ON_START = false;
     public static final boolean DEFAULT_VIBRATE_ON_CLICK = true;
     public static final int DEFAULT_X_CLICK              = 502;

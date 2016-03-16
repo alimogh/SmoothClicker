@@ -15,7 +15,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package com.pylapp.smoothclicker.view;
+package com.pylapp.smoothclicker.views;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -24,9 +24,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
@@ -43,6 +40,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.pylapp.smoothclicker.clicker.ATClicker;
+import com.pylapp.smoothclicker.notifiers.NotificationsManager;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.utils.ConfigStatus;
@@ -75,15 +73,16 @@ public class ClickerActivity extends AppCompatActivity {
 
     /**
      * Triggered to create the view
+     *
      * @param savedInstanceState -
      */
     @Override
-    protected void onCreate( Bundle savedInstanceState ){
+    protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
         // Check whether we're recreating a previously destroyed instance
-        if ( savedInstanceState != null ){
+        if (savedInstanceState != null) {
             Switch typeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
             typeOfStart.setChecked(savedInstanceState.getBoolean(Config.SP_START_TYPE_DELAYED));
             EditText et = (EditText) findViewById(R.id.etDelay);
@@ -108,9 +107,9 @@ public class ClickerActivity extends AppCompatActivity {
                 final int X = (int) event.getX();
                 final int Y = (int) event.getY();
                 EditText et = (EditText) findViewById(R.id.etXcoord);
-                et.setText(X+"");
+                et.setText(X + "");
                 et = (EditText) findViewById(R.id.etYcoord);
-                et.setText(Y+"");
+                et.setText(Y + "");
                 return false;
             }
         });
@@ -124,12 +123,21 @@ public class ClickerActivity extends AppCompatActivity {
 
     /**
      * Triggered when the view has been created
+     *
      * @param savedInstanceState -
      */
     @Override
-    protected void onPostCreate( Bundle savedInstanceState ){
+    protected void onPostCreate(Bundle savedInstanceState) {
         initDefaultValues();
         super.onPostCreate(savedInstanceState);
+    }
+
+    /**
+     * Triggered when the back button is pressed
+     */
+    @Override
+    public void onBackPressed(){
+        handleExit();
     }
 
     /**
@@ -215,6 +223,16 @@ public class ClickerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * To call to finish this main activity and quit the app
+     */
+    @Override
+    public void finish(){
+        SplashScreenActivity.sIsFirstLaunch = true;
+        stopClickingProcess();
+        NotificationsManager.getInstance(this).stopAllNotifications();
+        super.finish();
+    }
 
     /* ************* *
      * OTHER METHODS *
@@ -298,7 +316,7 @@ public class ClickerActivity extends AppCompatActivity {
         Logger.d(LOG_TAG, "Initializes the default values");
 
         Switch typeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
-        typeOfStart.setChecked(Config.DEFAULT_START_TYPE);
+        typeOfStart.setChecked(Config.DEFAULT_START_DELAYED);
         EditText et = (EditText) findViewById(R.id.etDelay);
         et.setText(Config.DEFAULT_DELAY);
         et = (EditText) findViewById(R.id.etTimeBeforeEachClick);
@@ -388,8 +406,6 @@ public class ClickerActivity extends AppCompatActivity {
                 .setMessage(getString(R.string.message_confirm_exit_content))
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick( DialogInterface dialog, int which ){
-                        SplashScreenActivity.sIsFirstLaunch = true;
-                        stopClickingProcess();
                         finish();
                     }
                 })

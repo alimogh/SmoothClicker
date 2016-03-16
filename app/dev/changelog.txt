@@ -93,6 +93,12 @@ ________________________________________________
 
 Date..........   /  /
 What..........
+                State notifications
+                    - Refactored notifications by vibrations
+                    - The state of the app is notified by light and notifications
+                Misc
+                    - Now the back button is for exit, press home to put the app in background / hide it
+                    - Refactoring of some constants
 
 
 ________________________________________________

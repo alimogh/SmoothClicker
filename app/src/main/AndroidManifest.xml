@@ -39,7 +39,7 @@
 
         <!-- The splash screen -->
         <activity
-            android:name=".view.SplashScreenActivity"
+            android:name=".views.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -51,7 +51,7 @@
 
         <!-- The main activity of the app -->
         <activity
-            android:name=".view.ClickerActivity"
+            android:name=".views.ClickerActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -60,7 +60,7 @@
 
         <!-- The credits activity displaying the licenses etc. -->
         <activity
-            android:name=".view.CreditsActivity"
+            android:name=".views.CreditsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
