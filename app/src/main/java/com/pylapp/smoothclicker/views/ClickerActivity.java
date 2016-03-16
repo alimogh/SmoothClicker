@@ -44,6 +44,7 @@ import com.pylapp.smoothclicker.notifiers.NotificationsManager;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.utils.ConfigStatus;
+import com.pylapp.smoothclicker.utils.ConfigVersions;
 import com.pylapp.smoothclicker.utils.Logger;
 
 import java.io.IOException;
@@ -54,7 +55,7 @@ import java.io.IOException;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.3.0
+ * @version 2.4.0
  * @since 02/03/2016
  */
 public class ClickerActivity extends AppCompatActivity {
@@ -95,6 +96,12 @@ public class ClickerActivity extends AppCompatActivity {
             cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_START));
             cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
             cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK));
+            cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
+            cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK));
+            cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
+            cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_REPEAT_ENDLESS));
+            et = (EditText) findViewById(R.id.etRepeat);
+            et.setEnabled( ! cb.isEnabled() );
         }
 
         setContentView(R.layout.activity_clicker);
@@ -161,14 +168,17 @@ public class ClickerActivity extends AppCompatActivity {
         et = (EditText) findViewById(R.id.etRepeat);
         int repeatEach =  Integer.parseInt(et.getText().toString());
 
-        CheckBox cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
-        boolean vibrateOnStart = cb.isChecked();
+        CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
+        boolean isEndlessRepeat = cb.isChecked();
+
+        cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
+        boolean isVibrateOnStart = cb.isChecked();
 
         cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
-        boolean vibrateOnClick = cb.isChecked();
+        boolean isVibrateOnClick = cb.isChecked();
 
         cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
-        boolean notifOnClick = cb.isChecked();
+        boolean isNotifOnClick = cb.isChecked();
 
         et = (EditText) findViewById(R.id.etXcoord);
         int xCoord = Integer.parseInt(et.getText().toString());
@@ -182,9 +192,10 @@ public class ClickerActivity extends AppCompatActivity {
         savedInstanceState.putInt(Config.SP_KEY_DELAY, delayInS);
         savedInstanceState.putInt(Config.SP_KEY_TIME_GAP, timeGapInS);
         savedInstanceState.putInt(Config.SP_KEY_REPEAT, repeatEach);
-        savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_START, vibrateOnStart);
-        savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK , vibrateOnClick);
-        savedInstanceState.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK , notifOnClick);
+        savedInstanceState.putBoolean(Config.SP_KEY_REPEAT_ENDLESS, isEndlessRepeat);
+        savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
+        savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK , isVibrateOnClick);
+        savedInstanceState.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK , isNotifOnClick);
         savedInstanceState.putInt(Config.SP_KEY_COORD_X, xCoord);
         savedInstanceState.putInt(Config.SP_KEY_COORD_Y, yCoord);
 
@@ -266,21 +277,23 @@ public class ClickerActivity extends AppCompatActivity {
         if ( et.getText() == null ) return ConfigStatus.REPEAT_NOT_DEFINED;
         int repeatEach =  Integer.parseInt(et.getText().toString());
 
-        CheckBox cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
-        boolean vibrateOnStart = cb.isChecked();
+        CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
+        boolean isEndlessRepeat = cb.isChecked();
+
+        cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
+        boolean isVibrateOnStart = cb.isChecked();
 
         cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
-        boolean vibrateOnClick = cb.isChecked();
+        boolean isVibrateOnClick = cb.isChecked();
 
         cb = ( CheckBox) findViewById(R.id.cbNotifOnClick);
-        boolean displayNotifs = cb.isChecked();
+        boolean isDisplayNotifs = cb.isChecked();
 
         et = (EditText) findViewById(R.id.etXcoord);
         int xCoord = Integer.parseInt(et.getText().toString());
 
         et = (EditText) findViewById(R.id.etYcoord);
         int yCoord = Integer.parseInt(et.getText().toString());
-
 
         // Update the shared preferences
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
@@ -289,9 +302,10 @@ public class ClickerActivity extends AppCompatActivity {
         editor.putInt(Config.SP_KEY_DELAY, delayInS);
         editor.putInt(Config.SP_KEY_TIME_GAP, timeGapInS);
         editor.putInt(Config.SP_KEY_REPEAT, repeatEach);
-        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, vibrateOnStart);
-        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, vibrateOnClick);
-        editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, displayNotifs);
+        editor.putBoolean(Config.SP_KEY_REPEAT_ENDLESS, isEndlessRepeat);
+        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
+        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, isVibrateOnClick);
+        editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, isDisplayNotifs);
         editor.putInt(Config.SP_KEY_COORD_X, xCoord);
         editor.putInt(Config.SP_KEY_COORD_Y, yCoord);
 
@@ -305,8 +319,38 @@ public class ClickerActivity extends AppCompatActivity {
      * Runs the clicking process
      */
     private void startClickingProcess(){
-        ATClicker.stop();
-        ATClicker.getInstance(this).execute();
+
+        // Check if we make an endless repeat...
+        SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
+        boolean isEndlessRepeat = sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
+        if ( isEndlessRepeat ){
+
+            new AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.warning_hazard_repeat_endless_title))
+                    .setMessage(getString(R.string.warning_hazard_repeat_endless_content))
+                    .setPositiveButton(R.string.warning_hazard_repeat_endless_yes, new DialogInterface.OnClickListener() {
+                        public void onClick( DialogInterface dialog, int which ){
+                            // Go !
+                            ATClicker.stop();
+                            ATClicker.getInstance(ClickerActivity.this).execute();
+                        }
+                    })
+                    .setNegativeButton(R.string.warning_hazard_repeat_endless_no, new DialogInterface.OnClickListener() {
+                        public void onClick( DialogInterface dialog, int which ){
+                            // Do nothing
+                            return;
+                        }
+                    })
+                    .show();
+
+        } else {
+
+            // Go !
+            ATClicker.stop();
+            ATClicker.getInstance(this).execute();
+
+        }
+
     }
 
     /**
@@ -356,7 +400,7 @@ public class ClickerActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String tag = Config.VERSION_TAG_CURRENT;
+        String tag = ConfigVersions.VERSION_TAG_CURRENT;
         String code = pi.versionCode+"";
         String name = pi.versionName;
 
@@ -526,6 +570,16 @@ public class ClickerActivity extends AppCompatActivity {
                 etDelay.setEnabled(isChecked);
                 EditText etR = (EditText) findViewById(R.id.etRepeat);
                 if ( "666".equals(etR.getText().toString()) ) Toast.makeText(ClickerActivity.this, "✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 Hotter Than Hell !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // The endless repeat
+        CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
+        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged( CompoundButton buttonView, boolean isChecked ){
+                EditText etRepeat = (EditText) findViewById(R.id.etRepeat);
+                etRepeat.setEnabled( ! isChecked );
             }
         });
 
