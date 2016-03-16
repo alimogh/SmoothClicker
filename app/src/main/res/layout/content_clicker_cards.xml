@@ -261,8 +261,43 @@
 
         </android.support.v7.widget.CardView>
 
+        <!-- ********************************* -->
+        <!-- Row 7 : display the notifications  -->
+        <!-- ********************************* -->
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="2dp">
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/widget_notifications"
+                    android:textColor="@color/colorAccent"/>
+
+                <CheckBox
+                    android:id="@+id/cbNotifOnClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
         <!-- ************************ -->
-        <!-- Row 7 : the X coordinate -->
+        <!-- Row 8 : the X coordinate -->
         <!-- ************************ -->
 
         <android.support.v7.widget.CardView
@@ -300,7 +335,7 @@
         </android.support.v7.widget.CardView>
 
         <!-- ************************ -->
-        <!-- Row 8 : the Y coordinate -->
+        <!-- Row 9 : the Y coordinate -->
         <!-- ************************ -->
 
         <android.support.v7.widget.CardView

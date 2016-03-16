@@ -18,7 +18,6 @@
 LAST TASK : #33
 
 TO DO
-    Task #30 : [v1.5.0] Light notification : notifications very where and has new entry in config (notify each click)
     Task #25 : [v1.5.1] French language support
     Task #32 : [v1.5.1] Repeat click endless
     Task #24 : [v1.5.2] Generated the Javadoc as HTML

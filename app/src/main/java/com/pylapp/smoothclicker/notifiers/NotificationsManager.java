@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.pylapp.smoothclicker.utils.Config;
+import com.pylapp.smoothclicker.utils.Logger;
 
 /**
  * Utility class which manages notifications.
@@ -47,9 +48,13 @@ public final class NotificationsManager {
      */
     private boolean mVibrateOnStart;
     /**
-     * If we have ti vibrate on each click
+     * If we have to vibrate on each click
      */
     private boolean mVibrateOnClick;
+    /**
+     * If we have to display a notification on each new click
+     */
+    private boolean mNotifOnClick;
 
     /**
      * The singleton
@@ -107,15 +112,14 @@ public final class NotificationsManager {
     public void makeNewClickNotifications(){
 
         // Vibrations ?
-        if ( mVibrateOnStart || mVibrateOnClick ){
-            VibrationNotifier vn = new VibrationNotifier(mContext);
-            if ( mVibrateOnClick ) vn.vibrate(VibrationNotifier.VIBRATE_ON_CLICK_DURATION);
+        if ( mVibrateOnClick ){
+            new VibrationNotifier(mContext).vibrate(VibrationNotifier.VIBRATE_ON_CLICK_DURATION);
         }
 
         // Notification in status bar ?
-        // TODO
-        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
-        sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICK_MADE);
+        if ( mNotifOnClick ) {
+            new StatusBarNotifier(mContext).makeNotification(StatusBarNotifier.NotificationTypes.CLICK_MADE);
+        }
 
     }
 
@@ -210,13 +214,16 @@ public final class NotificationsManager {
         mVibrateOnStart = sp.getBoolean(Config.SP_KEY_VIBRATE_ON_START, Config.DEFAULT_VIBRATE_ON_START);
         mVibrateOnClick = sp.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, Config.DEFAULT_VIBRATE_ON_CLICK);
 
+        // Notifications
+        mNotifOnClick = sp.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK, Config.DEFAULT_NOTIF_ON_CLICK);
+
     }
 
     /**
      * Defines the context to use for this object, the context ahs to be defined to get accesses to vibrator, shared preferences, etc.
      * @param c -
      */
-    public void setContext( Context c ){
+    public void refresh( Context c ){
         mContext = c;
         init();
     }
