@@ -106,9 +106,16 @@ What..........
 ________________________________________________
 
 
-Date..........   /  /
+Date..........  16/03/2016
 What..........
-
+                Repeat
+                    - Endless repeat with warning in an alert dialog
+                Notifications
+                    - Start the activity if we click on the notifications (except "new click")
+                Languages
+                    - French support
+                Documentation
+                    - Generate Javadoc as HTML
 
 ________________________________________________
 

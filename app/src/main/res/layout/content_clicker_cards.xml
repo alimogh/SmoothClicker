@@ -182,12 +182,25 @@
 
                 <EditText
                     android:id="@+id/etRepeat"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:hint="@string/widget_speed_hint"
                     android:inputType="number"
                     android:maxLength="3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/widget_repeat_endless"
+                    android:textColor="@color/colorAccent"/>
+
+                <CheckBox
+                    android:id="@+id/cbEndlessRepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

@@ -32,6 +32,11 @@
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
 
+    <string name="warning_hazard_repeat_endless_title">Hazardous operation</string>
+    <string name="warning_hazard_repeat_endless_content">Are you sure to make an endless repeat? This operation may be hazardous for your device.</string>
+    <string name="warning_hazard_repeat_endless_no">Nope!</string>
+    <string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+
     <!-- Widgets -->
     <string name="widget_type_of_start">Delayed start</string>
     <string name="widget_delay">Delay</string>
@@ -40,6 +45,7 @@
     <string name="widget_speed_hint">...in seconds</string>
     <string name="widget_repeat">Repeat</string>
     <string name="widget_repeat_hint">...in seconds</string>
+    <string name="widget_repeat_endless">Endless</string>
     <string name="widget_vibrate_on_start">Vibrate on start</string>
     <string name="widget_vibrate_on_click">Vibrate on click</string>
     <string name="widget_delayed_starts">Delayed</string>
@@ -73,7 +79,7 @@
 
     <!-- Notifications -->
     <string name="notif_content_title">Smooth Clicker</string>
-    <string name="notif_content_text_click_made">New click !</string>
+    <string name="notif_content_text_click_made">New click!</string>
     <string name="notif_content_text_clicks_on_going">The clicking process is running...</string>
     <string name="notif_content_text_clicks_stop">The clicking process has been stopped</string>
     <string name="notif_content_text_clicks_over">The clicking process is over</string>

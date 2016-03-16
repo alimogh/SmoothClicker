@@ -19,17 +19,20 @@ package com.pylapp.smoothclicker.notifiers;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
 import com.pylapp.smoothclicker.R;
+import com.pylapp.smoothclicker.views.ClickerActivity;
 
 /**
  * Utility class which manages notifications in the status bar.
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -103,6 +106,13 @@ public class StatusBarNotifier {
         b.setSmallIcon(R.drawable.logo_32);
         b.setContentTitle(mContext.getString(R.string.notif_content_title));
         b.setVisibility(Notification.VISIBILITY_PUBLIC);
+
+        if ( type != NotificationTypes.CLICK_MADE ) {
+            Intent activityToStartOnClick = new Intent(mContext, ClickerActivity.class);
+            activityToStartOnClick.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            PendingIntent pi = PendingIntent.getActivity(mContext, 0, activityToStartOnClick, 0);
+            b.setContentIntent(pi);
+        }
 
         NotificationManager nm = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         Notification n = null;

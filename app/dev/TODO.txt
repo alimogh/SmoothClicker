@@ -18,9 +18,6 @@
 LAST TASK : #33
 
 TO DO
-    Task #25 : [v1.5.1] French language support
-    Task #32 : [v1.5.1] Repeat click endless
-    Task #24 : [v1.5.2] Generated the Javadoc as HTML
     Task #20 : [v1.5.2] Make a Service reachable from third parties which will launch the process instead of using the main activity
     Task #33 : Unit Tests and Instrumented tests
 

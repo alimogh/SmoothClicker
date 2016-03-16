@@ -1,0 +1,93 @@
+<!--
+    Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- Apps -->
+    <string name="app_name">Smooth Clicker</string>
+
+    <!-- Menus -->
+    <string name="action_about">À propos</string>
+    <string name="action_credit">Licences</string>
+    <string name="action_exit">Quitter</string>
+
+    <!-- Messages -->
+    <string name="info_message_start">Enregistre la configuration et démarre le processus de click</string>
+    <string name="info_message_stop">Arrête le processus de click</string>
+    <string name="info_message_request_su">Demande les accès SU</string>
+    <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
+    <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
+
+    <string name="warning_hazard_repeat_endless_title">Operation risquée</string>
+    <string name="warning_hazard_repeat_endless_content">Êtes-vous sûr de vouloir faire une répétition infinie ? Cette opération peut être risquée pour votre appareil.</string>
+    <string name="warning_hazard_repeat_endless_no">J\'abandonne !</string>
+    <string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+
+    <!-- Widgets -->
+    <string name="widget_type_of_start">Départ différé</string>
+    <string name="widget_delay">Retard</string>
+    <string name="widget_delay_hint">...en secondes</string>
+    <string name="widget_speed">Durée entre chaque click</string>
+    <string name="widget_speed_hint">...en secondes</string>
+    <string name="widget_repeat">Répétition</string>
+    <string name="widget_repeat_hint">...en secondes</string>
+    <string name="widget_repeat_endless">Infinie</string>
+    <string name="widget_vibrate_on_start">Vibre au démarrage</string>
+    <string name="widget_vibrate_on_click">Vibre à chaque click</string>
+    <string name="widget_delayed_starts">Différé</string>
+    <string name="widget_immediate_starts">Immédiat</string>
+    <string name="widget_click_coordinates">Sélectionner un point sur l\'écran</string>
+    <string name="widget_x_coordinate">Coordonnées X</string>
+    <string name="widget_y_coordinate">Coordonnées Y</string>
+    <string name="widget_notifications">Notifications</string>
+
+    <!-- Credits -->
+    <string name="credits_app_label">Smooth Clicker</string>
+    <string name="credits_app_desc">App créée par pylapp</string>
+    <string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
+    <string name="credits_app_license">Sous Licence Apache V2</string>
+    <string name="credits_app_personal_page">https://twitter.com/pylapp</string>
+    <string name="credits_logo_label">Application logo</string>
+    <string name="credits_logo_desc">Icône créée par Freepik from www.flaticon.com</string>
+    <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
+    <string name="credits_logo_license">Sous Licence Flaticon Basic</string>
+    <string name="credits_mam_label">Material Arc Menu</string>
+    <string name="credits_mam_desc">Librairie créée par Saurabh Arora</string>
+    <string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
+    <string name="credits_mam_license">Sous Licence Apache v2</string>
+    <string name="credits_htextview_label">HTextView</string>
+    <string name="credits_htextview_desc">Librairie faite par Hanks Zyh</string>
+    <string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
+    <string name="credits_htextview_license">Sous Licence Apache v2</string>
+
+    <!-- Splash screen -->
+    <string name="splashscreen_description">Smooth Clicker</string>
+
+    <!-- Notifications -->
+    <string name="notif_content_title">Smooth Clicker</string>
+    <string name="notif_content_text_click_made">Nouveau click !</string>
+    <string name="notif_content_text_clicks_on_going">Le processus de click travaille...</string>
+    <string name="notif_content_text_clicks_stop">Le processus de click a été arreté</string>
+    <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
+    <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>
+
+    <!-- Misc. -->
+    <string name="error_not_implemented">Pas encore disponible !</string>
+    <string name="message_confirm_exit_label">Quitter</string>
+    <string name="message_confirm_exit_content">Voulez-vous quitter l\'application ?</string>
+
+</resources>

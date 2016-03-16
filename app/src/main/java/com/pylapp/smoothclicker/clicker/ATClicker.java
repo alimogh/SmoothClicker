@@ -25,7 +25,6 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import com.pylapp.smoothclicker.notifiers.NotificationsManager;
-import com.pylapp.smoothclicker.notifiers.VibrationNotifier;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.utils.Logger;
 
@@ -36,7 +35,7 @@ import java.io.IOException;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.0.0
+ * @version 2.1.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -89,7 +88,10 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
      * The amount of repeat to do
      */
     private int mRepeat;
-
+    /**
+     * If the repeat is endless
+     */
+    private boolean mIsRepeatEndless;
     /**
      * The singleton of this class
      */
@@ -137,7 +139,7 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
         mDelay = sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
         mTimeGap = sp.getInt(Config.SP_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP));
         mRepeat = sp.getInt(Config.SP_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT));
-
+        mIsRepeatEndless = sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
         NotificationsManager.getInstance(mContext).stopAllNotifications();
         NotificationsManager.getInstance(mContext).makeStartNotification();
 
@@ -151,11 +153,7 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
     @Override
     protected Void doInBackground( Void... params ){
 
-        if ( checkIfCancelled() ){
-            NotificationsManager.getInstance(mContext).stopAllNotifications();
-            NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
-            return null;
-        }
+        if ( checkIfCancelled() ) return null;
 
         /*
          * Step 1 : Get the process as "su"
@@ -171,11 +169,7 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
             return null;
         }
 
-        if ( checkIfCancelled() ){
-            NotificationsManager.getInstance(mContext).stopAllNotifications();
-            NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
-            return null;
-        }
+        if ( checkIfCancelled() ) return null;
 
         /*
          * Step 2 : Fet the process output stream
@@ -183,11 +177,7 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
         Logger.d(LOG_TAG, "Get 'su' process data output stream...");
         mOutputStream = new DataOutputStream(mProcess.getOutputStream());
 
-        if ( checkIfCancelled() ){
-            NotificationsManager.getInstance(mContext).stopAllNotifications();
-            NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
-            return null;
-        }
+        if ( checkIfCancelled() ) return null;
 
         /*
          * Step 3 : Execute the command, the same we can execute from ADB within a terminal and deal with the configuration
@@ -207,17 +197,16 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
             } catch ( InterruptedException ie ){}
         }
 
-        // Should we repeat the execution ?
-        if ( mRepeat > 1 ){
-            Logger.d(LOG_TAG, "Should repeat the process : " + mRepeat);
-            for ( int i = 0; i < mRepeat; i++ ){
-                if ( checkIfCancelled() ){
-                    NotificationsManager.getInstance(mContext).stopAllNotifications();
-                    NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
-                    return null;
-                }
+        /*
+         * Is the execution endless ?
+         */
+        if (mIsRepeatEndless) {
+
+            while (true) {
+                if (checkIfCancelled()) return null;
+                Logger.d(LOG_TAG, "Should repeat the process ENDLESSLY");
                 executeTap();
-                // Should be wait before the next action ?
+                // Should we wait before the next action ?
                 if ( mTimeGap > 0 ){
                     try {
                         Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
@@ -227,12 +216,33 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
                 }
             }
+
+        /*
+         * Should we repeat the execution ?
+         */
+        } else if ( mRepeat > 1 ){
+
+            Logger.d(LOG_TAG, "Should repeat the process : " + mRepeat);
+            for ( int i = 0; i < mRepeat; i++ ){
+                if ( checkIfCancelled() ) return null;
+                executeTap();
+                // Should we wait before the next action ?
+                if ( mTimeGap > 0 ){
+                    try {
+                        Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
+                        Thread.sleep(mTimeGap*1000);
+                    } catch ( InterruptedException ie ){}
+                } else {
+                    Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
+                }
+            }
+
+        /*
+         * Just one execution
+         */
         } else {
-            if ( checkIfCancelled() ){
-                NotificationsManager.getInstance(mContext).stopAllNotifications();
-                NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
-                return null;
-            }            Logger.d(LOG_TAG, "Should NOT repeat the process : "+mRepeat);
+            if ( checkIfCancelled() ) return null;
+            Logger.d(LOG_TAG, "Should NOT repeat the process : "+mRepeat);
             executeTap();
         }
 
@@ -254,8 +264,11 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
      * @return boolean - True if the AsyncTask has been cancelled, false otherwise
      */
     private boolean checkIfCancelled(){
-        if ( isCancelled() ) return true;
-        if ( getStatus() == Status.FINISHED ) return true;
+        if ( isCancelled() || getStatus() == Status.FINISHED ){
+            NotificationsManager.getInstance(mContext).stopAllNotifications();
+            NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
+            return true;
+        }
         return false;
     }
 
