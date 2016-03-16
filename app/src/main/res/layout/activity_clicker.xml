@@ -47,7 +47,7 @@
         android:layout_gravity="bottom|end"
         app:menu_scr="@android:drawable/ic_menu_manage"
         app:menu_open="arc_left"
-        app:menu_radius="100dp">
+        app:menu_radius="120dp">
 
         <!-- Starts the clicks actions -->
         <android.support.design.widget.FloatingActionButton
@@ -62,6 +62,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_input_delete"/>
+
+        <!-- Select a point on the screen -->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabSelectPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_add"/>
 
         <!-- Requests SU grant -->
         <android.support.design.widget.FloatingActionButton

@@ -22,4 +22,5 @@
     <color name="colorPrimaryDark">#7b1fa2</color>
     <color name="colorAccent">#01579b</color>
     <color name="colorMisterGrey">#9e9e9e</color>
+    <color name="colorTransparent">#409c27b0</color>
 </resources>

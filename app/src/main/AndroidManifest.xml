@@ -29,7 +29,6 @@
     <!-- ********************* -->
     <!-- The SmoothClicker app -->
     <!-- ********************* -->
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_512"
@@ -63,6 +62,12 @@
             android:name=".views.CreditsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <!-- A translucent activity to help the suer click on a point on its screen -->
+        <activity
+            android:name=".views.TranslucentActivity"
+            android:theme="@style/Theme.Transparent">
         </activity>
 
     </application>

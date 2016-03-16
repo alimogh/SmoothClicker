@@ -29,7 +29,7 @@ package com.pylapp.smoothclicker.utils;
  * The version tag is a code name, easy to remember. It should be changed each time the XX or YY part is modified.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 16/03/2016
  */
 public final class ConfigVersions {
@@ -42,6 +42,7 @@ public final class ConfigVersions {
     public static final String VERSION_TAG_1_3_0 = "Blazing Buffalo";
     public static final String VERSION_TAG_1_4_0 = "Crazy Crane";
     public static final String VERSION_TAG_1_5_0 = "Dumb Dodo";
-    public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_5_0;
+    public static final String VERSION_TAG_1_6_0 = "Elastic Elephant";
+    public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_6_0;
 
 }
