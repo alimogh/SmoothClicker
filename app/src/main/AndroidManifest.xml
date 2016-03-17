@@ -66,7 +66,7 @@
 
         <!-- A translucent activity to help the suer click on a point on its screen -->
         <activity
-            android:name=".views.TranslucentActivity"
+            android:name=".views.SelectPointActivity"
             android:theme="@style/Theme.Transparent">
         </activity>
 

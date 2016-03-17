@@ -29,13 +29,13 @@ import android.widget.Toast;
 import com.pylapp.smoothclicker.R;
 
 /**
- * A translucent activity to help the user to click on a point on its screen over another app for example.
+ * A translucent activity.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 16/03/2016
  */
-public class TranslucentActivity extends AppCompatActivity {
+public abstract class TranslucentActivity extends AppCompatActivity {
 
 
     /* ****************************** *
@@ -54,18 +54,6 @@ public class TranslucentActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-
-        // Get the touch coordinates
-        View v = findViewById(R.id.translucentMainView);
-        v.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int X = (int) event.getX();
-                final int Y = (int) event.getY();
-                Toast.makeText(TranslucentActivity.this, X + " / " + Y, Toast.LENGTH_LONG).show();
-                return false;
-            }
-        });
 
     }
 

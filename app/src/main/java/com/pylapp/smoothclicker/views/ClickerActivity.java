@@ -17,6 +17,7 @@
 
 package com.pylapp.smoothclicker.views;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -46,6 +47,7 @@ import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.utils.ConfigStatus;
 import com.pylapp.smoothclicker.utils.ConfigVersions;
 import com.pylapp.smoothclicker.utils.Logger;
+import com.sa90.materialarcmenu.ArcMenu;
 
 import java.io.IOException;
 
@@ -55,15 +57,24 @@ import java.io.IOException;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.4.0
+ * @version 2.5.0
  * @since 02/03/2016
  */
 public class ClickerActivity extends AppCompatActivity {
 
 
-    /* ********** *
-     * ATTRIBUTES *
-     * ********** */
+    /* ********* *
+     * CONSTANTS *
+     * ********* */
+
+    /**
+     * The result code for the SelectPointActivity
+     */
+    private static final int SELECT_POINT_ACTIVITY_RESULT_CODE = 0x000011;
+    /**
+     * The key to get the selected point
+     */
+    public static final String SELECT_POINT_ACTIVITY_RESULT = "0x000012";
 
     private static final String LOG_TAG = "ClickerActivity";
 
@@ -107,19 +118,19 @@ public class ClickerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_clicker);
 
         // A a touch listener filling the dedicated X and Y fields on click
-        View v = findViewById(R.id.myMainLayout);
-        v.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int X = (int) event.getX();
-                final int Y = (int) event.getY();
-                EditText et = (EditText) findViewById(R.id.etXcoord);
-                et.setText(X + "");
-                et = (EditText) findViewById(R.id.etYcoord);
-                et.setText(Y + "");
-                return false;
-            }
-        });
+//        View v = findViewById(R.id.myMainLayout);
+//        v.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                final int X = (int) event.getX();
+//                final int Y = (int) event.getY();
+//                EditText et = (EditText) findViewById(R.id.etXcoord);
+//                et.setText(X + "");
+//                et = (EditText) findViewById(R.id.etYcoord);
+//                et.setText(Y + "");
+//                return false;
+//            }
+//        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -212,6 +223,31 @@ public class ClickerActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu( Menu menu ){
         getMenuInflater().inflate(R.menu.menu_clicker, menu);
         return true;
+    }
+
+    /**
+     * Triggered when the activity results
+     * @param requestCode -
+     * @param resultCode -
+     * @param data -
+     */
+    @Override
+    protected void onActivityResult( int requestCode, int resultCode, Intent data ){
+
+        switch ( requestCode ){
+            case SELECT_POINT_ACTIVITY_RESULT_CODE:
+                if ( resultCode == Activity.RESULT_OK ){
+                    int [] result = data.getIntArrayExtra(SELECT_POINT_ACTIVITY_RESULT);
+                    EditText et = (EditText) findViewById(R.id.etXcoord);
+                    et.setText(result[0]+"");
+                    et = (EditText) findViewById(R.id.etYcoord);
+                    et.setText(result[1]+"");
+                }
+                break;
+            default:
+                break;
+        }
+
     }
 
     /**
@@ -441,6 +477,10 @@ public class ClickerActivity extends AppCompatActivity {
                 m = ClickerActivity.this.getString(R.string.info_message_request_su);
                 Logger.d("SmoothClicker", m);
                 break;
+            case NEW_CLICK:
+                m = ClickerActivity.this.getString(R.string.info_message_new_point);
+                Logger.d("SmoothClicker", m);
+                break;
             default:
                 m = null;
                 break;
@@ -477,6 +517,14 @@ public class ClickerActivity extends AppCompatActivity {
      */
     private void startCreditsActivity(){
         startActivity(new Intent(ClickerActivity.this, CreditsActivity.class));
+    }
+
+    /**
+     * Starts the activity which allows the user to select a point on its screen
+     */
+    private void startSelectPointActivity(){
+        Intent i = new Intent(ClickerActivity.this, SelectPointActivity.class);
+        startActivityForResult(i, SELECT_POINT_ACTIVITY_RESULT_CODE);
     }
 
     /**
@@ -541,6 +589,24 @@ public class ClickerActivity extends AppCompatActivity {
             @Override
             public void onClick( View v ){
                 stopClickingProcess();
+            }
+        });
+
+        // The button to add a new point to click on
+        fab = (FloatingActionButton) findViewById(R.id.fabSelectPoint);
+        fab.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                displayMessage(MessageTypes.NEW_CLICK);
+                return true;
+            }
+        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArcMenu fabAction = (ArcMenu) findViewById(R.id.fabAction);
+                fabAction.toggleMenu();
+                startSelectPointActivity();
             }
         });
 

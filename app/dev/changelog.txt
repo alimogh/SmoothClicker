@@ -136,9 +136,12 @@ What..........
 ________________________________________________
 
 
-Date..........   /  /
+Date..........   17/03/2016
 What..........
-
+                GUI
+                    - The SelectPointActivity does not have a title anymore
+                    - The arc menu get smaller when clicking on the "select point" button
+                    - Now the only way to select a point on the screen to click on is the dedicated activity
 
 ________________________________________________
 

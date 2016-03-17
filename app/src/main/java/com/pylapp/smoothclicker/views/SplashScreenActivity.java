@@ -85,7 +85,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         HTextView htv = (HTextView) findViewById(R.id.htvSplashScreenDesc);
         htv.setAnimateType(HTextViewType.ANVIL);
-        htv.animateText(getString(R.string.splashscreen_description)); // FIXME May throw an OutOfMemory error
+        htv.animateText(getString(R.string.splashscreen_description)); // FIXME May throw an OutOfMemory error, this lib is a bit pity
 
         new Handler().postDelayed(new Runnable() {
             @Override

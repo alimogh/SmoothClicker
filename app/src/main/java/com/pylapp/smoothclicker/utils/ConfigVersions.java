@@ -43,6 +43,7 @@ public final class ConfigVersions {
     public static final String VERSION_TAG_1_4_0 = "Crazy Crane";
     public static final String VERSION_TAG_1_5_0 = "Dumb Dodo";
     public static final String VERSION_TAG_1_6_0 = "Elastic Elephant";
+    // public static final String VERSION_TAG_1_7_0 = "Freaky Fawn"; // For the future ;)
     public static final String VERSION_TAG_CURRENT = VERSION_TAG_1_6_0;
 
 }
