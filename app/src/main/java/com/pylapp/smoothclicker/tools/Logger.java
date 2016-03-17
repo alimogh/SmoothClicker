@@ -15,7 +15,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package com.pylapp.smoothclicker.utils;
+package com.pylapp.smoothclicker.tools;
 
 import android.util.Log;
 

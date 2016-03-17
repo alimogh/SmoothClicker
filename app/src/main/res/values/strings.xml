@@ -16,6 +16,11 @@
 
 <resources>
 
+    <!-- TODO WARNING Keep these values always up to date! -->
+    <string name="pref_about_version_tag_summary">Elastic Elephant</string>
+    <string name="pref_about_version_name_summary">1.6.2</string>
+    <string name="pref_about_version_code_summary">11</string>
+
     <!-- Apps -->
     <string name="app_name">Smooth Clicker</string>
 
@@ -23,13 +28,14 @@
     <string name="action_about">About</string>
     <string name="action_credit">Credits</string>
     <string name="action_exit">Exit</string>
+    <string name="action_settings">Settings</string>
 
     <!-- Messages -->
     <string name="info_message_start">Save the configuration and starts the clicking process</string>
     <string name="info_message_stop">Stop the clicking process</string>
     <string name="info_message_request_su">Ask for the SU grant</string>
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
-    <string name="info_message_new_point">Select a new point on the screen</string>
+    <string name="info_message_new_point">Select new points on the screen</string>
     <string name="info_message_invite_new_point">Select a new point on the screen</string>
     <string name="info_message_invite_new_points">Select several points and then back</string>
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
@@ -90,8 +96,25 @@
     <string name="notif_content_text_clicks_over">The clicking process is over</string>
     <string name="notif_content_text_su_granted">The super-user permission has been granted</string>
 
+    <!-- Settings / Preferences -->
+    <string name="pref_settings_title">Settings</string>
+    <string name="pref_settings_shaketoclean_title">Shake to clean</string>
+    <string name="pref_settings_shaketoclean_summary">Shake your device to make the configuration empty</string>
+
+    <string name="pref_credits_title">Credits</string>
+    <string name="pref_key_credit_title">This app uses third party contents</string>
+    <string name="pref_key_credit_summary">Click here to show the licenses</string>
+
+    <string name="pref_about_title">About</string>
+    <string name="pref_about_version_tag_title">Version tag</string>
+    <string name="pref_about_version_name_title">Version name</string>
+    <string name="pref_about_version_code_title">Version code</string>
+    <string name="pref_about_version_app_title">Smooth Clicker</string>
+    <string name="pref_about_version_app_summary">written by pylapp - License Apache v2</string>
+
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>
+    <string name="message_reinit_config">Clean up...</string>
     <string name="message_confirm_exit_label">Exit</string>
     <string name="message_confirm_exit_content">Do you want to quit the app?</string>
 

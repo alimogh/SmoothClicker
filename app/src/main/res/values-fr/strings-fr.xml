@@ -24,13 +24,14 @@
     <string name="action_about">À propos</string>
     <string name="action_credit">Licences</string>
     <string name="action_exit">Quitter</string>
+    <string name="action_settings">Paramètres</string>
 
     <!-- Messages -->
     <string name="info_message_start">Enregistre la configuration et démarre le processus de click</string>
     <string name="info_message_stop">Arrête le processus de click</string>
     <string name="info_message_request_su">Demande les accès SU</string>
     <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
-    <string name="info_message_new_point">Sélectionner un point sur l\'écran</string>
+    <string name="info_message_new_point">Sélectionne des points sur l\'écran</string>
     <string name="info_message_invite_new_point">Sélectionnez un point sur l\'écran</string>
     <string name="info_message_invite_new_points">Sélectionnez plusieurs points puis back</string>
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
@@ -67,7 +68,7 @@
     <string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
     <string name="credits_app_license">Sous Licence Apache V2</string>
     <string name="credits_app_personal_page">https://twitter.com/pylapp</string>
-    <string name="credits_logo_label">Application logo</string>
+    <string name="credits_logo_label">Logo de l\'application</string>
     <string name="credits_logo_desc">Icône créée par Freepik from www.flaticon.com</string>
     <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
     <string name="credits_logo_license">Sous Licence Flaticon Basic</string>
@@ -91,8 +92,25 @@
     <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
     <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>
 
+    <!-- Settings / Preferences -->
+    <string name="pref_settings_title">Paramètres</string>
+    <string name="pref_settings_shaketoclean_title">Secouer pour vider</string>
+    <string name="pref_settings_shaketoclean_summary">Secouer l\'appareil pour réinitialiser la configuration de l\'app</string>
+
+    <string name="pref_credits_title">Crédits</string>
+    <string name="pref_key_credit_title">Cette app utilise des outils tiers</string>
+    <string name="pref_key_credit_summary">Click pour accéder aux licences</string>
+
+    <string name="pref_about_title">À propos</string>
+    <string name="pref_about_version_tag_title">Version tag</string>
+    <string name="pref_about_version_name_title">Version name</string>
+    <string name="pref_about_version_code_title">Version code</string>
+    <string name="pref_about_version_app_title">Smooth Clicker</string>
+    <string name="pref_about_version_app_summary">écrit par pylapp - Licence Apache v2</string>
+
     <!-- Misc. -->
     <string name="error_not_implemented">Pas encore disponible !</string>
+    <string name="message_reinit_config">Nettoyage...</string>
     <string name="message_confirm_exit_label">Quitter</string>
     <string name="message_confirm_exit_content">Voulez-vous quitter l\'application ?</string>
 

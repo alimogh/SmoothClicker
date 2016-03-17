@@ -19,18 +19,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.ClickerActivity">
 
-    <!-- The "about" menu -->
+    <!-- The "settings" menu -->
     <item
-        android:id="@+id/action_about"
+        android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="@string/action_about"
-        app:showAsAction="never" />
-
-    <!-- The "credits" menu -->
-    <item
-        android:id="@+id/action_credit"
-        android:orderInCategory="100"
-        android:title="@string/action_credit"
+        android:title="@string/action_settings"
         app:showAsAction="never" />
 
     <!-- The "exit" menu -->

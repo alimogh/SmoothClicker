@@ -23,7 +23,7 @@ import android.content.Context;
  * Just a configuration class with useful values
  *
  * @author pylapp
- * @version 1.4.0
+ * @version 1.5.0
  * @since 02/03/2016
  */
 public final class Config {
@@ -32,13 +32,14 @@ public final class Config {
      * Default values
      */
     public static final boolean DEFAULT_START_DELAYED    = true;
-    public static final String DEFAULT_DELAY             = "1";
-    public static final String DEFAULT_TIME_GAP          = "1";
-    public static final String DEFAULT_REPEAT            = "10";
+    public static final String DEFAULT_DELAY             = "5";
+    public static final String DEFAULT_TIME_GAP          = "3";
+    public static final String DEFAULT_REPEAT            = "0";
     public static final boolean DEFAULT_REPEAT_ENDLESS   = false;
     public static final boolean DEFAULT_VIBRATE_ON_START = false;
     public static final boolean DEFAULT_VIBRATE_ON_CLICK = true;
     public static final boolean DEFAULT_NOTIF_ON_CLICK   = true;
+    public static final boolean DEFAULT_SHAKE_TO_CLEAN   = true;
 
     /*
      * The shared preferences
