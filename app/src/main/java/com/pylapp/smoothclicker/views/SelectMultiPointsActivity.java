@@ -26,12 +26,14 @@ import android.widget.Toast;
 
 import com.pylapp.smoothclicker.R;
 
+import java.util.ArrayList;
+
 /**
  * A translucent activity to help the user to click on a point on its screen over another app for example.
  * To use it:
      <pre>
          <activity
-             android:name=".views.SelectPointActivity"
+             android:name=".views.SelectMultiPointsActivity"
              android:theme="@style/Theme.Transparent">
          </activity>
      </pre>
@@ -40,8 +42,22 @@ import com.pylapp.smoothclicker.R;
  * @version 1.0.0
  * @since 17/03/2016
  */
-@Deprecated
-public class SelectPointActivity extends TranslucentActivity {
+public class SelectMultiPointsActivity extends TranslucentActivity {
+
+
+    /* ********** *
+     * ATTRIBUTES *
+     * ********** */
+
+    /**
+     * The list of coordinates of points to click on.
+     * The list contains each X and Y value as follows:
+         <pre>
+         { x0, y 0, x1, y1, ..., xN, yN}
+         </pre>
+     */
+    // FIXME Dirty, heavy
+    private ArrayList<Integer> mXYCoordinates;
 
 
     /* ****************************** *
@@ -58,7 +74,9 @@ public class SelectPointActivity extends TranslucentActivity {
 
         super.onCreate(savedInstanceState);
 
-        Toast.makeText(SelectPointActivity.this, getString(R.string.info_message_invite_new_point), Toast.LENGTH_SHORT).show();
+        Toast.makeText(SelectMultiPointsActivity.this, getString(R.string.info_message_invite_new_points), Toast.LENGTH_SHORT).show();
+
+        mXYCoordinates = new ArrayList<Integer>();
 
         // Get the touch coordinates
         View v = findViewById(R.id.translucentMainView);
@@ -70,18 +88,11 @@ public class SelectPointActivity extends TranslucentActivity {
                 final int X = (int) event.getX();
                 final int Y = (int) event.getY();
 
-                int [] result = new int[2];
-                result[0] = X;
-                result[1] = Y;
+                mXYCoordinates.add(X);
+                mXYCoordinates.add(Y);
 
                 // Notify the user
-                Toast.makeText(SelectPointActivity.this, "Click X="+X+" / Y=" + Y, Toast.LENGTH_SHORT).show();
-
-                // Finish after sending data to the parent activity
-                Intent returnIntent = new Intent();
-                returnIntent.putExtra(ClickerActivity.SELECT_POINT_ACTIVITY_RESULT,result);
-                setResult(Activity.RESULT_OK, returnIntent);
-                finish();
+                Toast.makeText(SelectMultiPointsActivity.this, "Click X="+X+" / Y=" + Y, Toast.LENGTH_SHORT).show();
 
                 return false;
 
@@ -96,7 +107,8 @@ public class SelectPointActivity extends TranslucentActivity {
     @Override
     public void onBackPressed(){
         Intent returnIntent = new Intent();
-        setResult(Activity.RESULT_CANCELED, returnIntent);
+        returnIntent.putIntegerArrayListExtra(ClickerActivity.SELECT_POINTS_ACTIVITY_RESULT, mXYCoordinates);
+        setResult(Activity.RESULT_OK, returnIntent);
         finish();
     }
 
