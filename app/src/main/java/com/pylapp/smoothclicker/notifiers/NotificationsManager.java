@@ -28,7 +28,7 @@ import com.pylapp.smoothclicker.utils.Logger;
  * It is base on a facade design pattern for notification features.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 16/03/2016
  */
 public final class NotificationsManager {
@@ -108,8 +108,10 @@ public final class NotificationsManager {
 
     /**
      * Manages the notifications about the new click.
+     * @param x - The x coordinate of the click
+     * @param y - The y coordinate of the click
      */
-    public void makeNewClickNotifications(){
+    public void makeNewClickNotifications( int x, int y){
 
         // Vibrations ?
         if ( mVibrateOnClick ){
@@ -118,7 +120,7 @@ public final class NotificationsManager {
 
         // Notification in status bar ?
         if ( mNotifOnClick ) {
-            new StatusBarNotifier(mContext).makeNotification(StatusBarNotifier.NotificationTypes.CLICK_MADE);
+            new StatusBarNotifier(mContext).makeNotification(StatusBarNotifier.NotificationTypes.CLICK_MADE, x, y);
         }
 
     }

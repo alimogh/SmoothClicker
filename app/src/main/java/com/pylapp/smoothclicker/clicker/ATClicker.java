@@ -28,20 +28,22 @@ import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.notifiers.NotificationsManager;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.utils.Logger;
+import com.pylapp.smoothclicker.views.PointsListAdapter;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.1.1
+ * @version 2.2.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
 // FIXME Use the Observer/Observable design pattern with NotificationsManager as Observer and ATClicker as observable
-public class ATClicker extends AsyncTask< Void, Void, Void >{
+public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Void >{
 
 
     /* ********** *
@@ -66,13 +68,9 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
     private Context mContext;
 
     /**
-     * The X coordinate of the point to click on
+     * The list of points to click on
      */
-    private int mCoordX;
-    /**
-     * The Y coordinate of the point to click on
-     */
-    private int mCoordY;
+    private List<PointsListAdapter.Point> mPoints;
     /**
      * The type of start
      */
@@ -152,9 +150,14 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
      * @return Void - Nothing
      */
     @Override
-    protected Void doInBackground( Void... params ){
+    protected Void doInBackground( List<PointsListAdapter.Point>... params ){ // FIXME Too heavy
 
         if ( checkIfCancelled() ) return null;
+        if ( params == null || params.length <= 0 ){
+            throw new IllegalArgumentException("No points to click on!");
+        }
+
+        mPoints = params[0];
 
         /*
          * Step 1 : Get the process as "su"
@@ -300,17 +303,38 @@ public class ATClicker extends AsyncTask< Void, Void, Void >{
      * Executes the tap action
      */
     private void executeTap(){
-        String shellCmd = "/system/bin/input tap " + mCoordX+ " " + mCoordY + "\n";
-        Logger.d(LOG_TAG, "The system command will be executed : " + shellCmd);
-        try {
-            if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
-            mOutputStream.writeBytes(shellCmd);
-            NotificationsManager.getInstance(mContext).makeNewClickNotifications();
-        } catch ( IOException ioe ){
-            Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
-            ioe.printStackTrace();
-            displayToast("An error occurs during tap execution: " + ioe.getMessage());
-        }
+
+        for ( PointsListAdapter.Point p : mPoints ){
+
+            if ( ! p.mIsUsable ) continue;
+
+            int x = p.mX;
+            int y = p.mY;
+
+            String shellCmd = "/system/bin/input tap " + x + " " + y + "\n";
+            Logger.d(LOG_TAG, "The system command will be executed : " + shellCmd);
+            try {
+                if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
+                mOutputStream.writeBytes(shellCmd);
+                NotificationsManager.getInstance(mContext).makeNewClickNotifications(x, y);
+            } catch ( IOException ioe ){
+                Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
+                ioe.printStackTrace();
+                displayToast("An error occurs during tap execution: " + ioe.getMessage());
+            }
+
+            // Should we wait before the next action ?
+            if ( mTimeGap > 0 ){
+                try {
+                    Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
+                    Thread.sleep(mTimeGap*1000);
+                } catch ( InterruptedException ie ){}
+            } else {
+                Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
+            }
+
+        } // End of for ( PointsListAdapter.Point p : mPoints )
+
     }
 
     /**

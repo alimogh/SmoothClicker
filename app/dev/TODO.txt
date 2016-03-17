@@ -18,12 +18,11 @@
 LAST TASK : #41
 
 TO DO
-    *Task #10 : [v1.6.1] Select several points to click on
+    Task #40 : [v1.6.2] Settings with about, licenses and check to clean
+    Task #30 : [v1.6.2] Shake to renit the config
     Task #20 : [v1.7.0] Make a Service reachable from third parties which will launch the process instead of using the main activity
-    *Task #41 : Update notifications for new clicks: add the coordinates
     Task #33 : Unit Tests and Instrumented tests
-    *Task #30 : Shake to renit the config
-    *Task #40 : Settings with about, licenses and check to clean
+
     Task #38 : Link with Appium or other things ?
 
     Task #2  : Movable floating action button

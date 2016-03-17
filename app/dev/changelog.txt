@@ -152,3 +152,74 @@ What..........
                     - Updated GUI for the selection of several points
 
 ________________________________________________
+
+
+Date..........  17/03/2016
+What..........
+                Languages
+                    - Fixed verbatims
+                Bugs
+                    - Fixed bug about null values in EditTexts
+                    - Fixed bug making a force close when we start the process without defined clicks
+                Feature
+                    - The process can click on several points selected thanks to a dedicated translucent view
+                GUI
+                    - The notifications display the coordinates of the click which has been made
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________
+
+
+Date..........
+What..........
+
+
+________________________________________________

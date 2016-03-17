@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -53,6 +54,7 @@ import com.sa90.materialarcmenu.ArcMenu;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -172,13 +174,19 @@ public class ClickerActivity extends AppCompatActivity {
         boolean isDelayed = sTypeOfStart.isChecked();
 
         EditText et = (EditText) findViewById(R.id.etDelay);
-        int delayInS = Integer.parseInt(et.getText().toString());
+        int delayInS;
+        if ( et.getText() == null || et.getText().toString().length() <= 0 ) delayInS = 0;
+        else delayInS = Integer.parseInt(et.getText().toString());
 
         et = (EditText) findViewById(R.id.etTimeBeforeEachClick);
-        int timeGapInS = Integer.parseInt(et.getText().toString());
+        int timeGapInS;
+        if ( et.getText() == null || et.getText().toString().length() <= 0 ) timeGapInS = 0;
+        else timeGapInS = Integer.parseInt(et.getText().toString());
 
         et = (EditText) findViewById(R.id.etRepeat);
-        int repeatEach =  Integer.parseInt(et.getText().toString());
+        int repeatEach;
+        if ( et.getText() == null || et.getText().toString().length() <= 0 ) repeatEach = 0;
+        else repeatEach = Integer.parseInt(et.getText().toString());
 
         CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
         boolean isEndlessRepeat = cb.isChecked();
@@ -293,15 +301,21 @@ public class ClickerActivity extends AppCompatActivity {
 
         EditText et = (EditText) findViewById(R.id.etDelay);
         if ( et.getText() == null ) return ConfigStatus.DELAY_NOT_DEFINED;
-        int delayInS = Integer.parseInt(et.getText().toString());
+        int delayInS;
+        if ( et.getText().toString().length() <= 0 ) delayInS = 0;
+        else delayInS = Integer.parseInt(et.getText().toString());
 
         et = (EditText) findViewById(R.id.etTimeBeforeEachClick);
         if ( et.getText() == null ) return ConfigStatus.TIME_GAP_NOT_DEFINED;
-        int timeGapInS = Integer.parseInt(et.getText().toString());
+        int timeGapInS;
+        if ( et.getText().toString().length() <= 0 ) timeGapInS = 0;
+        else timeGapInS = Integer.parseInt(et.getText().toString());
 
         et = (EditText) findViewById(R.id.etRepeat);
         if ( et.getText() == null ) return ConfigStatus.REPEAT_NOT_DEFINED;
-        int repeatEach =  Integer.parseInt(et.getText().toString());
+        int repeatEach;
+        if ( et.getText().toString().length() <= 0 ) repeatEach = 0;
+        else repeatEach = Integer.parseInt(et.getText().toString());
 
         CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
         boolean isEndlessRepeat = cb.isChecked();
@@ -336,11 +350,19 @@ public class ClickerActivity extends AppCompatActivity {
     /**
      * Runs the clicking process
      */
-    private void startClickingProcess(){
+    private void startClickingProcess() {
 
         // Check if we make an endless repeat...
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
         boolean isEndlessRepeat = sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
+
+        PointsListAdapter pla = (PointsListAdapter) ((Spinner) findViewById(R.id.sPointsToClick)).getAdapter();
+        if (pla == null || pla.getList().size() <= 0){
+            displayMessage(MessageTypes.NO_CLICK_DEFINED);
+            return;
+        }
+
+        final List<PointsListAdapter.Point> lp = pla.getList();
 
         if ( isEndlessRepeat ){
 
@@ -351,7 +373,7 @@ public class ClickerActivity extends AppCompatActivity {
                         public void onClick( DialogInterface dialog, int which ){
                             // Go !
                             ATClicker.stop();
-                            ATClicker.getInstance(ClickerActivity.this).execute();
+                            ATClicker.getInstance(ClickerActivity.this).execute(lp);
                         }
                     })
                     .setNegativeButton(R.string.warning_hazard_repeat_endless_no, new DialogInterface.OnClickListener() {
@@ -366,7 +388,7 @@ public class ClickerActivity extends AppCompatActivity {
 
             // Go !
             ATClicker.stop();
-            ATClicker.getInstance(this).execute();
+            ATClicker.getInstance(this).execute(lp);
 
         }
 
@@ -460,6 +482,10 @@ public class ClickerActivity extends AppCompatActivity {
                 m = ClickerActivity.this.getString(R.string.info_message_new_point);
                 Logger.d("SmoothClicker", m);
                 break;
+            case NO_CLICK_DEFINED:
+                m = ClickerActivity.this.getString(R.string.error_message_no_click_defined);
+                Logger.d("SmoothClicker", m);
+                break;
             default:
                 m = null;
                 break;
@@ -508,6 +534,7 @@ public class ClickerActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 s.setSelection(0); // The item 0 is a label saying to the user the account of items in the list
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 s.setSelection(0); // The item 0 is a label saying to the user the account of items in the list
@@ -669,7 +696,8 @@ public class ClickerActivity extends AppCompatActivity {
         STOP_PROCESS,
         NEW_CLICK,
         NOT_IMPLEMENTED,
-        SU_GRANT
+        SU_GRANT,
+        NO_CLICK_DEFINED
     } // private enum MESSAGE_TYPE
 
 }

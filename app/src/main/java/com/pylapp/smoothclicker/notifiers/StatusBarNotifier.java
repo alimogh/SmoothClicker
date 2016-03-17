@@ -32,7 +32,7 @@ import com.pylapp.smoothclicker.views.ClickerActivity;
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -99,8 +99,9 @@ public class StatusBarNotifier {
      * This notification is an "on going" one, and should be displayed will the app is clicking.
      *
      * @param type - The notification type
+     * @param params - params[0] for the X coordinate, params[1] for the Y coordinate, null otherwise
      */
-    public void makeNotification( NotificationTypes type ){
+    public void makeNotification( NotificationTypes type, int... params ){
 
         NotificationCompat.Builder b = new NotificationCompat.Builder(mContext);
         b.setSmallIcon(R.drawable.logo_32);
@@ -141,7 +142,12 @@ public class StatusBarNotifier {
                 nm.notify(NOTIF_CLICK_PROCESS_OVER, n);
                 break;
             case CLICK_MADE:
-                b.setContentText(mContext.getString(R.string.notif_content_text_click_made));
+                StringBuffer sb = new StringBuffer();
+                sb.append(mContext.getString(R.string.notif_content_text_click_made));
+                if ( params != null && params.length == 2 ){
+                    sb.append(" : ").append(params[0]).append(" / ").append(params[1]);
+                }
+                b.setContentText(sb.toString());
                 n = b.build();
                 n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_MADE, n);
