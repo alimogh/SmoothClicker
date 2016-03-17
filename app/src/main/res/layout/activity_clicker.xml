@@ -37,7 +37,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_clicker_cards" />
+    <include layout="@layout/content_clicker_cards_multipoints" />
 
     <!-- The floating action button which displays the "start" button" and the "new click" button" -->
     <com.sa90.materialarcmenu.ArcMenu

@@ -64,9 +64,9 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-        <!-- A translucent activity to help the suer click on a point on its screen -->
+        <!-- A translucent activity to help the user to select several points on its screen -->
         <activity
-            android:name=".views.SelectPointActivity"
+            android:name=".views.SelectMultiPointsActivity"
             android:theme="@style/Theme.Transparent">
         </activity>
 

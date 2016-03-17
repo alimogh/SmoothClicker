@@ -25,13 +25,14 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 
 import android.support.design.widget.FloatingActionButton;
@@ -47,9 +48,11 @@ import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.utils.ConfigStatus;
 import com.pylapp.smoothclicker.utils.ConfigVersions;
 import com.pylapp.smoothclicker.utils.Logger;
+
 import com.sa90.materialarcmenu.ArcMenu;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 /**
@@ -70,11 +73,24 @@ public class ClickerActivity extends AppCompatActivity {
     /**
      * The result code for the SelectPointActivity
      */
+    @Deprecated
     private static final int SELECT_POINT_ACTIVITY_RESULT_CODE = 0x000011;
     /**
      * The key to get the selected point
      */
+    @Deprecated
     public static final String SELECT_POINT_ACTIVITY_RESULT = "0x000012";
+
+    /**
+     * The result code for the SelectMultiPointsActivity
+     */
+    private static final int SELECT_POINTS_ACTIVITY_RESULT_CODE = 0x000013;
+    /**
+     * The key to get the selected points
+     */
+    public static final String SELECT_POINTS_ACTIVITY_RESULT = "0x000014";
+
+
 
     private static final String LOG_TAG = "ClickerActivity";
 
@@ -116,21 +132,6 @@ public class ClickerActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_clicker);
-
-        // A a touch listener filling the dedicated X and Y fields on click
-//        View v = findViewById(R.id.myMainLayout);
-//        v.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                final int X = (int) event.getX();
-//                final int Y = (int) event.getY();
-//                EditText et = (EditText) findViewById(R.id.etXcoord);
-//                et.setText(X + "");
-//                et = (EditText) findViewById(R.id.etYcoord);
-//                et.setText(Y + "");
-//                return false;
-//            }
-//        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -191,12 +192,6 @@ public class ClickerActivity extends AppCompatActivity {
         cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
         boolean isNotifOnClick = cb.isChecked();
 
-        et = (EditText) findViewById(R.id.etXcoord);
-        int xCoord = Integer.parseInt(et.getText().toString());
-
-        et = (EditText) findViewById(R.id.etYcoord);
-        int yCoord = Integer.parseInt(et.getText().toString());
-
         // Save the values
 
         savedInstanceState.putBoolean(Config.SP_START_TYPE_DELAYED, isDelayed);
@@ -207,8 +202,6 @@ public class ClickerActivity extends AppCompatActivity {
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK , isVibrateOnClick);
         savedInstanceState.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK , isNotifOnClick);
-        savedInstanceState.putInt(Config.SP_KEY_COORD_X, xCoord);
-        savedInstanceState.putInt(Config.SP_KEY_COORD_Y, yCoord);
 
         super.onSaveInstanceState(savedInstanceState);
 
@@ -235,13 +228,10 @@ public class ClickerActivity extends AppCompatActivity {
     protected void onActivityResult( int requestCode, int resultCode, Intent data ){
 
         switch ( requestCode ){
-            case SELECT_POINT_ACTIVITY_RESULT_CODE:
-                if ( resultCode == Activity.RESULT_OK ){
-                    int [] result = data.getIntArrayExtra(SELECT_POINT_ACTIVITY_RESULT);
-                    EditText et = (EditText) findViewById(R.id.etXcoord);
-                    et.setText(result[0]+"");
-                    et = (EditText) findViewById(R.id.etYcoord);
-                    et.setText(result[1]+"");
+            case SELECT_POINTS_ACTIVITY_RESULT_CODE:
+                if ( resultCode == Activity.RESULT_OK ) {
+                    ArrayList<Integer> alp = data.getIntegerArrayListExtra(SELECT_POINTS_ACTIVITY_RESULT);
+                    handleMultiPointResult(alp);
                 }
                 break;
             default:
@@ -325,12 +315,6 @@ public class ClickerActivity extends AppCompatActivity {
         cb = ( CheckBox) findViewById(R.id.cbNotifOnClick);
         boolean isDisplayNotifs = cb.isChecked();
 
-        et = (EditText) findViewById(R.id.etXcoord);
-        int xCoord = Integer.parseInt(et.getText().toString());
-
-        et = (EditText) findViewById(R.id.etYcoord);
-        int yCoord = Integer.parseInt(et.getText().toString());
-
         // Update the shared preferences
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
@@ -342,8 +326,6 @@ public class ClickerActivity extends AppCompatActivity {
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, isVibrateOnClick);
         editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, isDisplayNotifs);
-        editor.putInt(Config.SP_KEY_COORD_X, xCoord);
-        editor.putInt(Config.SP_KEY_COORD_Y, yCoord);
 
         editor.commit();
 
@@ -359,6 +341,7 @@ public class ClickerActivity extends AppCompatActivity {
         // Check if we make an endless repeat...
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
         boolean isEndlessRepeat = sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
+
         if ( isEndlessRepeat ){
 
             new AlertDialog.Builder(this)
@@ -416,10 +399,6 @@ public class ClickerActivity extends AppCompatActivity {
         cb.setChecked(Config.DEFAULT_VIBRATE_ON_START);
         cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
         cb.setChecked(Config.DEFAULT_VIBRATE_ON_CLICK);
-        et = (EditText) findViewById(R.id.etXcoord);
-        et.setText(Config.DEFAULT_X_CLICK+"");
-        et = (EditText) findViewById(R.id.etYcoord);
-        et.setText(Config.DEFAULT_Y_CLICK + "");
 
     }
 
@@ -513,6 +492,30 @@ public class ClickerActivity extends AppCompatActivity {
     }
 
     /**
+     * Handles the list of coordinates of the points to click on.
+     * Will update the list showing to the user the points.
+     * Will update the config so as to allow the ATClicker to click on all these points.
+     *
+     * @param coords - The list of X/Y values of the points to click on as {x0, y0, x1, y2, ..., xN, yN}
+     */
+    private void handleMultiPointResult( ArrayList<Integer> coords ){
+
+        final Spinner s = (Spinner) findViewById(R.id.sPointsToClick);
+        s.setAdapter(null); // Clean the list view
+        s.setAdapter(new PointsListAdapter(this, coords));
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                s.setSelection(0); // The item 0 is a label saying to the user the account of items in the list
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                s.setSelection(0); // The item 0 is a label saying to the user the account of items in the list
+            }
+        });
+    }
+
+    /**
      * Starts the activity which displays the credits / third-parties licences
      */
     private void startCreditsActivity(){
@@ -523,8 +526,8 @@ public class ClickerActivity extends AppCompatActivity {
      * Starts the activity which allows the user to select a point on its screen
      */
     private void startSelectPointActivity(){
-        Intent i = new Intent(ClickerActivity.this, SelectPointActivity.class);
-        startActivityForResult(i, SELECT_POINT_ACTIVITY_RESULT_CODE);
+        Intent i = new Intent(ClickerActivity.this, SelectMultiPointsActivity.class);
+        startActivityForResult(i, SELECT_POINTS_ACTIVITY_RESULT_CODE);
     }
 
     /**

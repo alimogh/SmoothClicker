@@ -31,6 +31,7 @@
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
     <string name="info_message_new_point">Select a new point on the screen</string>
     <string name="info_message_invite_new_point">Select a new point on the screen</string>
+    <string name="info_message_invite_new_points">Select several points and then back</string>
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
     <string name="error_su_missing">Did you root your Android before using this app? It is mandatory.</string>
 
@@ -55,6 +56,7 @@
     <string name="widget_click_coordinates">Select the point on the screen</string>
     <string name="widget_x_coordinate">Coordinate X</string>
     <string name="widget_y_coordinate">Coordinate Y</string>
+    <string name="widget_xy_coordinates">Points to click on</string>
     <string name="widget_notifications">Notifications</string>
 
     <!-- Credits -->

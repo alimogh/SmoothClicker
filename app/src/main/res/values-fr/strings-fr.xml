@@ -32,6 +32,7 @@
     <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
     <string name="info_message_new_point">Sélectionner un point sur l\'écran</string>
     <string name="info_message_invite_new_point">Sélectionnez un point sur l\'écran</string>
+    <string name="info_message_invite_new_points">Sélectionnez plusieurs points puis back</string>
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
     <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
 
@@ -56,6 +57,7 @@
     <string name="widget_click_coordinates">Sélectionner un point sur l\'écran</string>
     <string name="widget_x_coordinate">Coordonnées X</string>
     <string name="widget_y_coordinate">Coordonnées Y</string>
+    <string name="widget_xy_coordinates">Points à cliquer</string>
     <string name="widget_notifications">Notifications</string>
 
     <!-- Credits -->
