@@ -185,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:hint="@string/widget_speed_hint"
+                    android:hint="@string/widget_repeat_hint"
                     android:inputType="number"
                     android:maxLength="3"/>
 

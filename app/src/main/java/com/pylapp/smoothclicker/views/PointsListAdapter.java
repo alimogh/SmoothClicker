@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+
 import com.pylapp.smoothclicker.R;
 
 import java.util.ArrayList;
@@ -164,6 +165,14 @@ public class PointsListAdapter extends BaseAdapter {
     }
 
     /**
+     * Returns the list of points
+     * @return List<Point>
+     */
+    public List<Point> getList(){
+        return mPoints;
+    }
+
+    /**
      *
      * @param location - The location of the point to remove
      * @return Point - The removed point
@@ -209,17 +218,23 @@ public class PointsListAdapter extends BaseAdapter {
          * A description
          */
         public String mDesc;
+        /**
+         * Should we click on it ?
+         */
+        public boolean mIsUsable;
 
         public Point( int x, int y ){
             super();
             mX = x;
             mY = y;
             mDesc = null;
+            mIsUsable = true;
         }
 
         public Point( String desc ){
             super();
             mDesc = desc;
+            mIsUsable = false;
         }
 
         @Override

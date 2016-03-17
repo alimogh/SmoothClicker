@@ -35,6 +35,7 @@
     <string name="info_message_invite_new_points">Sélectionnez plusieurs points puis back</string>
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
     <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
+    <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ Aucun point à cliquer n\'a été défini</string>
 
     <string name="warning_hazard_repeat_endless_title">Operation risquée</string>
     <string name="warning_hazard_repeat_endless_content">Êtes-vous sûr de vouloir faire une répétition infinie ? Cette opération peut être risquée pour votre appareil.</string>
@@ -48,7 +49,7 @@
     <string name="widget_speed">Durée entre chaque click</string>
     <string name="widget_speed_hint">...en secondes</string>
     <string name="widget_repeat">Répétition</string>
-    <string name="widget_repeat_hint">...en secondes</string>
+    <string name="widget_repeat_hint">...fois</string>
     <string name="widget_repeat_endless">Infinie</string>
     <string name="widget_vibrate_on_start">Vibre au démarrage</string>
     <string name="widget_vibrate_on_click">Vibre à chaque click</string>
@@ -86,7 +87,7 @@
     <string name="notif_content_title">Smooth Clicker</string>
     <string name="notif_content_text_click_made">Nouveau click !</string>
     <string name="notif_content_text_clicks_on_going">Le processus de click travaille...</string>
-    <string name="notif_content_text_clicks_stop">Le processus de click a été arreté</string>
+    <string name="notif_content_text_clicks_stop">Le processus de click a été arrêté</string>
     <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
     <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>
 
