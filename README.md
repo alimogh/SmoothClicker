@@ -1,8 +1,8 @@
 # Smooth Clicker
-Android app which can trigger software clicks thanks to system Shell commands executed as SU.
+A free open-source easy to use material-designed autoclicker for Android rooted devices.
 
-This app is quite similar as apps which can be found on the Google Play, but this one is open-source (!) and under Apache v2 Licence.
+This app can trigger software clicks thanks to system Shell commands executed as SU.
+The app is open-source, easy to use and to configure and can make several clicks by delayed starts and pause between each click.
+Yuo can also repeat clicks sequences and make infinite clicks loops.
 
-<b>This app is still in development, some features should be added.</b>
-
-<b>Keep in mind your device must be rooted</b>
+<b>Be ware this app is still in development and your device must be rooted</b>
