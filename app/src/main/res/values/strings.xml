@@ -29,8 +29,9 @@
     <string name="info_message_stop">Stop the clicking process</string>
     <string name="info_message_request_su">Ask for the SU grant</string>
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
+    <string name="info_message_new_point">Select a new point on the screen</string>
+    <string name="info_message_invite_new_point">Select a new point on the screen</string>
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
-
     <string name="error_su_missing">Did you root your Android before using this app? It is mandatory.</string>
 
     <string name="warning_hazard_repeat_endless_title">Hazardous operation</string>
