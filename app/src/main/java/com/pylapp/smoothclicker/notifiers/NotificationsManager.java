@@ -21,7 +21,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.pylapp.smoothclicker.utils.Config;
-import com.pylapp.smoothclicker.utils.Logger;
 
 /**
  * Utility class which manages notifications.

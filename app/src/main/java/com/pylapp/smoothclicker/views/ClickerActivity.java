@@ -25,10 +25,11 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -44,11 +45,12 @@ import android.widget.Toast;
 
 import com.pylapp.smoothclicker.clicker.ATClicker;
 import com.pylapp.smoothclicker.notifiers.NotificationsManager;
+import com.pylapp.smoothclicker.tools.ShakeToClean;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.utils.ConfigStatus;
 import com.pylapp.smoothclicker.utils.ConfigVersions;
-import com.pylapp.smoothclicker.utils.Logger;
+import com.pylapp.smoothclicker.tools.Logger;
 
 import com.sa90.materialarcmenu.ArcMenu;
 
@@ -62,10 +64,12 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.5.0
+ * @version 2.7.0
  * @since 02/03/2016
+ * @see AppCompatActivity
+ * @see com.pylapp.smoothclicker.tools.ShakeToClean.ShakeToCleanCallback
  */
-public class ClickerActivity extends AppCompatActivity {
+public class ClickerActivity extends AppCompatActivity implements ShakeToClean.ShakeToCleanCallback {
 
 
     /* ********* *
@@ -257,11 +261,8 @@ public class ClickerActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected( MenuItem item ){
         int id = item.getItemId();
         switch ( id ){
-            case R.id.action_about:
-                displayAboutInfo();
-                break;
-            case R.id.action_credit:
-                startCreditsActivity();
+            case R.id.action_settings:
+                startSettingsActivity();
                 break;
             case R.id.action_exit:
                 handleExit();
@@ -282,6 +283,27 @@ public class ClickerActivity extends AppCompatActivity {
         NotificationsManager.getInstance(this).stopAllNotifications();
         super.finish();
     }
+
+    /**
+     * Triggered when the activity is resuming
+     */
+    @Override
+    public void onResume(){
+        super.onResume();
+        ShakeToClean.getInstance(this).register();
+        ShakeToClean.getInstance(this).registerCallback(this);
+    }
+
+    /**
+     * Triggered when the activity is pausing
+     */
+    @Override
+    public void onPause(){
+        super.onPause();
+        ShakeToClean.getInstance(this).unregister();
+        ShakeToClean.getInstance(this).unregisterCallback();
+    }
+
 
     /* ************* *
      * OTHER METHODS *
@@ -421,6 +443,10 @@ public class ClickerActivity extends AppCompatActivity {
         cb.setChecked(Config.DEFAULT_VIBRATE_ON_START);
         cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
         cb.setChecked(Config.DEFAULT_VIBRATE_ON_CLICK);
+        cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
+        cb.setChecked(Config.DEFAULT_NOTIF_ON_CLICK);
+
+        handleMultiPointResult( null ); // Make the spinner of points to click empty
 
     }
 
@@ -528,6 +554,9 @@ public class ClickerActivity extends AppCompatActivity {
 
         final Spinner s = (Spinner) findViewById(R.id.sPointsToClick);
         s.setAdapter(null); // Clean the list view
+
+        if ( coords == null ) return;
+
         s.setAdapter(new PointsListAdapter(this, coords));
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -543,10 +572,10 @@ public class ClickerActivity extends AppCompatActivity {
     }
 
     /**
-     * Starts the activity which displays the credits / third-parties licences
+     * Starts the settings activity
      */
-    private void startCreditsActivity(){
-        startActivity(new Intent(ClickerActivity.this, CreditsActivity.class));
+    private void startSettingsActivity(){
+        startActivity(new Intent(ClickerActivity.this, SettingsActivity.class));
     }
 
     /**
@@ -635,7 +664,7 @@ public class ClickerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArcMenu fabAction = (ArcMenu) findViewById(R.id.fabAction);
-                fabAction.toggleMenu();
+                if ( fabAction.isMenuOpened() ) fabAction.toggleMenu();
                 startSelectPointActivity();
             }
         });
@@ -681,6 +710,25 @@ public class ClickerActivity extends AppCompatActivity {
 
     }
 
+
+    /* ********************************* *
+     * METHODS FROM ShakeToCleanCallback *
+     * ********************************* */
+
+    /**
+     * Triggered when a shake to clean event has been thrown
+     */
+    @Override
+    public void shakeToClean() {
+        // Check if the shake to clean option is enabled
+        if (PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(SettingsActivity.PREF_KEY_SHAKE_TO_CLEAN, Config.DEFAULT_SHAKE_TO_CLEAN)) {
+            Toast.makeText(this, getString(R.string.message_reinit_config), Toast.LENGTH_SHORT).show();
+            initDefaultValues();
+            ArcMenu fabAction = (ArcMenu) findViewById(R.id.fabAction);
+            if ( fabAction.isMenuOpened() ) fabAction.toggleMenu();
+        }
+    }
 
     /* *********** *
      * INNER ENUMS *

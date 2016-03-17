@@ -27,7 +27,7 @@ import android.widget.Toast;
 import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.notifiers.NotificationsManager;
 import com.pylapp.smoothclicker.utils.Config;
-import com.pylapp.smoothclicker.utils.Logger;
+import com.pylapp.smoothclicker.tools.Logger;
 import com.pylapp.smoothclicker.views.PointsListAdapter;
 
 import java.io.DataOutputStream;

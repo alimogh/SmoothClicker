@@ -169,9 +169,15 @@ What..........
 ________________________________________________
 
 
-Date..........
+Date..........  17/03/2016 17h15
 What..........
-
+                Feature
+                    - Settings
+                    - Shake to clean
+                Languages
+                    - Fixed verbatims
+                Bugs
+                    - New campaign
 
 ________________________________________________
 
