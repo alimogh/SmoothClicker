@@ -21,7 +21,8 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 
-import com.pylapp.smoothclicker.notifiers.NotificationsManager;
+import com.pylapp.smoothclicker.notifiers.StatusBarNotifier;
+import com.pylapp.smoothclicker.notifiers.VibrationNotifier;
 import com.pylapp.smoothclicker.tools.Logger;
 import com.pylapp.smoothclicker.utils.Config;
 
@@ -33,12 +34,42 @@ import java.util.ArrayList;
  * Service to call our to start from the outside (e.g. a third party app) so as to trigger the cliking process
  * without using the GUI and its dedicated Activity instances.
  *
+     <h3>How to start (and use) the ServiceClicker ?</h3>
+     <pre>
+
+         // Create the Intent with the good action
+         Intent intentServiceSmoothClicker = new Intent("com.pylapp.smoothclicker.clicker.ServiceClicker.START");
+
+         // Defines the configuration to use
+         intentServiceSmoothClicker.putExtra("0x000011", true); // Start delayed ?
+         intentServiceSmoothClicker.putExtra("0x000012", 10);   // How much delay for the start ?
+         intentServiceSmoothClicker.putExtra("0x000013", 2);    // The amount of time to wait between clicks
+         intentServiceSmoothClicker.putExtra("0x000021", 5);    // The number of repeat to do
+         intentServiceSmoothClicker.putExtra("0x000022", false);// Endless repeat ?
+         intentServiceSmoothClicker.putExtra("0x000031", false);// Vibrate on start ?
+         intentServiceSmoothClicker.putExtra("0x000032", true);// Vibrate on each click ?
+         intentServiceSmoothClicker.putExtra("0x000041", true);// Make notifications ?
+         ArrayList<Integer> points = new ArrayList<Integer>();
+         points.add(252); // x0
+         points.add(674); // y0
+         points.add(266); // x1
+         points.add(930); // y1
+         points.add(597); // x2
+         points.add(936); // y2
+         intentServiceSmoothClicker.putIntegerArrayListExtra("0x000051",points); // The list of points
+
+         // Starts the service
+         startService(intentServiceSmoothClicker);
+
+     </pre>
+ *
  * @author pylapp
  * @version 1.0.0
  * @since 18/03/2016
  * @see IntentService
- * @ßee ATClicker
+ * @see ATClicker
  */
+// FIXME Refactor that, it's an heavy code
 public class ServiceClicker extends IntentService {
 
 
@@ -99,6 +130,11 @@ public class ServiceClicker extends IntentService {
      * Display notifications on click
      */
     private boolean mNotif;
+
+    /**
+     * Flag to rise to stop the service when possible
+     */
+    private boolean mIsShouldStop;
 
 
     /* ********* *
@@ -217,6 +253,7 @@ public class ServiceClicker extends IntentService {
                 return;
             case SERVICE_CLICKER_INTENT_FILTER_NAME_STOP:
                 broadcastStatus(StatusTypes.TERMINATED);
+                mIsShouldStop = true;
                 stopSelf();
                 break;
             case SERVICE_CLICKER_INTENT_FILTER_NAME_START:
@@ -228,26 +265,20 @@ public class ServiceClicker extends IntentService {
                 break;
         }
 
+        mContext = this;
+
         /*
          * Step 3a : Saves the config
          */
 
         mIsStartDelayed = intent.getBooleanExtra(BUNDLE_KEY_DELAYED_START, Config.DEFAULT_START_DELAYED);
-
         mDelay = intent.getIntExtra(BUNDLE_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
-
         mTimeGap = intent.getIntExtra(BUNDLE_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP));
-
         mRepeat = intent.getIntExtra(BUNDLE_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT));
-
         mIsRepeatEndless = intent.getBooleanExtra(BUNDLE_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
-
         mVibrateOnStart = intent.getBooleanExtra(BUNDLE_KEY_VIBRATE_ON_START, Config.DEFAULT_VIBRATE_ON_START);
-
         mVibrateOnClick = intent.getBooleanExtra(BUNDLE_KEY_VIBRATE_ON_CLICK, Config.DEFAULT_VIBRATE_ON_CLICK);
-
         mNotif = intent.getBooleanExtra(BUNDLE_KEY_NOTIFICATIONS, Config.DEFAULT_NOTIF_ON_CLICK);
-
         mPoints = intent.getIntegerArrayListExtra(BUNDLE_KEY_POINTS);
 
         if ( mPoints == null || mPoints.size() <= 0 ){
@@ -263,6 +294,7 @@ public class ServiceClicker extends IntentService {
         /*
          * Step 4 : Starts the clicking process
          */
+        makeStartNotification();
         executeTaps();
 
         /*
@@ -273,7 +305,7 @@ public class ServiceClicker extends IntentService {
         /*
          * Step 6 : Finish !
          */
-
+        // ~=[,,_,,]:3
 
     }
 
@@ -288,6 +320,8 @@ public class ServiceClicker extends IntentService {
     // FIXME Find a way to factorise the sources, design patterns !
     private void executeTaps(){
 
+        if ( checkIfCancelled() ) return;
+
         /*
          * Step 1 : Get the process as "su"
          */
@@ -299,11 +333,15 @@ public class ServiceClicker extends IntentService {
             e.printStackTrace();
         }
 
+        if ( checkIfCancelled() ) return;
+
         /*
          * Step 2 : Get the process output stream
          */
         Logger.d(LOG_TAG, "Get 'su' process data output stream...");
         mOutputStream = new DataOutputStream(mProcess.getOutputStream());
+
+        if ( checkIfCancelled() ) return;
 
         /*
          * Step 3 : Execute the command, the same we can execute from ADB within a terminal and deal with the configuration
@@ -320,14 +358,15 @@ public class ServiceClicker extends IntentService {
             // Loop for each second
             for ( int i = 1; i <= count; i++ ){
                 try {
-                    NotificationsManager.getInstance(mContext).makeCountDownNotification(mDelay-i);
+                    makeCountDownNotification(mDelay - i);
                     Thread.sleep(1000); // Sleep of 1 second
+                    if ( checkIfCancelled() ) return;
                 } catch ( InterruptedException ie ){}
             }
-            NotificationsManager.getInstance(mContext).stopAllNotifications();
+            stopAllNotifications();
         }
 
-        NotificationsManager.getInstance(mContext).makeClicksOnGoingNotification();
+        makeClicksOnGoingNotification();
 
         /*
          * Is the execution endless ?
@@ -336,6 +375,7 @@ public class ServiceClicker extends IntentService {
 
             while (true) {
                 Logger.d(LOG_TAG, "Should repeat the process ENDLESSLY");
+                if ( checkIfCancelled() ) return;
                 executeTap();
                 // Should we wait before the next action ?
                 if ( mTimeGap > 0 ){
@@ -355,6 +395,7 @@ public class ServiceClicker extends IntentService {
 
             Logger.d(LOG_TAG, "Should repeat the process : " + mRepeat);
             for ( int i = 0; i < mRepeat; i++ ){
+                if ( checkIfCancelled() ) return;
                 executeTap();
                 // Should we wait before the next action ?
                 if ( mTimeGap > 0 ){
@@ -371,12 +412,13 @@ public class ServiceClicker extends IntentService {
          * Just one execution
          */
         } else {
+            if ( checkIfCancelled() ) return;
             Logger.d(LOG_TAG, "Should NOT repeat the process : "+mRepeat);
             executeTap();
         }
 
-        NotificationsManager.getInstance(mContext).stopAllNotifications();
-        NotificationsManager.getInstance(mContext).makeClicksOverNotification();
+        stopAllNotifications();
+        makeClicksOverNotification();
         Logger.d(LOG_TAG, "The input event seems to be triggered");
 
     }
@@ -397,7 +439,7 @@ public class ServiceClicker extends IntentService {
             try {
                 if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
                 mOutputStream.writeBytes(shellCmd);
-                NotificationsManager.getInstance(mContext).makeNewClickNotifications(x, y);
+                makeNewClickNotifications(x, y);
             } catch ( IOException ioe ){
                 Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
                 ioe.printStackTrace();
@@ -415,6 +457,80 @@ public class ServiceClicker extends IntentService {
 
         } // End of for ( PointsListAdapter.Point p : mPoints )
 
+    }
+
+    /**
+     * Manages the notifications about the count down for delayed starts
+     * @param countDown - The leaving amount of seconds before start
+     */
+    private void makeCountDownNotification( int countDown ){
+        if ( ! mNotif ) return;
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.COUNT_DOWN, countDown);
+    }
+
+    /**
+     * Manages the notifications about the new click.
+     * @param x - The x coordinate of the click
+     * @param y - The y coordinate of the click
+     */
+    private void makeNewClickNotifications( int x, int y){
+        if ( mVibrateOnClick ){
+            new VibrationNotifier(mContext).vibrate(VibrationNotifier.VIBRATE_ON_CLICK_DURATION);
+        }
+        if ( mNotif ) {
+            new StatusBarNotifier(mContext).makeNotification(StatusBarNotifier.NotificationTypes.CLICK_MADE, x, y);
+        }
+    }
+
+    /**
+     * Manages the notifications about the on going clicking process
+     */
+    private void makeClicksOnGoingNotification(){
+        if ( ! mNotif ) return;
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_ON_GOING_BY_SERVICE);
+    }
+
+    /**
+     * Manages the notifications about the clicking process which is over
+     */
+    private void makeClicksOverNotification(){
+        if ( ! mNotif ) return;
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_OVER);
+    }
+
+    /**
+     * Makes a notification about the fact the clicking process starts
+     */
+    private void makeStartNotification(){
+        if ( mVibrateOnStart ){
+            VibrationNotifier vn = new VibrationNotifier(mContext);
+            vn.vibrate(VibrationNotifier.VIBRATE_ON_START_DURATION);
+        }
+    }
+
+    /**
+     * Stops all the notifications
+     */
+    private void stopAllNotifications(){
+        if ( ! mNotif ) return;
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.removeAllNotifications();
+    }
+
+    /**
+     *
+     * @return boolean - True if the AsyncTask has been cancelled, false otherwise
+     */
+    private boolean checkIfCancelled(){
+        if ( mIsShouldStop ){
+            stopAllNotifications();
+            makeClicksOverNotification();
+            return true;
+        }
+        return false;
     }
 
     /**

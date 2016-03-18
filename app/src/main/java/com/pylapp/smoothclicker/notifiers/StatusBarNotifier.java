@@ -32,7 +32,7 @@ import com.pylapp.smoothclicker.views.ClickerActivity;
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 1.5.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -55,27 +55,31 @@ public class StatusBarNotifier {
     /**
      * The identifier of the notification about tSU permission which has been granted
      */
-    public static final int NOTIF_SU_GRANTED             = 0x000101;
+    public static final int NOTIF_SU_GRANTED                        = 0x000101;
     /**
-     * The identifier of the notification about the clicking process which is on going
+     * The identifier of the notification about the clicking process which is on going (through the app)
      */
-    public static final int NOTIF_CLICK_PROCESS_ON_GOING = 0x000201;
+    public static final int NOTIF_CLICK_PROCESS_ON_GOING_BY_APP     = 0x000201;
+    /**
+     * The identifier of the notification about the clicking process which is on going (through the background service)
+     */
+    public static final int NOTIF_CLICK_PROCESS_ON_GOING_BY_SERVICE = 0x000202;
     /**
      * The identifier of the notification about the clicking process which has been stopped
      */
-    public static final int NOTIF_CLICK_PROCESS_STOPPED  = 0x000202;
+    public static final int NOTIF_CLICK_PROCESS_STOPPED             = 0x000203;
     /**
      * The identifier of the notification about the clicking process which has made all its click
      */
-    public static final int NOTIF_CLICK_PROCESS_OVER     = 0x000203;
+    public static final int NOTIF_CLICK_PROCESS_OVER                = 0x000204;
     /**
      * The identifier of the notification about the clicking process which has made a new click
      */
-    public static final int NOTIF_CLICK_MADE             = 0x000204;
+    public static final int NOTIF_CLICK_MADE                        = 0x000205;
     /**
      * The identifier of the notification about the countdown
      */
-    public static final int NOTIF_COUNT_DOWN             = 0x000205;
+    public static final int NOTIF_COUNT_DOWN                        = 0x000205;
 
 
     /* *********** *
@@ -117,7 +121,7 @@ public class StatusBarNotifier {
         b.setContentTitle(mContext.getString(R.string.notif_content_title));
         b.setVisibility(Notification.VISIBILITY_PUBLIC);
 
-        if ( type != NotificationTypes.CLICK_MADE ) {
+        if ( type != NotificationTypes.CLICK_MADE && type != NotificationTypes.CLICKS_ON_GOING_BY_SERVICE ) {
             Intent activityToStartOnClick = new Intent(mContext, ClickerActivity.class);
             activityToStartOnClick.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             PendingIntent pi = PendingIntent.getActivity(mContext, 0, activityToStartOnClick, 0);
@@ -128,15 +132,24 @@ public class StatusBarNotifier {
         Notification n = null;
 
         switch ( type ){
-            case CLICKS_ON_GOING:
-                b.setContentText(mContext.getString(R.string.notif_content_text_clicks_on_going));
+            case CLICKS_ON_GOING_BY_APP:
+                b.setContentText(mContext.getString(R.string.notif_content_text_clicks_on_going_app));
                 b.setProgress(0, 0, true);
                 b.setLights(0xff9c27b0, 1000, 500);
                 n = b.build();
                 n.flags |= Notification.FLAG_NO_CLEAR;
                 n.flags |= Notification.FLAG_SHOW_LIGHTS;
                 n.flags |= Notification.FLAG_LOCAL_ONLY;
-                nm.notify(NOTIF_CLICK_PROCESS_ON_GOING, n);
+                nm.notify(NOTIF_CLICK_PROCESS_ON_GOING_BY_APP, n);
+            case CLICKS_ON_GOING_BY_SERVICE:
+                b.setContentText(mContext.getString(R.string.notif_content_text_clicks_on_going_service));
+                b.setProgress(0, 0, true);
+                b.setLights(0xff9c27b0, 1000, 500);
+                n = b.build();
+                n.flags |= Notification.FLAG_NO_CLEAR;
+                n.flags |= Notification.FLAG_SHOW_LIGHTS;
+                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                nm.notify(NOTIF_CLICK_PROCESS_ON_GOING_BY_SERVICE, n);
                 break;
             case CLICKS_STOPPED:
                 b.setContentText(mContext.getString(R.string.notif_content_text_clicks_stop));
@@ -195,8 +208,8 @@ public class StatusBarNotifier {
     public void removeNotification( NotificationTypes type ){
         NotificationManager nm = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         switch (type){
-            case CLICKS_ON_GOING:
-                nm.cancel(NOTIF_CLICK_PROCESS_ON_GOING);
+            case CLICKS_ON_GOING_BY_APP:
+                nm.cancel(NOTIF_CLICK_PROCESS_ON_GOING_BY_APP);
                 break;
             case CLICKS_STOPPED:
                 nm.cancel(NOTIF_CLICK_PROCESS_STOPPED);
@@ -220,9 +233,14 @@ public class StatusBarNotifier {
      */
     public enum NotificationTypes {
         /**
-         * The clicking process is running
+         * The clicking process is running by the app
          */
-        CLICKS_ON_GOING,
+        CLICKS_ON_GOING_BY_APP,
+        /**
+         * The clicking process is running by the background service
+         */
+        CLICKS_ON_GOING_BY_SERVICE,
+
         /**
          * A click has been made
          */

@@ -86,7 +86,8 @@
     <!-- Notifications -->
     <string name="notif_content_title">Smooth Clicker</string>
     <string name="notif_content_text_click_made">New click!</string>
-    <string name="notif_content_text_clicks_on_going">The clicking process is running...</string>
+    <string name="notif_content_text_clicks_on_going_app">The clicking process is running (through the app)...</string>
+    <string name="notif_content_text_clicks_on_going_service">The clicking process is running (through the service)...</string>
     <string name="notif_content_text_clicks_stop">The clicking process has been stopped</string>
     <string name="notif_content_text_clicks_over">The clicking process is over</string>
     <string name="notif_content_text_su_granted">The super-user permission has been granted</string>

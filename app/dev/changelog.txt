@@ -131,11 +131,14 @@ What:
 ###################################################
 Date: 18/03/2016
 What:
-    feat: klingon support
+    feat: Klingon support
 ###################################################
-Date:
+Date: 18/03/2016
 What:
-
+    fix: Shake to clean cleans the endless repeat choice
+    feat: Service reachable by a third app which can make clicks
+    doc: Update the doc
+    chore: Clean sources
 ###################################################
 Date:
 What:

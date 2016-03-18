@@ -63,7 +63,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.7.0
+ * @version 2.8.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see com.pylapp.smoothclicker.tools.ShakeToClean.ShakeToCleanCallback
@@ -444,6 +444,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         cb.setChecked(Config.DEFAULT_VIBRATE_ON_CLICK);
         cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
         cb.setChecked(Config.DEFAULT_NOTIF_ON_CLICK);
+        cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
+        cb.setChecked(Config.DEFAULT_REPEAT_ENDLESS);
 
         handleMultiPointResult( null ); // Make the spinner of points to click empty
 
