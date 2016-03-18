@@ -18,6 +18,8 @@
 package com.pylapp.smoothclicker.views;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -25,15 +27,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.pylapp.smoothclicker.R;
+import com.pylapp.smoothclicker.utils.ConfigVersions;
 
 /**
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
+
+
+    /* ********** *
+     * ATTRIBUTES *
+     * ********** */
+
+    /**
+     * The release
+     */
+    private static String sVersionRelease;
 
 
     /* ********* *
@@ -43,6 +56,7 @@ public class SettingsActivity extends AppCompatActivity {
     private static final String PREF_KEY_CREDITS = "pref_key_credit";
     private static final String PREF_KEY_APP = "pref_key_app";
     public static final String PREF_KEY_SHAKE_TO_CLEAN = "pref_key_settings_shaketoclean";
+    private static final String PREF_KEY_ABOUT_VERSION = "pref_about_version_title";
 
 
     /* ****************************** *
@@ -58,6 +72,20 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        // Builds the release string
+        StringBuffer sb = new StringBuffer();
+        sb.append(ConfigVersions.VERSION_TAG_CURRENT);
+        try {
+            PackageInfo pi = getPackageManager().getPackageInfo(getPackageName(), 0);
+            String versionName = pi.versionName;
+            sb.append(" - v").append(versionName);
+            int versionCode = pi.versionCode;
+            sb.append(" - ").append(versionCode);
+        } catch ( PackageManager.NameNotFoundException e ){
+            e.printStackTrace();
+        }
+        sVersionRelease = sb.toString();
 
         // Display the fragment as the main content.
         getFragmentManager()
@@ -103,6 +131,10 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 }
             });
+
+            // The version
+            pref = (Preference) findPreference(PREF_KEY_ABOUT_VERSION);
+            pref.setSummary(sVersionRelease);
 
         }
 

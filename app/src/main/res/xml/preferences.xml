@@ -60,19 +60,9 @@
         android:key="pref_key_about">
 
         <Preference
-            android:enabled="false"
-            android:title="@string/pref_about_version_tag_title"
-            android:summary="@string/pref_about_version_tag_summary" />
-
-        <Preference
-            android:enabled="false"
-            android:title="@string/pref_about_version_name_title"
-            android:summary="@string/pref_about_version_name_summary" />
-
-        <Preference
-            android:enabled="false"
-            android:title="@string/pref_about_version_code_title"
-            android:summary="@string/pref_about_version_code_summary" />
+            android:selectable="false"
+            android:key="pref_about_version_title"
+            android:title="@string/pref_about_version_title" />
 
         <Preference
             android:key="pref_key_app"
