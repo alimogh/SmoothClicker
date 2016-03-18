@@ -129,9 +129,9 @@ What:
     chore: Refactor changelog
     chore: Refactor strings
 ###################################################
-Date:
+Date: 18/03/2016
 What:
-
+    feat: klingon support
 ###################################################
 Date:
 What:
