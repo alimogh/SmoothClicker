@@ -24,7 +24,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-
 import com.pylapp.smoothclicker.R;
 
 import java.util.ArrayList;

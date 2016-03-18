@@ -19,12 +19,8 @@ package com.pylapp.smoothclicker.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.pylapp.smoothclicker.R;
 
@@ -32,7 +28,7 @@ import com.pylapp.smoothclicker.R;
  * A translucent activity.
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.1.1
  * @since 16/03/2016
  */
 public abstract class TranslucentActivity extends AppCompatActivity {

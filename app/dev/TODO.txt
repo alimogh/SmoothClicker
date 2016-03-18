@@ -18,8 +18,6 @@
 LAST TASK : #42
 
 TO DO
-    Task #20 : [v1.7.0] Make a Service reachable from third parties which will launch the process instead of using the main activity
-                    - Update wiki : how to start the service
     Task #33 : Unit Tests and Instrumented tests
 
     Task #38 : [v1.8.0] Link with Appium or other things ?

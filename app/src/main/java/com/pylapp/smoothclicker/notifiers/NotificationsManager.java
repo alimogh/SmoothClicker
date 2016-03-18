@@ -97,12 +97,10 @@ public final class NotificationsManager {
      * Makes a notification about the fact the clicking process starts
      */
     public void makeStartNotification(){
-
         if ( mVibrateOnStart ){
             VibrationNotifier vn = new VibrationNotifier(mContext);
             vn.vibrate(VibrationNotifier.VIBRATE_ON_START_DURATION);
         }
-
     }
 
     /**
@@ -129,7 +127,7 @@ public final class NotificationsManager {
      */
     public void makeClicksOnGoingNotification(){
         StatusBarNotifier sbn = new StatusBarNotifier(mContext);
-        sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_ON_GOING);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_ON_GOING_BY_APP);
     }
 
     /**
@@ -170,7 +168,7 @@ public final class NotificationsManager {
      */
     public void stopClicksOnGoingNotification(){
         StatusBarNotifier sbn = new StatusBarNotifier(mContext);
-        sbn.removeNotification(StatusBarNotifier.NotificationTypes.CLICKS_ON_GOING);
+        sbn.removeNotification(StatusBarNotifier.NotificationTypes.CLICKS_ON_GOING_BY_APP);
     }
 
     /**
