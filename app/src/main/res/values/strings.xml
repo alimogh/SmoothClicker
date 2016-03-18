@@ -111,5 +111,6 @@
     <string name="message_reinit_config">Clean up...</string>
     <string name="message_confirm_exit_label">Exit</string>
     <string name="message_confirm_exit_content">Do you want to quit the app?</string>
+    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
 </resources>

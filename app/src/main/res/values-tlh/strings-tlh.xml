@@ -1,0 +1,115 @@
+<!--
+    Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- http://www.bing.com/translator/ : French/English to Klingon -->
+
+    <!-- Menus -->
+    <string name="action_about">umqu\' ghot</string>
+    <string name="action_credit">chaw\'</string>
+    <string name="action_exit">mej</string>
+    <string name="action_settings">DuH</string>
+
+    <!-- Messages -->
+    <string name="info_message_start">toD \'ej qet</string>
+    <string name="info_message_stop">click mIw mev</string>
+    <string name="info_message_request_su">botlhobbogh su naw\'</string>
+    <string name="info_message_su_granted">Qu\' su naw\'</string>
+    <string name="info_message_new_point">chu\' lang jIHDaq chollaw\'lI\' wIv</string>
+    <string name="info_message_invite_new_point">chu\' lang jIHDaq chollaw\'lI\' wIv</string>
+    <string name="info_message_invite_new_points">lang puS wIv \'ej vaj Dub</string>
+    <string name="error_message_su_not_granted">wej Suq su naw\'</string>
+    <string name="error_su_missing">Android \'oQqar SoH pa\' app lo\'? Daghaj.</string>
+    <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ pagh wutlh clicks</string>
+
+    <string name="warning_hazard_repeat_endless_title">Qom yo\'SeH</string>
+    <string name="warning_hazard_repeat_endless_content">endless jatlhqa\' Son be yo\'SeH chaq Qom jan.</string>
+    <string name="warning_hazard_repeat_endless_no">So\'</string>
+    <string name="warning_hazard_repeat_endless_yes">qul neH qung!</string>
+
+    <!-- Widgets -->
+    <string name="widget_type_of_start">mIm qet</string>
+    <string name="widget_delay">mlm</string>
+    <string name="widget_delay_hint">in cha\'DIch</string>
+    <string name="widget_speed">pa\' Hoch click poH</string>
+    <string name="widget_speed_hint">in cha\'DIch</string>
+    <string name="widget_repeat">atlhqa\'</string>
+    <string name="widget_repeat_hint">poH</string>
+    <string name="widget_repeat_endless">Hutlh megh\'an</string>
+    <string name="widget_vibrate_on_start">wab qet</string>
+    <string name="widget_vibrate_on_click">wab click</string>
+    <string name="widget_delayed_starts">mIm</string>
+    <string name="widget_immediate_starts">DaH</string>
+    <string name="widget_click_coordinates">lang jIHDaq chollaw\'lI\' wIv</string>
+    <string name="widget_x_coordinate">x Quv</string>
+    <string name="widget_y_coordinate">y Quv</string>
+    <string name="widget_xy_coordinates">volchaHDaj click</string>
+    <string name="widget_notifications">QIn</string>
+
+    <!-- Credits -->
+    <string name="credits_app_label">Smooth Clicker</string>
+    <string name="credits_app_desc">chenmoH pylapp Doch</string>
+    <string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
+    <string name="credits_app_license">bopummeH chaw\' Apache V2</string>
+    <string name="credits_app_personal_page">https://twitter.com/pylapp</string>
+    <string name="credits_logo_label">Doch mIllogh</string>
+    <string name="credits_logo_desc">chenmoH Freepik from www.flaticon.com Doch</string>
+    <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
+    <string name="credits_logo_license">bopummeH chaw\'Flaticon Basic</string>
+    <string name="credits_mam_label">Material Arc Menu</string>
+    <string name="credits_mam_desc">chenmoH Saurabh Arora Doch</string>
+    <string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
+    <string name="credits_mam_license">bopummeH chaw\' Apache v2</string>
+    <string name="credits_htextview_label">HTextView</string>
+    <string name="credits_htextview_desc">chenmoH Hanks Zyh chenmoH</string>
+    <string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
+    <string name="credits_htextview_license">bopummeH chaw\' Apache v2</string>
+
+    <!-- Splash screen -->
+    <string name="splashscreen_description">Smooth Clicker</string>
+
+    <!-- Notifications -->
+    <string name="notif_content_title">Smooth Clicker</string>
+    <string name="notif_content_text_click_made">chu\' click!</string>
+    <string name="notif_content_text_clicks_on_going">qet click mIw.</string>
+    <string name="notif_content_text_clicks_stop">bImevchu\'pu\'be\'mo\' click mIw</string>
+    <string name="notif_content_text_clicks_over">rIn click mIw</string>
+    <string name="notif_content_text_su_granted">granted super-user choHwI\' wIlIng</string>
+    <string name="notif_content_countdown">qet:</string>
+
+    <!-- Settings / Preferences -->
+    <string name="pref_settings_title">DuH</string>
+    <string name="pref_settings_shaketoclean_title">shake Say\'</string>
+    <string name="pref_settings_shaketoclean_summary">vay\' Doch chIm jan shake</string>
+
+    <string name="pref_credits_title">DeQ</string>
+    <string name="pref_key_credit_title">wejDIch ghom \'a ghIH lo\' app</string>
+    <string name="pref_key_credit_summary">click naDev chaw\' cha\'</string>
+
+    <string name="pref_about_title">umqu\' ghot</string>
+    <string name="pref_about_version_title">nuq</string>
+    <string name="pref_about_version_app_title">Smooth Clicker</string>
+    <string name="pref_about_version_app_summary">ngabchu\' pylapp - License Apache v2</string>
+
+    <!-- Misc. -->
+    <string name="error_not_implemented">Nwej chenmoH \'ach!</string>
+    <string name="message_reinit_config">Say\'</string>
+    <string name="message_confirm_exit_label">mej</string>
+    <string name="message_confirm_exit_content">Doch bup DaneH\'a\'?</string>
+
+</resources>

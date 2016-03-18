@@ -16,15 +16,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pylapp.smoothclicker">
 
+
     <!-- *********** -->
     <!-- Permissions -->
     <!-- *********** -->
-
 
     <!-- To be SU -->
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <!-- To make the device vibrate (here on each click or on start if needed) -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- To start the service when the boot of the device is done -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
 
     <!-- ********************* -->
     <!-- The SmoothClicker app -->
@@ -36,16 +39,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- ********** -->
+        <!-- Activities -->
+        <!-- ********** -->
+
         <!-- The splash screen -->
         <activity
             android:name=".views.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <!-- The main activity of the app -->
@@ -54,24 +62,40 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
 
         <!-- The credits activity displaying the licenses etc. -->
         <activity
             android:name=".views.CreditsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- A translucent activity to help the user to select several points on its screen -->
         <activity
             android:name=".views.SelectMultiPointsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Transparent"></activity>
+            android:theme="@style/Theme.Transparent" />
 
         <!-- The settings activity -->
         <activity
             android:name=".views.SettingsActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+
+        <!-- ******** -->
+        <!-- Services -->
+        <!-- ******** -->
+        <service
+            android:name=".clicker.ServiceClicker"
+            android:label="@string/service_label_serviceclicker"
+            android:enabled="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="com.pylapp.smoothclicker.clicker.ServiceClicker.START" />
+            </intent-filter>
+
+        </service>
+
 
     </application>
 
