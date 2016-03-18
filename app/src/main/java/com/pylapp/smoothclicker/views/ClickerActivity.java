@@ -25,7 +25,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Menu;
@@ -118,7 +117,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         // Check whether we're recreating a previously destroyed instance
         if (savedInstanceState != null) {
             Switch typeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
-            typeOfStart.setChecked(savedInstanceState.getBoolean(Config.SP_START_TYPE_DELAYED));
+            typeOfStart.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_START_TYPE_DELAYED));
             EditText et = (EditText) findViewById(R.id.etDelay);
             et.setText(savedInstanceState.getString(Config.SP_KEY_DELAY));
             et = (EditText) findViewById(R.id.etTimeBeforeEachClick);
@@ -206,7 +205,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         // Save the values
 
-        savedInstanceState.putBoolean(Config.SP_START_TYPE_DELAYED, isDelayed);
+        savedInstanceState.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, isDelayed);
         savedInstanceState.putInt(Config.SP_KEY_DELAY, delayInS);
         savedInstanceState.putInt(Config.SP_KEY_TIME_GAP, timeGapInS);
         savedInstanceState.putInt(Config.SP_KEY_REPEAT, repeatEach);
@@ -354,7 +353,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         // Update the shared preferences
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean(Config.SP_START_TYPE_DELAYED, isDelayed);
+        editor.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, isDelayed);
         editor.putInt(Config.SP_KEY_DELAY, delayInS);
         editor.putInt(Config.SP_KEY_TIME_GAP, timeGapInS);
         editor.putInt(Config.SP_KEY_REPEAT, repeatEach);

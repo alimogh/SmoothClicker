@@ -132,9 +132,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         super.onPreExecute();
 
         SharedPreferences sp = mContext.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
-//        mCoordX = sp.getInt(Config.SP_KEY_COORD_X, Config.DEFAULT_X_CLICK);
-//        mCoordY = sp.getInt(Config.SP_KEY_COORD_Y, Config.DEFAULT_Y_CLICK);
-        mIsStartDelayed = sp.getBoolean(Config.SP_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);
+        mIsStartDelayed = sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);
         mDelay = sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
         mTimeGap = sp.getInt(Config.SP_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP));
         mRepeat = sp.getInt(Config.SP_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT));
