@@ -45,7 +45,7 @@ public final class Config {
      * The shared preferences
      */
     public static final String SMOOTHCLICKER_SHARED_PREFERENCES_NAME = "com.pylapp.smoothclicker.SMOOTHCLICKER_SHARED_PREFERENCES_NAME";
-    public static final String SP_START_TYPE_DELAYED                 = "0x000011";
+    public static final String SP_KEY_START_TYPE_DELAYED             = "0x000011";
     public static final String SP_KEY_DELAY                          = "0x000012";
     public static final String SP_KEY_TIME_GAP                       = "0x000021";
     public static final String SP_KEY_REPEAT                         = "0x000031";

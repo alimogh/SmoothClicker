@@ -19,11 +19,6 @@ LAST TASK : #42
 
 TO DO
     Task #20 : [v1.7.0] Make a Service reachable from third parties which will launch the process instead of using the main activity
-                    - Make a receiver for boot completed, battery okay and battery low events
-                    - Register this receiver from the main activity
-                    - Starts the service if boot completed and battery okay
-                    - Kills the service if battery low
-                    - Create the service : retrieve data, update config, etc
                     - Update wiki : how to start the service
     Task #33 : Unit Tests and Instrumented tests
 
