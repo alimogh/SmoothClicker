@@ -17,9 +17,6 @@
 
 <resources>
 
-    <!-- Apps -->
-    <string name="app_name">Smooth Clicker</string>
-
     <!-- Menus -->
     <string name="action_about">À propos</string>
     <string name="action_credit">Licences</string>
@@ -91,6 +88,7 @@
     <string name="notif_content_text_clicks_stop">Le processus de click a été arrêté</string>
     <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
     <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>
+    <string name="notif_content_countdown">Démarrage dans :</string>
 
     <!-- Settings / Preferences -->
     <string name="pref_settings_title">Paramètres</string>
@@ -102,9 +100,7 @@
     <string name="pref_key_credit_summary">Click pour accéder aux licences</string>
 
     <string name="pref_about_title">À propos</string>
-    <string name="pref_about_version_tag_title">Version tag</string>
-    <string name="pref_about_version_name_title">Version name</string>
-    <string name="pref_about_version_code_title">Version code</string>
+    <string name="pref_about_version_title">Version</string>
     <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">écrit par pylapp - Licence Apache v2</string>
 

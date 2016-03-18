@@ -38,7 +38,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.2.0
+ * @version 2.3.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -176,7 +176,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         if ( checkIfCancelled() ) return null;
 
         /*
-         * Step 2 : Fet the process output stream
+         * Step 2 : Get the process output stream
          */
         Logger.d(LOG_TAG, "Get 'su' process data output stream...");
         mOutputStream = new DataOutputStream(mProcess.getOutputStream());
@@ -191,15 +191,21 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
                 $ input tap XXX YYY
          */
 
-        NotificationsManager.getInstance(mContext).makeClicksOnGoingNotification();
-
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
             Logger.d(LOG_TAG, "The start is delayed, will sleep : "+mDelay);
-            try {
-                Thread.sleep(mDelay*1000);
-            } catch ( InterruptedException ie ){}
+            final int count = mDelay;
+            // Loop for each second
+            for ( int i = 1; i <= count; i++ ){
+                try {
+                    NotificationsManager.getInstance(mContext).makeCountDownNotification(mDelay-i);
+                    Thread.sleep(1000); // Sleep of 1 second
+                } catch ( InterruptedException ie ){}
+            }
+            NotificationsManager.getInstance(mContext).stopAllNotifications();
         }
+
+        NotificationsManager.getInstance(mContext).makeClicksOnGoingNotification();
 
         /*
          * Is the execution endless ?

@@ -1,231 +1,160 @@
-<!--
-    Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
+#
+#    Copyright 2016 Pierre-Yves Lapersonne (aka. "pylapp",  pylapp(dot)pylapp(at)gmail(dot)com)
+#
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+#
+# ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
-
-________________________________________________
-
-
-Date.......... 02/03/2016 21h30
-What.......... Initialized the project
+###################################################
+Date: 02/03/2016 21h30
+What:
+    chore: Initialized the project
                 - light GUI
                 - Apache v2 licence
                 - Click with SU shell commands
                 - Configuration of the clicking process
                 - About field
                 - Logo
-________________________________________________
+###################################################
+Date: 03/03/2016 23h55
+What:
+    chore: Clean up
+###################################################
+Date: 15/03/2016
+What:
+    feat: Credits
+                - Added credits / licences in the GUI
+###################################################
+Date: 15/03/2016
+What:
+    chore: Credits
+                - Improve the cardviews
+    feat: Vibrations
+                - Now the device can vibrate on starts or on each click
+###################################################
+Date: 15/03/2016
+What:
+    chore: Credits
+                - Now the URL of third-party contents are clickable
+                - Refactored verbatims
+                - Added new entries
+    feat: Splash screen
+###################################################
+Date: 15/03/2016
+What:
+    feat: Clicks
+                - X and Y fields automatically filled
+    feat: Buttons
+                - The "add a point" button has been replaced by a "request SU grant" button
+                - The "stop" button has been modified
+    feat: SU
+                - A feature has been implemented to get SU grant without having to trigger a clicking process
+###################################################
+Date: 15/03/2016 19h10
+What:
+    chore: UI
+                - Changed colors
+                - Refactored the main UI
+                - Cleared focus
+                - Fixed verbatims
+    feat: Exit
+                - Implemented an exit feature which will prevent then splash screen to be displayed each time, etc.
+###################################################
+Date: 16/03/2016
+What:
+    feat: notifications
+                - Refactored notifications by vibrations
+                - The state of the app is notified by light and notifications
+    chore: GUI
+                - Updated the GUI
+    chore: Misc.
+                - Now the back button is for exit, press home to put the app in background / hide it
+                - Refactoring of some constants
+                - Fixed verbatims
+###################################################
+Date: 16/03/2016
+What:
+    feat: Endless repeat
+                - Endless repeat with warning in an alert dialog
+    feat: Notifications
+                - Start the activity if we click on the notifications (except "new click")
+    feat: French language support
+    doc: Javadoc
+                - Generate Javadoc as HTML
+###################################################
+Date: 17/03/2016
+What:
+    feat: GUI
+                - The SelectPointActivity does not have a title anymore
+                - The arc menu get smaller when clicking on the "select point" button
+                - Now the only way to select a point on the screen to click on is the dedicated activity
+###################################################
+Date: 17/03/2016
+What:
+    feat: GUI for select multipoint
+                - Updated GUI for the selection of several points
+###################################################
+Date: 17/03/2016
+What:
+    chore: Languages
+                - Fixed verbatims
+    fix: Bugs
+                - Fixed bug about null values in EditTexts
+                - Fixed bug making a force close when we start the process without defined clicks
+    feat: Translucent view
+    feat: Notifications
+                - The notifications display the coordinates of the click which has been made
+###################################################
+Date: 17/03/2016 17h15
+What:
+    feat: Settings
+    feat: Shake to clean
+    chore: Update verbatims
+    fix : New bugs tracking campaign
+###################################################
+Date: 18/03/2016
+What:
+    feat: Countdown on notifications for delayed starts
+    refactor: New settings screen with less fields
+    chore: Refactor changelog
+    chore: Refactor strings
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
 
-
-Date.......... 03/03/2016 23h55
-What.......... Clean up
-
-
-________________________________________________
-
-
-Date..........  15/03/2016
-What..........  Credits
-                    - Added credits / licences in the GUI
-
-________________________________________________
-
-
-Date..........  15/03/2016
-What..........  Credits
-                    - Improve the cardviews
-                Vibrations
-                    - Now the device can vibrate on starts or on each click
-
-
-________________________________________________
-
-
-Date..........  15/03/2016
-What..........
-                Credits
-                    - Now the URL of third-party contents are clickable
-                    - Refactored verbatims
-                    - Added new entries
-                Splash screen
-                    - It is here !
-
-________________________________________________
-
-
-Date..........  15/03/2016
-What..........
-                Clicks
-                   - X and Y fields automatically filled
-                Buttons
-                   - The "add a point" button has been replaced by a "request SU grant" button
-                   - The "stop" button has been modified
-                SU
-                   - A feature has been implemented to get SU grant without having to trigger a clicking process
-
-________________________________________________
-
-
-Date..........   15/03/2016 19h10
-What..........
-                UI
-                   - Changed colors
-                   - Refactored the main UI
-                   - Cleared focus
-                   - Fixed verbatims
-                Feature
-                   - Implemented an exit feature which will prevent then splash screen to be displayed each time, etc.
-
-________________________________________________
-
-
-Date..........   16/03/2016
-What..........
-                State notifications
-                    - Refactored notifications by vibrations
-                    - The state of the app is notified by light and notifications
-                    - Updated the GUI
-                Misc
-                    - Now the back button is for exit, press home to put the app in background / hide it
-                    - Refactoring of some constants
-                    - Fixed verbatims
-
-
-________________________________________________
-
-
-Date..........  16/03/2016
-What..........
-                Repeat
-                    - Endless repeat with warning in an alert dialog
-                Notifications
-                    - Start the activity if we click on the notifications (except "new click")
-                Languages
-                    - French support
-                Documentation
-                    - Generate Javadoc as HTML
-
-________________________________________________
-
-
-Date..........   16/03/2016
-What..........
-                Languages
-                    - The error message about SU missing is displayed according to i18n
-
-________________________________________________
-
-
-Date..........   16/03/2016
-What..........
-                GUI
-                    - More code about TranslucentActivity and feature about point selection on the screen
-
-________________________________________________
-
-
-Date..........   17/03/2016
-What..........
-                GUI
-                    - The SelectPointActivity does not have a title anymore
-                    - The arc menu get smaller when clicking on the "select point" button
-                    - Now the only way to select a point on the screen to click on is the dedicated activity
-
-________________________________________________
-
-
-Date..........   17/03/2016
-What..........
-                GUI
-                    - Updated GUI for the selection of several points
-
-________________________________________________
-
-
-Date..........  17/03/2016
-What..........
-                Languages
-                    - Fixed verbatims
-                Bugs
-                    - Fixed bug about null values in EditTexts
-                    - Fixed bug making a force close when we start the process without defined clicks
-                Feature
-                    - The process can click on several points selected thanks to a dedicated translucent view
-                GUI
-                    - The notifications display the coordinates of the click which has been made
-
-________________________________________________
-
-
-Date..........  17/03/2016 17h15
-What..........
-                Feature
-                    - Settings
-                    - Shake to clean
-                Languages
-                    - Fixed verbatims
-                Bugs
-                    - New campaign
-
-________________________________________________
-
-
-Date..........
-What..........
-
-
-________________________________________________
-
-
-Date..........
-What..........
-
-
-________________________________________________
-
-
-Date..........
-What..........
-
-
-________________________________________________
-
-
-Date..........
-What..........
-
-
-________________________________________________
-
-
-Date..........
-What..........
-
-
-________________________________________________
-
-
-Date..........
-What..........
-
-
-________________________________________________
-
-
-Date..........
-What..........
-
-
-________________________________________________

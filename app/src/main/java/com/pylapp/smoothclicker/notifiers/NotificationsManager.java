@@ -27,7 +27,7 @@ import com.pylapp.smoothclicker.utils.Config;
  * It is base on a facade design pattern for notification features.
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 16/03/2016
  */
 public final class NotificationsManager {
@@ -149,6 +149,15 @@ public final class NotificationsManager {
     }
 
     /**
+     * Manages the notifications about the count down for delayed starts
+     * @param countDown - The leaving amount of seconds before start
+     */
+    public void makeCountDownNotification( int countDown ){
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.COUNT_DOWN, countDown);
+    }
+
+    /**
      * Manages the notifications about the granted SU permission
      */
     public void makeSuGrantedNotification(){
@@ -194,6 +203,14 @@ public final class NotificationsManager {
     public void stopClickMadeNotification(){
         StatusBarNotifier sbn = new StatusBarNotifier(mContext);
         sbn.removeNotification(StatusBarNotifier.NotificationTypes.CLICK_MADE);
+    }
+
+    /**
+     * Stops the notifications about the count-down
+     */
+    public void stopCountdownNotification(){
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.removeNotification(StatusBarNotifier.NotificationTypes.COUNT_DOWN);
     }
 
     /**

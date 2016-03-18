@@ -32,7 +32,7 @@ import com.pylapp.smoothclicker.views.ClickerActivity;
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -72,6 +72,10 @@ public class StatusBarNotifier {
      * The identifier of the notification about the clicking process which has made a new click
      */
     public static final int NOTIF_CLICK_MADE             = 0x000204;
+    /**
+     * The identifier of the notification about the countdown
+     */
+    public static final int NOTIF_COUNT_DOWN             = 0x000205;
 
 
     /* *********** *
@@ -99,7 +103,12 @@ public class StatusBarNotifier {
      * This notification is an "on going" one, and should be displayed will the app is clicking.
      *
      * @param type - The notification type
-     * @param params - params[0] for the X coordinate, params[1] for the Y coordinate, null otherwise
+     * @param params -
+     *               <ul>
+     *                  <li>For CLICK_MADE :params[0] for the X coordinate, params[1] for the Y coordinate</li>
+     *                  <li>For COUNT_DOWN :params[0] for the leaving time to display</li>
+     *                  <li>Nothing otherwise</li>
+     *               </ul>
      */
     public void makeNotification( NotificationTypes type, int... params ){
 
@@ -157,6 +166,16 @@ public class StatusBarNotifier {
                 n = b.build();
                 n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_SU_GRANTED, n);
+            case COUNT_DOWN:
+                if ( params != null && params.length == 1 ){
+                    b.setContentText(mContext.getString(R.string.notif_content_countdown)+" "+params[0]);
+                } else {
+                    b.setContentText(mContext.getString(R.string.notif_content_countdown));
+                }
+                n = b.build();
+                n.flags |= Notification.FLAG_NO_CLEAR;
+                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                nm.notify(NOTIF_COUNT_DOWN, n);
                 break;
         }
 
@@ -219,7 +238,11 @@ public class StatusBarNotifier {
         /**
          * The SU permission has been granted
          */
-        SU_GRANTED
+        SU_GRANTED,
+        /**
+         * The amount of time before start, i.e. a count down
+         */
+        COUNT_DOWN
     } // End of public enum NotificationTypes
 
 }
