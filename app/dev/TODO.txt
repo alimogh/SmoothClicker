@@ -15,9 +15,10 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #41
+LAST TASK : #42
 
 TO DO
+    Task #42 : BZH support
     Task #20 : [v1.7.0] Make a Service reachable from third parties which will launch the process instead of using the main activity
     Task #33 : Unit Tests and Instrumented tests
 
