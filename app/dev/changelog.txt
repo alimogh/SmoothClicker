@@ -140,9 +140,11 @@ What:
     doc: Update the doc
     chore: Clean sources
 ###################################################
-Date:
+Date: 21/03/2016
 What:
-
+    fix: Bug where two notifications for on-going process (by app and service) were displayed
+    fix: Mistake in version tag
+    doc: Update HTML JavaDoc
 ###################################################
 Date:
 What:

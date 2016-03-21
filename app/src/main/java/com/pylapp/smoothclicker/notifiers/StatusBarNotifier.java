@@ -32,7 +32,7 @@ import com.pylapp.smoothclicker.views.ClickerActivity;
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 1.5.0
+ * @version 1.6.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -141,6 +141,7 @@ public class StatusBarNotifier {
                 n.flags |= Notification.FLAG_SHOW_LIGHTS;
                 n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_PROCESS_ON_GOING_BY_APP, n);
+                break;
             case CLICKS_ON_GOING_BY_SERVICE:
                 b.setContentText(mContext.getString(R.string.notif_content_text_clicks_on_going_service));
                 b.setProgress(0, 0, true);
