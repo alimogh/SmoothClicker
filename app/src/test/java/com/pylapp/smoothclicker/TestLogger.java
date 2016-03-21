@@ -40,8 +40,8 @@ import org.junit.Test;
  */
 public class TestLogger {
 
-    /***
-     *
+    /**
+     * Tests the log() method
      */
     @Test
     public void log(){
@@ -64,8 +64,8 @@ public class TestLogger {
 
     }
 
-    /***
-     *
+    /**
+     * Tests the d() method
      */
     @Test
     public void d(){
@@ -87,8 +87,8 @@ public class TestLogger {
 
     }
 
-    /***
-     *
+    /**
+     * Tests the i() method
      */
     @Test
     public void i(){
@@ -110,8 +110,8 @@ public class TestLogger {
 
     }
 
-    /***
-     *
+    /**
+     * Tests the v() method
      */
     @Test
     public void v(){
@@ -132,8 +132,8 @@ public class TestLogger {
         }
     }
 
-    /***
-     *
+    /**
+     * Tests the w() method
      */
     @Test
     public void w(){
@@ -155,8 +155,8 @@ public class TestLogger {
 
     }
 
-    /***
-     *
+    /**
+     * Tests the e() method
      */
     @Test
     public void e(){
@@ -179,7 +179,7 @@ public class TestLogger {
     }
 
     /***
-     *
+     * tests the fe() method
      */
     @Test
     public void fe(){
@@ -201,8 +201,8 @@ public class TestLogger {
 
     }
 
-    /***
-     *
+    /**
+     * Tests the wtf() method
      */
     @Test
     public void wtf(){

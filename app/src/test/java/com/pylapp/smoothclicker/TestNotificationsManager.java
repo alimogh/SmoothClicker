@@ -42,8 +42,9 @@ import static org.junit.Assert.assertNull;
  */
 public class TestNotificationsManager {
 
+
     /***
-     *
+     * Tests the singleton init
      */
     @Test
     public void getInstance(){

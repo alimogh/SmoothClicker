@@ -31,7 +31,7 @@ android {
 
     defaultConfig {
         applicationId "com.pylapp.smoothclicker"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 23
         versionCode 17
         versionName "1.7.3"
@@ -82,9 +82,16 @@ dependencies {
     testCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support.test:rules:0.4.1'
 
+    // ///////////////////////////////////
+    // UIAutomator : black-box-style tests
+    // ///////////////////////////////////
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
+
     // /////
     // Misc.
     // /////
     androidTestCompile 'com.android.support:support-annotations:23.1.1'
 
+    androidTestCompile 'junit:junit:4.12'
 }

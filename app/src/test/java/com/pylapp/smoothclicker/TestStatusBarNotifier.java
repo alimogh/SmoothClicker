@@ -41,8 +41,9 @@ import org.junit.Test;
  */
 public class TestStatusBarNotifier {
 
+
     /***
-     *
+     * Tests the constructor
      */
     @Test (expected = IllegalArgumentException.class)
     public void constructor(){
