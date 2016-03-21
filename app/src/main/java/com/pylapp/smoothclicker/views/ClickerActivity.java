@@ -56,7 +56,7 @@ import com.pylapp.smoothclicker.tools.ShakeToClean;
 import com.pylapp.smoothclicker.utils.Config;
 import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.utils.ConfigStatus;
-import com.pylapp.smoothclicker.utils.ConfigVersions;
+import com.pylapp.smoothclicker.utils.AppConfigVersions;
 import com.pylapp.smoothclicker.tools.Logger;
 
 import com.sa90.materialarcmenu.ArcMenu;
@@ -472,7 +472,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             e.printStackTrace();
         }
 
-        String tag = ConfigVersions.VERSION_TAG_CURRENT;
+        String tag = AppConfigVersions.VERSION_TAG_CURRENT;
         String code = pi.versionCode+"";
         String name = pi.versionName;
 

@@ -84,6 +84,8 @@ Finally, starts the service: <br/>
    * Klingon support
    * Service reachable from the outside
    * Some bugs fixes
-
+* _v1.7.2_
+    * MIT License
+    * more debug 
 
 

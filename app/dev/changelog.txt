@@ -153,13 +153,13 @@ What:
     fix: Mistake in version tag
     doc: Update HTML JavaDoc
 ###################################################
-Date:
+Date: 21/03/2016
 What:
-    chore: Change the license: upgrafe from Apache v2 to MIT License
+    chore: Change the license: upgrade from Apache v2 to MIT License
 ###################################################
-Date:
+Date: 21/03/2016
 What:
-
+    test: More code to have objects more securized about parameters
 ###################################################
 Date:
 What:

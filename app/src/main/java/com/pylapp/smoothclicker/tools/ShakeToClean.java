@@ -35,7 +35,7 @@ import android.hardware.SensorManager;
  * Class which shows features for a Shake To Clean service.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.2.0
  * @since 17/03/2016
  * @see SensorEventListener
  */
@@ -99,10 +99,12 @@ public class ShakeToClean implements SensorEventListener {
 
     /**
      *
-     * @paramc -
+     * @param c - The context, must not be null
+     * @throws IllegalArgumentException - If c is null
      */
     public ShakeToClean( Context c ){
         super();
+        if ( c == null ) throw new IllegalArgumentException("The context param must not be null");
         mContext = c;
         init();
     }

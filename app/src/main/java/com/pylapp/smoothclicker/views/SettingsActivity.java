@@ -35,7 +35,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.pylapp.smoothclicker.R;
-import com.pylapp.smoothclicker.utils.ConfigVersions;
+import com.pylapp.smoothclicker.utils.AppConfigVersions;
 
 /**
  * The preferences activity of this SmoothClicker app.
@@ -83,7 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         // Builds the release string
         StringBuffer sb = new StringBuffer();
-        sb.append(ConfigVersions.VERSION_TAG_CURRENT);
+        sb.append(AppConfigVersions.VERSION_TAG_CURRENT);
         try {
             PackageInfo pi = getPackageManager().getPackageInfo(getPackageName(), 0);
             String versionName = pi.versionName;

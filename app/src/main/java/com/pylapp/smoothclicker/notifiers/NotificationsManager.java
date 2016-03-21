@@ -35,7 +35,7 @@ import com.pylapp.smoothclicker.utils.Config;
  * It is base on a facade design pattern for notification features.
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 16/03/2016
  */
 public final class NotificationsManager {
@@ -76,6 +76,7 @@ public final class NotificationsManager {
     /**
      * Default constructor
      * @param c - The context to use to get the SharedPreferences, must not be null
+     * @throws IllegalArgumentException - If c is null
      */
     private NotificationsManager( Context c ){
         super();
@@ -92,9 +93,10 @@ public final class NotificationsManager {
     /**
      * Returns the singleton
      * @param c - The context to use, must not be null
-     * @return NotificationsManager - The singleton
+     * @return NotificationsManager - The singleton, null if c is null
      */
     public static NotificationsManager getInstance( Context c ){
+        if ( c == null ) return null;
         if ( sInstance == null ){
             sInstance = new NotificationsManager(c);
         }
