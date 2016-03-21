@@ -40,7 +40,7 @@ package com.pylapp.smoothclicker.utils;
  * @version 1.2.0
  * @since 16/03/2016
  */
-public final class ConfigVersions {
+public final class AppConfigVersions {
 
 
     /**

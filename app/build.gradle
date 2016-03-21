@@ -33,8 +33,8 @@ android {
         applicationId "com.pylapp.smoothclicker"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 16
-        versionName "1.7.2"
+        versionCode 17
+        versionName "1.7.3"
     }
     buildTypes {
         release {
@@ -42,26 +42,49 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    // Mandatory to test mocked Android API like Log
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
 
+    // ///////////
     // Base config
+    // ///////////
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
 
+    // /////////////////
     // Material Arc Menu
+    // /////////////////
     // https://github.com/saurabharora90/MaterialArcMenu
     compile 'com.sa90.materialarcmenu:library:1.4'
 
+    // /////////
     // HTextView
+    // /////////
     // https://github.com/hanks-zyh/HTextView
     compile 'hanks.xyz:htextview-library:0.1.3'
 
+    // //////////
     // Card views
+    // //////////
     // http://developer.android.com/training/material/lists-cards.html
     compile 'com.android.support:cardview-v7:23.0.+'
+
+    // ///////////////////////////
+    // JUnit 4 : unit tests on API
+    // ///////////////////////////
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:rules:0.4.1'
+
+    // /////
+    // Misc.
+    // /////
+    androidTestCompile 'com.android.support:support-annotations:23.1.1'
 
 }
