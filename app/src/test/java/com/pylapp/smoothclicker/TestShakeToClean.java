@@ -15,8 +15,9 @@ import org.junit.Test;
  */
 public class TestShakeToClean {
 
+
     /**
-     *
+     * Tests the constructor
      */
     @Test (expected = IllegalArgumentException.class)
     public void constructor(){

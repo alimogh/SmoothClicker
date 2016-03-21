@@ -26,8 +26,8 @@
 package com.pylapp.smoothclicker;
 
 /**
- * Package containing classes which process unit tests with JUnit.
- * We want to test the API of the app, here the core / the work classes / the non-GUI parts
+ * Package containing classes which process indtrumented tests with UIAutomator.
+ * We want to test the app in a more high-level way.
  * We have two types of tests: local tests (the unit tests) and instrumented tests (more for GUI)
  *
  * About the local tests:
@@ -50,11 +50,8 @@ package com.pylapp.smoothclicker;
  * Some frameworks are helpful to mock objects : Hamcrest (https://github.com/hamcrest, http://hamcrest.org/)
  * and Mockito (https://github.com/mockito/mockito, http://site.mockito.org/)
  *
- * More about JUnit :
- *  <ul>
-         <li>http://junit.org/</li>
-         <li>https://github.com/junit-team/junit</li>
- *  </ul>
+ * The tool "uiautomatorviewer" available in the tools folder in the Android SDK is very helpful to get information
+ * about fields for UIAutomator.
  *
  *  More about tests :
  *  <ul>
