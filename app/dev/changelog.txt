@@ -165,9 +165,17 @@ Date: 21/03/2016
 What:
     test: More code for instrumented tests
 ###################################################
-Date:
+Date: 22/03/2016
 What:
-
+    chore: refactor tests packages
+    test: more code for instrumented tests
+    fix: bug in new click verbatim
+    fix: bug where it was impossible to stop the process if the countdown was ongoing
+    fix: bug because of missing breaks in StatusBarNotifier
+    refactor: resource string values
+    doc: update doc
+    fix: more control on the service and the AT clicker about inputs (negative values in params, etc).
+    fix: more control on the broadcast receiver
 ###################################################
 Date:
 What:

@@ -1,7 +1,8 @@
-package com.pylapp.smoothclicker;
+package com.pylapp.smoothclicker.junit;
 
 import android.content.Context;
 
+import com.pylapp.smoothclicker.AbstractTest;
 import com.pylapp.smoothclicker.tools.ShakeToClean;
 
 import org.junit.Test;
@@ -12,8 +13,9 @@ import org.junit.Test;
  * @author pylapp
  * @version 1.0.0
  * @since 21/03/2016
+ * @see UnitTestShakeToClean
  */
-public class TestShakeToClean {
+public class UnitTestShakeToClean extends AbstractTest {
 
 
     /**
@@ -21,6 +23,7 @@ public class TestShakeToClean {
      */
     @Test (expected = IllegalArgumentException.class)
     public void constructor(){
+        l(this, "@Test constructor");
         Context nullContext = null;
         new ShakeToClean(nullContext);
     }

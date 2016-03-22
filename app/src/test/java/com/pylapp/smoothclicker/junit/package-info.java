@@ -23,34 +23,8 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package com.pylapp.smoothclicker;
-
-import android.content.Context;
-
-import com.pylapp.smoothclicker.notifiers.StatusBarNotifier;
-
-import org.junit.Test;
-
+package com.pylapp.smoothclicker.junit;
 
 /**
- * Class to test the StatusBarNotifier
- *
- * @author pylapp
- * @version 1.0.0
- * @since 21/03/2016
+ * Package containing classes which process unit tests with JUnit.
  */
-public class TestStatusBarNotifier {
-
-
-    /***
-     * Tests the constructor
-     */
-    @Test (expected = IllegalArgumentException.class)
-    public void constructor(){
-
-        Context nullContext = null;
-        new StatusBarNotifier(nullContext);
-
-    }
-
-}

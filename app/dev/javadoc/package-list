@@ -1,5 +1,7 @@
 com.pylapp.smoothclicker
 com.pylapp.smoothclicker.clicker
+com.pylapp.smoothclicker.espresso
+com.pylapp.smoothclicker.misc
 com.pylapp.smoothclicker.notifiers
 com.pylapp.smoothclicker.receivers
 com.pylapp.smoothclicker.tools

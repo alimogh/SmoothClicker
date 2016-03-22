@@ -188,11 +188,12 @@ public class StatusBarNotifier {
                 n = b.build();
                 n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_SU_GRANTED, n);
+                break;
             case COUNT_DOWN:
                 if ( params != null && params.length == 1 ){
-                    b.setContentText(mContext.getString(R.string.notif_content_countdown)+" "+params[0]);
+                    b.setContentText(mContext.getString(R.string.notif_content_text_countdown)+" "+params[0]);
                 } else {
-                    b.setContentText(mContext.getString(R.string.notif_content_countdown));
+                    b.setContentText(mContext.getString(R.string.notif_content_text_countdown));
                 }
                 n = b.build();
                 n.flags |= Notification.FLAG_NO_CLEAR;

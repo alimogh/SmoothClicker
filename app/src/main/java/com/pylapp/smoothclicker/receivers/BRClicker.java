@@ -51,7 +51,7 @@ public class BRClicker extends BroadcastReceiver {
     /**
      * The action of the broadcast for a boot completed event
      */
-    private static final String BR_BOOT_COMPLETED = "android.intent.action.BOOT_COMPLETED";
+    public static final String BR_BOOT_COMPLETED = "android.intent.action.BOOT_COMPLETED";
 //    /**
 //     * The action of the broadcast for a battery okay event
 //     */
@@ -59,7 +59,7 @@ public class BRClicker extends BroadcastReceiver {
     /**
      * The action of the broadcast for a battery low event
      */
-    private static final String BR_BATTERY_LOW = "android.intent.action.ACTION_BATTERY_LOW";
+    public static final String BR_BATTERY_LOW = "android.intent.action.ACTION_BATTERY_LOW";
 
 
     private static final String LOG_TAG = "BRCLicker";
@@ -72,9 +72,13 @@ public class BRClicker extends BroadcastReceiver {
     @Override
     public void onReceive( Context context, Intent intent ){
 
+        if ( context == null ){
+            throw new IllegalArgumentException("The BroadcastReceiver BRClicker has received a broadcast without context !");
+        }
+
         if ( intent == null || intent.getAction() == null ){
             Logger.fe(LOG_TAG, "The BroadcastReceiver BRClicker has received a broadcast without intent or action O_ô");
-            return;
+            throw new IllegalArgumentException("The BroadcastReceiver BRClicker has received a broadcast without intent or action O_ô");
         }
 
         final String action = intent.getAction();

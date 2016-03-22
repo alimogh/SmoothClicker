@@ -37,7 +37,7 @@
     <!-- Messages -->
     <string name="info_message_start">Save the configuration and starts the clicking process</string>
     <string name="info_message_stop">Stop the clicking process</string>
-    <string name="info_message_request_su">Ask for the SU smooth clicker site:github.comgrant</string>
+    <string name="info_message_request_su">Ask for the SU grant</string>
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
     <string name="info_message_new_point">Select new points on the screen</string>
     <string name="info_message_invite_new_point">Select a new point on the screen</string>
@@ -94,13 +94,13 @@
 
     <!-- Notifications -->
     <string name="notif_content_title">Smooth Clicker</string>
-    <string name="notif_content_text_click_made">New click!</string>
+    <string name="notif_content_text_click_made">New click </string>
     <string name="notif_content_text_clicks_on_going_app">The clicking process is running (through the app)...</string>
     <string name="notif_content_text_clicks_on_going_service">The clicking process is running (through the service)...</string>
     <string name="notif_content_text_clicks_stop">The clicking process has been stopped</string>
     <string name="notif_content_text_clicks_over">The clicking process is over</string>
     <string name="notif_content_text_su_granted">The super-user permission has been granted</string>
-    <string name="notif_content_countdown">Start in:</string>
+    <string name="notif_content_text_countdown">Start in:</string>
 
     <!-- Settings / Preferences -->
     <string name="pref_settings_title">Settings</string>

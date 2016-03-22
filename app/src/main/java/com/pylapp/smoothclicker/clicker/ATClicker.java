@@ -46,7 +46,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.3.0
+ * @version 2.4.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -142,8 +142,17 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         SharedPreferences sp = mContext.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
         mIsStartDelayed = sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);
         mDelay = sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
+        if ( mDelay < 0 ){
+            throw new IllegalArgumentException("The delay cannot be < 0!");
+        }
         mTimeGap = sp.getInt(Config.SP_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP));
+        if ( mTimeGap < 0 ){
+            throw new IllegalArgumentException("The time gap between clicks cannot be < 0!");
+        }
         mRepeat = sp.getInt(Config.SP_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT));
+        if ( mRepeat < 0 ) {
+            throw new IllegalArgumentException("The repeat amount cannot be < 0!");
+        }
         mIsRepeatEndless = sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
         NotificationsManager.getInstance(mContext).stopAllNotifications();
         NotificationsManager.getInstance(mContext).makeStartNotification();
@@ -204,6 +213,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
             // Loop for each second
             for ( int i = 1; i <= count; i++ ){
                 try {
+                    if ( checkIfCancelled() ) return null;
                     NotificationsManager.getInstance(mContext).makeCountDownNotification(mDelay-i);
                     Thread.sleep(1000); // Sleep of 1 second
                 } catch ( InterruptedException ie ){}
