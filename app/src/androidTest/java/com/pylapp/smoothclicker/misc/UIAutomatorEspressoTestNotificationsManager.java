@@ -51,7 +51,7 @@ import com.pylapp.smoothclicker.views.ClickerActivity;
 
 
 /**
- * Class to use to make UI tests with Espresso of the NotificationsManager.
+ * Class to use to make UI tests with Espresso and UIAutomator of the NotificationsManager.
  *
  *  @author pylapp
  *  @version 1.0.0

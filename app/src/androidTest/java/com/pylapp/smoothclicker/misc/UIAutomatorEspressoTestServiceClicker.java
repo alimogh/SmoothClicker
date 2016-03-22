@@ -50,7 +50,7 @@ import static android.support.test.rule.ServiceTestRule.withTimeout;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Class to use to make instrumented tests with Espresso of the ServiceClicker.
+ * Class to use to make instrumented tests with Espresso and UIAUtomator of the ServiceClicker.
  *
  *  @author pylapp
  *  @version 1.0.0
