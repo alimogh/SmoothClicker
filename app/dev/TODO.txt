@@ -23,13 +23,13 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #43
+LAST TASK : #44
 
 TO DO
-    Task #43 : Refactor the common code between clicker AT and servcie to have a more testable object (factorize the code)
+    Task #44 : [v1.8.0] Instrumented UIAUtomator tests for activities Clicker, Credits and Settings
+    Task #43 : [v1.9.0] Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
 
-    Task #38 : [v1.8.0] Link with Appium or other things ?
-
+    Task #38 : Link with Appium or other things ?
     Task #2  : Movable floating action button
     Task #16 : Handle swipes, long presses, ...
     Task #34 : Load LUA scripts to make the clicks
