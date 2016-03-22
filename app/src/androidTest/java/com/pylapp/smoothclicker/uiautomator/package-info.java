@@ -23,36 +23,8 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package com.pylapp.smoothclicker;
-
-import android.content.Context;
-
-import com.pylapp.smoothclicker.notifiers.NotificationsManager;
-
-import org.junit.Test;
-import static org.junit.Assert.assertNull;
-
+package com.pylapp.smoothclicker.uiautomator;
 
 /**
- * Class to test the NotificationsManager
- *
- * @author pylapp
- * @version 1.0.0
- * @since 21/03/2016
+ * Package containing classes which process instrumented tests with UIAutomator.
  */
-public class TestNotificationsManager {
-
-
-    /***
-     * Tests the singleton init
-     */
-    @Test
-    public void getInstance(){
-
-        Context nullContext = null;
-        NotificationsManager instance = NotificationsManager.getInstance(nullContext);
-        assertNull("The instance of NotificationsManager must be null", instance);
-
-    }
-
-}

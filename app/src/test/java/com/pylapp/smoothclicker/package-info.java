@@ -26,7 +26,7 @@
 package com.pylapp.smoothclicker;
 
 /**
- * Package containing classes which process unit tests with JUnit.
+ * Package containing classes which process unit tests.
  * We want to test the API of the app, here the core / the work classes / the non-GUI parts
  * We have two types of tests: local tests (the unit tests) and instrumented tests (more for GUI)
  *

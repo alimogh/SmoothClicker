@@ -23,10 +23,10 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #42
+LAST TASK : #43
 
 TO DO
-    Task #33 : Unit Tests and Instrumented tests
+    Task #43 : Refactor the common code between clicker AT and servcie to have a more testable object (factorize the code)
 
     Task #38 : [v1.8.0] Link with Appium or other things ?
 

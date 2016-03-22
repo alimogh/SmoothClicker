@@ -33,10 +33,12 @@ import com.pylapp.smoothclicker.notifiers.StatusBarNotifier;
 import com.pylapp.smoothclicker.notifiers.VibrationNotifier;
 import com.pylapp.smoothclicker.tools.Logger;
 import com.pylapp.smoothclicker.utils.Config;
+import com.pylapp.smoothclicker.views.PointsListAdapter;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Service to call our to start from the outside (e.g. a third party app) so as to trigger the cliking process
@@ -72,7 +74,7 @@ import java.util.ArrayList;
      </pre>
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 18/03/2016
  * @see IntentService
  * @see ATClicker
@@ -240,7 +242,7 @@ public class ServiceClicker extends IntentService {
     @Override
     protected void onHandleIntent( Intent intent ){
 
-        if ( intent == null){
+        if ( intent == null || intent.getAction() == null ){
             broadcastStatus(StatusTypes.BAD_CONFIG);
             return;
         }
@@ -278,11 +280,22 @@ public class ServiceClicker extends IntentService {
         /*
          * Step 3a : Saves the config
          */
-
         mIsStartDelayed = intent.getBooleanExtra(BUNDLE_KEY_DELAYED_START, Config.DEFAULT_START_DELAYED);
         mDelay = intent.getIntExtra(BUNDLE_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
+        if ( mDelay < 0 ){
+            broadcastStatus(StatusTypes.BAD_CONFIG);
+            throw new IllegalArgumentException("The delay cannot be < 0!");
+        }
         mTimeGap = intent.getIntExtra(BUNDLE_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP));
+        if ( mTimeGap < 0 ){
+            broadcastStatus(StatusTypes.BAD_CONFIG);
+            throw new IllegalArgumentException("The time gap between clicks cannot be < 0!");
+        }
         mRepeat = intent.getIntExtra(BUNDLE_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT));
+        if ( mRepeat < 0 ){
+            broadcastStatus(StatusTypes.BAD_CONFIG);
+            throw new IllegalArgumentException("The repeat amount cannot be < 0!");
+        }
         mIsRepeatEndless = intent.getBooleanExtra(BUNDLE_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
         mVibrateOnStart = intent.getBooleanExtra(BUNDLE_KEY_VIBRATE_ON_START, Config.DEFAULT_VIBRATE_ON_START);
         mVibrateOnClick = intent.getBooleanExtra(BUNDLE_KEY_VIBRATE_ON_CLICK, Config.DEFAULT_VIBRATE_ON_CLICK);
@@ -291,7 +304,13 @@ public class ServiceClicker extends IntentService {
 
         if ( mPoints == null || mPoints.size() <= 0 ){
             broadcastStatus(StatusTypes.BAD_CONFIG);
-            return;
+            throw new IllegalArgumentException("No points to click on!");
+        }
+
+        // FIXME Wait for more Java8 support on Android and use lambads and map/reduce/filter pattern !
+        for (Integer p : mPoints) if ( p < 0 ){
+            broadcastStatus(StatusTypes.BAD_CONFIG);
+            throw new IllegalArgumentException("A point cannot have a negative coordinate !");
         }
 
         /*
@@ -366,6 +385,7 @@ public class ServiceClicker extends IntentService {
             // Loop for each second
             for ( int i = 1; i <= count; i++ ){
                 try {
+                    if ( checkIfCancelled() ) return;
                     makeCountDownNotification(mDelay - i);
                     Thread.sleep(1000); // Sleep of 1 second
                     if ( checkIfCancelled() ) return;

@@ -23,10 +23,12 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package com.pylapp.smoothclicker;
+package com.pylapp.smoothclicker.junit;
 
 import android.content.Context;
+import android.support.v7.transition.ActionBarTransition;
 
+import com.pylapp.smoothclicker.AbstractTest;
 import com.pylapp.smoothclicker.notifiers.VibrationNotifier;
 
 import org.junit.Test;
@@ -38,8 +40,9 @@ import org.junit.Test;
  * @author pylapp
  * @version 1.0.0
  * @since 21/03/2016
+ * @see com.pylapp.smoothclicker.AbstractTest
  */
-public class TestVibrationNotifier {
+public class UnitTestVibrationNotifier extends AbstractTest {
 
 
     /***
@@ -47,10 +50,9 @@ public class TestVibrationNotifier {
      */
     @Test (expected = IllegalArgumentException.class)
     public void constructor(){
-
+        l(this, "@Test constructor");
         Context nullContext = null;
         new VibrationNotifier(nullContext);
-
     }
 
 }

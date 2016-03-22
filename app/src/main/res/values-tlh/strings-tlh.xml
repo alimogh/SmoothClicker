@@ -93,13 +93,13 @@
 
     <!-- Notifications -->
     <string name="notif_content_title">Smooth Clicker</string>
-    <string name="notif_content_text_click_made">chu\' click!</string>
+    <string name="notif_content_text_click_made">chu\' click </string>
     <string name="notif_content_text_clicks_on_going_app">qet click mIw.</string>
     <string name="notif_content_text_clicks_on_going_service">qet click mIw.</string>
     <string name="notif_content_text_clicks_stop">bImevchu\'pu\'be\'mo\' click mIw</string>
     <string name="notif_content_text_clicks_over">rIn click mIw</string>
     <string name="notif_content_text_su_granted">granted super-user choHwI\' wIlIng</string>
-    <string name="notif_content_countdown">qet:</string>
+    <string name="notif_content_text_countdown">qet:</string>
 
     <!-- Settings / Preferences -->
     <string name="pref_settings_title">DuH</string>

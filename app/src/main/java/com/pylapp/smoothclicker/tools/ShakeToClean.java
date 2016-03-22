@@ -148,7 +148,7 @@ public class ShakeToClean implements SensorEventListener {
      */
     @Override
     public void onAccuracyChanged( Sensor sensor, int accuracy ){
-        // DoNothing
+        // Do nothing
         return;
     }
 

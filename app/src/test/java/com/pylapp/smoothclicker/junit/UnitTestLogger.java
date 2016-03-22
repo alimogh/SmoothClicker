@@ -23,8 +23,9 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package com.pylapp.smoothclicker;
+package com.pylapp.smoothclicker.junit;
 
+import com.pylapp.smoothclicker.AbstractTest;
 import com.pylapp.smoothclicker.tools.Logger;
 
 import static org.junit.Assert.fail;
@@ -37,14 +38,17 @@ import org.junit.Test;
  * @author pylapp
  * @version 1.0.0
  * @since 21/03/2016
+ * @see AbstractTest
  */
-public class TestLogger {
+public class UnitTestLogger extends AbstractTest {
 
     /**
      * Tests the log() method
      */
     @Test
     public void log(){
+
+        l(this, "@Test log");
 
         Logger.LogLevel ll = Logger.LogLevel.DEBUG;
         String nullLogTag = null;
@@ -70,6 +74,8 @@ public class TestLogger {
     @Test
     public void d(){
 
+        l(this, "@Test d");
+
         String nullLogTag = null;
         String nullMessage = null;
         String logTag = "log tag";
@@ -92,6 +98,8 @@ public class TestLogger {
      */
     @Test
     public void i(){
+
+        l(this, "@Test i");
 
         String nullLogTag = null;
         String nullMessage = null;
@@ -116,6 +124,8 @@ public class TestLogger {
     @Test
     public void v(){
 
+        l(this, "@Test v");
+
         String nullLogTag = null;
         String nullMessage = null;
         String logTag = "log tag";
@@ -137,6 +147,8 @@ public class TestLogger {
      */
     @Test
     public void w(){
+
+        l(this, "@Test w");
 
         String nullLogTag = null;
         String nullMessage = null;
@@ -161,6 +173,8 @@ public class TestLogger {
     @Test
     public void e(){
 
+        l(this, "@Test e");
+
         String nullLogTag = null;
         String nullMessage = null;
         String logTag = "log tag";
@@ -184,6 +198,8 @@ public class TestLogger {
     @Test
     public void fe(){
 
+        l(this, "@Test fe");
+
         String nullLogTag = null;
         String nullMessage = null;
         String logTag = "log tag";
@@ -206,6 +222,8 @@ public class TestLogger {
      */
     @Test
     public void wtf(){
+
+        l(this, "@Test wtf");
 
         String nullLogTag = null;
         String nullMessage = null;
