@@ -6,6 +6,8 @@ The app is open-source, easy to use and to configure and can make several clicks
 You can also repeat clicks sequences and make infinite clicks loops.
 The app possesses a dedicated Android service you can reach and trigger to make some click processes instead of using the GUI.
 
+_Why this app? Because I wanted to build my own autoclicker to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>)_
+
 **Be aware this app is still in development and your device must be rooted**
 
 ***
