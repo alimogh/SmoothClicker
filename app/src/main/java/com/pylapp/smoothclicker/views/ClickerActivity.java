@@ -32,6 +32,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -71,7 +72,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.8.0
+ * @version 2.9.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see com.pylapp.smoothclicker.tools.ShakeToClean.ShakeToCleanCallback
@@ -286,7 +287,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     @Override
     public void finish(){
         SplashScreenActivity.sIsFirstLaunch = true;
-        stopClickingProcess();
+        if ( ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.RUNNING
+                || ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.PENDING )
+            stopClickingProcess();
         NotificationsManager.getInstance(this).stopAllNotifications();
         super.finish();
     }
@@ -428,7 +431,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      */
     private void stopClickingProcess(){
         Logger.d(LOG_TAG, "Stops the clicking process");
-        ATClicker.stop();
+        if ( ! ATClicker.stop() ){
+            displayMessage(MessageTypes.WAS_NOT_WORKING);
+        }
     }
 
     /**
@@ -521,6 +526,10 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                 m = ClickerActivity.this.getString(R.string.error_message_no_click_defined);
                 Logger.d("SmoothClicker", m);
                 break;
+            case WAS_NOT_WORKING:
+                m = ClickerActivity.this.getString(R.string.error_message_was_not_working);
+                Logger.d("SmoothClicker", m);
+                break;
             default:
                 m = null;
                 break;
@@ -564,7 +573,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         final Spinner s = (Spinner) findViewById(R.id.sPointsToClick);
         s.setAdapter(null); // Clean the list view
 
-        if ( coords == null ) return;
+        if ( coords == null || coords.size() <= 0 ) return;
 
         s.setAdapter(new PointsListAdapter(this, coords));
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -601,7 +610,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      */
     private void showInSnackbarWithoutAction( String message ){
         if ( message == null || message.length() <= 0 ) return;
-        View v = findViewById(R.id.myMainLayout);
+        View v = findViewById(R.id.clickerActivityMainLayout);
         Snackbar.make(v, message, Snackbar.LENGTH_LONG).setAction("", null).show();
     }
 
@@ -754,7 +763,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         NEW_CLICK,
         NOT_IMPLEMENTED,
         SU_GRANT,
-        NO_CLICK_DEFINED
+        NO_CLICK_DEFINED,
+        WAS_NOT_WORKING
     } // private enum MESSAGE_TYPE
 
 }

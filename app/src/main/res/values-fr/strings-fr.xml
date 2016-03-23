@@ -42,6 +42,7 @@
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
     <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ Aucun point à cliquer n\'a été défini</string>
+    <string name="error_message_was_not_working">(－‸ლ) Le processus de click n\'est pas démarré</string>
 
     <string name="warning_hazard_repeat_endless_title">Operation risquée</string>
     <string name="warning_hazard_repeat_endless_content">Êtes-vous sûr de vouloir faire une répétition infinie ? Cette opération peut être risquée pour votre appareil.</string>
@@ -111,7 +112,7 @@
     <string name="pref_about_title">À propos</string>
     <string name="pref_about_version_title">Version</string>
     <string name="pref_about_version_app_title">Smooth Clicker</string>
-    <string name="pref_about_version_app_summary">écrit par pylapp - Licence Apache v2</string>
+    <string name="pref_about_version_app_summary">écrit par pylapp - Licence MIT</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Pas encore disponible !</string>

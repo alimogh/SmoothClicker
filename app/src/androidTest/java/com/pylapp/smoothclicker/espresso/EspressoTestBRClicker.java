@@ -66,6 +66,8 @@ public class EspressoTestBRClicker extends AbstractTest {
 
     /**
      * Tests the onReceive() method with a null intent
+     *
+     * <i>A BRClicker object can deal with null intent</i>
      */
     @Test (expected = IllegalArgumentException.class)
     public void onReceiveNullIntent(){
@@ -81,6 +83,8 @@ public class EspressoTestBRClicker extends AbstractTest {
 
     /**
      * Tests the onReceive() method with an intent without action
+     *
+     * <i>A BRClicker object can deal with intent having no action</i>
      */
     @Test (expected = IllegalArgumentException.class)
     public void onReceiveNoAction(){
@@ -96,6 +100,8 @@ public class EspressoTestBRClicker extends AbstractTest {
 
     /**
      * Tests the onReceive() method without context
+     *
+     * <i>A BRClicker object can deal with null context</i>
      */
     @Test (expected = IllegalArgumentException.class)
     public void onReceiveNullContext(){
@@ -111,6 +117,8 @@ public class EspressoTestBRClicker extends AbstractTest {
 
     /**
      * Tests the onReceive()
+     *
+     * <i>A BClicker object can handle BOOT_COMPLETED and BATTERY_LOW signals</i>
      */
     @Test
     public void onReceive(){

@@ -46,7 +46,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.4.0
+ * @version 2.5.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -309,16 +309,23 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
 
     /**
      * Stops the AsyncTask
+     * @return boolean - True if the process was working, false otherwise
      */
-    public static final void stop(){
+    public static final boolean stop(){
         Logger.d(LOG_TAG, "Stops the clicking process");
         if ( sInstance == null ){
             Logger.w(LOG_TAG, "The ATClicker is null");
-            return;
+            return false;
         }
-        if ( ! sInstance.isCancelled() ) sInstance.cancel(true);
-        else Logger.w(LOG_TAG, "The ATClicker has been canceled previously");
-        sInstance = null;
+        if ( ! sInstance.isCancelled() ){
+            sInstance.cancel(true);
+            sInstance = null;
+            return true;
+        } else{
+            Logger.w(LOG_TAG, "The ATClicker has been canceled previously");
+            sInstance = null;
+            return false;
+        }
     }
 
     /**

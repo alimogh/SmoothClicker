@@ -44,6 +44,7 @@
     <string name="error_message_su_not_granted">wej Suq su naw\'</string>
     <string name="error_su_missing">Android \'oQqar SoH pa\' app lo\'? Daghaj.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ pagh wutlh clicks</string>
+    <string name="error_message_was_not_working">(－‸ლ) wej Qap</string>
 
     <string name="warning_hazard_repeat_endless_title">Qom yo\'SeH</string>
     <string name="warning_hazard_repeat_endless_content">endless jatlhqa\' Son be yo\'SeH chaq Qom jan.</string>
@@ -113,7 +114,7 @@
     <string name="pref_about_title">umqu\' ghot</string>
     <string name="pref_about_version_title">nuq</string>
     <string name="pref_about_version_app_title">Smooth Clicker</string>
-    <string name="pref_about_version_app_summary">ngabchu\' pylapp - License Apache v2</string>
+    <string name="pref_about_version_app_summary">ngabchu\' pylapp - bopummeH chaw\' MIT</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Nwej chenmoH \'ach!</string>

@@ -55,7 +55,7 @@
         android:layout_gravity="bottom|end"
         app:menu_scr="@android:drawable/ic_menu_manage"
         app:menu_open="arc_left"
-        app:menu_radius="120dp">
+        app:menu_radius="150dp">
 
         <!-- Starts the clicks actions -->
         <android.support.design.widget.FloatingActionButton
