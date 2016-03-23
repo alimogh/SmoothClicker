@@ -48,7 +48,7 @@ import static org.junit.Assert.assertTrue;
  * Class to use to make UI tests with Espresso and UIAutomator of the NotificationsManager.
  *
  *  @author pylapp
- *  @version 1.0.0
+ *  @version 1.1.0
  *  @since 21/03/2016
  *  @see AbstractTest
  */
@@ -80,6 +80,8 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
 
     /**
      * Initializes the NotificationManager
+     *
+     * <i>The tests have to start on the home screen</i>
      */
     @Before
     public void init(){
@@ -92,6 +94,7 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
 
     /**
      * Cleans
+     * <i>The tests have make the device to its initial state</i>
      */
     @After
     public void clean(){
@@ -101,6 +104,8 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
 
     /**
      * Test the makeNotification() method
+     *
+     * <i>The notification features can handle removable (or not) notifications, with clicks on them and wrong inputs</i>
      */
     @Test
     public void makeNotification(){
@@ -141,6 +146,8 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
 
     /**
      * Test the removeNotification() method
+     *
+     * <i>All notifications have to be removable</i>
      */
     @Test
     public void removeNotification(){

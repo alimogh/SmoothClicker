@@ -38,7 +38,7 @@ import org.junit.Test;
  * Class to use to make instrumented / unit tests with Espresso of the ShakeToClean.
  *
  *  @author pylapp
- *  @version 1.0.0
+ *  @version 1.1.0
  *  @since 22/03/2016
  *  @see AbstractTest
  */
@@ -64,6 +64,8 @@ public class EspressoTestShakeToClean extends AbstractTest {
 
     /**
      * Tests the constructor with a null context
+     *
+     * <i>The ShakeToClean object can handle null context</i>
      */
     @Test (expected = IllegalArgumentException.class)
     public void constructorWithNullContext(){

@@ -26,10 +26,13 @@
 
 package com.pylapp.smoothclicker.misc;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ServiceTestRule;
+import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
+import android.support.test.runner.lifecycle.Stage;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiSelector;
@@ -38,14 +41,17 @@ import com.pylapp.smoothclicker.AbstractTest;
 import com.pylapp.smoothclicker.R;
 import com.pylapp.smoothclicker.clicker.ServiceClicker;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.rule.ServiceTestRule.withTimeout;
 import static org.junit.Assert.assertTrue;
 
@@ -53,7 +59,7 @@ import static org.junit.Assert.assertTrue;
  * Class to use to make instrumented tests with Espresso and UIAUtomator of the ServiceClicker.
  *
  *  @author pylapp
- *  @version 1.0.0
+ *  @version 1.1.0
  *  @since 22/03/2016
  *  @see AbstractTest
  */
@@ -77,6 +83,7 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     /**
      * Initializes the NotificationManager
+     * <i>The tests have to start from the home screen</i>
      */
     @Before
     public void init(){
@@ -87,7 +94,17 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
     }
 
     /**
+     *<i>The tests have to let the device to its initial state</i>
+     */
+    @After
+    public void clean(){
+        l(this, "@After clean");
+    }
+
+    /**
      * Tests the service start method without data in bundle
+     *
+     * <i>The clicker service can be started from an intent</i>
      */
     @Test
     public void startServiceWithoutValue(){
@@ -102,6 +119,9 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     /**
      * Tests the service start method without well formed intent
+     *
+     * <i>The clicker service can be started from the outside with a dedicated intent with numerous values inside</i>
+     * <i>Once started the clicker service have to make notifications displayed</i>
      */
     @Test
     public void startService(){
@@ -140,14 +160,10 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
         // Test the new click notification
         testNotification(mContext.getString(R.string.notif_content_text_click_made));
 
-        l(this, "pouet 1");
-
         // Test the on going process notification
         testNotification(mContext.getString(R.string.notif_content_text_clicks_on_going_service));
 
         w(10000);
-
-        l(this, "pouet 2");
 
         // Test the terminated notification
         testNotification(mContext.getString(R.string.notif_content_text_clicks_over));
@@ -156,8 +172,10 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     /**
      * Tests the service start method with dummy values
+     *
+     * <i>A service can handle bad actions in its intent and make nothing / returns if it occurs</i>
      */
-    @Test
+    //@Test
     public void startServiceWithBadAction() {
 
         l(this, "@Test startServiceWithBadAction");
@@ -170,6 +188,8 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     /**
      * Tests the service start method with dummy values
+     *
+     * <i>A service can handle negative delays</i>
      */
     //@Test
     public void startServiceWithNegativeValues1() {
@@ -189,6 +209,8 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     /**
      * Tests the service start method with dummy values
+     *
+     *< i>A service can handle negative time gaps</i>
      */
     //@Test
     public void startServiceWithNegativeValues2() {
@@ -208,6 +230,8 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     /**
      * Tests the service start method with dummy values
+     *
+     * <i>The service can handle negative repeat</i>
      */
     //@Test
     public void startServiceWithNegativeValues3() {
@@ -227,6 +251,8 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     /**
      * Tests the service start method with dummy values
+     *
+     * <i>The service can handle points with negative coordinates</i>
      */
     //@Test
     public void startServiceWithNegativeValues4() {
@@ -245,8 +271,52 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     }
 
+
+    /**
+     * Tests the service start method with dummy values
+     *
+     * <i>The service can handle points with too big coordinates</i>
+     */
+    @Test
+    public void startServiceWithToBigCoordinates() {
+
+        l(this, "@Test startServiceWithToBigCoordinates");
+
+        Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
+        startIntent.setAction("com.pylapp.smoothclicker.clicker.ServiceClicker.START");
+        ArrayList<Integer> points = new ArrayList<Integer>();
+        points.add(Integer.MAX_VALUE); // x0
+        points.add(Integer.MAX_VALUE); // y0
+        startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+
+    }
+
+    /**
+     * Tests the service start method with dummy values
+     *
+     * <i>The service can handle points with too small coordinates</i>
+     */
+    //@Test
+    public void startServiceWithToSmallCoordinates() {
+
+        l(this, "@Test startServiceWithToSmallCoordinates");
+
+        Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
+        startIntent.setAction("com.pylapp.smoothclicker.clicker.ServiceClicker.START");
+        ArrayList<Integer> points = new ArrayList<Integer>();
+        points.add(Integer.MIN_VALUE); // x0
+        points.add(Integer.MIN_VALUE); // y0
+        startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+
+    }
+
+
     /**
      * Tests the service start method without null values
+     *
+     * <i>The service can handle null values for the points</i>
      */
     //@Test
     public void startServiceWithNullValues(){
@@ -291,5 +361,23 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
     }
 
+    private static Activity mResumedActivity;
+
+    /**
+     * Retrieves the on going activity
+     * @return Activity - The current activity
+     */
+    private static Activity getActivityInstance(){
+        getInstrumentation().runOnMainSync(new Runnable() {
+            public void run() {
+                Collection resumedActivities = ActivityLifecycleMonitorRegistry.getInstance()
+                        .getActivitiesInStage(Stage.RESUMED);
+                if (resumedActivities.iterator().hasNext()) {
+                    mResumedActivity = (Activity) resumedActivities.iterator().next();
+                }
+            }
+        });
+        return mResumedActivity;
+    }
 
 }

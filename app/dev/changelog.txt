@@ -177,9 +177,15 @@ What:
     fix: more control on the service and the AT clicker about inputs (negative values in params, etc).
     fix: more control on the broadcast receiver
 ###################################################
-Date:
+Date: 23/03/2016
 What:
-
+    test: more instrumented tests
+    doc: update doc (inner Javadoc and HTML Javadoc)
+    fix: more bug fixes
+    fix: display snackbar when clicking on the stop button without having started the process
+    fix: bug where it was possible to start the process with no point selected on the selection screen
+    fix: mistake in credits
+    fix: handle back when splash screen occurs
 ###################################################
 Date:
 What:

@@ -45,6 +45,7 @@
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
     <string name="error_su_missing">Did you root your Android before using this app? It is mandatory.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ No clicks defined</string>
+    <string name="error_message_was_not_working">(－‸ლ) The process is not started</string>
 
     <string name="warning_hazard_repeat_endless_title">Hazardous operation</string>
     <string name="warning_hazard_repeat_endless_content">Are you sure to make an endless repeat? This operation may be hazardous for your device.</string>
@@ -114,7 +115,7 @@
     <string name="pref_about_title">About</string>
     <string name="pref_about_version_title">Version</string>
     <string name="pref_about_version_app_title">Smooth Clicker</string>
-    <string name="pref_about_version_app_summary">written by pylapp - License Apache v2</string>
+    <string name="pref_about_version_app_summary">written by pylapp - License MIT</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>

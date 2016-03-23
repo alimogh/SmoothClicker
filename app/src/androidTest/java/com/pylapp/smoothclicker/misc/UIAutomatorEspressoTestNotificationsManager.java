@@ -25,18 +25,24 @@
 
 package com.pylapp.smoothclicker.misc;
 
+import android.app.Activity;
 import android.content.Context;
 
-import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
+import android.support.test.runner.lifecycle.Stage;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 
 import android.test.suitebuilder.annotation.SmallTest;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
@@ -49,12 +55,14 @@ import com.pylapp.smoothclicker.AbstractTest;
 import com.pylapp.smoothclicker.notifiers.NotificationsManager;
 import com.pylapp.smoothclicker.views.ClickerActivity;
 
+import java.util.Collection;
+
 
 /**
  * Class to use to make UI tests with Espresso and UIAutomator of the NotificationsManager.
  *
  *  @author pylapp
- *  @version 1.0.0
+ *  @version 1.1.0
  *  @since 21/03/2016
  *  @see AbstractTest
  */
@@ -88,18 +96,22 @@ public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
 
     /**
      * Initializes the NotificationManager
+     *
+     * <i>Tests should start from the home screen</i>
      */
     @Before
     public void init(){
         l(this,"@Before init");
         mContext = mActivityRule.getActivity().getApplicationContext();
         mNm = NotificationsManager.getInstance(mContext);
-        mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        mDevice = UiDevice.getInstance(getInstrumentation());
         mDevice.pressHome();
     }
 
     /**
      * Cleans
+     *
+     * <i>Tests should put the device at it initial state when done</i>
      */
     @After
     public void clean(){
@@ -109,6 +121,9 @@ public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
 
     /**
      * Test the countdown notifications
+     *
+     * <i>A notification with an int value can be displayed for the countdown</i>
+     * <i>If we click on a countdown notification the main activity is displayed</i>
      */
     @Test
     public void makeCountDownNotification(){
@@ -120,12 +135,16 @@ public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
         String m = base + " " + countDown;
         mNm.makeCountDownNotification(countDown);
 
-        testNotification(m);
+        testIfNotificationExists(m);
+        testNotificationClick(m);
 
     }
 
     /**
      * Test the click over notifications
+     *
+     * <i>A notification for clicks over can be displayed</i>
+     * <i>If we click on a click over notification, the main activity has to be displayed</i>
      */
     @Test
     public void makeClickOverNotification(){
@@ -135,12 +154,16 @@ public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
         mNm.makeClicksOverNotification();
 
         String m = mContext.getString(R.string.notif_content_text_clicks_over);
-        testNotification(m);
+        testIfNotificationExists(m);
+        testNotificationClick(m);
 
     }
 
     /**
      * Test the click stopped notifications
+     *
+     * <i>Notifications about stopped click process can be displayed</i>
+     * <i>If we click on such notification the main activity will be displayed </i>
      */
     @Test
     public void makeClickStoppedNotification(){
@@ -150,27 +173,34 @@ public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
         mNm.makeClicksStoppedNotification();
 
         String m = mContext.getString(R.string.notif_content_text_clicks_stop);
-        testNotification(m);
+        testIfNotificationExists(m);
+        testNotificationClick(m);
 
     }
 
    /**
     * Test the click on going notifications
+    *
+    * <i>A notification about on-going process (by the app) can be displayed</i>
+    * <i>If such notification has been clicker, the main activity will be displayed</i>
     */
-    @Test
-    public void makeClickOnGoingNotification(){
+   @Test
+   public void makeClickOnGoingNotification(){
 
-        l(this,"@Test makeClickOnGoingNotification");
+        l(this, "@Test makeClickOnGoingNotification");
 
         mNm.makeClicksOnGoingNotification();
 
         String m = mContext.getString(R.string.notif_content_text_clicks_on_going_app);
-        testNotification(m);
+        testIfNotificationExists(m);
 
     }
 
     /**
      * Test the new click notifications
+     *
+     * <i>A notification about a new click can be displayed</i>
+     * <i>If we click on such notification, nothing occurs</i>
      */
     @Test
     public void makeNewClickNotification(){
@@ -184,15 +214,15 @@ public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
         mNm.makeNewClickNotifications(X, Y);
 
         // Check it
-        testNotification(m);
+        testIfNotificationExists(m);
 
     }
 
     /**
      * Inner method to get a dedicated notification and test it
-     * @param textContent - The etxt to use to get the notification
+     * @param textContent - The text to use to get the notification
      */
-    private void testNotification( String textContent ){
+    private void testIfNotificationExists( String textContent ){
 
         UiObject n = mDevice.findObject(
                 new UiSelector()
@@ -205,6 +235,52 @@ public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
         n.waitForExists(2000);
         assertTrue(n.exists());
 
+    }
+
+    /**
+     * Inner method to get a dedicated notification and test if this notification is clicakble and display the good activity on click
+     * @param textContent - The text to use to get the notification
+     */
+    private void testNotificationClick( String textContent ){
+
+        UiObject n = mDevice.findObject(
+                new UiSelector()
+                        .resourceId("android:id/text")
+                        .className("android.widget.TextView")
+                        .packageName("com.pylapp.smoothclicker")
+                        .textContains(textContent));
+
+        mDevice.openNotification();
+        n.waitForExists(2000);
+
+        try {
+            n.click();
+            w(5000);
+            assertEquals(ClickerActivity.class.getSimpleName(), getActivityInstance().getClass().getSimpleName());
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail();
+        }
+
+    }
+
+    private static Activity mResumedActivity;
+
+    /**
+     * Retrieves the on going activity
+     * @return Activity - The current activity
+     */
+    private static Activity getActivityInstance(){
+        getInstrumentation().runOnMainSync(new Runnable() {
+            public void run() {
+                Collection resumedActivities = ActivityLifecycleMonitorRegistry.getInstance()
+                        .getActivitiesInStage(Stage.RESUMED);
+                if ( resumedActivities.iterator().hasNext() ){
+                    mResumedActivity = (Activity) resumedActivities.iterator().next();
+                }
+            }
+        });
+        return mResumedActivity;
     }
 
 }

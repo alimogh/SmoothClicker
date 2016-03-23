@@ -37,7 +37,7 @@
         android:background="@color/colorMisterGrey"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".views.ClickerActivity"
-        android:id="@+id/myMainLayout">
+        android:id="@+id/clickerActivityMainLayout">
 
     <!-- FIXME Too heavy, populate the linear layout programmatically ? -->
 

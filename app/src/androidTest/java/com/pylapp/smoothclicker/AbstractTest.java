@@ -67,6 +67,9 @@ public abstract class AbstractTest {
     private static final String LOG_PREFIX = "[Instrumented Test] ";
 
 
+    /**
+     * <i>The tests have to start from the screen home</i>
+     */
     @BeforeClass
     public static void start(){
         l("AbstractTest","@BeforeClass start");
@@ -74,6 +77,9 @@ public abstract class AbstractTest {
         d.pressHome();
     }
 
+    /**
+     * <i>The device should be at its initial state when all tests are done</i>
+     */
     @AfterClass
     public static void end(){
         l("AbstractTest","@AfterClass end");

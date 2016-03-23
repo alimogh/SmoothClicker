@@ -38,7 +38,7 @@ import com.pylapp.smoothclicker.R;
  * The splash screen activity
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 15/03/2016
  */
 public class SplashScreenActivity extends AppCompatActivity {
@@ -52,6 +52,15 @@ public class SplashScreenActivity extends AppCompatActivity {
      * Flag indicating if the app is starting for the first time or not
      */
     public static boolean sIsFirstLaunch = true;
+
+    /**
+     * The handler with starts the main activity after a delay
+     */
+    private Handler mHandler;
+    /**
+     * The callback triggered by the handler
+     */
+    private Runnable mCallback;
 
 
     /* ********* *
@@ -95,17 +104,33 @@ public class SplashScreenActivity extends AppCompatActivity {
         htv.setAnimateType(HTextViewType.ANVIL);
         htv.animateText(getString(R.string.splashscreen_description)); // FIXME May throw an OutOfMemory error, this lib is a bit pity
 
-        new Handler().postDelayed(new Runnable() {
+        mHandler = new Handler();
+        mCallback = new Runnable() {
             @Override
             public void run() {
                 Intent i = new Intent(SplashScreenActivity.this, ClickerActivity.class);
                 startActivity(i);
                 finish();
             }
-        }, SPLASH_TIME_OUT);
+        };
+        mHandler.postDelayed(mCallback, SPLASH_TIME_OUT);
 
         super.onPostCreate(savedInstanceState);
 
+    }
+
+    /**
+     * Triggered when the back button has been pressed
+     */
+    @Override
+    public void onBackPressed(){
+        if ( mHandler != null && mCallback != null ){
+            mHandler.removeCallbacks(mCallback);
+            mHandler = null;
+            mCallback = null;
+        }
+        sIsFirstLaunch = true;
+        finish();
     }
 
 }
