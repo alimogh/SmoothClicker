@@ -25,10 +25,11 @@
 
 <resources>
 
-    <!-- Apps -->
+    <!-- For the app -->
     <string name="app_name">Smooth Clicker</string>
     <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
     <!-- Menus -->
     <string name="action_about">About</string>
@@ -124,6 +125,5 @@
     <string name="message_reinit_config">Clean up...</string>
     <string name="message_confirm_exit_label">Exit</string>
     <string name="message_confirm_exit_content">Do you want to quit the app?</string>
-    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
 </resources>
