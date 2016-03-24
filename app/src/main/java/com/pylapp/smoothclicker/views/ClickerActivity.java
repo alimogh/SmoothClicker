@@ -72,7 +72,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.9.0
+ * @version 2.10.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see com.pylapp.smoothclicker.tools.ShakeToClean.ShakeToCleanCallback
@@ -626,7 +626,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             Logger.e(LOG_TAG, "Exception thrown during 'su' : " + e.getMessage());
             e.printStackTrace();
             Toast.makeText(this, "An error occurs during SU grant : "+e.getMessage(), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Did you root your Android before using this app? It is mandatory", Toast.LENGTH_LONG).show();
+            String s = getString(R.string.error_su_missing);
+            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
         }
     }
 

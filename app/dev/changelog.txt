@@ -187,9 +187,9 @@ What:
     fix: mistake in credits
     fix: handle back when splash screen occurs
 ###################################################
-Date:
+Date: 24/03/2016
 What:
-
+    fix: bug where the toast about missing root was displayed only in english
 ###################################################
 Date:
 What:
