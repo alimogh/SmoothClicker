@@ -62,8 +62,8 @@ Finally, starts the service: <br/>
 
 ***
 ## Features
-* device may vibrate on start and aon each click
-* device may display notifications when the process is on going, on clicks and when the countdown is decrementing
+* device may vibrate on start and on each click
+* device may display notifications when the process is on going, on clicks and when the countdown is running
 * several points can be selected
 * a sequence of clicks can be repeated, endlessly if needed
 * a delay can be defined before each sequence of clicks
