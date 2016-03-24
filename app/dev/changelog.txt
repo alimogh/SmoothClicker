@@ -195,9 +195,10 @@ Date: 24/03/2016
 What:
     refactor: packages
 ###################################################
-Date:
+Date: 24/03/2016
 What:
-
+    feat: add sharedUserId for the application so as to make other apps share data and processes if needed
+            (http://java-hamster.blogspot.fr/2010/05/androids-shareduserid.html, issue #1227, #3763 for Android)
 ###################################################
 Date:
 What:
