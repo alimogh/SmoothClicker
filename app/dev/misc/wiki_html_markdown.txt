@@ -102,6 +102,8 @@ Finally, starts the service: <br/>
 * _v1.8.0 : Galactic Gorilla_
     * a lot of bugs have been fixed
     * improve the GUI
+* _v1.8.1
+    * more fixed bugs
 
 
 
