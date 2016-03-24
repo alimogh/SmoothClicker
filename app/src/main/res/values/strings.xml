@@ -27,6 +27,8 @@
 
     <!-- Apps -->
     <string name="app_name">Smooth Clicker</string>
+    <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+    <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
 
     <!-- Menus -->
     <string name="action_about">About</string>

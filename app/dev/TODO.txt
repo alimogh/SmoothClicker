@@ -23,13 +23,13 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #45
+LAST TASK : #46
 
 TO DO
     Task #45 : [v1.8.x] Set up a reminder toast which is displayed when the user has launched the select-multipoint-activity and does nothing
     Task #43 : [v1.8.x] Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
+    Task #36 : [v1.9.x] Date picker to define a time period when clicks process can be done
 
-    Task #38 : Link with Appium or other things ?
     Task #2  : Movable floating action button
     Task #16 : Handle swipes, long presses, ...
     Task #34 : Load LUA scripts to make the clicks
