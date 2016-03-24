@@ -23,9 +23,10 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #46
+LAST TASK : #47
 
 TO DO
+    Task #47 : [v1.8.x] Make a new run of Lint to optimize the app
     Task #45 : [v1.8.x] Set up a reminder toast which is displayed when the user has launched the select-multipoint-activity and does nothing
     Task #43 : [v1.8.x] Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
     Task #36 : [v1.9.x] Date picker to define a time period when clicks process can be done
