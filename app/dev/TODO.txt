@@ -23,10 +23,11 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #44
+LAST TASK : #45
 
 TO DO
-    Task #43 : [v1.9.0] Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
+    Task #45 : [v1.8.x] Set up a reminder toast which is displayed when the user has launched the select-multipoint-activity and does nothing
+    Task #43 : [v1.8.x] Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
 
     Task #38 : Link with Appium or other things ?
     Task #2  : Movable floating action button

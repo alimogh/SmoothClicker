@@ -30,16 +30,16 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.pylapp.smoothclicker"
+        applicationId "pylapp.smoothclicker.android"
         minSdkVersion 18
         targetSdkVersion 23
-        versionCode 19
-        versionName "1.8.1"
+        versionCode 20
+        versionName "1.8.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" // For UIAutomator
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -102,6 +102,6 @@ dependencies {
     // Misc.
     // /////
     androidTestCompile 'com.android.support:support-annotations:23.1.1'
-
     androidTestCompile 'junit:junit:4.12'
+
 }

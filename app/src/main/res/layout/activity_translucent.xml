@@ -30,6 +30,6 @@
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
     android:id="@+id/translucentMainView"
-    tools:context="com.pylapp.smoothclicker.views.TranslucentActivity">
+    tools:context="pylapp.smoothclicker.android.views.TranslucentActivity">
 
 </RelativeLayout>

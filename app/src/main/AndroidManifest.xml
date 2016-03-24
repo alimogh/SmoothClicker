@@ -24,7 +24,7 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pylapp.smoothclicker">
+    package="pylapp.smoothclicker.android">
 
 
     <!-- *********** -->
@@ -99,18 +99,18 @@
         <!-- ******** -->
 
         <service
-            android:name=".clicker.ServiceClicker"
+            android:name=".clickers.ServiceClicker"
             android:label="@string/service_label_serviceclicker"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.pylapp.smoothclicker.clicker.ServiceClicker.START" />
+                <action android:name="pylapp.smoothclicker.android.clickers.ServiceClicker.START" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.pylapp.smoothclicker.clicker.ServiceClicker.STOP" />
+                <action android:name="pylapp.smoothclicker.android.clickers.ServiceClicker.STOP" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.pylapp.smoothclicker.clicker.ServiceClicker.WAKEUP" />
+                <action android:name="pylapp.smoothclicker.android.clickers.ServiceClicker.WAKEUP" />
             </intent-filter>
         </service>
 
