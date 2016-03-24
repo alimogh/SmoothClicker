@@ -37,7 +37,7 @@ _Why this app? Because I wanted to build my own autoclicker to make some tricks 
 _You can simply use the app itself, or use the embedded Android Service to reach :_
 
 First, create the good intent:<br/>
-`Intent intentServiceSmoothClicker = new Intent("com.pylapp.smoothclicker.clicker.ServiceClicker.START");`
+`Intent intentServiceSmoothClicker = new Intent("pylapp.smoothclicker.android.clickers.ServiceClicker.START");`
 
 Then define the configuration to set up:<br/>
 `intentServiceSmoothClicker.putExtra("0x000011", true); // Start delayed ?`<br/>

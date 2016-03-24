@@ -191,9 +191,9 @@ Date: 24/03/2016
 What:
     fix: bug where the toast about missing root was displayed only in english
 ###################################################
-Date:
+Date: 24/03/2016
 What:
-
+    refactor: packages
 ###################################################
 Date:
 What:
