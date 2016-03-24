@@ -34,7 +34,7 @@ _Why this app? Because I wanted to build my own autoclicker to make some tricks 
 ***
 ## How to use the service ?
 
-_You can simply use the app iteself, or use the embedded Android Service to reach :_
+_You can simply use the app itself, or use the embedded Android Service to reach :_
 
 First, create the good intent:<br/>
 `Intent intentServiceSmoothClicker = new Intent("com.pylapp.smoothclicker.clicker.ServiceClicker.START");`
