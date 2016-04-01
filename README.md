@@ -8,7 +8,7 @@ The app possesses a dedicated Android service you can reach and trigger to make 
 
 _Why this app? Because I wanted to build my own autoclicker to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>)_
 
-The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here`</a>.
+The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
 
 **Be aware this app is still in development and your device must be rooted**
 
