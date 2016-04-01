@@ -10,6 +10,8 @@ The app possesses a dedicated Android service you can reach and trigger to make 
 
 _Why this app? Because I wanted to build my own autoclicker to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>)_
 
+The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
+
 ***
 ## Features
 * device may vibrate on start and on each click
@@ -104,12 +106,6 @@ Finally, starts the service: <br/>
     * improve the GUI
 * _v1.8.1_
     * more fixed bugs
-<!--
 * _v1.8.2_
     * more refactor
     * optimization
--->
-
-
-
-
