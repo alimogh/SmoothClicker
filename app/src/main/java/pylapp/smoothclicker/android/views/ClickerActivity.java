@@ -74,7 +74,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.11.0
+ * @version 2.12.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -271,6 +271,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     public boolean onOptionsItemSelected( MenuItem item ){
         int id = item.getItemId();
         switch ( id ){
+            case R.id.action_clean_all:
+                initDefaultValues();
+                break;
             case R.id.action_settings:
                 startSettingsActivity();
                 break;
@@ -330,7 +333,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         Logger.d(LOG_TAG, "Updates configuration");
 
         // Get the defined values
-        Switch sTypeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
+        SwitchButton sTypeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         boolean isDelayed = sTypeOfStart.isChecked();
 
         EditText et = (EditText) findViewById(R.id.etDelay);

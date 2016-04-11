@@ -31,10 +31,14 @@ import android.support.test.espresso.action.GeneralClickAction;
 import android.support.test.espresso.action.Press;
 import android.support.test.espresso.action.Tap;
 import android.support.test.rule.ActivityTestRule;
+import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.UiSelector;
 import android.view.View;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.views.ClickerActivity;
 
 import org.junit.After;
@@ -50,6 +54,8 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * Class to use to make instrumented / unit tests with Espresso of the ClickerActivity

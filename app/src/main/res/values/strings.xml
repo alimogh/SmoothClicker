@@ -36,6 +36,8 @@
     <string name="action_credit">Credits</string>
     <string name="action_exit">Exit</string>
     <string name="action_settings">Settings</string>
+    <string name="action_clean_points">Delete the selected points</string>
+    <string name="action_clean_all">Reset the values and delete the selected points</string>
 
     <!-- Messages -->
     <string name="info_message_start">Save the configuration and starts the clicking process</string>
@@ -80,22 +82,36 @@
     <string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
     <string name="credits_app_license">Under License MIT</string>
     <string name="credits_app_personal_page">https://twitter.com/pylapp</string>
+
     <string name="credits_logo_label">Application logo</string>
     <string name="credits_logo_desc">Icon made by Freepik from www.flaticon.com</string>
     <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
     <string name="credits_logo_license">Under Flaticon Basic License</string>
+
     <string name="credits_mam_label">Material Arc Menu</string>
     <string name="credits_mam_desc">Library made by Saurabh Arora</string>
     <string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
     <string name="credits_mam_license">Under License Apache v2</string>
+
     <string name="credits_htextview_label">HTextView</string>
     <string name="credits_htextview_desc">Library made by Hanks Zyh</string>
     <string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
     <string name="credits_htextview_license">Under License Apache v2</string>
+
     <string name="credits_switchbutton_label">SwitchButton</string>
     <string name="credits_switchbutton_desc">Library made by kyleduo</string>
     <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
     <string name="credits_switchbutton_license">Under License Apache v2</string>
+
+    <string name="credits_icon_trash_label">Icon \"clean all\"</string>
+    <string name="credits_icon_trash_desc">Icon made by FreepiK from www.flaticon.com</string>
+    <string name="credits_icon_trash_url">http://www.flaticon.com/free-icon/delete_121116</string>
+    <string name="credits_icon_trash_license">Under Flaticon Basic License</string>
+
+    <string name="credits_icon_trash2_label">Icon \"clean points\"</string>
+    <string name="credits_icon_trash2_desc">Icon made by FreepiK from www.flaticon.com</string>
+    <string name="credits_icon_trash2_url">http://www.flaticon.com/free-icon/garbage_121115</string>
+    <string name="credits_icon_trash2_license">Under Flaticon Basic License</string>
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
