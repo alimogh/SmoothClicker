@@ -92,6 +92,10 @@
     <string name="credits_htextview_desc">Librairie faite par Hanks Zyh</string>
     <string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
     <string name="credits_htextview_license">Sous Licence Apache v2</string>
+    <string name="credits_switchbutton_label">SwitchButton</string>
+    <string name="credits_switchbutton_desc">Librairie créée par kyleduo</string>
+    <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
+    <string name="credits_switchbutton_license">Sous License Apache v2</string>
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>

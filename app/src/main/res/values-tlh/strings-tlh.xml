@@ -91,9 +91,13 @@
     <string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
     <string name="credits_mam_license">bopummeH chaw\' Apache v2</string>
     <string name="credits_htextview_label">HTextView</string>
-    <string name="credits_htextview_desc">chenmoH Hanks Zyh chenmoH</string>
+    <string name="credits_htextview_desc">chenmoH Hanks Zyh</string>
     <string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
     <string name="credits_htextview_license">bopummeH chaw\' Apache v2</string>
+    <string name="credits_switchbutton_label">SwitchButton</string>
+    <string name="credits_switchbutton_desc">chenmoH kyleduo</string>
+    <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
+    <string name="credits_switchbutton_license">bopummeH chaw\' Apache v2</string>
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
