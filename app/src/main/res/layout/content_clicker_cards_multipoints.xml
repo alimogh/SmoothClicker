@@ -73,12 +73,15 @@
                     android:text="@string/widget_type_of_start"
                     android:textColor="@color/colorAccent"/>
 
-                <Switch
+                <com.kyleduo.switchbutton.SwitchButton
                     android:id="@+id/sTypeOfStartDelayed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textOn="@string/widget_delayed_starts"
-                    android:textOff="@string/widget_immediate_starts"/>
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="4dp"
+                    app:kswTextOn="@string/widget_delayed_starts"
+                    app:kswTextOff="@string/widget_immediate_starts"/>
 
             </LinearLayout>
 

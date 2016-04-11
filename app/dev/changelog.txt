@@ -200,6 +200,28 @@ What:
     feat: add sharedUserId for the application so as to make other apps share data and processes if needed
             (http://java-hamster.blogspot.fr/2010/05/androids-shareduserid.html, issue #1227, #3763 for Android)
 ###################################################
+Date: 11/04/2016
+What:
+    feat: new switch button with a good text content
+    feat: add new entry in the credits view
+    fix: mistakes in Klingon texts
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
 Date:
 What:
 

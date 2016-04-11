@@ -60,6 +60,8 @@ import pylapp.smoothclicker.android.utils.ConfigStatus;
 import pylapp.smoothclicker.android.utils.AppConfigVersions;
 import pylapp.smoothclicker.android.tools.Logger;
 
+import com.kyleduo.switchbutton.SwitchButton;
+
 import com.sa90.materialarcmenu.ArcMenu;
 
 import java.io.IOException;
@@ -72,7 +74,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.10.0
+ * @version 2.11.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -182,7 +184,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         // Get values to save
 
-        Switch sTypeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
+        SwitchButton sTypeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         boolean isDelayed = sTypeOfStart.isChecked();
 
         EditText et = (EditText) findViewById(R.id.etDelay);
@@ -443,7 +445,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         Logger.d(LOG_TAG, "Initializes the default values");
 
-        Switch typeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
+        SwitchButton typeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         typeOfStart.setChecked(Config.DEFAULT_START_DELAYED);
         EditText et = (EditText) findViewById(R.id.etDelay);
         et.setText(Config.DEFAULT_DELAY);
@@ -706,7 +708,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         // The switch button about the type of start
         // If checked, enabled the filed for the delay
-        Switch sTypeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
+        SwitchButton sTypeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         sTypeOfStart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged( CompoundButton buttonView, boolean isChecked ){
