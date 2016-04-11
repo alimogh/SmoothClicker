@@ -39,7 +39,7 @@ import pylapp.smoothclicker.android.R;
  * The activity which displays the credits / third-parties licences.
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 1.4.0
  * @since 15/03/2016
  */
 public class CreditsActivity extends AppCompatActivity {
@@ -124,6 +124,28 @@ public class CreditsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(getString(R.string.credits_app_personal_page)));
+                startActivity(i);
+            }
+        });
+
+        // The icon for the feature "clean all"
+        tv = (TextView) findViewById(R.id.tvCreditsIconEraseAllUrl);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.credits_icon_trash_url)));
+                startActivity(i);
+            }
+        });
+
+        // The icon for the feature "clean points"
+        tv = (TextView) findViewById(R.id.tvCreditsIconErasePointsUrl);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.credits_icon_trash2_url)));
                 startActivity(i);
             }
         });

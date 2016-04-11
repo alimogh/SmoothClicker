@@ -36,6 +36,8 @@
     <string name="action_credit">Licences</string>
     <string name="action_exit">Quitter</string>
     <string name="action_settings">Paramètres</string>
+    <string name="action_clean_points">Supprime les points sélectionnés</string>
+    <string name="action_clean_all">Réinitialise les valeurs et supprime les points sélectionnés</string>
 
     <!-- Messages -->
     <string name="info_message_start">Enregistre la configuration et démarre le processus de click</string>
@@ -80,22 +82,37 @@
     <string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
     <string name="credits_app_license">Sous Licence MIT</string>
     <string name="credits_app_personal_page">https://twitter.com/pylapp</string>
+
     <string name="credits_logo_label">Logo de l\'application</string>
-    <string name="credits_logo_desc">Icône créée par Freepik from www.flaticon.com</string>
-    <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
+    <string name="credits_logo_desc">Icône créée par Freepik de www.flaticon.com</string>
+    <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726</string>
     <string name="credits_logo_license">Sous Licence Flaticon Basic</string>
+
     <string name="credits_mam_label">Material Arc Menu</string>
     <string name="credits_mam_desc">Librairie créée par Saurabh Arora</string>
     <string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
     <string name="credits_mam_license">Sous Licence Apache v2</string>
+
     <string name="credits_htextview_label">HTextView</string>
     <string name="credits_htextview_desc">Librairie faite par Hanks Zyh</string>
     <string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
     <string name="credits_htextview_license">Sous Licence Apache v2</string>
+
     <string name="credits_switchbutton_label">SwitchButton</string>
     <string name="credits_switchbutton_desc">Librairie créée par kyleduo</string>
     <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
     <string name="credits_switchbutton_license">Sous License Apache v2</string>
+
+    <string name="credits_icon_trash_label">Icône \"tout effacer\"</string>
+    <string name="credits_icon_trash_desc">Icône faite par Freepik de www.flaticon.com</string>
+    <string name="credits_icon_trash_url">http://www.flaticon.com/free-icon/delete_121116</string>
+    <string name="credits_icon_trash_license">Sous License Flaticon Basic</string>
+
+    <string name="credits_icon_trash2_label">Icône \"effacer les points\"</string>
+    <string name="credits_icon_trash2_desc">Icône faite par Freepik de www.flaticon.com</string>
+    <string name="credits_icon_trash2_url">http://www.flaticon.com/free-icon/garbage_121115</string>
+    <string name="credits_icon_trash2_license">Sous License Flaticon Basic</string>
+
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>

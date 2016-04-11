@@ -206,9 +206,15 @@ What:
     feat: add new entry in the credits view
     fix: mistakes in Klingon texts
 ###################################################
-Date:
+Date: 11/04/2016
 What:
-
+    feat: add feature to restore all the configuration in default values
+    feat: add new entries in the credits view
+    fix: bug with switch button
+    chore: add button for the feature "delete points"
+    chore: new icons for cleaning features
+    doc: update the HTML JavaDoc
+    test: add new tests for the "clean all" feature
 ###################################################
 Date:
 What:

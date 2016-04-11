@@ -40,6 +40,7 @@ import android.support.test.uiautomator.Until;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.views.ClickerActivity;
 
 import org.junit.Before;
@@ -60,7 +61,7 @@ import static org.junit.Assert.fail;
  * Class to use to make UI tests with UIAutomator of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 22/03/2016
  * @see AbstractTest
  */

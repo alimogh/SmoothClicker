@@ -38,6 +38,8 @@
     <string name="action_credit">chaw\'</string>
     <string name="action_exit">mej</string>
     <string name="action_settings">DuH</string>
+    <string name="action_clean_points">wIv lang Qaw\'</string>
+    <string name="action_clean_all">lo\'laHghach QIH je wIv lang Qaw\'</string>
 
     <!-- Messages -->
     <string name="info_message_start">toD \'ej qet</string>
@@ -82,22 +84,36 @@
     <string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
     <string name="credits_app_license">bopummeH chaw\' MIT</string>
     <string name="credits_app_personal_page">https://twitter.com/pylapp</string>
+
     <string name="credits_logo_label">Doch mIllogh</string>
     <string name="credits_logo_desc">chenmoH Freepik from www.flaticon.com Doch</string>
     <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
-    <string name="credits_logo_license">bopummeH chaw\'Flaticon Basic</string>
+    <string name="credits_logo_license">bopummeH chaw\' Flaticon Basic</string>
+
     <string name="credits_mam_label">Material Arc Menu</string>
     <string name="credits_mam_desc">chenmoH Saurabh Arora Doch</string>
     <string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
     <string name="credits_mam_license">bopummeH chaw\' Apache v2</string>
+
     <string name="credits_htextview_label">HTextView</string>
     <string name="credits_htextview_desc">chenmoH Hanks Zyh</string>
     <string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
     <string name="credits_htextview_license">bopummeH chaw\' Apache v2</string>
+
     <string name="credits_switchbutton_label">SwitchButton</string>
     <string name="credits_switchbutton_desc">chenmoH kyleduo</string>
     <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
     <string name="credits_switchbutton_license">bopummeH chaw\' Apache v2</string>
+
+    <string name="credits_icon_trash_label">mIllogh</string>
+    <string name="credits_icon_trash_desc">chenmoH Freepik www.flaticon.com</string>
+    <string name="credits_icon_trash_url">http://www.flaticon.com/free-icon/delete_121116</string>
+    <string name="credits_icon_trash_license">bopummeH chaw\' Flaticon Basic</string>
+
+    <string name="credits_icon_trash2_label">mIllogh</string>
+    <string name="credits_icon_trash2_desc">chenmoH Freepik www.flaticon.com</string>
+    <string name="credits_icon_trash2_url">http://www.flaticon.com/free-icon/garbage_121115</string>
+    <string name="credits_icon_trash2_license">bopummeH chaw\' Flaticon Basic</string>
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>

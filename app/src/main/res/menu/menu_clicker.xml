@@ -27,6 +27,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.ClickerActivity">
 
+    <!-- The "clean points" feature -->
+    <item
+        android:id="@+id/action_clean_points"
+        android:orderInCategory="100"
+        android:title="@string/action_clean_points"
+        android:icon="@drawable/icon_clean_points"
+        app:showAsAction="always" />
+
+    <!-- The "clean all" feature -->
+    <item
+        android:id="@+id/action_clean_all"
+        android:orderInCategory="100"
+        android:title="@string/action_clean_all"
+        android:icon="@drawable/icon_clean_all"
+        app:showAsAction="always" />
+
     <!-- The "settings" menu -->
     <item
         android:id="@+id/action_settings"
