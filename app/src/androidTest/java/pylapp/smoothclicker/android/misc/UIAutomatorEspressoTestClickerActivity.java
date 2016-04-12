@@ -52,7 +52,7 @@ import static org.junit.Assert.fail;
  * Class to use to make UI tests with UIAutomator and Espresso of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 11/04/2016
  * @see AbstractTest
  */
@@ -222,6 +222,47 @@ public class UIAutomatorEspressoTestClickerActivity extends AbstractTest {
 
     }
 
+    /**
+     * Test the click on the button for the "clean points" feature
+     *
+     * <i>If the button to clean points is clicked, the list of points has to be cleaned</i>
+     * <i>If the button to clean points is clicked and no values has been changed, the values still remain the default ones</i>
+     */
+    @Test
+    public void clickCleanPoints() {
+
+        l(this, "@Test clickCleanPoints");
+
+        try {
+
+            // Get the menu item
+            UiObject mi = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/action_clean_all")
+            );
+
+            w(5000); // If there is no wait, Espresso fails to get the floating action button
+
+            // Bind the list
+            fillSpinnerAsUser();
+
+            // Click on the menu item
+            mi.click();
+
+            // Check if the values have been made empty
+//            onView(withId(R.id.clickerActivityMainLayout)).perform(swipeUp());
+//            onView(withId(R.id.sPointsToClick)).perform(click());
+//            onView(withId(R.id.sPointsToClick)).check(ViewAssertions.matches(withListSize(1)));
+
+            // Test again to check if the default values remain
+            mi.click();
+ //           onView(withId(R.id.sPointsToClick)).check(ViewAssertions.matches(withListSize(1)));
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail( uonfe.getMessage() );
+        }
+
+    }
 
     /**
      * Selects some points to fill the spinner
