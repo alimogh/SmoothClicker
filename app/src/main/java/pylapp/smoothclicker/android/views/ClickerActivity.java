@@ -74,7 +74,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.12.0
+ * @version 2.13.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -271,6 +271,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     public boolean onOptionsItemSelected( MenuItem item ){
         int id = item.getItemId();
         switch ( id ){
+            case R.id.action_clean_points:
+                handleMultiPointResult( null );
+                break;
             case R.id.action_clean_all:
                 initDefaultValues();
                 break;
@@ -572,6 +575,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      * Will update the config so as to allow the ATClicker to click on all these points.
      *
      * @param coords - The list of X/Y values of the points to click on as {x0, y0, x1, y2, ..., xN, yN}
+     *               If null, the list will be made empty
      */
     private void handleMultiPointResult( ArrayList<Integer> coords ){
 

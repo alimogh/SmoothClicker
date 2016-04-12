@@ -216,9 +216,10 @@ What:
     doc: update the HTML JavaDoc
     test: add new tests for the "clean all" feature
 ###################################################
-Date:
+Date: 12/04/2016
 What:
-
+    feat: add feature to clean all the selected points
+    doc: update the doc
 ###################################################
 Date:
 What:
