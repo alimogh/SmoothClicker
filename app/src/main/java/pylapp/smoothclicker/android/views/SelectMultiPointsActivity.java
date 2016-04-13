@@ -28,6 +28,7 @@ package pylapp.smoothclicker.android.views;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -47,7 +48,7 @@ import java.util.ArrayList;
      </pre>
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 17/03/2016
  */
 public class SelectMultiPointsActivity extends TranslucentActivity {
@@ -67,6 +68,19 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
     // FIXME Dirty, heavy
     private ArrayList<Integer> mXYCoordinates;
 
+    /**
+     * The handler which makes the helping toasts appear
+     */
+    private Handler mHandlerHelpingToasts;
+    /**
+     * The runnable for the handler which makes the helping toasts appear
+     */
+    private Runnable mRunnableHelpingToasts;
+    /**
+     * The time to wait before displaying (in ms)
+     */
+    private static final int TIME_FOR_HELPING_TOASTS = 30*1000;
+
 
     /* ****************************** *
      * METHODS FROM AppCompatActivity *
@@ -81,8 +95,6 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-        Toast.makeText(SelectMultiPointsActivity.this, getString(R.string.info_message_invite_new_points), Toast.LENGTH_SHORT).show();
 
         mXYCoordinates = new ArrayList<Integer>();
 
@@ -99,8 +111,10 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
                 mXYCoordinates.add(X);
                 mXYCoordinates.add(Y);
 
+                initHelpingToastsRoutine();
+
                 // Notify the user
-                Toast.makeText(SelectMultiPointsActivity.this, "Click X="+X+" / Y=" + Y, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SelectMultiPointsActivity.this, "Click X=" + X + " / Y=" + Y, Toast.LENGTH_SHORT).show();
 
                 return false;
 
@@ -110,14 +124,75 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
     }
 
     /**
+     * Triggered when the activity is resumed
+     */
+    @Override
+    public void onResume(){
+        super.onResume();
+        initHelpingToastsRoutine();
+        displayHelpingToast();
+    }
+
+    /**
+     * Triggered when the activity is paused
+     */
+    @Override
+    public void onPause(){
+        cleanHelpingToastsRoutine();
+        super.onPause();
+    }
+
+    /**
      * Triggered when the back button is pressed
      */
     @Override
     public void onBackPressed(){
+        cleanHelpingToastsRoutine();
         Intent returnIntent = new Intent();
         returnIntent.putIntegerArrayListExtra(ClickerActivity.SELECT_POINTS_ACTIVITY_RESULT, mXYCoordinates);
         setResult(Activity.RESULT_OK, returnIntent);
         finish();
+    }
+
+    /**
+     * Displays an helping toast saying to the user he has to click on the screen then back to save its actions
+     */
+    private void displayHelpingToast(){
+        Toast.makeText(SelectMultiPointsActivity.this, getString(R.string.info_message_invite_new_points), Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Initializes the routine which make helping toasts appear
+     */
+    private void initHelpingToastsRoutine(){
+
+        cleanHelpingToastsRoutine();
+
+        mHandlerHelpingToasts = new Handler();
+        mRunnableHelpingToasts = new Runnable() {
+            @Override
+            public void run() {
+                displayHelpingToast();
+                mHandlerHelpingToasts.postDelayed( mRunnableHelpingToasts, TIME_FOR_HELPING_TOASTS );
+            }
+        };
+
+        mHandlerHelpingToasts.postDelayed(mRunnableHelpingToasts, TIME_FOR_HELPING_TOASTS);
+
+    }
+
+    /**
+     * Cleans the routine which make helping toast appear
+     */
+    private void cleanHelpingToastsRoutine(){
+
+        if ( mHandlerHelpingToasts != null && mRunnableHelpingToasts != null ){
+            mHandlerHelpingToasts.removeCallbacks(mRunnableHelpingToasts);
+            mHandlerHelpingToasts = null;
+        }
+
+        if ( mRunnableHelpingToasts != null ) mRunnableHelpingToasts = null;
+
     }
 
 }

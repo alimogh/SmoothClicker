@@ -62,3 +62,4 @@ v1.9.0 : Holy Hedgehog
     - More bug fixes
     - New feature : possible to restore all the default values
     - New feature : possible to delete all the selected points
+    - New feature : an helping toast is displayed on the clicking screen when the user is inactive
