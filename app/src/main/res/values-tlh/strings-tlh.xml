@@ -99,15 +99,20 @@
     <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
     <string name="credits_switchbutton_license">bopummeH chaw\' Apache v2</string>
 
-    <string name="credits_icon_trash_label">mIllogh</string>
-    <string name="credits_icon_trash_desc">chenmoH Freepik www.flaticon.com</string>
-    <string name="credits_icon_trash_url">http://www.flaticon.com/free-icon/delete_121116</string>
-    <string name="credits_icon_trash_license">bopummeH chaw\' Flaticon Basic</string>
+    <string name="credits_icon_flaticon_freepik_label">mIllogh</string>
+    <string name="credits_icon_flaticon_freepik_desc">chenmoH FreepiK www.flaticon.com</string>
+    <string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
+    <string name="credits_icon_flaticon_freepik_license">bopummeH chaw\' Flaticon Basic</string>
 
-    <string name="credits_icon_trash2_label">mIllogh</string>
-    <string name="credits_icon_trash2_desc">chenmoH Freepik www.flaticon.com</string>
-    <string name="credits_icon_trash2_url">http://www.flaticon.com/free-icon/garbage_121115</string>
-    <string name="credits_icon_trash2_license">bopummeH chaw\' Flaticon Basic</string>
+    <string name="credits_icon_flaticon_elegantthemes_label">mIllogh</string>
+    <string name="credits_icon_flaticon_elegantthemes_desc">chenmoH Elegant Themes www.flaticon.com</string>
+    <string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-themes</string>
+    <string name="credits_icon_flaticon_elegantthemes_license">bopummeH chaw\' CC 3.0 BY</string>
+
+    <string name="credits_icon_flaticon_yannick_label">mIllogh</string>
+    <string name="credits_icon_flaticon_yannick_desc">chenmoH Yannick www.flaticon.com</string>
+    <string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/yannick</string>
+    <string name="credits_icon_flaticon_yannick_license">bopummeH chaw\' CC 3.0 BY</string>
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
@@ -139,10 +144,23 @@
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Ha\'</string>
 
+    <!-- Intro screens -->
+    <string name="intro_welcome_label">QI\'yaH!</string>
+    <string name="intro_welcome_desc">yI\'el</string>
+    <string name="intro_root_label">tlhab</string>
+    <string name="intro_root_desc">jan tlhab Daghaj</string>
+    <string name="intro_clicks_label">tlhaw\'</string>
+    <string name="intro_clicks_desc">puS tlhaw\' mIw chenmoH</string>
+    <string name="intro_notifications_label">maj</string>
+    <string name="intro_notifications_desc">&#8230; \'ej ghaH QaQ Doch mIw</string>
+    <string name="intro_free_label">Born to be free</string>
+    <string name="intro_free_desc">Smooth Clicker QaQ</string>
+
     <!-- Misc. -->
     <string name="error_not_implemented">Nwej chenmoH \'ach!</string>
     <string name="message_reinit_config">Say\'</string>
     <string name="message_confirm_exit_label">mej</string>
     <string name="message_confirm_exit_content">Doch bup DaneH\'a\'?</string>
+    <string name="app_intro">Smooth Clicker</string>
 
 </resources>

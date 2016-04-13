@@ -39,7 +39,7 @@ import pylapp.smoothclicker.android.R;
  * The activity which displays the credits / third-parties licences.
  *
  * @author pylapp
- * @version 1.4.0
+ * @version 1.5.0
  * @since 15/03/2016
  */
 public class CreditsActivity extends AppCompatActivity {
@@ -128,24 +128,35 @@ public class CreditsActivity extends AppCompatActivity {
             }
         });
 
-        // The icon for the feature "clean all"
-        tv = (TextView) findViewById(R.id.tvCreditsIconEraseAllUrl);
+        // The icon made by FreepiK form Flaticon
+        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsFreepikUrl);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_icon_trash_url)));
+                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_freepik_url)));
                 startActivity(i);
             }
         });
 
-        // The icon for the feature "clean points"
-        tv = (TextView) findViewById(R.id.tvCreditsIconErasePointsUrl);
+        // The icon made by Yannick form Flaticon
+        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsYannickUrl);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_icon_trash2_url)));
+                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_yannick_url)));
+                startActivity(i);
+            }
+        });
+
+        // The icon made by Elegant Themes form Flaticon
+        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsElegantthemesUrl);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_elegantthemes_url)));
                 startActivity(i);
             }
         });

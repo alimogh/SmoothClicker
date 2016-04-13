@@ -33,7 +33,7 @@ android {
         applicationId "pylapp.smoothclicker.android"
         minSdkVersion 18
         targetSdkVersion 23
-        versionCode 22
+        versionCode 23
         versionName "1.9.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" // For UIAutomator
     }
@@ -89,6 +89,12 @@ dependencies {
     // ////////////
     compile 'com.kyleduo.switchbutton:library:1.4.0'
 
+    // ////////
+    // AppIntro
+    // ////////
+    // https://github.com/PaoloRotolo/AppIntro
+    compile 'com.github.paolorotolo:appintro:3.4.0'
+
     // ///////////////////////////
     // JUnit 4 : unit tests on API
     // ///////////////////////////
@@ -108,7 +114,6 @@ dependencies {
     //androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.1'
     //androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.1'
     //androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.1'
-
 
     // /////
     // Misc.

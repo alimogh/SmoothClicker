@@ -31,7 +31,7 @@ import android.content.Context;
  * Just a configuration class with useful values
  *
  * @author pylapp
- * @version 1.5.0
+ * @version 1.6.0
  * @since 02/03/2016
  */
 public final class Config {
@@ -48,6 +48,7 @@ public final class Config {
     public static final boolean DEFAULT_VIBRATE_ON_CLICK = true;
     public static final boolean DEFAULT_NOTIF_ON_CLICK   = true;
     public static final boolean DEFAULT_SHAKE_TO_CLEAN   = true;
+    public static final boolean DEFAULT_IS_FIRST_START   = true;
 
     /*
      * The shared preferences
@@ -61,6 +62,7 @@ public final class Config {
     public static final String SP_KEY_VIBRATE_ON_START               = "0x000041";
     public static final String SP_KEY_VIBRATE_ON_CLICK               = "0x000042";
     public static final String SP_KEY_NOTIF_ON_CLICK                 = "0x000051";
+    public static final String SP_KEY_IS_FIRST_START                 = "0x000061";
 
     public static final int SP_ACCESS_MODE                           = Context.MODE_PRIVATE;
 
