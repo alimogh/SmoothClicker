@@ -226,9 +226,11 @@ What:
     feat: an helping toast is displayed periodically on the clicking screen when the user is inactive
     doc: update the doc
 ###################################################
-Date:
+Date: 13/04/2016
 What:
-
+    feat: the toasts showing the action defined by the user is replaced by a snackbar
+    test: new tests for the snackbar about new action
+    doc: update the doc
 ###################################################
 Date:
 What:

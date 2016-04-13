@@ -26,8 +26,7 @@
 LAST TASK : #54
 
 TO DO
-    Task #53 : [v1.10.x] Use snackbars to show the use the actions he chooses (replace toasts with coordinates by snackbars)
-    Task #54 : [v1.10.x] In snackbars about actions, set up a "dismiss" action to cancel the new defined action
+    Task #54 : [v1.9.x] In snackbars about actions, set up a "dismiss" action to cancel the new defined action
     Task #49 : [v1.11.x] App intro
     Task #16 : [v1.12.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
     Task #2  : [v2.x.x] Movable floating action button
