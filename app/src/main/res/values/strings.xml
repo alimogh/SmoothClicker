@@ -140,6 +140,9 @@
     <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">written by pylapp - License MIT</string>
 
+    <!-- Snackbars -->
+    <string name="snackbar_action_dismiss">Undo</string>
+
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>
     <string name="message_reinit_config">Clean up...</string>

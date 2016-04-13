@@ -113,7 +113,6 @@
     <string name="credits_icon_trash2_url">http://www.flaticon.com/free-icon/garbage_121115</string>
     <string name="credits_icon_trash2_license">Sous License Flaticon Basic</string>
 
-
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
 
@@ -140,6 +139,9 @@
     <string name="pref_about_version_title">Version</string>
     <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">écrit par pylapp - Licence MIT</string>
+
+    <!-- Snackbars -->
+    <string name="snackbar_action_dismiss">Annuler</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Pas encore disponible !</string>

@@ -26,12 +26,11 @@
 LAST TASK : #54
 
 TO DO
-    Task #54 : [v1.9.x] In snackbars about actions, set up a "dismiss" action to cancel the new defined action
-    Task #49 : [v1.11.x] App intro
-    Task #16 : [v1.12.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
+    Task #49 : [v1.9.x] App intro
+    Task #47 : [vx.x.x] Make a new run of Lint to optimize the app
+    Task #16 : [v1.10.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
     Task #2  : [v2.x.x] Movable floating action button
     Task #52 : [v2.x.x] Make the clicks and the other actions without root nor SU
-    Task #47 : [vx.x.x] Make a new run of Lint to optimize the app
     Task #43 : [vx.x.x] Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
     Task #36 : [vx.x.x] Date picker to define a time period when clicks process can be done
 

@@ -64,3 +64,4 @@ v1.9.0 : Holy Hedgehog
     - New feature : possible to delete all the selected points
     - New feature : an helping toast is displayed on the clicking screen when the user is inactive
     - New feature : a snackbar is displayed to show to the user its defined action, instead of a toast
+    - New feature : the user can undo its action thanks to a dismiss button in the snackbar
