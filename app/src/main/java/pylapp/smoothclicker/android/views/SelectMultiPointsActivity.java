@@ -29,6 +29,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -48,7 +49,7 @@ import java.util.ArrayList;
      </pre>
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 17/03/2016
  */
 public class SelectMultiPointsActivity extends TranslucentActivity {
@@ -114,7 +115,7 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
                 initHelpingToastsRoutine();
 
                 // Notify the user
-                Toast.makeText(SelectMultiPointsActivity.this, "Click X=" + X + " / Y=" + Y, Toast.LENGTH_SHORT).show();
+                showInSnackbarWithoutAction("Click X = " + X + " / Y = " + Y);
 
                 return false;
 
@@ -193,6 +194,16 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
 
         if ( mRunnableHelpingToasts != null ) mRunnableHelpingToasts = null;
 
+    }
+
+    /**
+     * Displays in the snack bar a message
+     * @param message - The string to display. Will do nothing if null or empty
+     */
+    private void showInSnackbarWithoutAction( String message ){
+        if ( message == null || message.length() <= 0 ) return;
+        View v = findViewById(R.id.translucentMainView);
+        Snackbar.make(v, message, Snackbar.LENGTH_LONG).setAction("", null).show();
     }
 
 }
