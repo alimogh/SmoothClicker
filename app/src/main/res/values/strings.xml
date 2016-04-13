@@ -32,8 +32,6 @@
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
     <!-- Menus -->
-    <string name="action_about">About</string>
-    <string name="action_credit">Credits</string>
     <string name="action_exit">Exit</string>
     <string name="action_settings">Settings</string>
     <string name="action_clean_points">Delete the selected points</string>
@@ -45,7 +43,6 @@
     <string name="info_message_request_su">Ask for the SU grant</string>
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
     <string name="info_message_new_point">Select new points on the screen</string>
-    <string name="info_message_invite_new_point">Select a new point on the screen</string>
     <string name="info_message_invite_new_points">Select several points and then back</string>
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
     <string name="error_su_missing">Did you root your Android before using this app? It is mandatory.</string>
@@ -60,19 +57,16 @@
     <!-- Widgets -->
     <string name="widget_type_of_start">Delayed start</string>
     <string name="widget_delay">Delay</string>
-    <string name="widget_delay_hint">...in seconds</string>
+    <string name="widget_delay_hint">&#8230; in seconds</string>
     <string name="widget_speed">Time before each click</string>
-    <string name="widget_speed_hint">...in seconds</string>
+    <string name="widget_speed_hint">&#8230; in seconds</string>
     <string name="widget_repeat">Repeat</string>
-    <string name="widget_repeat_hint">...times</string>
+    <string name="widget_repeat_hint">&#8230; times</string>
     <string name="widget_repeat_endless">Endless</string>
     <string name="widget_vibrate_on_start">Vibrate on start</string>
     <string name="widget_vibrate_on_click">Vibrate on click</string>
     <string name="widget_delayed_starts">Delayed</string>
     <string name="widget_immediate_starts">Now</string>
-    <string name="widget_click_coordinates">Select the point on the screen</string>
-    <string name="widget_x_coordinate">Coordinate X</string>
-    <string name="widget_y_coordinate">Coordinate Y</string>
     <string name="widget_xy_coordinates">Points to click on</string>
     <string name="widget_notifications">Notifications</string>
 
@@ -119,8 +113,8 @@
     <!-- Notifications -->
     <string name="notif_content_title">Smooth Clicker</string>
     <string name="notif_content_text_click_made">New click </string>
-    <string name="notif_content_text_clicks_on_going_app">The clicking process is running (through the app)...</string>
-    <string name="notif_content_text_clicks_on_going_service">The clicking process is running (through the service)...</string>
+    <string name="notif_content_text_clicks_on_going_app">The clicking process is running (through the app)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_service">The clicking process is running (through the service)&#8230; </string>
     <string name="notif_content_text_clicks_stop">The clicking process has been stopped</string>
     <string name="notif_content_text_clicks_over">The clicking process is over</string>
     <string name="notif_content_text_su_granted">The super-user permission has been granted</string>
@@ -145,7 +139,7 @@
 
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>
-    <string name="message_reinit_config">Clean up...</string>
+    <string name="message_reinit_config">Clean up&#8230; </string>
     <string name="message_confirm_exit_label">Exit</string>
     <string name="message_confirm_exit_content">Do you want to quit the app?</string>
 

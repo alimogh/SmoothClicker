@@ -32,8 +32,6 @@
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
     <!-- Menus -->
-    <string name="action_about">À propos</string>
-    <string name="action_credit">Licences</string>
     <string name="action_exit">Quitter</string>
     <string name="action_settings">Paramètres</string>
     <string name="action_clean_points">Supprime les points sélectionnés</string>
@@ -45,7 +43,6 @@
     <string name="info_message_request_su">Demande les accès SU</string>
     <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
     <string name="info_message_new_point">Sélectionne des points sur l\'écran</string>
-    <string name="info_message_invite_new_point">Sélectionnez un point sur l\'écran</string>
     <string name="info_message_invite_new_points">Sélectionnez plusieurs points puis back</string>
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
     <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
@@ -60,19 +57,16 @@
     <!-- Widgets -->
     <string name="widget_type_of_start">Départ différé</string>
     <string name="widget_delay">Retard</string>
-    <string name="widget_delay_hint">...en secondes</string>
+    <string name="widget_delay_hint">&#8230; en secondes</string>
     <string name="widget_speed">Durée entre chaque click</string>
-    <string name="widget_speed_hint">...en secondes</string>
+    <string name="widget_speed_hint">&#8230; en secondes</string>
     <string name="widget_repeat">Répétition</string>
-    <string name="widget_repeat_hint">...fois</string>
+    <string name="widget_repeat_hint">&#8230; fois</string>
     <string name="widget_repeat_endless">Infinie</string>
     <string name="widget_vibrate_on_start">Vibre au démarrage</string>
     <string name="widget_vibrate_on_click">Vibre à chaque click</string>
     <string name="widget_delayed_starts">Différé</string>
     <string name="widget_immediate_starts">Immédiat</string>
-    <string name="widget_click_coordinates">Sélectionner un point sur l\'écran</string>
-    <string name="widget_x_coordinate">Coordonnées X</string>
-    <string name="widget_y_coordinate">Coordonnées Y</string>
     <string name="widget_xy_coordinates">Points à cliquer</string>
     <string name="widget_notifications">Notifications</string>
 
@@ -119,8 +113,8 @@
     <!-- Notifications -->
     <string name="notif_content_title">Smooth Clicker</string>
     <string name="notif_content_text_click_made">Nouveau click </string>
-    <string name="notif_content_text_clicks_on_going_app">Le processus de click travaille (via l\'app)...</string>
-    <string name="notif_content_text_clicks_on_going_service">Le processus de click travaille (via le service)...</string>
+    <string name="notif_content_text_clicks_on_going_app">Le processus de click travaille (via l\'app)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_service">Le processus de click travaille (via le service)&#8230; </string>
     <string name="notif_content_text_clicks_stop">Le processus de click a été arrêté</string>
     <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
     <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>
@@ -145,7 +139,7 @@
 
     <!-- Misc. -->
     <string name="error_not_implemented">Pas encore disponible !</string>
-    <string name="message_reinit_config">Nettoyage...</string>
+    <string name="message_reinit_config">Nettoyage&#8230; </string>
     <string name="message_confirm_exit_label">Quitter</string>
     <string name="message_confirm_exit_content">Voulez-vous quitter l\'application ?</string>
 

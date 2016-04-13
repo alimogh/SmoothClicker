@@ -97,7 +97,7 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
 
         super.onCreate(savedInstanceState);
 
-        mXYCoordinates = new ArrayList<Integer>();
+        mXYCoordinates = new ArrayList<>();
 
         // Get the touch coordinates
         View v = findViewById(R.id.translucentMainView);

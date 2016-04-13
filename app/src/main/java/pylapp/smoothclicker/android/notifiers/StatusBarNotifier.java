@@ -30,6 +30,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
 import pylapp.smoothclicker.android.R;
@@ -40,7 +41,7 @@ import pylapp.smoothclicker.android.views.ClickerActivity;
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 1.6.0
+ * @version 2.1.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -125,9 +126,9 @@ public class StatusBarNotifier {
     public void makeNotification( NotificationTypes type, int... params ){
 
         NotificationCompat.Builder b = new NotificationCompat.Builder(mContext);
-        b.setSmallIcon(R.drawable.logo_32);
+        b.setSmallIcon(R.drawable.notification_icon);
         b.setContentTitle(mContext.getString(R.string.notif_content_title));
-        b.setVisibility(Notification.VISIBILITY_PUBLIC);
+        if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ) b.setVisibility(Notification.VISIBILITY_PUBLIC);
 
         if ( type != NotificationTypes.CLICK_MADE && type != NotificationTypes.CLICKS_ON_GOING_BY_SERVICE ) {
             Intent activityToStartOnClick = new Intent(mContext, ClickerActivity.class);
@@ -147,7 +148,7 @@ public class StatusBarNotifier {
                 n = b.build();
                 n.flags |= Notification.FLAG_NO_CLEAR;
                 n.flags |= Notification.FLAG_SHOW_LIGHTS;
-                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_PROCESS_ON_GOING_BY_APP, n);
                 break;
             case CLICKS_ON_GOING_BY_SERVICE:
@@ -157,36 +158,36 @@ public class StatusBarNotifier {
                 n = b.build();
                 n.flags |= Notification.FLAG_NO_CLEAR;
                 n.flags |= Notification.FLAG_SHOW_LIGHTS;
-                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_PROCESS_ON_GOING_BY_SERVICE, n);
                 break;
             case CLICKS_STOPPED:
                 b.setContentText(mContext.getString(R.string.notif_content_text_clicks_stop));
                 n = b.build();
-                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_PROCESS_STOPPED, n);
                 break;
             case CLICKS_OVER:
                 b.setContentText(mContext.getString(R.string.notif_content_text_clicks_over));
                 n = b.build();
-                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_PROCESS_OVER, n);
                 break;
             case CLICK_MADE:
-                StringBuffer sb = new StringBuffer();
+                StringBuilder sb = new StringBuilder();
                 sb.append(mContext.getString(R.string.notif_content_text_click_made));
                 if ( params != null && params.length == 2 ){
                     sb.append(" : ").append(params[0]).append(" / ").append(params[1]);
                 }
                 b.setContentText(sb.toString());
                 n = b.build();
-                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_MADE, n);
                 break;
             case SU_GRANTED:
                 b.setContentText(mContext.getString(R.string.notif_content_text_su_granted));
                 n = b.build();
-                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_SU_GRANTED, n);
                 break;
             case COUNT_DOWN:
@@ -196,8 +197,8 @@ public class StatusBarNotifier {
                     b.setContentText(mContext.getString(R.string.notif_content_text_countdown));
                 }
                 n = b.build();
-                n.flags |= Notification.FLAG_NO_CLEAR;
-                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_NO_CLEAR;
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_COUNT_DOWN, n);
                 break;
         }

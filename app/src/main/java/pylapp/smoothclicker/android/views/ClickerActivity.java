@@ -30,8 +30,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -57,7 +55,6 @@ import pylapp.smoothclicker.android.tools.ShakeToClean;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.ConfigStatus;
-import pylapp.smoothclicker.android.utils.AppConfigVersions;
 import pylapp.smoothclicker.android.tools.Logger;
 
 import com.kyleduo.switchbutton.SwitchButton;
@@ -74,7 +71,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.13.0
+ * @version 2.14.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -86,16 +83,16 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      * CONSTANTS *
      * ********* */
 
-    /**
-     * The result code for the SelectPointActivity
-     */
-    @Deprecated
-    private static final int SELECT_POINT_ACTIVITY_RESULT_CODE = 0x000011;
-    /**
-     * The key to get the selected point
-     */
-    @Deprecated
-    public static final String SELECT_POINT_ACTIVITY_RESULT = "0x000012";
+//    /**
+//     * The result code for the SelectPointActivity
+//     */
+//    @Deprecated
+//    private static final int SELECT_POINT_ACTIVITY_RESULT_CODE = 0x000011;
+//    /**
+//     * The key to get the selected point
+//     */
+//    @Deprecated
+//    public static final String SELECT_POINT_ACTIVITY_RESULT = "0x000012";
 
     /**
      * The result code for the SelectMultiPointsActivity
@@ -381,7 +378,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, isVibrateOnClick);
         editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, isDisplayNotifs);
 
-        editor.commit();
+        editor.apply();
 
         return ConfigStatus.TIME_GAP_NOT_DEFINED.READY;
 
@@ -419,7 +416,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                     .setNegativeButton(R.string.warning_hazard_repeat_endless_no, new DialogInterface.OnClickListener() {
                         public void onClick( DialogInterface dialog, int which ){
                             // Do nothing
-                            return;
                         }
                     })
                     .show();
@@ -469,29 +465,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         cb.setChecked(Config.DEFAULT_REPEAT_ENDLESS);
 
         handleMultiPointResult( null ); // Make the spinner of points to click empty
-
-    }
-
-    /**
-     * Displays the "about" information, i.e. some information about the app.
-     * The display is made in the snackbar.
-     */
-    private void displayAboutInfo(){
-
-        PackageInfo pi = null;
-        try {
-            pi = getPackageManager().getPackageInfo(getPackageName(), 0);
-        } catch ( PackageManager.NameNotFoundException | NullPointerException e ){
-            e.printStackTrace();
-        }
-
-        String tag = AppConfigVersions.VERSION_TAG_CURRENT;
-        String code = pi.versionCode+"";
-        String name = pi.versionName;
-
-        StringBuffer sb = new StringBuffer();
-        sb.append(tag).append(" - Version code : ").append(code).append(" - Version : ").append(name);
-        showInSnackbarWithoutAction(sb.toString());
 
     }
 
@@ -562,7 +535,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     public void onClick( DialogInterface dialog, int which ){
                         // Do nothing
-                        return;
                     }
                 })
                 .show();

@@ -31,9 +31,10 @@ import android.util.Log;
  * Class to use to log things with a small amount of fun.
  * 
  * @author pylapp
- * @version 1.0.0
+ * @version 2.0.0
  * @since 02/03/2016
  */
+@SuppressWarnings("unused")
 public final class Logger {
 
 	/**
@@ -139,7 +140,7 @@ public final class Logger {
 	 * @return String - The ASCII-art rosa
 	 */
 	private static String createRosa(){
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		sb.append("\n");
 		sb.append("          __ \n");
 		sb.append("     _   / /| \n");
@@ -165,7 +166,7 @@ public final class Logger {
 	 * @return String - The ASCII-art dalek
 	 */
 	private static String createDalek(){
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		sb.append("\n");
 		sb.append("     _n____n__\n");
 		sb.append("     /         \\---||--<\n");
@@ -203,7 +204,7 @@ public final class Logger {
 	 */
 	private static String createReaper(){
 		
-		StringBuffer sb1 = new StringBuffer();
+		StringBuilder sb1 = new StringBuilder();
 		sb1.append("\n\ntttttttttttttttt11ttttttttttttttttttttttL88888888C888888L1tt1tttttttttttttttttttttttt1111111111111tttt\n");
 		sb1.append("tttttttttttt1tttttttttttttttttttttttttttG88888888C8888880ttttttttttttttttttttttttttttt11111111t1111ttt\n");
 		sb1.append("ttttttttttttt1tttttttttttttttttttttttttf888888888C8888880Ltttttttttttttttttttttttttttttttttttttttttttt\n");
@@ -244,7 +245,7 @@ public final class Logger {
 		sb1.append(",,,,,,,,,,,,,,,,,,,,,,,,,C000f;,,,L88888888888888888C888888888888t,,,G8G:,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n");
 		sb1.append(",,,,,,,,,,,,,,,,,,,,,,,,,,;00t:,,f88888888888888888808888888888888888Gf;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,:\n");
 		
-		StringBuffer sb2 = new StringBuffer();
+		StringBuilder sb2 = new StringBuilder();
 		sb2.append(",,,,,,,,,,,,,,,,,,,,,,,,,,,i0;,,:888888888888888888808888888888888880:,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,:\n");
 		sb2.append(",,,,,,:,,::,::,,,,,::::::::::,,:G08888888888888888880888888888888880;::::::::::,,::::::::::::,,,,,,:,:\n");
 		sb2.append(",:::,:::::::::::::::::::::::::,L00888888888888888888808888888888888C::::::::::::::::::::::::::::::::::\n");
@@ -298,7 +299,7 @@ public final class Logger {
 	 * @return String - The ASCII-art Joly Roger
 	 */
 	private static String createJolyRoger(){
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		sb.append("  _                   _ \n");
 		sb.append(" _( )                 ( )_ \n");
 		sb.append("(_, |      __ __      | ,_) \n");

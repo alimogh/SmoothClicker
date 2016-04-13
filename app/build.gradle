@@ -82,7 +82,7 @@ dependencies {
     // Card views
     // //////////
     // http://developer.android.com/training/material/lists-cards.html
-    compile 'com.android.support:cardview-v7:23.0.+'
+    compile 'com.android.support:cardview-v7:23.1.1'
 
     // ////////////
     // SwitchButton

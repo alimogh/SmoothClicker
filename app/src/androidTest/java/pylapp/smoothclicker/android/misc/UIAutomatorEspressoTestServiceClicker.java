@@ -59,7 +59,7 @@ import static org.junit.Assert.assertTrue;
  * Class to use to make instrumented tests with Espresso and UIAUtomator of the ServiceClicker.
  *
  *  @author pylapp
- *  @version 1.1.0
+ *  @version 1.1.1
  *  @since 22/03/2016
  *  @see AbstractTest
  */
@@ -141,7 +141,7 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
         startIntent.putExtra("0x000031", false);// Vibrate on start ?
         startIntent.putExtra("0x000032", false);// Vibrate on each click ?
         startIntent.putExtra("0x000041", true);// Make notifications ?
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         points.add(695); // x0
         points.add(799); // y0
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
@@ -182,7 +182,7 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
         Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
         startIntent.setAction("pylapp.smoothclicker.android.clickers.ServiceClicker.STOP");
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 
@@ -199,11 +199,11 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
         Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
         startIntent.setAction("pylapp.smoothclicker.android.clickers.ServiceClicker.START");
         startIntent.putExtra("0x000012", -20);   // How much delay for the start ?
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         points.add(0); // x0
         points.add(0); // y0
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 
@@ -220,11 +220,11 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
         Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
         startIntent.setAction("pylapp.smoothclicker.android.clickers.ServiceClicker.START");
         startIntent.putExtra("0x000013", -2);    // The amount of time to wait between clicks
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         points.add(0); // x0
         points.add(0); // y0
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 
@@ -241,11 +241,11 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
         Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
         startIntent.setAction("pylapp.smoothclicker.android.clickers.ServiceClicker.START");
         startIntent.putExtra("0x000021", -10);    // The number of repeat to do
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         points.add(0); // x0
         points.add(0); // y0
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 
@@ -261,13 +261,13 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
         Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
         startIntent.setAction("pylapp.smoothclicker.android.clickers.ServiceClicker.START");
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         points.add(0); // x0
         points.add(42); // y0
         points.add(1337); // x1
         points.add(-50); // y1
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 
@@ -284,11 +284,11 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
         Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
         startIntent.setAction("pylapp.smoothclicker.android.clickers.ServiceClicker.START");
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         points.add(Integer.MAX_VALUE); // x0
         points.add(Integer.MAX_VALUE); // y0
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 
@@ -304,11 +304,11 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
 
         Intent startIntent = new Intent(InstrumentationRegistry.getTargetContext(), ServiceClicker.class);
         startIntent.setAction("pylapp.smoothclicker.android.clickers.ServiceClicker.START");
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         points.add(Integer.MIN_VALUE); // x0
         points.add(Integer.MIN_VALUE); // y0
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 
@@ -336,9 +336,9 @@ public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
         startIntent.putExtra("0x000031", false);// Vibrate on start ?
         startIntent.putExtra("0x000032", false);// Vibrate on each click ?
         startIntent.putExtra("0x000041", true);// Make notifications ?
-        ArrayList<Integer> points = new ArrayList<Integer>();
+        ArrayList<Integer> points = new ArrayList<>();
         startIntent.putIntegerArrayListExtra("0x000051", points); // The list of points
-        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){ }
+        try { mServiceRule.startService( startIntent ); } catch ( TimeoutException te ){te.printStackTrace();}
 
     }
 

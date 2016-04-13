@@ -27,16 +27,16 @@ LAST TASK : #54
 
 TO DO
     Task #49 : [v1.9.x] App intro
-    Task #47 : [vx.x.x] Make a new run of Lint to optimize the app
-    Task #16 : [v1.10.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
+    Task #16 : [v2.0.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
     Task #2  : [v2.x.x] Movable floating action button
     Task #52 : [v2.x.x] Make the clicks and the other actions without root nor SU
-    Task #43 : [vx.x.x] Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
-    Task #36 : [vx.x.x] Date picker to define a time period when clicks process can be done
+    Task #47 : [vx.x.x] Make a new run of Lint to optimize the app
 
-    Task #51 : Refactor the list of credits by using a ListView and a dedicated Adapter
     Task #48 : Check if ProGuard can rise errors or make unexpected behaviours in the app because of ClassNotFound of bad optimization
-                    (http://developer.android.com/tools/help/proguard.html)
+                        (http://developer.android.com/tools/help/proguard.html)
+    Task #51 : Refactor the list of credits by using a ListView and a dedicated Adapter
+    Task #43 : Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
+    Task #36 : Date picker to define a time period when clicks process can be done
     Task #50 : Refactor the pool of tests: do not separate tests according to their frameworks, but make packages with the same schema as the sources packages, and gather the Espresso / UIAutomator tests in same files (one for this activity, one for that, ...)
     Task #34 : Load LUA scripts to make the clicks
     Task #35 : Fabric.io, Crashlytics or other tools for bug tracking ?

@@ -28,9 +28,12 @@ package pylapp.smoothclicker.android.uiautomator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+
 import android.support.test.InstrumentationRegistry;
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import android.support.test.runner.lifecycle.Stage;
+
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
@@ -40,22 +43,20 @@ import android.support.test.uiautomator.Until;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
-import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.views.ClickerActivity;
 
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Collection;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
 
 /**
  * Class to use to make UI tests with UIAutomator of the ClickerActivity.

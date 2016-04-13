@@ -41,7 +41,7 @@ import java.util.List;
  * A BaseAdapter for the view containing the points to click on
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since  17/03/2016
  * @see BaseAdapter
  */
@@ -76,7 +76,7 @@ public class PointsListAdapter extends BaseAdapter {
         super();
 
         mContext = c;
-        mPoints = new ArrayList<Point>();
+        mPoints = new ArrayList<>();
 
         if ( xyPoints == null ){
             throw new IllegalArgumentException("The xyPoints is null !");
@@ -111,7 +111,7 @@ public class PointsListAdapter extends BaseAdapter {
 
     /**
      *
-     * @param position
+     * @param position -
      * @return Object
      */
     @Override
@@ -140,7 +140,7 @@ public class PointsListAdapter extends BaseAdapter {
     public View getView( int position, View convertView, ViewGroup parent ){
 
         LayoutInflater lf = LayoutInflater.from(mContext);
-        convertView = lf.inflate(R.layout.list_points_item, null);
+        convertView = lf.inflate(R.layout.list_points_item, null); // FIXME LINT
         TextView tv = (TextView) convertView.findViewById(R.id.tvTitleOfPointList);
 
         tv.setText(mPoints.get(position).toString());
@@ -247,7 +247,7 @@ public class PointsListAdapter extends BaseAdapter {
         @Override
         public String toString(){
             if ( mDesc != null && mDesc.length() > 0 ) return mDesc;
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             sb.append("x = ").append(mX).append(" / y = ").append(mY);
             return sb.toString();
         }

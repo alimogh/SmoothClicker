@@ -33,7 +33,7 @@
         android:orderInCategory="100"
         android:title="@string/action_clean_points"
         android:icon="@drawable/icon_clean_points"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <!-- The "clean all" feature -->
     <item
@@ -41,7 +41,7 @@
         android:orderInCategory="100"
         android:title="@string/action_clean_all"
         android:icon="@drawable/icon_clean_all"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <!-- The "settings" menu -->
     <item

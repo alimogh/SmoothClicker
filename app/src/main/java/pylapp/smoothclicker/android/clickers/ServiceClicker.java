@@ -72,7 +72,7 @@ import java.util.ArrayList;
      </pre>
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 18/03/2016
  * @see IntentService
  * @see ATClicker
@@ -387,7 +387,7 @@ public class ServiceClicker extends IntentService {
                     makeCountDownNotification(mDelay - i);
                     Thread.sleep(1000); // Sleep of 1 second
                     if ( checkIfCancelled() ) return;
-                } catch ( InterruptedException ie ){}
+                } catch ( InterruptedException ie ){ie.printStackTrace();}
             }
             stopAllNotifications();
         }
@@ -408,7 +408,7 @@ public class ServiceClicker extends IntentService {
                     try {
                         Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
                         Thread.sleep(mTimeGap*1000);
-                    } catch ( InterruptedException ie ){}
+                    } catch ( InterruptedException ie ){ie.printStackTrace();}
                 } else {
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
                 }
@@ -428,7 +428,7 @@ public class ServiceClicker extends IntentService {
                     try {
                         Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
                         Thread.sleep(mTimeGap*1000);
-                    } catch ( InterruptedException ie ){}
+                    } catch ( InterruptedException ie ){ie.printStackTrace();}
                 } else {
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
                 }
@@ -476,7 +476,7 @@ public class ServiceClicker extends IntentService {
                 try {
                     Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
                     Thread.sleep(mTimeGap*1000);
-                } catch ( InterruptedException ie ){}
+                } catch ( InterruptedException ie ){ie.printStackTrace();}
             } else {
                 Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
             }
@@ -601,7 +601,7 @@ public class ServiceClicker extends IntentService {
          */
         TERMINATED("0x001004");
 
-        String mCode;
+        final String mCode;
 
         StatusTypes( String s ){
             mCode = s;

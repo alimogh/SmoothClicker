@@ -34,8 +34,6 @@
     <!-- http://www.bing.com/translator/ : French/English to Klingon -->
 
     <!-- Menus -->
-    <string name="action_about">umqu\' ghot</string>
-    <string name="action_credit">chaw\'</string>
     <string name="action_exit">mej</string>
     <string name="action_settings">DuH</string>
     <string name="action_clean_points">wIv lang Qaw\'</string>
@@ -47,7 +45,6 @@
     <string name="info_message_request_su">botlhobbogh su naw\'</string>
     <string name="info_message_su_granted">Qu\' su naw\'</string>
     <string name="info_message_new_point">chu\' lang jIHDaq chollaw\'lI\' wIv</string>
-    <string name="info_message_invite_new_point">chu\' lang jIHDaq chollaw\'lI\' wIv</string>
     <string name="info_message_invite_new_points">lang puS wIv \'ej vaj Dub</string>
     <string name="error_message_su_not_granted">wej Suq su naw\'</string>
     <string name="error_su_missing">Android \'oQqar SoH pa\' app lo\'? Daghaj.</string>
@@ -72,9 +69,6 @@
     <string name="widget_vibrate_on_click">wab click</string>
     <string name="widget_delayed_starts">mIm</string>
     <string name="widget_immediate_starts">DaH</string>
-    <string name="widget_click_coordinates">lang jIHDaq chollaw\'lI\' wIv</string>
-    <string name="widget_x_coordinate">x Quv</string>
-    <string name="widget_y_coordinate">y Quv</string>
     <string name="widget_xy_coordinates">volchaHDaj click</string>
     <string name="widget_notifications">QIn</string>
 
