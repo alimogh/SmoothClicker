@@ -35,7 +35,7 @@ import android.hardware.SensorManager;
  * Class which shows features for a Shake To Clean service.
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.4.0
  * @since 17/03/2016
  * @see SensorEventListener
  */
@@ -59,9 +59,9 @@ public class ShakeToClean implements SensorEventListener {
      */
     private long mLastTimestampAcc;
     /**
-     * The variations of the axis
+     * For the variations of the axis
      */
-    private float mX, mY, mZ, mXprev, mYprev, mZprev;
+    private float mXprev, mYprev, mZprev;
 
     /**
      * The object to warn when the shake to clean event has been detected
@@ -124,10 +124,10 @@ public class ShakeToClean implements SensorEventListener {
         if ( (actualAccTs - mLastTimestampAcc) > SEUIL_TIMESTAMP_ACCELEROMETER ){
             long diffTime = (actualAccTs - mLastTimestampAcc);
             mLastTimestampAcc = actualAccTs;
-            mX = se.values[0];
-            mY = se.values[1];
-            mZ = se.values[2];
-            float speed = Math.abs(mX+mY+mZ-mXprev-mYprev-mZprev) / diffTime * 10000;
+            float x = se.values[0];
+            float y = se.values[1];
+            float z = se.values[2];
+            float speed = Math.abs(x+y+z-mXprev-mYprev-mZprev) / diffTime * 10000;
             if ( speed > SEUIL_SHAKE ){
                 if ( mCallback == null ){
                     throw new IllegalStateException("Nobody can handle the shake to clean event !");
@@ -135,9 +135,9 @@ public class ShakeToClean implements SensorEventListener {
                     mCallback.shakeToClean();
                 }
             }
-            mXprev = mX;
-            mYprev = mY;
-            mZprev = mZ;
+            mXprev = x;
+            mYprev = y;
+            mZprev = z;
         }
     }
 
@@ -149,7 +149,6 @@ public class ShakeToClean implements SensorEventListener {
     @Override
     public void onAccuracyChanged( Sensor sensor, int accuracy ){
         // Do nothing
-        return;
     }
 
 

@@ -77,10 +77,6 @@ public class UIAutomatorTestSettingsActivity extends AbstractTest {
     /**
      *
      */
-    private static final int WAIT_FOR_EXISTS_TIMEOUT = 5000;
-    /**
-     *
-     */
     private static final String PACKAGE_APP_PATH = "pylapp.smoothclicker.android";
 
 

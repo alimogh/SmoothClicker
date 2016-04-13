@@ -54,7 +54,7 @@ import org.junit.BeforeClass;
  *  </ul>
  *
  *  @author pylapp
- *  @version 1.0.0
+ *  @version 1.0.1
  *  @since 21/03/2016
  */
 //@RunWith(AndroidJUnit4.class)
@@ -92,7 +92,7 @@ public abstract class AbstractTest {
      * @param timeMs - The time to wait
      */
     protected void w( long timeMs ){
-        try { Thread.sleep(timeMs); } catch ( InterruptedException ie ){}
+        try { Thread.sleep(timeMs); } catch ( InterruptedException ie ){ie.printStackTrace();}
     }
 
     /**

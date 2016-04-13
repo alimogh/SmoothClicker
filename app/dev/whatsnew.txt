@@ -58,10 +58,11 @@ v1.8.2
     - More refactor
     - Optimization
 v1.9.0 : Holy Hedgehog
-    - Refactor the GUI with a enw switch button
-    - More bug fixes
     - New feature : possible to restore all the default values
     - New feature : possible to delete all the selected points
     - New feature : an helping toast is displayed on the clicking screen when the user is inactive
     - New feature : a snackbar is displayed to show to the user its defined action, instead of a toast
     - New feature : the user can undo its action thanks to a dismiss button in the snackbar
+    - Refactor the GUI with a new switch button
+    - More bug fixes
+    - More optimization and clean

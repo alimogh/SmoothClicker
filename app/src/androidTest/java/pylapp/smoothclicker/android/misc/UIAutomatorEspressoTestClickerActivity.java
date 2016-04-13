@@ -9,7 +9,12 @@ import android.support.test.espresso.action.CoordinatesProvider;
 import android.support.test.espresso.action.GeneralClickAction;
 import android.support.test.espresso.action.Press;
 import android.support.test.espresso.action.Tap;
-import android.support.test.espresso.assertion.ViewAssertions;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.swipeUp;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
@@ -18,41 +23,28 @@ import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 
 import android.view.View;
-import android.widget.ListView;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.notNullValue;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.Config;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.pressBack;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.swipeUp;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.empty;
-import static org.hamcrest.Matchers.notNullValue;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 /**
  * Class to use to make UI tests with UIAutomator and Espresso of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.1.1
  * @since 11/04/2016
  * @see AbstractTest
  */
@@ -308,28 +300,28 @@ public class UIAutomatorEspressoTestClickerActivity extends AbstractTest {
 
                         final float screenX = screenPos[0] + x;
                         final float screenY = screenPos[1] + y;
-                        float[] coordinates = {screenX, screenY};
 
-                        return coordinates;
+                        return new float[]{screenX, screenY};
+
                     }
                 },
                 Press.FINGER);
     }
 
-    /**
-     * Matcher for a list with its size
-     * @param size
-     * @return Matcher<View>
-     */
-    public static Matcher<View> withListSize( final int size ){
-        return new TypeSafeMatcher<View>() {
-            @Override public boolean matchesSafely( final View view ){
-                return ((ListView) view).getChildCount () == size;
-            }
-            @Override public void describeTo( final Description description ){
-                description.appendText ("ListView should have " + size + " items");
-            }
-        };
-    }
+//    /**
+//     * Matcher for a list with its size
+//     * @param size -
+//     * @return Matcher<View>
+//     */
+//    public static Matcher<View> withListSize( final int size ){
+//        return new TypeSafeMatcher<View>() {
+//            @Override public boolean matchesSafely( final View view ){
+//                return ((ListView) view).getChildCount () == size;
+//            }
+//            @Override public void describeTo( final Description description ){
+//                description.appendText ("ListView should have " + size + " items");
+//            }
+//        };
+//    }
 
 }

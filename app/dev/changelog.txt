@@ -237,9 +237,10 @@ What:
     feat: undo the new point creation thanks to a dismiss button in the notification snackbar
     doc: update the doc
 ###################################################
-Date:
+Date: 13/04/2016
 What:
-
+    chore: new run of Lint and more, more and moooore clean and optimization of sources
+    doc: update the doc
 ###################################################
 Date:
 What:

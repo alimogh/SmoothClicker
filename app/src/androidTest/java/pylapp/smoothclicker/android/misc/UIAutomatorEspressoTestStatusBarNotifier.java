@@ -201,7 +201,7 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
         testNotification(textContent);
         mSbn.removeAllNotifications();
         w(1000);
-        mSbn.makeNotification(type, null);
+        mSbn.makeNotification(type);
         testNotification(textContent);
         mSbn.removeAllNotifications();
         w(1000);

@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.utils.AppConfigVersions;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -82,7 +82,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Builds the release string
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(AppConfigVersions.VERSION_TAG_CURRENT);
         try {
             PackageInfo pi = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -121,7 +121,7 @@ public class SettingsActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.preferences);
 
             // The credits view with all third party contents
-            Preference pref = (Preference) findPreference(PREF_KEY_CREDITS);
+            Preference pref = findPreference(PREF_KEY_CREDITS);
             pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     startActivity(new Intent(getActivity(), CreditsActivity.class));
@@ -130,7 +130,7 @@ public class SettingsActivity extends AppCompatActivity {
             });
 
             // The page of the author
-            pref = (Preference) findPreference(PREF_KEY_APP);
+            pref = findPreference(PREF_KEY_APP);
             pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
@@ -141,7 +141,7 @@ public class SettingsActivity extends AppCompatActivity {
             });
 
             // The version
-            pref = (Preference) findPreference(PREF_KEY_ABOUT_VERSION);
+            pref = findPreference(PREF_KEY_ABOUT_VERSION);
             pref.setSummary(sVersionRelease);
 
         }

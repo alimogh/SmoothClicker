@@ -46,7 +46,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.5.0
+ * @version 2.5.1
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -216,7 +216,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
                     if ( checkIfCancelled() ) return null;
                     NotificationsManager.getInstance(mContext).makeCountDownNotification(mDelay-i);
                     Thread.sleep(1000); // Sleep of 1 second
-                } catch ( InterruptedException ie ){}
+                } catch ( InterruptedException ie ){ie.printStackTrace();}
             }
             NotificationsManager.getInstance(mContext).stopAllNotifications();
         }
@@ -237,7 +237,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
                     try {
                         Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
                         Thread.sleep(mTimeGap*1000);
-                    } catch ( InterruptedException ie ){}
+                    } catch ( InterruptedException ie ){ie.printStackTrace();}
                 } else {
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
                 }
@@ -257,7 +257,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
                     try {
                         Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
                         Thread.sleep(mTimeGap*1000);
-                    } catch ( InterruptedException ie ){}
+                    } catch ( InterruptedException ie ){ie.printStackTrace();}
                 } else {
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
                 }
@@ -302,7 +302,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
      * @param c - The context to sue to retrieve data from Shared Preferences
      * @return ATClicker - The singleton
      */
-    public static final ATClicker getInstance( Context c ){
+    public static ATClicker getInstance( Context c ){
         if ( sInstance == null ) sInstance = new ATClicker(c);
         return sInstance;
     }
@@ -311,7 +311,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
      * Stops the AsyncTask
      * @return boolean - True if the process was working, false otherwise
      */
-    public static final boolean stop(){
+    public static boolean stop(){
         Logger.d(LOG_TAG, "Stops the clicking process");
         if ( sInstance == null ){
             Logger.w(LOG_TAG, "The ATClicker is null");
@@ -357,7 +357,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
                 try {
                     Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
                     Thread.sleep(mTimeGap*1000);
-                } catch ( InterruptedException ie ){}
+                } catch ( InterruptedException ie ){ie.printStackTrace();}
             } else {
                 Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
             }

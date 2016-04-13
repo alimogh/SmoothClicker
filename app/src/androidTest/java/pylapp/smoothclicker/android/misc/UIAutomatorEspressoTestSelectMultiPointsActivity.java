@@ -27,37 +27,40 @@ package pylapp.smoothclicker.android.misc;
 
 import android.content.Context;
 import android.content.Intent;
+
 import android.support.test.InstrumentationRegistry;
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
+
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.CoordinatesProvider;
 import android.support.test.espresso.action.GeneralClickAction;
 import android.support.test.espresso.action.Press;
 import android.support.test.espresso.action.Tap;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
+
 import android.view.View;
 
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.pressBack;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.swipeUp;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
 
 /**
  * Class to use to make UI tests with UIAutomator of the SelectMultiPointsActivity.
@@ -79,10 +82,6 @@ public class UIAutomatorEspressoTestSelectMultiPointsActivity extends AbstractTe
      *
      */
     private static final int LAUNCH_TIMEOUT_MS = 5000;
-    /**
-     *
-     */
-    private static final int WAIT_FOR_EXISTS_TIMEOUT = 5000;
     /**
      *
      */
@@ -195,9 +194,9 @@ public class UIAutomatorEspressoTestSelectMultiPointsActivity extends AbstractTe
 
                         final float screenX = screenPos[0] + x;
                         final float screenY = screenPos[1] + y;
-                        float[] coordinates = {screenX, screenY};
 
-                        return coordinates;
+                        return new float[]{screenX, screenY};
+
                     }
                 },
                 Press.FINGER);
