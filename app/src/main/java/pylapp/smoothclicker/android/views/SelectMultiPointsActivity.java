@@ -49,7 +49,7 @@ import java.util.ArrayList;
      </pre>
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 17/03/2016
  */
 public class SelectMultiPointsActivity extends TranslucentActivity {
@@ -115,7 +115,7 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
                 initHelpingToastsRoutine();
 
                 // Notify the user
-                showInSnackbarWithoutAction("Click X = " + X + " / Y = " + Y);
+                showInSnackbarWithDismissAction("Click X = " + X + " / Y = " + Y);
 
                 return false;
 
@@ -204,6 +204,39 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
         if ( message == null || message.length() <= 0 ) return;
         View v = findViewById(R.id.translucentMainView);
         Snackbar.make(v, message, Snackbar.LENGTH_LONG).setAction("", null).show();
+    }
+
+    /**
+     * Displays in the snack bar a message with a dismiss action.
+     * If the user click on the dismiss action, its selected point will be removed
+     * @param message - The string to display. Will do nothing if null or empty
+     */
+    private void showInSnackbarWithDismissAction( String message ){
+
+        if ( message == null || message.length() <= 0 ) return;
+
+        View v = findViewById(R.id.translucentMainView);
+
+        Snackbar.make(v, message, Snackbar.LENGTH_LONG)
+                .setAction(getString(R.string.snackbar_action_dismiss),
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                removeLastPoint();
+                            }
+                        }
+                ).show();
+
+    }
+
+    /**
+     * Removes form the list of coordinates the last point, i.e. the two last items
+     */
+    private void removeLastPoint(){
+        if ( mXYCoordinates == null || mXYCoordinates.size() <= 0 ) return;
+        int index = mXYCoordinates.size() - 1; // Start from 0...
+        mXYCoordinates.remove(index); // The Y
+        mXYCoordinates.remove(index-1); // The X
     }
 
 }

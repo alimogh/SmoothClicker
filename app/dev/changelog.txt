@@ -232,9 +232,10 @@ What:
     test: new tests for the snackbar about new action
     doc: update the doc
 ###################################################
-Date:
+Date: 13/04/2016
 What:
-
+    feat: undo the new point creation thanks to a dismiss button in the notification snackbar
+    doc: update the doc
 ###################################################
 Date:
 What:
