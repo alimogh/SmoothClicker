@@ -26,6 +26,7 @@
 LAST TASK : #54
 
 TO DO
+    Task #55 : New screen shots, update the README and the wiki
     Task #49 : [v1.9.x] App intro
     Task #16 : [v2.0.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
     Task #2  : [v2.x.x] Movable floating action button
