@@ -26,6 +26,7 @@
 package pylapp.smoothclicker.android.views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,12 +34,13 @@ import android.os.Bundle;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
 import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.utils.Config;
 
 /**
  * The splash screen activity
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 2.0.0
  * @since 15/03/2016
  */
 public class SplashScreenActivity extends AppCompatActivity {
@@ -84,6 +86,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState ){
         super.onCreate(savedInstanceState);
+        // If the app has been started previously, do not start the splash screen and run to the next activity
         if ( ! sIsFirstLaunch) {
             Intent i = new Intent(SplashScreenActivity.this, ClickerActivity.class);
             startActivity(i);
@@ -108,9 +111,26 @@ public class SplashScreenActivity extends AppCompatActivity {
         mCallback = new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreenActivity.this, ClickerActivity.class);
-                startActivity(i);
-                finish();
+                // If this is the first start of the app (after the install), show the intro screen
+                if ( isFirstStartSinceInstall() ){
+
+                    // Change the settings
+                    SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putBoolean(Config.SP_KEY_IS_FIRST_START, false);
+                    editor.apply();
+
+                    // Starts the intro screen
+                    Intent i = new Intent(SplashScreenActivity.this, IntroScreensActivity.class);
+                    startActivity(i);
+                    finish();
+
+                // The app has been started previously, the user knows it, so go to the "main" activity
+                } else {
+                    Intent i = new Intent(SplashScreenActivity.this, ClickerActivity.class);
+                    startActivity(i);
+                    finish();
+                }
             }
         };
         mHandler.postDelayed(mCallback, SPLASH_TIME_OUT);
@@ -131,6 +151,20 @@ public class SplashScreenActivity extends AppCompatActivity {
         }
         sIsFirstLaunch = true;
         finish();
+    }
+
+
+    /* ************* *
+     * OTHER METHODS *
+     * ************* */
+
+    /**
+     * Checks it the app ahs ever been started or not
+     * @return boolean - True if the app has never benn started previously, false otherwise
+     */
+    private boolean isFirstStartSinceInstall(){
+        SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
+        return sp.getBoolean(Config.SP_KEY_IS_FIRST_START, Config.DEFAULT_IS_FIRST_START);
     }
 
 }

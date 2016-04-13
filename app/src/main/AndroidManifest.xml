@@ -71,6 +71,12 @@
 
         </activity>
 
+        <!-- The intro screen -->
+        <activity
+            android:name=".views.IntroScreensActivity"
+            android:label="@string/app_intro"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <!-- The main activity of the app -->
         <activity
             android:name=".views.ClickerActivity"

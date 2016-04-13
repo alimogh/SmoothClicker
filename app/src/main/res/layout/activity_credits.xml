@@ -299,11 +299,11 @@
 
         </android.support.v7.widget.CardView>
 
-        <!-- The icon for the feature "clean points" -->
+        <!-- The icons made by FreepiK -->
 
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/cv_credits_icon_erase_points"
+            android:id="@+id/cv_credits_icon_flaticons_freepik"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -322,40 +322,40 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
-                    android:text="@string/credits_icon_trash2_label"
+                    android:text="@string/credits_icon_flaticon_freepik_label"
                     android:paddingBottom="@dimen/activity_vertical_margin"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/credits_icon_trash2_desc"/>
+                    android:text="@string/credits_icon_flaticon_freepik_desc"/>
 
                 <TextView
-                    android:id="@+id/tvCreditsIconErasePointsUrl"
+                    android:id="@+id/tvCreditsFlaticonsFreepikUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/activity_horizontal_margin"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/credits_icon_trash2_url"/>
+                    android:text="@string/credits_icon_flaticon_freepik_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/activity_horizontal_margin"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/credits_icon_trash2_license"
+                    android:text="@string/credits_icon_flaticon_freepik_license"
                     android:textStyle="bold"/>
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
-        <!-- The icon for the feature "clean all" -->
+        <!-- The icons made by Elegant Themse -->
 
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/cv_credits_icon_erase_all"
+            android:id="@+id/cv_credits_icon_flaticons_eleganthemes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -374,29 +374,81 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
-                    android:text="@string/credits_icon_trash_label"
+                    android:text="@string/credits_icon_flaticon_elegantthemes_label"
                     android:paddingBottom="@dimen/activity_vertical_margin"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/credits_icon_trash_desc"/>
+                    android:text="@string/credits_icon_flaticon_elegantthemes_desc"/>
 
                 <TextView
-                    android:id="@+id/tvCreditsIconEraseAllUrl"
+                    android:id="@+id/tvCreditsFlaticonsElegantthemesUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/activity_horizontal_margin"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/credits_icon_trash_url"/>
+                    android:text="@string/credits_icon_flaticon_elegantthemes_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/activity_horizontal_margin"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/credits_icon_trash_license"
+                    android:text="@string/credits_icon_flaticon_elegantthemes_license"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!-- The icons made by Yannick -->
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv_credits_icon_flaticons_yannick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/credits_icon_flaticon_yannick_label"
+                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_icon_flaticon_yannick_desc"/>
+
+                <TextView
+                    android:id="@+id/tvCreditsFlaticonsYannickUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_icon_flaticon_yannick_url"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_icon_flaticon_yannick_license"
                     android:textStyle="bold"/>
 
             </LinearLayout>
@@ -404,5 +456,6 @@
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
+
 
 </ScrollView>

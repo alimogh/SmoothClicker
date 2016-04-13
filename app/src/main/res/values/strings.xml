@@ -97,15 +97,20 @@
     <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
     <string name="credits_switchbutton_license">Under License Apache v2</string>
 
-    <string name="credits_icon_trash_label">Icon \"clean all\"</string>
-    <string name="credits_icon_trash_desc">Icon made by FreepiK from www.flaticon.com</string>
-    <string name="credits_icon_trash_url">http://www.flaticon.com/free-icon/delete_121116</string>
-    <string name="credits_icon_trash_license">Under Flaticon Basic License</string>
+    <string name="credits_icon_flaticon_freepik_label">Icons</string>
+    <string name="credits_icon_flaticon_freepik_desc">Icons made by FreepiK from www.flaticon.com</string>
+    <string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
+    <string name="credits_icon_flaticon_freepik_license">Under Flaticon Basic License</string>
 
-    <string name="credits_icon_trash2_label">Icon \"clean points\"</string>
-    <string name="credits_icon_trash2_desc">Icon made by FreepiK from www.flaticon.com</string>
-    <string name="credits_icon_trash2_url">http://www.flaticon.com/free-icon/garbage_121115</string>
-    <string name="credits_icon_trash2_license">Under Flaticon Basic License</string>
+    <string name="credits_icon_flaticon_elegantthemes_label">Icons</string>
+    <string name="credits_icon_flaticon_elegantthemes_desc">Icons made by Elegant Themes from www.flaticon.com</string>
+    <string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-themes</string>
+    <string name="credits_icon_flaticon_elegantthemes_license">Under CC 3.0 BY License</string>
+
+    <string name="credits_icon_flaticon_yannick_label">Icons</string>
+    <string name="credits_icon_flaticon_yannick_desc">Icons made by Yannick from www.flaticon.com</string>
+    <string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/yannick</string>
+    <string name="credits_icon_flaticon_yannick_license">Under CC 3.0 BY License</string>
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
@@ -137,10 +142,23 @@
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Undo</string>
 
+    <!-- Intro screens -->
+    <string name="intro_welcome_label">Hey!</string>
+    <string name="intro_welcome_desc">Welcome to Smooth Clicker</string>
+    <string name="intro_root_label">Root</string>
+    <string name="intro_root_desc">You need to have a rooted Android device to use this app</string>
+    <string name="intro_clicks_label">Clicks</string>
+    <string name="intro_clicks_desc">Define several clicks to process&#8230; </string>
+    <string name="intro_notifications_label">Configurable</string>
+    <string name="intro_notifications_desc">&#8230; and configure the process with notifications, vibrations or delays</string>
+    <string name="intro_free_label">Born to be free</string>
+    <string name="intro_free_desc">Smooth Clicker is both free and open-source!</string>
+
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>
     <string name="message_reinit_config">Clean up&#8230; </string>
     <string name="message_confirm_exit_label">Exit</string>
     <string name="message_confirm_exit_content">Do you want to quit the app?</string>
+    <string name="app_intro">Welcome to Smooth Clicker</string>
 
 </resources>

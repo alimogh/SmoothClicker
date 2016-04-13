@@ -242,9 +242,13 @@ What:
     chore: new run of Lint and more, more and moooore clean and optimization of sources
     doc: update the doc
 ###################################################
-Date:
+Date: 13/04/2016
 What:
-
+    feat: intro screen with view pager
+    doc: update the doc
+    test: new tests
+    chore: clean up
+    chore: update the credits
 ###################################################
 Date:
 What:
