@@ -31,7 +31,7 @@ The app can be found in Google Play <a href="https://play.google.com/store/apps/
 <img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_2_en.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
 </td>
 <td>
-
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/notifications_on_going_en.png" alt="The app can display notifications about what its state" title="The app can display notifications about what it is doing" width="200">
 </td>
 <td>
 <img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/credits_en.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
