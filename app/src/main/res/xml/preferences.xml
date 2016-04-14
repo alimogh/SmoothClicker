@@ -37,10 +37,9 @@
         <!-- The shake to clean -->
         <CheckBoxPreference
             android:key="pref_key_settings_shaketoclean"
-            android:checked="true"
             android:title="@string/pref_settings_shaketoclean_title"
             android:summary="@string/pref_settings_shaketoclean_summary"
-            android:defaultValue="false"/>
+            android:defaultValue="true"/>
 
     </PreferenceCategory>
 

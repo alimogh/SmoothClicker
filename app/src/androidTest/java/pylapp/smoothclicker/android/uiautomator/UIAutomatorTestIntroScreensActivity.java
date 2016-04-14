@@ -39,7 +39,7 @@ import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 
 import org.junit.Before;
-import org.junit.Test;
+//import org.junit.Test;
 
 import java.util.Collection;
 

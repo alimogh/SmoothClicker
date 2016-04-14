@@ -97,8 +97,13 @@
     <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
     <string name="credits_switchbutton_license">Under License Apache v2</string>
 
+    <string name="credits_appintro_label">AppIntro</string>
+    <string name="credits_appintro_desc">Library made by Paolo Rotolo</string>
+    <string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
+    <string name="credits_appintro_license">Under License Apache v2</string>
+
     <string name="credits_icon_flaticon_freepik_label">Icons</string>
-    <string name="credits_icon_flaticon_freepik_desc">Icons made by FreepiK from www.flaticon.com</string>
+    <string name="credits_icon_flaticon_freepik_desc">Icons made by Freepik from www.flaticon.com</string>
     <string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
     <string name="credits_icon_flaticon_freepik_license">Under Flaticon Basic License</string>
 
