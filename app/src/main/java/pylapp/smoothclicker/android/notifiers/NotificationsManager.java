@@ -35,7 +35,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * It is base on a facade design pattern for notification features.
  *
  * @author pylapp
- * @version 1.4.0
+ * @version 1.3.0
  * @since 16/03/2016
  */
 public final class NotificationsManager {
@@ -166,6 +166,14 @@ public final class NotificationsManager {
     }
 
     /**
+     * Manages the notifications about the granted SU permission
+     */
+    public void makeSuGrantedNotification(){
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.SU_GRANTED);
+    }
+
+    /**
      * Stops the notifications about the on going clicking process
      */
     public void stopClicksOnGoingNotification(){
@@ -187,6 +195,14 @@ public final class NotificationsManager {
     public void stopClickOverNotification(){
         StatusBarNotifier sbn = new StatusBarNotifier(mContext);
         sbn.removeNotification(StatusBarNotifier.NotificationTypes.CLICKS_OVER);
+    }
+
+    /**
+     * Stops the notifications about the granted SU permission
+     */
+    public void stopSuGrantedNotification(){
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.removeNotification(StatusBarNotifier.NotificationTypes.SU_GRANTED);
     }
 
     /**

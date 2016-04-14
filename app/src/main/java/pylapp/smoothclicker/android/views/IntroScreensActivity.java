@@ -38,7 +38,7 @@ import pylapp.smoothclicker.android.R;
  * The intro screen
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.0.0
  * @since 13/04/2016
  * @see AppIntro
  */
@@ -131,7 +131,15 @@ public class IntroScreensActivity extends AppIntro {
                 ContextCompat.getColor(this, R.color.colorBlack))
         );
 
-        // Slide 2: Clicks
+        // Slide 2: Root
+        addSlide(AppIntroFragment.newInstance(
+                        getString(R.string.intro_root_label),
+                        getString(R.string.intro_root_desc),
+                        R.drawable.root,
+                        ContextCompat.getColor(this, R.color.colorBlack))
+        );
+
+        // Slide 3: Clicks
         addSlide(AppIntroFragment.newInstance(
                         getString(R.string.intro_clicks_label),
                         getString(R.string.intro_clicks_desc),
@@ -139,19 +147,11 @@ public class IntroScreensActivity extends AppIntro {
                         ContextCompat.getColor(this, R.color.colorBlack))
         );
 
-        // Slide 3: Notifications
+        // Slide 4: Notifications
         addSlide(AppIntroFragment.newInstance(
                         getString(R.string.intro_notifications_label),
                         getString(R.string.intro_notifications_desc),
                         R.drawable.notifications,
-                        ContextCompat.getColor(this, R.color.colorBlack))
-        );
-
-        // Slide 4: Root ? Nope !
-        addSlide(AppIntroFragment.newInstance(
-                        getString(R.string.intro_root_label),
-                        getString(R.string.intro_root_desc),
-                        R.drawable.root,
                         ContextCompat.getColor(this, R.color.colorBlack))
         );
 

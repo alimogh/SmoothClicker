@@ -55,7 +55,7 @@
         android:layout_gravity="bottom|end"
         app:menu_scr="@android:drawable/ic_menu_manage"
         app:menu_open="arc_left"
-        app:menu_radius="120dp">
+        app:menu_radius="150dp">
 
         <!-- Starts the clicks actions -->
         <android.support.design.widget.FloatingActionButton
@@ -64,6 +64,13 @@
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_media_play"/>
 
+        <!-- Stops the clicks actions -->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_delete"/>
+
         <!-- Select a point on the screen -->
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabSelectPoint"
@@ -71,12 +78,12 @@
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_add"/>
 
-        <!-- Stops the clicks actions -->
+        <!-- Requests SU grant -->
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fabStop"
+            android:id="@+id/fabRequestSuGrant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_input_delete"/>
+            android:src="@android:drawable/ic_lock_idle_low_battery"/>
 
     </com.sa90.materialarcmenu.ArcMenu>
 
