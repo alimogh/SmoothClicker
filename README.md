@@ -11,6 +11,7 @@ No need to root its device, a simple and easy-to-use autotouch/autoclick app!_
 
 The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
 
+
 ***
 ## Screen shots
 <table>
