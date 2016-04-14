@@ -17,18 +17,29 @@ The app can be found in Google Play <a href="https://play.google.com/store/apps/
 <table>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.8.0/ui_snackbar_arcmenu_en.png" alt="Start or stops the process, add new points or ask for SU grant" title="Start or stops the process, add new points or ask for SU grant" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/intro_1_en.png" alt="Introduction screen" title="Welcome to Smooth Clicker guys!" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.8.0/select_multipoint_en_1.png" alt="Select points everywhere on the device's screen" title="Select points everywhere on the device's screen" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/main_screen_en.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
+</td>
+<td>
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_1_en.png" alt="Select several points on the screen" title="Select several points on the screen" width="200">
 </td>
 </tr>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.8.0/select_multipoint_en_2.png" alt="Select several points" title="Select several points" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_3_en.png" alt="Undo the click you have selected" title="Undo the click you have selected" width="200">
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_2_en.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.8.0/notification_on_going.png" alt="Notifications displayed during the process" title="Notifications displayed during the process" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/notifications_on_going_en.png" alt="The app can display notifications about what it is doing" title="The app can display notifications about what it is doing" width="200">
+</td>
+<td>
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/notifications_on_going_en.png" alt="The app can display notifications about what it is doing" title="The app can display notifications about what it is doing" width="200">
 </td>
 </tr>
 </table>
