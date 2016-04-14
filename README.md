@@ -1,16 +1,16 @@
 # Smooth Clicker
 _A free open-source easy to use material-designed autoclicker for Android rooted devices._
 
-This app can trigger software clicks thanks to system Shell commands executed as SU.
+This app can trigger software clicks / touches thanks to system Shell commands executed as SU.
 The app is open-source, easy to use and to configure and can make several clicks with delayed starts and pauses between each click.
 You can also repeat clicks sequences and make infinite clicks loops.
 The app possesses a dedicated Android service you can reach and trigger to make some click processes instead of using the GUI.
 
-_Why this app? Because I wanted to build my own autoclicker to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>)_
+_Why this app? Because I wanted to build my own autoclicker to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>, <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a> or <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans&">Clash of Clans</a>)_
 
 The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
 
-**Be aware this app is still in development and your device must be rooted**
+**Be aware your device must be rooted**
 
 ***
 ## Screen shots
@@ -64,10 +64,11 @@ Finally, starts the service: <br/>
 
 ***
 ## Features
-* device may vibrate on start and on each click
-* device may display notifications when the process is on going, on clicks and when the countdown is running
+* define a sequence of clicks to make
 * several points can be selected
 * a sequence of clicks can be repeated, endlessly if needed
 * a delay can be defined before each sequence of clicks
 * a pause can me made between each click
-* supported languages: English, French, Klingon
+* device may vibrate on start and on each click
+* device may display notifications when the process is on going, on clicks and when the countdown is running
+* supported languages: English, French, Klingon, Spanish
