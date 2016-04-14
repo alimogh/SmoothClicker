@@ -64,6 +64,7 @@ Finally, starts the service: <br/>
 
 ***
 ## Features
+* intro screen to introduce the app
 * define a sequence of clicks to make
 * several points can be selected
 * a sequence of clicks can be repeated, endlessly if needed
@@ -71,4 +72,6 @@ Finally, starts the service: <br/>
 * a pause can me made between each click
 * device may vibrate on start and on each click
 * device may display notifications when the process is on going, on clicks and when the countdown is running
+* the configuration can be reset to defaults values
+* a shake to clean feature can reset the configuration
 * supported languages: English, French, Klingon, Spanish
