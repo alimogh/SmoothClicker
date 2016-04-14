@@ -23,11 +23,6 @@ The app can be found in Google Play <a href="https://play.google.com/store/apps/
 <img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/main_screen_en.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_1_en.png" alt="Select several points on the screen" title="Select several points on the screen" width="200">
-</td>
-</tr>
-<tr>
-<td>
 <img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_3_en.png" alt="Undo the click you have selected" title="Undo the click you have selected" width="200">
 </td>
 </tr>
