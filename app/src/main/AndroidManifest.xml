@@ -75,6 +75,7 @@
         <activity
             android:name=".views.IntroScreensActivity"
             android:label="@string/app_intro"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <!-- The main activity of the app -->

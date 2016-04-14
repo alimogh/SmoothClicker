@@ -250,9 +250,15 @@ What:
     chore: clean up
     chore: update the credits
 ###################################################
-Date:
+Date: 14/04/2016
 What:
-
+    feat: support for spanish
+    doc: update the docs
+    test: new run
+    chore: clean up
+    chore: update the credits view
+    chore: new screen shot
+    fix: fix bug with the ShakeToClean checkbox in the settings which where not checked but the feature activated
 ###################################################
 Date:
 What:

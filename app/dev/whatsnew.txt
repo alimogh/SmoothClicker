@@ -66,5 +66,6 @@ v1.9.0 : Holy Hedgehog
     - New feature: now an intro screen is displayed at the very first start of the app
     - Refactor the GUI with a new switch button
     - Refactor the credits view
+    - Support for: spanish
     - More bug fixes
     - More optimization and clean

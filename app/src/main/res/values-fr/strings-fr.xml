@@ -29,7 +29,7 @@
     <string name="app_name">Smooth Clicker</string>
     <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
-    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
+    <string name="service_label_serviceclicker">Service Clicker de Smooth Clicker</string>
 
     <!-- Menus -->
     <string name="action_exit">Quitter</string>
@@ -97,8 +97,13 @@
     <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
     <string name="credits_switchbutton_license">Sous License Apache v2</string>
 
+    <string name="credits_appintro_label">AppIntro</string>
+    <string name="credits_appintro_desc">Librairie créée par Paolo Rotolo</string>
+    <string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
+    <string name="credits_appintro_license">Sous License Apache v2</string>
+
     <string name="credits_icon_flaticon_freepik_label">Icônes</string>
-    <string name="credits_icon_flaticon_freepik_desc">Icônes faites par FreepiK de www.flaticon.com</string>
+    <string name="credits_icon_flaticon_freepik_desc">Icônes faites par Freepik de www.flaticon.com</string>
     <string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
     <string name="credits_icon_flaticon_freepik_license">Sous License Flaticon Basic</string>
 
