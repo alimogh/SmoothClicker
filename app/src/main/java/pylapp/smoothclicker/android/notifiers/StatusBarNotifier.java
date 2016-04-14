@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.ClickerActivity;
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 2..0
+ * @version 2.1.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -61,10 +61,10 @@ public class StatusBarNotifier {
      * CONSTANTS *
      * ********* */
 
-//    /**
-//     * The identifier of the notification about tSU permission which has been granted
-//     */
-//    public static final int NOTIF_SU_GRANTED                        = 0x000101;
+    /**
+     * The identifier of the notification about tSU permission which has been granted
+     */
+    public static final int NOTIF_SU_GRANTED                        = 0x000101;
     /**
      * The identifier of the notification about the clicking process which is on going (through the app)
      */
@@ -184,6 +184,12 @@ public class StatusBarNotifier {
                 if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_MADE, n);
                 break;
+            case SU_GRANTED:
+                b.setContentText(mContext.getString(R.string.notif_content_text_su_granted));
+                n = b.build();
+                if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
+                nm.notify(NOTIF_SU_GRANTED, n);
+                break;
             case COUNT_DOWN:
                 if ( params != null && params.length == 1 ){
                     b.setContentText(mContext.getString(R.string.notif_content_text_countdown)+" "+params[0]);
@@ -222,6 +228,9 @@ public class StatusBarNotifier {
             case CLICK_MADE:
                 nm.cancel(NOTIF_CLICK_MADE);
                 break;
+            case SU_GRANTED:
+                nm.cancel(NOTIF_SU_GRANTED);
+                break;
         }
     }
 
@@ -242,6 +251,7 @@ public class StatusBarNotifier {
          * The clicking process is running by the background service
          */
         CLICKS_ON_GOING_BY_SERVICE,
+
         /**
          * A click has been made
          */
@@ -254,6 +264,10 @@ public class StatusBarNotifier {
          * The clicking process is over
          */
         CLICKS_OVER,
+        /**
+         * The SU permission has been granted
+         */
+        SU_GRANTED,
         /**
          * The amount of time before start, i.e. a count down
          */

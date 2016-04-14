@@ -61,6 +61,7 @@ import com.kyleduo.switchbutton.SwitchButton;
 
 import com.sa90.materialarcmenu.ArcMenu;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +71,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.1.0
+ * @version 2.14.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -482,9 +483,21 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                 m = ClickerActivity.this.getString(R.string.info_message_stop);
                 Logger.d("SmoothClicker", m);
                 break;
+            case SU_GRANTED:
+                m = ClickerActivity.this.getString(R.string.info_message_su_granted);
+                Logger.i("SmoothClicker", m);
+                break;
+            case SU_NOT_GRANTED:
+                m = ClickerActivity.this.getString(R.string.error_message_su_not_granted);
+                Logger.e("SmoothClicker", m);
+                break;
             case NOT_IMPLEMENTED:
                 m = ClickerActivity.this.getString(R.string.error_not_implemented);
                 Logger.e("SmoothClicker", m);
+                break;
+            case SU_GRANT:
+                m = ClickerActivity.this.getString(R.string.info_message_request_su);
+                Logger.d("SmoothClicker", m);
                 break;
             case NEW_CLICK:
                 m = ClickerActivity.this.getString(R.string.info_message_new_point);
@@ -583,6 +596,23 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     }
 
     /**
+     * Requests the SU grant by starting a SU process which will trigger
+     * the "SU grant" system window
+     */
+    private void requestSuGrant(){
+        try {
+            Logger.d(LOG_TAG, "Get 'su' process...");
+            Runtime.getRuntime().exec("su");
+        } catch ( IOException e ){
+            Logger.e(LOG_TAG, "Exception thrown during 'su' : " + e.getMessage());
+            e.printStackTrace();
+            Toast.makeText(this, "An error occurs during SU grant : "+e.getMessage(), Toast.LENGTH_LONG).show();
+            String s = getString(R.string.error_su_missing);
+            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    /**
      * Initializes the listeners on the widgets
      */
     private void initInnerListeners(){
@@ -639,6 +669,22 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             }
         });
 
+        // The button to request SU grant
+        fab = (FloatingActionButton) findViewById(R.id.fabRequestSuGrant);
+        fab.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                displayMessage(MessageTypes.SU_GRANT);
+                return true;
+            }
+        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestSuGrant();
+            }
+        });
+
         // The switch button about the type of start
         // If checked, enabled the filed for the delay
         SwitchButton sTypeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
@@ -692,10 +738,13 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      * The type of messages to display
      */
     private enum MessageTypes {
+        SU_GRANTED,
+        SU_NOT_GRANTED,
         START_PROCESS,
         STOP_PROCESS,
         NEW_CLICK,
         NOT_IMPLEMENTED,
+        SU_GRANT,
         NO_CLICK_DEFINED,
         WAS_NOT_WORKING
     } // private enum MESSAGE_TYPE

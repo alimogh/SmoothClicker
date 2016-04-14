@@ -32,11 +32,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
+import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.notifiers.NotificationsManager;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.tools.Logger;
 import pylapp.smoothclicker.android.views.PointsListAdapter;
 
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -44,7 +46,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.6.0
+ * @version 2.5.1
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -55,6 +57,18 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
     /* ********** *
      * ATTRIBUTES *
      * ********** */
+
+    /**
+     * Represents an external process. Enables writing to, reading from, destroying,
+     * and waiting for it, as well as querying its exit value.
+     * It is sued to get a Super User access.
+     */
+    private Process mProcess;
+
+    /**
+     * The output stream of the {@link Process} object
+     */
+    private DataOutputStream mOutputStream;
 
     /**
      * The application context
@@ -129,7 +143,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         mIsStartDelayed = sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);
         mDelay = sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
         if ( mDelay < 0 ){
-            throw new IllegalArgumentException("The delay cannot be < 0 !");
+            throw new IllegalArgumentException("The delay cannot be < 0!");
         }
         mTimeGap = sp.getInt(Config.SP_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP));
         if ( mTimeGap < 0 ){
@@ -159,6 +173,38 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         }
 
         mPoints = params[0];
+
+        /*
+         * Step 1 : Get the process as "su"
+         */
+        try {
+            Logger.d(LOG_TAG, "Get 'su' process...");
+            mProcess = Runtime.getRuntime().exec("su");
+        } catch ( IOException e ){
+            Logger.e(LOG_TAG, "Exception thrown during 'su' : " + e.getMessage());
+            e.printStackTrace();
+            displayToast("An error occurs during super-user process retrieve: "+e.getMessage());
+            displayToast(mContext.getString(R.string.error_su_missing));
+            return null;
+        }
+
+        if ( checkIfCancelled() ) return null;
+
+        /*
+         * Step 2 : Get the process output stream
+         */
+        Logger.d(LOG_TAG, "Get 'su' process data output stream...");
+        mOutputStream = new DataOutputStream(mProcess.getOutputStream());
+
+        if ( checkIfCancelled() ) return null;
+
+        /*
+         * Step 3 : Execute the command, the same we can execute from ADB within a terminal and deal with the configuration
+             $ adb devices
+             > ...
+             $ adb shell
+                $ input tap XXX YYY
+         */
 
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
@@ -297,7 +343,8 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
             String shellCmd = "/system/bin/input tap " + x + " " + y + "\n";
             Logger.d(LOG_TAG, "The system command will be executed : " + shellCmd);
             try {
-                Runtime.getRuntime().exec(shellCmd);
+                if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
+                mOutputStream.writeBytes(shellCmd);
                 NotificationsManager.getInstance(mContext).makeNewClickNotifications(x, y);
             } catch ( IOException ioe ){
                 Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
