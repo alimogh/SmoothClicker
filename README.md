@@ -1,13 +1,12 @@
 # Smooth Clicker
-_A free open-source easy to use material-designed autoclicker for Android devices._
+_A free open-source easy to use material-designed autoclicker for Android rooted devices._
 
-This app can trigger software clicks / touches thanks to system Shell commands executed in the system.
+This app can trigger software clicks / touches thanks to system Shell commands executed in the system as SU.
 The app is open-source, easy to use and to configure and can make several clicks with delayed starts and pauses between each click.
 You can also repeat clicks sequences and make infinite clicks loops.
 The app possesses a dedicated Android service you can reach and trigger to make some click processes instead of using the GUI.
 
-_Why this app? Because I wanted to build my own autoclicker to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>, <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a> or <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans&">Clash of Clans</a>).
-No need to root its device, a simple and easy-to-use autotouch/autoclick app!_
+_Why this app? Because I wanted to build my own autoclicker to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>, <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a> or <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans&">Clash of Clans</a>)._
 
 The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
 
@@ -42,7 +41,7 @@ The app can be found in Google Play <a href="https://play.google.com/store/apps/
 
 ***
 ## Features
-* no need to have a rooted Android device
+* still need to have a rooted Android device...
 * intro screen to introduce the app
 * define a sequence of clicks to make
 * several points can be selected
