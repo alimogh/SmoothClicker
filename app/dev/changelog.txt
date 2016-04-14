@@ -260,9 +260,14 @@ What:
     chore: new screen shot
     fix: fix bug with the ShakeToClean checkbox in the settings which where not checked but the feature activated
 ###################################################
-Date:
+Date: 14/04/2016
 What:
-
+    feat: no need to root the device nor to have SU access to use the app!
+    refactor: refactor the arc menu
+    doc: update doc
+    chore: new run of Lint and code analysis
+    test: new run of tests
+    chore: new screen shots
 ###################################################
 Date:
 What:

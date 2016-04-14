@@ -34,8 +34,6 @@
     <!-- Permissions -->
     <!-- *********** -->
 
-    <!-- To be SU -->
-    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <!-- To make the device vibrate (here on each click or on start if needed) -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- To start the service when the boot of the device is done -->

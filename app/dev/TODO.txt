@@ -30,7 +30,6 @@ TO DO
     Task #51 : [v1.9.1] Refactor the list of credits by using a ListView and a dedicated Adapter
 
     Task #16 : [v2.0.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
-    Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU
     Task #2  : [vx.x.x] Movable floating action button
     Task #47 : [vx.x.x] Make a new run of Lint to optimize the app
 

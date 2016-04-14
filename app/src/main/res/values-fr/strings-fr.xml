@@ -40,12 +40,8 @@
     <!-- Messages -->
     <string name="info_message_start">Enregistre la configuration et démarre le processus de click</string>
     <string name="info_message_stop">Arrête le processus de click</string>
-    <string name="info_message_request_su">Demande les accès SU</string>
-    <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
     <string name="info_message_new_point">Sélectionne des points sur l\'écran</string>
     <string name="info_message_invite_new_points">Sélectionnez plusieurs points puis back</string>
-    <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
-    <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ Aucun point à cliquer n\'a été défini</string>
     <string name="error_message_was_not_working">(－‸ლ) Le processus de click n\'est pas démarré</string>
 
@@ -127,7 +123,6 @@
     <string name="notif_content_text_clicks_on_going_service">Le processus de click travaille (via le service)&#8230; </string>
     <string name="notif_content_text_clicks_stop">Le processus de click a été arrêté</string>
     <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
-    <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>
     <string name="notif_content_text_countdown">Démarrage dans :</string>
 
     <!-- Settings / Preferences -->
@@ -150,8 +145,8 @@
     <!-- Intro screens -->
     <string name="intro_welcome_label">Hey !</string>
     <string name="intro_welcome_desc">Bienvenue dans Smooth Clicker</string>
-    <string name="intro_root_label">Root</string>
-    <string name="intro_root_desc">Votre appareil Android doit être rooté pour utiliser cette app</string>
+    <string name="intro_root_label">Root ?</string>
+    <string name="intro_root_desc">Vous n\'avez pas à rooter votre Android, pas d\'inquiétudes à avoir :)</string>
     <string name="intro_clicks_label">Clicks</string>
     <string name="intro_clicks_desc">Définissez une séquence de clicks à exécuter&#8230;</string>
     <string name="intro_notifications_label">Configurable</string>
