@@ -209,51 +209,6 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
     }
 
     /**
-     * Tests the long clicks on the floating action button for SU grant in the arc menu
-     *
-     * <i>A long click on the button to use to get the SU grant should display a snackbar with an explain message</i>
-     */
-    @Test
-    public void longClickOnArcMenuSuGrantItem(){
-
-        l(this, "@Test longClickOnArcMenuSuGrantItem");
-
-        String expectedString = InstrumentationRegistry.getTargetContext().getString(R.string.info_message_request_su);
-
-        try {
-
-            /*
-             * Display the floating action buttons in the arc menu
-             */
-            UiObject arcMenu = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/fabAction")
-            );
-            arcMenu.click();
-            arcMenu.waitForExists(WAIT_FOR_EXISTS_TIMEOUT);
-
-            /*
-             * The floating action button
-             */
-            UiObject fab = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH+":id/fabRequestSuGrant")
-            );
-            fab.waitForExists(WAIT_FOR_EXISTS_TIMEOUT);
-            assertTrue(fab.isLongClickable());
-            fab.swipeLeft(100); //fab.longClick() makes clicks sometimes, so swipeLeft() is a trick to make always a longclick
-            UiObject snack = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/snackbar_text")
-            );
-
-            assertEquals(expectedString, snack.getText());
-
-        } catch ( UiObjectNotFoundException uonfe ){
-            uonfe.printStackTrace();
-            fail( uonfe.getMessage() );
-        }
-
-    }
-
-    /**
      * Tests the long clicks on the floating action button for new point in the arc menu
      *
      * <i>A long click on the button to use to add points to click on should display a snackbar with an explain message</i>
@@ -365,49 +320,6 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
                     assertTrue(repeatField.isEnabled());
                 }
             }
-
-        } catch ( UiObjectNotFoundException uonfe ){
-            uonfe.printStackTrace();
-            fail( uonfe.getMessage() );
-        }
-
-    }
-
-    /**
-     * Test the click on the SU grant button
-     *
-     * <i>If the button to get the SU grant is clicked, a notification about the good access to SU grant is displayed</i>
-     */
-    @Test
-    public void clickOnSuGrantButton(){
-
-        l(this, "@Test clickOnSuGrantButton");
-
-        try {
-
-            // Open the arc menu
-            UiObject arcMenu = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/fabAction")
-            );
-            arcMenu.click();
-
-            // Request the SU grant
-            UiObject suGrantFab = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/fabRequestSuGrant")
-            );
-            suGrantFab.click();
-
-            // Check the notifications panel
-            UiObject notification = mDevice.findObject(
-                    new UiSelector()
-                            .resourceId("android:id/text")
-                            .className("android.widget.TextView")
-                            .packageName("com.android.settings")
-                            .textContains("Droits Super-utilisateur accordés à Smooth Clicker")); // WARNING FIXME French language, get the string in system R
-
-            mDevice.openNotification();
-            notification.waitForExists(2000);
-            assertTrue(notification.exists());
 
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();

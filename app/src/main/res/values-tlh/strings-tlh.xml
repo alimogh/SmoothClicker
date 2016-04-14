@@ -42,12 +42,8 @@
     <!-- Messages -->
     <string name="info_message_start">toD \'ej qet</string>
     <string name="info_message_stop">click mIw mev</string>
-    <string name="info_message_request_su">botlhobbogh su naw\'</string>
-    <string name="info_message_su_granted">Qu\' su naw\'</string>
     <string name="info_message_new_point">chu\' lang jIHDaq chollaw\'lI\' wIv</string>
     <string name="info_message_invite_new_points">lang puS wIv \'ej vaj Dub</string>
-    <string name="error_message_su_not_granted">wej Suq su naw\'</string>
-    <string name="error_su_missing">Android \'oQqar SoH pa\' app lo\'? Daghaj.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ pagh wutlh clicks</string>
     <string name="error_message_was_not_working">(－‸ლ) wej Qap</string>
 
@@ -129,7 +125,6 @@
     <string name="notif_content_text_clicks_on_going_service">qet click mIw.</string>
     <string name="notif_content_text_clicks_stop">bImevchu\'pu\'be\'mo\' click mIw</string>
     <string name="notif_content_text_clicks_over">rIn click mIw</string>
-    <string name="notif_content_text_su_granted">granted super-user choHwI\' wIlIng</string>
     <string name="notif_content_text_countdown">qet:</string>
 
     <!-- Settings / Preferences -->
@@ -152,10 +147,10 @@
     <!-- Intro screens -->
     <string name="intro_welcome_label">QI\'yaH!</string>
     <string name="intro_welcome_desc">yI\'el</string>
-    <string name="intro_root_label">tlhab</string>
+    <string name="intro_root_label">Root ?</string>
     <string name="intro_root_desc">jan tlhab Daghaj</string>
     <string name="intro_clicks_label">tlhaw\'</string>
-    <string name="intro_clicks_desc">puS tlhaw\' mIw chenmoH</string>
+    <string name="intro_clicks_desc">pagh nIS root</string>
     <string name="intro_notifications_label">maj</string>
     <string name="intro_notifications_desc">&#8230; \'ej ghaH QaQ Doch mIw</string>
     <string name="intro_free_label">Born to be free</string>

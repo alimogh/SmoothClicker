@@ -40,12 +40,8 @@
     <!-- Messages -->
     <string name="info_message_start">Guardar la configuración e inicia el proceso de clic</string>
     <string name="info_message_stop">Detiene el proceso de clic</string>
-    <string name="info_message_request_su">Demanda de acceso SU</string>
-    <string name="info_message_su_granted">Se ha concedido el acceso SU</string>
     <string name="info_message_new_point">Selección de puntos en la pantalla</string>
     <string name="info_message_invite_new_points">Seleccionar varios elementos y luego de vuelta</string>
-    <string name="error_message_su_not_granted">En El acceso fue denegado x-(</string>
-    <string name="error_su_missing">¿Se rienda suelta a su dispositivo Android de antemano? Esto es obligatorio.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ No tiene sentido hacer clic se ha definido</string>
     <string name="error_message_was_not_working">(－‸ლ) Haga clic en No se ha iniciado el proceso de</string>
 
@@ -127,7 +123,6 @@
     <string name="notif_content_text_clicks_on_going_service">El proceso de trabajo de clic (a través del servicio)&#8230; </string>
     <string name="notif_content_text_clicks_stop">Hacer un clic se detuvo el proceso de</string>
     <string name="notif_content_text_clicks_over">Haga clic en el proceso se completa</string>
-    <string name="notif_content_text_su_granted">Se obtuvo acceso de superusuario</string>
     <string name="notif_content_text_countdown">Se comenzará en:</string>
 
     <!-- Settings / Preferences -->
@@ -150,8 +145,8 @@
     <!-- Intro screens -->
     <string name="intro_welcome_label">Hola !</string>
     <string name="intro_welcome_desc">Bienvenido a Smooth Clicker</string>
-    <string name="intro_root_label">Root</string>
-    <string name="intro_root_desc">El dispositivo Android debe ser ilimitada para utilizar esta aplicación</string>
+    <string name="intro_root_label">Root ?</string>
+    <string name="intro_root_desc">No es necesario dar rienda suelta a su Android, no tienen preocupaciones :)</string>
     <string name="intro_clicks_label">Clics</string>
     <string name="intro_clicks_desc">Definición de una secuencia de clics para realizar&#8230;</string>
     <string name="intro_notifications_label">Esto es configurable</string>

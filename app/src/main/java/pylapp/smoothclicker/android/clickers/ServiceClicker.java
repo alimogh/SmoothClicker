@@ -34,7 +34,6 @@ import pylapp.smoothclicker.android.notifiers.VibrationNotifier;
 import pylapp.smoothclicker.android.tools.Logger;
 import pylapp.smoothclicker.android.utils.Config;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -72,7 +71,7 @@ import java.util.ArrayList;
      </pre>
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 18/03/2016
  * @see IntentService
  * @see ATClicker
@@ -84,18 +83,6 @@ public class ServiceClicker extends IntentService {
      /* ********** *
      * ATTRIBUTES *
      * ********** */
-
-    /**
-     * Represents an external process. Enables writing to, reading from, destroying,
-     * and waiting for it, as well as querying its exit value.
-     * It is sued to get a Super User access.
-     */
-    private Process mProcess;
-
-    /**
-     * The output stream of the {@link Process} object
-     */
-    private DataOutputStream mOutputStream;
 
     /**
      * The application context
@@ -305,7 +292,7 @@ public class ServiceClicker extends IntentService {
             throw new IllegalArgumentException("No points to click on!");
         }
 
-        // FIXME Wait for more Java8 support on Android and use lambads and map/reduce/filter pattern !
+        // FIXME Wait for more Java 8 support on Android and use lambdas and map/reduce/filter pattern !
         for (Integer p : mPoints) if ( p < 0 ){
             broadcastStatus(StatusTypes.BAD_CONFIG);
             throw new IllegalArgumentException("A point cannot have a negative coordinate !");
@@ -348,35 +335,8 @@ public class ServiceClicker extends IntentService {
         if ( checkIfCancelled() ) return;
 
         /*
-         * Step 1 : Get the process as "su"
+         * Should we delay the execution ?
          */
-        try {
-            Logger.d(LOG_TAG, "Get 'su' process...");
-            mProcess = Runtime.getRuntime().exec("su");
-        } catch ( IOException e ){
-            Logger.e(LOG_TAG, "Exception thrown during 'su' : " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        if ( checkIfCancelled() ) return;
-
-        /*
-         * Step 2 : Get the process output stream
-         */
-        Logger.d(LOG_TAG, "Get 'su' process data output stream...");
-        mOutputStream = new DataOutputStream(mProcess.getOutputStream());
-
-        if ( checkIfCancelled() ) return;
-
-        /*
-         * Step 3 : Execute the command, the same we can execute from ADB within a terminal and deal with the configuration
-             $ adb devices
-             > ...
-             $ adb shell
-                $ input tap XXX YYY
-         */
-
-        // Should we delay the execution ?
         if ( mIsStartDelayed ){
             Logger.d(LOG_TAG, "The start is delayed, will sleep : "+mDelay);
             final int count = mDelay;
@@ -456,15 +416,13 @@ public class ServiceClicker extends IntentService {
 
         for ( int i = 0; i < mPoints.size(); i+=2 ){
 
-
             int x = mPoints.get(i);
             int y = mPoints.get(i+1);
 
             String shellCmd = "/system/bin/input tap " + x + " " + y + "\n";
             Logger.d(LOG_TAG, "The system command will be executed : " + shellCmd);
             try {
-                if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
-                mOutputStream.writeBytes(shellCmd);
+                Runtime.getRuntime().exec(shellCmd);
                 makeNewClickNotifications(x, y);
             } catch ( IOException ioe ){
                 Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());

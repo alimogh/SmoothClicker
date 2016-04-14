@@ -58,6 +58,7 @@ v1.8.2
     - More refactor
     - Optimization
 v1.9.0 : Holy Hedgehog
+    - New feature: No need to use a rooted device !
     - New feature: possible to restore all the default values
     - New feature: possible to delete all the selected points
     - New feature: an helping toast is displayed on the clicking screen when the user is inactive

@@ -138,10 +138,6 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
         textContent = mContext.getString(R.string.notif_content_text_clicks_stop);
         testMakeNotification(textContent, StatusBarNotifier.NotificationTypes.CLICKS_STOPPED);
 
-        //  SU Granted
-        textContent = mContext.getString(R.string.notif_content_text_su_granted);
-        testMakeNotification(textContent, StatusBarNotifier.NotificationTypes.SU_GRANTED);
-
     }
 
     /**
@@ -183,11 +179,6 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
         mSbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_STOPPED);
         w(1000);
         mSbn.removeNotification(StatusBarNotifier.NotificationTypes.CLICKS_STOPPED);
-
-        //  SU Granted
-        mSbn.makeNotification(StatusBarNotifier.NotificationTypes.SU_GRANTED);
-        w(1000);
-        mSbn.removeNotification(StatusBarNotifier.NotificationTypes.SU_GRANTED);
 
     }
 
