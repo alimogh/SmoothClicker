@@ -269,9 +269,12 @@ What:
     test: new run of tests
     chore: new screen shots
 ###################################################
-Date:
+Date: 14/04/2016
 What:
-
+    doc: update doc
+    chore: new run of Lint and code analysis
+    test: new run of tests
+    chore: new screen shots
 ###################################################
 Date:
 What:
