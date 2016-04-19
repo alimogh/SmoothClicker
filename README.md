@@ -10,7 +10,7 @@ _Why this app? Because I wanted to build my own auto clicker / auto touch to mak
 
 The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
 
-The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit tests with _JUnit_ and the isntrumented tests with _Espresso_ and _UIAutomator_.
+The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit tests with _JUnit_ and the instrumented tests with _Espresso_ and _UIAutomator_.
 
 ***
 ## Screen shots
