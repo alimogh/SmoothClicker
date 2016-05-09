@@ -25,7 +25,8 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 * device may display notifications when the process is on going, on clicks and when the countdown is running
 * the configuration can be reset to defaults values
 * a shake to clean feature can reset the configuration
-* supported languages: English, French, Klingon, Spanish
+* supported languages: english, french, klingon, spanish, portuguese, german, russian, korean
+
 
 ***
 ## Screen shots
@@ -132,6 +133,9 @@ Finally, starts the service: <br/>
     * improve the credits view
     * support for spanish
     * more bug fixes, optimization and clean
+* _v1.9.1_
+    * support for german, portuguese, russian and korean languages
+    * entry in settings screen to redirect the user on the market's page
 
 ***
 ## Licence
