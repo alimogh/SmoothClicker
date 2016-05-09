@@ -139,6 +139,8 @@
 	<string name="pref_about_version_title">버전</string>
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">pylapp-라이센스 MIT에 의해 작성 된</string>
+	<string name="pref_play_store_title">Google Play</string>
+	<string name="pref_play_store_summary">&#9733; 평가 자유롭게 앱 코멘트 &#9733;</string>
 
     <!-- Snack bars -->
 	<string name="snackbar_action_dismiss">실행 취소</string>

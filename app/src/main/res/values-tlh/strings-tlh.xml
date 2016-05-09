@@ -146,6 +146,9 @@
     <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">ngabchu\' pylapp - bopummeH chaw\' MIT</string>
 
+    <string name="pref_play_store_title">Google Play</string>
+    <string name="pref_play_store_summary">&#9733; Smooth Clicker &#9733;</string>
+
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Ha\'</string>
 

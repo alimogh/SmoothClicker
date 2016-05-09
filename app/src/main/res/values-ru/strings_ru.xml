@@ -141,6 +141,8 @@
 	<string name="pref_about_version_title">Версия</string>
 	<string name="pref_about_version_app_title">Гладкая зазывала</string>
 	<string name="pref_about_version_app_summary">Автор pylapp - Лицензия MIT</string>
+	<string name="pref_play_store_title">Google Play</string>
+	<string name="pref_play_store_summary">&#9733; Не стесняйтесь оценивать и комментировать приложение &#9733;</string>
 
     <!-- Snackbars -->
 	<string name="snackbar_action_dismiss">Отменить</string>
