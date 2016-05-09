@@ -26,7 +26,6 @@
 package pylapp.smoothclicker.android.junit;
 
 import android.content.Context;
-import android.support.v7.transition.ActionBarTransition;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.notifiers.VibrationNotifier;

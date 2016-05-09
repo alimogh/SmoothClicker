@@ -335,10 +335,10 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
 
         for ( PointsListAdapter.Point p : mPoints ){
 
-            if ( ! p.mIsUsable ) continue;
+            if ( ! p.isUsable) continue;
 
-            int x = p.mX;
-            int y = p.mY;
+            int x = p.x;
+            int y = p.y;
 
             String shellCmd = "/system/bin/input tap " + x + " " + y + "\n";
             Logger.d(LOG_TAG, "The system command will be executed : " + shellCmd);
