@@ -1,0 +1,167 @@
+<!--
+    MIT License
+
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- For the app -->
+    <string name="app_name">Smooth Clicker</string>
+    <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+    <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+    <string name="service_label_serviceclicker">Service Clicker de Smooth Clicker</string>
+
+    <!-- Menus -->
+	<string name="action_exit">Ausfahrt</string>
+	<string name="action_settings">Einstellungen</string>
+	<string name="action_clean_points">Löschen Sie die ausgewählten Punkte</string>
+	<string name="action_clean_all">Zurücksetzen Sie die Werte und löschen Sie die ausgewählten Punkte</string>
+
+    <!-- Messages -->
+    <string name="info_message_start">Speichern Sie die Konfiguration und startet die klicken</string>
+	<string name="info_message_stop">Klicken Sie auf Prozess beenden</string>
+	<string name="info_message_request_su">Der SU-Zuschuss beantragen</string>
+	<string name="info_message_su_granted">Die SU-Genehmigung wurde erteilt :-)</string>
+	<string name="info_message_new_point">Wählen Sie neue Punkte auf dem Bildschirm</string>
+	<string name="info_message_invite_new_points">Wählen Sie mehrere Punkte aus und dann wieder</string>
+	<string name="error_message_su_not_granted">Die SU-Autorisierung wurde nicht erteilt X -)</string>
+	<string name="error_su_missing">Root Sie Ihr Android, bevor Sie mit dieser app? Es ist obligatorisch.</string>
+	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ definiert keine Klicks</string>
+	<string name="error_message_was_not_working">(－‸ლ) Der Prozess wird nicht gestartet</string>
+
+	<string name="warning_hazard_repeat_endless_title">Gefährlicher Vorgang</string>
+	<string name="warning_hazard_repeat_endless_content">Sind Sie sicher, dass eine endlose Wiederholung? Dieser Vorgang möglicherweise gefährlicher für Ihr Gerät.</string>
+	<string name="warning_hazard_repeat_endless_no">Nee!</string>
+	<string name="warning_hazard_repeat_endless_yes">Feur Frei!</string>
+
+    <!-- Widgets -->
+	<string name="widget_type_of_start">Verzögerter start</string>
+	<string name="widget_delay">Verzögerung</string>
+	<string name="widget_delay_hint">... in Sekunden</string>
+	<string name="widget_speed">Vor jedem Klick</string>
+	<string name="widget_speed_hint">... in Sekunden</string>
+	<string name="widget_repeat">Wiederholen Sie die</string>
+	<string name="widget_repeat_hint">... Mal</string>
+	<string name="widget_repeat_endless">Endlose</string>
+	<string name="widget_vibrate_on_start">Vibrieren am start</string>
+	<string name="widget_vibrate_on_click">Vibrieren beim Klicken</string>
+	<string name="widget_delayed_starts">Verzögert</string>
+	<string name="widget_immediate_starts">Jetzt</string>
+	<string name="widget_xy_coordinates">Punkte zum anklicken</string>
+
+    <!-- Credits -->
+    <string name="widget_notifications">Benachrichtigungen</string>
+	<string name="credits_app_label">Glatte Clicker</string>
+	<string name="credits_app_desc">App von Pylapp gemacht</string>
+	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
+	<string name="credits_app_license">Unter Lizenz MIT</string>
+	<string name="credits_app_personal_page">https://Twitter.com/pylapp</string>
+
+	<string name="credits_logo_label">Anwendung-logo</string>
+	<string name="credits_logo_desc">Symbol von Freepik aus www.flaticon.com hergestellt</string>
+	<string name="credits_logo_url">http://www.flaticon.com/Free-Icon/Small-Monkey-with-long-tail_28726#Term=Monkey</string>
+	<string name="credits_logo_license">Flaticon Basic Lizenz</string>
+
+	<string name="credits_mam_label">Materiell Arc-Menü</string>
+	<string name="credits_mam_desc">Bibliothek von Saurabh Arora</string>
+	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
+	<string name="credits_mam_license">Unter der Apache Lizenz v2</string>
+
+	<string name="credits_htextview_label">HTextView</string>
+	<string name="credits_htextview_desc">Bibliothek von Hanks Zyh gemacht</string>
+	<string name="credits_htextview_url">https://github.com/Hanks-ZYH/HTextView</string>
+	<string name="credits_htextview_license">Unter der Apache Lizenz v2</string>
+
+	<string name="credits_switchbutton_label">Druckknopf</string>
+	<string name="credits_switchbutton_desc">Bibliothek von kyleduo</string>
+	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
+	<string name="credits_switchbutton_license">Unter der Apache Lizenz v2</string>
+
+	<string name="credits_appintro_label">AppIntro</string>
+	<string name="credits_appintro_desc">Bibliothek von Paolo Rotolo</string>
+	<string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
+	<string name="credits_appintro_license">Unter der Apache Lizenz v2</string>
+
+	<string name="credits_icon_flaticon_freepik_label">Symbole</string>
+	<string name="credits_icon_flaticon_freepik_desc">Symbole von Freepik aus www.flaticon.com hergestellt</string>
+	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
+	<string name="credits_icon_flaticon_freepik_license">Flaticon Basic Lizenz</string>
+	<string name="credits_icon_flaticon_elegantthemes_label">Symbole</string>
+	<string name="credits_icon_flaticon_elegantthemes_desc">Symbole, die Elegant Themes von www.flaticon.com gemacht</string>
+	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-Themes</string>
+	<string name="credits_icon_flaticon_elegantthemes_license">Unter CC 3.0 Lizenz</string>
+	<string name="credits_icon_flaticon_yannick_label">Symbole</string>
+	<string name="credits_icon_flaticon_yannick_desc">Symbole von Yannick aus www.flaticon.com hergestellt</string>
+	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/Yannick</string>
+	<string name="credits_icon_flaticon_yannick_license">Unter CC 3.0 Lizenz</string>
+
+    <!-- Splash screen -->
+	<string name="splashscreen_description">Glatte Clicker</string>
+
+    <!-- Notifications -->
+	<string name="notif_content_title">Glatte Clicker</string>
+	<string name="notif_content_text_click_made">Neu klicken </string>
+	<string name="notif_content_text_clicks_on_going_app">Der Klick-Prozess läuft (durch die app)... </string>
+	<string name="notif_content_text_clicks_on_going_service">Der Klick-Prozess läuft (durch den Dienst)... </string>
+	<string name="notif_content_text_clicks_stop">Der Klick-Prozess wurde beendet</string>
+	<string name="notif_content_text_clicks_over">Der Klick-Prozess ist vorbei</string>
+	<string name="notif_content_text_su_granted">Die Superuser-Genehmigung wurde erteilt</string>
+	<string name="notif_content_text_countdown">Starten:</string>
+
+    <!-- Settings / Preferences -->
+	<string name="pref_settings_title">Einstellungen</string>
+	<string name="pref_settings_shaketoclean_title">Erschütterung zu reinigen</string>
+	<string name="pref_settings_shaketoclean_summary">Schütteln Sie Ihr Gerät um die Konfiguration leer machen</string>
+
+	<string name="pref_credits_title">Impressum</string>
+	<string name="pref_key_credit_title">Diese app nutzt fremde Inhalte</string>
+	<string name="pref_key_credit_summary">Klicken Sie hier, um die Lizenzen zu zeigen</string>
+
+	<string name="pref_about_title">Über</string>
+	<string name="pref_about_version_title">Version</string>
+	<string name="pref_about_version_app_title">Glatte Clicker</string>
+	<string name="pref_about_version_app_summary">Geschrieben von Pylapp - Lizenz MIT</string>
+
+    <!-- Snackbars -->
+	<string name="snackbar_action_dismiss">Rückgängig machen</string>
+
+    <!-- Intro screens -->
+	<string name="intro_welcome_label">Hallöchen!</string>
+	<string name="intro_welcome_desc">Willkommen bei Smooth Clicker</string>
+	<string name="intro_root_label">Stamm</string>
+	<string name="intro_root_desc">Sie benötigen eine verwurzelte Android Gerät, diese app zu verwenden</string>
+	<string name="intro_clicks_label">Klicks</string>
+	<string name="intro_clicks_desc">Definieren Sie mehrere Klicks verarbeiten... </string>
+	<string name="intro_notifications_label">Konfigurierbare</string>
+	<string name="intro_notifications_desc">... und konfigurieren Sie den Prozess mit Benachrichtigungen, Vibrationen oder Verzögerungen</string>
+	<string name="intro_free_label">Geboren um frei zu sein</string>
+	<string name="intro_free_desc">Glatte Clicker ist frei und Open Source!</string>
+
+    <!-- Misc. -->
+	<string name="error_not_implemented">Noch implementiert nicht!</string>
+	<string name="message_reinit_config">Aufräumen... </string>
+	<string name="message_confirm_exit_label">Ausfahrt</string>
+	<string name="message_confirm_exit_content">Möchten Sie die app zu beenden?</string>
+	<string name="app_intro">Willkommen bei Smooth Clicker</string>
+
+</resources>
