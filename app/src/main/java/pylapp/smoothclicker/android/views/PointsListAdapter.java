@@ -41,7 +41,7 @@ import java.util.List;
  * A BaseAdapter for the view containing the points to click on
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since  17/03/2016
  * @see BaseAdapter
  */
@@ -216,39 +216,47 @@ public class PointsListAdapter extends BaseAdapter {
         /**
          * The X coordinate
          */
-        public int mX;
+        public int x;
         /**
          * The Y coordinate
          */
-        public int mY;
+        public int y;
         /**
          * A description
          */
-        public String mDesc;
+        public String desc;
         /**
          * Should we click on it ?
          */
-        public boolean mIsUsable;
+        public boolean isUsable;
 
         public Point( int x, int y ){
             super();
-            mX = x;
-            mY = y;
-            mDesc = null;
-            mIsUsable = true;
+            this.x = x;
+            this.y = y;
+            desc = null;
+            isUsable = true;
+        }
+
+        public Point( int x, int y, String desc ){
+            super();
+            this.x = x;
+            this.y = y;
+            this.desc = desc;
+            isUsable = true;
         }
 
         public Point( String desc ){
             super();
-            mDesc = desc;
-            mIsUsable = false;
+            this.desc = desc;
+            isUsable = false;
         }
 
         @Override
         public String toString(){
-            if ( mDesc != null && mDesc.length() > 0 ) return mDesc;
-            StringBuilder sb = new StringBuilder();
-            sb.append("x = ").append(mX).append(" / y = ").append(mY);
+            StringBuffer sb = new StringBuffer();
+            if ( desc != null && desc.length() > 0 ) sb.append(desc).append(" / ");
+            sb.append("x = ").append(x).append(" / y = ").append(y);
             return sb.toString();
         }
 

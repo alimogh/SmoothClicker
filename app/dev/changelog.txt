@@ -268,9 +268,10 @@ What:
     chore: new screen shots
     chore: clean up
 ###################################################
-Date:
+Date: 09/05/2016
 What:
-
+    chore: more code on JSON points file management
+    chore: new rnu of UT, IT, Lint and JavaDoc HTML build
 ###################################################
 Date:
 What:

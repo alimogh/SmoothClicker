@@ -1,10 +1,8 @@
 pylapp.smoothclicker.android
 pylapp.smoothclicker.android.clickers
-pylapp.smoothclicker.android.espresso
-pylapp.smoothclicker.android.misc
+pylapp.smoothclicker.android.junit
 pylapp.smoothclicker.android.notifiers
 pylapp.smoothclicker.android.receivers
 pylapp.smoothclicker.android.tools
-pylapp.smoothclicker.android.uiautomator
 pylapp.smoothclicker.android.utils
 pylapp.smoothclicker.android.views
