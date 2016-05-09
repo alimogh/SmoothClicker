@@ -1,0 +1,165 @@
+<!--
+    MIT License
+
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- For the app -->
+    <string name="app_name">Smooth Clicker</string>
+    <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+    <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
+
+    <!-- Menus -->
+	<string name="action_exit">출구</string>
+	<string name="action_settings">설정</string>
+	<string name="action_clean_points">선택한 점 삭제</string>
+	<string name="action_clean_all">값을 다시 설정 하 고 선택한 점 삭제</string>
+
+	<string name="info_message_start">구성을 저장 하 고 클릭 하 여 프로세스를 시작</string>
+	<string name="info_message_stop">클릭 프로세스 중지</string>
+	<string name="info_message_request_su">SU 그랜트에 대 한 질문</string>
+	<string name="info_message_su_granted">SU 권한 부여:-) 부여</string>
+	<string name="info_message_new_point">화면에 새로운 점 선택</string>
+	<string name="info_message_invite_new_points">몇 가지 포인트를 선택 하 고 다시</string>
+
+	<string name="error_message_su_not_granted">SU 권한 부여 x-(부여 되지 않은</string>
+	<string name="error_su_missing">이 응용 프로그램을 사용 하기 전에 안 드 로이드를 뿌리 나요? 그것은 필수입니다.</string>
+	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ 아니 클릭 정의</string>
+	<string name="error_message_was_not_working">(－‸ლ) 프로세스가 시작 되지 않습니다.</string>
+
+	<string name="warning_hazard_repeat_endless_title">위험한 작업</string>
+	<string name="warning_hazard_repeat_endless_content">당신은 끝 없는 반복을? 이 작업은 장치에 대 한 위험 수 있습니다.</string>
+	<string name="warning_hazard_repeat_endless_no">아니!</string>
+	<string name="warning_hazard_repeat_endless_yes">Feur 프라이!</string>
+
+    <!-- Widgets -->
+	<string name="widget_type_of_start">지연 된 시작</string>
+	<string name="widget_delay">지연</string>
+	<string name="widget_delay_hint">초에...</string>
+	<string name="widget_speed">각 클릭 하기 전에 시간</string>
+	<string name="widget_speed_hint">초에...</string>
+	<string name="widget_repeat">반복</string>
+	<string name="widget_repeat_hint">... 시간</string>
+	<string name="widget_repeat_endless">끝 없는</string>
+	<string name="widget_vibrate_on_start">시작 진동</string>
+	<string name="widget_vibrate_on_click">클릭에 진동</string>
+	<string name="widget_delayed_starts">지연</string>
+	<string name="widget_immediate_starts">지금</string>
+	<string name="widget_xy_coordinates">클릭 하 여 포인트</string>
+	<string name="widget_notifications">알림</string>
+
+    <!-- Credits -->
+	<string name="credits_app_label">Smooth Clicker</string>
+	<string name="credits_app_desc">Pylapp에 의해 응용 프로그램</string>
+	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
+	<string name="credits_app_license">MIT 허가서</string>
+	<string name="credits_app_personal_page">https://twitter.com/pylapp</string>
+
+	<string name="credits_logo_label">응용 프로그램 로고</string>
+	<string name="credits_logo_desc">Www.flaticon.com에서 Freepik에 의해 만들어진 아이콘</string>
+	<string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
+	<string name="credits_logo_license">Flaticon 기본 라이센스</string>
+
+	<string name="credits_mam_label">소재 호 메뉴</string>
+	<string name="credits_mam_desc">Saurabh Arora 만든 라이브러리</string>
+	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
+	<string name="credits_mam_license">아파치 라이선스 v 2에서</string>
+
+	<string name="credits_htextview_label">HTextView</string>
+	<string name="credits_htextview_desc">행 크 Zyh에 의해 만들어진 라이브러리</string>
+	<string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
+	<string name="credits_htextview_license">아파치 라이선스 v 2에서</string>
+
+	<string name="credits_switchbutton_label">SwitchButton</string>
+	<string name="credits_switchbutton_desc">Kyleduo에 의해 만들어진 라이브러리</string>
+	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
+	<string name="credits_switchbutton_license">아파치 라이선스 v 2에서</string>
+
+	<string name="credits_appintro_label">AppIntro</string>
+	<string name="credits_appintro_desc">파올로 Rotolo 만든 라이브러리</string>
+	<string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
+	<string name="credits_appintro_license">아파치 라이선스 v 2에서</string>
+
+	<string name="credits_icon_flaticon_freepik_label">아이콘</string>
+	<string name="credits_icon_flaticon_freepik_desc">Www.flaticon.com에서 Freepik에 의해 만들어진 아이콘</string>
+	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
+	<string name="credits_icon_flaticon_freepik_license">Flaticon 기본 라이센스</string>
+	<string name="credits_icon_flaticon_elegantthemes_label">아이콘</string>
+	<string name="credits_icon_flaticon_elegantthemes_desc">우아한 테마에 의해 www.flaticon.com에서 만든 아이콘</string>
+	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-themes</string>
+	<string name="credits_icon_flaticon_elegantthemes_license">CC 라이센스 3.0에서</string>
+	<string name="credits_icon_flaticon_yannick_label">아이콘</string>
+	<string name="credits_icon_flaticon_yannick_desc">야 닉 www.flaticon.com에서 만든 아이콘</string>
+	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/yannick</string>
+	<string name="credits_icon_flaticon_yannick_license">CC 라이센스 3.0에서</string>
+
+    <!-- Splash screen -->
+	<string name="splashscreen_description">Smooth Clicker</string>
+
+    <!-- Notifications -->
+	<string name="notif_content_title">Smooth Clicker</string>
+	<string name="notif_content_text_click_made">새 클릭 </string>
+	<string name="notif_content_text_clicks_on_going_app">클릭 프로세스 (응용 프로그램)를 통해 실행... </string>
+	<string name="notif_content_text_clicks_on_going_service">클릭 프로세스 (서비스)를 통해 실행... </string>
+	<string name="notif_content_text_clicks_stop">클릭 프로세스 중지 되었습니다.</string>
+	<string name="notif_content_text_clicks_over">클릭 과정이 끝났습니다.</string>
+	<string name="notif_content_text_su_granted">슈퍼 사용자 권한이 부여 되었는지</string>
+	<string name="notif_content_text_countdown">시작:</string>
+
+    <!-- Settings / Preferences -->
+	<string name="pref_settings_title">설정</string>
+	<string name="pref_settings_shaketoclean_title">흔들어 청소</string>
+	<string name="pref_settings_shaketoclean_summary">구성 빈 수 있도록 장치를 흔들어</string>
+	<string name="pref_credits_title">크레딧</string>
+	<string name="pref_key_credit_title">이 응용 프로그램 사용 하 여 타사 내용</string>
+	<string name="pref_key_credit_summary">라이센스를 표시 하려면 여기를 클릭 하십시오.</string>
+	<string name="pref_about_title">에 대 한</string>
+	<string name="pref_about_version_title">버전</string>
+	<string name="pref_about_version_app_title">Smooth Clicker</string>
+	<string name="pref_about_version_app_summary">pylapp-라이센스 MIT에 의해 작성 된</string>
+
+    <!-- Snack bars -->
+	<string name="snackbar_action_dismiss">실행 취소</string>
+
+    <!-- Intro screen -->
+	<string name="intro_welcome_label">이 봐!</string>
+	<string name="intro_welcome_desc">오신 것을 환영 합니다 식자를 부드럽게</string>
+	<string name="intro_root_label">루트</string>
+	<string name="intro_root_desc">이 애플 리 케이이 션을 사용 하 여 뿌리 안 드 로이드 장치를가지고 해야</string>
+	<string name="intro_clicks_label">클릭</string>
+	<string name="intro_clicks_desc">처리를 여러 번 클릭을 정의... </string>
+	<string name="intro_notifications_label">구성 가능</string>
+	<string name="intro_notifications_desc">... 및 알림, 진동 또는 지연 과정 구성</string>
+	<string name="intro_free_label">자유롭기 위하여 태어난</string>
+	<string name="intro_free_desc">부드러운 식자는 무료 이며 오픈 소스!</string>
+
+    <!-- Misc. -->
+	<string name="error_not_implemented">아직 구현 되지 않았습니다!</string>
+	<string name="message_reinit_config">정리... </string>
+	<string name="message_confirm_exit_label">출구</string>
+	<string name="message_confirm_exit_content">응용 프로그램을 종료 하 시겠습니까?</string>
+	<string name="app_intro">오신 것을 환영 합니다 식자를 부드럽게</string>
+
+</resources>

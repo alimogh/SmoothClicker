@@ -37,7 +37,6 @@
     <string name="action_clean_points">Delete the selected points</string>
     <string name="action_clean_all">Reset the values and delete the selected points</string>
 
-    <!-- Messages -->
     <string name="info_message_start">Save the configuration and starts the clicking process</string>
     <string name="info_message_stop">Stop the clicking process</string>
     <string name="info_message_request_su">Ask for the SU grant</string>
