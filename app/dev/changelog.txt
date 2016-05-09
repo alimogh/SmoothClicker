@@ -277,9 +277,9 @@ Date: 09/05/2016
 What:
     feat: support for russian (-ru), portuguese (-pt), german (-de) and korean (-ko)
 ###################################################
-Date:
+Date: 09/05/2016
 What:
-
+    feat: add new entry in the settings screen to make the user go on the Play Store's app's page
 ###################################################
 Date:
 What:

@@ -69,3 +69,5 @@ v1.9.0 : Holy Hedgehog
     - Support for: spanish
     - More bug fixes
     - More optimization and clean
+v1.9.1
+    - Support for languages russian, german, portuguese and korean

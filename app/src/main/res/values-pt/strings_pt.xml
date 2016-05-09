@@ -141,7 +141,9 @@
 	<string name="pref_about_version_title">Versão</string>
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">escrito por pylapp - licença MIT</string>
-    
+	<string name="pref_play_store_title">Google Play</string>
+	<string name="pref_play_store_summary">&#9733; Sinta-se livre para avaliar e comentar o app &#9733;</string>
+
     <!-- Snackbars -->
 	<string name="snackbar_action_dismiss">Desfazer</string>
 

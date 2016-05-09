@@ -76,6 +76,12 @@
             android:title="@string/pref_about_version_app_title"
             android:summary="@string/pref_about_version_app_summary" />
 
+        <Preference
+            android:selectable="true"
+            android:key="pref_play_store_title"
+            android:title="@string/pref_play_store_title"
+            android:summary="@string/pref_play_store_summary"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

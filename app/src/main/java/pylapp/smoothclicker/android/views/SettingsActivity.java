@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.utils.AppConfigVersions;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -65,6 +65,7 @@ public class SettingsActivity extends AppCompatActivity {
     private static final String PREF_KEY_APP = "pref_key_app";
     public static final String PREF_KEY_SHAKE_TO_CLEAN = "pref_key_settings_shaketoclean";
     private static final String PREF_KEY_ABOUT_VERSION = "pref_about_version_title";
+    private static final String PREF_KEY_STORE_PAGE = "pref_play_store_title";
 
 
     /* ****************************** *
@@ -125,6 +126,20 @@ public class SettingsActivity extends AppCompatActivity {
             pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     startActivity(new Intent(getActivity(), CreditsActivity.class));
+                    return true;
+                }
+            });
+
+            // Set up the listener to make the user go on the Google Play Store's page
+            pref = findPreference(PREF_KEY_STORE_PAGE);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                public boolean onPreferenceClick(Preference preference) {
+                    final String appPackageName = getActivity().getPackageName();
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                    } catch ( android.content.ActivityNotFoundException anfe ){
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                    }
                     return true;
                 }
             });
