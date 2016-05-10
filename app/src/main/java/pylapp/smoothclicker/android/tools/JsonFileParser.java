@@ -26,6 +26,7 @@
 package pylapp.smoothclicker.android.tools;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.util.Log;
 
@@ -40,6 +41,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.views.PointsListAdapter;
 
 /**
@@ -47,7 +49,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Based on the "singleton" design pattern.
  *
  <pre>
-        adb push smoothclicker_points.json /storage/emulated/legacy/Download/
+        adb push myFile.json /storage/emulated/legacy/Download/
  </pre>
  *
  *
@@ -72,10 +74,17 @@ public class JsonFileParser {
      * CONSTANTS *
      * ********* */
 
+    // For the JSON points file
+
     /**
      * The file to the JSON file, in /storage/emulated/legacy/Download/
      */
     private static final String JSON_FILE_PATH = "smoothclicker_points.json";
+    /**
+     * The name of the config file, in /storage/emulated/legacy/Download/
+     */
+    private static final String JSON_CONFIG_FILE = "smoothclicker_config.json";
+
 
     /**
      * The key of the array containing the JSON points
@@ -93,6 +102,44 @@ public class JsonFileParser {
      * The description of the point
      */
     private static final String JSON_OBJECT_DESC = "desc";
+
+    // For the JSON config file
+
+    /**
+     * The key to get the boolean value for a delayed start mode
+     */
+    private static final String JSON_OBJECT_DELAYED_START = "delayedStart";
+    /**
+     * The key to get the int value for a delay
+     */
+    private static final String JSON_OBJECT_DELAY = "delay";
+    /**
+     * The key to get the int value for the time gap
+     */
+    private static final String JSON_OBJECT_TIME_GAP = "timeGap";
+    /**
+     * The key to get the int value for the repeat
+     */
+    private static final String JSON_OBJECT_REPEAT = "repeat";
+    /**
+     * The key to get the boolean value for the endless repeat mode
+     */
+    private static final String JSON_OBJECT_ENDLESS_REPEAT = "endlessRepeat";
+    /**
+     * The key to get the boolean value for the vibrate on start mode
+     */
+    private static final String JSON_OBJECT_VIBRATE_ON_START = "vibrateOnStart";
+    /**
+     * The key to get the boolean value for the vibrate on click mode
+     */
+    private static final String JSON_OBJECT_VIBRATE_ON_CLICK = "vibrateOnClick";
+    /**
+     * The key to get the boolean value for the notifications mode
+     */
+    private static final String JSON_OBJECT_NOTIFICATIONS = "notifications";
+
+
+    // For the Watch
 
     private static final String LOG_TAG = "JsonFileParser";
 
@@ -194,6 +241,75 @@ public class JsonFileParser {
         }
 
         return points;
+
+    }
+
+    /**
+     * Parses the JSON file which contains the config to apply on th click process
+     * @param c - The context which enables to update the shard preferences, must not be null
+     * @throws NotSuitableJsonConfigFileException - If a problem occurs with the JSON config file
+     */
+    public void parseConfigFile( Context c ) throws NotSuitableJsonConfigFileException {
+
+        if ( c == null ) throw new IllegalArgumentException("The context must not be null");
+
+        JSONObject jsonData = null;
+
+        // Get the file, its content and parse it
+        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        File file = new File(dir.getAbsolutePath()+"/"+ JSON_CONFIG_FILE);
+        try {
+            InputStream is = new FileInputStream( file );
+            int size = 0;
+            size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            String jsonString = new String(buffer, "UTF-8");
+            jsonData = new JSONObject(jsonString);
+        } catch ( IOException | JSONException e  ){
+            e.printStackTrace();
+            throw new NotSuitableJsonConfigFileException("A problem occurs with the JSON file : "+e.getMessage());
+        }
+
+        // Get the values in JSON
+        boolean isDelayed = false;
+        int delayInS = 0;
+        int timeGapInS = 0;
+        int repeatEach = 0;
+        boolean isEndlessRepeat = false;
+        boolean isVibrateOnStart = false;
+        boolean isVibrateOnClick = false;
+        boolean isDisplayNotifs = false;
+        try {
+            isDelayed = jsonData.getBoolean(JSON_OBJECT_DELAYED_START);
+            delayInS = jsonData.getInt(JSON_OBJECT_DELAY);
+            timeGapInS = jsonData.getInt(JSON_OBJECT_TIME_GAP);
+            repeatEach = jsonData.getInt(JSON_OBJECT_REPEAT);
+            isEndlessRepeat = jsonData.getBoolean(JSON_OBJECT_ENDLESS_REPEAT);
+            isVibrateOnStart = jsonData.getBoolean(JSON_OBJECT_VIBRATE_ON_START);
+            isVibrateOnClick = jsonData.getBoolean(JSON_OBJECT_VIBRATE_ON_CLICK);
+            isDisplayNotifs = jsonData.getBoolean(JSON_OBJECT_NOTIFICATIONS);
+        } catch ( JSONException jsone ){
+            jsone.printStackTrace();
+            throw new NotSuitableJsonConfigFileException("A problem occurs with the JSON file : "+jsone.getMessage());
+        }
+
+        Log.d("JSON", jsonData.toString());
+
+        // Update the config
+        SharedPreferences sp = c.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, isDelayed);
+        editor.putInt(Config.SP_KEY_DELAY, delayInS);
+        editor.putInt(Config.SP_KEY_TIME_GAP, timeGapInS);
+        editor.putInt(Config.SP_KEY_REPEAT, repeatEach);
+        editor.putBoolean(Config.SP_KEY_REPEAT_ENDLESS, isEndlessRepeat);
+        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
+        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, isVibrateOnClick);
+        editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, isDisplayNotifs);
+
+        editor.apply();
 
     }
 
