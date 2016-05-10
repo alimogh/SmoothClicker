@@ -281,6 +281,27 @@ Date: 09/05/2016
 What:
     feat: add new entry in the settings screen to make the user go on the Play Store's app's page
 ###################################################
+Date: 10/05/2016
+What:
+    chore: more work on execution of a huge sequence of clicks within a JSON file with a remote-triggerable invisible activity
+            (in case of need, not an important feature)
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
 Date:
 What:
 
