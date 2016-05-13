@@ -48,12 +48,13 @@
         android:src="@drawable/logo_128" />
 
     <!-- A description -->
-    <com.hanks.htextview.HTextView
-        android:id="@+id/htvSplashScreenDesc"
+    <TextView
+        android:id="@+id/tvSplashScreenDesc"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:text="@string/app_name"/>
 
 </LinearLayout>

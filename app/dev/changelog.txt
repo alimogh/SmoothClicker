@@ -286,9 +286,11 @@ What:
     chore: more work on execution of a huge sequence of clicks within a JSON file with a remote-triggerable invisible activity
             (in case of need, not an important feature)
 ###################################################
-Date:
+Date: 13/05/2016
 What:
-
+    fix: OutOfMemory error on boot because of HTextView
+    fix: bug in display of points with a strange default (O,O) point
+    chore: new run of Lint
 ###################################################
 Date:
 What:

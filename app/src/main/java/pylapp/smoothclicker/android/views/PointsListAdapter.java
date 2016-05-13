@@ -41,7 +41,7 @@ import java.util.List;
  * A BaseAdapter for the view containing the points to click on
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since  17/03/2016
  * @see BaseAdapter
  */
@@ -230,6 +230,9 @@ public class PointsListAdapter extends BaseAdapter {
          */
         public boolean isUsable;
 
+        final int UNDEFINED_X = -1;
+        final int UNDEFINED_Y = -1;
+
         public Point( int x, int y ){
             super();
             this.x = x;
@@ -248,6 +251,8 @@ public class PointsListAdapter extends BaseAdapter {
 
         public Point( String desc ){
             super();
+            this.x = UNDEFINED_X;
+            this.y = UNDEFINED_Y;
             this.desc = desc;
             isUsable = false;
         }
@@ -255,6 +260,7 @@ public class PointsListAdapter extends BaseAdapter {
         @Override
         public String toString(){
             StringBuffer sb = new StringBuffer();
+            if ( x == UNDEFINED_X || y == UNDEFINED_Y ) return desc;
             if ( desc != null && desc.length() > 0 ) sb.append(desc).append(" / ");
             sb.append("x = ").append(x).append(" / y = ").append(y);
             return sb.toString();

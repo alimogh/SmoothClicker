@@ -31,8 +31,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.hanks.htextview.HTextView;
-import com.hanks.htextview.HTextViewType;
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.Config;
 
@@ -40,7 +38,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * The splash screen activity
  *
  * @author pylapp
- * @version 2.0.0
+ * @version 3.0.0
  * @since 15/03/2016
  */
 public class SplashScreenActivity extends AppCompatActivity {
@@ -102,10 +100,6 @@ public class SplashScreenActivity extends AppCompatActivity {
      */
     @Override
     protected void onPostCreate( Bundle savedInstanceState ){
-
-        HTextView htv = (HTextView) findViewById(R.id.htvSplashScreenDesc);
-        htv.setAnimateType(HTextViewType.ANVIL);
-        htv.animateText(getString(R.string.splashscreen_description)); // FIXME May throw an OutOfMemory error, this lib is a bit pity
 
         mHandler = new Handler();
         mCallback = new Runnable() {
