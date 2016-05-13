@@ -57,11 +57,11 @@
     <!-- Widgets -->
 	<string name="widget_type_of_start">지연 된 시작</string>
 	<string name="widget_delay">지연</string>
-	<string name="widget_delay_hint">초에...</string>
+	<string name="widget_delay_hint">초에&#8230;</string>
 	<string name="widget_speed">각 클릭 하기 전에 시간</string>
-	<string name="widget_speed_hint">초에...</string>
+	<string name="widget_speed_hint">초에&#8230;</string>
 	<string name="widget_repeat">반복</string>
-	<string name="widget_repeat_hint">... 시간</string>
+	<string name="widget_repeat_hint">&#8230; 시간</string>
 	<string name="widget_repeat_endless">끝 없는</string>
 	<string name="widget_vibrate_on_start">시작 진동</string>
 	<string name="widget_vibrate_on_click">클릭에 진동</string>
@@ -121,8 +121,8 @@
     <!-- Notifications -->
 	<string name="notif_content_title">Smooth Clicker</string>
 	<string name="notif_content_text_click_made">새 클릭 </string>
-	<string name="notif_content_text_clicks_on_going_app">클릭 프로세스 (응용 프로그램)를 통해 실행... </string>
-	<string name="notif_content_text_clicks_on_going_service">클릭 프로세스 (서비스)를 통해 실행... </string>
+	<string name="notif_content_text_clicks_on_going_app">클릭 프로세스 (응용 프로그램)를 통해 실행&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">클릭 프로세스 (서비스)를 통해 실행&#8230; </string>
 	<string name="notif_content_text_clicks_stop">클릭 프로세스 중지 되었습니다.</string>
 	<string name="notif_content_text_clicks_over">클릭 과정이 끝났습니다.</string>
 	<string name="notif_content_text_su_granted">슈퍼 사용자 권한이 부여 되었는지</string>
@@ -151,15 +151,15 @@
 	<string name="intro_root_label">루트</string>
 	<string name="intro_root_desc">이 애플 리 케이이 션을 사용 하 여 뿌리 안 드 로이드 장치를가지고 해야</string>
 	<string name="intro_clicks_label">클릭</string>
-	<string name="intro_clicks_desc">처리를 여러 번 클릭을 정의... </string>
+	<string name="intro_clicks_desc">처리를 여러 번 클릭을 정의&#8230; </string>
 	<string name="intro_notifications_label">구성 가능</string>
-	<string name="intro_notifications_desc">... 및 알림, 진동 또는 지연 과정 구성</string>
+	<string name="intro_notifications_desc">&#8230; 및 알림, 진동 또는 지연 과정 구성</string>
 	<string name="intro_free_label">자유롭기 위하여 태어난</string>
 	<string name="intro_free_desc">부드러운 식자는 무료 이며 오픈 소스!</string>
 
     <!-- Misc. -->
 	<string name="error_not_implemented">아직 구현 되지 않았습니다!</string>
-	<string name="message_reinit_config">정리... </string>
+	<string name="message_reinit_config">정리&#8230; </string>
 	<string name="message_confirm_exit_label">출구</string>
 	<string name="message_confirm_exit_content">응용 프로그램을 종료 하 시겠습니까?</string>
 	<string name="app_intro">오신 것을 환영 합니다 식자를 부드럽게</string>

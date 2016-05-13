@@ -57,11 +57,11 @@
     <!-- Widgets -->
 	<string name="widget_type_of_start">Início diferido</string>
 	<string name="widget_delay">Atraso</string>
-	<string name="widget_delay_hint">... em segundos</string>
+	<string name="widget_delay_hint">&#8230; em segundos</string>
 	<string name="widget_speed">Tempo antes de cada clique</string>
-	<string name="widget_speed_hint">... em segundos</string>
+	<string name="widget_speed_hint">&#8230; em segundos</string>
 	<string name="widget_repeat">Repita</string>
-	<string name="widget_repeat_hint">... vezes</string>
+	<string name="widget_repeat_hint">&#8230; vezes</string>
 	<string name="widget_repeat_endless">Sem fim</string>
 	<string name="widget_vibrate_on_start">Vibrar no início</string>
 	<string name="widget_vibrate_on_click">Vibrar no clique</string>
@@ -121,8 +121,8 @@
     <!-- Notifications -->
 	<string name="notif_content_title">Smooth Clicker</string>
 	<string name="notif_content_text_click_made">Novo clique </string>
-	<string name="notif_content_text_clicks_on_going_app">O processo clicando em está executando (através do app)... </string>
-	<string name="notif_content_text_clicks_on_going_service">O processo clicando em está em execução (por meio do serviço)... </string>
+	<string name="notif_content_text_clicks_on_going_app">O processo clicando em está executando (através do app)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">O processo clicando em está em execução (por meio do serviço)&#8230; </string>
 	<string name="notif_content_text_clicks_stop">Parou o processo clicando em</string>
 	<string name="notif_content_text_clicks_over">Acabou-se o processo clicando em</string>
 	<string name="notif_content_text_su_granted">Foi concedida a permissão de super usuário</string>
@@ -153,15 +153,15 @@
 	<string name="intro_root_label">Raiz</string>
 	<string name="intro_root_desc">Você precisa ter um dispositivo Android enraizado para usar esse app</string>
 	<string name="intro_clicks_label">Cliques</string>
-	<string name="intro_clicks_desc">Defina vários cliques para processar... </string>
+	<string name="intro_clicks_desc">Defina vários cliques para processar&#8230; </string>
 	<string name="intro_notifications_label">Configurável</string>
-	<string name="intro_notifications_desc">... e configurar o processo com notificações, vibrações ou atrasos</string>
+	<string name="intro_notifications_desc">&#8230; e configurar o processo com notificações, vibrações ou atrasos</string>
 	<string name="intro_free_label">Nascidos para ser livres</string>
 	<string name="intro_free_desc">Clicker suave é gratuito e open-source!</string>
     
     <!-- Misc -->
 	<string name="error_not_implemented">Ainda não está implementado.</string>
-	<string name="message_reinit_config">Limpar-se... </string>
+	<string name="message_reinit_config">Limpar-se&#8230; </string>
 	<string name="message_confirm_exit_label">Saída</string>
 	<string name="message_confirm_exit_content">Você quer parar o app?</string>
 	<string name="app_intro">Bem-vindo ao suavizar o Smooth Clicker</string>
