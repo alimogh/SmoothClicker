@@ -57,11 +57,11 @@
     <!-- Widgets -->
     <string name="widget_type_of_start">Отложенный запуск</string>
 	<string name="widget_delay">Задержка</string>
-	<string name="widget_delay_hint">..., в секундах</string>
+	<string name="widget_delay_hint">&#8230;, в секундах</string>
 	<string name="widget_speed">Время перед каждый клик</string>
-	<string name="widget_speed_hint">..., в секундах</string>
+	<string name="widget_speed_hint">&#8230;, в секундах</string>
 	<string name="widget_repeat">Повторите</string>
-	<string name="widget_repeat_hint">... раз</string>
+	<string name="widget_repeat_hint">&#8230; раз</string>
 	<string name="widget_repeat_endless">Бесконечные</string>
 	<string name="widget_vibrate_on_start">Вибрируйте на старте</string>
 	<string name="widget_vibrate_on_click">Вибрируйте на нажмите</string>
@@ -121,8 +121,8 @@
     <!-- Notifications -->
 	<string name="notif_content_title">Гладкая зазывала</string>
 	<string name="notif_content_text_click_made">Новый щелчок </string>
-	<string name="notif_content_text_clicks_on_going_app">(Через приложение) выполняется щелчок процесс... </string>
-	<string name="notif_content_text_clicks_on_going_service">(Через службу) выполняется щелчок процесс... </string>
+	<string name="notif_content_text_clicks_on_going_app">(Через приложение) выполняется щелчок процесс&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">(Через службу) выполняется щелчок процесс&#8230; </string>
 	<string name="notif_content_text_clicks_stop">Щелкая процесс был остановлен</string>
 	<string name="notif_content_text_clicks_over">Щелкая процесс завершен</string>
 	<string name="notif_content_text_su_granted">Супер-пользователя разрешение</string>
@@ -153,15 +153,15 @@
 	<string name="intro_root_label">Корень</string>
 	<string name="intro_root_desc">Вы должны иметь корни андроид устройства использовать этот app</string>
 	<string name="intro_clicks_label">Кликов</string>
-	<string name="intro_clicks_desc">Определите несколько кликов для обработки... </string>
+	<string name="intro_clicks_desc">Определите несколько кликов для обработки&#8230; </string>
 	<string name="intro_notifications_label">Конфигурируемые</string>
-	<string name="intro_notifications_desc">... и настройте процесс уведомления, вибрация или задержки</string>
+	<string name="intro_notifications_desc">&#8230; и настройте процесс уведомления, вибрация или задержки</string>
 	<string name="intro_free_label">Рожден, чтобы быть свободной</string>
 	<string name="intro_free_desc">Гладкая Clicker является бесплатным и открытым исходным кодом!</string>
 
     <!-- Misc -->
 	<string name="error_not_implemented">Еще не реализовано!</string>
-	<string name="message_reinit_config">Очистить... </string>
+	<string name="message_reinit_config">Очистить&#8230; </string>
 	<string name="message_confirm_exit_label">Выход</string>
 	<string name="message_confirm_exit_content">Вы хотите выйти из приложения?</string>
 	<string name="app_intro">Добро пожаловать на Smooth Clicker</string>

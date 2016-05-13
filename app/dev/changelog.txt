@@ -291,6 +291,7 @@ What:
     fix: OutOfMemory error on boot because of HTextView
     fix: bug in display of points with a strange default (O,O) point
     chore: new run of Lint
+    fix: replace '...' by '#8230'
 ###################################################
 Date:
 What:

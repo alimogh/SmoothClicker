@@ -74,3 +74,4 @@ v1.9.1
 v1.9.2
     - Fixed bug which may appear on start of the app
     - Fixed a display bug in the list of points (a strange x = 0 / y = 0 point)
+    - Clean some verbatims

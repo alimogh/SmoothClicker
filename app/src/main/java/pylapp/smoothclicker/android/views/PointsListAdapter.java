@@ -259,7 +259,7 @@ public class PointsListAdapter extends BaseAdapter {
 
         @Override
         public String toString(){
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             if ( x == UNDEFINED_X || y == UNDEFINED_Y ) return desc;
             if ( desc != null && desc.length() > 0 ) sb.append(desc).append(" / ");
             sb.append("x = ").append(x).append(" / y = ").append(y);

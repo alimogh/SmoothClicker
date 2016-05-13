@@ -57,11 +57,11 @@
     <!-- Widgets -->
 	<string name="widget_type_of_start">Verzögerter start</string>
 	<string name="widget_delay">Verzögerung</string>
-	<string name="widget_delay_hint">... in Sekunden</string>
+	<string name="widget_delay_hint">&#8230; in Sekunden</string>
 	<string name="widget_speed">Vor jedem Klick</string>
-	<string name="widget_speed_hint">... in Sekunden</string>
+	<string name="widget_speed_hint">&#8230; in Sekunden</string>
 	<string name="widget_repeat">Wiederholen Sie die</string>
-	<string name="widget_repeat_hint">... Mal</string>
+	<string name="widget_repeat_hint">&#8230; Mal</string>
 	<string name="widget_repeat_endless">Endlose</string>
 	<string name="widget_vibrate_on_start">Vibrieren am start</string>
 	<string name="widget_vibrate_on_click">Vibrieren beim Klicken</string>
@@ -121,8 +121,8 @@
     <!-- Notifications -->
 	<string name="notif_content_title">Glatte Clicker</string>
 	<string name="notif_content_text_click_made">Neu klicken </string>
-	<string name="notif_content_text_clicks_on_going_app">Der Klick-Prozess läuft (durch die app)... </string>
-	<string name="notif_content_text_clicks_on_going_service">Der Klick-Prozess läuft (durch den Dienst)... </string>
+	<string name="notif_content_text_clicks_on_going_app">Der Klick-Prozess läuft (durch die app)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">Der Klick-Prozess läuft (durch den Dienst)&#8230; </string>
 	<string name="notif_content_text_clicks_stop">Der Klick-Prozess wurde beendet</string>
 	<string name="notif_content_text_clicks_over">Der Klick-Prozess ist vorbei</string>
 	<string name="notif_content_text_su_granted">Die Superuser-Genehmigung wurde erteilt</string>
@@ -153,15 +153,15 @@
 	<string name="intro_root_label">Stamm</string>
 	<string name="intro_root_desc">Sie benötigen eine verwurzelte Android Gerät, diese app zu verwenden</string>
 	<string name="intro_clicks_label">Klicks</string>
-	<string name="intro_clicks_desc">Definieren Sie mehrere Klicks verarbeiten... </string>
+	<string name="intro_clicks_desc">Definieren Sie mehrere Klicks verarbeiten&#8230; </string>
 	<string name="intro_notifications_label">Konfigurierbare</string>
-	<string name="intro_notifications_desc">... und konfigurieren Sie den Prozess mit Benachrichtigungen, Vibrationen oder Verzögerungen</string>
+	<string name="intro_notifications_desc">&#8230; und konfigurieren Sie den Prozess mit Benachrichtigungen, Vibrationen oder Verzögerungen</string>
 	<string name="intro_free_label">Geboren um frei zu sein</string>
 	<string name="intro_free_desc">Glatte Clicker ist frei und Open Source!</string>
 
     <!-- Misc. -->
 	<string name="error_not_implemented">Noch implementiert nicht!</string>
-	<string name="message_reinit_config">Aufräumen... </string>
+	<string name="message_reinit_config">Aufräumen&#8230; </string>
 	<string name="message_confirm_exit_label">Ausfahrt</string>
 	<string name="message_confirm_exit_content">Möchten Sie die app zu beenden?</string>
 	<string name="app_intro">Willkommen bei Smooth Clicker</string>
