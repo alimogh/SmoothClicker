@@ -71,3 +71,6 @@ v1.9.0 : Holy Hedgehog
     - More optimization and clean
 v1.9.1
     - Support for languages russian, german, portuguese and korean
+v1.9.2
+    - Fixed bug which may appear on start of the app
+    - Fixed a display bug in the list of points (a strange x = 0 / y = 0 point)
