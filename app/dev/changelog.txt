@@ -302,9 +302,10 @@ What:
     chore: new run of IT (UI Automator and Espresso), and UT (JUnit)
     chore: new run of Lint
 ###################################################
-Date:
+Date: 17/05/2016
 What:
-
+    fix: bug with the color of the icon bar for 5.0+ OS
+    chore: new run of IT and UT on a physical device
 ###################################################
 Date:
 What:

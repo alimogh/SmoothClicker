@@ -62,8 +62,7 @@
         <activity
             android:name=".views.SplashScreenActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -76,7 +75,7 @@
             android:name=".views.IntroScreensActivity"
             android:label="@string/app_intro"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
 
         <!-- The main activity of the app -->
         <activity
