@@ -71,7 +71,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.14.0
+ * @version 2.15.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -121,6 +121,12 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_clicker);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        initInnerListeners();
 
         // Check whether we're recreating a previously destroyed instance
         if (savedInstanceState != null) {
@@ -143,13 +149,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             et = (EditText) findViewById(R.id.etRepeat);
             et.setEnabled( ! cb.isEnabled() );
         }
-
-        setContentView(R.layout.activity_clicker);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        initInnerListeners();
 
     }
 

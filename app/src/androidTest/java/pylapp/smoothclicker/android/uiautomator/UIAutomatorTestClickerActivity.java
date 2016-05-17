@@ -29,6 +29,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
+import android.os.Build;
 import android.support.test.InstrumentationRegistry;
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
@@ -378,7 +379,8 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
      *
      * <i>If the button to get the SU grant is clicked, a notification about the good access to SU grant is displayed</i>
      */
-    @Test
+    //@Test
+    @Deprecated
     public void clickOnSuGrantButton(){
 
         l(this, "@Test clickOnSuGrantButton");
@@ -398,16 +400,27 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
             suGrantFab.click();
 
             // Check the notifications panel
-            UiObject notification = mDevice.findObject(
-                    new UiSelector()
-                            .resourceId("android:id/text")
-                            .className("android.widget.TextView")
-                            .packageName("com.android.settings")
-                            .textContains("Droits Super-utilisateur accordés à Smooth Clicker")); // WARNING FIXME French language, get the string in system R
+            UiObject n = null;
+
+            if ( Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT_WATCH ){
+                n = mDevice.findObject(
+                        new UiSelector()
+                                .resourceId("android:id/text")
+                                .className("android.widget.TextView")
+                                .packageName("pylapp.smoothclicker.android")
+                                .textContains("Droits Super-utilisateur accordés à Smooth Clicker")); // WARNING FIXME French language, get the string in system R
+            } else {
+                n = mDevice.findObject(
+                        new UiSelector()
+                                .resourceId("android:id/text")
+                                .className("android.widget.TextView")
+                                .packageName("com.android.systemui")
+                                .textContains("Droits Super-utilisateur accordés à Smooth Clicker")); // WARNING FIXME French language, get the string in system R
+            }
 
             mDevice.openNotification();
-            notification.waitForExists(2000);
-            assertTrue(notification.exists());
+            n.waitForExists(2000);
+            assertTrue(n.exists());
 
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();

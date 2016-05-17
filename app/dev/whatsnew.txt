@@ -75,3 +75,6 @@ v1.9.2
     - Fixed bug which may appear on start of the app
     - Fixed a display bug in the list of points (a strange x = 0 / y = 0 point)
     - Clean some verbatims
+v1.9.3
+    - Fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
+    - Support for languages romanian, polish and finnish

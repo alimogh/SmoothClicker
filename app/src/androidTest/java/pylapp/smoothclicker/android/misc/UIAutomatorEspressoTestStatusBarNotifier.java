@@ -26,6 +26,7 @@
 package pylapp.smoothclicker.android.misc;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.uiautomator.UiDevice;
@@ -48,7 +49,7 @@ import static org.junit.Assert.assertTrue;
  * Class to use to make UI tests with Espresso and UIAutomator of the NotificationsManager.
  *
  *  @author pylapp
- *  @version 1.1.0
+ *  @version 1.2.0
  *  @since 21/03/2016
  *  @see AbstractTest
  */
@@ -219,12 +220,23 @@ public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
 
         if ( textContent == null ) textContent = "";
 
-        UiObject n = mDevice.findObject(
-                new UiSelector()
-                        .resourceId("android:id/text")
-                        .className("android.widget.TextView")
-                        .packageName("pylapp.smoothclicker.android")
-                        .textContains(textContent));
+        UiObject n = null;
+
+        if ( Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT_WATCH ){
+            n = mDevice.findObject(
+                    new UiSelector()
+                            .resourceId("android:id/text")
+                            .className("android.widget.TextView")
+                            .packageName("pylapp.smoothclicker.android")
+                            .textContains(textContent));
+        } else {
+            n = mDevice.findObject(
+                    new UiSelector()
+                            .resourceId("android:id/text")
+                            .className("android.widget.TextView")
+                            .packageName("com.android.systemui")
+                            .textContains(textContent));
+        }
 
         mDevice.openNotification();
         n.waitForExists(2000);
