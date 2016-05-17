@@ -77,4 +77,5 @@ v1.9.2
     - Clean some verbatims
 v1.9.3
     - Fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
+    - Fixed bug which may make a white icons bar for full screen views
     - Support for languages romanian, polish and finnish
