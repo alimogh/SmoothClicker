@@ -140,7 +140,8 @@ Finally, starts the service: <br/>
     * fixed some bugs
     * update verbatims
 * _v1.9.3_
-    * fixed bug
+    * fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
+    * fixed bug which may make a white icons bar for full screen views
     * support for romanian, polish and finnish languages
 
 ***
