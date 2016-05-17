@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.CoordinatesProvider;
 import android.support.test.espresso.action.GeneralClickAction;
@@ -144,19 +145,21 @@ public class UIAutomatorEspressoTestClickerActivity extends AbstractTest {
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/etDelay")
             );
             delayField.setText("007");
-            mDevice.pressBack(); // To hide the soft keyboard
+
+            Espresso.closeSoftKeyboard();
+
             w(1000);
             UiObject repeatField = mDevice.findObject(
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/etRepeat")
             );
             repeatField.setText("42");
-            mDevice.pressBack(); // To hide the soft keyboard
+            Espresso.closeSoftKeyboard();
             w(1000);
             UiObject timeGapField = mDevice.findObject(
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/etTimeBeforeEachClick")
             );
-            timeGapField.setText("1337");
-            mDevice.pressBack(); // To hide the soft keyboard
+            timeGapField.setText("123");
+            Espresso.closeSoftKeyboard();
             w(1000);
             UiObject endless = mDevice.findObject(
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbEndlessRepeat")
@@ -207,9 +210,9 @@ public class UIAutomatorEspressoTestClickerActivity extends AbstractTest {
             assertEquals(Config.DEFAULT_NOTIF_ON_CLICK, notifications.isChecked());
 //            onView(withId(R.id.sPointsToClick)).check(ViewAssertions.matches(withListSize(1)));
 
-        } catch ( UiObjectNotFoundException uonfe ){
-            uonfe.printStackTrace();
-            fail( uonfe.getMessage() );
+        } catch ( Exception e ){
+            e.printStackTrace();
+            fail( e.getMessage() );
         }
 
     }

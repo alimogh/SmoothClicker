@@ -293,9 +293,14 @@ What:
     chore: new run of Lint
     fix: replace '...' by '#8230'
 ###################################################
-Date:
+Date: 17/05/2016
 What:
-
+    fix: bug with the main activity with a NullPointerException on the SwitchButton
+    feat: i18n of the app for Romanian, Finnish and Polish texts
+    refactor: refactor IT to deal with softkeyboards / back button
+    refactor: refactor IT to deal with variations between Android versions (e.g. get notifications from package name gap between 4.4 and 5.1)
+    chore: new run of IT (UI Automator and Espresso), and UT (JUnit)
+    chore: new run of Lint
 ###################################################
 Date:
 What:

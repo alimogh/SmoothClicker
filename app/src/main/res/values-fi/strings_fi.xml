@@ -1,0 +1,170 @@
+<!--
+    MIT License
+
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+	
+	<!-- For the app -->
+	<string name="app_name">Smooth Clicker</string>
+	<string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+	<string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+	<string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
+    
+    <!-- Menu -->
+	<string name="action_exit">Exit</string>
+	<string name="action_settings">Asetukset</string>
+	<string name="action_clean_points">Poistaa valitun pisteen</string>
+	<string name="action_clean_all">Palauttaa arvot ja poistaa valitun pisteen</string>
+
+	<string name="info_message_start">Tallenna kokoonpano ja alkaa klikkaamalla prosessi</string>
+	<string name="info_message_stop">Klikkaamalla pysäyttää</string>
+	<string name="info_message_request_su">Pyydä SU grant</string>
+	<string name="info_message_su_granted">SU-lupa on myönnetty :-)</string>
+	<string name="info_message_new_point">Valitse uusi pisteitä ruudulla</string>
+	<string name="info_message_invite_new_points">Valitse useita kohtia ja sitten takaisin</string>
+
+	<string name="error_message_su_not_granted">SU lupaa ei ole myönnetty x -)</string>
+	<string name="error_su_missing">Olet juuri Android aiemmin kohteleva nyt kuluva app? Se on pakollinen.</string>
+	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ ei napsautuksia määritelty</string>
+	<string name="error_message_was_not_working">(－‸ლ) Prosessia ei ole käynnistetty</string>
+
+	<string name="warning_hazard_repeat_endless_title">Vaarallinen toimenpide</string>
+	<string name="warning_hazard_repeat_endless_content">Oletko varma, että loputon toista? Tämä toiminto voi aiheuttaa vaaraa laite.</string>
+	<string name="warning_hazard_repeat_endless_no">Ei onnistu!</string>
+	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+
+    <!-- Widgets -->
+	<string name="widget_type_of_start">Viivästetty käynnistys</string>
+	<string name="widget_delay">Viive</string>
+	<string name="widget_delay_hint">&#8230; sekunteina</string>
+	<string name="widget_speed">Ajoin ennen napsautuksesta</string>
+	<string name="widget_speed_hint">&#8230; sekunteina</string>
+	<string name="widget_repeat">Toista</string>
+	<string name="widget_repeat_hint">&#8230; kertaa</string>
+	<string name="widget_repeat_endless">Loputon</string>
+	<string name="widget_vibrate_on_start">Värinä alkaa</string>
+	<string name="widget_vibrate_on_click">Valitse värisemään</string>
+	<string name="widget_delayed_starts">Myöhässä</string>
+	<string name="widget_immediate_starts">Nyt</string>
+	<string name="widget_xy_coordinates">Pisteitä napsauttamalla</string>
+	<string name="widget_notifications">Ilmoitukset</string>
+
+    <!-- Credits -->
+	<string name="credits_app_label">Smooth Clicker</string>
+	<string name="credits_app_desc">App, jonka pylapp</string>
+	<string name="credits_app_url">https://GitHub.com/pylapp/SmoothClicker</string>
+	<string name="credits_app_license">MIT-lisenssillä</string>
+	<string name="credits_app_personal_page">https://Twitter.com/pylapp</string>
+
+	<string name="credits_logo_label">Sovelluksen logo</string>
+	<string name="credits_logo_desc">Kuvake tekemät Freepik www.flaticon.com</string>
+	<string name="credits_logo_url">http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726#Term=Monkey</string>
+	<string name="credits_logo_license">Flaticon Basic-lisenssillä</string>
+
+	<string name="credits_mam_label">Materiaalin Arc valikko</string>
+	<string name="credits_mam_desc">Kirjasto, jonka Saurabh Arora</string>
+	<string name="credits_mam_url">https://GitHub.com/saurabharora90/MaterialArcMenu</string>
+	<string name="credits_mam_license">Nojalla lisenssin Apache v2</string>
+
+	<string name="credits_htextview_label">HTextView</string>
+	<string name="credits_htextview_desc">Kirjasto, jonka Hanks Zyh</string>
+	<string name="credits_htextview_url">https://GitHub.com/Hanks-zyh/HTextView</string>
+	<string name="credits_htextview_license">Nojalla lisenssin Apache v2</string>
+
+	<string name="credits_switchbutton_label">SwitchButton</string>
+	<string name="credits_switchbutton_desc">Kirjasto, jonka kyleduo</string>
+	<string name="credits_switchbutton_url">https://GitHub.com/kyleduo/SwitchButton</string>
+	<string name="credits_switchbutton_license">Nojalla lisenssin Apache v2</string>
+
+	<string name="credits_appintro_label">AppIntro</string>
+	<string name="credits_appintro_desc">Kirjasto, jonka Paolo Rotolo</string>
+	<string name="credits_appintro_url">https://GitHub.com/PaoloRotolo/AppIntro</string>
+	<string name="credits_appintro_license">Nojalla lisenssin Apache v2</string>
+
+	<string name="credits_icon_flaticon_freepik_label">Kuvakkeet</string>
+	<string name="credits_icon_flaticon_freepik_desc">Kuvakkeet tekemät Freepik www.flaticon.com</string>
+	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/Authors/freepik</string>
+	<string name="credits_icon_flaticon_freepik_license">Flaticon Basic-lisenssillä</string>
+	<string name="credits_icon_flaticon_elegantthemes_label">Kuvakkeet</string>
+	<string name="credits_icon_flaticon_elegantthemes_desc">Kuvakkeet tehdä Elegant Teemat www.flaticon.com</string>
+	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/Authors/Elegant-themes</string>
+	<string name="credits_icon_flaticon_elegantthemes_license">3.0 LISENSSILLÄ CC</string>
+	<string name="credits_icon_flaticon_yannick_label">Kuvakkeet</string>
+	<string name="credits_icon_flaticon_yannick_desc">Kuvakkeet tekemät Yannick www.flaticon.com</string>
+	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/Authors/Yannick</string>
+	<string name="credits_icon_flaticon_yannick_license">3.0 LISENSSILLÄ CC</string>
+
+    <!-- Splash screen -->
+	<string name="splashscreen_description">Smooth Clicker</string>
+
+    <!-- Notifications -->
+	<string name="notif_content_title">Smooth Clicker</string>
+	<string name="notif_content_text_click_made">Uuden napsauttamalla </string>
+	<string name="notif_content_text_clicks_on_going_app">Klikkaamalla prosessia suoritetaan (kautta app)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">Klikkaamalla prosessia suoritetaan (kautta palvelu)&#8230; </string>
+	<string name="notif_content_text_clicks_stop">Klikkaamalla prosessi keskeytettiin</string>
+	<string name="notif_content_text_clicks_over">Klikkaamalla prosessi on ohi</string>
+	<string name="notif_content_text_su_granted">Pääkäyttäjän oikeudet on myönnetty</string>
+	<string name="notif_content_text_countdown">Käynnistä:</string>
+
+    <!-- Settings / Preferences -->
+	<string name="pref_settings_title">Asetukset</string>
+	<string name="pref_settings_shaketoclean_title">Shake puhdistaa</string>
+	<string name="pref_settings_shaketoclean_summary">Ravistetaan laitteen kokoonpanoasetusten tyhjä</string>
+
+	<string name="pref_credits_title">Luottojen</string>
+	<string name="pref_key_credit_title">Tämä app käyttää kolmannen osapuolen sisältö</string>
+	<string name="pref_key_credit_summary">Klikkaa tästä nähdäksesi lisenssit</string>
+
+	<string name="pref_about_title">Tietoja</string>
+	<string name="pref_about_version_title">Versio</string>
+	<string name="pref_about_version_app_title">Smooth Clicker</string>
+	<string name="pref_about_version_app_summary">kirjoittanut pylapp - lisenssin MIT</string>
+
+	<string name="pref_play_store_title">Google Play</string>
+	<string name="pref_play_store_summary">★ Rohkeasti Arvostele ja kommentoi app ★</string>
+
+    <!-- Snackbars -->
+	<string name="snackbar_action_dismiss">Kumoa</string>
+
+    <!-- Intro screen -->
+	<string name="intro_welcome_label">Hei siellä!</string>
+	<string name="intro_welcome_desc">Tervetuloa Smooth Clicker</string>
+	<string name="intro_root_label">Root</string>
+	<string name="intro_root_desc">Sinun täytyy olla juurtunut Android laite käyttää tätä app</string>
+	<string name="intro_clicks_label">Napsautukset</string>
+	<string name="intro_clicks_desc">Määritä useita napsautuksia käsitellä&#8230; </string>
+	<string name="intro_notifications_label">Kokoonpano</string>
+	<string name="intro_notifications_desc">&#8230; ja määritä prosessin ilmoitukset, tärinä tai viivästyksiä</string>
+	<string name="intro_free_label">Syntyneet vapaasti</string>
+	<string name="intro_free_desc">Smooth Clicker on sekä vapaan ja avoimen lähdekoodin!</string>
+
+    <!-- Misc. -->
+	<string name="error_not_implemented">Ole vielä käyttöön!</string>
+	<string name="message_reinit_config">Puhdistaa&#8230; </string>
+	<string name="message_confirm_exit_label">Exit</string>
+	<string name="message_confirm_exit_content">Haluatko lopettaa app?</string>
+	<string name="app_intro">Tervetuloa Smooth Clicker</string>
+
+</resources>
