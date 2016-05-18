@@ -83,3 +83,4 @@ v1.10.0 [in dev]
     - Support for landscape mode for handsets and tablets
     - Fixed some bugs
     - Updated the credits view
+    - More support for tablets [in dev]

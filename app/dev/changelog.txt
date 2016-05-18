@@ -317,13 +317,13 @@ Date: 18/05/2016
 What:
     refactor: refactor the pool of Instrumented and Unit Tests
 ###################################################
-Date:
+Date: 18/05/2016
 What:
     fix: remove the entry on HTextView from the Credits View (and updates the strings)
 ###################################################
-Date:
+Date: 18/05/2016
 What:
-
+    fix: centered the image and the title of the splash screen
 ###################################################
 Date:
 What:

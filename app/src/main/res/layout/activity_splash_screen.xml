@@ -24,9 +24,19 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+    <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
+    <!--android:background="@color/colorBlack"-->
+    <!--tools:context="pylapp.smoothclicker.android.views.SplashScreenActivity">-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -36,6 +46,17 @@
     android:background="@color/colorBlack"
     tools:context="pylapp.smoothclicker.android.views.SplashScreenActivity">
 
+    <!-- A description -->
+    <TextView
+        android:id="@+id/tvSplashScreenDesc"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/splashscreen_title_text_size"
+        android:textAlignment="center"
+        android:text="@string/app_name"/>
 
     <!-- The logo of the application -->
     <ImageView
@@ -43,18 +64,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/tvSplashScreenDesc"
+        android:layout_centerInParent="true"
         android:contentDescription="@string/splashscreen_description"
-        android:src="@drawable/logo_128" />
+        android:src="@drawable/logo_512" />
 
-    <!-- A description -->
-    <TextView
-        android:id="@+id/tvSplashScreenDesc"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:text="@string/app_name"/>
-
-</LinearLayout>
+</RelativeLayout>
