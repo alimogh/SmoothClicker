@@ -23,54 +23,8 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.espresso;
-
-import android.content.Context;
-
-import pylapp.smoothclicker.android.AbstractTest;
-import pylapp.smoothclicker.android.tools.ShakeToClean;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+package pylapp.smoothclicker.android.views;
 
 /**
- * Class to use to make instrumented / unit tests with Espresso of the ShakeToClean.
- *
- *  @author pylapp
- *  @version 1.1.0
- *  @since 22/03/2016
- *  @see AbstractTest
+ * Package containing classes which process instrumented tests (Espresso and UiAutomator) on the views package
  */
-public class EspressoTestShakeToClean extends AbstractTest {
-
-
-    /**
-     *
-     */
-    @Before
-    public void init(){
-        l(this,"@Before init");
-    }
-
-    /**
-     *
-     */
-    @After
-    public void clean(){
-        l(this, "@After clean");
-    }
-
-
-    /**
-     * Tests the constructor with a null context
-     *
-     * <i>The ShakeToClean object can handle null context</i>
-     */
-    @Test (expected = IllegalArgumentException.class)
-    public void constructorWithNullContext(){
-        Context nullContext = null;
-        new ShakeToClean(nullContext);
-    }
-
-}

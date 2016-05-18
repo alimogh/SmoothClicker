@@ -23,8 +23,9 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.espresso;
+package pylapp.smoothclicker.android.tools;
 
 /**
- * Package containing classes which process instrumented tests with Espresso.
+ * Package containing classes which process instrumented tests (Espresso and UiAutomator) in the classes
+ * of the tools package.
  */

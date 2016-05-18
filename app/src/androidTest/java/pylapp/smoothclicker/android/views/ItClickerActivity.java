@@ -1,29 +1,4 @@
-/*
-    MIT License
-
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
- */
-// ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
-
-package pylapp.smoothclicker.android.uiautomator;
+package pylapp.smoothclicker.android.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,49 +6,84 @@ import android.content.Intent;
 
 import android.os.Build;
 import android.support.test.InstrumentationRegistry;
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import android.support.test.espresso.Espresso;
+import android.support.test.espresso.ViewAction;
+import android.support.test.espresso.action.CoordinatesProvider;
+import android.support.test.espresso.action.GeneralClickAction;
+import android.support.test.espresso.action.Press;
+import android.support.test.espresso.action.Tap;
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import android.support.test.runner.lifecycle.Stage;
-
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
+import android.view.View;
 
-import pylapp.smoothclicker.android.AbstractTest;
-import pylapp.smoothclicker.android.R;
-import pylapp.smoothclicker.android.views.ClickerActivity;
-
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
-import java.util.Collection;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.swipeUp;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.fail;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+
+import java.util.Collection;
+
+import pylapp.smoothclicker.android.AbstractTest;
+import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.utils.Config;
+
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
+
 
 /**
- * Class to use to make UI tests with UIAutomator of the ClickerActivity.
+ * Class to use to make UI tests with UIAutomator and Espresso of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.1.0
- * @since 22/03/2016
+ * @version 1.1.1
+ * @since 11/04/2016
  * @see AbstractTest
  */
-public class UIAutomatorTestClickerActivity extends AbstractTest {
+public class ItClickerActivity extends AbstractTest {
 
 
     /**
      * The UIDevice object is the primary way to access and manipulate the state of the device
      */
     private UiDevice mDevice;
+
+    /**
+     * Defines a rule for our tests : here the activity to test.
+     * An Espresso object..
+     */
+    @Rule
+    public ActivityTestRule<ClickerActivity> mActivityRule = new ActivityTestRule<>(ClickerActivity.class);
+
+    /**
+     *
+     */
+    private static final int MOCK_POINT_X = 500;
+    /**
+     *
+     */
+    private static final int MOCK_POINT_Y = 600;
 
     /**
      *
@@ -88,6 +98,22 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
      */
     private static final String PACKAGE_APP_PATH = "pylapp.smoothclicker.android";
 
+
+    /**
+     *
+     */
+    @Before
+    public void init(){
+        l(this,"@Before init");
+    }
+
+    /**
+     *
+     */
+    @After
+    public void clean(){
+        l(this, "@After clean");
+    }
 
     /**
      * Starts the main activity to test from the home screen
@@ -508,6 +534,46 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
     }
 
     /**
+     * Tests clicks on the select points activity and if the list of points is well populated (in the clicker activity)
+     *
+     * <i>If a click is donne at coordinates X/Y on the dedicated activity, the main activity has to display the selected point in its spinner</i>
+     */
+    @Test
+    public void selectPoints(){
+
+        l(this, "@Test selectPoints");
+
+        w(3000);
+        // Open the arc menu
+        onView(withId(R.id.fabAction)).perform(click());
+        w(1000);
+
+        // Start the select multipoints activity
+        onView(withId(R.id.fabSelectPoint)).perform(click());
+        w(2000);
+
+        int x = 500;
+        int y  = 600;
+
+        // Make two clicks on the screen
+        onView(withId(R.id.translucentMainView)).perform(clickXY(x, y));
+        w(2000);
+
+        // Go back to the main activity
+        pressBack();
+        w(2000);
+
+        onView(withId(R.id.clickerActivityMainLayout)).perform(swipeUp());
+        w(1000);
+
+        // Check the spinner containing all the selected points
+        onView(withId(R.id.sPointsToClick)).perform(click());
+        //  onView(withText("1 clicks")).perform(click());
+        onView(withText("x = "+x+" / y = "+y)).check(matches(isDisplayed()));
+
+    }
+
+    /**
      * Test the button for selecting points
      *
      * <i>If the button to select points is clicked, the activity to select points have to be launched</i>
@@ -628,6 +694,195 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
 
     }
 
+    /**
+     * Test the click on the button for the "clean all" feature
+     *
+     * <i>If the button to clean all is clicked, the configuration / values ion the fields have to be the default values, and the list of points has to be cleaned</i>
+     * <i>If the button to clean all is clicked and no values has been changed, the values still remain the default ones</i>
+     */
+    @Test
+    public void clickCleanAll(){
+
+        l(this, "@Test clickCleanAll");
+
+        try {
+
+            // Get the menu item
+            UiObject mi = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/action_clean_all")
+            );
+
+            // Add some values
+            UiObject delayField = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/etDelay")
+            );
+            delayField.setText("007");
+
+            Espresso.closeSoftKeyboard();
+
+            w(1000);
+            UiObject repeatField = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/etRepeat")
+            );
+            repeatField.setText("42");
+            Espresso.closeSoftKeyboard();
+            w(1000);
+            UiObject timeGapField = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/etTimeBeforeEachClick")
+            );
+            timeGapField.setText("123");
+            Espresso.closeSoftKeyboard();
+            w(1000);
+            UiObject endless = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbEndlessRepeat")
+            );
+            endless.click();
+            w(1000);
+            UiObject vibrateOnStart = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbVibrateOnStart")
+            );
+            vibrateOnStart.click();
+            w(1000);
+            UiObject vibrateOnClick = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbVibrateOnClick")
+            );
+            vibrateOnClick.click();
+            w(1000);
+            UiObject notifications = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbNotifOnClick")
+            );
+            notifications.click();
+            w(1000);
+
+            fillSpinnerAsUser();
+
+            // Click on the menu item
+            mi.click();
+
+            // Check if the values have been made empty
+            assertEquals(Config.DEFAULT_DELAY, delayField.getText());
+            assertEquals(Config.DEFAULT_TIME_GAP, timeGapField.getText());
+            assertEquals(Config.DEFAULT_REPEAT, repeatField.getText());
+            assertEquals(Config.DEFAULT_REPEAT_ENDLESS, endless.isChecked());
+            assertEquals(Config.DEFAULT_VIBRATE_ON_START, vibrateOnStart.isChecked());
+            assertEquals(Config.DEFAULT_VIBRATE_ON_CLICK, vibrateOnClick.isChecked());
+            assertEquals(Config.DEFAULT_NOTIF_ON_CLICK, notifications.isChecked());
+//            onView(withId(R.id.clickerActivityMainLayout)).perform(swipeUp());
+//            onView(withId(R.id.sPointsToClick)).perform(click());
+//            onView(withId(R.id.sPointsToClick)).check(ViewAssertions.matches(withListSize(1)));
+
+            // Test again to check if the default values remain
+            mi.click();
+            assertEquals(Config.DEFAULT_DELAY, delayField.getText());
+            assertEquals(Config.DEFAULT_TIME_GAP, timeGapField.getText());
+            assertEquals(Config.DEFAULT_REPEAT, repeatField.getText());
+            assertEquals(Config.DEFAULT_REPEAT_ENDLESS, endless.isChecked());
+            assertEquals(Config.DEFAULT_VIBRATE_ON_START, vibrateOnStart.isChecked());
+            assertEquals(Config.DEFAULT_VIBRATE_ON_CLICK, vibrateOnClick.isChecked());
+            assertEquals(Config.DEFAULT_NOTIF_ON_CLICK, notifications.isChecked());
+//            onView(withId(R.id.sPointsToClick)).check(ViewAssertions.matches(withListSize(1)));
+
+        } catch ( Exception e ){
+            e.printStackTrace();
+            fail( e.getMessage() );
+        }
+
+    }
+
+    /**
+     * Test the click on the button for the "clean points" feature
+     *
+     * <i>If the button to clean points is clicked, the list of points has to be cleaned</i>
+     * <i>If the button to clean points is clicked and no values has been changed, the values still remain the default ones</i>
+     */
+    @Test
+    public void clickCleanPoints() {
+
+        l(this, "@Test clickCleanPoints");
+
+        try {
+
+            // Get the menu item
+            UiObject mi = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/action_clean_all")
+            );
+
+            w(5000); // If there is no wait, Espresso fails to get the floating action button
+
+            // Bind the list
+            fillSpinnerAsUser();
+
+            // Click on the menu item
+            mi.click();
+
+            // Check if the values have been made empty
+//            onView(withId(R.id.clickerActivityMainLayout)).perform(swipeUp());
+//            onView(withId(R.id.sPointsToClick)).perform(click());
+//            onView(withId(R.id.sPointsToClick)).check(ViewAssertions.matches(withListSize(1)));
+
+            // Test again to check if the default values remain
+            mi.click();
+            //           onView(withId(R.id.sPointsToClick)).check(ViewAssertions.matches(withListSize(1)));
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail( uonfe.getMessage() );
+        }
+
+    }
+
+    /**
+     * Selects some points to fill the spinner
+     */
+    private void fillSpinnerAsUser(){
+
+        // Open the arc menu
+        onView(withId(R.id.fabAction)).perform(click());
+        w(1000);
+
+        // Start the select multipoints activity
+        onView(withId(R.id.fabSelectPoint)).perform(click());
+        w(2000);
+
+        // Make two clicks on the screen
+        onView(withId(R.id.translucentMainView)).perform(clickXY(MOCK_POINT_X, MOCK_POINT_Y));
+        w(2000);
+
+        // Go back to the main activity
+        pressBack();
+        w(2000);
+
+        onView(withId(R.id.clickerActivityMainLayout)).perform(swipeUp());
+        w(1000);
+
+    }
+
+    /**
+     * Custom ViewAction to click on dedicated coordinates
+     * @param x -
+     * @param y -
+     * @return ViewAction -
+     */
+    private ViewAction clickXY( final int x, final int y ){
+        return new GeneralClickAction(
+                Tap.SINGLE,
+                new CoordinatesProvider() {
+                    @Override
+                    public float[] calculateCoordinates( View view ){
+
+                        final int[] screenPos = new int[2];
+                        view.getLocationOnScreen(screenPos);
+
+                        final float screenX = screenPos[0] + x;
+                        final float screenY = screenPos[1] + y;
+
+                        return new float[]{screenX, screenY};
+
+                    }
+                },
+                Press.FINGER);
+    }
+
     private static Activity mResumedActivity;
 
     /**
@@ -649,5 +904,21 @@ public class UIAutomatorTestClickerActivity extends AbstractTest {
         });
         return mResumedActivity;
     }
+
+//    /**
+//     * Matcher for a list with its size
+//     * @param size -
+//     * @return Matcher<View>
+//     */
+//    public static Matcher<View> withListSize( final int size ){
+//        return new TypeSafeMatcher<View>() {
+//            @Override public boolean matchesSafely( final View view ){
+//                return ((ListView) view).getChildCount () == size;
+//            }
+//            @Override public void describeTo( final Description description ){
+//                description.appendText ("ListView should have " + size + " items");
+//            }
+//        };
+//    }
 
 }

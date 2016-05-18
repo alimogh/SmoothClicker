@@ -24,7 +24,7 @@
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
 
-package pylapp.smoothclicker.android.espresso;
+package pylapp.smoothclicker.android.receivers;
 
 import android.content.Context;
 import android.content.Intent;
@@ -38,14 +38,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Class to use to make instrumented / unit tests with Espresso of the BRClicker.
+ * Class to use to make instrumented / unit tests with Espresso and UiAutomator of the BRClicker.
  *
  *  @author pylapp
  *  @version 1.0.0
  *  @since 22/03/2016
  *  @see AbstractTest
  */
-public class EspressoTestBRClicker extends AbstractTest {
+public class ItBrClicker extends AbstractTest {
 
 
     /**

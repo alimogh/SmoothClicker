@@ -24,7 +24,7 @@
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
 
-package pylapp.smoothclicker.android.misc;
+package pylapp.smoothclicker.android.clickers;
 
 import android.app.Activity;
 import android.content.Context;
@@ -57,14 +57,14 @@ import static android.support.test.rule.ServiceTestRule.withTimeout;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Class to use to make instrumented tests with Espresso and UIAUtomator of the ServiceClicker.
+ * Class to use to make instrumented tests with Espresso and UIAutomator of the ServiceClicker.
  *
  *  @author pylapp
  *  @version 1.2.0
  *  @since 22/03/2016
  *  @see AbstractTest
  */
-public class UIAutomatorEspressoTestServiceClicker extends AbstractTest {
+public class ItServiceClicker extends AbstractTest {
 
 
     /**

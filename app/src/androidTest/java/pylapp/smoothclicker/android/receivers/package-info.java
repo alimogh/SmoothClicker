@@ -23,11 +23,9 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.misc;
+package pylapp.smoothclicker.android.receivers;
 
 /**
- * Package containing classes which process instrumented tests with both Espresso and UIAutomator and the same time.
- * Indeed, some features (like Notifications and NotificationsManager) cannot be tested only by Espresso (because it cannot access to the notifications panel)
- * and UIAutomator (because the String retrievment from the Context fails).
- * So these two frameworks are sued in the same time.
+ * Package containing classes which process instrumented tests (Espresso and UiAutomator) in the classes
+ * of the receivers package.
  */

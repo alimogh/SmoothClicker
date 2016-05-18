@@ -23,7 +23,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.misc;
+package pylapp.smoothclicker.android.notifiers;
 
 import android.content.Context;
 import android.os.Build;
@@ -53,7 +53,7 @@ import static org.junit.Assert.assertTrue;
  *  @since 21/03/2016
  *  @see AbstractTest
  */
-public class UIAutomatorEspressoTestStatusBarNotifier extends AbstractTest {
+public class ItStatusBarNotifier extends AbstractTest {
 
 
     /**
