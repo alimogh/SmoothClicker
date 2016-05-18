@@ -30,7 +30,6 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 
 import com.github.paolorotolo.appintro.AppIntro;
-import com.github.paolorotolo.appintro.AppIntroFragment;
 
 import pylapp.smoothclicker.android.R;
 
@@ -38,7 +37,7 @@ import pylapp.smoothclicker.android.R;
  * The intro screen
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.2.0
  * @since 13/04/2016
  * @see AppIntro
  */
@@ -124,7 +123,7 @@ public class IntroScreensActivity extends AppIntro {
     private void addSlides() {
 
         // Slide 1: Welcome
-        addSlide(AppIntroFragment.newInstance(
+        addSlide(MyAppIntroFragment.newInstance(
                 getString(R.string.intro_welcome_label),
                 getString(R.string.intro_welcome_desc),
                 R.drawable.smooth_clicker,
@@ -132,7 +131,7 @@ public class IntroScreensActivity extends AppIntro {
         );
 
         // Slide 2: Root
-        addSlide(AppIntroFragment.newInstance(
+        addSlide(MyAppIntroFragment.newInstance(
                         getString(R.string.intro_root_label),
                         getString(R.string.intro_root_desc),
                         R.drawable.root,
@@ -140,7 +139,7 @@ public class IntroScreensActivity extends AppIntro {
         );
 
         // Slide 3: Clicks
-        addSlide(AppIntroFragment.newInstance(
+        addSlide(MyAppIntroFragment.newInstance(
                         getString(R.string.intro_clicks_label),
                         getString(R.string.intro_clicks_desc),
                         R.drawable.clicks,
@@ -148,7 +147,7 @@ public class IntroScreensActivity extends AppIntro {
         );
 
         // Slide 4: Notifications
-        addSlide(AppIntroFragment.newInstance(
+        addSlide(MyAppIntroFragment.newInstance(
                         getString(R.string.intro_notifications_label),
                         getString(R.string.intro_notifications_desc),
                         R.drawable.notifications,
@@ -156,7 +155,7 @@ public class IntroScreensActivity extends AppIntro {
         );
 
         // Slide 5: Free and open-source
-        addSlide(AppIntroFragment.newInstance(
+        addSlide(MyAppIntroFragment.newInstance(
                         getString(R.string.intro_free_label),
                         getString(R.string.intro_free_desc),
                         R.drawable.open_sources,

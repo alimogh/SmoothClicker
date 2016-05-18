@@ -325,6 +325,18 @@ Date: 18/05/2016
 What:
     fix: centered the image and the title of the splash screen
 ###################################################
+Date: 18/05/2016
+What:
+    fix: change the size of the font of the texts displayed in splash screen and intro screens
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
 Date:
 What:
 
