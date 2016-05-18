@@ -87,11 +87,6 @@
 	<string name="credits_mam_url">https://GitHub.com/saurabharora90/MaterialArcMenu</string>
 	<string name="credits_mam_license">Nojalla lisenssin Apache v2</string>
 
-	<string name="credits_htextview_label">HTextView</string>
-	<string name="credits_htextview_desc">Kirjasto, jonka Hanks Zyh</string>
-	<string name="credits_htextview_url">https://GitHub.com/Hanks-zyh/HTextView</string>
-	<string name="credits_htextview_license">Nojalla lisenssin Apache v2</string>
-
 	<string name="credits_switchbutton_label">SwitchButton</string>
 	<string name="credits_switchbutton_desc">Kirjasto, jonka kyleduo</string>
 	<string name="credits_switchbutton_url">https://GitHub.com/kyleduo/SwitchButton</string>

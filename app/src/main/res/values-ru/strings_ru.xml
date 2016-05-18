@@ -87,11 +87,6 @@
 	<string name="credits_mam_url">HTTPS://GitHub.com/saurabharora90/MaterialArcMenu</string>
 	<string name="credits_mam_license">По лицензии Apache v2</string>
 
-	<string name="credits_htextview_label">HTextView</string>
-	<string name="credits_htextview_desc">Библиотека, сделанные Хэнкс Зых</string>
-	<string name="credits_htextview_url">HTTPS://GitHub.com/Hanks-ZYH/HTextView</string>
-	<string name="credits_htextview_license">По лицензии Apache v2</string>
-
 	<string name="credits_switchbutton_label">SwitchButton</string>
 	<string name="credits_switchbutton_desc">Библиотека, сделанные kyleduo</string>
 	<string name="credits_switchbutton_url">HTTPS://GitHub.com/kyleduo/SwitchButton</string>

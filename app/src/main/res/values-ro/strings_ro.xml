@@ -87,11 +87,6 @@
 	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
 	<string name="credits_mam_license">Sub licența Apache v2</string>
 
-	<string name="credits_htextview_label">HTextView</string>
-	<string name="credits_htextview_desc">Bibliotecă de Hanks Zyh</string>
-	<string name="credits_htextview_url">https://github.com/Hanks-zyh/HTextView</string>
-	<string name="credits_htextview_license">Sub licența Apache v2</string>
-
 	<string name="credits_switchbutton_label">SwitchButton</string>
 	<string name="credits_switchbutton_desc">Bibliotecă de kyleduo</string>
 	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>

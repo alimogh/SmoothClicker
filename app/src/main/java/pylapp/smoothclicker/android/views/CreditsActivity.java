@@ -39,7 +39,7 @@ import pylapp.smoothclicker.android.R;
  * The activity which displays the credits / third-parties licences.
  *
  * @author pylapp
- * @version 1.6.0
+ * @version 1.7.0
  * @since 15/03/2016
  */
 public class CreditsActivity extends AppCompatActivity {
@@ -84,17 +84,6 @@ public class CreditsActivity extends AppCompatActivity {
             }
         });
 
-        // The HTextView's Github URL
-        tv = (TextView) findViewById(R.id.tvCreditsHtextviewUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_htextview_url)));
-                startActivity(i);
-            }
-        });
-
         // The SwitchButton's Github URL
         tv = (TextView) findViewById(R.id.tvCreditsSwitchButtonUrl);
         tv.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +117,7 @@ public class CreditsActivity extends AppCompatActivity {
             }
         });
 
-        // The app's author personnal page
+        // The app's author personal page
         tv = (TextView) findViewById(R.id.tvCreditsAppDesc);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
