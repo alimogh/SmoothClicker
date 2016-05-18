@@ -87,11 +87,6 @@
 	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
 	<string name="credits_mam_license">아파치 라이선스 v 2에서</string>
 
-	<string name="credits_htextview_label">HTextView</string>
-	<string name="credits_htextview_desc">행 크 Zyh에 의해 만들어진 라이브러리</string>
-	<string name="credits_htextview_url">https://github.com/hanks-zyh/HTextView</string>
-	<string name="credits_htextview_license">아파치 라이선스 v 2에서</string>
-
 	<string name="credits_switchbutton_label">SwitchButton</string>
 	<string name="credits_switchbutton_desc">Kyleduo에 의해 만들어진 라이브러리</string>
 	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>

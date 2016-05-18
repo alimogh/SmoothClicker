@@ -319,7 +319,7 @@ What:
 ###################################################
 Date:
 What:
-
+    fix: remove the entry on HTextView from the Credits View (and updates the strings)
 ###################################################
 Date:
 What:

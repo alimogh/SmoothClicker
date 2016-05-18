@@ -28,6 +28,15 @@ LAST TASK : #56
 TO DO
 
     *Task #36 : [v1.10.x] Tablets support (10' screen)
+        TABLETS
+                splash screen with icon and titles not centered
+                font's size in intro screen and splash screen too small
+            LANDSCAPE
+                padding / margin between inner fields in cardviews of Credits's view too big
+                make a main activity's view with two columns?
+            PORTRAIT
+                very important blank / empty space under the last field (the list of points)
+
     Task #51 : [v1.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
 
     Task #16 : [v2.0.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
