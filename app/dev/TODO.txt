@@ -29,10 +29,10 @@ TO DO
 
     *Task #36 : [v1.10.x] Tablets support (10' screen)
         TABLETS
-                font's size in intro screen and splash screen too small
             LANDSCAPE
                 padding / margin between inner fields in cardviews of Credits's view too big
                 make a main activity's view with two columns?
+                font's size of splash screen and intro screens too small
             PORTRAIT
                 very important blank / empty space under the last field (the list of points)
 
