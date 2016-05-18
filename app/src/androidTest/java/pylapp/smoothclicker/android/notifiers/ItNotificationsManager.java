@@ -23,7 +23,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.misc;
+package pylapp.smoothclicker.android.notifiers;
 
 import android.app.Activity;
 import android.content.Context;
@@ -69,7 +69,7 @@ import java.util.Collection;
  */
 @RunWith(AndroidJUnit4.class)
 @SmallTest
-public class UIAutomatorEspressoTestNotificationsManager extends AbstractTest {
+public class ItNotificationsManager extends AbstractTest {
 
 
     /**

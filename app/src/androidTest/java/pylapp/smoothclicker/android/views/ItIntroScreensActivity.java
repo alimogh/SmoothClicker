@@ -23,7 +23,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.uiautomator;
+package pylapp.smoothclicker.android.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -64,7 +64,7 @@ import static org.junit.Assert.fail;
  * @since 22/03/2016
  * @see AbstractTest
  */
-public class UIAutomatorTestIntroScreensActivity extends AbstractTest {
+public class ItIntroScreensActivity extends AbstractTest {
 
 
     /**

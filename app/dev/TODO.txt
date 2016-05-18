@@ -27,7 +27,7 @@ LAST TASK : #56
 
 TO DO
 
-    Task #36 : [v1.x.x] Tablets support (10' screen)
+    *Task #36 : [v1.10.x] Tablets support (10' screen)
     Task #51 : [v1.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
 
     Task #16 : [v2.0.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
@@ -40,7 +40,6 @@ TO DO
                         (http://developer.android.com/tools/help/proguard.html)
     Task #43 : Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
     Task #36 : Date picker to define a time period when clicks process can be done
-    Task #50 : Refactor the pool of tests: do not separate tests according to their frameworks, but make packages with the same schema as the sources packages, and gather the Espresso / UIAutomator tests in same files (one for this activity, one for that, ...)
     Task #35 : Fabric.io, Crashlytics or other tools for bug tracking ?
     Task #37 : Android Wear support
 

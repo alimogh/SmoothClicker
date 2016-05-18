@@ -23,7 +23,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.misc;
+package pylapp.smoothclicker.android.views;
 
 import android.content.Context;
 import android.content.Intent;
@@ -70,7 +70,7 @@ import static org.hamcrest.Matchers.notNullValue;
  * @since 13/04/2016
  * @see AbstractTest
  */
-public class UIAutomatorEspressoTestSelectMultiPointsActivity extends AbstractTest {
+public class ItSelectMultiPointsActivity extends AbstractTest {
 
 
     /**

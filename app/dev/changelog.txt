@@ -313,9 +313,9 @@ What:
     fix: fixed a bug risen by a ClassCastException on the switch button
     chore: update the version code, the version name and the version tag
 ###################################################
-Date:
+Date: 18/05/2016
 What:
-
+    refactor: refactor the pool of Instrumented and Unit Tests
 ###################################################
 Date:
 What:

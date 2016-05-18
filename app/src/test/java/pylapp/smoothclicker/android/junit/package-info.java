@@ -26,5 +26,5 @@
 package pylapp.smoothclicker.android.junit;
 
 /**
- * Package containing classes which process unit tests with JUnit.
+ * Package containing classes which process Unit Tests (UT) with JUnit.
  */
