@@ -41,7 +41,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -71,7 +70,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.15.0
+ * @version 2.16.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -130,7 +129,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         // Check whether we're recreating a previously destroyed instance
         if (savedInstanceState != null) {
-            Switch typeOfStart = (Switch) findViewById(R.id.sTypeOfStartDelayed);
+            SwitchButton typeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
             typeOfStart.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_START_TYPE_DELAYED));
             EditText et = (EditText) findViewById(R.id.etDelay);
             et.setText(savedInstanceState.getString(Config.SP_KEY_DELAY));

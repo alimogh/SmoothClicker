@@ -307,6 +307,32 @@ What:
     fix: bug with the color of the icon bar for 5.0+ OS
     chore: new run of IT and UT on a physical device
 ###################################################
+Date: 18/05/2016
+What:
+    feat: support for landscape mode for handsets
+    fix: fixed a bug risen by a ClassCastException on the switch button
+    chore: update the version code, the version name and the version tag
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
 Date:
 What:
 
