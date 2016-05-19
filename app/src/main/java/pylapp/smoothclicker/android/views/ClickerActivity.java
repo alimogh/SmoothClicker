@@ -70,7 +70,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.16.0
+ * @version 2.17.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -117,7 +117,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      * @param savedInstanceState -
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState ){
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clicker);
@@ -126,9 +126,10 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         setSupportActionBar(toolbar);
 
         initInnerListeners();
+        initDefaultValues();
 
         // Check whether we're recreating a previously destroyed instance
-        if (savedInstanceState != null) {
+        if ( savedInstanceState != null ){
             SwitchButton typeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
             typeOfStart.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_START_TYPE_DELAYED));
             EditText et = (EditText) findViewById(R.id.etDelay);
@@ -150,18 +151,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         }
 
     }
-
-    /**
-     * Triggered when the view has been created
-     *
-     * @param savedInstanceState -
-     */
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        initDefaultValues();
-        super.onPostCreate(savedInstanceState);
-    }
-
+    
     /**
      * Triggered when the back button is pressed
      */
