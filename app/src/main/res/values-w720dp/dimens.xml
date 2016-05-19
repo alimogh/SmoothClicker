@@ -32,11 +32,30 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">64dp</dimen>
 
+    <!-- ***************** -->
     <!-- The splash screen -->
+    <!-- ***************** -->
     <dimen name="splashscreen_title_text_size">30sp</dimen>
 
+    <!-- ****************** -->
     <!-- Then intro screens -->
+    <!-- ****************** -->
     <dimen name="introscreens_title_text_size">30sp</dimen>
     <dimen name="introscreens_desc_text_size">15sp</dimen>
+
+    <!-- ***************** -->
+    <!-- The main activity -->
+    <!-- ***************** -->
+    <dimen name="widget_label_text_size">24sp</dimen>
+
+    <!-- **************** -->
+    <!-- The credits view -->
+    <!-- **************** -->
+    <dimen name="cardview_layout_margin">8dp</dimen>
+    <dimen name="cardview_innerlayout_horizontal_margin_top">24dp</dimen>
+    <dimen name="cardview_innerlayout_horizontal_margin_bottom">24dp</dimen>
+    <dimen name="cardview_innerlayout_horizontal_margin_left">16dp</dimen>
+    <dimen name="cardview_innerlayout_horizontal_margin_right">16dp</dimen>
+    <dimen name="cardview_bottom_padding">16dp</dimen>
 
 </resources>
