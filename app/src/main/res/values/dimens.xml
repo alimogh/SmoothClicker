@@ -32,7 +32,7 @@
     <dimen name="spinner_points_padding">10dp</dimen>
 
     <!-- The splash screen -->
-    <dimen name="splashscreen_title_text_size">20sp</dimen>
+    <dimen name="splashscreen_title_text_size">30sp</dimen>
 
     <!-- Then intro screens -->
     <dimen name="introscreens_title_text_size">10sp</dimen>
