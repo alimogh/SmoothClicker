@@ -45,7 +45,7 @@
             android:id="@+id/cv_credits_app"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -54,7 +54,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -62,7 +66,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_app_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:id="@+id/tvCreditsAppDesc"
@@ -75,14 +79,14 @@
                     android:id="@+id/tvCreditsAppUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_app_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_app_license"
                     android:textStyle="bold"/>
@@ -98,7 +102,7 @@
             android:id="@+id/cv_credits_application_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -107,7 +111,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -115,7 +123,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_logo_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -127,14 +135,14 @@
                     android:id="@+id/tvCreditsApplicationLogoUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_logo_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_logo_license"
                     android:textStyle="bold"/>
@@ -150,7 +158,7 @@
             android:id="@+id/cv_credits_application_mam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -159,7 +167,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -167,7 +179,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_mam_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -179,14 +191,14 @@
                     android:id="@+id/tvCreditsMamUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_mam_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_mam_license"
                     android:textStyle="bold"/>
@@ -202,7 +214,7 @@
             android:id="@+id/cv_credits_switchbutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -211,7 +223,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -219,7 +235,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_switchbutton_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -231,14 +247,14 @@
                     android:id="@+id/tvCreditsSwitchButtonUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_switchbutton_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_switchbutton_license"
                     android:textStyle="bold"/>
@@ -254,7 +270,7 @@
             android:id="@+id/cv_credits_appintro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -263,7 +279,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -271,7 +291,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_appintro_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -283,14 +303,14 @@
                     android:id="@+id/tvCreditsAppintroUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_appintro_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_appintro_license"
                     android:textStyle="bold"/>
@@ -306,7 +326,7 @@
             android:id="@+id/cv_credits_icon_flaticons_freepik"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -315,7 +335,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -323,7 +347,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_icon_flaticon_freepik_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -335,14 +359,14 @@
                     android:id="@+id/tvCreditsFlaticonsFreepikUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_icon_flaticon_freepik_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_icon_flaticon_freepik_license"
                     android:textStyle="bold"/>
@@ -358,7 +382,7 @@
             android:id="@+id/cv_credits_icon_flaticons_eleganthemes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -367,7 +391,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -375,7 +403,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_icon_flaticon_elegantthemes_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -387,14 +415,14 @@
                     android:id="@+id/tvCreditsFlaticonsElegantthemesUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_icon_flaticon_elegantthemes_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_icon_flaticon_elegantthemes_license"
                     android:textStyle="bold"/>
@@ -410,7 +438,7 @@
             android:id="@+id/cv_credits_icon_flaticons_yannick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/cardview_layout_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="5dp">
 
@@ -419,7 +447,11 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -427,7 +459,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorAccent"
                     android:text="@string/credits_icon_flaticon_yannick_label"
-                    android:paddingBottom="@dimen/activity_vertical_margin"/>
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -439,14 +471,14 @@
                     android:id="@+id/tvCreditsFlaticonsYannickUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_icon_flaticon_yannick_url"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/credits_icon_flaticon_yannick_license"
                     android:textStyle="bold"/>
