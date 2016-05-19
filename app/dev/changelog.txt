@@ -329,9 +329,17 @@ Date: 18/05/2016
 What:
     fix: change the size of the font of the texts displayed in splash screen and intro screens
 ###################################################
-Date:
+Date: 19/05/2016
 What:
-
+    feat: more support for 5", 6", 7" and 10" devices (handsets and tablets) both in landscape and portrait modes
+    fix: change the text style of widgets in the main activity to make it more material and to apply the Google's guidelines
+    fix: font size of texts in intro screens for handsets and tablets in portrait and landscape modes
+    fix: retrieve defined data when orientation changes
+    fix: good font size for text in splash screen for handsets and tablets in portrait or landscape mode
+    fix: redesign the credits view to follow Google's material guidelines and have a better UI on tablets in portrait and landscape modes
+    fix: change the appearance of the selected point's spinner (dialog and no more drop down list)
+    chore: new run of Lint, new run of IT (Espresso and UIAutomator), new run of UT (JUnit)
+    fix: missing file in IT folder
 ###################################################
 Date:
 What:

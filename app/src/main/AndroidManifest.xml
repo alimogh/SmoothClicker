@@ -36,6 +36,12 @@
 
     <!-- To be SU -->
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+
+    <!--
+     These permissions are NORMAL permissions, so no need to ask grant for them
+     See: https://developer.android.com/guide/topics/security/permissions.html#normal-dangerous
+     See: https://developer.android.com/guide/topics/security/normal-permissions.html
+     -->
     <!-- To make the device vibrate (here on each click or on start if needed) -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- To start the service when the boot of the device is done -->
