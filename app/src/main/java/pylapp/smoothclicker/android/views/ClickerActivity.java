@@ -151,7 +151,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         }
 
     }
-    
+
     /**
      * Triggered when the back button is pressed
      */
