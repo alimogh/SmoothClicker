@@ -79,8 +79,9 @@ v1.9.3
     - Fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
     - Fixed bug which may make a white icons bar for full screen views
     - Support for languages romanian, polish and finnish
-v1.10.0 [in dev]
+v1.10.0
     - Support for landscape mode for handsets and tablets
+    - More support for 6", 7" and 10" screens devices
     - Fixed some bugs
-    - Updated the credits view
-    - More support for tablets [in dev]
+    - Improved the credits view
+    - Improved some components to make them more material

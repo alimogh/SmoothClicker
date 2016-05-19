@@ -27,7 +27,7 @@ LAST TASK : #57
 
 TO DO
 
-    Task #57 : [v1.10.0] Deal with Android 6 and permissions
+    Task #57 : [vx.x.x] Deal with Android 6 permissions
     Task #51 : [v1.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
 
 
