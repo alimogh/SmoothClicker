@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_type_of_start"
                     android:textColor="@color/colorAccent"/>
 
@@ -80,6 +80,7 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="4dp"
+                    android:textSize="@dimen/widget_label_text_size"
                     app:kswTextOn="@string/widget_delayed_starts"
                     app:kswTextOff="@string/widget_immediate_starts"/>
 
@@ -109,7 +110,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_delay"
                     android:textColor="@color/colorAccent"/>
 
@@ -117,7 +118,7 @@
                     android:id="@+id/etDelay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:hint="@string/widget_delay_hint"
                     android:inputType="number"
                     android:maxLength="3"/>
@@ -148,7 +149,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_speed"
                     android:textColor="@color/colorAccent"/>
 
@@ -156,7 +157,7 @@
                     android:id="@+id/etTimeBeforeEachClick"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:hint="@string/widget_speed_hint"
                     android:inputType="number"
                     android:maxLength="3"/>
@@ -187,7 +188,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_repeat"
                     android:textColor="@color/colorAccent"/>
 
@@ -195,7 +196,7 @@
                     android:id="@+id/etRepeat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:hint="@string/widget_repeat_hint"
                     android:inputType="number"
                     android:maxLength="3"/>
@@ -203,7 +204,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_repeat_endless"
                     android:textColor="@color/colorAccent"/>
 
@@ -238,7 +239,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_vibrate_on_start"
                     android:textColor="@color/colorAccent"/>
 
@@ -272,7 +273,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_vibrate_on_click"
                     android:textColor="@color/colorAccent"/>
 
@@ -307,7 +308,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_notifications"
                     android:textColor="@color/colorAccent"/>
 
@@ -342,7 +343,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="@dimen/widget_label_text_size"
                     android:text="@string/widget_xy_coordinates"
                     android:textColor="@color/colorAccent"/>
 
@@ -351,7 +352,7 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:textSize="@dimen/widget_label_text_size"/>
 
             </LinearLayout>
 

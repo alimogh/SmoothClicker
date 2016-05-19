@@ -38,4 +38,7 @@
     <dimen name="introscreens_title_text_size">10sp</dimen>
     <dimen name="introscreens_desc_text_size">5sp</dimen>
 
+    <!-- The labels for widgets -->
+    <dimen name="widget_label_text_size">20sp</dimen>
+
 </resources>

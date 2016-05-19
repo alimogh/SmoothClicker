@@ -35,6 +35,7 @@ TO DO
                 make a main activity's view with two columns?
             PORTRAIT
                 very important blank / empty space under the last field (the list of points)
+                        -> define size of texts according to guidelines
 
     Task #51 : [v1.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
 
