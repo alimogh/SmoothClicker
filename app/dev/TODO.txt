@@ -27,6 +27,10 @@ LAST TASK : #57
 
 TO DO
 
+    Task #59 : [v1.10.0] Start the process remotely with JSON files
+    Task #58 : [v1.X.X] SMS toggleable click process (receive a SMS with a dedicated action and starts the click process)
+
+   
     Task #57 : [vx.x.x] Deal with Android 6 permissions
     Task #51 : [v1.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
 
