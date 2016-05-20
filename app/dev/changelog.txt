@@ -341,9 +341,11 @@ What:
     chore: new run of Lint, new run of IT (Espresso and UIAutomator), new run of UT (JUnit)
     fix: missing file in IT folder
 ###################################################
-Date:
+Date: 20/05/2016
 What:
-
+    chore: UK English screen captures of v1.10.0 on a Nexus 5 via https://developer.android.com/distribute/tools/promote/device-art.html
+    feat: support for italian and catalan
+    chore: new run of Lint, Unit Tests with JUnit, Instrumented Tests with Espresso and UI Automator
 ###################################################
 Date:
 What:

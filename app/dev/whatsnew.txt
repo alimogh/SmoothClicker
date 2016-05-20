@@ -85,3 +85,4 @@ v1.10.0
     - Fixed some bugs
     - Improved the credits view
     - Improved some components to make them more material
+    - Support for italian and catalan

@@ -44,6 +44,7 @@
 	<string name="info_message_su_granted">Die SU-Genehmigung wurde erteilt :-)</string>
 	<string name="info_message_new_point">Wählen Sie neue Punkte auf dem Bildschirm</string>
 	<string name="info_message_invite_new_points">Wählen Sie mehrere Punkte aus und dann wieder</string>
+
 	<string name="error_message_su_not_granted">Die SU-Autorisierung wurde nicht erteilt X -)</string>
 	<string name="error_su_missing">Root Sie Ihr Android, bevor Sie mit dieser app? Es ist obligatorisch.</string>
 	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ definiert keine Klicks</string>
@@ -68,9 +69,9 @@
 	<string name="widget_delayed_starts">Verzögert</string>
 	<string name="widget_immediate_starts">Jetzt</string>
 	<string name="widget_xy_coordinates">Punkte zum anklicken</string>
+    <string name="widget_notifications">Benachrichtigungen</string>
 
     <!-- Credits -->
-    <string name="widget_notifications">Benachrichtigungen</string>
 	<string name="credits_app_label">Glatte Clicker</string>
 	<string name="credits_app_desc">App von Pylapp gemacht</string>
 	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>

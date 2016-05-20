@@ -1,0 +1,166 @@
+<!--
+    MIT License
+
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <!-- For the app -->
+    <string name="app_name">Smooth Clicker</string>
+    <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+    <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
+
+    <!-- Menus -->
+	<string name="action_exit">Sortida</string>
+	<string name="action_settings">Configuració</string>
+	<string name="action_clean_points">Suprimeix els punts seleccionats</string>
+	<string name="action_clean_all">Reinicialitzar els valors i suprimir els punts seleccionats</string>
+
+    <!-- Messages -->
+	<string name="info_message_start">Desa la configuració i comença el procés de clic</string>
+	<string name="info_message_stop">Aturar el procés de clic</string>
+	<string name="info_message_request_su">Demanar la subvenció SU</string>
+	<string name="info_message_su_granted">L\'autorització de SU ha estat concedit :-)</string>
+	<string name="info_message_new_point">Seleccioneu nous punts a la pantalla</string>
+	<string name="info_message_invite_new_points">Seleccioneu diversos punts i llavors retrocedir</string>
+
+	<string name="error_message_su_not_granted">L\'autorització de SU no ha atorgat (x-</string>
+	<string name="error_su_missing">Que et decantes seu Android abans d\'utilitzar aquest app? És obligatori.</string>
+	<string name="error_message_no_click_defined">¯\\_ (: ツ) _ / ¯ definit cap clic</string>
+	<string name="error_message_was_not_working">(－‸ლ) No s\'inicia el procés</string>
+
+	<string name="warning_hazard_repeat_endless_title">Operació perillosos</string>
+	<string name="warning_hazard_repeat_endless_content">Esteu segur que voleu fer una repetició sense fi? Aquesta operació pot ser perillós per al vostre dispositiu.</string>
+	<string name="warning_hazard_repeat_endless_no">!</string>
+	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+
+    <!-- Widgets -->
+	<string name="widget_type_of_start">Començament retardat</string>
+	<string name="widget_delay">Retard</string>
+	<string name="widget_delay_hint">&#8230; en segons</string>
+	<string name="widget_speed">Hora abans de cada clic</string>
+	<string name="widget_speed_hint">&#8230; en segons</string>
+	<string name="widget_repeat">Repetir</string>
+	<string name="widget_repeat_hint">&#8230; vegades</string>
+	<string name="widget_repeat_endless">Sense fi</string>
+	<string name="widget_vibrate_on_start">Vibrar a començament</string>
+	<string name="widget_vibrate_on_click">Vibrar a clic</string>
+	<string name="widget_delayed_starts">Retardat</string>
+	<string name="widget_immediate_starts">Ara</string>
+	<string name="widget_xy_coordinates">Punts de clicar.</string>
+	<string name="widget_notifications">Notificacions</string>
+
+    <!-- Credits -->
+	<string name="credits_app_label">Smooth Clicker</string>
+	<string name="credits_app_desc">Aplicació realitzada per pylapp</string>
+	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
+	<string name="credits_app_license">Sota Llicència MIT</string>
+	<string name="credits_app_personal_page">https://Twitter.com/pylapp</string>
+
+	<string name="credits_logo_label">Logotip de l\'aplicació</string>
+	<string name="credits_logo_desc">Icona confeccionada per Freepik www.flaticon.com</string>
+	<string name="credits_logo_url">http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726#Term=Monkey</string>
+	<string name="credits_logo_license">Sota llicència bàsica Flaticon</string>
+
+	<string name="credits_mam_label">Material Arc menú</string>
+	<string name="credits_mam_desc">Biblioteca fet per Saurabh Arora</string>
+	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
+	<string name="credits_mam_license">Sota la llicència Apache v2</string>
+
+	<string name="credits_switchbutton_label">SwitchButton</string>
+	<string name="credits_switchbutton_desc">Biblioteca fet per kyleduo</string>
+	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
+	<string name="credits_switchbutton_license">Sota la llicència Apache v2</string>
+
+	<string name="credits_appintro_label">AppIntro</string>
+	<string name="credits_appintro_desc">Biblioteca de Paolo Rotolo</string>
+	<string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
+	<string name="credits_appintro_license">Sota la llicència Apache v2</string>
+
+	<string name="credits_icon_flaticon_freepik_label">Icones</string>
+	<string name="credits_icon_flaticon_freepik_desc">Icones confeccionada per Freepik www.flaticon.com</string>
+	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
+	<string name="credits_icon_flaticon_freepik_license">Sota llicència bàsica Flaticon</string>
+	<string name="credits_icon_flaticon_elegantthemes_label">Icones</string>
+	<string name="credits_icon_flaticon_elegantthemes_desc">Icones confeccionada per Elegant temes www.flaticon.com</string>
+	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-Themes</string>
+	<string name="credits_icon_flaticon_elegantthemes_license">Sota CC 3.0 llicència per</string>
+	<string name="credits_icon_flaticon_yannick_label">Icones</string>
+	<string name="credits_icon_flaticon_yannick_desc">Icones confeccionada per Yannick www.flaticon.com</string>
+	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/Yannick</string>
+	<string name="credits_icon_flaticon_yannick_license">Sota CC 3.0 llicència per</string>
+
+    <!-- Splash screen -->
+	<string name="splashscreen_description">Smooth Clicker</string>
+
+    <!-- Notifications -->
+	<string name="notif_content_title">Smooth Clicker</string>
+	<string name="notif_content_text_click_made">Feu clic a nou </string>
+	<string name="notif_content_text_clicks_on_going_app">S\'està executant el procés fa clic (a través de l\'app)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">S\'està executant el procés fa clic (a través del servei)&#8230; </string>
+	<string name="notif_content_text_clicks_stop">S\'ha aturat el procés fent clic a</string>
+	<string name="notif_content_text_clicks_over">El procés de clic</string>
+	<string name="notif_content_text_su_granted">S\'ha concedit el permís de superusuari</string>
+	<string name="notif_content_text_countdown">Iniciar en:</string>
+
+    <!-- Settings / Preferences -->
+	<string name="pref_settings_title">Configuració</string>
+	<string name="pref_settings_shaketoclean_title">Sacsejada per netejar</string>
+	<string name="pref_settings_shaketoclean_summary">Sacsegi el seu mecanisme per fer la configuració buit</string>
+
+	<string name="pref_credits_title">Crèdits</string>
+	<string name="pref_key_credit_title">Aquest app utilitza continguts de tercers</string>
+	<string name="pref_key_credit_summary">Feu clic aquí per mostrar les llicències</string>
+
+	<string name="pref_about_title">Sobre</string>
+	<string name="pref_about_version_title">Versió</string>
+	<string name="pref_about_version_app_title">Smooth Clicker</string>
+	<string name="pref_about_version_app_summary">escrit pylapp - Llicència MIT</string>
+
+	<string name="pref_play_store_title">Google Play</string>
+	<string name="pref_play_store_summary">★ Dubti valorar i comentar l\'app ★</string>
+
+    <!-- Snackbars -->
+	<string name="snackbar_action_dismiss">Desfer</string>
+
+    <!-- Intro screens -->
+	<string name="intro_welcome_label">Hola!</string>
+	<string name="intro_welcome_desc">Benvinguts a Smooth Clicker</string>
+	<string name="intro_root_label">Arrel</string>
+	<string name="intro_root_desc">Vostè necessita tenir un dispositiu Android plantat per utilitzar això app</string>
+	<string name="intro_clicks_label">Clics</string>
+	<string name="intro_clicks_desc">Definir uns quants clics per processar&#8230; </string>
+	<string name="intro_notifications_label">Configurable</string>
+	<string name="intro_notifications_desc">&#8230; i configurar el procés amb notificacions, vibracions o retards</string>
+	<string name="intro_free_label">Nascut per ser lliures</string>
+	<string name="intro_free_desc">Smooth Clicker és lliure i codi obert!</string>
+
+    <!-- Misc. -->
+	<string name="error_not_implemented">No implementat encara!</string>
+	<string name="message_reinit_config">Netejar&#8230; </string>
+	<string name="message_confirm_exit_label">Sortida</string>
+	<string name="message_confirm_exit_content">Voleu abandonar l\'app?</string>
+	<string name="app_intro">Benvinguts a Smooth Clicker</string>
+
+</resources>
