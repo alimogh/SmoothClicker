@@ -17,24 +17,24 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 <table>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/intro_1_en.png" alt="Introduction screen" title="Welcome to Smooth Clicker guys!" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_intro_1_framed.png" alt="Introduction screen" title="Welcome to Smooth Clicker guys!" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/main_screen_en.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_clicker_activity_2_framed.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_3_en.png" alt="Undo the click you have selected" title="Undo the click you have selected" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_multipoint_3_framed.png" alt="Select some points everywhere" title="Select some points everywhere" width="200">
 </td>
 </tr>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_2_en.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_multipoint_2_framed.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/notifications_on_going_en.png" alt="The app can display notifications about what its state" title="The app can display notifications about what it is doing" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_notifications_on_going_framed.png" alt="The app can display notifications about what its state" title="The app can display notifications about what it is doing" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/credits_en.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_settings_framed.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
 </td>
 </tr>
 </table>
