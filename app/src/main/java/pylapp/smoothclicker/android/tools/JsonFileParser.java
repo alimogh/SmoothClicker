@@ -55,7 +55,6 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  *
  * @version 1.0.0
  * @since 04/05/2016
- * @see Exception
  */
 public class JsonFileParser {
 

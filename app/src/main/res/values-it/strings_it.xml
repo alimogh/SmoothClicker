@@ -30,7 +30,13 @@
 	<string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
 	<string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
 	<string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-	
+
+    <!-- The standalone activity -->
+    <string name="app_name_ninja">Smooth Clicker (standalone)</string>
+    <string name="ninja_init_config">Standalone : i valori di configurazione vengono raccolti &#8230;</string>
+    <string name="ninja_init_points">Standalone : Punti a fare clic su sono raccolti &#8230;</string>
+    <string name="ninja_start_click_process">Standalone : Il processo di scatto sta iniziando &#8230;</string>
+
 	<!-- Menus -->
 	<string name="action_exit">Uscita</string>
 	<string name="action_settings">Impostazioni</string>
@@ -119,7 +125,8 @@
 	<string name="notif_content_text_click_made">Nuovo fare clic su </string>
 	<string name="notif_content_text_clicks_on_going_app">Il processo facendo clic su è in esecuzione (tramite l\'app)&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">Il processo facendo clic su è in esecuzione (tramite il servizio)&#8230; </string>
-	<string name="notif_content_text_clicks_stop">È stato arrestato il processo facendo clic su</string>
+    <string name="notif_content_text_clicks_on_going_standalone">Il processo facendo clic su è in esecuzione (standalone)&#8230; </string>
+    <string name="notif_content_text_clicks_stop">È stato arrestato il processo facendo clic su</string>
 	<string name="notif_content_text_clicks_over">Il processo di facendo clic su</string>
 	<string name="notif_content_text_su_granted">È stata concessa l\'autorizzazione di super-utente</string>
 	<string name="notif_content_text_countdown">Avviare in:</string>

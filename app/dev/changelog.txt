@@ -347,9 +347,12 @@ What:
     feat: support for italian and catalan
     chore: new run of Lint, Unit Tests with JUnit, Instrumented Tests with Espresso and UI Automator
 ###################################################
-Date:
+Date: 20/05/2016
 What:
-
+    feat: add standalone mode with a remote-startable invisible activity which will take points and config JSON files before starting the click process
+    refactor: pool of UT
+    test: add new UT
+    chore: update TODO
 ###################################################
 Date:
 What:

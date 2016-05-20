@@ -119,6 +119,7 @@
 	<string name="notif_content_text_click_made">Feu clic a nou </string>
 	<string name="notif_content_text_clicks_on_going_app">S\'està executant el procés fa clic (a través de l\'app)&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">S\'està executant el procés fa clic (a través del servei)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_standalone">S\'està executant el procés fa clic (standalone)&#8230; </string>
 	<string name="notif_content_text_clicks_stop">S\'ha aturat el procés fent clic a</string>
 	<string name="notif_content_text_clicks_over">El procés de clic</string>
 	<string name="notif_content_text_su_granted">S\'ha concedit el permís de superusuari</string>

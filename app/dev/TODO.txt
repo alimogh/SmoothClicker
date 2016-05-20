@@ -23,19 +23,20 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #60
+LAST TASK : #61
 
 TO DO
 
-    Task #59 : [v1.10.0] Start the process remotely with JSON files
-    Task #58 : [v1.10.0] SMS toggleable click process (receive a SMS with a dedicated action and starts the click process)
-    Task #60 : ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag
+    Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE
+    Task #58 : [v1.10.0] SMS toggleable click process (receive a SMS with a dedicated action and starts the click process as standalone mode)
+    Task #60 : [memo] ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag
 
-    Task #57 : [vx.x.x] Deal with Android 6 permissions
+
+    Task #61 : [vx.x.x] More Unit tests with JUnit and Mockito
     Task #51 : [v1.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
 
 
-    Task #16 : [v2.0.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
+    Task #16 : [vx.x.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
     Task #56 : [vx.x.x] Handle JSON files
     Task #2  : [vx.x.x] Movable floating action button
     Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU

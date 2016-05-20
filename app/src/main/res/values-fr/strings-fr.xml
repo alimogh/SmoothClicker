@@ -31,6 +31,12 @@
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker de Smooth Clicker</string>
 
+    <!-- The standalone activity -->
+    <string name="app_name_ninja">Smooth Clicker (standalone)</string>
+    <string name="ninja_init_config">Standalone : Récupération de la configuration &#8230;</string>
+    <string name="ninja_init_points">Standalone : Récupération des points à cliquer&#8230;</string>
+    <string name="ninja_start_click_process">Standalone : Démarrage du process de clicks&#8230;</string>
+
     <!-- Menus -->
     <string name="action_exit">Quitter</string>
     <string name="action_settings">Paramètres</string>
@@ -120,6 +126,7 @@
     <string name="notif_content_text_click_made">Nouveau click </string>
     <string name="notif_content_text_clicks_on_going_app">Le processus de click travaille (via l\'app)&#8230; </string>
     <string name="notif_content_text_clicks_on_going_service">Le processus de click travaille (via le service)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_standalone">Le processus de click travaille (standalone)&#8230; </string>
     <string name="notif_content_text_clicks_stop">Le processus de click a été arrêté</string>
     <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
     <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>

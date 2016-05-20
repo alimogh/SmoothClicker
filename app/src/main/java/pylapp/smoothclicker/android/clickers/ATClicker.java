@@ -25,6 +25,7 @@
 
 package pylapp.smoothclicker.android.clickers;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -36,6 +37,7 @@ import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.notifiers.NotificationsManager;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.tools.Logger;
+import pylapp.smoothclicker.android.views.NinjaActivity;
 import pylapp.smoothclicker.android.views.PointsListAdapter;
 
 import java.io.DataOutputStream;
@@ -99,6 +101,12 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
      * If the repeat is endless
      */
     private boolean mIsRepeatEndless;
+
+    /**
+     * Flag to rise to true if in standalone mode, or to put to false if in app mode
+     */
+    private boolean mIsStandalone;
+
     /**
      * The singleton of this class
      */
@@ -118,12 +126,13 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
 
     /**
      * Constructor
-     * @param c - The context to use to get the SharedPreferences to get the configuration
+     * @param parent - The activity which possesses the context to use to get the SharedPreferences to get the configuration
      */
-    private ATClicker( Context c ){
+    private ATClicker( Activity parent ){
         super();
-        if ( c == null ) throw new IllegalArgumentException("The Context _c_ variable is null !");
-        mContext = c;
+        if ( parent == null ) throw new IllegalArgumentException("The Context _c_ variable is null !");
+        mContext = parent;
+        mIsStandalone = ( parent instanceof NinjaActivity);
     }
 
 
@@ -221,7 +230,8 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
             NotificationsManager.getInstance(mContext).stopAllNotifications();
         }
 
-        NotificationsManager.getInstance(mContext).makeClicksOnGoingNotification();
+        if ( mIsStandalone ) NotificationsManager.getInstance(mContext).makeClicksOnGoingNotificationStandalone();
+        else NotificationsManager.getInstance(mContext).makeClicksOnGoingNotificationByApp();
 
         /*
          * Is the execution endless ?
@@ -299,11 +309,11 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
     }
 
     /**
-     * @param c - The context to sue to retrieve data from Shared Preferences
+     * @param parent - The parent activity which possesses the context to sue to retrieve data from Shared Preferences
      * @return ATClicker - The singleton
      */
-    public static ATClicker getInstance( Context c ){
-        if ( sInstance == null ) sInstance = new ATClicker(c);
+    public static ATClicker getInstance( Activity parent ){
+        if ( sInstance == null ) sInstance = new ATClicker( parent );
         return sInstance;
     }
 

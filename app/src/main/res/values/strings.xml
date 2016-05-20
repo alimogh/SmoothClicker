@@ -31,11 +31,11 @@
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
-    <!-- Ninja activity -->
-    <string name="app_name_ninja">Smooth Clicker (Ninja)</string>
-    <string name="ninja_init_config">Config values are picked &#8230;</string>
-    <string name="ninja_init_points">Points to click on are picked &#8230;</string>
-    <string name="ninja_start_click_process">The clicking process is starting &#8230;</string>
+    <!-- The standalone activity -->
+    <string name="app_name_ninja">Smooth Clicker (standalone)</string>
+    <string name="ninja_init_config">Standalone: Config values are picked &#8230;</string>
+    <string name="ninja_init_points">Standalone: Points to click on are picked &#8230;</string>
+    <string name="ninja_start_click_process">Standalone: The clicking process is starting &#8230;</string>
 
     <!-- Menus -->
     <string name="action_exit">Exit</string>
@@ -125,6 +125,7 @@
     <string name="notif_content_text_click_made">New click </string>
     <string name="notif_content_text_clicks_on_going_app">The clicking process is running (through the app)&#8230; </string>
     <string name="notif_content_text_clicks_on_going_service">The clicking process is running (through the service)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_standalone">The clicking process is running (standalone)&#8230;</string>
     <string name="notif_content_text_clicks_stop">The clicking process has been stopped</string>
     <string name="notif_content_text_clicks_over">The clicking process is over</string>
     <string name="notif_content_text_su_granted">The super-user permission has been granted</string>

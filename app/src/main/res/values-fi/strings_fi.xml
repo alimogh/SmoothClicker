@@ -30,7 +30,13 @@
 	<string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
 	<string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
 	<string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-    
+
+	<!-- The standalone activity -->
+    <string name="app_name_ninja">Smooth Clicker (standalone)</string>
+    <string name="ninja_init_config">Itsenäinen: Kokoonpano arvot poimitaan &#8230;</string>
+    <string name="ninja_init_points">Itsenäinen: Pisteet klikata poimitaan &#8230;</string>
+    <string name="ninja_start_click_process">Itsenäinen: Tällä krakkausprosessista alkaa &#8230;</string>
+
     <!-- Menu -->
 	<string name="action_exit">Exit</string>
 	<string name="action_settings">Asetukset</string>
@@ -118,7 +124,8 @@
 	<string name="notif_content_text_click_made">Uuden napsauttamalla </string>
 	<string name="notif_content_text_clicks_on_going_app">Klikkaamalla prosessia suoritetaan (kautta app)&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">Klikkaamalla prosessia suoritetaan (kautta palvelu)&#8230; </string>
-	<string name="notif_content_text_clicks_stop">Klikkaamalla prosessi keskeytettiin</string>
+    <string name="notif_content_text_clicks_on_going_standalone">Klikkaamalla prosessia suoritetaan (standalone)&#8230; </string>
+    <string name="notif_content_text_clicks_stop">Klikkaamalla prosessi keskeytettiin</string>
 	<string name="notif_content_text_clicks_over">Klikkaamalla prosessi on ohi</string>
 	<string name="notif_content_text_su_granted">Pääkäyttäjän oikeudet on myönnetty</string>
 	<string name="notif_content_text_countdown">Käynnistä:</string>

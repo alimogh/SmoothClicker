@@ -31,6 +31,12 @@
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
+	<!-- The standalone activity -->
+	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
+	<string name="ninja_init_config">Autonomă: Valorile de configurare sunt culese &#8230;</string>
+	<string name="ninja_init_points">Autonomă: Puncte să faceți clic pe sunt culese &#8230;</string>
+	<string name="ninja_start_click_process">Autonomă: Procesul de clic este de pornire &#8230;</string>
+
     <!-- Menu -->
 	<string name="action_exit">Ieşire</string>
 	<string name="action_settings">Setări</string>
@@ -118,7 +124,8 @@
 	<string name="notif_content_text_click_made">Faceţi clic pe nou </string>
 	<string name="notif_content_text_clicks_on_going_app">Făcând clic pe proces se execută (prin app)&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">Făcând clic pe proces se execută (prin serviciul de)&#8230; </string>
-	<string name="notif_content_text_clicks_stop">S-a oprit procesul făcând clic pe</string>
+    <string name="notif_content_text_clicks_on_going_standalone">Făcând clic pe proces se execută (autonomă)&#8230;</string>
+    <string name="notif_content_text_clicks_stop">S-a oprit procesul făcând clic pe</string>
 	<string name="notif_content_text_clicks_over">Procesului de clic</string>
 	<string name="notif_content_text_su_granted">S-a acordat permisiunea de super-utilizator</string>
 	<string name="notif_content_text_countdown">Începe:</string>

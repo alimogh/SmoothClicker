@@ -88,7 +88,11 @@ public class StatusBarNotifier {
     /**
      * The identifier of the notification about the countdown
      */
-    public static final int NOTIF_COUNT_DOWN                        = 0x000205;
+    public static final int NOTIF_COUNT_DOWN                        = 0x000206;
+    /**
+     * The identifier of the notification about the clicking process which is on going (in standalone mode)
+     */
+    public static final int NOTIF_CLICK_PROCESS_ON_GOING_STANDALONE = 0x000207;
 
 
     /* *********** *
@@ -150,6 +154,16 @@ public class StatusBarNotifier {
                 n.flags |= Notification.FLAG_SHOW_LIGHTS;
                 if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_PROCESS_ON_GOING_BY_APP, n);
+                break;
+            case CLICKS_ON_GOING_STANDALONE:
+                b.setContentText(mContext.getString(R.string.notif_content_text_clicks_on_going_standalone));
+                b.setProgress(0, 0, true);
+                b.setLights(0xff9c27b0, 1000, 500);
+                n = b.build();
+                n.flags |= Notification.FLAG_NO_CLEAR;
+                n.flags |= Notification.FLAG_SHOW_LIGHTS;
+                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                nm.notify(NOTIF_CLICK_PROCESS_ON_GOING_STANDALONE, n);
                 break;
             case CLICKS_ON_GOING_BY_SERVICE:
                 b.setContentText(mContext.getString(R.string.notif_content_text_clicks_on_going_service));
@@ -248,10 +262,13 @@ public class StatusBarNotifier {
          */
         CLICKS_ON_GOING_BY_APP,
         /**
+         * The clicking process is running in a standalone mode
+         */
+        CLICKS_ON_GOING_STANDALONE,
+        /**
          * The clicking process is running by the background service
          */
         CLICKS_ON_GOING_BY_SERVICE,
-
         /**
          * A click has been made
          */

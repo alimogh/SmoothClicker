@@ -31,6 +31,12 @@
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
+	<!-- The standalone activity -->
+	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
+	<string name="ninja_init_config">Standalone : Config-Werte werden gepflückt &#8230;</string>
+	<string name="ninja_init_points">Standalone : Punkte zu klicken Sie werden gepflückt &#8230;</string>
+	<string name="ninja_start_click_process">Standalone : Der Krackverfahren beginnt &#8230;</string>
+
     <!-- Menus -->
 	<string name="action_exit">Ausfahrt</string>
 	<string name="action_settings">Einstellungen</string>
@@ -119,6 +125,7 @@
 	<string name="notif_content_text_click_made">Neu klicken </string>
 	<string name="notif_content_text_clicks_on_going_app">Der Klick-Prozess läuft (durch die app)&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">Der Klick-Prozess läuft (durch den Dienst)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_standalone">Der Klick-Prozess läuft (standalone)&#8230; </string>
 	<string name="notif_content_text_clicks_stop">Der Klick-Prozess wurde beendet</string>
 	<string name="notif_content_text_clicks_over">Der Klick-Prozess ist vorbei</string>
 	<string name="notif_content_text_su_granted">Die Superuser-Genehmigung wurde erteilt</string>
