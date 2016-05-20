@@ -26,6 +26,7 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 * the configuration can be reset to defaults values
 * a shake to clean feature can reset the configuration
 * support for portrait / landscape modes, for tablets and handsets
+* standalone mode with an empty activity loading points and config files before finishing and starting the click process
 * supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish, finnish, italian and catalan
 
 
@@ -34,55 +35,76 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 <table>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/intro_1_en.png" alt="Introduction screen" title="Welcome to Smooth Clicker guys!" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_intro_1_framed.png" alt="Introduction screen" title="Welcome to Smooth Clicker guys!" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/main_screen_en.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_clicker_activity_2_framed.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_3_en.png" alt="Undo the click you have selected" title="Undo the click you have selected" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_multipoint_3_framed.png" alt="Select some points everywhere" title="Select some points everywhere" width="200">
 </td>
 </tr>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/select_multipoint_2_en.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_multipoint_2_framed.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/notifications_on_going_en.png" alt="The app can display notifications about what its state" title="The app can display notifications about what it is doing" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_notifications_on_going_framed.png" alt="The app can display notifications about what its state" title="The app can display notifications about what it is doing" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.9.0/credits_en.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_settings_framed.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
 </td>
 </tr>
 </table>
 
-***
-## How to use the service ?
 
-_You can simply use the app itself, or use the embedded Android Service to reach :_
+***
+## How to use Smooth Clicker?
+
+_<em>Case 1</em> : You can simply use the app itself and select manually the points_
+
+<br/>or<br/>
+
+_<em>Case 2</em> : You can start the app is standalone mode which will use JSON files (<a href="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/smoothclicker_points.json">smoothclicker_points.json</a> and <a href="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/smoothclicker_config.json">smoothclicker_config.json</a>) in Download folder to set up and start the click process_<br/>
+
+```shell
+    am start -n pylapp.smoothclicker.android/pylapp.smoothclicker.android.views.NinjaActivity
+```
+
+<br/>or<br/>
+
+_<em>Case 3</em> : You can start a dedicated Android service :_
 
 First, create the good intent:<br/>
-`Intent intentServiceSmoothClicker = new Intent("pylapp.smoothclicker.android.clickers.ServiceClicker.START");`
+```java
+Intent intentServiceSmoothClicker = new Intent("pylapp.smoothclicker.android.clickers.ServiceClicker.START");
+```
 
 Then define the configuration to set up:<br/>
-`intentServiceSmoothClicker.putExtra("0x000011", true); // Start delayed ?`<br/>
-`intentServiceSmoothClicker.putExtra("0x000012", 10);   // How much delay for the start ?`<br/>
-`intentServiceSmoothClicker.putExtra("0x000013", 2);    // The amount of time to wait between clicks`<br/>
-`intentServiceSmoothClicker.putExtra("0x000021", 5);    // The number of repeat to do`<br/>
-`intentServiceSmoothClicker.putExtra("0x000022", false);// Endless repeat ?`<br/>
-`intentServiceSmoothClicker.putExtra("0x000031", false);// Vibrate on start ?`<br/>
-`intentServiceSmoothClicker.putExtra("0x000032", true);// Vibrate on each click ?`<br/>
-`intentServiceSmoothClicker.putExtra("0x000041", true);// Make notifications ?`<br/>
+```java
+intentServiceSmoothClicker.putExtra("0x000011", true); // Start delayed ?
+intentServiceSmoothClicker.putExtra("0x000012", 10);   // How much delay for the start ?
+intentServiceSmoothClicker.putExtra("0x000013", 2);    // The amount of time to wait between clicks
+intentServiceSmoothClicker.putExtra("0x000021", 5);    // The number of repeat to do
+intentServiceSmoothClicker.putExtra("0x000022", false);// Endless repeat ?
+intentServiceSmoothClicker.putExtra("0x000031", false);// Vibrate on start ?
+intentServiceSmoothClicker.putExtra("0x000032", true);// Vibrate on each click ?
+intentServiceSmoothClicker.putExtra("0x000041", true);// Make notifications ?
+```
 
 Today the points to click on are in one list like:<br/>
-`ArrayList<Integer> points = new ArrayList<Integer>();`<br/>
-`points.add(252); // x0`<br/>
-`points.add(674); // y0`<br/>
-etc<br/>
-`intentServiceSmoothClicker.putIntegerArrayListExtra("0x000051",points); // The list of points`<br/>
+```java
+ArrayList<Integer> points = new ArrayList<Integer>();
+points.add(252); // x0
+points.add(674); // y0
+//etc
+intentServiceSmoothClicker.putIntegerArrayListExtra("0x000051",points); // The list of points
+```
 
 Finally, starts the service: <br/>
-`startService(intentServiceSmoothClicker);`
+```java
+startService(intentServiceSmoothClicker);
+```
 
 
 ***
@@ -144,12 +166,13 @@ Finally, starts the service: <br/>
     * fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
     * fixed bug which may make a white icons bar for full screen views
     * support for romanian, polish and finnish languages
-* _v1.10.0_
+* _v1.10.0 : Incredible Indri_
     * support for landscape mode for handsets and tablets
     * more support for 6", 7" and 10" screens devices
+    * standalone mode with an empty activity loading points and config file before starting the click process
+    * support for italian and catalan
     * fixed some bugs
     * improved the credits view and other UI components
-    * support for italian and catalan
 
 ***
 ## Licence

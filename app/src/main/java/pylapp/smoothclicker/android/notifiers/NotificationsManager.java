@@ -133,11 +133,19 @@ public final class NotificationsManager {
     }
 
     /**
-     * Manages the notifications about the on going clicking process
+     * Manages the notifications about the on going clicking process in the "app" mode
      */
-    public void makeClicksOnGoingNotification(){
+    public void makeClicksOnGoingNotificationByApp(){
         StatusBarNotifier sbn = new StatusBarNotifier(mContext);
         sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_ON_GOING_BY_APP);
+    }
+
+    /**
+     * Manages the notifications about the on going clicking process in the "standalone" mode
+     */
+    public void makeClicksOnGoingNotificationStandalone(){
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_ON_GOING_STANDALONE);
     }
 
     /**

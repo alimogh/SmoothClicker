@@ -43,7 +43,8 @@ import java.util.List;
 /**
  * A kind of main activity of this Smooth Clicker app.
  * It parses the JSON file containing the points to click on, it parses also the JSON file containing the configuration to use,
- * and it starts the clicking process with these values.*
+ * and it starts the clicking process with these values.
+ * This activity can be used in a standalone context: the user does not want to choose the points himself, but just start an already-defined-process.
  *
  * To click on all the points defined in the JSON file:
      <pre>
@@ -51,7 +52,7 @@ import java.util.List;
      </pre>
  *
  *
- * @version 1.0.0
+ * @version 1.1.0
  * @since 10/05/2016
  * @see AppCompatActivity
  */
@@ -69,13 +70,6 @@ public class NinjaActivity extends AppCompatActivity {
     private List<PointsListAdapter.Point> mPointsToClickOn;
 
 
-    /* ********* *
-     * CONSTANTS *
-     * ********* */
-
-    private static final String LOG_TAG = "NinjaActivity";
-
-
     /* ****************************** *
      * METHODS FROM AppCompatActivity *
      * ****************************** */
@@ -86,7 +80,7 @@ public class NinjaActivity extends AppCompatActivity {
      * @param savedInstanceState -
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState ){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ninja);
         messageToUser(getString(R.string.app_name_ninja));
@@ -99,10 +93,14 @@ public class NinjaActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        initConfigValues();
+        if ( ! initConfigValues() ) finish();
         NotificationsManager.getInstance(NinjaActivity.this).refresh(NinjaActivity.this);
-        initPointsToClickOn();
-        startClickingProcess();
+        if ( ! initPointsToClickOn() ) finish();
+        try {
+            startClickingProcess();
+        } catch ( Exception e ){
+            errorToUser(e.getMessage());
+        }
         finish();
     }
 
@@ -113,8 +111,10 @@ public class NinjaActivity extends AppCompatActivity {
 
     /**
      * Initializes the config values from a dedicated JSON file
+     *
+     * @return boolean - True if no problem occurs with the config file, false if something wrong happens with it
      */
-    public void initConfigValues(){
+    public boolean initConfigValues(){
 
         messageToUser(getString(R.string.ninja_init_config));
 
@@ -123,14 +123,19 @@ public class NinjaActivity extends AppCompatActivity {
         } catch ( NotSuitableJsonConfigFileException nsjcfe ){
             nsjcfe.printStackTrace();
             errorToUser(nsjcfe.getMessage());
+            return false;
         }
+
+        return true;
 
     }
 
     /**
      * Initializes the points to click on defined in a JSON file
+     *
+     * @return boolean - True if no problem occurs with the points file, false if something wrong happens with it
      */
-    public void initPointsToClickOn(){
+    public boolean initPointsToClickOn(){
 
         messageToUser(getString(R.string.ninja_init_points));
 
@@ -140,9 +145,11 @@ public class NinjaActivity extends AppCompatActivity {
             for ( int i = 0; i < pointsAsArray.length; i+=2 ){
                 mPointsToClickOn.add( new PointsListAdapter.Point(pointsAsArray[i], pointsAsArray[i+1]) );
             }
+            return true;
         } catch ( NotSuitableJsonPointsFileException e ){
             e.printStackTrace();
             errorToUser(e.getMessage());
+            return false;
         }
 
     }
@@ -172,7 +179,7 @@ public class NinjaActivity extends AppCompatActivity {
      * Notifies to the user what the app is doing
      * @param message - The message to send
      */
-    private void messageToUser(String message){
+    private void messageToUser( String message ){
         if ( message == null || message.length() <= 0 ) message = "Working...'";
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }

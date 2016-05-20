@@ -28,9 +28,9 @@ package pylapp.smoothclicker.android.tools;
 /**
  * Exception to use if the JSON file to get to config for the clicking process is not well defined
  *
+ * @author pylapp
  * @version 1.0.0
  * @since 10/05/2016
- * @see Exception
  */
 public class NotSuitableJsonConfigFileException extends Exception {
 

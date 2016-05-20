@@ -31,6 +31,12 @@
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
+	<!-- The standalone activity -->
+	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
+	<string name="ninja_init_config">독립형 : 구성 값이 선택됩니다  &#8230;</string>
+	<string name="ninja_init_points">독립형 : 클릭하는 포인트가 선택됩니다 &#8230;</string>
+	<string name="ninja_start_click_process">독립형 : 독립 다음 클릭 프로세스가 시작 &#8230;</string>
+
     <!-- Menus -->
 	<string name="action_exit">출구</string>
 	<string name="action_settings">설정</string>
@@ -118,6 +124,7 @@
 	<string name="notif_content_text_click_made">새 클릭 </string>
 	<string name="notif_content_text_clicks_on_going_app">클릭 프로세스 (응용 프로그램)를 통해 실행&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">클릭 프로세스 (서비스)를 통해 실행&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_standalone">클릭 프로세스 (서비스) 독립형&#8230;</string>
 	<string name="notif_content_text_clicks_stop">클릭 프로세스 중지 되었습니다.</string>
 	<string name="notif_content_text_clicks_over">클릭 과정이 끝났습니다.</string>
 	<string name="notif_content_text_su_granted">슈퍼 사용자 권한이 부여 되었는지</string>

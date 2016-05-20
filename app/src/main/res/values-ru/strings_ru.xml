@@ -31,6 +31,12 @@
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
+	<!-- The standalone activity -->
+	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
+	<string name="ninja_init_config">Standalone: Значения конфигурации выбраны &#8230;</string>
+	<string name="ninja_init_points">Standalone: Очки нажать на подбираются &#8230;</string>
+	<string name="ninja_start_click_process">Standalone: Процесс начинается нажмите &#8230;</string>
+
     <!-- Menus -->
 	<string name="action_exit">Выход</string>
 	<string name="action_settings">Параметры</string>
@@ -118,7 +124,8 @@
 	<string name="notif_content_text_click_made">Новый щелчок </string>
 	<string name="notif_content_text_clicks_on_going_app">(Через приложение) выполняется щелчок процесс&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">(Через службу) выполняется щелчок процесс&#8230; </string>
-	<string name="notif_content_text_clicks_stop">Щелкая процесс был остановлен</string>
+    <string name="notif_content_text_clicks_on_going_standalone">(standalone) выполняется щелчок процесс&#8230;</string>
+    <string name="notif_content_text_clicks_stop">Щелкая процесс был остановлен</string>
 	<string name="notif_content_text_clicks_over">Щелкая процесс завершен</string>
 	<string name="notif_content_text_su_granted">Супер-пользователя разрешение</string>
 	<string name="notif_content_text_countdown">Начало:</string>

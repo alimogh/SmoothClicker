@@ -53,7 +53,6 @@ import org.junit.runner.RunWith;
 
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.AbstractTest;
-import pylapp.smoothclicker.android.notifiers.NotificationsManager;
 import pylapp.smoothclicker.android.views.ClickerActivity;
 
 import java.util.Collection;
@@ -190,7 +189,7 @@ public class ItNotificationsManager extends AbstractTest {
 
         l(this, "@Test makeClickOnGoingNotification");
 
-        mNm.makeClicksOnGoingNotification();
+        mNm.makeClicksOnGoingNotificationByApp();
 
         String m = mContext.getString(R.string.notif_content_text_clicks_on_going_app);
         testIfNotificationExists(m);

@@ -31,6 +31,12 @@
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
 
+	<!-- The standalone activity -->
+	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
+	<string name="ninja_init_config">Standalone : Wartości konfiguracyjne są zbierane &#8230;</string>
+	<string name="ninja_init_points">Standalone : Punkty do kliknięcia są zbierane &#8230;</string>
+	<string name="ninja_start_click_process">Standalone : Proces kliknięcie zaczyna &#8230;</string>
+
     <!-- Menu -->
 	<string name="action_exit">Zjazd</string>
 	<string name="action_settings">Ustawienia</string>
@@ -118,7 +124,8 @@
 	<string name="notif_content_text_click_made">Kliknij przycisk Nowy </string>
 	<string name="notif_content_text_clicks_on_going_app">Klikając proces jest uruchomiony (poprzez aplikację)&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">Klikając proces jest uruchomiony (poprzez usługę)&#8230; </string>
-	<string name="notif_content_text_clicks_stop">Klikając proces został zatrzymany</string>
+    <string name="notif_content_text_clicks_on_going_standalone">Klikając proces jest uruchomiony (poprzez usługę)&#8230;</string>
+    <string name="notif_content_text_clicks_stop">Klikając proces został zatrzymany</string>
 	<string name="notif_content_text_clicks_over">Klikając procesu</string>
 	<string name="notif_content_text_su_granted">Udzielono uprawnienia administratora</string>
 	<string name="notif_content_text_countdown">Początkowa:</string>
