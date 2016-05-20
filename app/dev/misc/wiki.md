@@ -25,7 +25,8 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 * device may display notifications when the process is on going, on clicks and when the countdown is running
 * the configuration can be reset to defaults values
 * a shake to clean feature can reset the configuration
-* supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish and finnish
+* support for portrait / landscape modes, for tablets and handsets
+* supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish, finnish, italian and catalan
 
 
 ***
@@ -143,6 +144,12 @@ Finally, starts the service: <br/>
     * fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
     * fixed bug which may make a white icons bar for full screen views
     * support for romanian, polish and finnish languages
+* _v1.10.0_
+    * support for landscape mode for handsets and tablets
+    * more support for 6", 7" and 10" screens devices
+    * fixed some bugs
+    * improved the credits view and other UI components
+    * support for italian and catalan
 
 ***
 ## Licence

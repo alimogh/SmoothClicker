@@ -53,7 +53,8 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 * device may display notifications when the process is on going, on clicks and when the countdown is running
 * the configuration can be reset to defaults values
 * a shake to clean feature can reset the configuration
-* supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish and finnish
+* support for portrait / landscape modes, for tablets and handsets
+* supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish, finnish, italian and catalan
 
 ***
 ## Licence
