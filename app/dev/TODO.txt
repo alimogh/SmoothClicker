@@ -23,13 +23,17 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #61
+LAST TASK : #64
 
 TO DO
 
     Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE
-    Task #58 : [v1.10.0] SMS toggleable click process (receive a SMS with a dedicated action and starts the click process as standalone mode)
-    Task #60 : [memo] ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag
+    Task #56 : [v.10.0] Handle JSON files (config)
+    Task #62 : [v1.10.0] Wakelock and shell routine to unlock and awake (if possible, toggle them in settings)
+    Task #63 : [v1.10.0] GUI for standalone mode (kinf od shortcut) to start/stop this mode
+                        - click on all points as usual according to the config
+    Task #64 : |v.10.0] Use of OCR pattern to start the click process according to the config files
+    Task #60 : [memo] ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag, updates the credits if needed, update the intro screen to talk about standalone mode and OCR
 
 
     Task #61 : [vx.x.x] More Unit tests with JUnit and Mockito
@@ -37,7 +41,7 @@ TO DO
 
 
     Task #16 : [vx.x.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
-    Task #56 : [vx.x.x] Handle JSON files
+
     Task #2  : [vx.x.x] Movable floating action button
     Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU
 
