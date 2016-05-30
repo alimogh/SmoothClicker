@@ -14,7 +14,6 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 
 ***
 ## Screen shots
-## Screen shots
 <table>
 <tr>
 <td>
