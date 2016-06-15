@@ -33,7 +33,6 @@ TO DO
     Task #71 : [v1.10.0] Upgrade the credits view
     Task #72 : [v1.10.0] Start the click process on boot if needed (settings)
     Task #73 : [v1.10.0] Click each second or ms -> time to wait between each click
-    Task #74 : [v1.10.0] Update settings view with information about root
     Task #75 : [v1.10.0] Add standalone mode with OCR-like system and threshold and config files
     Task #76 : [v1.10.0] Add standalone mode with classic mode (config files and no OCR)
     Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes

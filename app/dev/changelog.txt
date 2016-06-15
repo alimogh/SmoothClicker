@@ -362,8 +362,9 @@ What:
     feat: prevent the screen to be off, and force it to be on if off
     test: add instrumented tests and unit tests for feature about the screen
     feat: unlock script
-    doc: enw build of HTML JavaDoc
-    chore: closed tasks #67, #68
+    feat: references to web pages about how to root devices
+    doc: new build of HTML JavaDoc
+    chore: closed tasks #67, #68, #74
 ###################################################
 Date:
 What:

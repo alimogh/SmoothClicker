@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.utils.AppConfigVersions;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.4.0
+ * @version 1.5.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -69,6 +69,9 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String PREF_KEY_WAKELOCK                = "pref_key_settings_wakelock";
     public static final String PREF_KEY_FORCESCREENON_BATTERY   = "pref_key_settings_forcescreenon_battery";
     public static final String PREF_KEY_UNLOCK_SCRIPT           = "pref_key_settings_unlockscript";
+    public static final String PREF_KEY_HEIMDALL                = "pref_key_root_heimdall";
+    public static final String PREF_KEY_ODIN                    = "pref_key_root_odin";
+    public static final String PREF_KEY_CHAINFIRE               = "pref_key_root_chainfire";
 
 
     /* ****************************** *
@@ -161,6 +164,42 @@ public class SettingsActivity extends AppCompatActivity {
             // The version
             pref = findPreference(PREF_KEY_ABOUT_VERSION);
             pref.setSummary(sVersionRelease);
+
+            // To root device under Linux
+            pref = findPreference(PREF_KEY_HEIMDALL);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(getString(R.string.pref_heimdall_url)));
+                    startActivity(i);
+                    return true;
+                }
+            });
+
+            // To root device under Windows
+            pref = findPreference(PREF_KEY_ODIN);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(getString(R.string.pref_odin_url)));
+                    startActivity(i);
+                    return true;
+                }
+            });
+
+            // To get information about root
+            pref = findPreference(PREF_KEY_CHAINFIRE);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(getString(R.string.pref_chainfire_url)));
+                    startActivity(i);
+                    return true;
+                }
+            });
 
         }
 

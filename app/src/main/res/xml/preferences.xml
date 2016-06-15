@@ -87,6 +87,33 @@
 
     </PreferenceCategory>
 
+    <!-- ********** -->
+    <!-- About root -->
+    <!-- ********** -->
+
+    <PreferenceCategory
+        android:title="@string/pref_root_title">
+
+        <!-- Heimdall -->
+        <Preference
+            android:key="pref_key_root_heimdall"
+            android:title="@string/pref_key_root_heimdall_title"
+            android:summary="@string/pref_key_root_heimdall_summary"/>
+
+        <!-- Odin -->
+        <Preference
+            android:key="pref_key_root_odin"
+            android:title="@string/pref_key_root_odin_title"
+            android:summary="@string/pref_key_root_odin_summary"/>
+
+        <!-- Chainfire XDA -->
+        <Preference
+            android:key="pref_key_root_chainfire"
+            android:title="@string/pref_key_root_chainfire_title"
+            android:summary="@string/pref_key_root_chainfire_summary"/>
+
+    </PreferenceCategory>
+
     <!-- ********************** -->
     <!-- The licenses / credits -->
     <!-- ********************** -->
