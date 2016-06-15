@@ -23,7 +23,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.tools;
+package pylapp.smoothclicker.android.json;
 
 import org.junit.Test;
 
@@ -31,14 +31,15 @@ import pylapp.smoothclicker.android.AbstractTest;
 
 import static junit.framework.Assert.assertEquals;
 
+
 /**
- * Class to test the MissingJsonPointsFileException
+ * Class to test the NotSuitableJsonPointsFileException
  *
  * @author pylapp
  * @version 1.0.0
  * @since 20/05/2016
  */
-public class UtMissingJsonPointsFileException extends AbstractTest {
+public class UtNotSuitableJsonPointsFileException extends AbstractTest {
 
     /**
      * Tests the getMessage()
@@ -50,7 +51,7 @@ public class UtMissingJsonPointsFileException extends AbstractTest {
 
         final String S = "A dummy message";
 
-        MissingJsonPointsFileException e = new MissingJsonPointsFileException(S);
+        NotSuitableJsonPointsFileException e = new NotSuitableJsonPointsFileException(S);
         assertEquals(S, e.getMessage());
 
     }

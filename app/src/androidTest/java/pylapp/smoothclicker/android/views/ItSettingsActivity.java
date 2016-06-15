@@ -125,7 +125,7 @@ public class ItSettingsActivity extends AbstractTest {
                     new UiSelector()
                             .className("android.widget.ImageView")
                             .packageName(PACKAGE_APP_PATH)
-                            .descriptionContains("Plus d'options") // WARNING FIXME French string used, use instead system R values
+                            .descriptionContains("Autres options") // WARNING FIXME French string used, use instead system R values
             );
             menu.click();
             w(1000);
