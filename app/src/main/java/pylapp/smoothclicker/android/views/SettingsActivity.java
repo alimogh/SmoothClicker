@@ -68,6 +68,7 @@ public class SettingsActivity extends AppCompatActivity {
     private static final String PREF_KEY_STORE_PAGE             = "pref_play_store_title";
     public static final String PREF_KEY_WAKELOCK                = "pref_key_settings_wakelock";
     public static final String PREF_KEY_FORCESCREENON_BATTERY   = "pref_key_settings_forcescreenon_battery";
+    public static final String PREF_KEY_UNLOCK_SCRIPT           = "pref_key_settings_unlockscript";
 
 
     /* ****************************** *

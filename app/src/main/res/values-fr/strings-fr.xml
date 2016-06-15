@@ -163,6 +163,9 @@
     <string name="pref_key_forcescreenon_battery_title">Forcer l\'éclairage</string>
     <string name="pref_key_forcescreenon_battery_summary">Si l\'écran est éteint, le forcer à s\'allumer si l\'appareil est sur batterie</string>
 
+    <string name="pref_unlockscript_title">Déverrouillage</string>
+    <string name="pref_key_unlockscript_title">Script ADB</string>
+    <string name="pref_key_unlockscript_summary">Utiliser un script customisé ayant les commandes systèmes pour déverrouiller l\'appareil</string>
 
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Annuler</string>

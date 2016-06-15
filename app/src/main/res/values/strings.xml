@@ -163,6 +163,10 @@
     <string name="pref_key_forcescreenon_battery_title">Force screen on</string>
     <string name="pref_key_forcescreenon_battery_summary">When the screen is off, turn it on if the device uses its battery and not the power supply</string>
 
+    <string name="pref_unlockscript_title">Unlock</string>
+    <string name="pref_key_unlockscript_title">ADB script</string>
+    <string name="pref_key_unlockscript_summary">use a dedicated custom script having system commands to unlock the device</string>
+
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Undo</string>
 

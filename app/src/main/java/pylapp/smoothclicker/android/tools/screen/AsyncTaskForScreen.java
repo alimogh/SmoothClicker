@@ -34,7 +34,6 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.widget.Toast;
 
 import pylapp.smoothclicker.android.receivers.BRScreenOff;
@@ -97,7 +96,7 @@ public abstract class AsyncTaskForScreen<T, U, V> extends AsyncTask<T, U, V>{
      */
     protected void forceScreenState(){
         forceScreenOnIfNeeded();
- //       forceScreenUnlockIfNeeded();
+        forceScreenUnlockIfNeeded();
         registerScreenOffReceiver();
     }
 
@@ -117,29 +116,29 @@ public abstract class AsyncTaskForScreen<T, U, V> extends AsyncTask<T, U, V>{
 
     }
 
-//    /**
-//     * Forces the phone to have its screen unlocked by executing a dedicated custom script
-//     * the user has put in its device
-//     */
-//    protected void forceScreenUnlockIfNeeded(){
-//
-//        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
-//        boolean isEnabled = sp.getBoolean(SettingsActivity.PREF_KEY_UNLOCK_SCRIPT, false);
-//
-//        if ( isEnabled ){
-//            KeyguardManager km = (KeyguardManager) mContext.getSystemService(Context.KEYGUARD_SERVICE);
-//            if (km.inKeyguardRestrictedInputMode()) {
-//                UnlockerStub unlocker = new UnlockerImpl();
-//                try {
-//                    unlocker.unlock(null);
-//                } catch (UnlockerStub.UnlockException ue) {
-//                    ue.printStackTrace();
-//                    displayToast("An error occurs during unlock execution: " + ue.getMessage());
-//                }
-//            }
-//        }
-//
-//    }
+    /**
+     * Forces the phone to have its screen unlocked by executing a dedicated custom script
+     * the user has put in its device
+     */
+    protected void forceScreenUnlockIfNeeded(){
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+        boolean isEnabled = sp.getBoolean(SettingsActivity.PREF_KEY_UNLOCK_SCRIPT, false);
+
+        if ( isEnabled ){
+            KeyguardManager km = (KeyguardManager) mContext.getSystemService(Context.KEYGUARD_SERVICE);
+            if (km.inKeyguardRestrictedInputMode()) {
+                UnlockerStub unlocker = new UnlockerImpl();
+                try {
+                    unlocker.unlock(null);
+                } catch (UnlockerStub.UnlockException ue) {
+                    ue.printStackTrace();
+                    displayToast("An error occurs during unlock execution: " + ue.getMessage());
+                }
+            }
+        }
+
+    }
 
     /**
      * Disable the lock which made the screen always on

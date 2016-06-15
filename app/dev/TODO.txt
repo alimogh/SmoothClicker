@@ -28,7 +28,6 @@ LAST TASK : #81
 TO DO
 
     Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE
-    Task #68 : [v1.10.0] Unlock shell script to unlock the device
     Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual managemet
     Task #70 : [v1.10.0] Add new icons in the arc menu
     Task #71 : [v1.10.0] Upgrade the credits view
