@@ -23,7 +23,7 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.tools;
+package pylapp.smoothclicker.android.json;
 
 import org.junit.Test;
 
@@ -49,7 +49,7 @@ public class UtJsonFileParser extends AbstractTest {
         l(this, "@Test getPointFromJsonFile");
 
         try {
-            JsonFileParser.instance.getPointFromJsonFile(null);
+            JsonFileParser.instance.getPointFromJsonFile(null, JsonFileParser.TypeOfPoints.ALL_POINTS);
         } catch ( NotSuitableJsonPointsFileException nsjpfe ){
             fail(nsjpfe.getMessage());
         }
