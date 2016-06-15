@@ -266,6 +266,15 @@ public class PointsListAdapter extends BaseAdapter {
             return sb.toString();
         }
 
+        public String toJson(){
+            StringBuilder sb = new StringBuilder();
+            sb.append("{\"x\" : ").append("\"").append(x).append("\", ");
+            sb.append("\"y\" : ").append("\"").append(y).append("\", ");
+            sb.append("\"desc\" : ").append("\"").append(desc).append("\"");
+            sb.append("}");
+            return sb.toString();
+        }
+
     } // End of public static class Point
 
 }

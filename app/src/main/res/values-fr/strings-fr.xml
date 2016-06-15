@@ -42,6 +42,9 @@
     <string name="action_settings">Paramètres</string>
     <string name="action_clean_points">Supprime les points sélectionnés</string>
     <string name="action_clean_all">Réinitialise les valeurs et supprime les points sélectionnés</string>
+    <string name="action_export">Exporter vers fichier JSON</string>
+    <string name="action_import">Importer depuis fichier JSON</string>
+    <string name="action_configuration">Configuration</string>
 
     <!-- Messages -->
     <string name="info_message_start">Enregistre la configuration et démarre le processus de click</string>
@@ -50,10 +53,16 @@
     <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
     <string name="info_message_new_point">Sélectionne des points sur l\'écran</string>
     <string name="info_message_invite_new_points">Sélectionnez plusieurs points puis back</string>
+    <string name="info_export_success">L\'export de la configuration a été fait</string>
+    <string name="info_export_fail">L\'export de la configuration a échoué</string>
+    <string name="info_import_success">L\'importation a été réalisée</string>
+    <string name="info_import_fail">L\'importation a echouée</string>
+
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
     <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ Aucun point à cliquer n\'a été défini</string>
     <string name="error_message_was_not_working">(－‸ლ) Le processus de click n\'est pas démarré</string>
+    <string name="error_nothing_to_open_json">Oups, aucune app ne peut ouvrir le fichier .json</string>
 
     <string name="warning_hazard_repeat_endless_title">Operation risquée</string>
     <string name="warning_hazard_repeat_endless_content">Êtes-vous sûr de vouloir faire une répétition infinie ? Cette opération peut être risquée pour votre appareil.</string>
@@ -169,5 +178,6 @@
     <string name="message_confirm_exit_label">Quitter</string>
     <string name="message_confirm_exit_content">Voulez-vous quitter l\'application ?</string>
     <string name="app_intro">Bienvenue dans Smooth Clicker</string>
+    <string name="snackbar_see_config_file">Lire</string>
 
 </resources>

@@ -23,22 +23,23 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.tools;
+package pylapp.smoothclicker.android.json;
 
 /**
- * Exception to use if the JSON file to process to get the points to click on is not well defined
+ * Exception to use if the JSON file to process to get the points to click on is missing
  *
  * @author pylapp
  * @version 1.0.0
  * @since 04/05/2016
+ * @see Exception
  */
-public class NotSuitableJsonPointsFileException extends Exception {
+public class MissingJsonPointsFileException extends Exception {
 
     /**
      *
      * @param message - The message to display, about the error
      */
-    public NotSuitableJsonPointsFileException( String message ){
+    public MissingJsonPointsFileException(String message){
         super(message);
     }
 

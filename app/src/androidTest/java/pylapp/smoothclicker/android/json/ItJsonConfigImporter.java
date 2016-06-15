@@ -23,23 +23,33 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.tools;
+package pylapp.smoothclicker.android.json;
+
+import org.junit.Test;
+
+import pylapp.smoothclicker.android.AbstractTest;
+import pylapp.smoothclicker.android.tools.config.ConfigImporter;
 
 /**
- * Exception to use if the JSON file to get to config for the clicking process is not well defined
+ * Class to use to test the JsonConfigImporter class
  *
  * @author pylapp
  * @version 1.0.0
- * @since 10/05/2016
+ * @since 27/05/2016
  */
-public class NotSuitableJsonConfigFileException extends Exception {
+public class ItJsonConfigImporter extends AbstractTest {
 
-    /**
-     *
-     * @param message - The message to display, about the error
+    /***
+     * Test the readConfig method
      */
-    public NotSuitableJsonConfigFileException( String message ){
-        super(message);
+    @Test
+    public void readConfig() throws ConfigImporter.ConfigImportException {
+
+        l(this, "@Test readConfig");
+
+        ConfigImporter importer = new JsonConfigImporter();
+        importer.readConfig();
+
     }
 
 }

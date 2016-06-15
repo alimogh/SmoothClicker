@@ -42,17 +42,27 @@
     <string name="action_settings">Settings</string>
     <string name="action_clean_points">Delete the selected points</string>
     <string name="action_clean_all">Reset the values and delete the selected points</string>
+    <string name="action_export">Export to JSON file</string>
+    <string name="action_import">Import from JSON file</string>
+    <string name="action_configuration">Configuration</string>
 
+    <!-- Messages -->
     <string name="info_message_start">Save the configuration and starts the clicking process</string>
     <string name="info_message_stop">Stop the clicking process</string>
     <string name="info_message_request_su">Ask for the SU grant</string>
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
     <string name="info_message_new_point">Select new points on the screen</string>
     <string name="info_message_invite_new_points">Select several points and then back</string>
+    <string name="info_export_success">Export has been made</string>
+    <string name="info_export_fail">Export has failed</string>
+    <string name="info_import_success">Import has been made</string>
+    <string name="info_import_fail">Import has failed</string>
+
     <string name="error_message_su_not_granted">The SU authorization has not been granted x-(</string>
     <string name="error_su_missing">Did you root your Android before using this app? It is mandatory.</string>
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ No clicks defined</string>
     <string name="error_message_was_not_working">(－‸ლ) The process is not started</string>
+    <string name="error_nothing_to_open_json">Woops nothing can open the .json file</string>
 
     <string name="warning_hazard_repeat_endless_title">Hazardous operation</string>
     <string name="warning_hazard_repeat_endless_content">Are you sure to make an endless repeat? This operation may be hazardous for your device.</string>
@@ -168,5 +178,7 @@
     <string name="message_confirm_exit_label">Exit</string>
     <string name="message_confirm_exit_content">Do you want to quit the app?</string>
     <string name="app_intro">Welcome to Smooth Clicker</string>
+    <string name="snackbar_see_config_file">Read</string>
+
 
 </resources>

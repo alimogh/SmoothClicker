@@ -43,6 +43,30 @@
         android:icon="@drawable/icon_clean_all"
         app:showAsAction="ifRoom" />
 
+    <!-- The "configuration" menu -->
+    <item
+        android:id="@+id/action_configuration"
+        android:orderInCategory="100"
+        android:title="@string/action_configuration"
+        app:showAsAction="never">
+
+        <menu>
+            <!-- The "export as JSON" menu -->
+            <item
+                android:id="@+id/action_export"
+                android:orderInCategory="100"
+                android:title="@string/action_export"
+                app:showAsAction="never" />
+            <!-- The "import as JSON" menu -->
+            <item
+                android:id="@+id/action_import"
+                android:orderInCategory="100"
+                android:title="@string/action_import"
+                app:showAsAction="never" />
+        </menu>
+
+    </item>
+
     <!-- The "settings" menu -->
     <item
         android:id="@+id/action_settings"

@@ -31,10 +31,11 @@ import android.widget.Toast;
 
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.clickers.ATClicker;
+import pylapp.smoothclicker.android.json.JsonFileParser;
+import pylapp.smoothclicker.android.json.NotSuitableJsonConfigFileException;
+import pylapp.smoothclicker.android.json.NotSuitableJsonPointsFileException;
 import pylapp.smoothclicker.android.notifiers.NotificationsManager;
-import pylapp.smoothclicker.android.tools.JsonFileParser;
-import pylapp.smoothclicker.android.tools.NotSuitableJsonConfigFileException;
-import pylapp.smoothclicker.android.tools.NotSuitableJsonPointsFileException;
+import pylapp.smoothclicker.android.views.PointsListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +53,7 @@ import java.util.List;
      </pre>
  *
  *
- * @version 1.1.0
+ * @version 1.2.0
  * @since 10/05/2016
  * @see AppCompatActivity
  */
@@ -140,7 +141,7 @@ public class NinjaActivity extends AppCompatActivity {
         messageToUser(getString(R.string.ninja_init_points));
 
         try {
-            int [] pointsAsArray = JsonFileParser.instance.getPointFromJsonFile(NinjaActivity.this);
+            int [] pointsAsArray = JsonFileParser.instance.getPointFromJsonFile(NinjaActivity.this, JsonFileParser.TypeOfPoints.ALL_POINTS);
             mPointsToClickOn = new ArrayList<>();
             for ( int i = 0; i < pointsAsArray.length; i+=2 ){
                 mPointsToClickOn.add( new PointsListAdapter.Point(pointsAsArray[i], pointsAsArray[i+1]) );

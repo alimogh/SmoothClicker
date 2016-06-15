@@ -27,9 +27,11 @@ package pylapp.smoothclicker.android.views;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -46,11 +48,17 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import pylapp.smoothclicker.android.clickers.ATClicker;
+import pylapp.smoothclicker.android.json.JsonConfigExporter;
+import pylapp.smoothclicker.android.json.JsonConfigImporter;
+import pylapp.smoothclicker.android.json.JsonFileParser;
 import pylapp.smoothclicker.android.notifiers.NotificationsManager;
 import pylapp.smoothclicker.android.tools.ShakeToClean;
+import pylapp.smoothclicker.android.tools.config.ConfigExporter;
+import pylapp.smoothclicker.android.tools.config.ConfigImporter;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.ConfigStatus;
@@ -60,6 +68,7 @@ import com.kyleduo.switchbutton.SwitchButton;
 
 import com.sa90.materialarcmenu.ArcMenu;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -149,6 +158,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             et = (EditText) findViewById(R.id.etRepeat);
             et.setEnabled( ! cb.isEnabled() );
         }
+
+        // Create the app's folder
+        Config.getAppFolder();
 
     }
 
@@ -268,7 +280,17 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             case R.id.action_exit:
                 handleExit();
                 break;
+            case R.id.action_export:
+                updateConfig();
+                exportConfig();
+                break;
+            case R.id.action_import:
+                importConfig();
+                break;
+            case R.id.action_configuration:
+                break;
             default:
+                showInSnackbarWithoutAction(getString(R.string.error_not_implemented));
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -370,6 +392,112 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         return ConfigStatus.TIME_GAP_NOT_DEFINED.READY;
 
+    }
+
+    /**
+     * Export the configuration in JSON files
+     */
+    private void exportConfig(){
+
+        ConfigExporter exporter = new JsonConfigExporter();
+
+        SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
+        exporter.setStartDelayed(sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED));
+        exporter.setDelay(sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY)));
+        exporter.setTimeGap(sp.getInt(Config.SP_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP)));
+        exporter.setRepeat(sp.getInt(Config.SP_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT)));
+        exporter.setEndlessRepeat(sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS));
+        exporter.setVibrateOnStart(sp.getBoolean(Config.SP_KEY_VIBRATE_ON_START, Config.DEFAULT_VIBRATE_ON_START));
+        exporter.setVibrateOnCLick(sp.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, Config.DEFAULT_VIBRATE_ON_CLICK));
+        exporter.setNotificationOnCLick(sp.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK, Config.DEFAULT_NOTIF_ON_CLICK));
+
+        PointsListAdapter pla = (PointsListAdapter) ((Spinner) findViewById(R.id.sPointsToClick)).getAdapter();
+        List<PointsListAdapter.Point> lp;
+        if (pla == null || pla.getList().size() <= 0) lp = new ArrayList<>();
+        else lp = pla.getList();
+        exporter.setPointsToClickOn(lp);
+
+        try {
+            exporter.writeConfig();
+            showInSnackbar(getString(R.string.info_export_success), getString(R.string.snackbar_see_config_file), new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        File file = JsonFileParser.getPointsFile();
+                        Uri path = Uri.fromFile(file);
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setDataAndType(path, "application/json");
+                        startActivity(intent);
+                    } catch ( ActivityNotFoundException anfe ){
+                        anfe.printStackTrace();
+                        Toast.makeText(ClickerActivity.this, getString(R.string.error_nothing_to_open_json), Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        } catch ( ConfigExporter.ConfigExportException cee ){
+            cee.printStackTrace();
+            showInSnackbarWithoutAction(getString(R.string.info_export_fail));
+            Toast.makeText(this, cee.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    /**
+     * Imports the configuration from a JSON file and updates the GUI and the preferences
+     */
+    private void importConfig(){
+
+        // Read the config file
+        ConfigImporter importer = new JsonConfigImporter();
+        try {
+            importer.readConfig();
+        } catch ( ConfigImporter.ConfigImportException cie ){
+            cie.printStackTrace();
+            showInSnackbarWithoutAction(getString(R.string.info_import_fail));
+            Toast.makeText(this, cie.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        // Update the GUI
+        SwitchButton typeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
+        typeOfStart.setChecked(importer.getStartDelayed());
+        EditText et = (EditText) findViewById(R.id.etDelay);
+        et.setText(importer.getDelay()+"");
+        et = (EditText) findViewById(R.id.etTimeBeforeEachClick);
+        et.setText(importer.getTimeGap()+"");
+        et = (EditText) findViewById(R.id.etRepeat);
+        et.setText(importer.getRepeat()+"");
+        CheckBox cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
+        cb.setChecked(importer.getVibrateOnStart());
+        cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
+        cb.setChecked(importer.getVibrateOnClick());
+        cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
+        cb.setChecked(importer.getNotificationOnCLick());
+        cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
+        cb.setChecked(importer.getEndlessRepeat());
+        et.setEnabled(!cb.isChecked());
+
+        ArrayList<Integer> coordsAsXY = new ArrayList<>();
+        List<PointsListAdapter.Point> lp = importer.getPointsToClickOn();
+        for ( PointsListAdapter.Point p : lp ){
+            coordsAsXY.add(p.x);
+            coordsAsXY.add(p.y);
+        }
+        handleMultiPointResult(coordsAsXY);
+
+        // Update the shared preferences
+        SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, importer.getStartDelayed());
+        editor.putInt(Config.SP_KEY_DELAY, importer.getDelay());
+        editor.putInt(Config.SP_KEY_TIME_GAP, importer.getTimeGap());
+        editor.putInt(Config.SP_KEY_REPEAT, importer.getRepeat());
+        editor.putBoolean(Config.SP_KEY_REPEAT_ENDLESS, importer.getEndlessRepeat());
+        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, importer.getVibrateOnStart());
+        editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, importer.getVibrateOnClick());
+        editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, importer.getNotificationOnCLick());
+        editor.apply();
+
+        showInSnackbarWithoutAction(getString(R.string.info_import_success));
     }
 
     /**
@@ -581,6 +709,18 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         if ( message == null || message.length() <= 0 ) return;
         View v = findViewById(R.id.clickerActivityMainLayout);
         Snackbar.make(v, message, Snackbar.LENGTH_LONG).setAction("", null).show();
+    }
+
+    /**
+     * Displays in the snack bar a message with dedicated action and callback
+     * @param message - The string to display. Will do nothing if null or empty
+     * @param action - The action
+     * @param callback - The callback to trigger when click on the action
+     */
+    private void showInSnackbar( String message, String action, View.OnClickListener callback ){
+        if ( message == null || message.length() <= 0 ) return;
+        View v = findViewById(R.id.clickerActivityMainLayout);
+        Snackbar.make(v, message, Snackbar.LENGTH_LONG).setAction(action, callback).show();
     }
 
     /**

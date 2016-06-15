@@ -23,11 +23,10 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-package pylapp.smoothclicker.android.tools;
+package pylapp.smoothclicker.android.json;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Environment;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -45,14 +44,14 @@ import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.views.PointsListAdapter;
 
 /**
- * Class which parses a JSON file which must contain the points to click on.
- * Based on the "singleton" design pattern.
+ * Class which parses the JSON file which must contain the points to click on.
+ * based on the "singleton" design pattern.
  *
- <pre>
-        adb push myFile.json /storage/emulated/legacy/Download/
- </pre>
+     <pre>
+         adb push myFile.json /storage/emulated/legacy/Download/
+     </pre>
  *
- *
+ * @author pylapp
  * @version 1.0.0
  * @since 04/05/2016
  */
@@ -76,66 +75,60 @@ public class JsonFileParser {
     // For the JSON points file
 
     /**
-     * The file to the JSON file, in /storage/emulated/legacy/Download/
-     */
-    private static final String JSON_FILE_PATH = "smoothclicker_points.json";
-    /**
-     * The name of the config file, in /storage/emulated/legacy/Download/
-     */
-    private static final String JSON_CONFIG_FILE = "smoothclicker_config.json";
-
-
-    /**
      * The key of the array containing the JSON points
      */
-    private static final String JSON_ARRAY_POINTS = "points";
+    public static final String JSON_ARRAY_POINTS = "points";
     /**
      * The key of the value containing the X point
      */
-    private static final String JSON_OBJECT_X = "x";
+    public static final String JSON_OBJECT_X = "x";
     /**
      * The key of the value containing the Y point
      */
-    private static final String JSON_OBJECT_Y = "y";
+    public static final String JSON_OBJECT_Y = "y";
     /**
      * The description of the point
      */
-    private static final String JSON_OBJECT_DESC = "desc";
+    public static final String JSON_OBJECT_DESC = "desc";
+    /**
+     * The  comment in the JSON point's file
+     */
+    public static final String JSON_OBJECT_COMMENT = "note";
 
     // For the JSON config file
 
     /**
      * The key to get the boolean value for a delayed start mode
      */
-    private static final String JSON_OBJECT_DELAYED_START = "delayedStart";
+    public static final String JSON_OBJECT_DELAYED_START = "delayedStart";
     /**
      * The key to get the int value for a delay
      */
-    private static final String JSON_OBJECT_DELAY = "delay";
+    public static final String JSON_OBJECT_DELAY = "delay";
     /**
      * The key to get the int value for the time gap
      */
-    private static final String JSON_OBJECT_TIME_GAP = "timeGap";
+    public static final String JSON_OBJECT_TIME_GAP = "timeGap";
     /**
      * The key to get the int value for the repeat
      */
-    private static final String JSON_OBJECT_REPEAT = "repeat";
+    public static final String JSON_OBJECT_REPEAT = "repeat";
     /**
      * The key to get the boolean value for the endless repeat mode
      */
-    private static final String JSON_OBJECT_ENDLESS_REPEAT = "endlessRepeat";
+    public static final String JSON_OBJECT_ENDLESS_REPEAT = "endlessRepeat";
     /**
      * The key to get the boolean value for the vibrate on start mode
      */
-    private static final String JSON_OBJECT_VIBRATE_ON_START = "vibrateOnStart";
+    public static final String JSON_OBJECT_VIBRATE_ON_START = "vibrateOnStart";
     /**
      * The key to get the boolean value for the vibrate on click mode
      */
-    private static final String JSON_OBJECT_VIBRATE_ON_CLICK = "vibrateOnClick";
+    public static final String JSON_OBJECT_VIBRATE_ON_CLICK = "vibrateOnClick";
     /**
      * The key to get the boolean value for the notifications mode
      */
-    private static final String JSON_OBJECT_NOTIFICATIONS = "notifications";
+    public static final String JSON_OBJECT_NOTIFICATIONS = "notifications";
 
 
     // For the Watch
@@ -161,13 +154,13 @@ public class JsonFileParser {
      * ******* */
 
     /**
-     * Parses the JSON file
+     * Parses the JSON file which contains the points to click on
      *
      * @param c - The context, cannot be null
      * @return List<Point> - The points picked form the JSON file
      * @throws NotSuitableJsonPointsFileException - If something wrong occurs during the parse
      */
-    private List<PointsListAdapter.Point> parseJsonFile( Context c ) throws NotSuitableJsonPointsFileException {
+    private List<PointsListAdapter.Point> parseJsonPointsFile(Context c) throws NotSuitableJsonPointsFileException {
 
         if ( c == null ) throw new IllegalArgumentException("The context cannot be null");
 
@@ -176,8 +169,8 @@ public class JsonFileParser {
         JSONObject jsonData = null;
 
         // Get the file, its content and parse it
-        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        File file = new File(dir.getAbsolutePath()+"/"+JSON_FILE_PATH);
+        File appDir = Config.getAppFolder();
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_POINTS_NAME);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
@@ -218,25 +211,43 @@ public class JsonFileParser {
      * Will load in a first time the JSON file.
      *
      * @param c  - The context, must not be null
+     * @param what - The point(s) to get
      * @return int[] -
      * @throws NotSuitableJsonPointsFileException - If something wrong occurs with the JSON file
      */
-    public int[] getPointFromJsonFile( Context c ) throws NotSuitableJsonPointsFileException {
+    public int[] getPointFromJsonFile( Context c, TypeOfPoints what ) throws NotSuitableJsonPointsFileException {
 
         if ( c == null ) throw new IllegalArgumentException("The context cannot be null");
 
         int [] points = null;
-        List<PointsListAdapter.Point> pointsFromJson = parseJsonFile(c);
+        List<PointsListAdapter.Point> pointsFromJson = parseJsonPointsFile(c);
 
         if ( pointsFromJson == null || pointsFromJson.size() <= 0 ){
             throw new NotSuitableJsonPointsFileException("The JSON file does not contain points");
         }
 
-        points = new int[pointsFromJson.size()*2];
-        int i = 0;
-        for ( PointsListAdapter.Point p : pointsFromJson ){
-            points[i++] = p.x;
-            points[i++] = p.y;
+        switch ( what ){
+            case FIRST_POINT:
+                points = new int[2];
+                points[0] = pointsFromJson.get(0).x;
+                points[1] = pointsFromJson.get(0).y;
+                break;
+            case SECOND_POINT:
+                if ( pointsFromJson.size() < 2 ){
+                    throw new NotSuitableJsonPointsFileException("The JSON file does not contain enough points");
+                }
+                points = new int[2];
+                points[0] = pointsFromJson.get(1).x;
+                points[1] = pointsFromJson.get(1).y;
+                break;
+            case ALL_POINTS:
+                points = new int[pointsFromJson.size()*2];
+                int i = 0;
+                for ( PointsListAdapter.Point p : pointsFromJson ){
+                    points[i++] = p.x;
+                    points[i++] = p.y;
+                }
+                break;
         }
 
         return points;
@@ -255,8 +266,8 @@ public class JsonFileParser {
         JSONObject jsonData = null;
 
         // Get the file, its content and parse it
-        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        File file = new File(dir.getAbsolutePath()+"/"+ JSON_CONFIG_FILE);
+        File appDir = Config.getAppFolder();
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_CONFIG_NAME);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
@@ -311,5 +322,47 @@ public class JsonFileParser {
         editor.apply();
 
     }
+
+    /**
+     *
+     * @return String - The path to the JSON config file
+     */
+    public static String getFullPathToConfigFile(){
+        File appDir = Config.getAppFolder();
+        return appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_CONFIG_NAME;
+    }
+
+    /**
+     *
+     * @return String - The path to the JSON points file
+     */
+    public static String getFullPathToPointsFile(){
+        File appDir = Config.getAppFolder();
+        return appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_POINTS_NAME;
+    }
+
+    /**
+     *
+     * @return String - The JSON points file
+     */
+    public static File getPointsFile(){
+        File appDir = Config.getAppFolder();
+        return new File(appDir, Config.FILE_JSON_POINTS_NAME);
+    }
+
+
+    /* *********** *
+     * INNER ENUMS *
+     * *********** */
+
+    /**
+     * The types of points to deal with
+     */
+    public enum TypeOfPoints {
+        FIRST_POINT,
+        SECOND_POINT,
+        ALL_POINTS
+    }
+
 
 }
