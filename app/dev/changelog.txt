@@ -364,8 +364,9 @@ What:
     feat: unlock script
     feat: references to web pages about how to root devices
     chore: clean up logs
+    chore: update verbatils
     doc: new build of HTML JavaDoc
-    chore: closed tasks #67, #68, #74, #81
+    chore: closed tasks #67, #68, #74, #81, #70
 ###################################################
 Date:
 What:

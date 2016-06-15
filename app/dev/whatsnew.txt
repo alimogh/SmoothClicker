@@ -93,3 +93,4 @@ v1.10.0 : Incredible Indri [on going]
     - Keep the screen on if needed
     - Use a Shell script using ADB commands to unlock the screen if needed
     - Add some references to tutorials about how to root the device
+    - Add new icons to floating arc menu
