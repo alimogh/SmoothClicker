@@ -43,6 +43,9 @@ import pylapp.smoothclicker.android.R;
 public abstract class TranslucentActivity extends AppCompatActivity {
 
 
+    //private static final String LOG_TAG = TranslucentActivity.class.getSimpleName();
+
+
     /* ****************************** *
      * METHODS FROM AppCompatActivity *
      * ****************************** */

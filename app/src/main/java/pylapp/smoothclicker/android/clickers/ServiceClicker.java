@@ -210,7 +210,7 @@ public class ServiceClicker extends IntentService {
     private static final String BROADCAST_ACTION = "pylapp.smoothclicker.android.clickers.ServiceClicker.BROADCAST";
 
 
-    private static final String LOG_TAG = "ServiceClicker";
+    private static final String LOG_TAG = ServiceClicker.class.getSimpleName();
 
 
     /* *********** *

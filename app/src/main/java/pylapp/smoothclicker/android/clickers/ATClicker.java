@@ -114,7 +114,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      * CONSTANTS *
      * ********* */
 
-    private static final String LOG_TAG = "ATClicker";
+    private static final String LOG_TAG = ATClicker.class.getSimpleName();
 
 
     /* *********** *
@@ -420,7 +420,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         }
         sb.append("*****************************************\n");
 
-        Log.i(LOG_TAG, sb.toString());
+        Logger.i(LOG_TAG, sb.toString());
 
     }
 

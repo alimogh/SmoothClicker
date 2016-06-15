@@ -99,7 +99,8 @@ public class UnlockerImpl implements UnlockerStub {
      */
     public static final String END_OF_SCRIPT_TOKEN = "UNLOCK_DONE";
 
-    private static final String LOG_TAG = "UnlockerImpl";
+    //private static final String LOG_TAG = UnlockerImpl.class.getSimpleName();
+
 
     /* *********** *
      * CONSTRUCTOR *

@@ -95,6 +95,8 @@ public class MyAppIntroFragment extends AppIntroFragment {
     private static final String ARG_TITLE_COLOR = "title_color";
     private static final String ARG_DESC_COLOR = "desc_color";
 
+    //private static final String LOG_TAG = MyAppIntroFragment.class.getSimpleName();
+
 
     /* *********** *
      * CONSTRUCTOR *

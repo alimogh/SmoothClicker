@@ -95,6 +95,9 @@ public class StatusBarNotifier {
     public static final int NOTIF_CLICK_PROCESS_ON_GOING_STANDALONE = 0x000207;
 
 
+    //private static final String LOG_TAG = StatusBarNotifier.class.getSimpleName();
+
+
     /* *********** *
      * CONSTRUCTOR *
      * *********** */

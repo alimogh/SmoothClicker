@@ -71,6 +71,9 @@ public abstract class AsyncTaskForScreen<T, U, V> extends AsyncTask<T, U, V>{
     private boolean mIsBrScreenOffRegistered;
 
 
+    //private static final String LOG_TAG = AsyncTaskForScreen.class.getSimpleName();
+
+
     /* *********** *
      * CONSTRUCTOR *
      * *********** */

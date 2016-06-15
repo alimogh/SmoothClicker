@@ -61,7 +61,7 @@ public class BRClicker extends BroadcastReceiver {
     public static final String BR_BATTERY_LOW = "android.intent.action.ACTION_BATTERY_LOW";
 
 
-    private static final String LOG_TAG = "BRCLicker";
+    private static final String LOG_TAG = BRClicker.class.getSimpleName();
 
 
     /* ****************************** *

@@ -67,6 +67,8 @@ public class VibrationNotifier {
      */
     public static final int VIBRATE_ON_CLICK_DURATION = 300;
 
+    //private static final String LOG_TAG = VibrationNotifier.class.getSimpleName();
+
 
     /* *********** *
      * CONSTRUCTOR *

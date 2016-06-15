@@ -83,6 +83,9 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
     private static final int TIME_FOR_HELPING_TOASTS = 30*1000;
 
 
+    //private static final String LOG_TAG = SelectMultiPointsActivity.class.getSimpleName();
+
+
     /* ****************************** *
      * METHODS FROM AppCompatActivity *
      * ****************************** */

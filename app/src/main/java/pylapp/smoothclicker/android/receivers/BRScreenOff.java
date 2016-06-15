@@ -33,6 +33,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import pylapp.smoothclicker.android.tools.Logger;
 import pylapp.smoothclicker.android.tools.screen.WakelockManager;
 import pylapp.smoothclicker.android.views.SettingsActivity;
 
@@ -57,7 +58,7 @@ public class BRScreenOff extends BroadcastReceiver {
     public static final String SCREEN_OFF_ACTION = Intent.ACTION_SCREEN_OFF;
 
 
-    private static final String LOG_TAG = "BRScreenOff";
+    private static final String LOG_TAG = BRScreenOff.class.getSimpleName();
 
 
     /* ****************************** *
@@ -82,7 +83,7 @@ public class BRScreenOff extends BroadcastReceiver {
         }
 
         if ( intent == null || intent.getAction() == null ){
-            Log.wtf(LOG_TAG, "The BroadcastReceiver BRScreenOff has received a broadcast without intent or action O_ô");
+            Logger.wtf(LOG_TAG, "The BroadcastReceiver BRScreenOff has received a broadcast without intent or action O_ô");
             throw new IllegalArgumentException("The BroadcastReceiver BRScreenOff has received a broadcast without intent or action O_ô");
         }
 

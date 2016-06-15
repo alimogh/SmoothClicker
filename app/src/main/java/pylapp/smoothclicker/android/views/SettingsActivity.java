@@ -73,6 +73,8 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String PREF_KEY_ODIN                    = "pref_key_root_odin";
     public static final String PREF_KEY_CHAINFIRE               = "pref_key_root_chainfire";
 
+    //private static final String LOG_TAG = SettingsActivity.class.getSimpleName();
+
 
     /* ****************************** *
      * METHODS FROM AppCompatActivity *

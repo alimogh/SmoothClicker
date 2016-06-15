@@ -72,6 +72,8 @@ public class SplashScreenActivity extends AppCompatActivity {
      */
     private static final int SPLASH_TIME_OUT = 3000;
 
+    //private static final String LOG_TAG = SplashScreenActivity.class.getSimpleName();
+
 
     /* ****************************** *
      * METHODS FROM AppCompatActivity *

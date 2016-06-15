@@ -68,6 +68,8 @@ public final class NotificationsManager {
      */
     private static NotificationsManager sInstance;
 
+    //private static final String LOG_TAG = NotificationsManager.class.getSimpleName();
+
 
     /* *********** *
      * CONSTRUCTOR *

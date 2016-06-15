@@ -133,7 +133,7 @@ public class JsonFileParser {
 
     // For the Watch
 
-    private static final String LOG_TAG = "JsonFileParser";
+    private static final String LOG_TAG = JsonFileParser.class.getSimpleName();
 
 
 
@@ -195,7 +195,6 @@ public class JsonFileParser {
                 String desc = point.getString(JSON_OBJECT_DESC);
                 PointsListAdapter.Point p = new PointsListAdapter.Point(x, y, desc);
                 pointsToClick.add(p);
-                Log.d(LOG_TAG, "Adds new point to click on: "+p.toString());
             }
         } catch ( Exception e ){
             e.printStackTrace();
@@ -304,8 +303,6 @@ public class JsonFileParser {
             jsone.printStackTrace();
             throw new NotSuitableJsonConfigFileException("A problem occurs with the JSON file : "+jsone.getMessage());
         }
-
-        Log.d("JSON", jsonData.toString());
 
         // Update the config
         SharedPreferences sp = c.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
