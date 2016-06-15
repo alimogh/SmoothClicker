@@ -167,6 +167,17 @@
     <string name="pref_key_unlockscript_title">ADB script</string>
     <string name="pref_key_unlockscript_summary">use a dedicated custom script having system commands to unlock the device</string>
 
+    <string name="pref_root_title">Root</string>
+    <string name="pref_key_root_heimdall_title">Heimdall</string>
+    <string name="pref_key_root_heimdall_summary">Go to Heimdall to root your device with Linux</string>
+    <string name="pref_key_root_odin_title">Odin</string>
+    <string name="pref_key_root_odin_summary">Go to Odin to root your device with Windows</string>
+    <string name="pref_key_root_chainfire_title">Chainfire XDA</string>
+    <string name="pref_key_root_chainfire_summary">Go to Chainfire to get more knowledge about root process</string>
+    <string name="pref_heimdall_url">https://doc.ubuntu-fr.org/heimdall</string>
+    <string name="pref_odin_url">http://odindownload.com/</string>
+    <string name="pref_chainfire_url">https://www.chainfire.eu/</string>
+
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Undo</string>
 
