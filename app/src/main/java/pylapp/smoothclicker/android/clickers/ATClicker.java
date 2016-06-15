@@ -31,10 +31,12 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.widget.Toast;
 
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.notifiers.NotificationsManager;
+import pylapp.smoothclicker.android.tools.screen.AsyncTaskForScreen;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.tools.Logger;
 import pylapp.smoothclicker.android.views.NinjaActivity;
@@ -53,7 +55,7 @@ import java.util.List;
  * @see android.os.AsyncTask
  */
 // FIXME Use the Observer/Observable design pattern with NotificationsManager as Observer and ATClicker as observable
-public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Void >{
+public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>, Void, Void > {
 
 
     /* ********** *
@@ -71,11 +73,6 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
      * The output stream of the {@link Process} object
      */
     private DataOutputStream mOutputStream;
-
-    /**
-     * The application context
-     */
-    private Context mContext;
 
     /**
      * The list of points to click on
@@ -129,9 +126,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
      * @param parent - The activity which possesses the context to use to get the SharedPreferences to get the configuration
      */
     private ATClicker( Activity parent ){
-        super();
-        if ( parent == null ) throw new IllegalArgumentException("The Context _c_ variable is null !");
-        mContext = parent;
+        super(parent);
         mIsStandalone = ( parent instanceof NinjaActivity);
     }
 
@@ -181,6 +176,9 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
             throw new IllegalArgumentException("No points to click on!");
         }
 
+        // Prepare the device for the click process: screen on and keep it on, unlock it
+        forceScreenState();
+
         mPoints = params[0];
 
         /*
@@ -192,6 +190,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         } catch ( IOException e ){
             Logger.e(LOG_TAG, "Exception thrown during 'su' : " + e.getMessage());
             e.printStackTrace();
+            disableForceScreenOn();
             displayToast("An error occurs during super-user process retrieve: "+e.getMessage());
             displayToast(mContext.getString(R.string.error_su_missing));
             return null;
@@ -214,6 +213,9 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
              $ adb shell
                 $ input tap XXX YYY
          */
+        logConfigurationState();
+
+        forceScreenState();
 
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
@@ -230,8 +232,12 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
             NotificationsManager.getInstance(mContext).stopAllNotifications();
         }
 
-        if ( mIsStandalone ) NotificationsManager.getInstance(mContext).makeClicksOnGoingNotificationStandalone();
-        else NotificationsManager.getInstance(mContext).makeClicksOnGoingNotificationByApp();
+        if ( mIsStandalone ){
+            NotificationsManager.getInstance(mContext).stopClicksOnGoingNotification();
+            NotificationsManager.getInstance(mContext).makeClicksOnGoingNotificationStandalone();
+        } else {
+            NotificationsManager.getInstance(mContext).makeClicksOnGoingNotificationByApp();
+        }
 
         /*
          * Is the execution endless ?
@@ -241,6 +247,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
             while (true) {
                 if (checkIfCancelled()) return null;
                 Logger.d(LOG_TAG, "Should repeat the process ENDLESSLY");
+                forceScreenState();
                 executeTap();
                 // Should we wait before the next action ?
                 if ( mTimeGap > 0 ){
@@ -261,6 +268,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
             Logger.d(LOG_TAG, "Should repeat the process : " + mRepeat);
             for ( int i = 0; i < mRepeat; i++ ){
                 if ( checkIfCancelled() ) return null;
+                forceScreenState();
                 executeTap();
                 // Should we wait before the next action ?
                 if ( mTimeGap > 0 ){
@@ -279,11 +287,13 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         } else {
             if ( checkIfCancelled() ) return null;
             Logger.d(LOG_TAG, "Should NOT repeat the process : "+mRepeat);
+            forceScreenState();
             executeTap();
         }
 
         NotificationsManager.getInstance(mContext).stopAllNotifications();
         NotificationsManager.getInstance(mContext).makeClicksOverNotification();
+        disableForceScreenOn();
         Logger.d(LOG_TAG, "The input event seems to be triggered");
 
         return null;
@@ -296,16 +306,18 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
      * ************* */
 
     /**
-     *
+     * Checks if the task has been canceled or must finish.
+     * In this case the task will stop all notifications and notify to the user it is finished
      * @return boolean - True if the AsyncTask has been cancelled, false otherwise
      */
-    private boolean checkIfCancelled(){
-        if ( isCancelled() || getStatus() == Status.FINISHED ){
+    @Override
+    protected boolean checkIfCancelled(){
+        boolean isCancelled = super.checkIfCancelled();
+        if ( isCancelled ){
             NotificationsManager.getInstance(mContext).stopAllNotifications();
             NotificationsManager.getInstance(mContext).makeClicksStoppedNotification();
-            return true;
         }
-        return false;
+        return isCancelled;
     }
 
     /**
@@ -329,6 +341,7 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
         }
         if ( ! sInstance.isCancelled() ){
             sInstance.cancel(true);
+            sInstance.disableForceScreenOn();
             sInstance = null;
             return true;
         } else{
@@ -360,6 +373,13 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
                 Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
                 ioe.printStackTrace();
                 displayToast("An error occurs during tap execution: " + ioe.getMessage());
+                // Retry to get the SU process (this operation may fail)
+                try {
+                    mProcess = Runtime.getRuntime().exec("su");
+                } catch ( IOException ioe2 ){
+                    ioe2.printStackTrace();
+                    Logger.e(LOG_TAG, "Exception thrown during tap execution (get again SU): " + ioe2.getMessage());
+                }
             }
 
             // Should we wait before the next action ?
@@ -377,16 +397,31 @@ public class ATClicker extends AsyncTask<List<PointsListAdapter.Point>, Void, Vo
     }
 
     /**
-     * Displays a toast with a dedicated message
-     * @param m - The message to display in a toast
+     * Logs the configuration in use
      */
-    private void displayToast( final String m ){
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(mContext, m, Toast.LENGTH_LONG).show();
+    private void logConfigurationState(){
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("*****************************************\n");
+        sb.append("ATClicker Clicking process with config: \n");
+        sb.append("*****************************************\n");
+        sb.append("\t delayed start......: ").append(mIsStartDelayed).append("\n");
+        sb.append("\t delay..............: ").append(mDelay).append("\n");
+        sb.append("\t time gap...........: ").append(mTimeGap).append("\n");
+        sb.append("\t endless repeat.....: ").append(mIsRepeatEndless).append("\n");
+        sb.append("\t repeat.............: ").append(mRepeat).append("\n");
+        sb.append("\t standalone.........: ").append(mIsStandalone).append("\n");
+        sb.append("\t point: \n");
+        for ( PointsListAdapter.Point p : mPoints ){
+            if ( p.x != PointsListAdapter.Point.UNDEFINED_X
+                    && p.y != PointsListAdapter.Point.UNDEFINED_Y ) {
+                sb.append("\t\t x=").append(p.x).append(" - y=").append(p.y).append("\n");
             }
-        });
+        }
+        sb.append("*****************************************\n");
+
+        Log.i(LOG_TAG, sb.toString());
+
     }
 
 }

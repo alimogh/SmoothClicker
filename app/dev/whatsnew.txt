@@ -79,7 +79,7 @@ v1.9.3
     - Fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
     - Fixed bug which may make a white icons bar for full screen views
     - Support for languages romanian, polish and finnish
-v1.10.0
+v1.10.0 : Incredible Indri
     - Support for landscape mode for handsets and tablets
     - More support for 6", 7" and 10" screens devices
     - Fixed some bugs
@@ -87,3 +87,6 @@ v1.10.0
     - Improved some components to make them more material
     - Support for italian and catalan
     - Standalone mode with an empty activity loading points and config file before starting the click process
+    - Import the configuration of the app (process and points) from a JSON file
+    - Export the configuration of the app (process and points) to a JSON file
+    - Force the screen to be on if off, and keep the screen on if needed

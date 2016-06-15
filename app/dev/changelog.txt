@@ -352,7 +352,42 @@ What:
     feat: add standalone mode with a remote-startable invisible activity which will take points and config JSON files before starting the click process
     refactor: pool of UT
     test: add new UT
-    chore: update TODO
+###################################################
+Date: 15/06/2016
+What:
+    feat: import and export of configuration (click process and points to click on) from/to JSON files in a dedicated app's folder
+###################################################
+Date: 15/06/2016
+What:
+    feat: prevent the screen to be off, and force it to be on if off
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
+###################################################
+Date:
+What:
+
 ###################################################
 Date:
 What:
