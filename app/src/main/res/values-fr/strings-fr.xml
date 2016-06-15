@@ -157,6 +157,13 @@
     <string name="pref_play_store_title">Google Play</string>
     <string name="pref_play_store_summary">&#9733; N\'hésitez pas à laisser une note et un commentaire &#9733;</string>
 
+    <string name="pref_wakescreenbattery_title">Réveil et batterie</string>
+    <string name="pref_key_wakelock_title">Wakelock</string>
+    <string name="pref_key_wakelock_summary">Utiliser les wakelocks pour avoir l\'écran toujours allumé (peut fortement diminuer la batterie)</string>
+    <string name="pref_key_forcescreenon_battery_title">Forcer l\'éclairage</string>
+    <string name="pref_key_forcescreenon_battery_summary">Si l\'écran est éteint, le forcer à s\'allumer si l\'appareil est sur batterie</string>
+
+
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Annuler</string>
 

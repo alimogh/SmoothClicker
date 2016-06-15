@@ -230,8 +230,8 @@ public class PointsListAdapter extends BaseAdapter {
          */
         public boolean isUsable;
 
-        final int UNDEFINED_X = -1;
-        final int UNDEFINED_Y = -1;
+        public static final int UNDEFINED_X = -1;
+        public static final int UNDEFINED_Y = -1;
 
         public Point( int x, int y ){
             super();

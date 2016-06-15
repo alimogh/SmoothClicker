@@ -50,6 +50,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- To get the JSON files from the external storage -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- To use wake locks to force the screen to be always on -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 
     <!-- ********************* -->

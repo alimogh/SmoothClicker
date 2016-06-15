@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.utils.AppConfigVersions;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 1.4.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -61,11 +61,13 @@ public class SettingsActivity extends AppCompatActivity {
      * CONSTANTS *
      * ********* */
 
-    private static final String PREF_KEY_CREDITS = "pref_key_credit";
-    private static final String PREF_KEY_APP = "pref_key_app";
-    public static final String PREF_KEY_SHAKE_TO_CLEAN = "pref_key_settings_shaketoclean";
-    private static final String PREF_KEY_ABOUT_VERSION = "pref_about_version_title";
-    private static final String PREF_KEY_STORE_PAGE = "pref_play_store_title";
+    private static final String PREF_KEY_CREDITS                = "pref_key_credit";
+    private static final String PREF_KEY_APP                    = "pref_key_app";
+    public static final String PREF_KEY_SHAKE_TO_CLEAN          = "pref_key_settings_shaketoclean";
+    private static final String PREF_KEY_ABOUT_VERSION          = "pref_about_version_title";
+    private static final String PREF_KEY_STORE_PAGE             = "pref_play_store_title";
+    public static final String PREF_KEY_WAKELOCK                = "pref_key_settings_wakelock";
+    public static final String PREF_KEY_FORCESCREENON_BATTERY   = "pref_key_settings_forcescreenon_battery";
 
 
     /* ****************************** *

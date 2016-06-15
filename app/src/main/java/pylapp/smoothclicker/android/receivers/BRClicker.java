@@ -23,7 +23,6 @@
  */
 // ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
-
 package pylapp.smoothclicker.android.receivers;
 
 import android.content.BroadcastReceiver;

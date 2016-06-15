@@ -157,6 +157,12 @@
     <string name="pref_play_store_title">Google Play</string>
     <string name="pref_play_store_summary">&#9733; Feel free to rate and comment the app &#9733;</string>
 
+    <string name="pref_wakescreenbattery_title">Awake and battery</string>
+    <string name="pref_key_wakelock_title">Wakelock</string>
+    <string name="pref_key_wakelock_summary">Use wakelocks to make the device always screen on (can reduce a lot the battery)</string>
+    <string name="pref_key_forcescreenon_battery_title">Force screen on</string>
+    <string name="pref_key_forcescreenon_battery_summary">When the screen is off, turn it on if the device uses its battery and not the power supply</string>
+
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Undo</string>
 

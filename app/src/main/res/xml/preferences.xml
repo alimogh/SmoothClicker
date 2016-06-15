@@ -43,6 +43,32 @@
 
     </PreferenceCategory>
 
+    <!-- ******************************************* -->
+    <!-- The settings about screen / wake  / battery -->
+    <!-- ******************************************* -->
+
+    <PreferenceCategory
+        android:title="@string/pref_wakescreenbattery_title"
+        android:key="pref_key_wakescreen">
+
+        <!-- Enable or not the wakelock -->
+        <CheckBoxPreference
+            android:key="pref_key_settings_wakelock"
+            android:checked="true"
+            android:title="@string/pref_key_wakelock_title"
+            android:summary="@string/pref_key_wakelock_summary"
+            android:defaultValue="true"/>
+
+        <!-- Enable or disable the force mode -->
+        <CheckBoxPreference
+            android:key="pref_key_settings_forcescreenon_battery"
+            android:checked="true"
+            android:title="@string/pref_key_forcescreenon_battery_title"
+            android:summary="@string/pref_key_forcescreenon_battery_summary"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
     <!-- ********************** -->
     <!-- The licenses / credits -->
     <!-- ********************** -->
