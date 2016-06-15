@@ -98,6 +98,9 @@ public class JsonConfigExporter implements ConfigExporter {
     private List<PointsListAdapter.Point> mPoints;
 
 
+    //private static final String LOG_TAG = JsonConfigExporter.class.getSimpleName();
+
+
     /* *********** *
      * CONSTRUCTOR *
      * *********** */

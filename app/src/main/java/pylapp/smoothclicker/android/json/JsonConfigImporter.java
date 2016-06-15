@@ -101,6 +101,9 @@ public class JsonConfigImporter implements ConfigImporter {
     private List<PointsListAdapter.Point> mPoints;
 
 
+    //private static final String LOG_TAG = JsonConfigImporter.class.getSimpleName();
+
+
     /* *********** *
      * CONSTRUCTOR *
      * *********** */

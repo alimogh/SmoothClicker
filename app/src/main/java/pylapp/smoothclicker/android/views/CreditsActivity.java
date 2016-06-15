@@ -44,6 +44,10 @@ import pylapp.smoothclicker.android.R;
  */
 public class CreditsActivity extends AppCompatActivity {
 
+
+    //private static final String LOG_TAG = CreditsActivity.class.getSimpleName();
+
+
     /**
      * Triggered to create the view
      * @param savedInstanceState -

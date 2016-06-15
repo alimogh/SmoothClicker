@@ -63,6 +63,9 @@ public class PointsListAdapter extends BaseAdapter {
     private List<Point> mPoints;
 
 
+    //private static final String LOG_TAG = PointsListAdapter.class.getSimpleName();
+
+
     /* *********** *
      * CONSTRUCTOR *
      * *********** */

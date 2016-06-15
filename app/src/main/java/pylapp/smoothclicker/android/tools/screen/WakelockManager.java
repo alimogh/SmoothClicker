@@ -29,6 +29,8 @@ import android.content.Context;
 import android.os.PowerManager;
 import android.util.Log;
 
+import pylapp.smoothclicker.android.tools.Logger;
+
 /**
  * Class which manages a wakelock to prevent the device to go to sleep and have its screen off.
  * Base on a singleton design pattern.
@@ -80,7 +82,7 @@ public class WakelockManager {
      */
     public static final String LOCK_TAG = "pylapp.smoothclicker.android.tools.screen.WakelockManager.WAKE_LOCK";
 
-    private static final String LOG_TAG = "WakelockManager";
+    private static final String LOG_TAG = WakelockManager.class.getSimpleName();
 
 
     /* *********** *
@@ -105,7 +107,6 @@ public class WakelockManager {
      * @param c - The new context to use, must be defined
      */
     public void refreshContext( Context c ){
-        Log.d(LOG_TAG, "Refreshes the context :"+c);
         if ( c == null ) throw new IllegalArgumentException("The context must be defined");
         mContext = c;
     }
@@ -116,7 +117,7 @@ public class WakelockManager {
      */
     public boolean isWakeLockAcquired(){
         boolean isAcquired = mWakeLock != null && mWakeLock.isHeld();
-        Log.d(LOG_TAG, "Wakelock acquired: "+isAcquired);
+        Logger.d(LOG_TAG, "Wakelock acquired: "+isAcquired);
         return isAcquired;
     }
 
@@ -129,7 +130,7 @@ public class WakelockManager {
      */
     public void acquireWakelock() throws IllegalStateException {
 
-        Log.d(LOG_TAG, "Acquire wakelock...");
+        Logger.d(LOG_TAG, "Acquire wakelock...");
         if ( mContext == null ) throw new IllegalStateException("No context is defined! Use previously refreshContext(Context).");
 
         // Case #1 : No wake lock defined
@@ -154,7 +155,7 @@ public class WakelockManager {
      * Releases the held wake lock and nullify it
      */
     public void releaseWakelock(){
-        Log.d(LOG_TAG, "Release wakelock...");
+        Logger.d(LOG_TAG, "Release wakelock...");
         if ( mWakeLock == null ) return;
         if ( mWakeLock.isHeld() ) mWakeLock.release();
         mWakeLock = null;
@@ -172,14 +173,14 @@ public class WakelockManager {
 
         // Case #1 : A wakelock exists and can be acquired
         if ( mWakeLock != null ){
-            Log.d(LOG_TAG, "Switch state of wakelock: nullify it...");
+            Logger.d(LOG_TAG, "Switch state of wakelock: nullify it...");
             if ( mWakeLock.isHeld() ) mWakeLock.release();
             mWakeLock = null;
             return;
         }
 
         // Case #2 : A wakelock is null, so get it
-        Log.d(LOG_TAG, "Switch state of wakelock: acquire it...");
+        Logger.d(LOG_TAG, "Switch state of wakelock: acquire it...");
         PowerManager powerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
         mWakeLock = powerManager.newWakeLock(WAKE_LOCK_TYPE, LOCK_TAG);
         mWakeLock.acquire();

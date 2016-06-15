@@ -70,6 +70,8 @@ public class NinjaActivity extends AppCompatActivity {
      */
     private List<PointsListAdapter.Point> mPointsToClickOn;
 
+    //private static final String LOG_TAG = NinjaActivity.class.getSimpleName();
+
 
     /* ****************************** *
      * METHODS FROM AppCompatActivity *

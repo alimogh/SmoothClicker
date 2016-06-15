@@ -44,6 +44,9 @@ import pylapp.smoothclicker.android.R;
 public class IntroScreensActivity extends AppIntro {
 
 
+    //private static final String LOG_TAG = IntroScreensActivity.class.getSimpleName();
+
+
     /* ********************* *
      * METHODS FROM AppIntro *
      * ********************* */
