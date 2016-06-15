@@ -695,6 +695,96 @@ public class ItClickerActivity extends AbstractTest {
     }
 
     /**
+     * Tests the export feature with its snackbar and its dedicated action button
+     *
+     * <i>If the configuration is exported in the JSON files, a snackbar with a good message is displayed with an action button</i>
+     */
+    @Test
+    public void exportConfig(){
+
+        l(this, "@Test exportConfig");
+
+        try {
+
+            // Display the pop-up
+            UiObject menu = mDevice.findObject(
+                    new UiSelector().className("android.widget.ImageView").description("Autres options") // FIXME Raw french string
+            );
+            menu.click();
+            UiObject submenu = mDevice.findObject(
+                    new UiSelector().className("android.widget.TextView").text(InstrumentationRegistry.getTargetContext().getString(R.string.action_configuration))
+            );
+            submenu.click();
+            UiObject menuItem = mDevice.findObject(
+                    new UiSelector().className("android.widget.TextView").text(InstrumentationRegistry.getTargetContext().getString(R.string.action_export))
+            );
+            menuItem.click();
+
+            // Check the snackbar
+            UiObject snackbar = mDevice.findObject(
+                    new UiSelector().className("android.widget.TextView")
+                            .resourceId(PACKAGE_APP_PATH + ":id/snackbar_text")
+            );
+            assertTrue(snackbar.exists());
+            assertEquals(InstrumentationRegistry.getTargetContext().getString(R.string.info_export_success), snackbar.getText());
+
+            // Check the action button
+            UiObject actionButton = mDevice.findObject(
+                    new UiSelector().className("android.widget.Button")
+                            .resourceId(PACKAGE_APP_PATH + ":id/snackbar_action")
+            );
+            assertTrue(actionButton.exists());
+            assertEquals(InstrumentationRegistry.getTargetContext().getString(R.string.snackbar_see_config_file), actionButton.getText());
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail(uonfe.getMessage());
+        }
+
+    }
+
+    /**
+     * Tests the import feature with its snackbar
+     *
+     * <i>If the configuration is imported in the JSON files, a snackbar with a good message is displayed</i>
+     */
+    @Test
+    public void importConfig(){
+
+        l(this, "@Test importConfig");
+
+        try {
+
+            // Display the pop-up
+            UiObject menu = mDevice.findObject(
+                    new UiSelector().className("android.widget.ImageView").description("Autres options") // FIXME Raw french string
+            );
+            menu.click();
+            UiObject submenu = mDevice.findObject(
+                    new UiSelector().className("android.widget.TextView").text(InstrumentationRegistry.getTargetContext().getString(R.string.action_configuration))
+            );
+            submenu.click();
+            UiObject menuItem = mDevice.findObject(
+                    new UiSelector().className("android.widget.TextView").text(InstrumentationRegistry.getTargetContext().getString(R.string.action_import))
+            );
+            menuItem.click();
+
+            // Check the snackbar
+            UiObject snackbar = mDevice.findObject(
+                    new UiSelector().className("android.widget.TextView")
+                            .resourceId(PACKAGE_APP_PATH + ":id/snackbar_text")
+            );
+            assertTrue(snackbar.exists());
+            assertEquals(InstrumentationRegistry.getTargetContext().getString(R.string.info_import_success), snackbar.getText());
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail(uonfe.getMessage());
+        }
+
+    }
+
+    /**
      * Test the click on the button for the "clean all" feature
      *
      * <i>If the button to clean all is clicked, the configuration / values ion the fields have to be the default values, and the list of points has to be cleaned</i>

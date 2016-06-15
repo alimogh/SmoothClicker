@@ -27,11 +27,13 @@ package pylapp.smoothclicker.android.utils;
 
 import android.content.Context;
 
+import java.io.File;
+
 /**
  * Just a configuration class with useful values
  *
  * @author pylapp
- * @version 1.6.0
+ * @version 1.7.0
  * @since 02/03/2016
  */
 public final class Config {
@@ -65,5 +67,27 @@ public final class Config {
     public static final String SP_KEY_IS_FIRST_START                 = "0x000061";
 
     public static final int SP_ACCESS_MODE                           = Context.MODE_PRIVATE;
+
+    /*
+     * The folders and files in use
+     */
+    public static final String FILE_JSON_POINTS_NAME    = "sc_points.json";
+    public static final String FILE_JSON_CONFIG_NAME    = "sc_config.json";
+    public static final String FILE_SH_UNLOCK_NAME      = "sc_unlock.sh";
+    public static final String FILE_TRIGGER_PICTURE     = "sc_trigger.png";
+    public static final String FILE_CAPTURE_PICTURE     = "sc_capture.tmp.png";
+    public static final String FOLDER_APP               = "Smooth_Clicker";
+
+
+    /**
+     * Gets the app's folder, and create it if necessary
+     * @return File - The app's folder
+     */
+    public static File getAppFolder(){
+        File f = new File(android.os.Environment.getExternalStorageDirectory(), File.separator + FOLDER_APP);
+        if ( f.exists() ) return f;
+        f.mkdirs();
+        return f;
+    }
 
 }
