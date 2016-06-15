@@ -23,26 +23,34 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #65
+LAST TASK : #79
 
 TO DO
 
     Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE
-    Task #56 : [v.10.0] Handle JSON files (config)
-    Task #62 : [v1.10.0] Wakelock and shell routine to unlock and awake (if possible, toggle them in settings)
-    Task #63 : [v1.10.0] GUI for standalone mode (kinf od shortcut) to start/stop this mode
-                        - click on all points as usual according to the config
-    Task #64 : |v.10.0] Use of OCR pattern to start the click process according to the config files
+    Task #56 : [v1.10.0] Import configuration from JSON files
+    Task #66 : [v1.10.0] Export configuration to JSON files
+    Task #67 : [v1.10.0] Wakelock to keep the screen one
+    Task #68 : [v1.10.0] Unlock shell script to unlock the device
+    Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual managemet
+    Task #70 : [v1.10.0] Add new icons in the arc menu
+    Task #71 : [v1.10.0] Upgrade the credits view
+    Task #72 : [v1.10.0] Start the click process on boot if needed (settings)
+    Task #73 : [v1.10.0] Click each second or ms -> time to wait between each click
+    Task #74 : [v1.10.0] Update settings view with information about root
+    Task #75 : [v1.10.0] Add standalone mode with OCR-like system and threshold and config files
+    Task #76 : [v1.10.0] Add standalone mode with classic mode (config files and no OCR)
+    Task #77 : [v1.10.0] Dedicated app folder
+    Task #78 : [v1.10.0] Better support for tablets and devices
+    Task #79 : [v1.10.0] Update i18n files
+
     Task #60 : [memo] ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag, updates the credits if needed, update the intro screen to talk about standalone mode and OCR
-    Task #65 : [v1.10.0] Better support for tablets and devices
+
 
 
     Task #61 : [vx.x.x] More Unit tests with JUnit and Mockito
-    Task #51 : [v1.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
-
-
+    Task #51 : [vx.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
     Task #16 : [vx.x.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
-
     Task #2  : [vx.x.x] Movable floating action button
     Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU
 
