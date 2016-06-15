@@ -127,6 +127,11 @@
     <string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/yannick</string>
     <string name="credits_icon_flaticon_yannick_license">Under CC 3.0 BY License</string>
 
+    <string name="credits_icon_flaticon_vaadin_label">Icons</string>
+    <string name="credits_icon_flaticon_vaadin_desc">Icons made by Vaadin from www.flaticon.com</string>
+    <string name="credits_icon_flaticon_vaadin_url">http://www.flaticon.com/authors/vaadin</string>
+    <string name="credits_icon_flaticon_vaadin_license">Under License CC 3.0 BY</string>
+
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
 

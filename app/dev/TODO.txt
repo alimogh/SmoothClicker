@@ -29,7 +29,6 @@ TO DO
 
     Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE
     Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual managemet
-    Task #71 : [v1.10.0] Upgrade the credits view
     Task #72 : [v1.10.0] Start the click process on boot if needed (settings)
     Task #73 : [v1.10.0] Click each second or ms -> time to wait between each click
     Task #75 : [v1.10.0] Add standalone mode with OCR-like system and threshold and config files
