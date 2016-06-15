@@ -360,6 +360,8 @@ What:
 Date: 15/06/2016
 What:
     feat: prevent the screen to be off, and force it to be on if off
+    test: add instrumented tests and unit tests for feature about the screen
+    chore: closed task #67
 ###################################################
 Date:
 What:
