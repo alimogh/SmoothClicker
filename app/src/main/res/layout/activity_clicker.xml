@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        app:menu_scr="@android:drawable/ic_menu_manage"
+        app:menu_scr="@drawable/menu_arc"
         app:menu_open="arc_left"
         app:menu_radius="150dp">
 
@@ -62,28 +62,28 @@
             android:id="@+id/fabStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_media_play"/>
+            android:src="@drawable/menu_start_process"/>
 
         <!-- Stops the clicks actions -->
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_input_delete"/>
+            android:src="@drawable/menu_stop_process"/>
 
         <!-- Select a point on the screen -->
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabSelectPoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_add"/>
+            android:src="@drawable/menu_add_points"/>
 
         <!-- Requests SU grant -->
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabRequestSuGrant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_lock_idle_low_battery"/>
+            android:src="@drawable/menu_get_su"/>
 
     </com.sa90.materialarcmenu.ArcMenu>
 

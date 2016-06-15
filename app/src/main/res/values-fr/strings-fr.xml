@@ -47,8 +47,8 @@
     <string name="action_configuration">Configuration</string>
 
     <!-- Messages -->
-    <string name="info_message_start">Enregistre la configuration et démarre le processus de click</string>
-    <string name="info_message_stop">Arrête le processus de click</string>
+    <string name="info_message_start">Enregistre la configuration et démarre les processus</string>
+    <string name="info_message_stop">Arrête les différents processus</string>
     <string name="info_message_request_su">Demande les accès SU</string>
     <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
     <string name="info_message_new_point">Sélectionne des points sur l\'écran</string>
