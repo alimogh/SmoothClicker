@@ -69,6 +69,24 @@
 
     </PreferenceCategory>
 
+    <!-- ************************************** -->
+    <!-- The custom script to unlock the device -->
+    <!-- ************************************** -->
+
+    <PreferenceCategory
+        android:title="@string/pref_unlockscript_title"
+        android:key="pref_key_unlockscript">
+
+        <!-- Use or not a custom unlock script -->
+        <CheckBoxPreference
+            android:key="pref_key_settings_unlockscript"
+            android:checked="true"
+            android:title="@string/pref_key_unlockscript_title"
+            android:summary="@string/pref_key_unlockscript_summary"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
     <!-- ********************** -->
     <!-- The licenses / credits -->
     <!-- ********************** -->
