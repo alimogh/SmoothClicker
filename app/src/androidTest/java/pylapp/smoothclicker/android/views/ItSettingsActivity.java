@@ -33,8 +33,10 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import android.support.test.runner.lifecycle.Stage;
 import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.BySelector;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
@@ -47,6 +49,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Collection;
+import java.util.List;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static junit.framework.TestCase.assertEquals;
@@ -58,7 +61,7 @@ import static org.junit.Assert.fail;
  * Class to use to make UI tests with UIAutomator of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 23/03/2016
  * @see AbstractTest
  */
@@ -107,6 +110,32 @@ public class ItSettingsActivity extends AbstractTest {
 
         // Wait for the app to appear
         mDevice.wait(Until.hasObject(By.pkg(PACKAGE_APP_PATH).depth(0)), LAUNCH_TIMEOUT_MS);
+
+    }
+
+    /**
+     * Check and uncheck the checkboxes in the settings screen
+     */
+    @Test
+    public void selections(){
+
+        l(this, "selections");
+
+        // The checkboxes
+        BySelector checkboxSettingsSelector = By.clazz("android.widget.CheckBox");
+        List<UiObject2> checkBoxes = mDevice.findObjects(checkboxSettingsSelector);
+
+        // Click...
+        for ( UiObject2 cb : checkBoxes ){
+            cb.click();
+            w(1000);
+        }
+
+        // ...and click again
+        for ( UiObject2 cb : checkBoxes ){
+            cb.click();
+            w(1000);
+        }
 
     }
 
