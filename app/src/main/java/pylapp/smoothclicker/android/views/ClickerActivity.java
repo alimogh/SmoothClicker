@@ -485,6 +485,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             cee.printStackTrace();
             showInSnackbarWithoutAction(getString(R.string.info_export_fail));
             Toast.makeText(this, cee.getMessage(), Toast.LENGTH_LONG).show();
+            return;
         }
 
     }
@@ -502,6 +503,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             cie.printStackTrace();
             showInSnackbarWithoutAction(getString(R.string.info_import_fail));
             Toast.makeText(this, cie.getMessage(), Toast.LENGTH_LONG).show();
+            return;
         }
 
         // Update the GUI

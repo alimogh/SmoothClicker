@@ -25,23 +25,30 @@
 
 package pylapp.smoothclicker.android.views;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.media.audiofx.BassBoost;
 import android.net.Uri;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.receivers.BRBootCompleted;
 import pylapp.smoothclicker.android.utils.AppConfigVersions;
 
 /**
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.7.0
+ * @version 1.8.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -74,6 +81,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String PREF_KEY_CHAINFIRE               = "pref_key_root_chainfire";
     public static final String PREF_KEY_PRTHRESHOLD             = "pref_key_picture_recognition_threshold";
     public static final String PREF_KEY_HELP                    = "pref_key_help";
+    public static final String PREF_KEY_START_ON_BOOT           = "pref_key_settings_start_standalone_on_boot";
 
 
     //private static final String LOG_TAG = SettingsActivity.class.getSimpleName();
@@ -125,6 +133,7 @@ public class SettingsActivity extends AppCompatActivity {
      * See http://developer.android.com/guide/topics/ui/settings.html
      */
     public static class SettingsFragment extends PreferenceFragment {
+
 
         @Override
         public void onCreate( Bundle savedInstanceState ){

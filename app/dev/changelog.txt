@@ -375,10 +375,11 @@ What:
     feat: standalone mode with config and points file and screen recognition
     feat: possible to choose the time unit in use (ms, s or h)
     feat: intro screen can be called as an help from the settings screen
+    fix: fixed bug with broken json files during import
     test: new UT and IT for standalone modes
     doc: new build of HTML JavaDoc
     chore: new run of Lint and code analysis
-    chore: closed tasks #75, #76, #73
+    chore: closed tasks #75, #76, #73, #72
 ###################################################
 Date:
 What:

@@ -159,6 +159,9 @@
     <string name="pref_settings_shaketoclean_title">Secouer pour vider</string>
     <string name="pref_settings_shaketoclean_summary">Secouer l\'appareil pour réinitialiser la configuration de l\'app</string>
 
+    <!--<string name="pref_settings_start_standalone_on_boot_title">Clicks au démarrage</string>-->
+    <!--<string name="pref_settings_start_standalone_on_boot_summary">Démarrer le processus de click en mode standalone avec seulement les fichiers JSON dès que l\'appareil a démarré</string>-->
+
     <string name="pref_picture_recognition_title">Reconnaissance d\'écran</string>
     <string name="pref_settings_prthreshold_title">Seuil de tolérance</string>
     <string name="pref_settings_prthreshold_summary">Plus le seuil est élevé, plus les différences entre l\'image de déclenchement et la capture d\'écran sont acceptées</string>
