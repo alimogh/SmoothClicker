@@ -201,6 +201,8 @@
     <string name="pref_heimdall_url">https://doc.ubuntu-fr.org/heimdall</string>
     <string name="pref_odin_url">http://odindownload.com/</string>
     <string name="pref_chainfire_url">https://www.chainfire.eu/</string>
+    <string name="pref_key_help_title">Help</string>
+    <string name="pref_key_help_summary">Start the tutorial</string>
 
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Undo</string>

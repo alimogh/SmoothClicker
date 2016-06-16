@@ -63,7 +63,7 @@ import static org.junit.Assert.fail;
  * Class to use to make UI tests with UIAutomator of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 23/03/2016
  * @see AbstractTest
  */
@@ -261,6 +261,48 @@ public class ItSettingsActivity extends AbstractTest {
             w(1000);
 
             assertEquals(CreditsActivity.class.getSimpleName(), getActivityInstance().getClass().getSimpleName());
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            fail(uonfe.getMessage());
+            uonfe.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Test if the item about help in the Settings activity starts the intro screens activity
+     */
+    @Test
+    public void help(){
+
+        l(this, "@Test help");
+
+        try {
+
+            // Swipe to the bottom of the view to get the credits field
+            UiObject list = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.ListView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/list")
+            );
+
+            list.swipeUp(100);
+            list.swipeUp(100);
+
+            // Clicks on the credits row
+            String s = InstrumentationRegistry.getTargetContext().getString(R.string.pref_key_help_title);
+            UiObject helpRow = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/title")
+                            .text(s)
+            );
+            helpRow.click();
+            w(1000);
+
+            assertEquals(IntroScreensActivity.class.getSimpleName(), getActivityInstance().getClass().getSimpleName());
 
         } catch ( UiObjectNotFoundException uonfe ){
             fail(uonfe.getMessage());

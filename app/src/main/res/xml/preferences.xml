@@ -161,6 +161,11 @@
         android:key="pref_key_about">
 
         <Preference
+            android:key="pref_key_help"
+            android:title="@string/pref_key_help_title"
+            android:summary="@string/pref_key_help_summary"/>
+
+        <Preference
             android:selectable="false"
             android:key="pref_about_version_title"
             android:title="@string/pref_about_version_title" />
