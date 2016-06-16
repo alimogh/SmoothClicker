@@ -31,7 +31,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import pylapp.smoothclicker.android.tools.Logger;
 import pylapp.smoothclicker.android.tools.screen.WakelockManager;
