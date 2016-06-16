@@ -52,7 +52,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
      </pre>
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 04/05/2016
  */
 public class JsonFileParser {
@@ -96,7 +96,10 @@ public class JsonFileParser {
     public static final String JSON_OBJECT_COMMENT = "note";
 
     // For the JSON config file
-
+    /**
+     * The key to get the string value for the unit time ('s', 'm' or 'h')
+     */
+    public static final String JSON_OBJECT_UNIT_TIME = "unitTime";
     /**
      * The key to get the boolean value for a delayed start mode
      */
@@ -210,11 +213,10 @@ public class JsonFileParser {
      * Will load in a first time the JSON file.
      *
      * @param c  - The context, must not be null
-     * @param what - The point(s) to get
      * @return int[] -
      * @throws NotSuitableJsonPointsFileException - If something wrong occurs with the JSON file
      */
-    public int[] getPointFromJsonFile( Context c, TypeOfPoints what ) throws NotSuitableJsonPointsFileException {
+    public int[] getPointFromJsonFile( Context c ) throws NotSuitableJsonPointsFileException {
 
         if ( c == null ) throw new IllegalArgumentException("The context cannot be null");
 
@@ -225,28 +227,11 @@ public class JsonFileParser {
             throw new NotSuitableJsonPointsFileException("The JSON file does not contain points");
         }
 
-        switch ( what ){
-            case FIRST_POINT:
-                points = new int[2];
-                points[0] = pointsFromJson.get(0).x;
-                points[1] = pointsFromJson.get(0).y;
-                break;
-            case SECOND_POINT:
-                if ( pointsFromJson.size() < 2 ){
-                    throw new NotSuitableJsonPointsFileException("The JSON file does not contain enough points");
-                }
-                points = new int[2];
-                points[0] = pointsFromJson.get(1).x;
-                points[1] = pointsFromJson.get(1).y;
-                break;
-            case ALL_POINTS:
-                points = new int[pointsFromJson.size()*2];
-                int i = 0;
-                for ( PointsListAdapter.Point p : pointsFromJson ){
-                    points[i++] = p.x;
-                    points[i++] = p.y;
-                }
-                break;
+        points = new int[pointsFromJson.size()*2];
+        int i = 0;
+        for ( PointsListAdapter.Point p : pointsFromJson ){
+            points[i++] = p.x;
+            points[i++] = p.y;
         }
 
         return points;
@@ -282,6 +267,7 @@ public class JsonFileParser {
         }
 
         // Get the values in JSON
+        int radioButtonUnitTimeId = -1;
         boolean isDelayed = false;
         int delayInS = 0;
         int timeGapInS = 0;
@@ -291,6 +277,7 @@ public class JsonFileParser {
         boolean isVibrateOnClick = false;
         boolean isDisplayNotifs = false;
         try {
+            radioButtonUnitTimeId = jsonData.getInt(JSON_OBJECT_UNIT_TIME);
             isDelayed = jsonData.getBoolean(JSON_OBJECT_DELAYED_START);
             delayInS = jsonData.getInt(JSON_OBJECT_DELAY);
             timeGapInS = jsonData.getInt(JSON_OBJECT_TIME_GAP);
@@ -307,6 +294,7 @@ public class JsonFileParser {
         // Update the config
         SharedPreferences sp = c.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
+        editor.putInt(Config.SP_KEY_UNIT_TIME, radioButtonUnitTimeId);
         editor.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, isDelayed);
         editor.putInt(Config.SP_KEY_DELAY, delayInS);
         editor.putInt(Config.SP_KEY_TIME_GAP, timeGapInS);
@@ -346,20 +334,5 @@ public class JsonFileParser {
         File appDir = Config.getAppFolder();
         return new File(appDir, Config.FILE_JSON_POINTS_NAME);
     }
-
-
-    /* *********** *
-     * INNER ENUMS *
-     * *********** */
-
-    /**
-     * The types of points to deal with
-     */
-    public enum TypeOfPoints {
-        FIRST_POINT,
-        SECOND_POINT,
-        ALL_POINTS
-    }
-
 
 }

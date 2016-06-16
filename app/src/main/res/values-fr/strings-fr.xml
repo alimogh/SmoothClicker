@@ -75,10 +75,12 @@
 
     <!-- Widgets -->
     <string name="widget_type_of_start">Départ différé</string>
+    <string name="widget_unit_time">Temps</string>
+    <string name="widget_unit_time_s">seconde</string>
+    <string name="widget_unit_time_m">minute</string>
+    <string name="widget_unit_time_h">heure</string>
     <string name="widget_delay">Retard</string>
-    <string name="widget_delay_hint">&#8230; en secondes</string>
     <string name="widget_speed">Durée entre chaque click</string>
-    <string name="widget_speed_hint">&#8230; en secondes</string>
     <string name="widget_repeat">Répétition</string>
     <string name="widget_repeat_hint">&#8230; fois</string>
     <string name="widget_repeat_endless">Infinie</string>

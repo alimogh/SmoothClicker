@@ -44,7 +44,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.5.1
+ * @version 2.6.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -72,6 +72,10 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      * The list of points to click on
      */
     private List<PointsListAdapter.Point> mPoints;
+    /**
+     * A factor to apply to the sleep time according to the unit time in use
+     */
+    private long mUnitTimeFactor;
     /**
      * The type of start
      */
@@ -108,6 +112,11 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      * CONSTANTS *
      * ********* */
 
+    /**
+     * The time to sleep for the task
+     */
+    private static final int SLEEP_TIME = 1000;
+
     private static final String LOG_TAG = ATClicker.class.getSimpleName();
 
 
@@ -138,6 +147,21 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         super.onPreExecute();
 
         SharedPreferences sp = mContext.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
+        int unitTime = sp.getInt(Config.SP_KEY_UNIT_TIME, Config.DEFAULT_TIME_UNIT_SELECTION);
+        switch ( unitTime ){
+            case R.id.rbUnitTimeS:
+                mUnitTimeFactor = 1 * 1;
+                break;
+            case R.id.rbUnitTimeM:
+                mUnitTimeFactor = 1 * 60;
+                break;
+            case R.id.rbUnitTimeH:
+                mUnitTimeFactor = 1 * 60 * 60;
+                break;
+            default:
+                mUnitTimeFactor = 1 * 1;
+                break;
+        }
         mIsStartDelayed = sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);
         mDelay = sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY));
         if ( mDelay < 0 ){
@@ -214,13 +238,13 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
             Logger.d(LOG_TAG, "The start is delayed, will sleep : "+mDelay);
-            final int count = mDelay;
-            // Loop for each second
+            final long count = mDelay * mUnitTimeFactor;
+            // Loop for each unit time
             for ( int i = 1; i <= count; i++ ){
                 try {
                     if ( checkIfCancelled() ) return null;
-                    NotificationsManager.getInstance(mContext).makeCountDownNotification(mDelay-i);
-                    Thread.sleep(1000); // Sleep of 1 second
+                    NotificationsManager.getInstance(mContext).makeCountDownNotification(count-i);
+                    Thread.sleep(SLEEP_TIME);
                 } catch ( InterruptedException ie ){ie.printStackTrace();}
             }
             NotificationsManager.getInstance(mContext).stopAllNotifications();
@@ -247,7 +271,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                 if ( mTimeGap > 0 ){
                     try {
                         Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
-                        Thread.sleep(mTimeGap*1000);
+                        Thread.sleep(mTimeGap*SLEEP_TIME);
                     } catch ( InterruptedException ie ){ie.printStackTrace();}
                 } else {
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
@@ -266,10 +290,13 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                 executeTap();
                 // Should we wait before the next action ?
                 if ( mTimeGap > 0 ){
-                    try {
-                        Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
-                        Thread.sleep(mTimeGap*1000);
-                    } catch ( InterruptedException ie ){ie.printStackTrace();}
+                    // Loop for each unit time
+                    for ( int j = 1; j <= mTimeGap*mUnitTimeFactor; j++ ){
+                        try {
+                            if ( checkIfCancelled() ) return null;
+                            Thread.sleep(SLEEP_TIME);
+                        } catch ( InterruptedException ie ){ie.printStackTrace();}
+                    }
                 } else {
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
                 }
@@ -378,10 +405,13 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
 
             // Should we wait before the next action ?
             if ( mTimeGap > 0 ){
-                try {
-                    Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
-                    Thread.sleep(mTimeGap*1000);
-                } catch ( InterruptedException ie ){ie.printStackTrace();}
+                Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
+                for ( int k = 1; k <= mTimeGap*mUnitTimeFactor; k++ ){
+                    try {
+                        if ( checkIfCancelled() ) return;
+                        Thread.sleep(SLEEP_TIME);
+                    } catch ( InterruptedException ie ){ie.printStackTrace();}
+                }
             } else {
                 Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
             }
@@ -399,6 +429,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         sb.append("*****************************************\n");
         sb.append("ATClicker Clicking process with config: \n");
         sb.append("*****************************************\n");
+        sb.append("\t time factor........: ").append(mUnitTimeFactor).append("\n");
         sb.append("\t delayed start......: ").append(mIsStartDelayed).append("\n");
         sb.append("\t delay..............: ").append(mDelay).append("\n");
         sb.append("\t time gap...........: ").append(mTimeGap).append("\n");

@@ -35,7 +35,7 @@ import static junit.framework.Assert.fail;
  * Class  to test the JsonFileParser
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 20/05/2016
  */
 public class UtJsonFileParser extends AbstractTest {
@@ -49,7 +49,7 @@ public class UtJsonFileParser extends AbstractTest {
         l(this, "@Test getPointFromJsonFile");
 
         try {
-            JsonFileParser.instance.getPointFromJsonFile(null, JsonFileParser.TypeOfPoints.ALL_POINTS);
+            JsonFileParser.instance.getPointFromJsonFile(null);
         } catch ( NotSuitableJsonPointsFileException nsjpfe ){
             fail(nsjpfe.getMessage());
         }

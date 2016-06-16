@@ -23,15 +23,15 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #81
+LAST TASK : #82
 
 TO DO
 
     Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE
-    Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual managemet
+    Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual management
     Task #72 : [v1.10.0] Start the click process on boot if needed (settings)
-    Task #73 : [v1.10.0] Click each second or ms -> time to wait between each click
     Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
+    *Task #82 : [v1.10.0] Display intro screen on demand (in settings)
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #79 : [v1.10.0] Update i18n files: regenerate string values files from the english one
     Task #80 : [v1.10.0] New run of Lint and code analysis, new build of HTML JavaDoc, final run of UT and IT

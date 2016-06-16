@@ -44,7 +44,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on importing the configuration of the app from a JSON file
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 27/05/2016
  * @ßee ConfigImporter
  */
@@ -54,6 +54,11 @@ public class JsonConfigImporter implements ConfigImporter {
     /* ********** *
      * ATTRIBUTES *
      * ********** */
+
+    /**
+     * The unit time in use (s, m or h)
+     */
+    private UnitTime mUnitTime;
 
     /**
      * If the start is delayed
@@ -119,6 +124,15 @@ public class JsonConfigImporter implements ConfigImporter {
     /* *************************** *
      * METHODS FROM ConfigImporter *
      * *************************** */
+
+    /**
+     *
+     * @return UnitTime - The unit time in use
+     */
+    @Override
+    public UnitTime getUnitTime(){
+        return mUnitTime;
+    }
 
     /**
      *
@@ -243,6 +257,19 @@ public class JsonConfigImporter implements ConfigImporter {
 
         // Get the values in JSON
         try {
+            String unitTime = jsonData.getString(JsonFileParser.JSON_OBJECT_UNIT_TIME);
+            switch ( unitTime ){
+                case "m":
+                    mUnitTime = UnitTime.MINUTE;
+                    break;
+                case "h":
+                    mUnitTime = UnitTime.HOUR;
+                    break;
+                case "s":
+                default:
+                    mUnitTime = UnitTime.SECOND;
+                    break;
+            }
             mIsStartDelayed = jsonData.getBoolean(JsonFileParser.JSON_OBJECT_DELAYED_START);
             mDelay= jsonData.getInt(JsonFileParser.JSON_OBJECT_DELAY);
             mTimeGap = jsonData.getInt(JsonFileParser.JSON_OBJECT_TIME_GAP);

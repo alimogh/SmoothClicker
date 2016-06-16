@@ -96,3 +96,4 @@ v1.10.0 : Incredible Indri [on going]
     - Add new icons to floating arc menu
     - Standalone mode with points and config files
     - Standalone mode with points and config files and screen recognition
+    - Possible to choose its time unit for the click process (ms, s or h)

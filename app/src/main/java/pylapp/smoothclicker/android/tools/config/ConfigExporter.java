@@ -33,7 +33,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Interface which defines the behaviour an object must have if it wants to save the app's config
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 26/05/2016
  */
 public interface ConfigExporter {
@@ -42,6 +42,12 @@ public interface ConfigExporter {
     /* ******* *
      * METHODS *
      * ******* */
+
+    /**
+     *
+     * @param unitTime - The unit time in use
+     */
+    void setUnitTime( UnitTime unitTime );
 
     /**
      *
@@ -115,6 +121,28 @@ public interface ConfigExporter {
         public ConfigExportException( String message ){
             super(message);
         }
+    }
+
+    /* ***** *
+     * ENUMS *
+     * ***** */
+
+    /**
+     * The unit time in use
+     */
+    enum UnitTime {
+        /**
+         * s
+         */
+        SECOND,
+        /**
+         * m
+         */
+        MINUTE,
+        /**
+         * h
+         */
+        HOUR
     }
 
 }
