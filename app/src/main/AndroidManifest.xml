@@ -116,7 +116,7 @@
 
         <!-- An activity to use with a remote tool / system / object to trigger the clicks -->
         <activity
-            android:name=".views.NinjaActivity"
+            android:name=".views.StandaloneActivity"
             android:label="@string/app_name_ninja"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.Dialog"

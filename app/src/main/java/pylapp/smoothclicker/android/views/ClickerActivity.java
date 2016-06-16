@@ -35,6 +35,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -58,6 +59,7 @@ import pylapp.smoothclicker.android.notifiers.NotificationsManager;
 import pylapp.smoothclicker.android.tools.ShakeToClean;
 import pylapp.smoothclicker.android.tools.config.ConfigExporter;
 import pylapp.smoothclicker.android.tools.config.ConfigImporter;
+import pylapp.smoothclicker.android.tools.screen.ATScreenWatcher;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.ConfigStatus;
@@ -78,12 +80,22 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.17.0
+ * @version 2.18.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
  */
 public class ClickerActivity extends AppCompatActivity implements ShakeToClean.ShakeToCleanCallback {
+
+
+    /* ********** *
+     * ATTRIBUTES *
+     * ********** */
+
+    /**
+     * Is the standalone mode activated ?
+     */
+    public static boolean isStandalone = false;
 
 
     /* ********* *
@@ -285,6 +297,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                 importConfig();
                 break;
             case R.id.action_configuration:
+                break;
+            case R.id.action_standalone:
+                handleStandaloneMode();
                 break;
             default:
                 showInSnackbarWithoutAction(getString(R.string.error_not_implemented));
@@ -554,6 +569,18 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     }
 
     /**
+     * Stops the running processes, i.e. the process which makes the clicks, and the process which looks on the screen to trigger the previous one
+     */
+    private void stopAllProcesses(){
+        Logger.d(LOG_TAG, "Stops all the processes");
+        if ( ! ATClicker.stop() ){
+            displayMessage(MessageTypes.WAS_NOT_WORKING);
+        }
+        ATScreenWatcher.stop();
+        isStandalone = false;
+    }
+
+    /**
      * Initializes the default values
      */
     private void initDefaultValues(){
@@ -651,6 +678,68 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                     }
                 })
                 .show();
+
+    }
+
+    /**
+     * Handles the standalone mode (when the user has clicked on the dedicated menu item).
+     * Disable the mode if is was running.
+     * Displays a list with the action to process in such mode.
+     * When the user chooses an option is this list, finish this activity and starts the standalone one with the dedicated intent.
+     */
+    private void handleStandaloneMode(){
+
+        // If we WERE in standalone mode: stop it
+        if ( isStandalone ) {
+            if (ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.RUNNING
+                    || ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.PENDING
+                    || ATScreenWatcher.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.RUNNING
+                    || ATScreenWatcher.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.PENDING) {
+                stopAllProcesses();
+            }
+            NotificationsManager.getInstance(this).stopAllNotifications();
+            showInSnackbarWithoutAction(getString(R.string.info_standalone_disactivated));
+            isStandalone = false;
+            return;
+        }
+
+        // If we WILL be in standalone mode: start it
+
+        // Show to the user the list of action : use a dedicated activity, as a dialog, with the choices for the standalone mode and the items for picture learning
+        StandaloneModeDialog dialog = new StandaloneModeDialog(this);
+        dialog.setPositiveButtonListener(new StandaloneModeDialog.OnPositiveButtonListener() {
+            @Override
+            public void onPositiveButtonClick(StandaloneActivity.StandaloneMode userSelection) {
+
+                // Notify the user the process will start
+                showInSnackbarWithoutAction(getString(R.string.info_standalone_activated));
+                isStandalone = true;
+
+                final String intentAction;
+                // Starts the process
+                switch ( userSelection ){
+                    case ALL_POINTS_WITH_CONFIG:
+                        intentAction = StandaloneActivity.ACTION_ALL_POINTS;
+                        break;
+                    case ALL_POINTS_WITH_CONFIG_ACCORDING_SCREEN:
+                        intentAction = StandaloneActivity.ACTION_ALL_POINTS_ACCORDING_SCREEN;
+                        break;
+                    default:
+                        intentAction = "";
+                        break;
+                }
+
+                // Start the standalone activity
+                Intent standaloneActivityIntent = new Intent( ClickerActivity.this, StandaloneActivity.class);
+                standaloneActivityIntent.setAction(intentAction);
+                startActivity(standaloneActivityIntent);
+
+                // Finish smoothly this activity to let the standalone one work
+                finish();
+            }
+        }); // End of new StandaloneModeDialog.OnPositiveButtonListener()
+
+        dialog.show();
 
     }
 

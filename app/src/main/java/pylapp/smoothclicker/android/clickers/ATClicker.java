@@ -26,21 +26,15 @@
 package pylapp.smoothclicker.android.clickers;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import android.widget.Toast;
 
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.notifiers.NotificationsManager;
 import pylapp.smoothclicker.android.tools.screen.AsyncTaskForScreen;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.tools.Logger;
-import pylapp.smoothclicker.android.views.NinjaActivity;
 import pylapp.smoothclicker.android.views.PointsListAdapter;
+import pylapp.smoothclicker.android.views.StandaloneActivity;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -127,7 +121,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      */
     private ATClicker( Activity parent ){
         super(parent);
-        mIsStandalone = ( parent instanceof NinjaActivity);
+        mIsStandalone = ( parent instanceof StandaloneActivity);
     }
 
 

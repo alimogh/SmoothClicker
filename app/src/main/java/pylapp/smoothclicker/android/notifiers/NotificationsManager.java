@@ -35,7 +35,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * It is base on a facade design pattern for notification features.
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 1.4.0
  * @since 16/03/2016
  */
 public final class NotificationsManager {
@@ -164,6 +164,14 @@ public final class NotificationsManager {
     public void makeClicksOverNotification(){
         StatusBarNotifier sbn = new StatusBarNotifier(mContext);
         sbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_OVER);
+    }
+
+    /**
+     * Manages the notifications about the watch process is over
+     */
+    public void makeWatchProcessStoppedNotification(){
+        StatusBarNotifier sbn = new StatusBarNotifier(mContext);
+        sbn.makeNotification(StatusBarNotifier.NotificationTypes.WATCH_OVER);
     }
 
     /**
