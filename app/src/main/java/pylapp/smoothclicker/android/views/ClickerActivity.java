@@ -42,6 +42,8 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import android.support.design.widget.FloatingActionButton;
@@ -79,7 +81,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.18.0
+ * @version 2.19.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -164,7 +166,10 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
             cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_REPEAT_ENDLESS));
             et = (EditText) findViewById(R.id.etRepeat);
-            et.setEnabled( ! cb.isEnabled() );
+            et.setEnabled( ! cb.isChecked() );
+            int checkedRbUnitTimeId = savedInstanceState.getInt(Config.SP_KEY_UNIT_TIME);
+            RadioButton rb = (RadioButton) findViewById(checkedRbUnitTimeId);
+            rb.setChecked(true);
         }
 
         // Create the app's folder
@@ -219,6 +224,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
         boolean isNotifOnClick = cb.isChecked();
 
+        RadioGroup rg = (RadioGroup) findViewById(R.id.rgUnitsTime);
+        int checkedRbUnitTimeId = rg.getCheckedRadioButtonId();
+
         // Save the values
 
         savedInstanceState.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, isDelayed);
@@ -229,6 +237,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK , isVibrateOnClick);
         savedInstanceState.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK , isNotifOnClick);
+        savedInstanceState.putInt(Config.SP_KEY_UNIT_TIME, checkedRbUnitTimeId);
 
         super.onSaveInstanceState(savedInstanceState);
 
@@ -321,6 +330,16 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     }
 
     /**
+     * Triggered when the activity will be destroyed
+     */
+    @Override
+    public void onDestroy(){
+        NotificationsManager.getInstance(this).stopAllNotifications();
+        ATScreenWatcher.cleanTempFile();
+        super.onDestroy();
+    }
+
+    /**
      * Triggered when the activity is resuming
      */
     @Override
@@ -356,6 +375,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         // Get the defined values
         SwitchButton sTypeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         boolean isDelayed = sTypeOfStart.isChecked();
+
+        RadioGroup rg = (RadioGroup) findViewById(R.id.rgUnitsTime);
+        int checkedRbUnitTimeId = rg.getCheckedRadioButtonId();
 
         EditText et = (EditText) findViewById(R.id.etDelay);
         if ( et.getText() == null ) return ConfigStatus.DELAY_NOT_DEFINED;
@@ -398,6 +420,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, isVibrateOnClick);
         editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, isDisplayNotifs);
+        editor.putInt(Config.SP_KEY_UNIT_TIME, checkedRbUnitTimeId);
 
         editor.apply();
 
@@ -414,6 +437,19 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
         exporter.setStartDelayed(sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED));
+        int checkedRbUnitTimeId = sp.getInt(Config.SP_KEY_UNIT_TIME, Config.DEFAULT_TIME_UNIT_SELECTION);
+        switch ( checkedRbUnitTimeId ){
+            case R.id.rbUnitTimeH:
+                exporter.setUnitTime(JsonConfigExporter.UnitTime.HOUR);
+                break;
+            case R.id.rbUnitTimeM:
+                exporter.setUnitTime(JsonConfigExporter.UnitTime.MINUTE);
+                break;
+            case R.id.rbUnitTimeS:
+            default:
+                exporter.setUnitTime(JsonConfigExporter.UnitTime.SECOND);
+                break;
+        }
         exporter.setDelay(sp.getInt(Config.SP_KEY_DELAY, Integer.parseInt(Config.DEFAULT_DELAY)));
         exporter.setTimeGap(sp.getInt(Config.SP_KEY_TIME_GAP, Integer.parseInt(Config.DEFAULT_TIME_GAP)));
         exporter.setRepeat(sp.getInt(Config.SP_KEY_REPEAT, Integer.parseInt(Config.DEFAULT_REPEAT)));
@@ -469,6 +505,21 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         }
 
         // Update the GUI
+        ConfigImporter.UnitTime unitTime = importer.getUnitTime();
+        RadioButton unitTimeRadioButton = null;
+        switch ( unitTime ){
+            case HOUR:
+                unitTimeRadioButton = (RadioButton) findViewById(R.id.rbUnitTimeH);
+                break;
+            case MINUTE:
+                unitTimeRadioButton = (RadioButton) findViewById(R.id.rbUnitTimeM);
+                break;
+            case SECOND:
+            default:
+                unitTimeRadioButton = (RadioButton) findViewById(R.id.rbUnitTimeS);
+                break;
+        }
+        unitTimeRadioButton.setChecked(true);
         SwitchButton typeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         typeOfStart.setChecked(importer.getStartDelayed());
         EditText et = (EditText) findViewById(R.id.etDelay);
@@ -586,6 +637,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
         Logger.d(LOG_TAG, "Initializes the default values");
 
+        RadioButton rbUnitTime = (RadioButton) findViewById(Config.DEFAULT_TIME_UNIT_SELECTION);
+        rbUnitTime.setChecked(true);
         SwitchButton typeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         typeOfStart.setChecked(Config.DEFAULT_START_DELAYED);
         EditText et = (EditText) findViewById(R.id.etDelay);

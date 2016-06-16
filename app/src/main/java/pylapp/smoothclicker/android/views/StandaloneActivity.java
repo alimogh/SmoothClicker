@@ -182,7 +182,7 @@ public class StandaloneActivity extends AppCompatActivity {
         messageToUser(getString(R.string.standalone_init_points));
 
         try {
-            int [] pointsAsArray = JsonFileParser.instance.getPointFromJsonFile(StandaloneActivity.this, JsonFileParser.TypeOfPoints.ALL_POINTS);
+            int [] pointsAsArray = JsonFileParser.instance.getPointFromJsonFile(StandaloneActivity.this);
             mPointsToClickOn = new ArrayList<>();
             for ( int i = 0; i < pointsAsArray.length; i+=2 ){
                 mPointsToClickOn.add( new PointsListAdapter.Point(pointsAsArray[i], pointsAsArray[i+1]) );

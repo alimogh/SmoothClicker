@@ -77,7 +77,7 @@ import java.util.ArrayList;
  * @see IntentService
  * @see ATClicker
  */
-// FIXME Refactor that, it's an heavy code
+@Deprecated
 public class ServiceClicker extends IntentService {
 
 

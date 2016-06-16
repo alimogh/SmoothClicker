@@ -34,7 +34,7 @@ import pylapp.smoothclicker.android.tools.config.ConfigExporter;
  * Class to use to test the JsonConfigExporter class
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 26/05/2016
  */
 public class ItJsonConfigExporter extends AbstractTest {
@@ -48,6 +48,7 @@ public class ItJsonConfigExporter extends AbstractTest {
         l(this, "@Test writeConfig");
 
         ConfigExporter exporter = new JsonConfigExporter();
+        exporter.setUnitTime(ConfigExporter.UnitTime.MINUTE);
         exporter.writeConfig();
 
     }

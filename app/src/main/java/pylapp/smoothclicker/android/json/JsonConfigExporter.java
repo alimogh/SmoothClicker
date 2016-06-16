@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on exporting the configuration of the app in a JSON file
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 26/05/2016
  * @see ConfigExporter
  */
@@ -52,6 +52,10 @@ public class JsonConfigExporter implements ConfigExporter {
      * ATTRIBUTES *
      * ********** */
 
+    /**
+     * The unit time to use (s, m or h)
+     */
+    private UnitTime mUnitTime;
     /**
      * If the start is delayed
      */
@@ -116,6 +120,15 @@ public class JsonConfigExporter implements ConfigExporter {
     /* *************************** *
      * METHODS FROM ConfigExporter *
      * *************************** */
+
+    /**
+     *
+     * @param unitTime - The unit time in use
+     */
+    @Override
+    public void setUnitTime( UnitTime unitTime ){
+        mUnitTime = unitTime;
+    }
 
     /**
      *
@@ -226,6 +239,19 @@ public class JsonConfigExporter implements ConfigExporter {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_COMMENT).append("\"            : ").append("\"").append(new Date()).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_UNIT_TIME).append("\"    : ").append("\"");
+        switch ( mUnitTime ){
+            case MINUTE:
+                sb.append("m").append("\",\n");
+                break;
+            case HOUR:
+                sb.append("h").append("\",\n");
+                break;
+            case SECOND:
+            default:
+                sb.append("s").append("\",\n");
+                break;
+        }
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_DELAYED_START).append("\"    : ").append("\"").append(mIsStartDelayed).append("\",\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_DELAY).append("\"                 : ").append("\"").append(mDelay).append("\",\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_TIME_GAP).append("\"           : ").append("\"").append(mTimeGap).append("\",\n");

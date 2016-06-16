@@ -38,11 +38,26 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class to use to test the JsonConfigExporter class
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 26/05/2016
  */
 public class UtJsonConfigExporter extends AbstractTest {
 
+
+    /**
+     * Tests the unit time to apply
+     */
+    @Test
+    public void setUnitTime(){
+
+        l(this, "@Test setUnitTime");
+
+        ConfigExporter exporter = new JsonConfigExporter();
+        exporter.setUnitTime(ConfigExporter.UnitTime.SECOND);
+        exporter.setUnitTime(ConfigExporter.UnitTime.MINUTE);
+        exporter.setUnitTime(ConfigExporter.UnitTime.HOUR);
+
+    }
 
     /**
      * Tests the setDelay method with bad values

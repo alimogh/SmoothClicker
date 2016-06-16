@@ -373,10 +373,11 @@ Date: 16/06/2016
 What:
     feat: standalone mode with only config and points files
     feat: standalone mode with config and points file and screen recognition
+    feat: possible to choose the time unit in use (ms, s or h)
     test: new UT and IT for standalone modes
     doc: new build of HTML JavaDoc
-    chore: new rnu of Lint and code analysis
-    chore: closed tasks #75, #76
+    chore: new run of Lint and code analysis
+    chore: closed tasks #75, #76, #73
 ###################################################
 Date:
 What:

@@ -81,10 +81,12 @@
 
     <!-- Widgets -->
     <string name="widget_type_of_start">Delayed start</string>
+    <string name="widget_unit_time">Time</string>
+    <string name="widget_unit_time_s">second</string>
+    <string name="widget_unit_time_m">minute</string>
+    <string name="widget_unit_time_h">hour</string>
     <string name="widget_delay">Delay</string>
-    <string name="widget_delay_hint">&#8230; in seconds</string>
     <string name="widget_speed">Time before each click</string>
-    <string name="widget_speed_hint">&#8230; in seconds</string>
     <string name="widget_repeat">Repeat</string>
     <string name="widget_repeat_hint">&#8230; times</string>
     <string name="widget_repeat_endless">Endless</string>

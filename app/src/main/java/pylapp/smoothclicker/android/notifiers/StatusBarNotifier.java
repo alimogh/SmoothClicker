@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.ClickerActivity;
  * It is based on a wrapper design pattern.
  *
  * @author pylapp
- * @version 2.1.0
+ * @version 2.2.0
  * @since 16/03/2016
  */
 public class StatusBarNotifier {
@@ -134,7 +134,7 @@ public class StatusBarNotifier {
      *                  <li>Nothing otherwise</li>
      *               </ul>
      */
-    public void makeNotification( NotificationTypes type, int... params ){
+    public void makeNotification( NotificationTypes type, long... params ){
 
         NotificationCompat.Builder b = new NotificationCompat.Builder(mContext);
         b.setSmallIcon(R.drawable.notification_icon);

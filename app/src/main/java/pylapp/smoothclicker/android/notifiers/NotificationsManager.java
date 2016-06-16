@@ -35,7 +35,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * It is base on a facade design pattern for notification features.
  *
  * @author pylapp
- * @version 1.4.0
+ * @version 1.5.0
  * @since 16/03/2016
  */
 public final class NotificationsManager {
@@ -178,7 +178,7 @@ public final class NotificationsManager {
      * Manages the notifications about the count down for delayed starts
      * @param countDown - The leaving amount of seconds before start
      */
-    public void makeCountDownNotification( int countDown ){
+    public void makeCountDownNotification( long countDown ){
         StatusBarNotifier sbn = new StatusBarNotifier(mContext);
         sbn.makeNotification(StatusBarNotifier.NotificationTypes.COUNT_DOWN, countDown);
     }

@@ -32,7 +32,6 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -136,7 +135,7 @@ public class ATScreenWatcher extends AsyncTaskForScreen<List<PointsListAdapter.P
         while ( true ){ // FIXME Hazardous
 
             // Remove the previous file if needed
-            clean();
+            cleanTempFile();
 
             Logger.d(LOG_TAG, "New turn in the loop");
             if ( checkIfCancelled() ) return null;
@@ -290,7 +289,7 @@ public class ATScreenWatcher extends AsyncTaskForScreen<List<PointsListAdapter.P
      * Cleans the files created by the task: removes them.
      * @return boolean - The result of the file's deletion process
      */
-    private boolean clean(){
+    public static boolean cleanTempFile(){
         File fileToClean = new File(Config.getAppFolder().getAbsolutePath()+"/"+Config.FILE_CAPTURE_PICTURE);
         return fileToClean.delete();
     }
