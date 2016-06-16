@@ -41,6 +41,8 @@ import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 
+import junit.framework.Assert;
+
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.views.CreditsActivity;
@@ -111,6 +113,9 @@ public class ItSettingsActivity extends AbstractTest {
         // Wait for the app to appear
         mDevice.wait(Until.hasObject(By.pkg(PACKAGE_APP_PATH).depth(0)), LAUNCH_TIMEOUT_MS);
 
+        // Prepare for tests
+        openSettingsScreenFromMenu();
+
     }
 
     /**
@@ -140,6 +145,91 @@ public class ItSettingsActivity extends AbstractTest {
     }
 
     /**
+     * Tests the seekbar for the threshold sued in the picture recognition system
+     */
+    @Test
+    public void thresholdSeekBar(){
+
+        l(this, "@Test thresholdSeekBar");
+
+        try {
+
+            // Get the seek bar
+            UiObject seekBar = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.SeekBar")
+                            .packageName(PACKAGE_APP_PATH)
+            );
+
+            // Swipe to the very right and check if we are at 100%
+            seekBar.swipeRight(100);
+
+            UiObject seekBarValue = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId(PACKAGE_APP_PATH + ":id/seekbar_value")
+            );
+            assertEquals( "100", seekBarValue.getText() );
+
+            // Swipe to the very left and check if we are at 100%
+            seekBar.swipeLeft(100);
+
+            seekBarValue = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId(PACKAGE_APP_PATH+":id/seekbar_value")
+            );
+            assertEquals("1", seekBarValue.getText());
+            w(1000);
+
+            // Click on the item to get the dialog to fill the seekbar: change the value but cancel
+            seekBarValue.click();
+            UiObject customValue = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.EditText")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId(PACKAGE_APP_PATH + ":id/customValue")
+            );
+            customValue.setText("42");
+            UiObject button = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.Button")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId(PACKAGE_APP_PATH + ":id/btn_cancel")
+            );
+            button.click();
+            assertEquals("1", seekBarValue.getText());
+            w(1000);
+
+            // Click on the item to get the dialog to fill the seekbar: change the value but apply
+            seekBarValue.click();
+            customValue = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.EditText")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId(PACKAGE_APP_PATH + ":id/customValue")
+            );
+            customValue.setText("23");
+            button = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.Button")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId(PACKAGE_APP_PATH + ":id/btn_apply")
+            );
+            button.click();
+            assertEquals("23", seekBarValue.getText());
+            w(1000);
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail(uonfe.getMessage());
+        }
+
+    }
+
+    /**
      * Test if the item about credits in the Settings activity starts the credits activity
      */
     @Test
@@ -149,30 +239,17 @@ public class ItSettingsActivity extends AbstractTest {
 
         try {
 
-            // Clicks the three-points-icon
-            UiObject menu = mDevice.findObject(
+            // Swipe to the bottom of the view to get the credits field
+            UiObject list = mDevice.findObject(
                     new UiSelector()
-                            .className("android.widget.ImageView")
+                            .className("android.widget.ListView")
                             .packageName(PACKAGE_APP_PATH)
-                            .descriptionContains("Autres options") // WARNING FIXME French string used, use instead system R values
+                            .resourceId("android:id/list")
             );
-            menu.click();
-            w(1000);
-
-            // Clicks on the settings item
-            String s = InstrumentationRegistry.getTargetContext().getString(R.string.action_settings);
-            UiObject itemParams = mDevice.findObject(
-                    new UiSelector()
-                            .className("android.widget.TextView")
-                            .packageName(PACKAGE_APP_PATH)
-                            .resourceId("pylapp.smoothclicker.android:id/title")
-                            .text(s)
-            );
-            itemParams.click();
-            w(1000);
+            list.swipeUp(100);
 
             // Clicks on the credits row
-            s = InstrumentationRegistry.getTargetContext().getString(R.string.pref_key_credit_title);
+            String s = InstrumentationRegistry.getTargetContext().getString(R.string.pref_key_credit_title);
             UiObject creditsRow = mDevice.findObject(
                     new UiSelector()
                             .className("android.widget.TextView")
@@ -186,9 +263,46 @@ public class ItSettingsActivity extends AbstractTest {
             assertEquals(CreditsActivity.class.getSimpleName(), getActivityInstance().getClass().getSimpleName());
 
         } catch ( UiObjectNotFoundException uonfe ){
-            fail();
+            fail(uonfe.getMessage());
             uonfe.printStackTrace();
         }
+
+    }
+
+    /**
+     * Opens the settings screen from the menu
+     */
+    private void openSettingsScreenFromMenu(){
+
+        try {
+
+            // Clicks the three-points-icon
+            UiObject menu = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.ImageView")
+                            .packageName(PACKAGE_APP_PATH)
+                                    //.descriptionContains("Plus d'options") // WARNING FIXME French string used, use instead system R values
+                            .descriptionContains("Autres options") // WARNING FIXME French string used, use instead system R values
+            );
+            menu.click();
+
+            // Clicks on the settings item
+            String s = InstrumentationRegistry.getTargetContext().getString(R.string.action_settings);
+            UiObject itemParams = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId(PACKAGE_APP_PATH + ":id/title")
+                            .text(s)
+            );
+            itemParams.click();
+            w(1000);
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            Assert.fail(uonfe.getMessage());
+        }
+        w(1000);
 
     }
 

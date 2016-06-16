@@ -94,3 +94,5 @@ v1.10.0 : Incredible Indri [on going]
     - Use a Shell script using ADB commands to unlock the screen if needed
     - Add some references to tutorials about how to root the device
     - Add new icons to floating arc menu
+    - Standalone mode with points and config files
+    - Standalone mode with points and config files and screen recognition

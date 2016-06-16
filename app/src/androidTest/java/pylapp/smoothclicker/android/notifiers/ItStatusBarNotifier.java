@@ -49,7 +49,7 @@ import static org.junit.Assert.assertTrue;
  * Class to use to make UI tests with Espresso and UIAutomator of the NotificationsManager.
  *
  *  @author pylapp
- *  @version 1.2.0
+ *  @version 1.3.0
  *  @since 21/03/2016
  *  @see AbstractTest
  */
@@ -139,6 +139,10 @@ public class ItStatusBarNotifier extends AbstractTest {
         textContent = mContext.getString(R.string.notif_content_text_clicks_stop);
         testMakeNotification(textContent, StatusBarNotifier.NotificationTypes.CLICKS_STOPPED);
 
+        //  Watch/picture recognition process stopped
+        textContent = mContext.getString(R.string.notif_content_text_watch_over);
+        testMakeNotification(textContent, StatusBarNotifier.NotificationTypes.WATCH_OVER);
+
         //  SU Granted
         textContent = mContext.getString(R.string.notif_content_text_su_granted);
         testMakeNotification(textContent, StatusBarNotifier.NotificationTypes.SU_GRANTED);
@@ -184,6 +188,11 @@ public class ItStatusBarNotifier extends AbstractTest {
         mSbn.makeNotification(StatusBarNotifier.NotificationTypes.CLICKS_STOPPED);
         w(1000);
         mSbn.removeNotification(StatusBarNotifier.NotificationTypes.CLICKS_STOPPED);
+
+        //  Watch process stopped
+        mSbn.makeNotification(StatusBarNotifier.NotificationTypes.WATCH_OVER);
+        w(1000);
+        mSbn.removeNotification(StatusBarNotifier.NotificationTypes.WATCH_OVER);
 
         //  SU Granted
         mSbn.makeNotification(StatusBarNotifier.NotificationTypes.SU_GRANTED);

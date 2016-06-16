@@ -28,7 +28,6 @@ package pylapp.smoothclicker.android.views;
 import android.content.Context;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
