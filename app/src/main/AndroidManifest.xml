@@ -147,7 +147,9 @@
         <!-- Receivers -->
         <!-- ********* -->
 
-        <receiver android:name=".receivers.BRClicker">
+        <!-- A receiver which can make clicks -->
+        <receiver
+            android:name=".receivers.BRClicker">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
@@ -160,6 +162,16 @@
             </intent-filter>
             -->
         </receiver>
+
+        <!--&lt;!&ndash; A receiver which can start the click process when the device has its boot completed &ndash;&gt;-->
+        <!--<receiver-->
+            <!--android:name=".receivers.BRBootCompleted"-->
+            <!--android:enabled="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
     </application>
 

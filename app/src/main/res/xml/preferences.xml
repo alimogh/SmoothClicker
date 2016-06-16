@@ -41,6 +41,14 @@
             android:summary="@string/pref_settings_shaketoclean_summary"
             android:defaultValue="true"/>
 
+        <!--&lt;!&ndash; Start standalone mode on boot &ndash;&gt;-->
+        <!--<CheckBoxPreference-->
+            <!--android:key="pref_key_settings_start_standalone_on_boot"-->
+            <!--android:title="@string/pref_settings_start_standalone_on_boot_title"-->
+            <!--android:summary="@string/pref_settings_start_standalone_on_boot_summary"-->
+            <!--android:defaultValue="false"-->
+            <!--android:checked="false"/>-->
+
     </PreferenceCategory>
 
     <!-- ************************************** -->

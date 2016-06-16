@@ -166,6 +166,9 @@
     <string name="pref_settings_shaketoclean_title">Shake to clean</string>
     <string name="pref_settings_shaketoclean_summary">Shake your device to make the configuration empty</string>
 
+    <!--<string name="pref_settings_start_standalone_on_boot_title">Clicks on boot</string>-->
+    <!--<string name="pref_settings_start_standalone_on_boot_summary">Starts the standalone mode with only JSON files when the device has booted</string>-->
+
     <string name="pref_picture_recognition_title">Screen recognition</string>
     <string name="pref_settings_prthreshold_title">Threshold</string>
     <string name="pref_settings_prthreshold_summary">The more the threshold is, the more accepted are the differences between the trigger picture and the last screen-shot made</string>
