@@ -26,6 +26,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
@@ -37,23 +38,27 @@ android {
         versionName "1.10.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" // For UIAutomator
     }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     // Mandatory to test mocked Android API like Log
     testOptions {
         unitTests.returnDefaultValues = true
     }
-    // FIXME Bad option, optimize the app with a new rin of Lint
+
+    // FIXME Bad option, optimize the app with a new run of Lint
     lintOptions {
         checkReleaseBuilds false
         // Or, if you prefer, you can continue to check for errors in release builds,
         // but continue the build even when errors are found:
         abortOnError false
     }
+
 }
 
 dependencies {
@@ -89,6 +94,18 @@ dependencies {
     // https://github.com/PaoloRotolo/AppIntro
     compile 'com.github.paolorotolo:appintro:3.4.0'
 
+    // //////////////
+    // Swipe selector
+    // //////////////
+    // https://github.com/roughike/SwipeSelector
+    compile 'com.roughike:swipe-selector:1.0.6'
+
+    // ///////////////////////////
+    // Material SeekBar Preference
+    // ///////////////////////////
+    // https://github.com/MrBIMC/MaterialSeekBarPreference
+    compile 'com.pavelsikun:material-seekbar-preference:2.3.0+'
+
     // ///////////////////////////
     // JUnit 4 : unit tests on API
     // ///////////////////////////
@@ -112,7 +129,7 @@ dependencies {
     // /////
     // Misc.
     // /////
-    androidTestCompile 'com.android.support:support-annotations:23.1.1'
+    androidTestCompile 'com.android.support:support-annotations:23.4.0'
     androidTestCompile 'junit:junit:4.12'
 
 }

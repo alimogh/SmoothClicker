@@ -1,9 +1,11 @@
 {
-  "note": "In a galaxy of points, far, far away...",
+  "note": "Calculatrice Samsung Galaxy A3 : 1+2*8=",
   "points": [
-    {"x" : "007", "y": "l337", "desc": "A point for g33k"},
-    {"x" : "0", "y": "42", "desc": "The very point"},
-    {"x" : "666", "y": "666", "desc": "Wow, it should be a hot point"},
-    {"x" : "123", "y": "456", "desc": "Just another point"}
+    {"x" : "82", "y": "792", "desc": "1"},
+    {"x" : "474", "y": "684", "desc": "+"},
+    {"x" : "214", "y": "802", "desc": "2"},
+    {"x" : "338", "y": "471", "desc": "*"},
+    {"x" : "218", "y": "579", "desc": "8"},
+    {"x" : "482", "y": "897", "desc": "=*"}
   ]
 }

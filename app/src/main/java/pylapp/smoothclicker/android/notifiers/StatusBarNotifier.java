@@ -88,11 +88,15 @@ public class StatusBarNotifier {
     /**
      * The identifier of the notification about the countdown
      */
-    public static final int NOTIF_COUNT_DOWN                        = 0x000206;
+    public static final int NOTIF_COUNT_DOWN                        = 0x000301;
     /**
      * The identifier of the notification about the clicking process which is on going (in standalone mode)
      */
-    public static final int NOTIF_CLICK_PROCESS_ON_GOING_STANDALONE = 0x000207;
+    public static final int NOTIF_CLICK_PROCESS_ON_GOING_STANDALONE = 0x000401;
+    /**
+     * The identifier of the notification about the watch process has been stopped
+     */
+    public static final int NOTIF_WATCH_PROCESS_OVER                = 0x000501;
 
 
     //private static final String LOG_TAG = StatusBarNotifier.class.getSimpleName();
@@ -190,6 +194,12 @@ public class StatusBarNotifier {
                 if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) n.flags |= Notification.FLAG_LOCAL_ONLY;
                 nm.notify(NOTIF_CLICK_PROCESS_OVER, n);
                 break;
+            case WATCH_OVER:
+                b.setContentText(mContext.getString(R.string.notif_content_text_watch_over));
+                n = b.build();
+                n.flags |= Notification.FLAG_LOCAL_ONLY;
+                nm.notify(NOTIF_WATCH_PROCESS_OVER, n);
+                break;
             case CLICK_MADE:
                 StringBuilder sb = new StringBuilder();
                 sb.append(mContext.getString(R.string.notif_content_text_click_made));
@@ -239,14 +249,29 @@ public class StatusBarNotifier {
             case CLICKS_ON_GOING_BY_APP:
                 nm.cancel(NOTIF_CLICK_PROCESS_ON_GOING_BY_APP);
                 break;
+            case CLICKS_ON_GOING_STANDALONE:
+                nm.cancel(NOTIF_CLICK_PROCESS_ON_GOING_STANDALONE);
+                break;
+            case CLICKS_ON_GOING_BY_SERVICE:
+                nm.cancel(NOTIF_CLICK_PROCESS_ON_GOING_BY_SERVICE);
+                break;
             case CLICKS_STOPPED:
                 nm.cancel(NOTIF_CLICK_PROCESS_STOPPED);
+                break;
+            case CLICKS_OVER:
+                nm.cancel(NOTIF_CLICK_PROCESS_OVER);
+                break;
+            case WATCH_OVER:
+                nm.cancel(NOTIF_WATCH_PROCESS_OVER);
                 break;
             case CLICK_MADE:
                 nm.cancel(NOTIF_CLICK_MADE);
                 break;
             case SU_GRANTED:
                 nm.cancel(NOTIF_SU_GRANTED);
+                break;
+            case COUNT_DOWN:
+                nm.cancel(NOTIF_COUNT_DOWN);
                 break;
         }
     }
@@ -284,6 +309,10 @@ public class StatusBarNotifier {
          * The clicking process is over
          */
         CLICKS_OVER,
+        /**
+         * The watch process is over
+         */
+        WATCH_OVER,
         /**
          * The SU permission has been granted
          */

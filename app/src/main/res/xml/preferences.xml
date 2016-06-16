@@ -43,6 +43,29 @@
 
     </PreferenceCategory>
 
+    <!-- ************************************** -->
+    <!-- The settings about picture recognition -->
+    <!-- ************************************** -->
+
+    <PreferenceCategory
+        android:title="@string/pref_picture_recognition_title">
+
+        <!-- Define the ratio / threshold for the picture comparison system -->
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            xmlns:sample="http://schemas.android.com/apk/res-auto"
+            android:key="pref_key_picture_recognition_threshold"
+            android:title="@string/pref_settings_prthreshold_title"
+            android:summary="@string/pref_settings_prthreshold_summary"
+            android:enabled="true"
+            android:defaultValue="10"
+            sample:msbp_minValue="1"
+            sample:msbp_maxValue="100"
+            sample:msbp_interval="1"
+            sample:msbp_measurementUnit="%"
+            sample:msbp_dialogEnabled="true"/>
+
+    </PreferenceCategory>
+
     <!-- ******************************************* -->
     <!-- The settings about screen / wake  / battery -->
     <!-- ******************************************* -->

@@ -32,10 +32,11 @@
     <string name="service_label_serviceclicker">Service Clicker de Smooth Clicker</string>
 
     <!-- The standalone activity -->
-    <string name="app_name_ninja">Smooth Clicker (standalone)</string>
-    <string name="ninja_init_config">Standalone : Récupération de la configuration &#8230;</string>
-    <string name="ninja_init_points">Standalone : Récupération des points à cliquer&#8230;</string>
-    <string name="ninja_start_click_process">Standalone : Démarrage du process de clicks&#8230;</string>
+    <string name="app_name_standalone">Smooth Clicker (standalone)</string>
+    <string name="standalone_init_config">Standalone : Récupération de la configuration &#8230;</string>
+    <string name="standalone_init_points">Standalone : Récupération des points à cliquer&#8230;</string>
+    <string name="standalone_start_click_process">Standalone : Démarrage du process de clicks&#8230;</string>
+    <string name="standalone_bad_action">Oups &#8230;, mauvaise action pour délencher ce mode !</string>
 
     <!-- Menus -->
     <string name="action_exit">Quitter</string>
@@ -45,6 +46,7 @@
     <string name="action_export">Exporter vers fichier JSON</string>
     <string name="action_import">Importer depuis fichier JSON</string>
     <string name="action_configuration">Configuration</string>
+    <string name="action_standalone">Mode standalone</string>
 
     <!-- Messages -->
     <string name="info_message_start">Enregistre la configuration et démarre les processus</string>
@@ -57,6 +59,8 @@
     <string name="info_export_fail">L\'export de la configuration a échoué</string>
     <string name="info_import_success">L\'importation a été réalisée</string>
     <string name="info_import_fail">L\'importation a echouée</string>
+    <string name="info_standalone_disactivated">Le mode standalone a été arrêté</string>
+    <string name="info_standalone_activated">Le mode standalone va démarrer</string>
 
     <string name="error_message_su_not_granted">L\'accès SU a été refusé x-(</string>
     <string name="error_su_missing">Avez-vous rooté votre appareil Android au préalable ? C\'est obligatoire.</string>
@@ -84,6 +88,7 @@
     <string name="widget_immediate_starts">Immédiat</string>
     <string name="widget_xy_coordinates">Points à cliquer</string>
     <string name="widget_notifications">Notifications</string>
+    <string name="widget_standalone_dialog_title">Mode standalone</string>
 
     <!-- Credits -->
     <string name="credits_app_label">Smooth Clicker</string>
@@ -145,11 +150,16 @@
     <string name="notif_content_text_clicks_over">Le processus de click est terminé</string>
     <string name="notif_content_text_su_granted">L\'accès super utilisateur a été obtenu</string>
     <string name="notif_content_text_countdown">Démarrage dans :</string>
+    <string name="notif_content_text_watch_over">Le process de vérification de l\'écran est terminé</string>
 
     <!-- Settings / Preferences -->
-    <string name="pref_settings_title">Paramètres</string>
+    <string name="pref_settings_title">Général</string>
     <string name="pref_settings_shaketoclean_title">Secouer pour vider</string>
     <string name="pref_settings_shaketoclean_summary">Secouer l\'appareil pour réinitialiser la configuration de l\'app</string>
+
+    <string name="pref_picture_recognition_title">Reconnaissance d\'écran</string>
+    <string name="pref_settings_prthreshold_title">Seuil de tolérance</string>
+    <string name="pref_settings_prthreshold_summary">Plus le seuil est élevé, plus les différences entre l\'image de déclenchement et la capture d\'écran sont acceptées</string>
 
     <string name="pref_credits_title">Crédits</string>
     <string name="pref_key_credit_title">Cette app utilise des outils tiers</string>
@@ -205,5 +215,7 @@
     <string name="message_confirm_exit_content">Voulez-vous quitter l\'application ?</string>
     <string name="app_intro">Bienvenue dans Smooth Clicker</string>
     <string name="snackbar_see_config_file">Lire</string>
+    <string name="dialog_negative_button">Annuler</string>
+    <string name="dialog_positive_button">OK</string>
 
 </resources>

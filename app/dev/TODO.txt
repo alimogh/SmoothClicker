@@ -31,8 +31,6 @@ TO DO
     Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual managemet
     Task #72 : [v1.10.0] Start the click process on boot if needed (settings)
     Task #73 : [v1.10.0] Click each second or ms -> time to wait between each click
-    Task #75 : [v1.10.0] Add standalone mode with OCR-like system and threshold and config files
-    Task #76 : [v1.10.0] Add standalone mode with classic mode (config files and no OCR)
     Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #79 : [v1.10.0] Update i18n files: regenerate string values files from the english one
