@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.utils.AppConfigVersions;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.6.0
+ * @version 1.7.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -73,6 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String PREF_KEY_ODIN                    = "pref_key_root_odin";
     public static final String PREF_KEY_CHAINFIRE               = "pref_key_root_chainfire";
     public static final String PREF_KEY_PRTHRESHOLD             = "pref_key_picture_recognition_threshold";
+    public static final String PREF_KEY_HELP                    = "pref_key_help";
 
 
     //private static final String LOG_TAG = SettingsActivity.class.getSimpleName();
@@ -200,6 +201,17 @@ public class SettingsActivity extends AppCompatActivity {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse(getString(R.string.pref_chainfire_url)));
+                    startActivity(i);
+                    return true;
+                }
+            });
+
+            // The tutorial
+            pref = findPreference(PREF_KEY_HELP);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent i = new Intent(SettingsFragment.this.getActivity().getApplicationContext(), IntroScreensActivity.class);
                     startActivity(i);
                     return true;
                 }

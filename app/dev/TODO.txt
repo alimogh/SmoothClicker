@@ -31,7 +31,6 @@ TO DO
     Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual management
     Task #72 : [v1.10.0] Start the click process on boot if needed (settings)
     Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
-    *Task #82 : [v1.10.0] Display intro screen on demand (in settings)
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #79 : [v1.10.0] Update i18n files: regenerate string values files from the english one
     Task #80 : [v1.10.0] New run of Lint and code analysis, new build of HTML JavaDoc, final run of UT and IT

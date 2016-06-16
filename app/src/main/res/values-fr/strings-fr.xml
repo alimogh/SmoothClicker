@@ -194,6 +194,9 @@
     <string name="pref_key_root_odin_summary">Accéder à Odin pour rooter votre appareil sous Windows</string>
     <string name="pref_key_root_chainfire_title">Chainfire XDA</string>
     <string name="pref_key_root_chainfire_summary">Accéder à Chainfire pour obtenir des informations sur le root</string>
+    <string name="pref_key_help_title">Aide</string>
+    <string name="pref_key_help_summary">Afficher l\'aide de l\'app</string>
+
 
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Annuler</string>
