@@ -41,6 +41,8 @@
         android:layout_margin="10dp">
 
         <TextView
+            android:paddingBottom="@dimen/widget_text_field_padding"
+            android:paddingTop="@dimen/widget_text_field_padding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/widget_label_text_size"

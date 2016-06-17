@@ -89,7 +89,7 @@
     <string name="widget_speed">Time before each click</string>
     <string name="widget_repeat">Repeat</string>
     <string name="widget_repeat_hint">&#8230; times</string>
-    <string name="widget_repeat_endless">Endless</string>
+    <string name="widget_repeat_endless">Endless repeat</string>
     <string name="widget_vibrate_on_start">Vibrate on start</string>
     <string name="widget_vibrate_on_click">Vibrate on click</string>
     <string name="widget_delayed_starts">Delayed</string>

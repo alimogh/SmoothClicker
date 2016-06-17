@@ -55,7 +55,7 @@
         <!-- Row 2 : the type of start -->
         <!-- ************************* -->
 
-        <include layout="@layout/content_clicker_start_time" />
+        <include layout="@layout/content_clicker_start_type" />
 
         <!-- ***************** -->
         <!-- Row 3 : the delay -->
@@ -69,32 +69,33 @@
 
         <include layout="@layout/content_clicker_time_gap" />
 
-        <!-- ****************** -->
-        <!-- Row 5 : the repeat -->
-        <!-- ****************** -->
+        <!-- ******************** -->
+        <!-- Row 5/6 : the repeat -->
+        <!-- ******************** -->
 
         <include layout="@layout/content_clicker_repeat" />
+        <include layout="@layout/content_clicker_repeat_endless" />
 
         <!-- ********************************** -->
-        <!-- Row 6 : the vibrate mode on starts -->
+        <!-- Row 7 : the vibrate mode on starts -->
         <!-- ********************************** -->
 
         <include layout="@layout/content_clicker_vibrate_on_start" />
 
         <!-- ********************************* -->
-        <!-- Row 7 : the vibrate mode on click -->
+        <!-- Row 8 : the vibrate mode on click -->
         <!-- ********************************* -->
 
         <include layout="@layout/content_clicker_vibrate_on_click" />
 
         <!-- ********************************* -->
-        <!-- Row 8 : display the notifications  -->
+        <!-- Row 9 : display the notifications -->
         <!-- ********************************* -->
 
         <include layout="@layout/content_clicker_notifications"/>
 
-        <!-- ************************** -->
-        <!-- Row 9 : the list of points -->
+        <!-- *************************** -->
+        <!-- Row 10 : the list of points -->
         <!-- *************************** -->
 
         <include layout="@layout/content_clicker_points"/>
