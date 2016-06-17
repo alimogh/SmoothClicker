@@ -81,7 +81,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.20.0
+ * @version 2.21.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -171,9 +171,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             RadioButton rb = (RadioButton) findViewById(checkedRbUnitTimeId);
             rb.setChecked(true);
         }
-
-        // Create the app's folder
-        Config.getAppFolder();
 
     }
 

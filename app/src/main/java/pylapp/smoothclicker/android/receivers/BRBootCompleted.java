@@ -42,6 +42,7 @@ import pylapp.smoothclicker.android.views.StandaloneActivity;
  * @since 16/06/2016
  * @see android.content.BroadcastReceiver
  */
+@Deprecated
 public class BRBootCompleted extends BroadcastReceiver {
 
 

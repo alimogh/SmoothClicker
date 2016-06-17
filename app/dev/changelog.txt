@@ -381,7 +381,7 @@ What:
     chore: new run of Lint and code analysis
     chore: closed tasks #75, #76, #73, #72
 ###################################################
-Date:
+Date: 17/06/2016
 What:
     feat: new UI for main view
     feat: update credits view

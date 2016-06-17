@@ -215,7 +215,6 @@
     <string name="pref_key_help_title">Aide</string>
     <string name="pref_key_help_summary">Afficher l\'aide de l\'app</string>
 
-
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Annuler</string>
 
@@ -230,6 +229,17 @@
     <string name="intro_notifications_desc">&#8230; et ajoutez au besoin des notifications, des vibrations ou du délai.</string>
     <string name="intro_free_label">Born to be free</string>
     <string name="intro_free_desc">Smooth Clicker est libre et open-source !</string>
+
+    <!-- Permissions -->
+    <string name="permission_vibrate_title">Permission VIBRER</string>
+    <string name="permission_vibrate_summary">L\'application à besoin de cette permissions pour faire vibrer le téléphone à chaque click</string>
+    <string name="permission_write_external_storage_title">Permission ECRITURE EXTERNE</string>
+    <string name="permission_write_external_storage_summary">L\'application a besoin de cette permission pour écrire des fichiers de configuration dans un dossier dédié</string>
+    <string name="permission_read_external_storage_title">Permission LECTURE EXTERNE</string>
+    <string name="permission_read_external_storage_summary">L\'application a besoin de cette permission pour lire des fichiers de configuration dans un dossier dédié</string>
+    <string name="permission_wakelock_title">Permission WAKE LOCK</string>
+    <string name="permission_wakelock_summary">L\'application a besoin de cette permission pour garder l\'écran allumé pour pouvoir cliquer</string>
+
 
     <!-- Misc. -->
     <string name="error_not_implemented">Pas encore disponible !</string>

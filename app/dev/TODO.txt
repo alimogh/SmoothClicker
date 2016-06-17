@@ -27,7 +27,13 @@ LAST TASK : #83
 
 TO DO
 
-    *Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE and "dangerous" permissions
+    *Task #57 : [v1.10.0] Deal with Android 6 permissions for "dangerous" permissions
+                    - test on Android 6.0+
+                    - test on Android < 6.0
+                        *- WRITE EXTERNAL
+                        - READ EXTERNAL
+                        - WAKELOCK
+                        - VIBRATE
     Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
     Task #83 : [v1.10.0] Frequency of refresh for the screen-capture-process in settings
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
