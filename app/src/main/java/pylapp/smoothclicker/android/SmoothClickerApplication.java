@@ -26,7 +26,8 @@
 package pylapp.smoothclicker.android;
 
 import android.app.Application;
-import android.widget.Toast;
+
+import com.karumi.dexter.Dexter;
 
 import pylapp.smoothclicker.android.utils.Config;
 
@@ -56,6 +57,7 @@ public class SmoothClickerApplication extends Application {
         Config.getAppFolder();
 
         // Initializes the library which deal with permissions
+        Dexter.initialize(this);
 
     }
 
