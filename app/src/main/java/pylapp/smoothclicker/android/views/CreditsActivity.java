@@ -39,7 +39,7 @@ import pylapp.smoothclicker.android.R;
  * The activity which displays the credits / third-parties licences.
  *
  * @author pylapp
- * @version 1.7.0
+ * @version 1.8.0
  * @since 15/03/2016
  */
 public class CreditsActivity extends AppCompatActivity {
@@ -106,6 +106,39 @@ public class CreditsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(getString(R.string.credits_appintro_url)));
+                startActivity(i);
+            }
+        });
+
+        // The Swipe Selector's Github URL
+        tv = (TextView) findViewById(R.id.tvCreditsSsUrl);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.credits_ss_url)));
+                startActivity(i);
+            }
+        });
+
+        // The Material SeekBar Preference
+        tv = (TextView) findViewById(R.id.tvCreditsMsbpUrl);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.credits_msbp_url)));
+                startActivity(i);
+            }
+        });
+
+        // The Dexter library
+        tv = (TextView) findViewById(R.id.tvCreditsDexterUrl);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.credits_dexter_url)));
                 startActivity(i);
             }
         });

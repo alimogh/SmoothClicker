@@ -23,12 +23,13 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #82
+LAST TASK : #83
 
 TO DO
 
     *Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE and "dangerous" permissions
-    *Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
+    Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
+    Task #83 : [v1.10.0] Frequency of refresh for the screen-capture-process in settings
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #79 : [v1.10.0] Update i18n files: regenerate string values files from the english one
     Task #80 : [v1.10.0] New run of Lint and code analysis, new build of HTML JavaDoc, final run of UT and IT

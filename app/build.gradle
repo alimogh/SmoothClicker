@@ -106,6 +106,12 @@ dependencies {
     // https://github.com/MrBIMC/MaterialSeekBarPreference
     compile 'com.pavelsikun:material-seekbar-preference:2.3.0+'
 
+    // //////
+    // Dexter
+    // //////
+    // https://github.com/Karumi/Dexter
+    compile 'com.karumi:dexter:2.2.2'
+
     // ///////////////////////////
     // JUnit 4 : unit tests on API
     // ///////////////////////////

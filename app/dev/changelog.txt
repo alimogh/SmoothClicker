@@ -383,6 +383,10 @@ What:
 ###################################################
 Date:
 What:
+    feat: new UI for main view
+    feat: update credits view
+    doc: new build of HTML JavaDoc
+    chore: new run of Lint, code analysis, UT and IT
     chore: closed tasks #69
 ###################################################
 Date:
