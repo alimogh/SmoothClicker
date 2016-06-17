@@ -83,7 +83,7 @@
     <string name="widget_speed">Durée entre chaque click</string>
     <string name="widget_repeat">Répétition</string>
     <string name="widget_repeat_hint">&#8230; fois</string>
-    <string name="widget_repeat_endless">Infinie</string>
+    <string name="widget_repeat_endless">Répétition infinie</string>
     <string name="widget_vibrate_on_start">Vibre au démarrage</string>
     <string name="widget_vibrate_on_click">Vibre à chaque click</string>
     <string name="widget_delayed_starts">Différé</string>

@@ -26,7 +26,6 @@
 
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -36,28 +35,27 @@
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
-
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        
         <TextView
-            android:layout_width="wrap_content"
+            android:paddingBottom="@dimen/widget_text_field_padding"
+            android:paddingTop="@dimen/widget_text_field_padding"
             android:layout_height="wrap_content"
-            android:text="@string/widget_type_of_start"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/widget_label_text_size" />
-
-        <com.kyleduo.switchbutton.SwitchButton
-            android:id="@+id/sTypeOfStartDelayed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:textSize="@dimen/widget_label_text_size"
-            app:kswTextOff="@string/widget_immediate_starts"
-            app:kswTextOn="@string/widget_delayed_starts" />
+            android:text="@string/widget_repeat_endless"
+            android:textColor="@color/colorAccent"
+            android:labelFor="@+id/cbEndlessRepeat"/>
+
+        <CheckBox
+            android:id="@+id/cbEndlessRepeat"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 

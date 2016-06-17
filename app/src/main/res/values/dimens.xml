@@ -46,6 +46,7 @@
     <!-- The main activity -->
     <!-- ***************** -->
     <dimen name="widget_label_text_size">20sp</dimen>
+    <dimen name="widget_text_field_padding">8dp</dimen>
 
     <!-- **************** -->
     <!-- The credits view -->
