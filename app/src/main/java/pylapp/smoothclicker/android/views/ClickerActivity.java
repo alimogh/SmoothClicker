@@ -25,6 +25,7 @@
 
 package pylapp.smoothclicker.android.views;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -33,6 +34,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -66,6 +68,14 @@ import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.ConfigStatus;
 import pylapp.smoothclicker.android.tools.Logger;
 
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.CompositePermissionListener;
+import com.karumi.dexter.listener.single.DialogOnDeniedPermissionListener;
+import com.karumi.dexter.listener.single.PermissionListener;
 import com.kyleduo.switchbutton.SwitchButton;
 
 import com.sa90.materialarcmenu.ArcMenu;
@@ -81,7 +91,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.21.0
+ * @version 2.22.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -97,6 +107,15 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      * Is the standalone mode activated ?
      */
     public static boolean isStandalone = false;
+
+    /**
+     * A permission listener dedicated to WRITE_EXTERNAL_STORAGE
+     */
+    private PermissionListener mPermissionListenerWriteExternalStorage;
+    /**
+     * A permission listener dedicated to READ_EXTERNAL_STORAGE
+     */
+    private PermissionListener mPermissionListenerReadExternalStorage;
 
 
     /* ********* *
@@ -170,6 +189,10 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             int checkedRbUnitTimeId = savedInstanceState.getInt(Config.SP_KEY_UNIT_TIME);
             RadioButton rb = (RadioButton) findViewById(checkedRbUnitTimeId);
             rb.setChecked(true);
+        }
+
+        if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ){
+            createPermissionListeners();
         }
 
     }
@@ -296,10 +319,18 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                 break;
             case R.id.action_export:
                 updateConfig();
-                exportConfig();
+                if ( Build.VERSION.SDK_INT < Build.VERSION_CODES.M ) {
+                    exportConfig();
+                } else {
+                    exportConfigIfPermissionGranted();
+                }
                 break;
             case R.id.action_import:
-                importConfig();
+                if ( Build.VERSION.SDK_INT < Build.VERSION_CODES.M ) {
+                    importConfig();
+                } else {
+                    importConfigIfPermissionGranted();
+                }
                 break;
             case R.id.action_configuration:
                 break;
@@ -426,7 +457,107 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     }
 
     /**
-     * Export the configuration in JSON files
+     * Creates permissions listeners.
+     * Use this method only if the version of the OS is Android Marshmallow 6.0+ (API 23+)
+     */
+    private void createPermissionListeners(){
+
+        /*
+         * WRITE_EXTERNAL_STORAGE
+         */
+
+        // Build a dialog which will be displayed if the users denies the dedicated permission
+        PermissionListener dialogPermissionListener =
+                DialogOnDeniedPermissionListener.Builder
+                        .withContext(this)
+                        .withTitle(R.string.permission_write_external_storage_title)
+                        .withMessage(R.string.permission_write_external_storage_summary)
+                        .withButtonText(android.R.string.ok)
+                        .withIcon(R.drawable.logo_512)
+                        .build();
+
+        // Create a lister which will trigger the export if permission granted
+        PermissionListener permissionListener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted(PermissionGrantedResponse response) {
+                Logger.i(LOG_TAG, "Permission "+ Manifest.permission.WRITE_EXTERNAL_STORAGE+" granted");
+                exportConfig();
+            }
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse response) {
+                Logger.i(LOG_TAG, "Permission "+ Manifest.permission.WRITE_EXTERNAL_STORAGE+" denied");
+            }
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                Logger.i(LOG_TAG, "Permission "+ Manifest.permission.WRITE_EXTERNAL_STORAGE+" rationale should be shown");
+                token.continuePermissionRequest();
+            }
+        };
+
+        mPermissionListenerWriteExternalStorage = new CompositePermissionListener(permissionListener, dialogPermissionListener);
+
+         /*
+         * READ_EXTERNAL_STORAGE
+         */
+
+        // Build a dialog which will be displayed if the users denies the dedicated permission
+        PermissionListener dialogPermissionListener2 =
+                DialogOnDeniedPermissionListener.Builder
+                        .withContext(this)
+                        .withTitle(R.string.permission_read_external_storage_title)
+                        .withMessage(R.string.permission_read_external_storage_summary)
+                        .withButtonText(android.R.string.ok)
+                        .withIcon(R.drawable.logo_512)
+                        .build();
+
+        // Create a lister which will trigger the export if permission granted
+        PermissionListener permissionListener2 = new PermissionListener() {
+            @Override
+            public void onPermissionGranted(PermissionGrantedResponse response) {
+                Logger.i(LOG_TAG, "Permission "+ Manifest.permission.READ_EXTERNAL_STORAGE+" granted");
+                importConfig();
+            }
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse response) {
+                Logger.i(LOG_TAG, "Permission "+ Manifest.permission.READ_EXTERNAL_STORAGE+" denied");
+            }
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                Logger.i(LOG_TAG, "Permission "+ Manifest.permission.READ_EXTERNAL_STORAGE+" rationale should be shown");
+                token.continuePermissionRequest();
+            }
+        };
+
+        mPermissionListenerReadExternalStorage = new CompositePermissionListener(permissionListener2, dialogPermissionListener2);
+
+        /*
+         * WAKELOCK
+         */
+        // TODO
+
+        /*
+         * VIBRATE
+         */
+        // TODO
+
+    }
+
+    /**
+     * Exports the configuration in JSON files if the permissions has been granted by the user
+     */
+    private void exportConfigIfPermissionGranted(){
+        Dexter.checkPermission(mPermissionListenerWriteExternalStorage, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    }
+
+    /**
+     * Imports the configuration in JSON fils if the permissions has been granted by the user
+     */
+    private void importConfigIfPermissionGranted(){
+        Dexter.checkPermission(mPermissionListenerReadExternalStorage, Manifest.permission.READ_EXTERNAL_STORAGE);
+    }
+
+    /**
+     * Exports the configuration in JSON files
      */
     private void exportConfig(){
 
