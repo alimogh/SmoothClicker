@@ -74,7 +74,7 @@
     <string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
 
     <!-- Widgets -->
-    <string name="widget_type_of_start">Départ différé</string>
+    <string name="widget_type_of_start">Départ</string>
     <string name="widget_unit_time">Temps</string>
     <string name="widget_unit_time_s">seconde</string>
     <string name="widget_unit_time_m">minute</string>
