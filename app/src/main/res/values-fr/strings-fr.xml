@@ -119,6 +119,21 @@
     <string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
     <string name="credits_appintro_license">Sous License Apache v2</string>
 
+    <string name="credits_ss_label">Swipe Selector</string>
+    <string name="credits_ss_desc">Librarie créée par Iiro Krankka</string>
+    <string name="credits_ss_url">https://github.com/roughike/SwipeSelector</string>
+    <string name="credits_ss_license">Sous License Apache v2</string>
+
+    <string name="credits_msbp_label">Material SeekBar Preference</string>
+    <string name="credits_msbp_desc">Librairie créée par Pavel Sikun</string>
+    <string name="credits_msbp_url">https://github.com/MrBIMC/MaterialSeekBarPreference</string>
+    <string name="credits_msbp_license">Sous License Apache v2</string>
+
+    <string name="credits_dexter_label">Dexter</string>
+    <string name="credits_dexter_desc">Librairie créée par Karumi</string>
+    <string name="credits_dexter_url">https://github.com/Karumi/Dexter</string>
+    <string name="credits_dexter_license">Sous License Apache v2</string>
+
     <string name="credits_icon_flaticon_freepik_label">Icônes</string>
     <string name="credits_icon_flaticon_freepik_desc">Icônes faites par Freepik de www.flaticon.com</string>
     <string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
