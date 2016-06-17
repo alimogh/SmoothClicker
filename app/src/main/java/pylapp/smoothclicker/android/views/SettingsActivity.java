@@ -25,23 +25,16 @@
 
 package pylapp.smoothclicker.android.views;
 
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.media.audiofx.BassBoost;
 import android.net.Uri;
 import android.preference.Preference;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import pylapp.smoothclicker.android.R;
-import pylapp.smoothclicker.android.receivers.BRBootCompleted;
 import pylapp.smoothclicker.android.utils.AppConfigVersions;
 
 /**

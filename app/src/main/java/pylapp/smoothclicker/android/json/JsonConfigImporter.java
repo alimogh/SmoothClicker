@@ -46,7 +46,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * @author pylapp
  * @version 1.1.0
  * @since 27/05/2016
- * @ßee ConfigImporter
+ * @see ConfigImporter
  */
 public class JsonConfigImporter implements ConfigImporter {
 

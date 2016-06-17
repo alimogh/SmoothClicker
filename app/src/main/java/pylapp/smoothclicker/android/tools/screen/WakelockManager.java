@@ -27,7 +27,6 @@ package pylapp.smoothclicker.android.tools.screen;
 
 import android.content.Context;
 import android.os.PowerManager;
-import android.util.Log;
 
 import pylapp.smoothclicker.android.tools.Logger;
 

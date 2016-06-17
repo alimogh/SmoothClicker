@@ -49,10 +49,10 @@
             android:textSize="@dimen/widget_label_text_size"
             android:text="@string/widget_vibrate_on_click"
             android:textColor="@color/colorAccent"
-            android:labelFor="@+id/cbVibrateOnClick"/>
+            android:labelFor="@+id/scVibrateOnClick"/>
 
-        <CheckBox
-            android:id="@+id/cbVibrateOnClick"
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/scVibrateOnClick"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"/>

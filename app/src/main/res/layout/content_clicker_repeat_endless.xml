@@ -49,13 +49,13 @@
             android:textSize="@dimen/widget_label_text_size"
             android:text="@string/widget_repeat_endless"
             android:textColor="@color/colorAccent"
-            android:labelFor="@+id/cbEndlessRepeat"/>
+            android:labelFor="@+id/scEndlessRepeat"/>
 
-        <CheckBox
-            android:id="@+id/cbEndlessRepeat"
-            android:layout_height="wrap_content"
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/scEndlessRepeat"
             android:layout_width="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

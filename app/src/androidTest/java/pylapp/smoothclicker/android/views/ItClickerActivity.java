@@ -376,7 +376,7 @@ public class ItClickerActivity extends AbstractTest {
         try {
 
             UiObject endlessCheckbox = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbEndlessRepeat")
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/scEndlessRepeat")
             );
 
             UiObject repeatField = mDevice.findObject(
@@ -824,22 +824,29 @@ public class ItClickerActivity extends AbstractTest {
             Espresso.closeSoftKeyboard();
             w(1000);
             UiObject endless = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbEndlessRepeat")
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/scEndlessRepeat")
             );
             endless.click();
             w(1000);
+
+            // Swipe to display items
+            UiObject swipeableLayout = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH+":id/clickerActivityMainLayout")
+            );
+            swipeableLayout.swipeUp(100);
+
             UiObject vibrateOnStart = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbVibrateOnStart")
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/scVibrateOnStart")
             );
             vibrateOnStart.click();
             w(1000);
             UiObject vibrateOnClick = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbVibrateOnClick")
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/scVibrateOnClick")
             );
             vibrateOnClick.click();
             w(1000);
             UiObject notifications = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/cbNotifOnClick")
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/scNotifOnClick")
             );
             notifications.click();
             w(1000);
