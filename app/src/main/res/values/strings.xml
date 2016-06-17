@@ -42,7 +42,7 @@
     <string name="app_name_ninja">Smooth Clicker (standalone)</string>
     <string name="ninja_init_config">Standalone: Config values are picked &#8230;</string>
     <string name="ninja_init_points">Standalone: Points to click on are picked &#8230;</string>
-    <string name="ninja_start_click_process">Standalone: The clicking process is starting &#8230;</string>
+    <string name="ninja_start_click_process">Standalone: The click process is starting &#8230;</string>
 
     <!-- Menus -->
     <string name="action_exit">Exit</string>
@@ -166,15 +166,14 @@
     <!-- Notifications -->
     <string name="notif_content_title">Smooth Clicker</string>
     <string name="notif_content_text_click_made">New click </string>
-    <string name="notif_content_text_clicks_on_going_app">The clicking process is running (through the app)&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_service">The clicking process is running (through the service)&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_standalone">The clicking process is running (standalone)&#8230;</string>
-    <string name="notif_content_text_clicks_stop">The clicking process has been stopped</string>
-    <string name="notif_content_text_clicks_over">The clicking process is over</string>
+    <string name="notif_content_text_clicks_on_going_app">The click process is running (through the app)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_service">The click process is running (through the service)&#8230; </string>
+    <string name="notif_content_text_clicks_on_going_standalone">The click process is running (standalone)&#8230;</string>
+    <string name="notif_content_text_clicks_stop">The click process has been stopped</string>
+    <string name="notif_content_text_clicks_over">The click process is over</string>
     <string name="notif_content_text_su_granted">The super-user permission has been granted</string>
     <string name="notif_content_text_countdown">Start in:</string>
     <string name="notif_content_text_watch_over">The watch process is over</string>
-
 
     <!-- Settings / Preferences -->
     <string name="pref_settings_title">Main</string>
@@ -236,6 +235,16 @@
     <string name="intro_notifications_desc">&#8230; and configure the process with notifications, vibrations or delays</string>
     <string name="intro_free_label">Born to be free</string>
     <string name="intro_free_desc">Smooth Clicker is both free and open-source!</string>
+
+    <!-- Permissions -->
+    <string name="permission_vibrate_title">VIBRATE permission</string>
+    <string name="permission_vibrate_summary">The app needs this permission to notify you a new click is made</string>
+    <string name="permission_write_external_storage_title">EXTERNAL STORAGE WRITE permission</string>
+    <string name="permission_write_external_storage_summary">The app needs this permission to write configuration files in a dedicated folder</string>
+    <string name="permission_read_external_storage_title">READ STORAGE WRITE permission</string>
+    <string name="permission_read_external_storage_summary">The app needs this permissios to read configuration files in a dedicated folder</string>
+    <string name="permission_wakelock_title">WAKE LOCK permission</string>
+    <string name="permission_wakelock_summary">Lhe app needs this permissions to keep the screen of the device on to make clicks</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>

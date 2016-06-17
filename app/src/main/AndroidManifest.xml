@@ -44,8 +44,8 @@
      -->
     <!-- To make the device vibrate (here on each click or on start if needed) -->
     <uses-permission android:name="android.permission.VIBRATE" />
-    <!-- To start the service when the boot of the device is done -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--&lt;!&ndash; To start the service when the boot of the device is done &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
     <!-- To put the JSON files to the external storage -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- To get the JSON files from the external storage -->
@@ -59,6 +59,7 @@
     <!-- ********************* -->
 
     <application
+        android:name="pylapp.smoothclicker.android.SmoothClickerApplication"
         android:allowBackup="true"
         android:icon="@drawable/logo_512"
         android:label="@string/app_name"

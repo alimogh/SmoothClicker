@@ -38,7 +38,7 @@ import android.os.Vibrator;
      </pre>
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 16/03/2016
  */
 public class VibrationNotifier {
@@ -52,6 +52,9 @@ public class VibrationNotifier {
      * The context to use to get the vibrator
      */
     private Context mContext;
+
+
+    private static final String LOG_TAG = VibrationNotifier.class.getSimpleName();
 
 
     /* ********* *
@@ -94,7 +97,7 @@ public class VibrationNotifier {
      * Makes the device vibrate during an amount of ms
      * @param duration - The time in ms to vibrate
      */
-    public void vibrate( int duration ){
+    public void vibrate( final int duration ){
         Vibrator v = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(duration);
     }

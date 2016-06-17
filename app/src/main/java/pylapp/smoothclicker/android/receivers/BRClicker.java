@@ -40,6 +40,7 @@ import pylapp.smoothclicker.android.tools.Logger;
  * @since 18/03/2016
  * @see android.content.BroadcastReceiver
  */
+@Deprecated
 public class BRClicker extends BroadcastReceiver {
 
 
