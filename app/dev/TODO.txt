@@ -28,7 +28,6 @@ LAST TASK : #82
 TO DO
 
     *Task #57 : [v1.10.0] Deal with Android 6 permissions for WRITE_EXTERNAL_STORAGE and "dangerous" permissions
-    *Task #69 : [v1.10.0] Upgrade the main view with switch buttons instead of checkboxes, and better visual management
     *Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #79 : [v1.10.0] Update i18n files: regenerate string values files from the english one

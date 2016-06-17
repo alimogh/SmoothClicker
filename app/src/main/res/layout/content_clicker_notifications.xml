@@ -49,10 +49,10 @@
             android:textSize="@dimen/widget_label_text_size"
             android:text="@string/widget_notifications"
             android:textColor="@color/colorAccent"
-            android:labelFor="@+id/cbNotifOnClick"/>
+            android:labelFor="@+id/scNotifOnClick"/>
 
-        <CheckBox
-            android:id="@+id/cbNotifOnClick"
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/scNotifOnClick"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"/>

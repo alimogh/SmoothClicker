@@ -39,7 +39,6 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -50,6 +49,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.SwitchCompat;
 import android.widget.Toast;
 
 import pylapp.smoothclicker.android.clickers.ATClicker;
@@ -81,7 +81,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.19.0
+ * @version 2.20.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -157,16 +157,16 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             et.setText(savedInstanceState.getString(Config.SP_KEY_TIME_GAP));
             et = (EditText) findViewById(R.id.etRepeat);
             et.setText(savedInstanceState.getString(Config.SP_KEY_REPEAT));
-            CheckBox cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
-            cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_START));
-            cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
-            cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK));
-            cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
-            cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK));
-            cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
-            cb.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_REPEAT_ENDLESS));
+            SwitchCompat sc = (SwitchCompat) findViewById(R.id.scVibrateOnStart);
+            sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_START));
+            sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
+            sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK));
+            sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
+            sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK));
+            sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
+            sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_REPEAT_ENDLESS));
             et = (EditText) findViewById(R.id.etRepeat);
-            et.setEnabled( ! cb.isChecked() );
+            et.setEnabled( ! sc.isChecked() );
             int checkedRbUnitTimeId = savedInstanceState.getInt(Config.SP_KEY_UNIT_TIME);
             RadioButton rb = (RadioButton) findViewById(checkedRbUnitTimeId);
             rb.setChecked(true);
@@ -212,17 +212,17 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         if ( et.getText() == null || et.getText().toString().length() <= 0 ) repeatEach = 0;
         else repeatEach = Integer.parseInt(et.getText().toString());
 
-        CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
-        boolean isEndlessRepeat = cb.isChecked();
+        SwitchCompat sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
+        boolean isEndlessRepeat = sc.isChecked();
 
-        cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
-        boolean isVibrateOnStart = cb.isChecked();
+        sc= (SwitchCompat) findViewById(R.id.scVibrateOnStart);
+        boolean isVibrateOnStart = sc.isChecked();
 
-        cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
-        boolean isVibrateOnClick = cb.isChecked();
+        sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
+        boolean isVibrateOnClick = sc.isChecked();
 
-        cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
-        boolean isNotifOnClick = cb.isChecked();
+        sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
+        boolean isNotifOnClick = sc.isChecked();
 
         RadioGroup rg = (RadioGroup) findViewById(R.id.rgUnitsTime);
         int checkedRbUnitTimeId = rg.getCheckedRadioButtonId();
@@ -397,17 +397,17 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         if ( et.getText().toString().length() <= 0 ) repeatEach = 0;
         else repeatEach = Integer.parseInt(et.getText().toString());
 
-        CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
-        boolean isEndlessRepeat = cb.isChecked();
+        SwitchCompat sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
+        boolean isEndlessRepeat = sc.isChecked();
 
-        cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
-        boolean isVibrateOnStart = cb.isChecked();
+        sc = (SwitchCompat) findViewById(R.id.scVibrateOnStart);
+        boolean isVibrateOnStart = sc.isChecked();
 
-        cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
-        boolean isVibrateOnClick = cb.isChecked();
+        sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
+        boolean isVibrateOnClick = sc.isChecked();
 
-        cb = ( CheckBox) findViewById(R.id.cbNotifOnClick);
-        boolean isDisplayNotifs = cb.isChecked();
+        sc = ( SwitchCompat) findViewById(R.id.scNotifOnClick);
+        boolean isDisplayNotifs = sc.isChecked();
 
         // Update the shared preferences
         SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
@@ -485,7 +485,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             cee.printStackTrace();
             showInSnackbarWithoutAction(getString(R.string.info_export_fail));
             Toast.makeText(this, cee.getMessage(), Toast.LENGTH_LONG).show();
-            return;
         }
 
     }
@@ -529,16 +528,16 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         et = (EditText) findViewById(R.id.etTimeBeforeEachClick);
         et.setText(importer.getTimeGap()+"");
         et = (EditText) findViewById(R.id.etRepeat);
-        et.setText(importer.getRepeat()+"");
-        CheckBox cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
-        cb.setChecked(importer.getVibrateOnStart());
-        cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
-        cb.setChecked(importer.getVibrateOnClick());
-        cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
-        cb.setChecked(importer.getNotificationOnCLick());
-        cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
-        cb.setChecked(importer.getEndlessRepeat());
-        et.setEnabled(!cb.isChecked());
+        et.setText(importer.getRepeat() + "");
+        SwitchCompat sc = (SwitchCompat) findViewById(R.id.scVibrateOnStart);
+        sc.setChecked(importer.getVibrateOnStart());
+        sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
+        sc.setChecked(importer.getVibrateOnClick());
+        sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
+        sc.setChecked(importer.getNotificationOnCLick());
+        SwitchCompat sw = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
+        sw.setChecked(importer.getEndlessRepeat());
+        et.setEnabled(!sw.isChecked());
 
         ArrayList<Integer> coordsAsXY = new ArrayList<>();
         List<PointsListAdapter.Point> lp = importer.getPointsToClickOn();
@@ -649,14 +648,14 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         et.setText(Config.DEFAULT_TIME_GAP);
         et = (EditText) findViewById(R.id.etRepeat);
         et.setText(Config.DEFAULT_REPEAT);
-        CheckBox cb = (CheckBox) findViewById(R.id.cbVibrateOnStart);
-        cb.setChecked(Config.DEFAULT_VIBRATE_ON_START);
-        cb = (CheckBox) findViewById(R.id.cbVibrateOnClick);
-        cb.setChecked(Config.DEFAULT_VIBRATE_ON_CLICK);
-        cb = (CheckBox) findViewById(R.id.cbNotifOnClick);
-        cb.setChecked(Config.DEFAULT_NOTIF_ON_CLICK);
-        cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
-        cb.setChecked(Config.DEFAULT_REPEAT_ENDLESS);
+        SwitchCompat sc = (SwitchCompat) findViewById(R.id.scVibrateOnStart);
+        sc.setChecked(Config.DEFAULT_VIBRATE_ON_START);
+        sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
+        sc.setChecked(Config.DEFAULT_VIBRATE_ON_CLICK);
+        sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
+        sc.setChecked(Config.DEFAULT_NOTIF_ON_CLICK);
+        sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
+        sc.setChecked(Config.DEFAULT_REPEAT_ENDLESS);
 
         handleMultiPointResult( null ); // Make the spinner of points to click empty
 
@@ -967,8 +966,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         });
 
         // The endless repeat
-        CheckBox cb = (CheckBox) findViewById(R.id.cbEndlessRepeat);
-        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        SwitchCompat sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
+        sc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged( CompoundButton buttonView, boolean isChecked ){
                 EditText etRepeat = (EditText) findViewById(R.id.etRepeat);

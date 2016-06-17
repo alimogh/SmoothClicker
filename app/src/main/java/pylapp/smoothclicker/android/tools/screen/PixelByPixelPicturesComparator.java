@@ -26,7 +26,6 @@
 package pylapp.smoothclicker.android.tools.screen;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import pylapp.smoothclicker.android.tools.Logger;
 
