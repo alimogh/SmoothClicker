@@ -70,7 +70,21 @@
             sample:msbp_maxValue="100"
             sample:msbp_interval="1"
             sample:msbp_measurementUnit="%"
-            sample:msbp_dialogEnabled="true"/>
+            sample:msbp_dialogEnabled="false"/>
+
+        <!-- Define the frequency of the screen-capture process to take a new picture of the screen -->
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            xmlns:sample="http://schemas.android.com/apk/res-auto"
+            android:key="pref_key_picture_recognition_frequency"
+            android:title="@string/pref_settings_prfrequency_title"
+            android:summary="@string/pref_settings_prfrequency_summary"
+            android:enabled="true"
+            android:defaultValue="1"
+            sample:msbp_minValue="1"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"
+            sample:msbp_measurementUnit="s"
+            sample:msbp_dialogEnabled="false"/>
 
     </PreferenceCategory>
 

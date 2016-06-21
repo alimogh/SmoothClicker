@@ -100,4 +100,4 @@ v1.10.0 : Incredible Indri [on going]
     - The intro screen is available from the settings screen as an help
     - Refactor main view
     - Update credits view
-    - Deal with the new system which mange permissions for Android 6.0+
+    - Deal with the new system which manage permissions for Android 6.0+
