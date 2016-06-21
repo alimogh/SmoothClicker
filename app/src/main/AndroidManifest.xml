@@ -37,6 +37,7 @@
     <!-- To be SU -->
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
 
+
     <!--
      These permissions are NORMAL permissions, so no need to ask grant for them
      See: https://developer.android.com/guide/topics/security/permissions.html#normal-dangerous
@@ -44,14 +45,21 @@
      -->
     <!-- To make the device vibrate (here on each click or on start if needed) -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- To use wake locks to force the screen to be always on -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--&lt;!&ndash; To start the service when the boot of the device is done &ndash;&gt;-->
     <!--<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
+
+
+    <!--
+     These permissions are DANGEROUS permissions, so we need to ask grant for them
+     See: https://developer.android.com/guide/topics/security/permissions.html#normal-dangerous
+     -->
     <!-- To put the JSON files to the external storage -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- To get the JSON files from the external storage -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- To use wake locks to force the screen to be always on -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
 
     <!-- ********************* -->
