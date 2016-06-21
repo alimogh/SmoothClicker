@@ -29,13 +29,14 @@ import android.app.Application;
 
 import com.karumi.dexter.Dexter;
 
+import pylapp.smoothclicker.android.tools.PermissionsManager;
 import pylapp.smoothclicker.android.utils.Config;
 
 /**
  * The application
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 17/06/2016
  */
 public class SmoothClickerApplication extends Application {
@@ -57,7 +58,7 @@ public class SmoothClickerApplication extends Application {
         Config.getAppFolder();
 
         // Initializes the library which deal with permissions
-        Dexter.initialize(this);
+        PermissionsManager.instance.initialize(this);
 
     }
 
