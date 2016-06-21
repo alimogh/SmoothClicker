@@ -184,43 +184,43 @@ public class ItSettingsActivity extends AbstractTest {
             assertEquals("1", seekBarValue.getText());
             w(1000);
 
-            // Click on the item to get the dialog to fill the seekbar: change the value but cancel
-            seekBarValue.click();
-            UiObject customValue = mDevice.findObject(
-                    new UiSelector()
-                            .className("android.widget.EditText")
-                            .packageName(PACKAGE_APP_PATH)
-                            .resourceId(PACKAGE_APP_PATH + ":id/customValue")
-            );
-            customValue.setText("42");
-            UiObject button = mDevice.findObject(
-                    new UiSelector()
-                            .className("android.widget.Button")
-                            .packageName(PACKAGE_APP_PATH)
-                            .resourceId(PACKAGE_APP_PATH + ":id/btn_cancel")
-            );
-            button.click();
-            assertEquals("1", seekBarValue.getText());
-            w(1000);
-
-            // Click on the item to get the dialog to fill the seekbar: change the value but apply
-            seekBarValue.click();
-            customValue = mDevice.findObject(
-                    new UiSelector()
-                            .className("android.widget.EditText")
-                            .packageName(PACKAGE_APP_PATH)
-                            .resourceId(PACKAGE_APP_PATH + ":id/customValue")
-            );
-            customValue.setText("23");
-            button = mDevice.findObject(
-                    new UiSelector()
-                            .className("android.widget.Button")
-                            .packageName(PACKAGE_APP_PATH)
-                            .resourceId(PACKAGE_APP_PATH + ":id/btn_apply")
-            );
-            button.click();
-            assertEquals("23", seekBarValue.getText());
-            w(1000);
+//            // Click on the item to get the dialog to fill the seekbar: change the value but cancel
+//            seekBarValue.click();
+//            UiObject customValue = mDevice.findObject(
+//                    new UiSelector()
+//                            .className("android.widget.EditText")
+//                            .packageName(PACKAGE_APP_PATH)
+//                            .resourceId(PACKAGE_APP_PATH + ":id/customValue")
+//            );
+//            customValue.setText("42");
+//            UiObject button = mDevice.findObject(
+//                    new UiSelector()
+//                            .className("android.widget.Button")
+//                            .packageName(PACKAGE_APP_PATH)
+//                            .resourceId(PACKAGE_APP_PATH + ":id/btn_cancel")
+//            );
+//            button.click();
+//            assertEquals("1", seekBarValue.getText());
+//            w(1000);
+//
+//            // Click on the item to get the dialog to fill the seekbar: change the value but apply
+//            seekBarValue.click();
+//            customValue = mDevice.findObject(
+//                    new UiSelector()
+//                            .className("android.widget.EditText")
+//                            .packageName(PACKAGE_APP_PATH)
+//                            .resourceId(PACKAGE_APP_PATH + ":id/customValue")
+//            );
+//            customValue.setText("23");
+//            button = mDevice.findObject(
+//                    new UiSelector()
+//                            .className("android.widget.Button")
+//                            .packageName(PACKAGE_APP_PATH)
+//                            .resourceId(PACKAGE_APP_PATH + ":id/btn_apply")
+//            );
+//            button.click();
+//            assertEquals("23", seekBarValue.getText());
+//            w(1000);
 
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();
@@ -246,6 +246,7 @@ public class ItSettingsActivity extends AbstractTest {
                             .packageName(PACKAGE_APP_PATH)
                             .resourceId("android:id/list")
             );
+            list.swipeUp(100);
             list.swipeUp(100);
 
             // Clicks on the credits row
