@@ -391,7 +391,12 @@ What:
 ###################################################
 Date:
 What:
-
+    feat: deal with the new permissions system provided by Android 6 and API 23+
+    feat: frequency of screen captures
+    fix: bug with unit time in the config file
+    fix: bug where notifications removed when finishing main activity in standalone mode
+    fix: bug where splash screen displayed even if standalone mode running
+    chore: closed tasks #57, #83
 ###################################################
 Date:
 What:

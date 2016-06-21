@@ -39,6 +39,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.views.PointsListAdapter;
 
@@ -51,7 +52,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
      </pre>
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.3.0
  * @since 04/05/2016
  */
 public class JsonFileParser {
@@ -266,7 +267,7 @@ public class JsonFileParser {
         }
 
         // Get the values in JSON
-        int radioButtonUnitTimeId = -1;
+        String unitTime = "s";
         boolean isDelayed = false;
         int delayInS = 0;
         int timeGapInS = 0;
@@ -276,7 +277,7 @@ public class JsonFileParser {
         boolean isVibrateOnClick = false;
         boolean isDisplayNotifs = false;
         try {
-            radioButtonUnitTimeId = jsonData.getInt(JSON_OBJECT_UNIT_TIME);
+            unitTime = jsonData.getString(JSON_OBJECT_UNIT_TIME);
             isDelayed = jsonData.getBoolean(JSON_OBJECT_DELAYED_START);
             delayInS = jsonData.getInt(JSON_OBJECT_DELAY);
             timeGapInS = jsonData.getInt(JSON_OBJECT_TIME_GAP);
@@ -293,6 +294,14 @@ public class JsonFileParser {
         // Update the config
         SharedPreferences sp = c.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
+        int radioButtonUnitTimeId = -1;
+        if ( "s".equals(unitTime) ){
+            radioButtonUnitTimeId = R.id.rbUnitTimeS;
+        } else if ( "m".equals(unitTime) ){
+            radioButtonUnitTimeId = R.id.rbUnitTimeM;
+        } else if ( "h".equals(unitTime) ){
+            radioButtonUnitTimeId = R.id.rbUnitTimeH;
+        }
         editor.putInt(Config.SP_KEY_UNIT_TIME, radioButtonUnitTimeId);
         editor.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, isDelayed);
         editor.putInt(Config.SP_KEY_DELAY, delayInS);

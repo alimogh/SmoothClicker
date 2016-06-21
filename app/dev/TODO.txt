@@ -23,13 +23,13 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #84
+LAST TASK : #85
 
 TO DO
 
-    Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
-    Task #83 : [v1.10.0] Frequency of refresh for the screen-capture-process in settings
-    Task #84 : [v1.10.0] Play a sound notification on click
+    *Task #83 : [v1.10.0] Refactor settings views to have more rubrics
+    *Task #80 : [v1.10.0] Update the intro screen with content about JSON files and standalone modes
+    *Task #84 : [v1.10.0] Play a sound notification on click
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #79 : [v1.10.0] Update i18n files: regenerate string values files from the english one
     Task #80 : [v1.10.0] New run of Lint and code analysis, new build of HTML JavaDoc, final run of UT and IT

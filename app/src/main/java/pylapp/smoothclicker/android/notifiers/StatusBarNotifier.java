@@ -34,6 +34,7 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
 import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.tools.Logger;
 import pylapp.smoothclicker.android.views.ClickerActivity;
 
 /**
@@ -99,7 +100,7 @@ public class StatusBarNotifier {
     public static final int NOTIF_WATCH_PROCESS_OVER                = 0x000501;
 
 
-    //private static final String LOG_TAG = StatusBarNotifier.class.getSimpleName();
+    private static final String LOG_TAG = StatusBarNotifier.class.getSimpleName();
 
 
     /* *********** *
@@ -135,6 +136,8 @@ public class StatusBarNotifier {
      *               </ul>
      */
     public void makeNotification( NotificationTypes type, long... params ){
+
+        Logger.d(LOG_TAG, "New notification: " + type);
 
         NotificationCompat.Builder b = new NotificationCompat.Builder(mContext);
         b.setSmallIcon(R.drawable.notification_icon);
@@ -236,6 +239,7 @@ public class StatusBarNotifier {
      * Removes all notifications
      */
     public void removeAllNotifications(){
+        Logger.d(LOG_TAG, "Remove all notifications");
         NotificationManager nm = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         nm.cancelAll();
     }
@@ -244,6 +248,7 @@ public class StatusBarNotifier {
      * Removes a notification
      */
     public void removeNotification( NotificationTypes type ){
+        Logger.d(LOG_TAG, "Remove notification: "+type);
         NotificationManager nm = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         switch (type){
             case CLICKS_ON_GOING_BY_APP:

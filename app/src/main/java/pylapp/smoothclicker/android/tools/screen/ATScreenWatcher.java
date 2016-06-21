@@ -85,14 +85,9 @@ public class ATScreenWatcher extends AsyncTaskForScreen<List<PointsListAdapter.P
      * ********* */
 
     /**
-     * The minimum value for TIME_MS_CHECK
+     * The default frequency to make the screen captures
      */
-    private static final int DEFAULT_TIME_MS_CHECK = 3000;
-
-    /**
-     * The time the task must wait between each screen check (in ms)
-     */
-    public static final int TIME_MS_CHECK = DEFAULT_TIME_MS_CHECK;
+    private static final int DEFAULT_FREQUENCY_CHECK_MS = 3000;
 
     private static final String LOG_TAG = ATScreenWatcher.class.getSimpleName();
 
@@ -168,9 +163,11 @@ public class ATScreenWatcher extends AsyncTaskForScreen<List<PointsListAdapter.P
 
             }
 
+            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+            int frequency = sp.getInt(SettingsActivity.PREF_KEY_CAPTURE_FREQUENCY, DEFAULT_FREQUENCY_CHECK_MS);
             // Wait before the new check
             try {
-                Thread.sleep(TIME_MS_CHECK);
+                Thread.sleep(1000 * frequency);
             } catch ( InterruptedException ie ){ ie.printStackTrace(); }
 
         } // End of while (true)

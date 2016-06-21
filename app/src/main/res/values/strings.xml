@@ -186,6 +186,8 @@
     <string name="pref_picture_recognition_title">Screen recognition</string>
     <string name="pref_settings_prthreshold_title">Threshold</string>
     <string name="pref_settings_prthreshold_summary">The more the threshold is, the more accepted are the differences between the trigger picture and the last screen-shot made</string>
+    <string name="pref_settings_prfrequency_title">Time for capture</string>
+    <string name="pref_settings_prfrequency_summary">The higher is the time for the capture, the slower will be the system to take screen shots of the device to trigger the click process</string>
 
     <string name="pref_credits_title">Credits</string>
     <string name="pref_key_credit_title">This app uses third party contents</string>
@@ -206,7 +208,7 @@
 
     <string name="pref_unlockscript_title">Unlock</string>
     <string name="pref_key_unlockscript_title">ADB script</string>
-    <string name="pref_key_unlockscript_summary">use a dedicated custom script having system commands to unlock the device</string>
+    <string name="pref_key_unlockscript_summary">Use a dedicated custom script having system commands to unlock the device</string>
 
     <string name="pref_root_title">Root</string>
     <string name="pref_key_root_heimdall_title">Heimdall</string>

@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.utils.AppConfigVersions;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.8.0
+ * @version 1.9.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -75,6 +75,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String PREF_KEY_PRTHRESHOLD             = "pref_key_picture_recognition_threshold";
     public static final String PREF_KEY_HELP                    = "pref_key_help";
     public static final String PREF_KEY_START_ON_BOOT           = "pref_key_settings_start_standalone_on_boot";
+    public static final String PREF_KEY_CAPTURE_FREQUENCY       = "pref_key_picture_recognition_frequency";
 
 
     //private static final String LOG_TAG = SettingsActivity.class.getSimpleName();

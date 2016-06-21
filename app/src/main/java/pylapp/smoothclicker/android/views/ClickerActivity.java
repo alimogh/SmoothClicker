@@ -62,6 +62,7 @@ import pylapp.smoothclicker.android.tools.ShakeToClean;
 import pylapp.smoothclicker.android.tools.config.ConfigExporter;
 import pylapp.smoothclicker.android.tools.config.ConfigImporter;
 import pylapp.smoothclicker.android.tools.screen.ATScreenWatcher;
+import pylapp.smoothclicker.android.tools.screen.WakelockManager;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.ConfigStatus;
@@ -341,11 +342,17 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      */
     @Override
     public void finish(){
-        SplashScreenActivity.sIsFirstLaunch = true;
-        if ( ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.RUNNING
-                || ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.PENDING )
-            stopClickingProcess();
-        NotificationsManager.getInstance(this).stopAllNotifications();
+        if ( ! isStandalone ){
+            SplashScreenActivity.sIsFirstLaunch = true;
+            if (ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.RUNNING
+                    || ATClicker.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.PENDING
+                    || ATScreenWatcher.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.RUNNING
+                    || ATScreenWatcher.getInstance(ClickerActivity.this).getStatus() == AsyncTask.Status.PENDING){
+                stopAllProcesses();
+            }
+            NotificationsManager.getInstance(this).stopAllNotifications();
+            WakelockManager.instance.releaseWakelock();
+        }
         super.finish();
     }
 
@@ -354,7 +361,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      */
     @Override
     public void onDestroy(){
-        NotificationsManager.getInstance(this).stopAllNotifications();
         ATScreenWatcher.cleanTempFile();
         super.onDestroy();
     }
@@ -934,7 +940,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View v ){
-                stopClickingProcess();
+                stopAllProcesses();
             }
         });
 

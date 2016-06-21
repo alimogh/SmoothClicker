@@ -63,7 +63,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * 
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 10/05/2016
  * @see AppCompatActivity
  */
@@ -204,23 +204,9 @@ public class StandaloneActivity extends AppCompatActivity {
 
         // Get the points
         List<PointsListAdapter.Point> filteredPointsToClickON = new ArrayList<>();
-        switch ( mStandaloneMode ){
-            case ALL_POINTS_WITH_CONFIG:
-                if ( mPointsToClickOn == null
-                        || mPointsToClickOn.size() <= 0 ){
-                    throw new IllegalStateException("Not enough point !");
-                }
-                break;
-            case ALL_POINTS_WITH_CONFIG_ACCORDING_SCREEN:
-                // Get the point
-                if ( mPointsToClickOn == null
-                        || mPointsToClickOn.size() <= 0 ){
-                    throw new IllegalStateException("Not enough point !");
-                }
-                break;
-            default:
-                errorToUser(getString(R.string.standalone_bad_action));
-                break;
+        if ( mPointsToClickOn == null
+                || mPointsToClickOn.size() <= 0 ){
+            throw new IllegalStateException("Not enough point !");
         }
         filteredPointsToClickON.addAll(mPointsToClickOn);
 
