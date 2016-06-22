@@ -89,8 +89,10 @@ public class ItStandaloneModeDialog extends AbstractTest {
     @BeforeClass
     public static void initInnerState(){
 
+        l("ItStandaloneModeDialog", "@BeforeClass initInnerState");
+
         String [] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
-        String [] descriptions = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
+        String [] descriptions = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_descriptions);
         if ( titles == null
                 || descriptions == null
                 || titles.length <= 0
@@ -108,6 +110,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
      */
     @Before
     public void startMainActivityFromHomeScreen() {
+
+        l(this, "@Before startMainActivityFromHomeScreen");
 
         // Initialize UiDevice instance
         mDevice = UiDevice.getInstance(getInstrumentation());
@@ -144,6 +148,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
     @Test
     public void swipeFromRightToLeft(){
 
+        l(this, "@Test swipeFromRightToLeft");
+
         try {
 
             // Swipe to the last item
@@ -159,7 +165,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
 
             // Check the last item
             String[] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
-            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
+            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_descriptions);
             String expectedLastItemTitle = titles[steps];
             String expectedLastItemDesc = descs[steps];
 
@@ -188,6 +194,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
     @Test
     public void swipeFromLeftToRight(){
 
+        l(this, "@Test swipeFromLeftToRight");
+
         try {
 
             // Swipe to the last item (to be at the end of the selector)
@@ -212,7 +220,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
 
             // Check the first item
             String[] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
-            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
+            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_descriptions);
             String expectedFirstItemTitle = titles[0];
             String expectedFirstItemDesc = descs[0];
 
@@ -241,6 +249,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
     @Test
     public void clickRightArrow(){
 
+        l(this, "@Test clickRightArrow");
+
         try {
 
             // Click on the (not) green arrow
@@ -254,7 +264,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
 
             // Check the last item
             String[] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
-            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
+            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_descriptions);
             String expectedLastItemTitle = titles[steps];
             String expectedLastItemDesc = descs[steps];
 
@@ -283,6 +293,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
     @Test
     public void clickLeftArrow(){
 
+        l(this, "@Test clickLeftArrow");
+
         try {
 
             // Click on the arrow to be at the end of the cursor
@@ -304,7 +316,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
 
             // Check the first item
             String[] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
-            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
+            String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_descriptions);
             String expectedFirstItemTitle = titles[0];
             String expectedFirstItemDesc = descs[0];
 

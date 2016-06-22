@@ -37,7 +37,7 @@ import pylapp.smoothclicker.android.R;
  * The intro screen
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.4.0
  * @since 13/04/2016
  * @see AppIntro
  */
@@ -125,42 +125,69 @@ public class IntroScreensActivity extends AppIntro {
      */
     private void addSlides() {
 
+        String[] titles = getApplicationContext().getResources().getStringArray(R.array.introscreen_titles);
+        String[] summaries = getApplicationContext().getResources().getStringArray(R.array.introscreen_summaries);
+
         // Slide 1: Welcome
         addSlide(MyAppIntroFragment.newInstance(
-                getString(R.string.intro_welcome_label),
-                getString(R.string.intro_welcome_desc),
+                titles[0],
+                summaries[0],
                 R.drawable.smooth_clicker,
                 ContextCompat.getColor(this, R.color.colorBlack))
         );
 
         // Slide 2: Root
         addSlide(MyAppIntroFragment.newInstance(
-                        getString(R.string.intro_root_label),
-                        getString(R.string.intro_root_desc),
+                        titles[1],
+                        summaries[1],
                         R.drawable.root,
                         ContextCompat.getColor(this, R.color.colorBlack))
         );
 
         // Slide 3: Clicks
         addSlide(MyAppIntroFragment.newInstance(
-                        getString(R.string.intro_clicks_label),
-                        getString(R.string.intro_clicks_desc),
+                        titles[2],
+                        summaries[2],
                         R.drawable.clicks,
                         ContextCompat.getColor(this, R.color.colorBlack))
         );
 
         // Slide 4: Notifications
         addSlide(MyAppIntroFragment.newInstance(
-                        getString(R.string.intro_notifications_label),
-                        getString(R.string.intro_notifications_desc),
+                        titles[3],
+                        summaries[3],
                         R.drawable.notifications,
                         ContextCompat.getColor(this, R.color.colorBlack))
         );
 
-        // Slide 5: Free and open-source
+        // Slide 5: JSON files
         addSlide(MyAppIntroFragment.newInstance(
-                        getString(R.string.intro_free_label),
-                        getString(R.string.intro_free_desc),
+                        titles[4],
+                        summaries[4],
+                        R.drawable.json,
+                        ContextCompat.getColor(this, R.color.colorBlack))
+        );
+
+        // Slide 6: Standalone mode
+        addSlide(MyAppIntroFragment.newInstance(
+                        titles[5],
+                        summaries[5],
+                        R.drawable.standalone,
+                        ContextCompat.getColor(this, R.color.colorBlack))
+        );
+
+        // Slide 7: Screen recognition
+        addSlide(MyAppIntroFragment.newInstance(
+                        titles[6],
+                        summaries[6],
+                        R.drawable.screenrecognition,
+                        ContextCompat.getColor(this, R.color.colorBlack))
+        );
+
+        // Slide 8: Free and open-source
+        addSlide(MyAppIntroFragment.newInstance(
+                        titles[7],
+                        summaries[7],
                         R.drawable.open_sources,
                         ContextCompat.getColor(this, R.color.colorBlack))
         );

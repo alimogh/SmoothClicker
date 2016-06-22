@@ -39,13 +39,13 @@ import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 //import org.junit.Test;
 
 import java.util.Collection;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
-import pylapp.smoothclicker.android.views.ClickerActivity;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -60,7 +60,7 @@ import static org.junit.Assert.fail;
  * <i> <b>Warning:</b> The intro screens activity is displayed only one time, so we should run these tests before all other tests cases </i>
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 22/03/2016
  * @see AbstractTest
  */
@@ -73,6 +73,16 @@ public class ItIntroScreensActivity extends AbstractTest {
     private UiDevice mDevice;
 
     /**
+     * The titles of the pages
+     */
+    private static String[] sTitles;
+
+    /**
+     * The summaries of the pages
+     */
+    private static String[] sSummaries;
+
+    /**
      *
      */
     private static final int LAUNCH_TIMEOUT_MS = 5000;
@@ -82,12 +92,23 @@ public class ItIntroScreensActivity extends AbstractTest {
      */
     private static final String PACKAGE_APP_PATH = "pylapp.smoothclicker.android";
 
+    /**
+     * Initializes some variables
+     */
+    @BeforeClass
+    public static void initInnerState(){
+        l("IntroScreenActivity", "@BeforeClass initInnerState");
+        sTitles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.introscreen_titles);
+        sSummaries = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.introscreen_summaries);
+    }
 
     /**
      * Starts the main activity to test from the home screen
      */
     @Before
     public void startMainActivityFromHomeScreen() {
+
+        l(this, "@Before startMainActivityFromHomeScreen");
 
         Context context = InstrumentationRegistry.getContext();
 
@@ -136,31 +157,35 @@ public class ItIntroScreensActivity extends AbstractTest {
             );
 
             // Are we in the first screen ?
-            testIfSlide1(context);
+            testIfSlide(1);
 
             // Swipe to the right
             viewPager.swipeRight(100);
-            testIfSlide1(context);
+            testIfSlide(2);
 
             // Swipe to the left
             viewPager.swipeLeft(100);
-            testIfSlide2(context);
+            testIfSlide(3);
 
             // Swipe to the left
             viewPager.swipeLeft(100);
-            testIfSlide3(context);
+            testIfSlide(4);
 
             // Swipe to the left
             viewPager.swipeLeft(100);
-            testIfSlide4(context);
+            testIfSlide(5);
 
             // Swipe to the left
             viewPager.swipeLeft(100);
-            testIfSlide5(context);
+            testIfSlide(6);
 
             // Swipe to the left
             viewPager.swipeLeft(100);
-            testIfSlide5(context);
+            testIfSlide(7);
+
+            // Swipe to the left
+            viewPager.swipeLeft(100);
+            testIfSlide(8);
 
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();
@@ -188,7 +213,7 @@ public class ItIntroScreensActivity extends AbstractTest {
             );
 
             // Are we in the first screen ?
-            testIfSlide1(context);
+            testIfSlide(1);
 
             // Skip
             skip.click();
@@ -204,9 +229,10 @@ public class ItIntroScreensActivity extends AbstractTest {
     }
 
     /**
-     * Test if the current slide is the slide 1
+     *
      */
-    private void testIfSlide1( Context c ){
+    private void testIfSlide( int index ){
+        if ( index <= 0 ) throw new IllegalArgumentException("Bad parameter for index");
         try {
             UiObject title = mDevice.findObject(
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/title")
@@ -217,100 +243,8 @@ public class ItIntroScreensActivity extends AbstractTest {
             UiObject next = mDevice.findObject(
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/skip")
             );
-            assertEquals(c.getString(R.string.intro_welcome_label), title.getText());
-            assertEquals(c.getString(R.string.intro_welcome_desc), description.getText());
-            assertTrue(next.exists());
-        } catch ( UiObjectNotFoundException uonfe ){
-            uonfe.printStackTrace();
-            fail(uonfe.getMessage() );
-        }
-    }
-
-    /**
-     * Test if the current slide is the slide 2
-     */
-    private void testIfSlide2( Context c ){
-        try {
-            UiObject title = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/title")
-            );
-            UiObject description = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/description")
-            );
-            UiObject next = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/skip")
-            );
-            assertEquals(c.getString(R.string.intro_root_label), title.getText());
-            assertEquals(c.getString(R.string.intro_root_desc), description.getText());
-            assertTrue(next.exists());
-        } catch ( UiObjectNotFoundException uonfe ){
-            uonfe.printStackTrace();
-            fail(uonfe.getMessage() );
-        }
-    }
-
-    /**
-     * Test if the current slide is the slide 3
-     */
-    private void testIfSlide3( Context c ){
-        try {
-            UiObject title = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/title")
-            );
-            UiObject description = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/description")
-            );
-            UiObject next = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/skip")
-            );
-            assertEquals(c.getString(R.string.intro_clicks_label), title.getText());
-            assertEquals(c.getString(R.string.intro_clicks_desc), description.getText());
-            assertTrue(next.exists());
-        } catch ( UiObjectNotFoundException uonfe ){
-            uonfe.printStackTrace();
-            fail(uonfe.getMessage() );
-        }
-    }
-
-    /**
-     * Test if the current slide is the slide 4
-     */
-    private void testIfSlide4( Context c ){
-        try {
-            UiObject title = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/title")
-            );
-            UiObject description = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/description")
-            );
-            UiObject next = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/skip")
-            );
-            assertEquals(c.getString(R.string.intro_notifications_label), title.getText());
-            assertEquals(c.getString(R.string.intro_notifications_desc), description.getText());
-            assertTrue(next.exists());
-        } catch ( UiObjectNotFoundException uonfe ){
-            uonfe.printStackTrace();
-            fail(uonfe.getMessage() );
-        }
-    }
-
-    /**
-     * Test if the current slide is the slide 5
-     */
-    private void testIfSlide5( Context c ){
-        try {
-            UiObject title = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/title")
-            );
-            UiObject description = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/description")
-            );
-            UiObject next = mDevice.findObject(
-                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/skip")
-            );
-            assertEquals(c.getString(R.string.intro_free_label), title.getText());
-            assertEquals(c.getString(R.string.intro_free_desc), description.getText());
+            assertEquals(sTitles[index - 1], title.getText());
+            assertEquals(sSummaries[index-1], description.getText());
             assertTrue(next.exists());
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();

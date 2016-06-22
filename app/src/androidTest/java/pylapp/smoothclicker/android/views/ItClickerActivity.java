@@ -121,6 +121,8 @@ public class ItClickerActivity extends AbstractTest {
     @Before
     public void startMainActivityFromHomeScreen() {
 
+        l(this, "@Before startMainActivityFromHomeScreen");
+
         // Initialize UiDevice instance
         mDevice = UiDevice.getInstance(getInstrumentation());
 

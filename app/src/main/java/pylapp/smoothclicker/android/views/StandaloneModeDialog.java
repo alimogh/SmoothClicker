@@ -119,7 +119,7 @@ public class StandaloneModeDialog extends AppCompatDialog {
 
         // Fill the view
         String[] titles = getContext().getResources().getStringArray(R.array.standalone_mode_titles);
-        String[] descs = getContext().getResources().getStringArray(R.array.standalone_mode_description);
+        String[] descs = getContext().getResources().getStringArray(R.array.standalone_mode_descriptions);
         SwipeItem[] items = new SwipeItem[titles.length];
         for ( int i = 0; i < titles.length ; i++ ){
             items[i] =  new SwipeItem(i, titles[i], descs[i]);

@@ -160,6 +160,11 @@
     <string name="credits_icon_flaticon_vaadin_url">http://www.flaticon.com/authors/vaadin</string>
     <string name="credits_icon_flaticon_vaadin_license">Under License CC 3.0 BY</string>
 
+    <string name="credits_icon_flaticon_madebyoliver_label">Icons</string>
+    <string name="credits_icon_flaticon_madebyoliver_desc">Icons made by Madebyoliver from www.flaticon.com</string>
+    <string name="credits_icon_flaticon_madebyoliver_url">http://www.flaticon.com/authors/madebyoliver</string>
+    <string name="credits_icon_flaticon_madebyoliver_license">Under Flaticon Basic License</string>
+
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>
 
@@ -229,18 +234,6 @@
 
     <!-- Snackbars -->
     <string name="snackbar_action_dismiss">Undo</string>
-
-    <!-- Intro screens -->
-    <string name="intro_welcome_label">Hey!</string>
-    <string name="intro_welcome_desc">Welcome to Smooth Clicker</string>
-    <string name="intro_root_label">Root</string>
-    <string name="intro_root_desc">You need to have a rooted Android device to use this app</string>
-    <string name="intro_clicks_label">Clicks</string>
-    <string name="intro_clicks_desc">Define several clicks to process&#8230; </string>
-    <string name="intro_notifications_label">Configurable</string>
-    <string name="intro_notifications_desc">&#8230; and configure the process with notifications, vibrations or delays</string>
-    <string name="intro_free_label">Born to be free</string>
-    <string name="intro_free_desc">Smooth Clicker is both free and open-source!</string>
 
     <!-- Permissions -->
     <string name="permission_vibrate_title">VIBRATE permission</string>

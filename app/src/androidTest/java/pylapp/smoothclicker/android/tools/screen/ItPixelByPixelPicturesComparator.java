@@ -39,7 +39,7 @@ import static junit.framework.Assert.assertTrue;
  * Class to use to make instrumented / unit tests with on the PixelByPixelPicturesComparator class
  *
  *  @author pylapp
- *  @version 1.0.0
+ *  @version 1.1.0
  *  @since 13/062016
  *  @see AbstractTest
  */
@@ -62,7 +62,8 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePictures(){
 
-        l(this, "comparePictures");
+        l(this, "@Test comparePictures");
+        l(this, "NOT IMPLEMENTED");
         // TODO
 
     }
@@ -75,7 +76,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithEmptyPictures() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithEmptyPictures");
+        l(this, "@Test comparePicturesWithEmptyPictures");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertTrue(
                 pc.comparePictures(createEmptyBitmap(), createEmptyBitmap())
@@ -91,7 +92,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test ( expected = PicturesComparator.PicturesComparatorException.class )
     public void comparePicturesWithNullBasePicture() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNullBasePicture");
+        l(this, "@Test comparePicturesWithNullBasePicture");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         pc.comparePictures(null, createEmptyBitmap());
 
@@ -105,7 +106,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test ( expected = PicturesComparator.PicturesComparatorException.class )
     public void comparePicturesWithNullPickedPicture() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNullPickedPicture");
+        l(this, "@Test comparePicturesWithNullPickedPicture");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         pc.comparePictures(createEmptyBitmap(), null);
 
@@ -119,7 +120,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithNotEqualWidthsPictures() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNotEqualWidthsPictures");
+        l(this, "@Test comparePicturesWithNotEqualWidthsPictures");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertFalse(
                 pc.comparePictures(createEmptyBitmap(1000, 2000), createEmptyBitmap(1000, 1337))
@@ -135,7 +136,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithNotEqualHeightsPictures() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNotEqualHeightsPictures");
+        l(this, "@Test comparePicturesWithNotEqualHeightsPictures");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertFalse(
                 pc.comparePictures(createEmptyBitmap(666, 42), createEmptyBitmap(310315, 42))
@@ -151,7 +152,8 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithSameDimensionsButDifferentContents(){
 
-        l(this, "comparePicturesWithSameDimensionsButDifferentContents");
+        l(this, "@Test comparePicturesWithSameDimensionsButDifferentContents");
+        l(this, "NOT IMPLEMENTED");
         // TODO
 
     }
@@ -164,7 +166,8 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithDifferentPictures(){
 
-        l(this, "comparePicturesWithDifferentPictures");
+        l(this, "@Test comparePicturesWithDifferentPictures");
+        l(this, "NOT IMPLEMENTED");
         // TODO
 
     }
@@ -179,7 +182,8 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithThreshold(){
 
-        l(this, "comparePicturesWithThreshold");
+        l(this, "@Test comparePicturesWithThreshold");
+        l(this, "NOT IMPLEMENTED");
         // TODO
 
     }
@@ -192,7 +196,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithEmptyPicturesWithThreshold() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithEmptyPicturesWithThreshold");
+        l(this, "@Test comparePicturesWithEmptyPicturesWithThreshold");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertTrue(
                 pc.comparePictures(createEmptyBitmap(), createEmptyBitmap(), 0)
@@ -208,7 +212,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test ( expected = PicturesComparator.PicturesComparatorException.class )
     public void comparePicturesWithNullBasePictureWithThreshold() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNullBasePictureWithThreshold");
+        l(this, "@Test comparePicturesWithNullBasePictureWithThreshold");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         pc.comparePictures(null, createEmptyBitmap(), 0);
 
@@ -222,7 +226,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test ( expected = PicturesComparator.PicturesComparatorException.class )
     public void comparePicturesWithNullPickedPictureWithThreshold() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNullPickedPictureWithThreshold");
+        l(this, "@Test comparePicturesWithNullPickedPictureWithThreshold");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         pc.comparePictures(createEmptyBitmap(), null, 0);
 
@@ -236,7 +240,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithNotEqualWidthsPicturesWithThreshold() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNotEqualWidthsPicturesWithThreshold");
+        l(this, "@Test comparePicturesWithNotEqualWidthsPicturesWithThreshold");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertFalse(
                 pc.comparePictures(createEmptyBitmap(1000, 2000), createEmptyBitmap(1000, 1337), 0)
@@ -252,7 +256,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithNotEqualHeightsPicturesWithThreshold() throws PicturesComparator.PicturesComparatorException {
 
-        l(this, "comparePicturesWithNotEqualHeightsPicturesWithThreshold");
+        l(this, "@Test comparePicturesWithNotEqualHeightsPicturesWithThreshold");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertFalse(
                 pc.comparePictures(createEmptyBitmap(666, 42), createEmptyBitmap(310315, 42), 0)
@@ -268,7 +272,8 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithSameDimensionsButDifferentContentsWithThreshold(){
 
-        l(this, "comparePicturesWithSameDimensionsButDifferentContentsWithThreshold");
+        l(this, "@Test comparePicturesWithSameDimensionsButDifferentContentsWithThreshold");
+        l(this, "NOT IMPLEMENTED");
         // TODO
 
     }
@@ -281,7 +286,8 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
     @Test
     public void comparePicturesWithDifferentPicturesWithThreshold(){
 
-        l(this, "comparePicturesWithDifferentPicturesWithThreshold");
+        l(this, "@Test comparePicturesWithDifferentPicturesWithThreshold");
+        l(this, "NOT IMPLEMENTED");
         // TODO
 
     }
@@ -293,7 +299,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
      */
     @Test (expected = PicturesComparator.PicturesComparatorException.class)
     public void comparePicturesWithNegativeThreshold() throws PicturesComparator.PicturesComparatorException {
-        l(this, "comparePicturesWithNegativeThreshold");
+        l(this, "@Test comparePicturesWithNegativeThreshold");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertFalse(
                 pc.comparePictures(createEmptyBitmap(5, 5), createEmptyBitmap(5, 5), -1)
@@ -308,7 +314,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
      */
     @Test (expected = PicturesComparator.PicturesComparatorException.class)
     public void comparePicturesWithTooBigThreshold() throws PicturesComparator.PicturesComparatorException {
-        l(this, "comparePicturesWithTooBigThreshold");
+        l(this, "@Test comparePicturesWithTooBigThreshold");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         assertFalse(
                 pc.comparePictures(createEmptyBitmap(5, 5), createEmptyBitmap(5, 5), 101)
@@ -322,7 +328,7 @@ public class ItPixelByPixelPicturesComparator extends AbstractTest {
      */
     @Test
     public void comparePicturesWithBorderValues() throws PicturesComparator.PicturesComparatorException {
-        l(this, "comparePicturesWithBorderValues");
+        l(this, "@Test comparePicturesWithBorderValues");
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         pc.comparePictures(createEmptyBitmap(5, 5), createEmptyBitmap(5, 5), 0);
         pc.comparePictures(createEmptyBitmap(5, 5), createEmptyBitmap(5, 5), 100);
