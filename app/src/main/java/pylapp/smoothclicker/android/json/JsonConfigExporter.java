@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on exporting the configuration of the app in a JSON file
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 26/05/2016
  * @see ConfigExporter
  */
@@ -90,6 +90,11 @@ public class JsonConfigExporter implements ConfigExporter {
      * If the device vibrate on click
      */
     private boolean mVibrateOnClick;
+
+    /**
+     * If the device must ring a sound on click
+     */
+    private boolean mRingOnClick;
 
     /**
      * If the device must have a notification on click
@@ -198,6 +203,15 @@ public class JsonConfigExporter implements ConfigExporter {
 
     /**
      *
+     * @param isRingOnClick - If the device must play a sound on each click
+     */
+    @Override
+    public void setRingOnClick( boolean isRingOnClick ){
+        mRingOnClick = isRingOnClick;
+    }
+
+    /**
+     *
      * @param isNotificationOnClick - If the device must have a notification on click
      */
     @Override
@@ -259,6 +273,7 @@ public class JsonConfigExporter implements ConfigExporter {
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_ENDLESS_REPEAT).append("\"  : ").append("\"").append(mIsEndlessRepeat).append("\",\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_VIBRATE_ON_START).append("\"    : ").append("\"").append(mVibrateOnStart).append("\",\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_VIBRATE_ON_CLICK).append("\"    : ").append("\"").append(mVibrateOnClick).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_RING).append("\"    : ").append("\"").append(mRingOnClick).append("\",\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_NOTIFICATIONS).append("\"       : ").append("\"").append(mNotifiyOnClick).append("\"");
         sb.append("\n}");
 

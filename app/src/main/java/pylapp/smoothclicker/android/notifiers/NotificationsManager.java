@@ -27,7 +27,10 @@ package pylapp.smoothclicker.android.notifiers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 
+import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.Config;
 
 /**
@@ -35,7 +38,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * It is base on a facade design pattern for notification features.
  *
  * @author pylapp
- * @version 1.5.0
+ * @version 1.6.0
  * @since 16/03/2016
  */
 public final class NotificationsManager {
@@ -62,6 +65,10 @@ public final class NotificationsManager {
      * If we have to display a notification on each new click
      */
     private boolean mNotifOnClick;
+    /**
+     * If we have to play a sound on each new click
+     */
+    private boolean mRingOnClick;
 
     /**
      * The singleton
@@ -122,17 +129,23 @@ public final class NotificationsManager {
      */
     public void makeNewClickNotifications( int x, int y){
 
-        // Vibrations ?
+        // Vibrations?
         if ( mVibrateOnClick ){
             new VibrationNotifier(mContext).vibrate(VibrationNotifier.VIBRATE_ON_CLICK_DURATION);
         }
 
-        // Notification in status bar ?
+        // Notification in status bar?
         if ( mNotifOnClick ) {
             new StatusBarNotifier(mContext).makeNotification(StatusBarNotifier.NotificationTypes.CLICK_MADE, x, y);
         }
 
+        // Sound notifications?
+        if ( mRingOnClick ) {
+            new SoundNotifier(mContext).ring();
+        }
+
     }
+
 
     /**
      * Manages the notifications about the on going clicking process in the "app" mode
@@ -261,6 +274,8 @@ public final class NotificationsManager {
         // Notifications
         mNotifOnClick = sp.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK, Config.DEFAULT_NOTIF_ON_CLICK);
 
+        // Sounds
+        mRingOnClick = sp.getBoolean(Config.SP_KEY_RING_ON_CLICK, Config.DEFAULT_RING_ON_CLICK);
     }
 
     /**

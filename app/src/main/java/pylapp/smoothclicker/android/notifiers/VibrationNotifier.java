@@ -29,7 +29,7 @@ import android.content.Context;
 import android.os.Vibrator;
 
 /**
- * Utility class which manages vibrations.
+ * Utility class which manages vibrations notifications.
  * It is based on a wrapper design pattern.
  * Be sure you use the dedicated permission
  *

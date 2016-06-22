@@ -92,6 +92,7 @@
     <string name="widget_xy_coordinates">Points à cliquer</string>
     <string name="widget_notifications">Notifications</string>
     <string name="widget_standalone_dialog_title">Mode standalone</string>
+    <string name="widget_sounds">Sonner à chaque click</string>
 
     <!-- Splash screen -->
     <string name="splashscreen_description">Smooth Clicker</string>

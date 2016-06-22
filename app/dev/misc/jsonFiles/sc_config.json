@@ -8,5 +8,6 @@
   "endlessRepeat"   : "false",
   "vibrateOnStart"  : "false",
   "vibrateOnClick"  : "true",
+  "ring"            : "false",
   "notifications"   : "true"
 }

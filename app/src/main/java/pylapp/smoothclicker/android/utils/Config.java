@@ -35,7 +35,7 @@ import pylapp.smoothclicker.android.R;
  * Just a configuration class with useful values
  *
  * @author pylapp
- * @version 1.8.0
+ * @version 1.9.0
  * @since 02/03/2016
  */
 public final class Config {
@@ -51,6 +51,7 @@ public final class Config {
     public static final boolean DEFAULT_VIBRATE_ON_START = false;
     public static final boolean DEFAULT_VIBRATE_ON_CLICK = true;
     public static final boolean DEFAULT_NOTIF_ON_CLICK   = true;
+    public static final boolean DEFAULT_RING_ON_CLICK    = false;
     public static final boolean DEFAULT_SHAKE_TO_CLEAN   = true;
     public static final boolean DEFAULT_IS_FIRST_START   = true;
     public static final int DEFAULT_TIME_UNIT_SELECTION  = R.id.rbUnitTimeS;
@@ -70,6 +71,7 @@ public final class Config {
     public static final String SP_KEY_NOTIF_ON_CLICK                 = "0x000051";
     public static final String SP_KEY_IS_FIRST_START                 = "0x000061";
     public static final String SP_KEY_UNIT_TIME                      = "0x000071";
+    public static final String SP_KEY_RING_ON_CLICK                  = "0x000081";
 
     public static final int SP_ACCESS_MODE                           = Context.MODE_PRIVATE;
 

@@ -80,26 +80,33 @@ v1.9.3
     - Fixed bug which may make a white icons bar for full screen views
     - Support for languages romanian, polish and finnish
 v1.10.0 : Incredible Indri [on going]
-    - Support for landscape mode for handsets and tablets
-    - More support for 6", 7" and 10" screens devices
-    - Fixed some bugs
-    - Improved the credits view
-    - Improved some components to make them more material
     - Support for italian and catalan
-    - Standalone mode with an empty activity loading points and config file before starting the click process
-    - Import the configuration of the app (process and points) from a JSON file
-    - Export the configuration of the app (process and points) to a JSON file
+    - Improved some components to make them more material
+    - Refactor main view
+    - Add new icons to floating arc menu
+    - Add some references to tutorials about how to root the device
+    - Fixed some bugs
+    - Update and optimize the credits view
+    - Update the intro screens
+    - Refactor the preferences scree,
+    - Deal with the new system which manage permissions for Android 6.0+
+    - The intro screen is available from the settings screen as an help
+    - Import / export the configuration of the app (process and points) from / to JSON files
+    - Play a sound if a click is made
+    - Possible to choose its time unit for the click process (s, m or h)
+    - Standalone mode using only predefined configuration in JSON files
+    - Standalone mode using predefined configuration in JSON files and a screen-recognition-pattern
     - Force the screen to be on if off
     - Keep the screen on if needed
     - Use a Shell script using ADB commands to unlock the screen if needed
-    - Add some references to tutorials about how to root the device
-    - Add new icons to floating arc menu
-    - Standalone mode with points and config files
-    - Standalone mode with points and config files and screen recognition
-    - Possible to choose its time unit for the click process (ms, s or h)
-    - The intro screen is available from the settings screen as an help
-    - Refactor main view
-    - Update and optimize the credits view
-    - Deal with the new system which manage permissions for Android 6.0+
-    - Refactor the preferences screen
-    - Update the intro screens
+    - Support for landscape mode for handsets and tablets
+    - More support for 6", 7" and 10" screens devices
+
+
+
+
+
+
+
+
+
