@@ -33,7 +33,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Interface which defines the behaviour an object must have if it wants to save the app's config
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 26/05/2016
  */
 public interface ConfigExporter {
@@ -90,6 +90,12 @@ public interface ConfigExporter {
      * @param isVibrateOnClick - If the device must vibrate on each click
      */
     void setVibrateOnCLick(boolean isVibrateOnClick);
+
+    /**
+     *
+     * @param isRingOnClick - If the device must play a sound on each click
+     */
+    void setRingOnClick(boolean isRingOnClick);
 
     /**
      *

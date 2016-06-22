@@ -88,14 +88,20 @@
 
         <include layout="@layout/content_clicker_vibrate_on_click" />
 
+        <!-- ****************************** -->
+        <!-- Row 9 : the ring mode on click -->
+        <!-- ****************************** -->
+
+        <include layout="@layout/content_clicker_sounds"/>
+
         <!-- ********************************* -->
-        <!-- Row 9 : display the notifications -->
+        <!-- Row 10 : display the notifications -->
         <!-- ********************************* -->
 
         <include layout="@layout/content_clicker_notifications"/>
 
         <!-- *************************** -->
-        <!-- Row 10 : the list of points -->
+        <!-- Row 11 : the list of points -->
         <!-- *************************** -->
 
         <include layout="@layout/content_clicker_points"/>

@@ -44,7 +44,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on importing the configuration of the app from a JSON file
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 27/05/2016
  * @see ConfigImporter
  */
@@ -86,14 +86,19 @@ public class JsonConfigImporter implements ConfigImporter {
     private boolean mIsEndlessRepeat;
 
     /**
-     * If the device vibrate on start
+     * If the device vibrates on start
      */
     private boolean mVibrateOnStart;
 
     /**
-     * If the device vibrate on click
+     * If the device vibrates on click
      */
     private boolean mVibrateOnClick;
+
+    /**
+     * If the device rings on each click
+     */
+    private boolean mRingOnClick;
 
     /**
      * If the device must have a notification on click
@@ -199,6 +204,15 @@ public class JsonConfigImporter implements ConfigImporter {
 
     /**
      *
+     * @return boolean - The ring on click flag
+     */
+    @Override
+    public boolean getRingOnClick() {
+        return mRingOnClick;
+    }
+
+    /**
+     *
      * @return boolean - The notification click flag
      */
     @Override
@@ -277,6 +291,7 @@ public class JsonConfigImporter implements ConfigImporter {
             mIsEndlessRepeat = jsonData.getBoolean(JsonFileParser.JSON_OBJECT_ENDLESS_REPEAT);
             mVibrateOnStart = jsonData.getBoolean(JsonFileParser.JSON_OBJECT_VIBRATE_ON_START);
             mVibrateOnClick = jsonData.getBoolean(JsonFileParser.JSON_OBJECT_VIBRATE_ON_CLICK);
+            mRingOnClick = jsonData.getBoolean(JsonFileParser.JSON_OBJECT_RING);
             mNotifyOnClick = jsonData.getBoolean(JsonFileParser.JSON_OBJECT_NOTIFICATIONS);
         } catch ( JSONException jsone ){
             jsone.printStackTrace();

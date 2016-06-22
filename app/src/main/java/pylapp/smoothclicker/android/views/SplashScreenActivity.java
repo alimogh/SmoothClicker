@@ -32,13 +32,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.notifiers.NotificationsManager;
 import pylapp.smoothclicker.android.utils.Config;
 
 /**
  * The splash screen activity
  *
  * @author pylapp
- * @version 3.0.0
+ * @version 3.1.0
  * @since 15/03/2016
  */
 public class SplashScreenActivity extends AppCompatActivity {
@@ -86,6 +87,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState ){
         super.onCreate(savedInstanceState);
+        NotificationsManager.getInstance(this).stopAllNotifications();
         // If the app has been started previously, do not start the splash screen and run to the next activity
         if ( ! sIsFirstLaunch) {
             Intent i = new Intent(SplashScreenActivity.this, ClickerActivity.class);

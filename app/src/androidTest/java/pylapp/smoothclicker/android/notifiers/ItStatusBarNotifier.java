@@ -131,7 +131,7 @@ public class ItStatusBarNotifier extends AbstractTest {
         textContent = mContext.getString(R.string.notif_content_text_click_made);
         testMakeNotification(textContent, StatusBarNotifier.NotificationTypes.CLICK_MADE);
 
-        //  Click process over
+        //  Click process overhttp://forum.korben.info/topic/2688-mp3-de-notifications/
         textContent = mContext.getString(R.string.notif_content_text_clicks_over);
         testMakeNotification(textContent, StatusBarNotifier.NotificationTypes.CLICKS_OVER);
 

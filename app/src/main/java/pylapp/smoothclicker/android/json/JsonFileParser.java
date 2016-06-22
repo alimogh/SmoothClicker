@@ -52,7 +52,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
      </pre>
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 1.4.0
  * @since 04/05/2016
  */
 public class JsonFileParser {
@@ -128,6 +128,10 @@ public class JsonFileParser {
      * The key to get the boolean value for the vibrate on click mode
      */
     public static final String JSON_OBJECT_VIBRATE_ON_CLICK = "vibrateOnClick";
+    /**
+     * The key to get the boolean value for the ring mode
+     */
+    public static final String JSON_OBJECT_RING = "ring";
     /**
      * The key to get the boolean value for the notifications mode
      */

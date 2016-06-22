@@ -83,7 +83,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.23.0
+ * @version 2.24.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -103,17 +103,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     /* ********* *
      * CONSTANTS *
      * ********* */
-
-//    /**
-//     * The result code for the SelectPointActivity
-//     */
-//    @Deprecated
-//    private static final int SELECT_POINT_ACTIVITY_RESULT_CODE = 0x000011;
-//    /**
-//     * The key to get the selected point
-//     */
-//    @Deprecated
-//    public static final String SELECT_POINT_ACTIVITY_RESULT = "0x000012";
 
     /**
      * The result code for the SelectMultiPointsActivity
@@ -162,6 +151,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_START));
             sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
             sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK));
+            sc = (SwitchCompat) findViewById(R.id.scRingOnClick);
+            sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_RING_ON_CLICK));
             sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
             sc.setChecked(savedInstanceState.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK));
             sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
@@ -234,6 +225,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
         boolean isVibrateOnClick = sc.isChecked();
 
+        sc = (SwitchCompat) findViewById(R.id.scRingOnClick);
+        boolean isRingOnClick = sc.isChecked();
+
         sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
         boolean isNotifOnClick = sc.isChecked();
 
@@ -249,6 +243,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         savedInstanceState.putBoolean(Config.SP_KEY_REPEAT_ENDLESS, isEndlessRepeat);
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
         savedInstanceState.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK , isVibrateOnClick);
+        savedInstanceState.putBoolean(Config.SP_KEY_RING_ON_CLICK , isRingOnClick);
         savedInstanceState.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK , isNotifOnClick);
         savedInstanceState.putInt(Config.SP_KEY_UNIT_TIME, checkedRbUnitTimeId);
 
@@ -432,6 +427,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
         boolean isVibrateOnClick = sc.isChecked();
 
+        sc = ( SwitchCompat) findViewById(R.id.scRingOnClick);
+        boolean isRingOnClick = sc.isChecked();
+
         sc = ( SwitchCompat) findViewById(R.id.scNotifOnClick);
         boolean isDisplayNotifs = sc.isChecked();
 
@@ -445,6 +443,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         editor.putBoolean(Config.SP_KEY_REPEAT_ENDLESS, isEndlessRepeat);
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, isVibrateOnStart);
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, isVibrateOnClick);
+        editor.putBoolean(Config.SP_KEY_RING_ON_CLICK, isRingOnClick);
         editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, isDisplayNotifs);
         editor.putInt(Config.SP_KEY_UNIT_TIME, checkedRbUnitTimeId);
 
@@ -482,6 +481,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         exporter.setEndlessRepeat(sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS));
         exporter.setVibrateOnStart(sp.getBoolean(Config.SP_KEY_VIBRATE_ON_START, Config.DEFAULT_VIBRATE_ON_START));
         exporter.setVibrateOnCLick(sp.getBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, Config.DEFAULT_VIBRATE_ON_CLICK));
+        exporter.setRingOnClick(sp.getBoolean(Config.SP_KEY_RING_ON_CLICK, Config.DEFAULT_RING_ON_CLICK));
         exporter.setNotificationOnCLick(sp.getBoolean(Config.SP_KEY_NOTIF_ON_CLICK, Config.DEFAULT_NOTIF_ON_CLICK));
 
         PointsListAdapter pla = (PointsListAdapter) ((Spinner) findViewById(R.id.sPointsToClick)).getAdapter();
@@ -559,6 +559,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         sc.setChecked(importer.getVibrateOnStart());
         sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
         sc.setChecked(importer.getVibrateOnClick());
+        sc = (SwitchCompat) findViewById(R.id.scRingOnClick);
+        sc.setChecked(importer.getRingOnClick());
         sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
         sc.setChecked(importer.getNotificationOnCLick());
         SwitchCompat sw = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
@@ -583,6 +585,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         editor.putBoolean(Config.SP_KEY_REPEAT_ENDLESS, importer.getEndlessRepeat());
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_START, importer.getVibrateOnStart());
         editor.putBoolean(Config.SP_KEY_VIBRATE_ON_CLICK, importer.getVibrateOnClick());
+        editor.putBoolean(Config.SP_KEY_RING_ON_CLICK, importer.getRingOnClick());
         editor.putBoolean(Config.SP_KEY_NOTIF_ON_CLICK, importer.getNotificationOnCLick());
         editor.apply();
 
@@ -678,6 +681,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         sc.setChecked(Config.DEFAULT_VIBRATE_ON_START);
         sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
         sc.setChecked(Config.DEFAULT_VIBRATE_ON_CLICK);
+        sc = (SwitchCompat) findViewById(R.id.scRingOnClick);
+        sc.setChecked(Config.DEFAULT_RING_ON_CLICK);
         sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
         sc.setChecked(Config.DEFAULT_NOTIF_ON_CLICK);
         sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
