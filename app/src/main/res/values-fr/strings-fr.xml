@@ -188,6 +188,8 @@
     <string name="pref_key_credit_summary">Click pour accéder aux licences</string>
 
     <string name="pref_about_title">À propos</string>
+    <string name="pref_about_subtitle">Smooth Clicker</string>
+    <string name="pref_about_summary">Clicker pour en savoir plus</string>
     <string name="pref_about_version_title">Version</string>
     <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">écrit par pylapp - Licence MIT</string>
@@ -205,6 +207,8 @@
     <string name="pref_key_unlockscript_summary">Utiliser un script customisé ayant les commandes systèmes pour déverrouiller l\'appareil</string>
 
     <string name="pref_root_title">Root</string>
+    <string name="pref_root_subtitle">Comment rooter mon appareil?</string>
+    <string name="pref_root_summary">Click pour en savoir plus</string>
     <string name="pref_key_root_heimdall_title">Heimdall</string>
     <string name="pref_key_root_heimdall_summary">Accéder à Heimdall pour rooter votre appareil sous Linux</string>
     <string name="pref_heimdall_url">https://doc.ubuntu-fr.org/heimdall</string>

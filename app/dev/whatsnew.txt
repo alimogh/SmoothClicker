@@ -101,3 +101,4 @@ v1.10.0 : Incredible Indri [on going]
     - Refactor main view
     - Update credits view
     - Deal with the new system which manage permissions for Android 6.0+
+    - Refactor the preference screen

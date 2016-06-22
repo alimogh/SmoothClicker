@@ -51,43 +51,6 @@
 
     </PreferenceCategory>
 
-    <!-- ************************************** -->
-    <!-- The settings about picture recognition -->
-    <!-- ************************************** -->
-
-    <PreferenceCategory
-        android:title="@string/pref_picture_recognition_title">
-
-        <!-- Define the ratio / threshold for the picture comparison system -->
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
-            xmlns:sample="http://schemas.android.com/apk/res-auto"
-            android:key="pref_key_picture_recognition_threshold"
-            android:title="@string/pref_settings_prthreshold_title"
-            android:summary="@string/pref_settings_prthreshold_summary"
-            android:enabled="true"
-            android:defaultValue="10"
-            sample:msbp_minValue="1"
-            sample:msbp_maxValue="100"
-            sample:msbp_interval="1"
-            sample:msbp_measurementUnit="%"
-            sample:msbp_dialogEnabled="false"/>
-
-        <!-- Define the frequency of the screen-capture process to take a new picture of the screen -->
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
-            xmlns:sample="http://schemas.android.com/apk/res-auto"
-            android:key="pref_key_picture_recognition_frequency"
-            android:title="@string/pref_settings_prfrequency_title"
-            android:summary="@string/pref_settings_prfrequency_summary"
-            android:enabled="true"
-            android:defaultValue="1"
-            sample:msbp_minValue="1"
-            sample:msbp_maxValue="10"
-            sample:msbp_interval="1"
-            sample:msbp_measurementUnit="s"
-            sample:msbp_dialogEnabled="false"/>
-
-    </PreferenceCategory>
-
     <!-- ******************************************* -->
     <!-- The settings about screen / wake  / battery -->
     <!-- ******************************************* -->
@@ -132,6 +95,43 @@
 
     </PreferenceCategory>
 
+    <!-- ************************************** -->
+    <!-- The settings about picture recognition -->
+    <!-- ************************************** -->
+
+    <PreferenceCategory
+        android:title="@string/pref_picture_recognition_title">
+
+        <!-- Define the ratio / threshold for the picture comparison system -->
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            xmlns:sample="http://schemas.android.com/apk/res-auto"
+            android:key="pref_key_picture_recognition_threshold"
+            android:title="@string/pref_settings_prthreshold_title"
+            android:summary="@string/pref_settings_prthreshold_summary"
+            android:enabled="true"
+            android:defaultValue="10"
+            sample:msbp_minValue="1"
+            sample:msbp_maxValue="100"
+            sample:msbp_interval="1"
+            sample:msbp_measurementUnit="%"
+            sample:msbp_dialogEnabled="false"/>
+
+        <!-- Define the frequency of the screen-capture process to take a new picture of the screen -->
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            xmlns:sample="http://schemas.android.com/apk/res-auto"
+            android:key="pref_key_picture_recognition_frequency"
+            android:title="@string/pref_settings_prfrequency_title"
+            android:summary="@string/pref_settings_prfrequency_summary"
+            android:enabled="true"
+            android:defaultValue="1"
+            sample:msbp_minValue="1"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"
+            sample:msbp_measurementUnit="s"
+            sample:msbp_dialogEnabled="false"/>
+
+    </PreferenceCategory>
+
     <!-- ********** -->
     <!-- About root -->
     <!-- ********** -->
@@ -139,23 +139,29 @@
     <PreferenceCategory
         android:title="@string/pref_root_title">
 
-        <!-- Heimdall -->
-        <Preference
-            android:key="pref_key_root_heimdall"
-            android:title="@string/pref_key_root_heimdall_title"
-            android:summary="@string/pref_key_root_heimdall_summary"/>
+        <PreferenceScreen
+            android:title="@string/pref_root_subtitle"
+            android:summary="@string/pref_root_summary">
 
-        <!-- Odin -->
-        <Preference
-            android:key="pref_key_root_odin"
-            android:title="@string/pref_key_root_odin_title"
-            android:summary="@string/pref_key_root_odin_summary"/>
+            <!-- Heimdall -->
+            <Preference
+                android:key="pref_key_root_heimdall"
+                android:title="@string/pref_key_root_heimdall_title"
+                android:summary="@string/pref_key_root_heimdall_summary"/>
 
-        <!-- Chainfire XDA -->
-        <Preference
-            android:key="pref_key_root_chainfire"
-            android:title="@string/pref_key_root_chainfire_title"
-            android:summary="@string/pref_key_root_chainfire_summary"/>
+            <!-- Odin -->
+            <Preference
+                android:key="pref_key_root_odin"
+                android:title="@string/pref_key_root_odin_title"
+                android:summary="@string/pref_key_root_odin_summary"/>
+
+            <!-- Chainfire XDA -->
+            <Preference
+                android:key="pref_key_root_chainfire"
+                android:title="@string/pref_key_root_chainfire_title"
+                android:summary="@string/pref_key_root_chainfire_summary"/>
+
+        </PreferenceScreen>
 
     </PreferenceCategory>
 
@@ -182,26 +188,32 @@
         android:title="@string/pref_about_title"
         android:key="pref_key_about">
 
-        <Preference
-            android:key="pref_key_help"
-            android:title="@string/pref_key_help_title"
-            android:summary="@string/pref_key_help_summary"/>
+        <PreferenceScreen
+            android:title="@string/pref_about_subtitle"
+            android:summary="@string/pref_about_summary">
 
-        <Preference
-            android:selectable="false"
-            android:key="pref_about_version_title"
-            android:title="@string/pref_about_version_title" />
+            <Preference
+                android:key="pref_key_help"
+                android:title="@string/pref_key_help_title"
+                android:summary="@string/pref_key_help_summary"/>
 
-        <Preference
-            android:key="pref_key_app"
-            android:title="@string/pref_about_version_app_title"
-            android:summary="@string/pref_about_version_app_summary" />
+            <Preference
+                android:selectable="false"
+                android:key="pref_about_version_title"
+                android:title="@string/pref_about_version_title" />
 
-        <Preference
-            android:selectable="true"
-            android:key="pref_play_store_title"
-            android:title="@string/pref_play_store_title"
-            android:summary="@string/pref_play_store_summary"/>
+            <Preference
+                android:key="pref_key_app"
+                android:title="@string/pref_about_version_app_title"
+                android:summary="@string/pref_about_version_app_summary" />
+
+            <Preference
+                android:selectable="true"
+                android:key="pref_play_store_title"
+                android:title="@string/pref_play_store_title"
+                android:summary="@string/pref_play_store_summary"/>
+
+        </PreferenceScreen>
 
     </PreferenceCategory>
 

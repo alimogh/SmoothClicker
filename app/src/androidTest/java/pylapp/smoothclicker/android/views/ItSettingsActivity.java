@@ -154,6 +154,16 @@ public class ItSettingsActivity extends AbstractTest {
 
         try {
 
+            // Swipe to the bottom of the view to get the seekbar
+            UiObject list = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.ListView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/list")
+            );
+            list.swipeUp(100);
+            list.swipeUp(100);
+
             // Get the seek bar
             UiObject seekBar = mDevice.findObject(
                     new UiSelector()
@@ -280,7 +290,7 @@ public class ItSettingsActivity extends AbstractTest {
 
         try {
 
-            // Swipe to the bottom of the view to get the credits field
+            // Swipe to the bottom of the view to get the credits field in an inner preference screen
             UiObject list = mDevice.findObject(
                     new UiSelector()
                             .className("android.widget.ListView")
@@ -290,6 +300,16 @@ public class ItSettingsActivity extends AbstractTest {
 
             list.swipeUp(100);
             list.swipeUp(100);
+
+            String innerPreferenceScreenTitle = InstrumentationRegistry.getTargetContext().getString(R.string.pref_about_subtitle);
+            UiObject aboutRow = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/title")
+                            .text(innerPreferenceScreenTitle)
+            );
+            aboutRow.click();
 
             // Clicks on the credits row
             String s = InstrumentationRegistry.getTargetContext().getString(R.string.pref_key_help_title);
