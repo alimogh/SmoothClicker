@@ -33,7 +33,7 @@
 
     <!-- The standalone activity -->
     <string name="app_name_standalone">Smooth Clicker (standalone)</string>
-    <string name="standalone_init_config">Standalone : Récupération de la configuration &#8230;</string>
+    <string name="standalone_init_config">Standalone : Récupération de la configuration&#8230;</string>
     <string name="standalone_init_points">Standalone : Récupération des points à cliquer&#8230;</string>
     <string name="standalone_start_click_process">Standalone : Démarrage du process de clicks&#8230;</string>
     <string name="standalone_bad_action">Oups &#8230;, mauvaise action pour délencher ce mode !</string>

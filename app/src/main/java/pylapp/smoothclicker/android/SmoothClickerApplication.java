@@ -27,8 +27,6 @@ package pylapp.smoothclicker.android;
 
 import android.app.Application;
 
-import com.karumi.dexter.Dexter;
-
 import pylapp.smoothclicker.android.tools.PermissionsManager;
 import pylapp.smoothclicker.android.utils.Config;
 

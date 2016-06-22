@@ -41,6 +41,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.io.IOException;
+
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
 
@@ -347,6 +349,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
 
         l(this, "@Test notificationOnGoing");
 
+        prepareNeededFiles();
+
         // Start a standalone mode
         try {
 
@@ -414,6 +418,31 @@ public class ItStandaloneModeDialog extends AbstractTest {
             uinfe.printStackTrace();
             fail(uinfe.getMessage());
         }
+    }
+
+    /**
+     * Prepares the files some tests may need.
+     *
+     * It will copy some backups files (sc_points.backup.json and sc_config.backup.json) to good files
+     * (sc_points.json ans sc_config.json) after having deleted the previous versions of these files.
+     * So the tests which need to check some on-going-notifications can work because the standalone mode will have the very files it needs.
+     */
+    private void prepareNeededFiles(){
+
+        String adbDeleteConfig = "rm /storage/emulated/legacy/Smooth_Clicker/sc_config.json";
+        String adbDeletePoints = "rm /storage/emulated/legacy/Smooth_Clicker/sc_points.json";
+        String adbCopyPoints   = "cp /storage/emulated/legacy/Smooth_Clicker/sc_points.backup.json /storage/emulated/legacy/Smooth_Clicker/sc_points.json";
+        String adbCopyConfig   = "cp /storage/emulated/legacy/Smooth_Clicker/sc_config.backup.json /storage/emulated/legacy/Smooth_Clicker/sc_config.json";
+
+        try {
+            Runtime.getRuntime().exec(adbDeleteConfig);
+            Runtime.getRuntime().exec(adbDeletePoints);
+            Runtime.getRuntime().exec(adbCopyPoints);
+            Runtime.getRuntime().exec(adbCopyConfig);
+        } catch ( IOException ioe ){
+            ioe.printStackTrace();
+        }
+
     }
 
 }
