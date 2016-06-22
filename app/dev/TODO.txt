@@ -36,20 +36,17 @@ TO DO
     Task #60 : [memo] ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag, updates the credits if needed, update the intro screen to talk about standalone mode and OCR
 
 
-
+    Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU : JNI ?
     Task #61 : [vx.x.x] More Unit tests with JUnit and Mockito
-    Task #51 : [vx.x.x] Refactor the list of credits by using a ListView and a dedicated Adapter
     Task #16 : [vx.x.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
     Task #2  : [vx.x.x] Movable floating action button
-    Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU
 
 
     Task #34 : Load LUA scripts to make the clicks
     Task #48 : Check if ProGuard can rise errors or make unexpected behaviours in the app because of ClassNotFound of bad optimization
                         (http://developer.android.com/tools/help/proguard.html)
-    Task #43 : Refactor the common code between clicker AT and service to have a more testable object (factorize the code)
     Task #36 : Date picker to define a time period when clicks process can be done
-    Task #35 : Fabric.io, Crashlytics or other tools for bug tracking ?
+    Task #35 : Fabric.io, Crashlytics or other tools for bug tracking
     Task #37 : Android Wear support
 
 

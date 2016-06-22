@@ -67,4 +67,73 @@
         <item>Smooth Clicker is both free and open-source!</item>
     </string-array>
 
+
+    <!-- *********** -->
+    <!-- The credits -->
+    <!-- *********** -->
+
+    <string-array name="credits_labels">
+        <item>Smooth Clicker</item>
+        <item>App\'s logo</item>
+        <item>Material Arc Menu</item>
+        <item>SwitchButton</item>
+        <item>AppIntro</item>
+        <item>Swipe Selector</item>
+        <item>Material SeekBar Preference</item>
+        <item>Dexter</item>
+        <item>Icons</item>
+        <item>Icons</item>
+        <item>Icons</item>
+        <item>Icons</item>
+        <item>Icons</item>
+    </string-array>
+
+    <string-array name="credits_descriptions">
+        <item>App made by pylapp</item>
+        <item>Icon made by Freepik from www.flaticon.com</item>
+        <item>Library made by Saurabh Arora</item>
+        <item>Library made by kyleduo</item>
+        <item>Library made by Paolo Rotolo</item>
+        <item>Library made by Iiro Krankka</item>
+        <item>Library made by Pavel Sikun</item>
+        <item>Library made by Karumi</item>
+        <item>Icons made by Freepik from www.flaticon.com</item>
+        <item>Icons made by Elegant Themes from www.flaticon.com</item>
+        <item>Icons made by Yannick from www.flaticon.com</item>
+        <item>Icons made by Vaadin from www.flaticon.com</item>
+        <item>Icons made by Madebyoliver from www.flaticon.com</item>
+    </string-array>
+
+    <string-array name="credits_urls">
+        <item>https://github.com/pylapp/SmoothClicker</item>
+        <item>http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726</item>
+        <item>https://github.com/saurabharora90/MaterialArcMenu</item>
+        <item>https://github.com/kyleduo/SwitchButton</item>
+        <item>https://github.com/roughike/SwipeSelector</item>
+        <item>https://github.com/PaoloRotolo/AppIntro</item>
+        <item>https://github.com/MrBIMC/MaterialSeekBarPreference</item>
+        <item>https://github.com/Karumi/Dexter</item>
+        <item>http://www.flaticon.com/authors/freepik</item>
+        <item>http://www.flaticon.com/authors/elegant-themes</item>
+        <item>http://www.flaticon.com/authors/yannick</item>
+        <item>http://www.flaticon.com/authors/vaadin</item>
+        <item>http://www.flaticon.com/authors/madebyoliver</item>
+    </string-array>
+
+    <string-array name="credits_licenses">
+        <item>Under Licence MIT</item>
+        <item>Under Licence Flaticon Basic</item>
+        <item>Under Licence Apache v2</item>
+        <item>Under License Apache v2</item>
+        <item>Under License Apache v2</item>
+        <item>Under License Apache v2</item>
+        <item>Under License Apache v2</item>
+        <item>Under License Apache v2</item>
+        <item>Under License Flaticon Basic</item>
+        <item>Under License CC 3.0 BY</item>
+        <item>Under License CC 3.0 BY</item>
+        <item>Under License CC 3.0 BY</item>
+        <item>Under License Flaticon Basic</item>
+    </string-array>
+
 </resources>

@@ -67,4 +67,72 @@
         <item>Smooth Clicker est libre et open-source !</item>
     </string-array>
 
+    <!-- *********** -->
+    <!-- The credits -->
+    <!-- *********** -->
+
+    <string-array name="credits_labels">
+        <item>Smooth Clicker</item>
+        <item>Logo de l\'application</item>
+        <item>Material Arc Menu</item>
+        <item>SwitchButton</item>
+        <item>AppIntro</item>
+        <item>Swipe Selector</item>
+        <item>Material SeekBar Preference</item>
+        <item>Dexter</item>
+        <item>Icônes</item>
+        <item>Icônes</item>
+        <item>Icônes</item>
+        <item>Icônes</item>
+        <item>Icônes</item>
+    </string-array>
+
+    <string-array name="credits_descriptions">
+        <item>App créée par pylapp</item>
+        <item>Icône créée par Freepik de www.flaticon.com</item>
+        <item>Librairie créée par Saurabh Arora</item>
+        <item>Librairie créée par kyleduo</item>
+        <item>Librairie créée par Paolo Rotolo</item>
+        <item>Librairie créée par Iiro Krankka</item>
+        <item>Librairie créée par Pavel Sikun</item>
+        <item>Librairie créée par Karumi</item>
+        <item>Icônes faites par Freepik de www.flaticon.com</item>
+        <item>Icônes faites par Elegant Themes de www.flaticon.com</item>
+        <item>Icônes faites par Yannick de www.flaticon.com</item>
+        <item>Icônes faites par Vaadin de www.flaticon.com</item>
+        <item>Icônes faîtes par Madebyoliver de www.flaticon.com</item>
+    </string-array>
+
+    <string-array name="credits_urls">
+        <item>https://github.com/pylapp/SmoothClicker</item>
+        <item>http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726</item>
+        <item>https://github.com/saurabharora90/MaterialArcMenu</item>
+        <item>https://github.com/kyleduo/SwitchButton</item>
+        <item>https://github.com/roughike/SwipeSelector</item>
+        <item>https://github.com/PaoloRotolo/AppIntro</item>
+        <item>https://github.com/MrBIMC/MaterialSeekBarPreference</item>
+        <item>https://github.com/Karumi/Dexter</item>
+        <item>http://www.flaticon.com/authors/freepik</item>
+        <item>http://www.flaticon.com/authors/elegant-themes</item>
+        <item>http://www.flaticon.com/authors/yannick</item>
+        <item>http://www.flaticon.com/authors/vaadin</item>
+        <item>http://www.flaticon.com/authors/madebyoliver</item>
+    </string-array>
+
+    <string-array name="credits_licenses">
+        <item>Sous Licence MIT</item>
+        <item>Sous Licence Flaticon Basic</item>
+        <item>Sous Licence Apache v2</item>
+        <item>Sous License Apache v2</item>
+        <item>Sous License Apache v2</item>
+        <item>Sous License Apache v2</item>
+        <item>Sous License Apache v2</item>
+        <item>Sous License Apache v2</item>
+        <item>Sous License Flaticon Basic</item>
+        <item>Sous License CC 3.0 BY</item>
+        <item>Sous License CC 3.0 BY</item>
+        <item>Sous License CC 3.0 BY</item>
+        <item>Sous License Flaticon Basic</item>
+    </string-array>
+
 </resources>

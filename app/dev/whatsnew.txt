@@ -99,7 +99,7 @@ v1.10.0 : Incredible Indri [on going]
     - Possible to choose its time unit for the click process (ms, s or h)
     - The intro screen is available from the settings screen as an help
     - Refactor main view
-    - Update credits view
+    - Update and optimize the credits view
     - Deal with the new system which manage permissions for Android 6.0+
     - Refactor the preferences screen
     - Update the intro screens
