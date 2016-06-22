@@ -27,8 +27,8 @@ LAST TASK : #86
 
 TO DO
 
-    Task #84 : [v1.10.0] Play a sound notification on click
-    Task #86 : [v1.10.0] Define the file's names in preferences
+    *Task #84 : [v1.10.0] Play a sound notification on click
+    *Task #86 : [v1.10.0] Define the file's names in preferences
     Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #79 : [v1.10.0] Update i18n files: regenerate STRING and ARRAY values files from the english one
     Task #80 : [v1.10.0] New run of Lint and code analysis, new build of HTML JavaDoc, final run of UT and IT
