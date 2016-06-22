@@ -695,6 +695,62 @@
 
         </android.support.v7.widget.CardView>
 
+        <!-- The icons made by Madebyoliver -->
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cv_credits_icon_flaticons_madebyoliver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/cardview_layout_margin"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/cardview_layout_margin"
+                android:paddingTop="@dimen/cardview_innerlayout_horizontal_margin_top"
+                android:paddingBottom="@dimen/cardview_innerlayout_horizontal_margin_bottom"
+                android:paddingEnd="@dimen/cardview_innerlayout_horizontal_margin_right"
+                android:paddingStart="@dimen/cardview_innerlayout_horizontal_margin_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/credits_icon_flaticon_madebyoliver_label"
+                    android:paddingBottom="@dimen/cardview_bottom_padding"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_icon_flaticon_madebyoliver_desc"/>
+
+                <TextView
+                    android:id="@+id/tvCreditsFlaticonsMadebyoliverUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_icon_flaticon_madebyoliver_url"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/cardview_bottom_padding"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/credits_icon_flaticon_madebyoliver_license"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 </ScrollView>

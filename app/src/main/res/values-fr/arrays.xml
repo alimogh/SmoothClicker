@@ -27,14 +27,44 @@
 
 <resources>
 
+    <!-- ******************** -->
+    <!-- The standalone modes -->
+    <!-- ******************** -->
+
     <string-array name="standalone_mode_titles">
         <item>Fichiers JSON</item>
         <item>Fichiers JSON et démarrage selon l\'écran</item>
     </string-array>
 
-    <string-array name="standalone_mode_description">
+    <string-array name="standalone_mode_descriptions">
         <item>Utiliser les fichiers sc_points.json et sc_config.json</item>
         <item>Utiliser les fichiers sc_points.json, sc_config.json et sc_trigger.png</item>
+    </string-array>
+
+    <!-- ********************** -->
+    <!-- The intro screen pages -->
+    <!-- ********************** -->
+
+    <string-array name="introscreen_titles">
+        <item>Hey !</item>
+        <item>Root</item>
+        <item>Clicks</item>
+        <item>Notifications</item>
+        <item>Configuration</item>
+        <item>Standalone</item>
+        <item>Reconnaissance d\'écran</item>
+        <item>Né pour être libre</item>
+    </string-array>
+
+    <string-array name="introscreen_summaries">
+        <item>Bienvenue dans Smooth Clicker !</item>
+        <item>Votre appareil Android doit être rooté pour utiliser cette app.</item>
+        <item>Définissez une séquence de clicks à exécuter&#8230;</item>
+        <item>&#8230; et ajoutez au besoin des notifications, des vibrations etc.</item>
+        <item>Des fichiers JSON peuvent être utilisés pour stocker la configuration du processsus de click.</item>
+        <item>Le mode standalone permet de lancer le processus de clicks en utilisant directement les fichiers de configuration JSON.</item>
+        <item>Le mode standalone peut également se baser sur une image de référence pour déclencher les clicks.</item>
+        <item>Smooth Clicker est libre et open-source !</item>
     </string-array>
 
 </resources>

@@ -63,7 +63,7 @@ import static org.junit.Assert.fail;
  * Class to use to make UI tests with UIAutomator of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 23/03/2016
  * @see AbstractTest
  */
@@ -90,6 +90,8 @@ public class ItSettingsActivity extends AbstractTest {
      */
     @Before
     public void startMainActivityFromHomeScreen() {
+
+        l(this, "@Before startMainActivityFromHomeScreen");
 
         // Initialize UiDevice instance
         mDevice = UiDevice.getInstance(getInstrumentation());
@@ -124,7 +126,7 @@ public class ItSettingsActivity extends AbstractTest {
     @Test
     public void selections(){
 
-        l(this, "selections");
+        l(this, "@Test selections");
 
         // The checkboxes
         BySelector checkboxSettingsSelector = By.clazz("android.widget.CheckBox");

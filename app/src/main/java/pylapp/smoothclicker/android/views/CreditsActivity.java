@@ -198,6 +198,17 @@ public class CreditsActivity extends AppCompatActivity {
             }
         });
 
+        // The icon made by Madebyoliver form Flaticon
+        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsMadebyoliverUrl);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_madebyoliver_url)));
+                startActivity(i);
+            }
+        });
+
         super.onPostCreate(savedInstanceState);
 
     }
