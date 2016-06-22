@@ -389,7 +389,7 @@ What:
     chore: new run of Lint, code analysis, UT and IT
     chore: closed tasks #69
 ###################################################
-Date:
+Date: 18/06/2016
 What:
     feat: deal with the new permissions system provided by Android 6 and API 23+
     feat: frequency of screen captures
@@ -398,9 +398,14 @@ What:
     fix: bug where splash screen displayed even if standalone mode running
     chore: closed tasks #57, #83
 ###################################################
-Date:
+Date: 22/06/2016
 What:
-
+    feat: new preferences screen
+    test: new IT for StandaloneDialog
+    chore: closed tasks #83, #80, #51
+    chore: update and optimized the credits view
+    chore: more logs on UT and IT
+    refactor: refactor the intro screen's pages to get its string values and put them in arrays
 ###################################################
 Date:
 What:

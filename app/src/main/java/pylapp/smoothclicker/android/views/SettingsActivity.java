@@ -163,7 +163,7 @@ public class SettingsActivity extends AppCompatActivity {
             pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(getString(R.string.credits_app_url)));
+                    i.setData(Uri.parse(getString(R.string.app_author)));
                     startActivity(i);
                     return true;
                 }

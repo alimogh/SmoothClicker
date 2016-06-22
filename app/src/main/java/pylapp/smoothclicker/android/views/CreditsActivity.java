@@ -25,11 +25,14 @@
 
 package pylapp.smoothclicker.android.views;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import pylapp.smoothclicker.android.R;
@@ -39,7 +42,7 @@ import pylapp.smoothclicker.android.R;
  * The activity which displays the credits / third-parties licences.
  *
  * @author pylapp
- * @version 1.8.0
+ * @version 2.0.0
  * @since 15/03/2016
  */
 public class CreditsActivity extends AppCompatActivity {
@@ -48,169 +51,97 @@ public class CreditsActivity extends AppCompatActivity {
     //private static final String LOG_TAG = CreditsActivity.class.getSimpleName();
 
 
+    /* ****************************** *
+     * METHODS FROM AppCompatActivity *
+     * ****************************** */
+
     /**
-     * Triggered to create the view
+     *
      * @param savedInstanceState -
      */
     @Override
     protected void onCreate( Bundle savedInstanceState ){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
+        ListView lv = (ListView)findViewById(R.id.list);
+        String[] labels = getApplicationContext().getResources().getStringArray(R.array.credits_labels);
+        String[] descriptions = getApplicationContext().getResources().getStringArray(R.array.credits_descriptions);
+        String[] urls = getApplicationContext().getResources().getStringArray(R.array.credits_urls);
+        String[] licenses = getApplicationContext().getResources().getStringArray(R.array.credits_licenses);
+        lv.setAdapter(new CreditsBaseAdapter( labels, descriptions, urls, licenses, this));
     }
+
+    /* *********** *
+     * INNER CLASS *
+     * *********** */
 
     /**
-     * Triggered when the view has been created.
-     * Initializes the listeners for TextViews containing URLs.
-     * @param savedInstanceState -
+     * An adapter for the list of credits
      */
-    @Override
-    protected void onPostCreate( Bundle savedInstanceState ){
+    public static class CreditsBaseAdapter extends BaseAdapter {
 
-        // The logo's URL
-        TextView tv = (TextView) findViewById(R.id.tvCreditsApplicationLogoUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_logo_url)));
-                startActivity(i);
-            }
-        });
+        String [] labels;
+        String [] descriptions;
+        String [] urls;
+        String [] licenses;
+        Context context;
+        LayoutInflater layoutInflater;
 
-        // The MaterialArcMenu's Github URL
-        tv = (TextView) findViewById(R.id.tvCreditsMamUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_mam_url)));
-                startActivity(i);
-            }
-        });
+        public CreditsBaseAdapter( String [] labels, String[] descriptions,
+                                   String [] urls, String[] licenses, Context context ){
+            super();
+            if ( labels == null ) throw new IllegalArgumentException("Labels cannot be null!");
+            if ( descriptions == null ) throw new IllegalArgumentException("Descriptions cannot be null!");
+            if ( urls == null ) throw new IllegalArgumentException("URLs cannot be null!");
+            if ( licenses == null ) throw new IllegalArgumentException("Licenses cannot be null!");
+            if ( context == null ) throw new IllegalArgumentException("Context cannot be null!");
+            this.labels = labels;
+            this.descriptions = descriptions;
+            this.urls = urls;
+            this.licenses = licenses;
+            this.context = context;
+            layoutInflater = LayoutInflater.from(this.context);
+        }
 
-        // The SwitchButton's Github URL
-        tv = (TextView) findViewById(R.id.tvCreditsSwitchButtonUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_switchbutton_url)));
-                startActivity(i);
-            }
-        });
+        @Override
+        public int getCount(){
+            return labels.length;
+        }
 
-        // The AppIntro's Github URL
-        tv = (TextView) findViewById(R.id.tvCreditsAppintroUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_appintro_url)));
-                startActivity(i);
-            }
-        });
+        @Override
+        public Object getItem( int position ){
+            return null;
+        }
 
-        // The Swipe Selector's Github URL
-        tv = (TextView) findViewById(R.id.tvCreditsSsUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_ss_url)));
-                startActivity(i);
-            }
-        });
+        @Override
+        public long getItemId( int position ){
+            return position;
+        }
 
-        // The Material SeekBar Preference
-        tv = (TextView) findViewById(R.id.tvCreditsMsbpUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_msbp_url)));
-                startActivity(i);
-            }
-        });
+        @Override
+        public View getView( int position, View convertView, ViewGroup parent ){
 
-        // The Dexter library
-        tv = (TextView) findViewById(R.id.tvCreditsDexterUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_dexter_url)));
-                startActivity(i);
-            }
-        });
+            // Get the data
+            String label = labels[position];
+            String description = descriptions[position];
+            String url = urls[position];
+            String license = licenses[position];
 
-        // The app's Github URL
-        tv = (TextView) findViewById(R.id.tvCreditsAppUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_app_url)));
-                startActivity(i);
-            }
-        });
+            // Build a view
+            convertView = layoutInflater.inflate(R.layout.content_credit_row, null);
+            TextView tv = (TextView) convertView.findViewById(R.id.tv_credits_label);
+            tv.setText(label);
+            tv = (TextView) convertView.findViewById(R.id.tv_credits_description);
+            tv.setText(description);
+            tv = (TextView) convertView.findViewById(R.id.tv_credits_url);
+            tv.setText(url);
+            tv = (TextView) convertView.findViewById(R.id.tv_credits_license);
+            tv.setText(license);
 
-        // The app's author personal page
-        tv = (TextView) findViewById(R.id.tvCreditsAppDesc);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_app_personal_page)));
-                startActivity(i);
-            }
-        });
+            return convertView;
 
-        // The icon made by FreepiK form Flaticon
-        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsFreepikUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_freepik_url)));
-                startActivity(i);
-            }
-        });
+        }
 
-        // The icon made by Yannick form Flaticon
-        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsYannickUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_yannick_url)));
-                startActivity(i);
-            }
-        });
-
-        // The icon made by Elegant Themes form Flaticon
-        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsElegantthemesUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_elegantthemes_url)));
-                startActivity(i);
-            }
-        });
-
-        // The icon made by Madebyoliver form Flaticon
-        tv = (TextView) findViewById(R.id.tvCreditsFlaticonsMadebyoliverUrl);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(getString(R.string.credits_icon_flaticon_madebyoliver_url)));
-                startActivity(i);
-            }
-        });
-
-        super.onPostCreate(savedInstanceState);
-
-    }
+    } // End of public static class CreditsBaseAdapter extends BaseAdapter
 
 }
