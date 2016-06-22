@@ -194,6 +194,8 @@
     <string name="pref_key_credit_summary">Click here to show the licenses</string>
 
     <string name="pref_about_title">About</string>
+    <string name="pref_about_subtitle">Smooth Clicker</string>
+    <string name="pref_about_summary">Click to get more</string>
     <string name="pref_about_version_title">Version</string>
     <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">written by pylapp - License MIT</string>
@@ -211,6 +213,8 @@
     <string name="pref_key_unlockscript_summary">Use a dedicated custom script having system commands to unlock the device</string>
 
     <string name="pref_root_title">Root</string>
+    <string name="pref_root_subtitle">How to root my device?</string>
+    <string name="pref_root_summary">Click to get more</string>
     <string name="pref_key_root_heimdall_title">Heimdall</string>
     <string name="pref_key_root_heimdall_summary">Go to Heimdall to root your device with Linux</string>
     <string name="pref_key_root_odin_title">Odin</string>
