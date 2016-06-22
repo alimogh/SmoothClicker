@@ -27,10 +27,7 @@ package pylapp.smoothclicker.android.notifiers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 
-import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.utils.Config;
 
 /**
