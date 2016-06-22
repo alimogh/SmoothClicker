@@ -28,6 +28,7 @@ package pylapp.smoothclicker.android.views;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
+import android.os.Build;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
@@ -37,6 +38,7 @@ import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import pylapp.smoothclicker.android.AbstractTest;
@@ -44,6 +46,7 @@ import pylapp.smoothclicker.android.R;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
@@ -64,6 +67,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
      */
     private UiDevice mDevice;
 
+    public static int steps = 0;
+
     /**
      *
      */
@@ -77,6 +82,26 @@ public class ItStandaloneModeDialog extends AbstractTest {
      */
     private static final int WAIT_FOR_EXISTS_TIMEOUT = 5000;
 
+
+    /**
+     * Initializes some variables
+     */
+    @BeforeClass
+    public static void initInnerState(){
+
+        String [] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
+        String [] descriptions = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
+        if ( titles == null
+                || descriptions == null
+                || titles.length <= 0
+                || descriptions.length <= 0
+                || titles.length != descriptions.length ){
+            fail("Bad resource array for standalone mode! Are they defined and have the same number of items?");
+        } else {
+            steps = titles.length - 1;
+        }
+
+    }
 
     /**
      * Starts the main activity to test from the home screen
@@ -122,8 +147,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
         try {
 
             // Swipe to the last item
-            final int STEPS = 1;
-            for ( int i = 1; i <= STEPS; i++ ){
+
+            for ( int i = 1; i <= steps; i++ ){
                 // Get the selector
                 UiObject swipeSelector = mDevice.findObject(
                         new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_layout_swipePager")
@@ -135,8 +160,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
             // Check the last item
             String[] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
             String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
-            String expectedLastItemTitle = titles[STEPS];
-            String expectedLastItemDesc = descs[STEPS];
+            String expectedLastItemTitle = titles[steps];
+            String expectedLastItemDesc = descs[steps];
 
             UiObject lastItemTitle = mDevice.findObject(
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_content_title")
@@ -166,8 +191,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
         try {
 
             // Swipe to the last item (to be at the end of the selector)
-            final int STEPS = 1;
-            for ( int i = 1; i <= STEPS; i++ ){
+            for ( int i = 1; i <= steps; i++ ){
                 // Get the selector
                 UiObject swipeSelector = mDevice.findObject(
                         new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_layout_swipePager")
@@ -177,7 +201,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
             }
 
             // Go backward
-            for ( int i = 1; i <= STEPS; i++ ){
+            for ( int i = 1; i <= steps; i++ ){
                 // Get the selector
                 UiObject swipeSelector = mDevice.findObject(
                         new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_layout_swipePager")
@@ -220,8 +244,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
         try {
 
             // Click on the (not) green arrow
-            final int STEPS = 1;
-            for ( int i = 1; i <= STEPS; i++ ){
+            for ( int i = 1; i <= steps; i++ ){
                 // Get the selector
                 UiObject rightArrow = mDevice.findObject(
                         new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_layout_rightButton")
@@ -232,8 +255,8 @@ public class ItStandaloneModeDialog extends AbstractTest {
             // Check the last item
             String[] titles = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_titles);
             String[] descs = InstrumentationRegistry.getTargetContext().getResources().getStringArray(R.array.standalone_mode_description);
-            String expectedLastItemTitle = titles[STEPS];
-            String expectedLastItemDesc = descs[STEPS];
+            String expectedLastItemTitle = titles[steps];
+            String expectedLastItemDesc = descs[steps];
 
             UiObject lastItemTitle = mDevice.findObject(
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_content_title")
@@ -263,8 +286,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
         try {
 
             // Click on the arrow to be at the end of the cursor
-            final int STEPS = 1;
-            for ( int i = 1; i <= STEPS; i++ ){
+            for ( int i = 1; i <= steps; i++ ){
                 // Get the selector
                 UiObject rightArrow = mDevice.findObject(
                         new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_layout_rightButton")
@@ -272,7 +294,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
                 rightArrow.click();
             }
             // Go backward
-            for ( int i = 1; i <= STEPS; i++ ){
+            for ( int i = 1; i <= steps; i++ ){
                 // Get the selector
                 UiObject leftArrow = mDevice.findObject(
                         new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_layout_leftButton")
@@ -295,6 +317,63 @@ public class ItStandaloneModeDialog extends AbstractTest {
                     new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_content_description")
             );
             assertEquals(expectedFirstItemDesc, lastItemDesc.getText());
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail( uonfe.getMessage() );
+        }
+
+    }
+
+    /**
+     * Tests if the notification is displayed when the standalone mode is running
+     *
+     * <i>If the standalone mode is running, a dedicated notification is displayed</i>
+     */
+    @Test
+    public void notificationOnGoing(){
+
+        l(this, "@Test notificationOnGoing");
+
+        // Start a standalone mode
+        try {
+
+            // Choose the OCR-like standalone mode (the alst of the list)
+            for ( int i = 1; i <= steps; i++ ){
+                UiObject rightArrow = mDevice.findObject(
+                        new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/swipeselector_layout_rightButton")
+                );
+                rightArrow.click();
+            }
+
+            // Click on the OK button
+            UiObject btOk = mDevice.findObject(
+                    new UiSelector().resourceId(PACKAGE_APP_PATH + ":id/btCreate")
+            );
+            btOk.click();
+
+            // Check the notification
+            String notificationText = InstrumentationRegistry.getTargetContext().getString(R.string.notif_content_text_clicks_on_going_standalone);
+            UiObject notification = null;
+            if ( Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT_WATCH ){
+                notification = mDevice.findObject(
+                        new UiSelector()
+                                .resourceId("android:id/text")
+                                .className("android.widget.TextView")
+                                .packageName("pylapp.smoothclicker.android")
+                                .textContains(notificationText));
+            } else {
+                notification = mDevice.findObject(
+                        new UiSelector()
+                                .resourceId("android:id/text")
+                                .className("android.widget.TextView")
+                                .packageName("com.android.systemui")
+                                .textContains(notificationText));
+            }
+
+            mDevice.openNotification();
+            notification.waitForExists(2000);
+            assertTrue(notification.exists());
 
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();
