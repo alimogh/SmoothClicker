@@ -44,7 +44,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.6.0
+ * @version 2.7.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -377,7 +377,11 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      */
     private void executeTap(){
 
-        for ( PointsListAdapter.Point p : mPoints ){
+        final int NUMBER_OF_POINTS = mPoints.size();
+
+        for ( int i = 0; i < NUMBER_OF_POINTS; i++ ){
+
+            PointsListAdapter.Point p = mPoints.get(i);
 
             if ( ! p.isUsable) continue;
 
