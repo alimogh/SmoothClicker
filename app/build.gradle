@@ -34,8 +34,8 @@ android {
         applicationId "pylapp.smoothclicker.android"
         minSdkVersion 18
         targetSdkVersion 23
-        versionCode 29
-        versionName "1.10.0"
+        versionCode 30
+        versionName "2.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" // For UIAutomator
     }
 
