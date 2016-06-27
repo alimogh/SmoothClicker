@@ -79,7 +79,7 @@ v1.9.3
     - Fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
     - Fixed bug which may make a white icons bar for full screen views
     - Support for languages romanian, polish and finnish
-v1.10.0 : Incredible Indri [on going]
+V2.0.0 : Incredible Indri [on going]
     - Support for italian and catalan
     - Improved some components to make them more material
     - Refactor main view
