@@ -256,7 +256,7 @@ public class ATScreenWatcher extends AsyncTaskForScreen<List<PointsListAdapter.P
     private boolean isScreenMatched(){
 
         // Get the base file
-        Bitmap baseFile = BitmapFactory.decodeFile(Config.getAppFolder().getAbsolutePath()+"/"+Config.FILE_TRIGGER_PICTURE);
+        Bitmap baseFile = BitmapFactory.decodeFile(Config.getAppFolder().getAbsolutePath()+"/"+Config.DEFAULT_FILE_TRIGGER_PICTURE);
         if ( baseFile == null ){
             Logger.e(LOG_TAG, "Base file is null");
             return false;

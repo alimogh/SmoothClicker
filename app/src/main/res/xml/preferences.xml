@@ -132,6 +132,65 @@
 
     </PreferenceCategory>
 
+    <!-- **************************** -->
+    <!-- The files in use for the app -->
+    <!-- **************************** -->
+
+    <PreferenceCategory
+        android:title="@string/pref_app_files">
+
+        <PreferenceScreen
+            android:title="@string/pref_app_files_title"
+            android:summary="@string/pref_app_files_summary">
+
+            <!-- The name of the file containing the points to click on -->
+            <PreferenceCategory
+                android:title="@string/pref_app_files_points_title">
+                <EditTextPreference
+                    android:id="@+id/pref_key_points_file"
+                    android:title="@string/pref_app_files_points_name" />
+                <Preference
+                    android:key="pref_key_points_file"
+                    android:title="@string/pref_app_files_points_content" />
+            </PreferenceCategory>
+
+            <!-- The name of the file containing the configuration to apply -->
+            <PreferenceCategory
+                android:title="@string/pref_app_files_config_title">
+                <EditTextPreference
+                    android:id="@+id/pref_key_config_file"
+                    android:title="@string/pref_app_files_config_name" />
+                <Preference
+                    android:key="pref_key_config_file"
+                    android:title="@string/pref_app_files_config_content" />
+            </PreferenceCategory>
+
+            <!-- The name of the file containing the Shell commands to unlock the device -->
+            <PreferenceCategory
+                android:title="@string/pref_app_files_unlock_title">
+                <EditTextPreference
+                    android:id="@+id/pref_key_unlock_file"
+                    android:title="@string/pref_app_files_unlock_name" />
+                <Preference
+                    android:key="pref_key_unlock_file"
+                    android:title="@string/pref_app_files_unlock_content" />
+            </PreferenceCategory>
+
+            <!-- The name of the file containing the screen state to compare to screenshots to trigger the click process -->
+            <PreferenceCategory
+                android:title="@string/pref_app_files_trigger_title">
+                <EditTextPreference
+                    android:id="@+id/pref_key_triggers_file"
+                    android:title="@string/pref_app_files_trigger_name" />
+                <Preference
+                    android:key="pref_key_trigger_file"
+                    android:title="@string/pref_app_files_trigger_content" />
+            </PreferenceCategory>
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
     <!-- ********** -->
     <!-- About root -->
     <!-- ********** -->

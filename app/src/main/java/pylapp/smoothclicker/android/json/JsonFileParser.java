@@ -177,7 +177,7 @@ public class JsonFileParser {
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_POINTS_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_POINTS_NAME);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
@@ -255,7 +255,7 @@ public class JsonFileParser {
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_CONFIG_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_CONFIG_NAME);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
@@ -326,7 +326,7 @@ public class JsonFileParser {
      */
     public static String getFullPathToConfigFile(){
         File appDir = Config.getAppFolder();
-        return appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_CONFIG_NAME;
+        return appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_CONFIG_NAME;
     }
 
     /**
@@ -335,7 +335,7 @@ public class JsonFileParser {
      */
     public static String getFullPathToPointsFile(){
         File appDir = Config.getAppFolder();
-        return appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_POINTS_NAME;
+        return appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_POINTS_NAME;
     }
 
     /**
@@ -344,7 +344,7 @@ public class JsonFileParser {
      */
     public static File getPointsFile(){
         File appDir = Config.getAppFolder();
-        return new File(appDir, Config.FILE_JSON_POINTS_NAME);
+        return new File(appDir, Config.DEFAULT_FILE_JSON_POINTS_NAME);
     }
 
 }

@@ -254,7 +254,7 @@ public class JsonConfigImporter implements ConfigImporter {
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_CONFIG_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_CONFIG_NAME);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
@@ -312,7 +312,7 @@ public class JsonConfigImporter implements ConfigImporter {
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_POINTS_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_POINTS_NAME);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
