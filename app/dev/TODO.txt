@@ -27,12 +27,12 @@ LAST TASK : #90
 
 TO DO
 
-    *Task #86 : [v1.10.0] Define the file's names in preferences
-    Task #87 : [v1.10.0] Check the format of exported JSON files and clean them (indentations, ...)
-    Task #79 : [v1.10.0] Update i18n files: regenerate STRING and ARRAY values files from the english one
-    Task #78 : [v1.10.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
-    Task #89 : [v1.xx.0] Random clicks: in SelectmultiPointsActiity create an option menu to choose randomly a point
-    Task #90 : [v1.xx.0] Time ms for click (to add to s / m / h) with default values in fields which will be disabled (prevent from problems)
+    *Task #86 : [v2.0.0] Define the file's names in preferences
+    Task #87 : [v2.0.0] Check the format of exported JSON files and clean them (indentations, ...)
+    Task #79 : [v2.0.0] Update i18n files: regenerate STRING and ARRAY values files from the english one
+    Task #78 : [v2.0.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
+    Task #89 : [v2.0.0] Random clicks: in SelectmultiPointsActiity create an option menu / bottom sheet dialog to choose randomly a point
+    Task #90 : [v2.0.0] Time ms for click (to add to s / m / h) with default values in fields which will be disabled (prevent from problems)
 
     Task #60 : [memo] ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag
 
