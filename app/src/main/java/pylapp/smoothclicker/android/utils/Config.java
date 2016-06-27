@@ -35,7 +35,7 @@ import pylapp.smoothclicker.android.R;
  * Just a configuration class with useful values
  *
  * @author pylapp
- * @version 1.9.0
+ * @version 1..0
  * @since 02/03/2016
  */
 public final class Config {
@@ -78,12 +78,12 @@ public final class Config {
     /*
      * The folders and files in use
      */
-    public static final String FILE_JSON_POINTS_NAME    = "sc_points.json";
-    public static final String FILE_JSON_CONFIG_NAME    = "sc_config.json";
-    public static final String FILE_SH_UNLOCK_NAME      = "sc_unlock.sh";
-    public static final String FILE_TRIGGER_PICTURE     = "sc_trigger.png";
-    public static final String FILE_CAPTURE_PICTURE     = "sc_capture.tmp.png";
-    public static final String FOLDER_APP               = "Smooth_Clicker";
+    public static final String DEFAULT_FILE_JSON_POINTS_NAME = "sc_points.json";
+    public static final String DEFAULT_FILE_JSON_CONFIG_NAME = "sc_config.json";
+    public static final String DEFAULT_FILE_SH_UNLOCK_NAME   = "sc_unlock.sh";
+    public static final String DEFAULT_FILE_TRIGGER_PICTURE  = "sc_trigger.png";
+    public static final String FILE_CAPTURE_PICTURE          = "sc_capture.tmp.png";
+    public static final String FOLDER_APP                    = "Smooth_Clicker";
 
 
     /**

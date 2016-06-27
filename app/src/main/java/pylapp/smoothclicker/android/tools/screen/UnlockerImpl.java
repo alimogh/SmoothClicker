@@ -132,7 +132,7 @@ public class UnlockerImpl implements UnlockerStub {
         // Get the script
         String scriptLines;
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_SH_UNLOCK_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_SH_UNLOCK_NAME);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;

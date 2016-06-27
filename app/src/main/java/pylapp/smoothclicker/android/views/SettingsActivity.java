@@ -25,23 +25,31 @@
 
 package pylapp.smoothclicker.android.views;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import java.io.File;
 
 import pylapp.smoothclicker.android.R;
+import pylapp.smoothclicker.android.json.JsonFileParser;
 import pylapp.smoothclicker.android.utils.AppConfigVersions;
+import pylapp.smoothclicker.android.utils.Config;
 
 /**
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.9.0
+ * @version 1.10.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -76,6 +84,10 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String PREF_KEY_HELP                    = "pref_key_help";
     public static final String PREF_KEY_START_ON_BOOT           = "pref_key_settings_start_standalone_on_boot";
     public static final String PREF_KEY_CAPTURE_FREQUENCY       = "pref_key_picture_recognition_frequency";
+    public static final String PREF_KEY_FILE_POINTS             = "pref_key_points_file";
+    public static final String PREF_KEY_FILE_CONFIG             = "pref_key_config_file";
+    public static final String PREF_KEY_FILE_UNLOCK             = "pref_key_unlock_file";
+    public static final String PREF_KEY_FILE_TRIGGER            = "pref_key_trigger_file";
 
 
     //private static final String LOG_TAG = SettingsActivity.class.getSimpleName();
@@ -216,6 +228,93 @@ public class SettingsActivity extends AppCompatActivity {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent i = new Intent(SettingsFragment.this.getActivity().getApplicationContext(), IntroScreensActivity.class);
                     startActivity(i);
+                    return true;
+                }
+            });
+
+            /*
+             * TODO : keyS in preferences to get the EditTextPreference with the files' names, and the Preference to click to edit the files
+             */
+            // See the file containing the points to click on
+            pref = findPreference(PREF_KEY_FILE_POINTS);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    try {
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
+                        String fileName = sp.getString(SettingsActivity.PREF_KEY_FILE_POINTS, Config.DEFAULT_FILE_JSON_POINTS_NAME);
+                        File f = new File(Config.getAppFolder(), fileName);
+                        Uri path = Uri.fromFile(f);
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setDataAndType(path, "application/json");
+                        startActivity(intent);
+                    } catch ( ActivityNotFoundException anfe ){
+                        anfe.printStackTrace();
+                        Toast.makeText(SettingsFragment.this.getActivity(), getString(R.string.error_nothing_to_open_json), Toast.LENGTH_LONG).show();
+                    }
+                    return true;
+                }
+            });
+
+            // See the file containing the configuration to apply
+            pref = findPreference(PREF_KEY_FILE_CONFIG);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    try {
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
+                        String fileName = sp.getString(SettingsActivity.PREF_KEY_FILE_CONFIG, Config.DEFAULT_FILE_JSON_CONFIG_NAME);
+                        File f = new File(Config.getAppFolder(), fileName);
+                        Uri path = Uri.fromFile(f);
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setDataAndType(path, "application/json");
+                        startActivity(intent);
+                    } catch ( ActivityNotFoundException anfe ){
+                        anfe.printStackTrace();
+                        Toast.makeText(SettingsFragment.this.getActivity(), getString(R.string.error_nothing_to_open_json), Toast.LENGTH_LONG).show();
+                    }
+                    return true;
+                }
+            });
+
+            // See the file containing the Shell script to sue to unlock the device
+            pref = findPreference(PREF_KEY_FILE_UNLOCK);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    try {
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
+                        String fileName = sp.getString(SettingsActivity.PREF_KEY_FILE_UNLOCK, Config.DEFAULT_FILE_SH_UNLOCK_NAME);
+                        File f = new File(Config.getAppFolder(), fileName);
+                        Uri path = Uri.fromFile(f);
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setDataAndType(path, "application/x-sh");
+                        startActivity(intent);
+                    } catch ( ActivityNotFoundException anfe ){
+                        anfe.printStackTrace();
+                        Toast.makeText(SettingsFragment.this.getActivity(), getString(R.string.error_nothing_to_open_json), Toast.LENGTH_LONG).show();
+                    }
+                    return true;
+                }
+            });
+
+            // See the file containing the picture of the screen which should match a screen-shot to trigger the click process
+            pref = findPreference(PREF_KEY_FILE_TRIGGER);
+            pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    try {
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SettingsFragment.this.getActivity());
+                        String fileName = sp.getString(SettingsActivity.PREF_KEY_FILE_TRIGGER, Config.DEFAULT_FILE_TRIGGER_PICTURE);
+                        File f = new File(Config.getAppFolder(), fileName);
+                        Uri path = Uri.fromFile(f);
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setDataAndType(path, "image/png");
+                        startActivity(intent);
+                    } catch ( ActivityNotFoundException anfe ){
+                        anfe.printStackTrace();
+                        Toast.makeText(SettingsFragment.this.getActivity(), getString(R.string.error_nothing_to_open_json), Toast.LENGTH_LONG).show();
+                    }
                     return true;
                 }
             });

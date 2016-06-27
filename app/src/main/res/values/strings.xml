@@ -129,6 +129,22 @@
     <string name="pref_settings_prfrequency_title">Time for capture</string>
     <string name="pref_settings_prfrequency_summary">The higher is the time for the capture, the slower will be the system to take screen shots of the device to trigger the click process</string>
 
+    <string name="pref_app_files">Storage</string>
+    <string name="pref_app_files_title">Files used by the app</string>
+    <string name="pref_app_files_summary">Click to manage the files in use</string>
+    <string name="pref_app_files_points_title">Points</string>
+    <string name="pref_app_files_points_name">Change the name of the file</string>
+    <string name="pref_app_files_points_content">Read</string>
+    <string name="pref_app_files_config_title">Configuration</string>
+    <string name="pref_app_files_config_name">Change the name of the file</string>
+    <string name="pref_app_files_config_content">Read</string>
+    <string name="pref_app_files_unlock_title">Unlock script</string>
+    <string name="pref_app_files_unlock_name">Change the name of the file</string>
+    <string name="pref_app_files_unlock_content">Read</string>
+    <string name="pref_app_files_trigger_title">Trigger picture</string>
+    <string name="pref_app_files_trigger_name">Change the name of the file</string>
+    <string name="pref_app_files_trigger_content">Read</string>
+
     <string name="pref_credits_title">Credits</string>
     <string name="pref_key_credit_title">This app uses third party contents</string>
     <string name="pref_key_credit_summary">Click here to show the licenses</string>

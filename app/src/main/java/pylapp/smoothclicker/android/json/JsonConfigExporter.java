@@ -279,7 +279,7 @@ public class JsonConfigExporter implements ConfigExporter {
 
         // Prepare the file
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_CONFIG_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_CONFIG_NAME);
 
         // Write the content into the file
         String content = sb.toString();
@@ -329,7 +329,7 @@ public class JsonConfigExporter implements ConfigExporter {
 
         // Prepare the file
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.FILE_JSON_POINTS_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_POINTS_NAME);
 
         // Write the content into the file
         String content = sb.toString();

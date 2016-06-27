@@ -123,6 +123,22 @@
     <string name="pref_settings_prfrequency_title">Temps de capture</string>
     <string name="pref_settings_prfrequency_summary">Plus le temps est élevé, plus le système de reconnaissance d\'écran prendra du temps pour faire la capture</string>
 
+    <string name="pref_app_files">Stockage</string>
+    <string name="pref_app_files_title">Fichiers utilisés par l\'app</string>
+    <string name="pref_app_files_summary">Click pour gérer les fichiers utilisés</string>
+    <string name="pref_app_files_points_title">Points</string>
+    <string name="pref_app_files_points_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_points_content">Lire</string>
+    <string name="pref_app_files_config_title">Configuration</string>
+    <string name="pref_app_files_config_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_config_content">Lire</string>
+    <string name="pref_app_files_unlock_title">Script de déverrouillage</string>
+    <string name="pref_app_files_unlock_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_unlock_content">Lire</string>
+    <string name="pref_app_files_trigger_title">Image de déclenchement</string>
+    <string name="pref_app_files_trigger_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_trigger_content">Lire</string>
+
     <string name="pref_credits_title">Crédits</string>
     <string name="pref_key_credit_title">Cette app utilise des outils tiers</string>
     <string name="pref_key_credit_summary">Click pour accéder aux licences</string>
