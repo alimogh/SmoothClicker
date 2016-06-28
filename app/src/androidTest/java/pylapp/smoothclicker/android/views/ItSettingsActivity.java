@@ -41,11 +41,8 @@ import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 
-import junit.framework.Assert;
-
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.R;
-import pylapp.smoothclicker.android.views.CreditsActivity;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -54,6 +51,7 @@ import java.util.Collection;
 import java.util.List;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
@@ -63,7 +61,7 @@ import static org.junit.Assert.fail;
  * Class to use to make UI tests with UIAutomator of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 1.4.0
  * @since 23/03/2016
  * @see AbstractTest
  */
@@ -182,7 +180,7 @@ public class ItSettingsActivity extends AbstractTest {
                             .packageName(PACKAGE_APP_PATH)
                             .resourceId(PACKAGE_APP_PATH + ":id/seekbar_value")
             );
-            assertEquals( "100", seekBarValue.getText() );
+            assertEquals( "10", seekBarValue.getText() );
 
             // Swipe to the very left and check if we are at 100%
             seekBar.swipeLeft(100);
@@ -335,6 +333,54 @@ public class ItSettingsActivity extends AbstractTest {
     }
 
     /**
+     * Tests the files names fields
+     *
+     * <i>If we change the name of the file in sue, we have to see the summary of the dedicated field be updated</i>
+     */
+    @Test
+    public void filesNames(){
+
+        l(this, "@Test fileNames");
+
+        try {
+
+            // Swipe to the bottom of the view to get the fields field in an inner preference screen
+            UiObject list = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.ListView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/list")
+            );
+
+            list.swipeUp(100);
+
+            String innerPreferenceScreenTitle = InstrumentationRegistry.getTargetContext().getString(R.string.pref_app_files_title);
+            UiObject filesRow = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/title")
+                            .text(innerPreferenceScreenTitle)
+            );
+            filesRow.click();
+
+            // Update the name of file containing the points
+            testFieldWithName(0, InstrumentationRegistry.getTargetContext().getString(R.string.pref_app_files_points_name));
+            // Update the name of file containing the config
+            testFieldWithName(1, InstrumentationRegistry.getTargetContext().getString(R.string.pref_app_files_config_name));
+            // Update the name of file containing the unlock script
+            testFieldWithName(2, InstrumentationRegistry.getTargetContext().getString(R.string.pref_app_files_unlock_name));
+            // Update the name of file containing the picture
+            testFieldWithName(3, InstrumentationRegistry.getTargetContext().getString(R.string.pref_app_files_trigger_name));
+
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail(uonfe.getMessage());
+        }
+
+    }
+
+    /**
      * Opens the settings screen from the menu
      */
     private void openSettingsScreenFromMenu(){
@@ -365,7 +411,7 @@ public class ItSettingsActivity extends AbstractTest {
 
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();
-            Assert.fail(uonfe.getMessage());
+            fail(uonfe.getMessage());
         }
         w(1000);
 
@@ -388,6 +434,103 @@ public class ItSettingsActivity extends AbstractTest {
             }
         });
         return mResumedActivity;
+    }
+
+    /**
+     * @param index - The idnex of the field in the list (start at 0)
+     * @param text - The text of the field to get
+     */
+    private void testFieldWithName( int index, String text ){
+
+        if ( text == null || text.length() <= 0 || index < 0){
+            fail("Wrong test");
+        }
+
+        final String DUMMY_TEXT = "Hello world";
+
+        try {
+            // Display the dialog
+            UiObject field = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/title")
+                            .text(text)
+            );
+            field.click();
+            // Change the value
+            field = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.EditText")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/edit")
+            );
+            final String BACKUP_TEXT = field.getText();
+            field.setText(DUMMY_TEXT);
+            // Confirm
+            UiObject button = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.Button")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/button1")
+            );
+            button.click();
+            w(1000);
+            // Check the summary
+            BySelector checkboxSettingsSelector = By.clazz("android.widget.TextView");
+            List<UiObject2> summaries = mDevice.findObjects(checkboxSettingsSelector);
+            UiObject2 field2 = summaries.get( index * 4 + 2 );
+            assertEquals(DUMMY_TEXT, field2.getText());
+            // Reset the value
+            resetFieldWithText( text, BACKUP_TEXT);
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail(uonfe.getMessage());
+        }
+
+    }
+
+    /**
+     * @param text - The text of the field to get
+     * @param newValue - The new value
+     */
+    private void resetFieldWithText( String text, String newValue ){
+
+        if ( text == null || text.length() <= 0 ){
+            fail("Wrong test");
+        }
+
+        try {
+            // Display the dialog
+            UiObject field = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.TextView")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/title")
+                            .text(text)
+            );
+            field.click();
+            // Change the value
+            field = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.EditText")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/edit")
+            );
+            field.setText(newValue);
+            // Confirm
+            UiObject button = mDevice.findObject(
+                    new UiSelector()
+                            .className("android.widget.Button")
+                            .packageName(PACKAGE_APP_PATH)
+                            .resourceId("android:id/button1")
+            );
+            button.click();
+        } catch ( UiObjectNotFoundException uonfe ){
+            uonfe.printStackTrace();
+            fail(uonfe.getMessage());
+        }
+
     }
 
 }
