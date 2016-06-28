@@ -147,10 +147,10 @@
             <PreferenceCategory
                 android:title="@string/pref_app_files_points_title">
                 <EditTextPreference
-                    android:id="@+id/pref_key_points_file"
+                    android:key="pref_key_points_file_name"
                     android:title="@string/pref_app_files_points_name" />
                 <Preference
-                    android:key="pref_key_points_file"
+                    android:key="pref_key_points_file_content"
                     android:title="@string/pref_app_files_points_content" />
             </PreferenceCategory>
 
@@ -158,10 +158,10 @@
             <PreferenceCategory
                 android:title="@string/pref_app_files_config_title">
                 <EditTextPreference
-                    android:id="@+id/pref_key_config_file"
+                    android:key="pref_key_config_file_name"
                     android:title="@string/pref_app_files_config_name" />
                 <Preference
-                    android:key="pref_key_config_file"
+                    android:key="pref_key_config_file_content"
                     android:title="@string/pref_app_files_config_content" />
             </PreferenceCategory>
 
@@ -169,10 +169,10 @@
             <PreferenceCategory
                 android:title="@string/pref_app_files_unlock_title">
                 <EditTextPreference
-                    android:id="@+id/pref_key_unlock_file"
+                    android:key="pref_key_unlock_file_name"
                     android:title="@string/pref_app_files_unlock_name" />
                 <Preference
-                    android:key="pref_key_unlock_file"
+                    android:key="pref_key_unlock_file_content"
                     android:title="@string/pref_app_files_unlock_content" />
             </PreferenceCategory>
 
@@ -180,10 +180,10 @@
             <PreferenceCategory
                 android:title="@string/pref_app_files_trigger_title">
                 <EditTextPreference
-                    android:id="@+id/pref_key_triggers_file"
+                    android:key="pref_key_trigger_file_name"
                     android:title="@string/pref_app_files_trigger_name" />
                 <Preference
-                    android:key="pref_key_trigger_file"
+                    android:key="pref_key_trigger_file_content"
                     android:title="@string/pref_app_files_trigger_content" />
             </PreferenceCategory>
 

@@ -74,6 +74,7 @@
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ No clicks defined</string>
     <string name="error_message_was_not_working">(－‸ლ) The process is not started</string>
     <string name="error_nothing_to_open_json">Woops nothing can open the .json file</string>
+    <string name="error_nothing_to_open_file">Woops nothing can open this file</string>
 
     <string name="warning_hazard_repeat_endless_title">Hazardous operation</string>
     <string name="warning_hazard_repeat_endless_content">Are you sure to make an endless repeat? This operation may be hazardous for your device.</string>
@@ -133,16 +134,16 @@
     <string name="pref_app_files_title">Files used by the app</string>
     <string name="pref_app_files_summary">Click to manage the files in use</string>
     <string name="pref_app_files_points_title">Points</string>
-    <string name="pref_app_files_points_name">Change the name of the file</string>
+    <string name="pref_app_files_points_name">File containing the points</string>
     <string name="pref_app_files_points_content">Read</string>
     <string name="pref_app_files_config_title">Configuration</string>
-    <string name="pref_app_files_config_name">Change the name of the file</string>
+    <string name="pref_app_files_config_name">File containing the configuration</string>
     <string name="pref_app_files_config_content">Read</string>
     <string name="pref_app_files_unlock_title">Unlock script</string>
-    <string name="pref_app_files_unlock_name">Change the name of the file</string>
+    <string name="pref_app_files_unlock_name">File containing the unlock script</string>
     <string name="pref_app_files_unlock_content">Read</string>
     <string name="pref_app_files_trigger_title">Trigger picture</string>
-    <string name="pref_app_files_trigger_name">Change the name of the file</string>
+    <string name="pref_app_files_trigger_name">Picture file which starts the click process</string>
     <string name="pref_app_files_trigger_content">Read</string>
 
     <string name="pref_credits_title">Credits</string>

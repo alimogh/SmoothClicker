@@ -88,7 +88,7 @@ V2.0.0 : Incredible Indri [on going]
     - Fixed some bugs
     - Update and optimize the credits view
     - Update the intro screens
-    - Refactor the preferences scree,
+    - Refactor the preferences screen
     - Deal with the new system which manage permissions for Android 6.0+
     - The intro screen is available from the settings screen as an help
     - Import / export the configuration of the app (process and points) from / to JSON files
@@ -99,8 +99,8 @@ V2.0.0 : Incredible Indri [on going]
     - Force the screen to be on if off
     - Keep the screen on if needed
     - Use a Shell script using ADB commands to unlock the screen if needed
-    - Support for landscape mode for handsets and tablets
-    - More support for 6", 7" and 10" screens devices
+    - [on going] Support for landscape mode for handsets and tablets
+    - [on going] More support for 6", 7" and 10" screens devices
 
 
 

@@ -68,6 +68,7 @@
     <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ Aucun point à cliquer n\'a été défini</string>
     <string name="error_message_was_not_working">(－‸ლ) Le processus de click n\'est pas démarré</string>
     <string name="error_nothing_to_open_json">Oups, aucune app ne peut ouvrir le fichier .json</string>
+    <string name="error_nothing_to_open_file">Oups, aucune app ne peut ouvrir ce fichier</string>
 
     <string name="warning_hazard_repeat_endless_title">Operation risquée</string>
     <string name="warning_hazard_repeat_endless_content">Êtes-vous sûr de vouloir faire une répétition infinie ? Cette opération peut être risquée pour votre appareil.</string>
@@ -127,16 +128,16 @@
     <string name="pref_app_files_title">Fichiers utilisés par l\'app</string>
     <string name="pref_app_files_summary">Click pour gérer les fichiers utilisés</string>
     <string name="pref_app_files_points_title">Points</string>
-    <string name="pref_app_files_points_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_points_name">Fichier contenant les points</string>
     <string name="pref_app_files_points_content">Lire</string>
     <string name="pref_app_files_config_title">Configuration</string>
-    <string name="pref_app_files_config_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_config_name">Fichier contant le configuration</string>
     <string name="pref_app_files_config_content">Lire</string>
     <string name="pref_app_files_unlock_title">Script de déverrouillage</string>
-    <string name="pref_app_files_unlock_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_unlock_name">Fichier de déverrouillage</string>
     <string name="pref_app_files_unlock_content">Lire</string>
     <string name="pref_app_files_trigger_title">Image de déclenchement</string>
-    <string name="pref_app_files_trigger_name">Changer le nom du fichier</string>
+    <string name="pref_app_files_trigger_name">Fichier image déclenchant les clicks</string>
     <string name="pref_app_files_trigger_content">Lire</string>
 
     <string name="pref_credits_title">Crédits</string>
