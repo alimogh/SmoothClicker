@@ -83,10 +83,20 @@ import pylapp.smoothclicker.android.utils.Config;
     </pre>
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 31/05/2016
  */
 public class UnlockerImpl implements UnlockerStub {
+
+
+    /* ********** *
+     * ATTRIBUTES *
+     * ********** */
+
+    /**
+     * The name of the file which contains the unlock script
+     */
+    private String mFileName;
 
 
     /* ********* *
@@ -108,9 +118,13 @@ public class UnlockerImpl implements UnlockerStub {
 
     /**
      * Default constructor
+     *
+     * @param fileName - The name of the unlock script to use
      */
-    public UnlockerImpl(){
+    public UnlockerImpl( String fileName ){
         super();
+        if ( fileName == null || fileName.length() <= 0 ) throw new IllegalArgumentException("The fileName parameter cannot be null nor empty");
+        mFileName = fileName;
     }
 
 
@@ -132,7 +146,7 @@ public class UnlockerImpl implements UnlockerStub {
         // Get the script
         String scriptLines;
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_SH_UNLOCK_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ mFileName);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;

@@ -38,7 +38,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class to use to test the JsonConfigExporter class
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 26/05/2016
  */
 public class UtJsonConfigExporter extends AbstractTest {
@@ -52,7 +52,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setUnitTime");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setUnitTime(ConfigExporter.UnitTime.SECOND);
         exporter.setUnitTime(ConfigExporter.UnitTime.MINUTE);
         exporter.setUnitTime(ConfigExporter.UnitTime.HOUR);
@@ -69,7 +69,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setDelayWithBadValues");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setDelay(-1);
 
     }
@@ -84,7 +84,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setDelay");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setDelay(0);
         exporter.setDelay(1);
         exporter.setDelay(Integer.MAX_VALUE);
@@ -101,7 +101,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setTimeGapWithBadValues");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setTimeGap(-1);
 
     }
@@ -116,7 +116,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setTimeGap");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setTimeGap(0);
         exporter.setTimeGap(1);
         exporter.setTimeGap(Integer.MAX_VALUE);
@@ -133,7 +133,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setRepeatWithBadValues");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setRepeat(-1);
 
     }
@@ -148,7 +148,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setRepeat");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setRepeat(0);
         exporter.setRepeat(1);
         exporter.setRepeat(Integer.MAX_VALUE);
@@ -165,7 +165,7 @@ public class UtJsonConfigExporter extends AbstractTest {
 
         l(this, "@Test setPointsToClickOn");
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        ConfigExporter exporter = new JsonConfigExporter("file", "another file");
         exporter.setPointsToClickOn(null);
         exporter.setPointsToClickOn(new ArrayList<PointsListAdapter.Point>());
         List<PointsListAdapter.Point> lp = new ArrayList<>();

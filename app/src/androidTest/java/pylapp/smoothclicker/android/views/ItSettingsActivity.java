@@ -340,7 +340,7 @@ public class ItSettingsActivity extends AbstractTest {
     @Test
     public void filesNames(){
 
-        l(this, "@Test fileNames");
+        l(this, "@Test filesNames");
 
         try {
 
