@@ -44,7 +44,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on importing the configuration of the app from a JSON file
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 27/05/2016
  * @see ConfigImporter
  */
@@ -110,6 +110,15 @@ public class JsonConfigImporter implements ConfigImporter {
      */
     private List<PointsListAdapter.Point> mPoints;
 
+    /**
+     * The name of the points file
+     */
+    private String mPointsFileName;
+
+    /**
+     * The name of the config file
+     */
+    private String mConfigFileName;
 
     //private static final String LOG_TAG = JsonConfigImporter.class.getSimpleName();
 
@@ -120,9 +129,16 @@ public class JsonConfigImporter implements ConfigImporter {
 
     /**
      * Default constructor
+     *
+     * @param pointsFileName - The name of the points file to use
+     * @param configFileName - The name of the config file to use
      */
-    public JsonConfigImporter(){
+    public JsonConfigImporter( String pointsFileName, String configFileName ){
         super();
+        if ( pointsFileName == null || pointsFileName.length() <= 0 ) throw new IllegalArgumentException("The points file's name parameter must not be null nor empty");
+        if ( configFileName == null || configFileName.length() <= 0 ) throw new IllegalArgumentException("The config file's name parameter must not be null nor empty");
+        mPointsFileName = pointsFileName;
+        mConfigFileName = configFileName;
     }
 
 
@@ -254,7 +270,7 @@ public class JsonConfigImporter implements ConfigImporter {
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_CONFIG_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ mConfigFileName);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
@@ -312,7 +328,7 @@ public class JsonConfigImporter implements ConfigImporter {
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_POINTS_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ mPointsFileName);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;

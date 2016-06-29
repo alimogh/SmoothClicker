@@ -52,7 +52,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
      </pre>
  *
  * @author pylapp
- * @version 1.4.0
+ * @version 1.5.0
  * @since 04/05/2016
  */
 public class JsonFileParser {
@@ -163,13 +163,13 @@ public class JsonFileParser {
     /**
      * Parses the JSON file which contains the points to click on
      *
-     * @param c - The context, cannot be null
+     * @param fileName - The name of the file to process
      * @return List<Point> - The points picked form the JSON file
      * @throws NotSuitableJsonPointsFileException - If something wrong occurs during the parse
      */
-    private List<PointsListAdapter.Point> parseJsonPointsFile(Context c) throws NotSuitableJsonPointsFileException {
+    private List<PointsListAdapter.Point> parseJsonPointsFile( String fileName ) throws NotSuitableJsonPointsFileException {
 
-        if ( c == null ) throw new IllegalArgumentException("The context cannot be null");
+        if ( fileName == null || fileName.length() <= 0 ) throw new IllegalArgumentException("The file name cannot be null nor empty");
 
         List<PointsListAdapter.Point> pointsToClick = new ArrayList<>();
 
@@ -177,7 +177,7 @@ public class JsonFileParser {
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_POINTS_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ fileName);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;
@@ -216,16 +216,16 @@ public class JsonFileParser {
      * Returns the point in the JSON file.
      * Will load in a first time the JSON file.
      *
-     * @param c  - The context, must not be null
+     * @param fileName - The name of the file to process
      * @return int[] -
      * @throws NotSuitableJsonPointsFileException - If something wrong occurs with the JSON file
      */
-    public int[] getPointFromJsonFile( Context c ) throws NotSuitableJsonPointsFileException {
+    public int[] getPointFromJsonFile( String fileName ) throws NotSuitableJsonPointsFileException {
 
-        if ( c == null ) throw new IllegalArgumentException("The context cannot be null");
+        if ( fileName == null || fileName.length() <= 0 ) throw new IllegalArgumentException("The file name cannot be null");
 
         int [] points = null;
-        List<PointsListAdapter.Point> pointsFromJson = parseJsonPointsFile(c);
+        List<PointsListAdapter.Point> pointsFromJson = parseJsonPointsFile(fileName);
 
         if ( pointsFromJson == null || pointsFromJson.size() <= 0 ){
             throw new NotSuitableJsonPointsFileException("The JSON file does not contain points");
@@ -245,17 +245,19 @@ public class JsonFileParser {
     /**
      * Parses the JSON file which contains the config to apply on th click process
      * @param c - The context which enables to update the shard preferences, must not be null
+     * @param fileName = The name of the file to process
      * @throws NotSuitableJsonConfigFileException - If a problem occurs with the JSON config file
      */
-    public void parseConfigFile( Context c ) throws NotSuitableJsonConfigFileException {
+    public void parseConfigFile( Context c, String fileName ) throws NotSuitableJsonConfigFileException {
 
         if ( c == null ) throw new IllegalArgumentException("The context must not be null");
+        if ( fileName == null || fileName.length() <= 0 ) throw new IllegalArgumentException("The file name must not be null nor empty");
 
         JSONObject jsonData = null;
 
         // Get the file, its content and parse it
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_CONFIG_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ fileName);
         try {
             InputStream is = new FileInputStream( file );
             int size = 0;

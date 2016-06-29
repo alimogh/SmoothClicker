@@ -63,7 +63,7 @@ import pylapp.smoothclicker.android.views.SettingsActivity;
  *
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 13/06/2016
  * @see AsyncTaskForScreen
  */
@@ -255,8 +255,11 @@ public class ATScreenWatcher extends AsyncTaskForScreen<List<PointsListAdapter.P
      */
     private boolean isScreenMatched(){
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+        String fileName = sp.getString(SettingsActivity.PREF_KEY_FILE_TRIGGER_NAME, Config.DEFAULT_FILE_TRIGGER_PICTURE);
+
         // Get the base file
-        Bitmap baseFile = BitmapFactory.decodeFile(Config.getAppFolder().getAbsolutePath()+"/"+Config.DEFAULT_FILE_TRIGGER_PICTURE);
+        Bitmap baseFile = BitmapFactory.decodeFile(Config.getAppFolder().getAbsolutePath()+"/"+fileName);
         if ( baseFile == null ){
             Logger.e(LOG_TAG, "Base file is null");
             return false;
@@ -270,7 +273,6 @@ public class ATScreenWatcher extends AsyncTaskForScreen<List<PointsListAdapter.P
         }
 
         // Make the match
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
         int threshold = sp.getInt(SettingsActivity.PREF_KEY_PRTHRESHOLD, 10);
         PicturesComparator pc = new PixelByPixelPicturesComparator();
         try {

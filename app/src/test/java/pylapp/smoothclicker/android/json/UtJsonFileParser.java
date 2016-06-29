@@ -35,7 +35,7 @@ import static junit.framework.Assert.fail;
  * Class  to test the JsonFileParser
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 20/05/2016
  */
 public class UtJsonFileParser extends AbstractTest {
@@ -65,7 +65,7 @@ public class UtJsonFileParser extends AbstractTest {
         l(this, "@Test parseConfigFile");
 
         try {
-            JsonFileParser.instance.parseConfigFile(null);
+            JsonFileParser.instance.parseConfigFile(null, "something");
         } catch ( NotSuitableJsonConfigFileException nsjcfe ){
             fail(nsjcfe.getMessage());
         }

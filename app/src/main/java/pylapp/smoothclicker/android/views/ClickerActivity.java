@@ -83,7 +83,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.24.0
+ * @version 2.25.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -458,9 +458,12 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      */
     private void exportConfig(){
 
-        ConfigExporter exporter = new JsonConfigExporter();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String pointsFileName = sp.getString(SettingsActivity.PREF_KEY_FILE_POINTS_NAME, Config.DEFAULT_FILE_JSON_POINTS_NAME);
+        String configFileName = sp.getString(SettingsActivity.PREF_KEY_FILE_CONFIG_NAME, Config.DEFAULT_FILE_JSON_CONFIG_NAME);
+        ConfigExporter exporter = new JsonConfigExporter(pointsFileName, configFileName);
 
-        SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
+        sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
         exporter.setStartDelayed(sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED));
         int checkedRbUnitTimeId = sp.getInt(Config.SP_KEY_UNIT_TIME, Config.DEFAULT_TIME_UNIT_SELECTION);
         switch ( checkedRbUnitTimeId ){
@@ -521,7 +524,10 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
     private void importConfig(){
 
         // Read the config file
-        ConfigImporter importer = new JsonConfigImporter();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String configFileName = sp.getString(SettingsActivity.PREF_KEY_FILE_CONFIG_NAME, Config.DEFAULT_FILE_JSON_CONFIG_NAME);
+        String pointsFileName = sp.getString(SettingsActivity.PREF_KEY_FILE_POINTS_NAME, Config.DEFAULT_FILE_JSON_POINTS_NAME);
+        ConfigImporter importer = new JsonConfigImporter(pointsFileName, configFileName);
         try {
             importer.readConfig();
         } catch ( ConfigImporter.ConfigImportException cie ){
@@ -576,7 +582,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         handleMultiPointResult(coordsAsXY);
 
         // Update the shared preferences
-        SharedPreferences sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
+        sp = getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, importer.getStartDelayed());
         editor.putInt(Config.SP_KEY_DELAY, importer.getDelay());

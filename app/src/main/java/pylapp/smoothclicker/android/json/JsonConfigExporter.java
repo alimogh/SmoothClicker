@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on exporting the configuration of the app in a JSON file
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.4.0
  * @since 26/05/2016
  * @see ConfigExporter
  */
@@ -55,7 +55,7 @@ public class JsonConfigExporter implements ConfigExporter {
     /**
      * The unit time to use (s, m or h)
      */
-    private UnitTime mUnitTime;
+    private UnitTime mUnitTime = UnitTime.SECOND;
     /**
      * If the start is delayed
      */
@@ -106,6 +106,15 @@ public class JsonConfigExporter implements ConfigExporter {
      */
     private List<PointsListAdapter.Point> mPoints;
 
+    /**
+     * The name of the points file
+     */
+    private String mPointsFileName;
+
+    /**
+     * The name of the config file
+     */
+    private String mConfigFileName;
 
     //private static final String LOG_TAG = JsonConfigExporter.class.getSimpleName();
 
@@ -116,9 +125,16 @@ public class JsonConfigExporter implements ConfigExporter {
 
     /**
      * Default constructor
+     *
+     * @param pointsFileName - The name of the points file to use
+     * @param configFileName - The name of the config file to use
      */
-    public JsonConfigExporter(){
+    public JsonConfigExporter( String pointsFileName, String configFileName ){
         super();
+        if ( pointsFileName == null || pointsFileName.length() <= 0 ) throw new IllegalArgumentException("The points file's name parameter must not be null nor empty");
+        if ( configFileName == null || configFileName.length() <= 0 ) throw new IllegalArgumentException("The config file's name parameter must not be null nor empty");
+        mPointsFileName = pointsFileName;
+        mConfigFileName = configFileName;
     }
 
 
@@ -279,7 +295,7 @@ public class JsonConfigExporter implements ConfigExporter {
 
         // Prepare the file
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_CONFIG_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ mConfigFileName);
 
         // Write the content into the file
         String content = sb.toString();
@@ -329,7 +345,7 @@ public class JsonConfigExporter implements ConfigExporter {
 
         // Prepare the file
         File appDir = Config.getAppFolder();
-        File file = new File(appDir.getAbsolutePath()+"/"+ Config.DEFAULT_FILE_JSON_POINTS_NAME);
+        File file = new File(appDir.getAbsolutePath()+"/"+ mPointsFileName);
 
         // Write the content into the file
         String content = sb.toString();

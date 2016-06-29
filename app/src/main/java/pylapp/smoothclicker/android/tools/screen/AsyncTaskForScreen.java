@@ -37,6 +37,7 @@ import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import pylapp.smoothclicker.android.receivers.BRScreenOff;
+import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.views.SettingsActivity;
 
 
@@ -44,7 +45,7 @@ import pylapp.smoothclicker.android.views.SettingsActivity;
  * Async Task which consists on working on the device and more on its screen of displayed elements.
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 13/06/2016
  * @see AsyncTask
  */
@@ -131,7 +132,7 @@ public abstract class AsyncTaskForScreen<T, U, V> extends AsyncTask<T, U, V>{
         if ( isEnabled ){
             KeyguardManager km = (KeyguardManager) mContext.getSystemService(Context.KEYGUARD_SERVICE);
             if (km.inKeyguardRestrictedInputMode()) {
-                UnlockerStub unlocker = new UnlockerImpl();
+                UnlockerStub unlocker = new UnlockerImpl(sp.getString(SettingsActivity.PREF_KEY_FILE_UNLOCK_NAME, Config.DEFAULT_FILE_SH_UNLOCK_NAME));
                 try {
                     unlocker.unlock(null);
                 } catch (UnlockerStub.UnlockException ue) {

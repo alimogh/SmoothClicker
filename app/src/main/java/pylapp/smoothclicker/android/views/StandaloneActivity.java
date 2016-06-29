@@ -25,7 +25,9 @@
 
 package pylapp.smoothclicker.android.views;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -63,7 +65,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * 
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 10/05/2016
  * @see AppCompatActivity
  */
@@ -165,8 +167,10 @@ public class StandaloneActivity extends AppCompatActivity {
 
         messageToUser(getString(R.string.standalone_init_config));
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         try {
-            JsonFileParser.instance.parseConfigFile(StandaloneActivity.this);
+            String fileName = sp.getString(SettingsActivity.PREF_KEY_FILE_CONFIG_NAME, Config.DEFAULT_FILE_JSON_CONFIG_NAME);
+            JsonFileParser.instance.parseConfigFile(this, fileName);
         } catch ( NotSuitableJsonConfigFileException nsjcfe ){
             nsjcfe.printStackTrace();
             errorToUser(nsjcfe.getMessage());
@@ -181,8 +185,10 @@ public class StandaloneActivity extends AppCompatActivity {
 
         messageToUser(getString(R.string.standalone_init_points));
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String fileName = sp.getString(SettingsActivity.PREF_KEY_FILE_POINTS_NAME, Config.DEFAULT_FILE_JSON_POINTS_NAME);
         try {
-            int [] pointsAsArray = JsonFileParser.instance.getPointFromJsonFile(StandaloneActivity.this);
+            int [] pointsAsArray = JsonFileParser.instance.getPointFromJsonFile(fileName);
             mPointsToClickOn = new ArrayList<>();
             for ( int i = 0; i < pointsAsArray.length; i+=2 ){
                 mPointsToClickOn.add( new PointsListAdapter.Point(pointsAsArray[i], pointsAsArray[i+1]) );
