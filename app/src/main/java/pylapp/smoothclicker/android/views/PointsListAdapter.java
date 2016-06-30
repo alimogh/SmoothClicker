@@ -94,7 +94,8 @@ public class PointsListAdapter extends BaseAdapter {
             mPoints.add( new Point(mContext.getString(R.string.widget_no_points)) );
         } else {
             mPoints.clear();
-            mPoints.add( new Point( xyPoints.size() / 2 + " clicks"));
+            if ( xyPoints.size() == 1 ) mPoints.add( new Point("1 click" ) );
+            else mPoints.add( new Point( xyPoints.size() / 2 + " clicks"));
         }
 
         for ( int i = 0; i < xyPoints.size(); i +=2 ){

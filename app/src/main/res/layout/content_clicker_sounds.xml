@@ -49,6 +49,7 @@
             android:textSize="@dimen/widget_label_text_size"
             android:text="@string/widget_sounds"
             android:textColor="@color/colorAccent"
+            android:id="@+id/tvRingOnClick"
             android:labelFor="@+id/scRingOnClick"/>
 
         <android.support.v7.widget.SwitchCompat
