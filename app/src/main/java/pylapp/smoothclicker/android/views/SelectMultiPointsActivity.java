@@ -30,6 +30,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
+import android.view.ContextMenu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -37,6 +38,8 @@ import android.widget.Toast;
 import pylapp.smoothclicker.android.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Random;
 
 /**
  * A translucent activity to help the user to click on a point on its screen over another app for example.
@@ -49,7 +52,7 @@ import java.util.ArrayList;
      </pre>
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 2.0.0
  * @since 17/03/2016
  */
 public class SelectMultiPointsActivity extends TranslucentActivity {
@@ -102,29 +105,43 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
 
         mXYCoordinates = new ArrayList<>();
 
-        // Get the touch coordinates
         View v = findViewById(R.id.translucentMainView);
         v.setOnTouchListener(new View.OnTouchListener() {
+
+            private static final int MIN_CLICK_DURATION = 1000;
+            private long mStartClickTime;
+
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                // Get the coordinates
-                final int X = (int) event.getX();
-                final int Y = (int) event.getY();
-
-                mXYCoordinates.add(X);
-                mXYCoordinates.add(Y);
-
-                initHelpingToastsRoutine();
-
-                // Notify the user
-                showInSnackbarWithDismissAction("Click X = " + X + " / Y = " + Y);
-
-                return false;
-
+            public boolean onTouch( View v, MotionEvent event ){
+                switch ( event.getAction() ){
+                    case MotionEvent.ACTION_UP:
+                        long clickDuration = Calendar.getInstance().getTimeInMillis() - mStartClickTime;
+                        if (clickDuration >= MIN_CLICK_DURATION) {
+                                selectRandomPoint(v);
+                        } else {
+                                selectPoint(event);
+                        }
+                        break;
+                    case MotionEvent.ACTION_DOWN:
+                        mStartClickTime = Calendar.getInstance().getTimeInMillis();
+                        break;
+                }
+                return true;
             }
         });
 
+    }
+
+    /**
+     *
+     * @param menu -
+     * @param v -
+     * @param menuInfo -
+     */
+    @Override
+    public void onCreateContextMenu( ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo ){
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0, v.getId(), 0, "Random");
     }
 
     /**
@@ -158,11 +175,53 @@ public class SelectMultiPointsActivity extends TranslucentActivity {
         finish();
     }
 
+
+    /* ************* *
+     * OTHER METHODS *
+     * ************* */
+
+    /**
+     * Selects a point according to the dedicated motion event
+     * @param event - The motion event
+     */
+    private void selectPoint( MotionEvent event ){
+        if ( event == null ) throw new IllegalArgumentException("The motion event is null, cannot get point");
+        // Get the coordinates
+        final int X = (int) event.getX();
+        final int Y = (int) event.getY();
+        mXYCoordinates.add(X);
+        mXYCoordinates.add(Y);
+        initHelpingToastsRoutine();
+        // Notify the user
+        showInSnackbarWithDismissAction("Click X = " + X + " / Y = " + Y);
+    }
+
+    /**
+     * Selects a random point  int the view
+     * @param view - The view to use to get the point
+     */
+    private void selectRandomPoint( View view ){
+        if ( view == null ) throw new IllegalArgumentException("The view is null, cannot get point");
+        // Get random coordinates
+        final int MAX_X = view.getWidth();
+        final int MAX_Y = view.getHeight();
+        Random randomGenerator = new Random();
+        final int X = randomGenerator.nextInt(MAX_X + 1);
+        final int Y = randomGenerator.nextInt(MAX_Y + 1);
+        // Add the point
+        mXYCoordinates.add(X);
+        mXYCoordinates.add(Y);
+        initHelpingToastsRoutine();
+        // Notify to the user
+        showInSnackbarWithDismissAction("Random click X = " + X + " / Y = " + Y);
+    }
+
     /**
      * Displays an helping toast saying to the user he has to click on the screen then back to save its actions
      */
     private void displayHelpingToast(){
-        Toast.makeText(SelectMultiPointsActivity.this, getString(R.string.info_message_invite_new_points), Toast.LENGTH_SHORT).show();
+        Toast.makeText(SelectMultiPointsActivity.this, getString(R.string.info_message_invite_new_points), Toast.LENGTH_LONG).show();
+        Toast.makeText(SelectMultiPointsActivity.this, getString(R.string.info_message_invite_new_random_points), Toast.LENGTH_LONG).show();
     }
 
     /**

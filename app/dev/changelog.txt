@@ -412,9 +412,10 @@ Date: 30/06/2016
 What:
     feat: possible to define the names of the files to sue
     feat: improved GUI with kind of labels to give focus to items
+    feat: random point when long click on the select multipoint screen
     fix: JSON export files format / indentations
     refactor: the main view
-    chore: closed tasks #86, #87
+    chore: closed tasks #86, #87, #89
 ###################################################
 Date:
 What:

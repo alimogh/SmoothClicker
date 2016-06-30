@@ -55,7 +55,8 @@
     <string name="info_message_request_su">Demande les accès SU</string>
     <string name="info_message_su_granted">L\'accès SU a été attribué :-)</string>
     <string name="info_message_new_point">Sélectionne des points sur l\'écran</string>
-    <string name="info_message_invite_new_points">Sélectionnez plusieurs points puis back</string>
+    <string name="info_message_invite_new_points">Click sur l\'écran pour choisir le point voulu, puis back</string>
+    <string name="info_message_invite_new_random_points">Click long sur l\'écran pour chosir aléatoirement un point, puis back</string>
     <string name="info_export_success">L\'export de la configuration a été fait</string>
     <string name="info_export_fail">L\'export de la configuration a échoué</string>
     <string name="info_import_success">L\'importation a été réalisée</string>
