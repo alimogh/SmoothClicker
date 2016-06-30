@@ -41,7 +41,7 @@ import java.util.List;
  * A BaseAdapter for the view containing the points to click on
  *
  * @author pylapp
- * @version 1.3.0
+ * @version 1.4.0
  * @since  17/03/2016
  * @see BaseAdapter
  */
@@ -90,7 +90,13 @@ public class PointsListAdapter extends BaseAdapter {
             throw new IllegalArgumentException("There is not the good number of values for xyPoints. The array list must be like {x1, y1, x2, y2, ..., xN, yN}");
         }
 
-        mPoints.add( new Point( xyPoints.size() / 2 + " clicks"));
+        if ( xyPoints.size() == 0 ){
+            mPoints.add( new Point(mContext.getString(R.string.widget_no_points)) );
+        } else {
+            mPoints.clear();
+            mPoints.add( new Point( xyPoints.size() / 2 + " clicks"));
+        }
+
         for ( int i = 0; i < xyPoints.size(); i +=2 ){
             Point p = new Point(xyPoints.get(i), xyPoints.get(i+1));
             mPoints.add(p);
@@ -141,15 +147,11 @@ public class PointsListAdapter extends BaseAdapter {
      */
     @Override
     public View getView( int position, View convertView, ViewGroup parent ){
-
         LayoutInflater lf = LayoutInflater.from(mContext);
         convertView = lf.inflate(R.layout.list_points_item, null); // FIXME LINT
         TextView tv = (TextView) convertView.findViewById(R.id.tvTitleOfPointList);
-
         tv.setText(mPoints.get(position).toString());
-
         return convertView;
-
     }
 
 
