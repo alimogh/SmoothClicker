@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on exporting the configuration of the app in a JSON file
  *
  * @author pylapp
- * @version 1.4.0
+ * @version 1.5.0
  * @since 26/05/2016
  * @see ConfigExporter
  */
@@ -269,7 +269,7 @@ public class JsonConfigExporter implements ConfigExporter {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_COMMENT).append("\"            : ").append("\"").append(new Date()).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_UNIT_TIME).append("\"    : ").append("\"");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_UNIT_TIME).append("\"        : ").append("\"");
         switch ( mUnitTime ){
             case MINUTE:
                 sb.append("m").append("\",\n");
@@ -283,14 +283,14 @@ public class JsonConfigExporter implements ConfigExporter {
                 break;
         }
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_DELAYED_START).append("\"    : ").append("\"").append(mIsStartDelayed).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_DELAY).append("\"                 : ").append("\"").append(mDelay).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_TIME_GAP).append("\"           : ").append("\"").append(mTimeGap).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_REPEAT).append("\"               : ").append("\"").append(mRepeat).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_ENDLESS_REPEAT).append("\"  : ").append("\"").append(mIsEndlessRepeat).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_VIBRATE_ON_START).append("\"    : ").append("\"").append(mVibrateOnStart).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_VIBRATE_ON_CLICK).append("\"    : ").append("\"").append(mVibrateOnClick).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_RING).append("\"    : ").append("\"").append(mRingOnClick).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_OBJECT_NOTIFICATIONS).append("\"       : ").append("\"").append(mNotifiyOnClick).append("\"");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_DELAY).append("\"           : ").append("\"").append(mDelay).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_TIME_GAP).append("\"         : ").append("\"").append(mTimeGap).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_REPEAT).append("\"          : ").append("\"").append(mRepeat).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_ENDLESS_REPEAT).append("\"   : ").append("\"").append(mIsEndlessRepeat).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_VIBRATE_ON_START).append("\"  : ").append("\"").append(mVibrateOnStart).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_VIBRATE_ON_CLICK).append("\"  : ").append("\"").append(mVibrateOnClick).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_RING).append("\"            : ").append("\"").append(mRingOnClick).append("\",\n");
+        sb.append("\"").append(JsonFileParser.JSON_OBJECT_NOTIFICATIONS).append("\"   : ").append("\"").append(mNotifiyOnClick).append("\"");
         sb.append("\n}");
 
         // Prepare the file
@@ -322,7 +322,7 @@ public class JsonConfigExporter implements ConfigExporter {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_COMMENT).append("\"            : ").append("\"").append(new Date()).append("\",\n");
-        sb.append("\"").append(JsonFileParser.JSON_ARRAY_POINTS).append("\"         : [").append("\n");
+        sb.append("\"").append(JsonFileParser.JSON_ARRAY_POINTS).append("\"          : [").append("\n");
 
         if ( mPoints != null ){
 

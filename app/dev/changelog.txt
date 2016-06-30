@@ -408,9 +408,13 @@ What:
     chore: more logs on UT and IT
     refactor: refactor the intro screen's pages to get its string values and put them in arrays
 ###################################################
-Date:
+Date: 30/06/2016
 What:
-
+    feat: possible to define the names of the files to sue
+    feat: improved GUI with kind of labels to give focus to items
+    fix: JSON export files format / indentations
+    refactor: the main view
+    chore: closed tasks #86, #87
 ###################################################
 Date:
 What:
