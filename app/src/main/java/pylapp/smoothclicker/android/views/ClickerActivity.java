@@ -83,7 +83,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.25.0
+ * @version 2.26.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -608,7 +608,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         boolean isEndlessRepeat = sp.getBoolean(Config.SP_KEY_REPEAT_ENDLESS, Config.DEFAULT_REPEAT_ENDLESS);
 
         PointsListAdapter pla = (PointsListAdapter) ((Spinner) findViewById(R.id.sPointsToClick)).getAdapter();
-        if (pla == null || pla.getList().size() <= 0){
+        if ( pla /* à tartes */== null
+                || pla.getList().size() <= 0
+                || (pla.getList().size() == 1 && pla.get(0).x == PointsListAdapter.Point.UNDEFINED_X) ){
             displayMessage(MessageTypes.NO_CLICK_DEFINED);
             return;
         }
@@ -807,7 +809,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
 
                 final String intentAction;
                 // Starts the process
-                switch ( userSelection ){
+                switch (userSelection) {
                     case ALL_POINTS_WITH_CONFIG:
                         intentAction = StandaloneActivity.ACTION_ALL_POINTS;
                         break;
@@ -820,7 +822,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                 }
 
                 // Start the standalone activity
-                Intent standaloneActivityIntent = new Intent( ClickerActivity.this, StandaloneActivity.class);
+                Intent standaloneActivityIntent = new Intent(ClickerActivity.this, StandaloneActivity.class);
                 standaloneActivityIntent.setAction(intentAction);
                 startActivity(standaloneActivityIntent);
 
@@ -846,7 +848,10 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         final Spinner s = (Spinner) findViewById(R.id.sPointsToClick);
         s.setAdapter(null); // Clean the list view
 
-        if ( coords == null || coords.size() <= 0 ) return;
+        if ( coords == null || coords.size() <= 0 ){
+            s.setAdapter(new PointsListAdapter(this, new ArrayList<Integer>()));
+            return;
+        }
 
         s.setAdapter(new PointsListAdapter(this, coords));
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

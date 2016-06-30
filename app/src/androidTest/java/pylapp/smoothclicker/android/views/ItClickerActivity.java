@@ -57,7 +57,7 @@ import static android.support.test.InstrumentationRegistry.getInstrumentation;
  * Class to use to make UI tests with UIAutomator and Espresso of the ClickerActivity.
  *
  * @author pylapp
- * @version 1.1.1
+ * @version 1.2.0
  * @since 11/04/2016
  * @see AbstractTest
  */
@@ -460,7 +460,7 @@ public class ItClickerActivity extends AbstractTest {
     /**
      * Test the start button without having defined clicks
      *
-     * <i>If the button to start the click process is clicked, and no point ahs been defined, a snackbar with an error message  have to be displayed</i>
+     * <i>If the button to start the click process is clicked, and no point has been defined, a snackbar with an error message has to be displayed</i>
      */
     @Test
     public void startButtonWithoutDefinedPoints(){
@@ -564,9 +564,6 @@ public class ItClickerActivity extends AbstractTest {
         // Go back to the main activity
         pressBack();
         w(2000);
-
-        onView(withId(R.id.clickerActivityMainLayout)).perform(swipeUp());
-        w(1000);
 
         // Check the spinner containing all the selected points
         onView(withId(R.id.sPointsToClick)).perform(click());

@@ -45,6 +45,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- ************************** -->
+        <!-- Row 0 : the list of points -->
+        <!-- ************************** -->
+
+        <include layout="@layout/content_clicker_points"/>
+
         <!-- ********************** -->
         <!-- Row 1 : the unit time  -->
         <!-- ********************** -->
@@ -99,12 +105,6 @@
         <!-- ********************************* -->
 
         <include layout="@layout/content_clicker_notifications"/>
-
-        <!-- *************************** -->
-        <!-- Row 11 : the list of points -->
-        <!-- *************************** -->
-
-        <include layout="@layout/content_clicker_points"/>
 
     </LinearLayout>
 
