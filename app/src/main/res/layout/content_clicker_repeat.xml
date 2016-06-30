@@ -49,6 +49,7 @@
             android:textSize="@dimen/widget_label_text_size"
             android:text="@string/widget_repeat"
             android:textColor="@color/colorAccent"
+            android:id="@+id/tvRepeat"
             android:labelFor="@+id/etRepeat"/>
 
         <EditText

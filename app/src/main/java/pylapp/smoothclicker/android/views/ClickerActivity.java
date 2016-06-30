@@ -50,6 +50,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.SwitchCompat;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import pylapp.smoothclicker.android.clickers.ATClicker;
@@ -83,7 +84,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.26.0
+ * @version 2.27.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -1014,6 +1015,79 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             public void onCheckedChanged( CompoundButton buttonView, boolean isChecked ){
                 EditText etRepeat = (EditText) findViewById(R.id.etRepeat);
                 etRepeat.setEnabled( ! isChecked );
+            }
+        });
+
+        // Some things for accessibility
+        TextView tv = (TextView) findViewById(R.id.tvDelay);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                EditText et = (EditText) findViewById(R.id.etDelay);
+                et.requestFocus();
+            }
+        });
+
+        tv = (TextView) findViewById(R.id.tvTimeBeforeEachClick);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                EditText et = (EditText) findViewById(R.id.etTimeBeforeEachClick);
+                et.requestFocus();
+            }
+        });
+
+        tv = (TextView) findViewById(R.id.tvRepeat);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                EditText et = (EditText) findViewById(R.id.etRepeat);
+                et.requestFocus();
+            }
+        });
+
+        tv = (TextView) findViewById(R.id.tvEndlessRepeat);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                SwitchCompat sc = (SwitchCompat) findViewById(R.id.scEndlessRepeat);
+                sc.setChecked(!sc.isChecked());
+            }
+        });
+
+        tv = (TextView) findViewById(R.id.tvVibrateOnStart);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                SwitchCompat sc = (SwitchCompat) findViewById(R.id.scVibrateOnStart);
+                sc.setChecked(!sc.isChecked());
+            }
+        });
+
+        tv = (TextView) findViewById(R.id.tvVibrateOnClick);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                SwitchCompat sc = (SwitchCompat) findViewById(R.id.scVibrateOnClick);
+                sc.setChecked(!sc.isChecked());
+            }
+        });
+
+        tv = (TextView) findViewById(R.id.tvRingOnClick);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                SwitchCompat sc = (SwitchCompat) findViewById(R.id.scRingOnClick);
+                sc.setChecked(!sc.isChecked());
+            }
+        });
+
+        tv = (TextView) findViewById(R.id.tvNotifOnClick);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View v ){
+                SwitchCompat sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
+                sc.setChecked(!sc.isChecked());
             }
         });
 
