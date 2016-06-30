@@ -61,7 +61,8 @@
     <string name="info_message_request_su">Ask for the SU grant</string>
     <string name="info_message_su_granted">The SU authorization has been granted :-)</string>
     <string name="info_message_new_point">Select new points on the screen</string>
-    <string name="info_message_invite_new_points">Select several points and then back</string>
+    <string name="info_message_invite_new_points">Click on the screen to select the point, then back</string>
+    <string name="info_message_invite_new_random_points">Long click on the screen to select a random point, then back</string>
     <string name="info_export_success">Export has been made</string>
     <string name="info_export_fail">Export has failed</string>
     <string name="info_import_success">Import has been made</string>

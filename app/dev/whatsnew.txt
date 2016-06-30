@@ -99,6 +99,7 @@ V2.0.0 : Incredible Indri [on going]
     - Force the screen to be on if off
     - Keep the screen on if needed
     - Use a Shell script using ADB commands to unlock the screen if needed
+    - Possible to define random points when long click on the screen
     - [on going] Support for landscape mode for handsets and tablets
     - [on going] More support for 6", 7" and 10" screens devices
 
