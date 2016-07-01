@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Class which consists on exporting the configuration of the app in a JSON file
  *
  * @author pylapp
- * @version 1.5.0
+ * @version 1.6.0
  * @since 26/05/2016
  * @see ConfigExporter
  */
@@ -271,6 +271,9 @@ public class JsonConfigExporter implements ConfigExporter {
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_COMMENT).append("\"            : ").append("\"").append(new Date()).append("\",\n");
         sb.append("\"").append(JsonFileParser.JSON_OBJECT_UNIT_TIME).append("\"        : ").append("\"");
         switch ( mUnitTime ){
+            case MILLISECOND:
+                sb.append("ms").append("\",\n");
+                break;
             case MINUTE:
                 sb.append("m").append("\",\n");
                 break;

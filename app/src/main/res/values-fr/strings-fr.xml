@@ -80,6 +80,7 @@
     <string name="widget_no_points">Pas encore de point sélectionné</string>
     <string name="widget_type_of_start">Départ</string>
     <string name="widget_unit_time">Temps</string>
+    <string name="widget_unit_time_ms">milliseconde</string>
     <string name="widget_unit_time_s">seconde</string>
     <string name="widget_unit_time_m">minute</string>
     <string name="widget_unit_time_h">heure</string>
