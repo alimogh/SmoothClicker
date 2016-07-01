@@ -42,7 +42,6 @@ import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import android.support.design.widget.FloatingActionButton;
@@ -84,7 +83,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.28.0
+ * @version 2.29.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -232,7 +231,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
         boolean isNotifOnClick = sc.isChecked();
 
-        //RadioGroup rg = (RadioGroup) findViewById(R.id.rgUnitsTime);
+        //RadioButtonGroupTableLayout rg = (RadioButtonGroupTableLayout) findViewById(R.id.rgUnitsTime);
         RadioButtonGroupTableLayout rbgtl = (RadioButtonGroupTableLayout) findViewById(R.id.rgUnitsTime);
         int checkedRbUnitTimeId = rbgtl.getCheckedRadioButtonId();
 
@@ -399,7 +398,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         SwitchButton sTypeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         boolean isDelayed = sTypeOfStart.isChecked();
 
-        RadioGroup rg = (RadioGroup) findViewById(R.id.rgUnitsTime);
+        RadioButtonGroupTableLayout rg = (RadioButtonGroupTableLayout) findViewById(R.id.rgUnitsTime);
         int checkedRbUnitTimeId = rg.getCheckedRadioButtonId();
 
         EditText et = (EditText) findViewById(R.id.etDelay);
@@ -543,6 +542,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         ConfigImporter.UnitTime unitTime = importer.getUnitTime();
         RadioButton unitTimeRadioButton = null;
         switch ( unitTime ){
+            case MILLISECOND:
+                unitTimeRadioButton = (RadioButton) findViewById(R.id.rbUnitTimeMs);
+                break;
             case HOUR:
                 unitTimeRadioButton = (RadioButton) findViewById(R.id.rbUnitTimeH);
                 break;
@@ -554,7 +556,10 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
                 unitTimeRadioButton = (RadioButton) findViewById(R.id.rbUnitTimeS);
                 break;
         }
+        RadioButtonGroupTableLayout rg = (RadioButtonGroupTableLayout) findViewById(R.id.rgUnitsTime);
+        rg.reset();
         unitTimeRadioButton.setChecked(true);
+        rg.setActiveRadioButton(unitTimeRadioButton);
         SwitchButton typeOfStart = (SwitchButton) findViewById(R.id.sTypeOfStartDelayed);
         typeOfStart.setChecked(importer.getStartDelayed());
         EditText et = (EditText) findViewById(R.id.etDelay);
