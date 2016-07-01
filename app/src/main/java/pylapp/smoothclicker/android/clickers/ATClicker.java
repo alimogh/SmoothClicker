@@ -30,6 +30,7 @@ import android.content.SharedPreferences;
 
 import pylapp.smoothclicker.android.R;
 import pylapp.smoothclicker.android.notifiers.NotificationsManager;
+import pylapp.smoothclicker.android.tools.config.ConfigImporter;
 import pylapp.smoothclicker.android.tools.screen.AsyncTaskForScreen;
 import pylapp.smoothclicker.android.utils.Config;
 import pylapp.smoothclicker.android.tools.Logger;
@@ -44,7 +45,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 2.7.0
+ * @version 3.0.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -76,6 +77,10 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      * A factor to apply to the sleep time according to the unit time in use
      */
     private long mUnitTimeFactor;
+    /**
+     * The unit time in use
+     */
+    private ConfigImporter.UnitTime mUnitTime;
     /**
      * The type of start
      */
@@ -149,16 +154,24 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         SharedPreferences sp = mContext.getSharedPreferences(Config.SMOOTHCLICKER_SHARED_PREFERENCES_NAME, Config.SP_ACCESS_MODE);
         int unitTime = sp.getInt(Config.SP_KEY_UNIT_TIME, Config.DEFAULT_TIME_UNIT_SELECTION);
         switch ( unitTime ){
+            case R.id.rbUnitTimeMs:
+                mUnitTime = ConfigImporter.UnitTime.MILLISECOND;
+                mUnitTimeFactor = 1 * 0;
+                break;
             case R.id.rbUnitTimeS:
+                mUnitTime = ConfigImporter.UnitTime.SECOND;
                 mUnitTimeFactor = 1 * 1;
                 break;
             case R.id.rbUnitTimeM:
+                mUnitTime = ConfigImporter.UnitTime.MINUTE;
                 mUnitTimeFactor = 1 * 60;
                 break;
             case R.id.rbUnitTimeH:
+                mUnitTime = ConfigImporter.UnitTime.HOUR;
                 mUnitTimeFactor = 1 * 60 * 60;
                 break;
             default:
+                mUnitTime = ConfigImporter.UnitTime.SECOND;
                 mUnitTimeFactor = 1 * 1;
                 break;
         }
@@ -238,14 +251,32 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
             Logger.d(LOG_TAG, "The start is delayed, will sleep : "+mDelay);
-            final long count = mDelay * mUnitTimeFactor;
-            // Loop for each unit time
-            for ( int i = 1; i <= count; i++ ){
-                try {
-                    if ( checkIfCancelled() ) return null;
-                    NotificationsManager.getInstance(mContext).makeCountDownNotification(count-i);
-                    Thread.sleep(SLEEP_TIME);
-                } catch ( InterruptedException ie ){ie.printStackTrace();}
+            // In case we use the unit time s / m or h, use "seconds"-based count for delays
+            if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ){
+                final long count = mDelay * mUnitTimeFactor;
+                // Loop for each unit time
+                for (int i = 1; i <= count; i++) {
+                    try {
+                        if (checkIfCancelled()) return null;
+                        NotificationsManager.getInstance(mContext).makeCountDownNotification(count - i);
+                        Thread.sleep(SLEEP_TIME);
+                    } catch (InterruptedException ie) {
+                        ie.printStackTrace();
+                    }
+                }
+            // In case we use the unit time ms
+            } else {
+                final long count = mDelay;
+                // Loop for each unit time
+                for (int i = 1; i <= count; i++) {
+                    try {
+                        if (checkIfCancelled()) return null;
+                        NotificationsManager.getInstance(mContext).makeCountDownNotification(count - i);
+                        Thread.sleep(1);
+                    } catch (InterruptedException ie) {
+                        ie.printStackTrace();
+                    }
+                }
             }
             NotificationsManager.getInstance(mContext).stopAllNotifications();
         }
@@ -270,8 +301,9 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                 // Should we wait before the next action ?
                 if ( mTimeGap > 0 ){
                     try {
-                        Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
-                        Thread.sleep(mTimeGap*SLEEP_TIME);
+                        Logger.d(LOG_TAG, "Should wait before each process occurrences : " + mTimeGap);
+                        if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ) Thread.sleep(mTimeGap * SLEEP_TIME);
+                        Thread.sleep(mTimeGap * (SLEEP_TIME/1000));
                     } catch ( InterruptedException ie ){ie.printStackTrace();}
                 } else {
                     Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
@@ -294,7 +326,8 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                     for ( int j = 1; j <= mTimeGap*mUnitTimeFactor; j++ ){
                         try {
                             if ( checkIfCancelled() ) return null;
-                            Thread.sleep(SLEEP_TIME);
+                            if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ) Thread.sleep(SLEEP_TIME);
+                            else Thread.sleep(SLEEP_TIME/1000);
                         } catch ( InterruptedException ie ){ie.printStackTrace();}
                     }
                 } else {
@@ -413,7 +446,8 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                 for ( int k = 1; k <= mTimeGap*mUnitTimeFactor; k++ ){
                     try {
                         if ( checkIfCancelled() ) return;
-                        Thread.sleep(SLEEP_TIME);
+                        if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ) Thread.sleep(SLEEP_TIME);
+                        else Thread.sleep(SLEEP_TIME/1000);
                     } catch ( InterruptedException ie ){ie.printStackTrace();}
                 }
             } else {

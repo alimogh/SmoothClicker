@@ -28,10 +28,8 @@ LAST TASK : #91
 TO DO
 
     *Task #90 : [v2.0.0] Time ms for click (to add to s / m / h) with default values in fields which will be disabled (prevent from problems)
-                        - main view
-                        - json importer / exporter / parser
-                        - tests
-                        - clicker
+                        --> test this feature
+                        --> update and check all unit and instrumented tests
     Task #79 : [v2.0.0] Update i18n files: regenerate STRING and ARRAY values files from the english one
     Task #78 : [v2.0.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait
     Task #91 : [v2.0.0] Update readme and wiki (new features, sue the modes, je files, ...)
