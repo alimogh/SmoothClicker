@@ -417,9 +417,11 @@ What:
     refactor: the main view
     chore: closed tasks #86, #87, #89
 ###################################################
-Date:
+Date: 01/07/2016
 What:
-
+    feat: time MS for unit time
+    doc: update HTML JavaDOC
+    chore: new run of Lint, code analysis, unit tests and instrumented tests
 ###################################################
 Date:
 What:
