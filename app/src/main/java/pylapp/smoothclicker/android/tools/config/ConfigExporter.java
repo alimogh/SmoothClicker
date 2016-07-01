@@ -33,7 +33,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
  * Interface which defines the behaviour an object must have if it wants to save the app's config
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 26/05/2016
  */
 public interface ConfigExporter {
@@ -53,61 +53,61 @@ public interface ConfigExporter {
      *
      * @param isStartDelayed - If the start is delayed
      */
-    void setStartDelayed(boolean isStartDelayed);
+    void setStartDelayed( boolean isStartDelayed );
 
     /**
      *
      * @param delayInS - The delay in second
      */
-    void setDelay(int delayInS);
+    void setDelay( int delayInS );
 
     /**
      *
      * @param timeGapInS - The time to wait (in second) between each click
      */
-    void setTimeGap(int timeGapInS);
+    void setTimeGap( int timeGapInS );
 
     /**
      *
      * @param repeat - The amount of repeat to do
      */
-    void setRepeat(int repeat);
+    void setRepeat( int repeat );
 
     /**
      *
      * @param isEndlessRepeat - If the repeat will be endless
      */
-    void setEndlessRepeat(boolean isEndlessRepeat);
+    void setEndlessRepeat( boolean isEndlessRepeat );
 
     /**
      *
      * @param isVibrateOnStart - If the device must vibrate on start
      */
-    void setVibrateOnStart(boolean isVibrateOnStart);
+    void setVibrateOnStart( boolean isVibrateOnStart );
 
     /**
      *
      * @param isVibrateOnClick - If the device must vibrate on each click
      */
-    void setVibrateOnCLick(boolean isVibrateOnClick);
+    void setVibrateOnCLick( boolean isVibrateOnClick );
 
     /**
      *
      * @param isRingOnClick - If the device must play a sound on each click
      */
-    void setRingOnClick(boolean isRingOnClick);
+    void setRingOnClick( boolean isRingOnClick );
 
     /**
      *
      * @param isNotificationOnClick - If the device must have a notification on click
      */
-    void setNotificationOnCLick(boolean isNotificationOnClick);
+    void setNotificationOnCLick( boolean isNotificationOnClick );
 
     /**
      *
      * @param pointsToClickOn - The list of points to click on
      */
-    void setPointsToClickOn(List<PointsListAdapter.Point> pointsToClickOn);
+    void setPointsToClickOn( List<PointsListAdapter.Point> pointsToClickOn );
 
     /**
      *  Writes the config
@@ -137,6 +137,10 @@ public interface ConfigExporter {
      * The unit time in use
      */
     enum UnitTime {
+        /**
+         * ms
+         */
+        MILLISECOND,
         /**
          * s
          */

@@ -56,7 +56,7 @@ public class JsonConfigImporter implements ConfigImporter {
      * ********** */
 
     /**
-     * The unit time in use (s, m or h)
+     * The unit time in use (ms, s, m or h)
      */
     private UnitTime mUnitTime;
 
@@ -247,7 +247,7 @@ public class JsonConfigImporter implements ConfigImporter {
 
     /**
      * Reads the configuration from the JSON file
-     * @throws ConfigImportException - When something wrong occured during the import
+     * @throws ConfigImportException - When something wrong occurred during the import
      */
     @Override
     public void readConfig() throws ConfigImportException {
@@ -289,6 +289,9 @@ public class JsonConfigImporter implements ConfigImporter {
         try {
             String unitTime = jsonData.getString(JsonFileParser.JSON_OBJECT_UNIT_TIME);
             switch ( unitTime ){
+                case "ms":
+                    mUnitTime = UnitTime.MILLISECOND;
+                    break;
                 case "m":
                     mUnitTime = UnitTime.MINUTE;
                     break;

@@ -52,7 +52,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
      </pre>
  *
  * @author pylapp
- * @version 1.5.0
+ * @version 1.6.0
  * @since 04/05/2016
  */
 public class JsonFileParser {
@@ -307,6 +307,10 @@ public class JsonFileParser {
             radioButtonUnitTimeId = R.id.rbUnitTimeM;
         } else if ( "h".equals(unitTime) ){
             radioButtonUnitTimeId = R.id.rbUnitTimeH;
+        } else if ( "ms".equals(unitTime) ){
+            radioButtonUnitTimeId = R.id.rbUnitTimeMs;
+        } else {
+            radioButtonUnitTimeId = R.id.rbUnitTimeS;
         }
         editor.putInt(Config.SP_KEY_UNIT_TIME, radioButtonUnitTimeId);
         editor.putBoolean(Config.SP_KEY_START_TYPE_DELAYED, isDelayed);

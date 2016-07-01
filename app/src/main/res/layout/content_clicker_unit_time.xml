@@ -49,41 +49,96 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/widget_label_text_size" />
 
-        <RadioGroup
+        <pylapp.smoothclicker.android.views.RadioButtonGroupTableLayout
             android:id="@+id/rgUnitsTime"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checkedButton="@+id/rbUnitTimeS"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/rbUnitTimeS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/widget_radio_button_padding"
-                android:paddingRight="@dimen/widget_radio_button_padding"
-                android:textSize="@dimen/widget_label_text_size"
-                android:text="@string/widget_unit_time_s" />
+            <TableRow>
+                <RadioButton
+                    android:id="@+id/rbUnitTimeMs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/widget_radio_button_padding"
+                    android:paddingRight="@dimen/widget_radio_button_padding"
+                    android:textSize="@dimen/widget_label_text_size"
+                    android:text="@string/widget_unit_time_ms" />
 
-            <RadioButton
-                android:id="@+id/rbUnitTimeM"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/widget_radio_button_padding"
-                android:paddingRight="@dimen/widget_radio_button_padding"
-                android:textSize="@dimen/widget_label_text_size"
-                android:text="@string/widget_unit_time_m" />
+                <RadioButton
+                    android:id="@+id/rbUnitTimeS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/widget_radio_button_padding"
+                    android:paddingRight="@dimen/widget_radio_button_padding"
+                    android:textSize="@dimen/widget_label_text_size"
+                    android:text="@string/widget_unit_time_s"
+                    android:checked="true"/>
+            </TableRow>
 
-            <RadioButton
-                android:id="@+id/rbUnitTimeH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/widget_radio_button_padding"
-                android:paddingRight="@dimen/widget_radio_button_padding"
-                android:textSize="@dimen/widget_label_text_size"
-                android:text="@string/widget_unit_time_h" />
+            <TableRow>
+                <RadioButton
+                    android:id="@+id/rbUnitTimeM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/widget_radio_button_padding"
+                    android:paddingRight="@dimen/widget_radio_button_padding"
+                    android:textSize="@dimen/widget_label_text_size"
+                    android:text="@string/widget_unit_time_m" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbUnitTimeH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/widget_radio_button_padding"
+                    android:paddingRight="@dimen/widget_radio_button_padding"
+                    android:textSize="@dimen/widget_label_text_size"
+                    android:text="@string/widget_unit_time_h" />
+            </TableRow>
+
+        </pylapp.smoothclicker.android.views.RadioButtonGroupTableLayout>
+        <!--<RadioGroup-->
+            <!--android:id="@+id/rgUnitsTime"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:checkedButton="@+id/rbUnitTimeS">-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rbUnitTimeMs"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="@dimen/widget_radio_button_padding"-->
+                <!--android:paddingRight="@dimen/widget_radio_button_padding"-->
+                <!--android:textSize="@dimen/widget_label_text_size"-->
+                <!--android:text="@string/widget_unit_time_ms" />-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rbUnitTimeS"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="@dimen/widget_radio_button_padding"-->
+                <!--android:paddingRight="@dimen/widget_radio_button_padding"-->
+                <!--android:textSize="@dimen/widget_label_text_size"-->
+                <!--android:text="@string/widget_unit_time_s" />-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rbUnitTimeM"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="@dimen/widget_radio_button_padding"-->
+                <!--android:paddingRight="@dimen/widget_radio_button_padding"-->
+                <!--android:textSize="@dimen/widget_label_text_size"-->
+                <!--android:text="@string/widget_unit_time_m" />-->
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/rbUnitTimeH"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="@dimen/widget_radio_button_padding"-->
+                <!--android:paddingRight="@dimen/widget_radio_button_padding"-->
+                <!--android:textSize="@dimen/widget_label_text_size"-->
+                <!--android:text="@string/widget_unit_time_h" />-->
+
+        <!--</RadioGroup>-->
 
     </LinearLayout>
 

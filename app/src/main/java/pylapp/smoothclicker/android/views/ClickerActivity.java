@@ -84,7 +84,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.27.0
+ * @version 2.28.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -232,8 +232,9 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
         sc = (SwitchCompat) findViewById(R.id.scNotifOnClick);
         boolean isNotifOnClick = sc.isChecked();
 
-        RadioGroup rg = (RadioGroup) findViewById(R.id.rgUnitsTime);
-        int checkedRbUnitTimeId = rg.getCheckedRadioButtonId();
+        //RadioGroup rg = (RadioGroup) findViewById(R.id.rgUnitsTime);
+        RadioButtonGroupTableLayout rbgtl = (RadioButtonGroupTableLayout) findViewById(R.id.rgUnitsTime);
+        int checkedRbUnitTimeId = rbgtl.getCheckedRadioButtonId();
 
         // Save the values
 
