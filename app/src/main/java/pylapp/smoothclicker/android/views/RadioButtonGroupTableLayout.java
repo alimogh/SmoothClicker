@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.R;
  * in a radio button group/
  *
  * @author pylapp
- * @version 1.0.0
+ * @version 1.1.0
  * @since 01/07/2016
  */
 public class RadioButtonGroupTableLayout extends TableLayout implements View.OnClickListener {
@@ -129,6 +129,28 @@ public class RadioButtonGroupTableLayout extends TableLayout implements View.OnC
     /* ************* *
      * OTHER METHODS *
      * ************* */
+
+    /**
+     *
+     * @param rb - The active radio button
+     */
+    public void setActiveRadioButton( RadioButton rb ){
+        mActiveRadioButton = rb;
+    }
+
+    /**
+     * Uncheck all buttons
+     */
+    public void reset(){
+        RadioButton rb = (RadioButton) findViewById(R.id.rbUnitTimeH);
+        rb.setChecked(false);
+        rb = (RadioButton) findViewById(R.id.rbUnitTimeM);
+        rb.setChecked(false);
+        rb = (RadioButton) findViewById(R.id.rbUnitTimeS);
+        rb.setChecked(false);
+        rb = (RadioButton) findViewById(R.id.rbUnitTimeMs);
+        rb.setChecked(false);
+    }
 
     /**
      *
