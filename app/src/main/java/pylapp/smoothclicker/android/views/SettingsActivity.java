@@ -31,11 +31,15 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.*;
+import android.text.InputFilter;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
@@ -48,7 +52,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.10.0
+ * @version 1.12.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -282,13 +286,19 @@ public class SettingsActivity extends AppCompatActivity {
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange( Preference preference, Object newValue ){
-                    if ( newValue == null ) return false;
+                    if ( newValue == null) return false;
                     String newVal = newValue.toString();
+                    if ( newVal.length() <= 0 ) return false;
                     Preference pref = findPreference(PREF_KEY_FILE_POINTS_NAME);
                     pref.setSummary(newVal);
                     return true;
                 }
             });
+
+            final int MIN_SIZE_FILE_NAME = 1;
+            final int MAX_SIZE_FILE_NAME = 100;
+            EditText et = ((EditTextPreference) pref).getEditText();
+            et.setFilters( new InputFilter[]{ new pylapp.smoothclicker.android.views.InputFilter(MIN_SIZE_FILE_NAME, MAX_SIZE_FILE_NAME)} );
 
             /*
              * See the file containing the configuration to apply
@@ -321,11 +331,14 @@ public class SettingsActivity extends AppCompatActivity {
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     if ( newValue == null ) return false;
                     String newVal = newValue.toString();
+                    if ( newVal.length() <= 0 ) return false;
                     Preference pref = findPreference(PREF_KEY_FILE_CONFIG_NAME);
                     pref.setSummary(newVal);
                     return true;
                 }
             });
+            et = ((EditTextPreference) pref).getEditText();
+            et.setFilters(new InputFilter[]{new pylapp.smoothclicker.android.views.InputFilter(MIN_SIZE_FILE_NAME, MAX_SIZE_FILE_NAME)});
 
             /*
              * See the file containing the unlock script
@@ -356,13 +369,16 @@ public class SettingsActivity extends AppCompatActivity {
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    if ( newValue == null ) return false;
+                    if (newValue == null) return false;
                     String newVal = newValue.toString();
+                    if ( newVal.length() <= 0 ) return false;
                     Preference pref = findPreference(PREF_KEY_FILE_UNLOCK_NAME);
                     pref.setSummary(newVal);
                     return true;
                 }
             });
+            et = ((EditTextPreference) pref).getEditText();
+            et.setFilters(new InputFilter[]{new pylapp.smoothclicker.android.views.InputFilter(MIN_SIZE_FILE_NAME, MAX_SIZE_FILE_NAME)});
 
             /*
              * See the file containing the picture of the screen which should match a screen-shot to trigger the click process
@@ -393,13 +409,16 @@ public class SettingsActivity extends AppCompatActivity {
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    if ( newValue == null ) return false;
+                    if (newValue == null) return false;
                     String newVal = newValue.toString();
+                    if ( newVal.length() <= 0 ) return false;
                     Preference pref = findPreference(PREF_KEY_FILE_TRIGGER_NAME);
                     pref.setSummary(newVal);
                     return true;
                 }
             });
+            et = ((EditTextPreference) pref).getEditText();
+            et.setFilters(new InputFilter[]{new pylapp.smoothclicker.android.views.InputFilter(MIN_SIZE_FILE_NAME, MAX_SIZE_FILE_NAME)});
 
         } // End of public void onCreate( Bundle savedInstanceState )
 

@@ -38,7 +38,7 @@ import android.os.Vibrator;
      </pre>
  *
  * @author pylapp
- * @version 1.2.0
+ * @version 1.3.0
  * @since 16/03/2016
  */
 public class VibrationNotifier {
@@ -68,7 +68,7 @@ public class VibrationNotifier {
     /**
      * The duration of a vibration in ms if the device must vibrate on each click
      */
-    public static final int VIBRATE_ON_CLICK_DURATION = 300;
+    public static final int VIBRATE_ON_CLICK_DURATION = 150;
 
     //private static final String LOG_TAG = VibrationNotifier.class.getSimpleName();
 
