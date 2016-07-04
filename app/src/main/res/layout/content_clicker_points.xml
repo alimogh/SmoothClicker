@@ -55,7 +55,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:textSize="@dimen/widget_label_text_size"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:background="@null"
+            android:dividerHeight="0dp"
+            android:divider="@null" />
 
     </LinearLayout>
 

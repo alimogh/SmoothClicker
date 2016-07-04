@@ -423,9 +423,14 @@ What:
     doc: update HTML JavaDOC
     chore: new run of Lint, code analysis, unit tests and instrumented tests
 ###################################################
-Date:
+Date: 04/07/2016
 What:
-
+    chore: change the vibration duration (150ms and not 300ms)
+    fix: now the notifications are made only if the click is done (changed the command line by adding to it a result token)
+    fix: filters the string value in preferences about files' names (minimum length)
+    chore: closed task #90
+    chore: new run of IT, UT and code analysis
+    doc: new build of HTML JavaDoc
 ###################################################
 Date:
 What:

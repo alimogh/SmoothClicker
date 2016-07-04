@@ -39,13 +39,14 @@ import pylapp.smoothclicker.android.views.StandaloneActivity;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 /**
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 3.0.0
+ * @version 3.1.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -121,6 +122,11 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      * The time to sleep for the task
      */
     private static final int SLEEP_TIME = 1000;
+
+    /**
+     * A token the command line to execute the click should display so as to free the async task and let it make notifications
+     */
+    private static final String KEYWORD_SHELL_CLICK_DONE = "SMOOTHCLICKER_CLICK_DONE";
 
     private static final String LOG_TAG = ATClicker.class.getSimpleName();
 
@@ -268,7 +274,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
             } else {
                 final long count = mDelay;
                 // Loop for each unit time
-                for (int i = 1; i <= count; i++) {
+                for ( int i = 1; i <= count; i++ ){
                     try {
                         if (checkIfCancelled()) return null;
                         NotificationsManager.getInstance(mContext).makeCountDownNotification(count - i);
@@ -421,11 +427,18 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
             int x = p.x;
             int y = p.y;
 
-            String shellCmd = "/system/bin/input tap " + x + " " + y + "\n";
+            String shellCmd = "/system/bin/input tap " + x + " " + y + " && echo \""+KEYWORD_SHELL_CLICK_DONE+"\" \n";
             Logger.d(LOG_TAG, "The system command will be executed : " + shellCmd);
             try {
                 if ( mProcess == null || mOutputStream == null ) throw new IllegalStateException("The process or its stream is not defined !");
                 mOutputStream.writeBytes(shellCmd);
+                InputStream inputStream = mProcess.getInputStream();
+                byte[] buffer = new byte[1024];
+                while ( true ){ // FIXME May be hazardous
+                    int read = inputStream.read(buffer);
+                    String out = new String(buffer, 0, read);
+                    if (out.contains(KEYWORD_SHELL_CLICK_DONE)) break;
+                }
                 NotificationsManager.getInstance(mContext).makeNewClickNotifications(x, y);
             } catch ( IOException ioe ){
                 Logger.e(LOG_TAG, "Exception thrown during tap execution : " + ioe.getMessage());
