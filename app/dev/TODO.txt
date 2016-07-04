@@ -23,10 +23,11 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #91
+LAST TASK : #92
 
 TO DO
 
+    Task #93 : [v2.0.0] Replace material arc menu by bottom action bar / add option to use on of them or the other one?
     *Task #90 : [v2.0.0] Time ms for click (to add to s / m / h) with default values in fields which will be disabled (prevent from problems)
                         --> test this feature
                         --> update and check all unit and instrumented tests
