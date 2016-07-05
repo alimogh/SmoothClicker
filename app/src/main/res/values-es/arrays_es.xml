@@ -31,10 +31,10 @@
         <item>Archivos JSON</item>
         <item>Archivos JSON y arranque según la pantalla</item>
     </string-array>
-    
+
     <string-array name="standalone_mode_descriptions">
-        <item>Uso de archivos sc_points.json y sc_config.json</item>
-        <item>Uso de archivos sc_points.json, sc_config.json y sc_trigger.png</item>
+        <item>Uso los dos archivos JSON para definir tup el proceso haga clic en</item>
+        <item>Utilizar los dos archivos JSON y la captura de pantalla para configurar e iniciar el proceso haga clic en</item>
     </string-array>
     
     <string-array name="introscreen_titles">

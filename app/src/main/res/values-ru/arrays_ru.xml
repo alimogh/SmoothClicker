@@ -31,10 +31,10 @@
         <item>JSON файлов</item>
         <item>JSON файлов и загрузки согласно экрана</item>
     </string-array>
-    
+
     <string-array name="standalone_mode_descriptions">
-        <item>Использовать файлы sc_points.json и sc_config.json</item>
-        <item>Использовать файлы sc_points.json, sc_config.json и sc_trigger.png</item>
+        <item>Использование двух JSON файлов чтобы задать туп процесса нажмите</item>
+        <item>Используйте два файла JSON и захвата экрана для установки и запуска процесса нажмите</item>
     </string-array>
     
     <string-array name="introscreen_titles">

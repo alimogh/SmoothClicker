@@ -37,8 +37,8 @@
     </string-array>
 
     <string-array name="standalone_mode_descriptions">
-        <item>Use sc_points.json and sc_config.json files</item>
-        <item>Use sc_points.json, sc_config.json and sc_trigger.png files</item>
+        <item>Use the two JSON files to set tup the click process</item>
+        <item>Use the two JSON files and the screen capture to set up and start the click process</item>
     </string-array>
 
     <!-- ********************** -->
