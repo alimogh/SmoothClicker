@@ -39,7 +39,7 @@
             android:key="pref_key_settings_shaketoclean"
             android:title="@string/pref_settings_shaketoclean_title"
             android:summary="@string/pref_settings_shaketoclean_summary"
-            android:defaultValue="true"/>
+            android:defaultValue="false"/>
 
         <!--&lt;!&ndash; Start standalone mode on boot &ndash;&gt;-->
         <!--<CheckBoxPreference-->
@@ -91,7 +91,7 @@
             android:checked="true"
             android:title="@string/pref_key_unlockscript_title"
             android:summary="@string/pref_key_unlockscript_summary"
-            android:defaultValue="true"/>
+            android:defaultValue="false"/>
 
     </PreferenceCategory>
 
@@ -109,7 +109,7 @@
             android:title="@string/pref_settings_prthreshold_title"
             android:summary="@string/pref_settings_prthreshold_summary"
             android:enabled="true"
-            android:defaultValue="10"
+            android:defaultValue="20"
             sample:msbp_minValue="1"
             sample:msbp_maxValue="100"
             sample:msbp_interval="1"
