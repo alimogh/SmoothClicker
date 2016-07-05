@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     MIT License
 
@@ -24,149 +26,146 @@
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
-
-    <!-- For the app -->
-    <string name="app_name">Smooth Clicker</string>
-    <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
-    <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
-    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-
-	<!-- The standalone activity -->
-	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
-	<string name="ninja_init_config">Autonomă: Valorile de configurare sunt culese &#8230;</string>
-	<string name="ninja_init_points">Autonomă: Puncte să faceți clic pe sunt culese &#8230;</string>
-	<string name="ninja_start_click_process">Autonomă: Procesul de clic este de pornire &#8230;</string>
-
-    <!-- Menu -->
+	<string name="app_name">Smooth Clicker</string>
+	<string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+	<string name="app_author">https://twitter.com/pylapp</string>
+	<string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+	<string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
+	<string name="app_name_standalone">Smooth Clickerr (independent)</string>
+	<string name="standalone_init_config">Configurare valori sunt culese&#8230;</string>
+	<string name="standalone_init_points">Se culeg puncte să faceţi clic pe&#8230;</string>
+	<string name="standalone_start_click_process">Mod independent este începând&#8230;</string>
+	<string name="standalone_bad_action">Woops&#8230;, nu a folosit o acţiune bună pentru a declanşa această activitate!</string>
+	<string name="app_name_ninja">Smooth Clickerr (independent)</string>
 	<string name="action_exit">Ieşire</string>
 	<string name="action_settings">Setări</string>
 	<string name="action_clean_points">Sterge punctele selectate</string>
 	<string name="action_clean_all">Resetarea valorilor şi şterge punctele selectate</string>
-
-	<string name="info_message_start">Salvaţi configuraţia şi începe procesul de clic</string>
-	<string name="info_message_stop">Opri procesul de clic</string>
+	<string name="action_export">Export în fişierul JSON</string>
+	<string name="action_import">Import din fişier JSON</string>
+	<string name="action_configuration">Configurare</string>
+	<string name="action_standalone">Standalone mode</string>
+	<string name="info_message_start">Salvaţi configuraţia şi începe procesus</string>
+	<string name="info_message_stop">Opriţi toate procesul</string>
 	<string name="info_message_request_su">Solicita acordarea SU</string>
-	<string name="info_message_su_granted">SU autorizaţia a fost acordată :-)</string>
+	<string name="info_message_su_granted">SU a fost acordată :-)</string>
 	<string name="info_message_new_point">Selectaţi puncte noi pe ecran</string>
-	<string name="info_message_invite_new_points">Selectaţi mai multe puncte şi apoi înapoi</string>
-
+	<string name="info_message_invite_new_points">Faceţi clic pe ecran pentru a selecta punctul, apoi înapoi</string>
+	<string name="info_message_invite_new_random_points">Mult timp pe ecran pentru a selecta un punct aleator, faceţi clic pe înapoi</string>
+	<string name="info_export_success">Export a fost făcută</string>
+	<string name="info_export_fail">Exportul nu a reușit</string>
+	<string name="info_import_success">S-a făcut importul</string>
+	<string name="info_import_fail">Importul nu a reuşit</string>
+	<string name="info_standalone_activated">Mod independent va începe</string>
+	<string name="info_standalone_disactivated">Mod independent va opri</string>
 	<string name="error_message_su_not_granted">Nu a fost acordată autorizaţia SU x -)</string>
 	<string name="error_su_missing">A făcut root Android dumneavoastră înainte de a utiliza acest app? Este obligatorie.</string>
 	<string name="error_message_no_click_defined">¯\\_ (Miss_pisy) _ / ¯ clicuri nu definit</string>
 	<string name="error_message_was_not_working">(－‸ლ) Procesul nu este pornit</string>
-
+	<string name="error_nothing_to_open_json">Woops nimic nu poate deschide fişierul .json</string>
+	<string name="error_nothing_to_open_file">Woops nimic nu poate deschide acest fişier</string>
 	<string name="warning_hazard_repeat_endless_title">Operațiunea periculoase</string>
 	<string name="warning_hazard_repeat_endless_content">Sunteţi sigur de a face o repetare fără sfârşit? Această operaţiune poate fi periculos pentru aparatul dvs.</string>
 	<string name="warning_hazard_repeat_endless_no">Nope!</string>
 	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
-
-    <!-- Widgets -->
-	<string name="widget_type_of_start">Pornire întârziată</string>
+	<string name="widget_no_points">Nici un punct selectat încă</string>
+	<string name="widget_type_of_start">Începe</string>
+	<string name="widget_unit_time">Timp</string>
+	<string name="widget_unit_time_ms">milisecunde</string>
+	<string name="widget_unit_time_s">al doilea</string>
+	<string name="widget_unit_time_m">minut</string>
+	<string name="widget_unit_time_h">oră</string>
 	<string name="widget_delay">Întârziere</string>
-	<string name="widget_delay_hint">&#8230; în câteva secunde</string>
 	<string name="widget_speed">Timp înainte de fiecare clic</string>
-	<string name="widget_speed_hint">&#8230; în câteva secunde</string>
 	<string name="widget_repeat">Se repetă</string>
 	<string name="widget_repeat_hint">&#8230; ori</string>
-	<string name="widget_repeat_endless">Fără sfârşit</string>
-	<string name="widget_vibrate_on_start">Vibrează pe start</string>
-	<string name="widget_vibrate_on_click">Vibrează pe click</string>
+	<string name="widget_repeat_endless">Repeta fără sfârşit</string>
+	<string name="widget_vibrate_on_start">Vibreze pe start</string>
+	<string name="widget_vibrate_on_click">Vibreze pe click</string>
 	<string name="widget_delayed_starts">Întârziată</string>
 	<string name="widget_immediate_starts">Acum</string>
 	<string name="widget_xy_coordinates">Puncte să faceţi clic pe</string>
 	<string name="widget_notifications">Notificări</string>
-
-    <!-- Credits -->
-	<string name="credits_app_label">Smooth Clicker</string>
-	<string name="credits_app_desc">App de pylapp</string>
-	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
-	<string name="credits_app_license">Sub licenta MIT</string>
-	<string name="credits_app_personal_page">https://Twitter.com/pylapp</string>
-
-	<string name="credits_logo_label">Cerere logo</string>
-	<string name="credits_logo_desc">Pictograma făcute de Freepik de la www.flaticon.com</string>
-	<string name="credits_logo_url">http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726#Term=Monkey</string>
-	<string name="credits_logo_license">Sub licenta Flaticon de bază</string>
-
-	<string name="credits_mam_label">Material Arc meniu</string>
-	<string name="credits_mam_desc">Bibliotecă de Saurabh Arora</string>
-	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
-	<string name="credits_mam_license">Sub licența Apache v2</string>
-
-	<string name="credits_switchbutton_label">SwitchButton</string>
-	<string name="credits_switchbutton_desc">Bibliotecă de kyleduo</string>
-	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
-	<string name="credits_switchbutton_license">Sub licența Apache v2</string>
-
-	<string name="credits_appintro_label">AppIntro</string>
-	<string name="credits_appintro_desc">Biblioteca de Paolo Rotolo</string>
-	<string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
-	<string name="credits_appintro_license">Sub licența Apache v2</string>
-
-	<string name="credits_icon_flaticon_freepik_label">Icoane</string>
-	<string name="credits_icon_flaticon_freepik_desc">Icoane făcute de Freepik de la www.flaticon.com</string>
-	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/FreePik</string>
-	<string name="credits_icon_flaticon_freepik_license">Sub licenta Flaticon de bază</string>
-	<string name="credits_icon_flaticon_elegantthemes_label">Icoane</string>
-	<string name="credits_icon_flaticon_elegantthemes_desc">Icoane făcute de Elegant Themes la www.flaticon.com</string>
-	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-themes</string>
-	<string name="credits_icon_flaticon_elegantthemes_license">În conformitate cu CC 3.0 de licenţă</string>
-	<string name="credits_icon_flaticon_yannick_label">Icoane</string>
-	<string name="credits_icon_flaticon_yannick_desc">Icoane făcute de Yannick de la www.flaticon.com</string>
-	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/Yannick</string>
-	<string name="credits_icon_flaticon_yannick_license">În conformitate cu CC 3.0 de licenţă</string>
-
-    <!-- Splash screen -->
-	<string name="splashscreen_description">Smooth Clicker</string>
-
-    <!-- Notifications -->
-	<string name="notif_content_title">Smooth Clicker</string>
+	<string name="widget_standalone_dialog_title">Standalone mode</string>
+	<string name="widget_sounds">Inel pe fiecare clic</string>
+	<string name="splashscreen_description">Smooth Clickerr</string>
+	<string name="notif_content_title">Smooth Clickerr</string>
 	<string name="notif_content_text_click_made">Faceţi clic pe nou </string>
-	<string name="notif_content_text_clicks_on_going_app">Făcând clic pe proces se execută (prin app)&#8230; </string>
-	<string name="notif_content_text_clicks_on_going_service">Făcând clic pe proces se execută (prin serviciul de)&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_standalone">Făcând clic pe proces se execută (autonomă)&#8230;</string>
-    <string name="notif_content_text_clicks_stop">S-a oprit procesul făcând clic pe</string>
+	<string name="notif_content_text_clicks_on_going_app">Procesul de clic este traversarea (app)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">Procesul de clic se execută (prin serviciul de)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_standalone">Procesul de clic execută (independent)&#8230;</string>
+	<string name="notif_content_text_clicks_stop">S-a oprit procesul de clic</string>
 	<string name="notif_content_text_clicks_over">Procesului de clic</string>
 	<string name="notif_content_text_su_granted">S-a acordat permisiunea de super-utilizator</string>
 	<string name="notif_content_text_countdown">Începe:</string>
-
-    <!-- Settings / Preferences -->
-	<string name="pref_settings_title">Setări</string>
+	<string name="notif_content_text_watch_over">Procesului de ceas</string>
+	<string name="pref_settings_title">Pagina principală</string>
 	<string name="pref_settings_shaketoclean_title">Se agită pentru a curăţa</string>
 	<string name="pref_settings_shaketoclean_summary">Se agită dispozitivul pentru a face configurarea gol</string>
-
+	<string name="pref_picture_recognition_title">Ecran de recunoaştere</string>
+	<string name="pref_settings_prthreshold_title">Prag</string>
+	<string name="pref_settings_prthreshold_summary">Mai mult de pragul este, sunt mult mai acceptate diferenţe între imaginea de declanşare şi ultimul ecran-shot făcute</string>
+	<string name="pref_settings_prfrequency_title">Timp pentru captare</string>
+	<string name="pref_settings_prfrequency_summary">Cea mai mare este timp pentru capturarea, mai lent va fi sistemul să ia capturi de ecran a dispozitivului pentru a declanşa procesul de clic</string>
+	<string name="pref_app_files">Depozitare</string>
+	<string name="pref_app_files_title">Fişierele folosite de app</string>
+	<string name="pref_app_files_summary">Click pentru a gestiona fişiere în utilizarea</string>
+	<string name="pref_app_files_points_title">Puncte</string>
+	<string name="pref_app_files_points_name">Fişierul care conţine punctele de</string>
+	<string name="pref_app_files_points_content">Citeste</string>
+	<string name="pref_app_files_config_title">Configurare</string>
+	<string name="pref_app_files_config_name">Fişierul care conţine configuraţia</string>
+	<string name="pref_app_files_config_content">Citeste</string>
+	<string name="pref_app_files_unlock_title">Debloca script-ul</string>
+	<string name="pref_app_files_unlock_name">Fişierul care conţine script-ul de deblocare</string>
+	<string name="pref_app_files_unlock_content">Citeste</string>
+	<string name="pref_app_files_trigger_title">Poze pentru declanşare</string>
+	<string name="pref_app_files_trigger_name">Fișier imagine care începe procesul de clic</string>
+	<string name="pref_app_files_trigger_content">Citeste</string>
 	<string name="pref_credits_title">Credite</string>
 	<string name="pref_key_credit_title">Acest app foloseste conţinutul terţe părţi</string>
 	<string name="pref_key_credit_summary">Click aici pentru a afişa licente</string>
-
 	<string name="pref_about_title">Despre</string>
+	<string name="pref_about_subtitle">Smooth Clickerr</string>
+	<string name="pref_about_summary">Click pentru a obţine mai multe</string>
 	<string name="pref_about_version_title">Versiune</string>
-	<string name="pref_about_version_app_title">Smooth Clicker</string>
+	<string name="pref_about_version_app_title">Smooth Clickerr</string>
 	<string name="pref_about_version_app_summary">scris de pylapp - licenta MIT</string>
-
 	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ Simţiţi-vă liber pentru a evalua și comenta app ★</string>
-
-    <!-- Snackbars -->
+	<string name="pref_play_store_summary">★ Simţiţi-vă liber pentru a evalua şi de a comenta app ★</string>
+	<string name="pref_wakescreenbattery_title">Treaz si baterie</string>
+	<string name="pref_key_wakelock_title">Wakelock</string>
+	<string name="pref_key_wakelock_summary">Utilizaţi wakelocks pentru a face aparatul mereu ecran pe (poate reduce mult bateria)</string>
+	<string name="pref_key_forcescreenon_battery_title">Vigoare ecran pe</string>
+	<string name="pref_key_forcescreenon_battery_summary">Atunci când ecranul este dezactivat, porniți-l dacă dispozitivul utilizează bateria sa şi nu de alimentare</string>
+	<string name="pref_unlockscript_title">Debloca</string>
+	<string name="pref_key_unlockscript_title">ADB script-ul</string>
+	<string name="pref_key_unlockscript_summary">Utilizaţi un script particularizat dedicat cu sistem de comenzi pentru a debloca aparatul</string>
+	<string name="pref_root_title">Rădăcină</string>
+	<string name="pref_root_subtitle">Cum să root dispozitivul meu?</string>
+	<string name="pref_root_summary">Click pentru a obţine mai multe</string>
+	<string name="pref_key_root_heimdall_title">Heimdall</string>
+	<string name="pref_key_root_heimdall_summary">Du-te la Heimdall a aparatului cu Linux</string>
+	<string name="pref_key_root_odin_title">Odin</string>
+	<string name="pref_key_root_odin_summary">Du-te la Odin la rădăcină aparat cu Windows</string>
+	<string name="pref_key_root_chainfire_title">Chainfire XDA</string>
+	<string name="pref_key_root_chainfire_summary">Du-te la Chainfire pentru a obţine mai multe cunoştinţe despre procesul de rădăcină</string>
+	<string name="pref_heimdall_url">https://doc.Ubuntu-fr.org/Heimdall</string>
+	<string name="pref_odin_url">http://odindownload.com/</string>
+	<string name="pref_chainfire_url">https://www.chainfire.eu/</string>
+	<string name="pref_key_help_title">ajutor</string>
+	<string name="pref_key_help_summary">Începe tutorial</string>
 	<string name="snackbar_action_dismiss">Anulare</string>
-
-    <!-- Intro screens -->
-	<string name="intro_welcome_label">hei!</string>
-	<string name="intro_welcome_desc">Bine ati venit pentru a Smooth Clicker</string>
-	<string name="intro_root_label">Rădăcină</string>
-	<string name="intro_root_desc">Trebuie să aveţi un dispozitiv Android înrădăcinate pentru a utiliza acest app</string>
-	<string name="intro_clicks_label">Click-uri</string>
-	<string name="intro_clicks_desc">Defini mai multe clicuri pentru a procesa&#8230; </string>
-	<string name="intro_notifications_label">Configurabil</string>
-	<string name="intro_notifications_desc">&#8230; şi a configura procesul cu notificările, vibratii sau întârzieri</string>
-	<string name="intro_free_label">Născut pentru a fi liber</string>
-	<string name="intro_free_desc">Smooth Clicker este gratuit şi open-source!</string>
-
-    <!-- Misc. -->
+	<string name="permission_write_external_storage_title">EXTERNE de stocare scrie permisiunea</string>
+	<string name="permission_write_external_storage_summary">App are nevoie de această permisiune să scrie fişiere de configurare într-un folder dedicat</string>
+	<string name="permission_read_external_storage_title">CITIT de stocare externe permisiunea</string>
+	<string name="permission_read_external_storage_summary">App are nevoie de această permisiune pentru a citi fişierele de configurare într-un folder dedicat</string>
 	<string name="error_not_implemented">Nu a fost implementată încă!</string>
 	<string name="message_reinit_config">Curat&#8230; </string>
 	<string name="message_confirm_exit_label">Ieşire</string>
 	<string name="message_confirm_exit_content">Vrei să renunţe la app?</string>
-	<string name="app_intro">Bine ati venit pentru a Smooth Clicker</string>
-    
+	<string name="app_intro">Bine ati venit pentru a netezi Clicker</string>
+	<string name="snackbar_see_config_file">Citeste</string>
+	<string name="dialog_negative_button">Revocare</string>
+	<string name="dialog_positive_button">ok</string>
 </resources>

@@ -51,7 +51,6 @@ import java.util.Collection;
 import java.util.List;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;

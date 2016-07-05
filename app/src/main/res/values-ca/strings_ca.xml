@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     MIT License
 
@@ -24,144 +26,146 @@
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
-
-    <!-- For the app -->
     <string name="app_name">Smooth Clicker</string>
     <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+    <string name="app_author">https://twitter.com/pylapp</string>
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-
-    <!-- Menus -->
+	<string name="app_name_standalone">Smooth Clicker (independent)</string>
+	<string name="standalone_init_config">Es recullen els valors de configuració&#8230;</string>
+	<string name="standalone_init_points">Es recullen els punts per fer clic a&#8230;</string>
+	<string name="standalone_start_click_process">El mode independent està començant&#8230;</string>
+	<string name="standalone_bad_action">Woops&#8230;, no vas utilitzar una bona acció per provocar aquesta activitat!</string>
+	<string name="app_name_ninja">Smooth Clicker (independent)</string>
 	<string name="action_exit">Sortida</string>
 	<string name="action_settings">Configuració</string>
 	<string name="action_clean_points">Suprimeix els punts seleccionats</string>
 	<string name="action_clean_all">Reinicialitzar els valors i suprimir els punts seleccionats</string>
-
-    <!-- Messages -->
-	<string name="info_message_start">Desa la configuració i comença el procés de clic</string>
-	<string name="info_message_stop">Aturar el procés de clic</string>
+	<string name="action_export">Exportar a fitxer JSON</string>
+	<string name="action_import">Importació d\'arxiu JSON</string>
+	<string name="action_configuration">Configuració</string>
+	<string name="action_standalone">Mode independent</string>
+	<string name="info_message_start">Desa la configuració i comença la procesus</string>
+	<string name="info_message_stop">Aturar tot el procés</string>
 	<string name="info_message_request_su">Demanar la subvenció SU</string>
 	<string name="info_message_su_granted">L\'autorització de SU ha estat concedit :-)</string>
 	<string name="info_message_new_point">Seleccioneu nous punts a la pantalla</string>
-	<string name="info_message_invite_new_points">Seleccioneu diversos punts i llavors retrocedir</string>
-
+	<string name="info_message_invite_new_points">Feu clic a la pantalla per seleccionar el punt, llavors faci retrocedir</string>
+	<string name="info_message_invite_new_random_points">Temps feu clic a la pantalla per seleccionar un punt fortuït, llavors faci retrocedir</string>
+	<string name="info_export_success">Exportació s\'ha fet</string>
+	<string name="info_export_fail">Exportació ha fallat</string>
+	<string name="info_import_success">Importació s\'ha fet</string>
+	<string name="info_import_fail">Ha fallat la importació</string>
+	<string name="info_standalone_activated">S\'iniciarà el mode independent</string>
+	<string name="info_standalone_disactivated">S\'aturarà el mode independent</string>
 	<string name="error_message_su_not_granted">L\'autorització de SU no ha atorgat (x-</string>
 	<string name="error_su_missing">Que et decantes seu Android abans d\'utilitzar aquest app? És obligatori.</string>
 	<string name="error_message_no_click_defined">¯\\_ (: ツ) _ / ¯ definit cap clic</string>
 	<string name="error_message_was_not_working">(－‸ლ) No s\'inicia el procés</string>
-
+	<string name="error_nothing_to_open_json">Woops res podeu obrir el fitxer JSON</string>
+	<string name="error_nothing_to_open_file">Woops res no pot obrir aquest fitxer</string>
 	<string name="warning_hazard_repeat_endless_title">Operació perillosos</string>
 	<string name="warning_hazard_repeat_endless_content">Esteu segur que voleu fer una repetició sense fi? Aquesta operació pot ser perillós per al vostre dispositiu.</string>
 	<string name="warning_hazard_repeat_endless_no">!</string>
 	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
-
-    <!-- Widgets -->
-	<string name="widget_type_of_start">Començament retardat</string>
+	<string name="widget_no_points">Cap punt triat encara</string>
+	<string name="widget_type_of_start">Inici</string>
+	<string name="widget_unit_time">Temps</string>
+	<string name="widget_unit_time_ms">mil·lisegon</string>
+	<string name="widget_unit_time_s">segon</string>
+	<string name="widget_unit_time_m">minut</string>
+	<string name="widget_unit_time_h">hores</string>
 	<string name="widget_delay">Retard</string>
-	<string name="widget_delay_hint">&#8230; en segons</string>
 	<string name="widget_speed">Hora abans de cada clic</string>
-	<string name="widget_speed_hint">&#8230; en segons</string>
 	<string name="widget_repeat">Repetir</string>
 	<string name="widget_repeat_hint">&#8230; vegades</string>
-	<string name="widget_repeat_endless">Sense fi</string>
+	<string name="widget_repeat_endless">Repetició sense fi</string>
 	<string name="widget_vibrate_on_start">Vibrar a començament</string>
 	<string name="widget_vibrate_on_click">Vibrar a clic</string>
 	<string name="widget_delayed_starts">Retardat</string>
 	<string name="widget_immediate_starts">Ara</string>
 	<string name="widget_xy_coordinates">Punts de clicar.</string>
 	<string name="widget_notifications">Notificacions</string>
-
-    <!-- Credits -->
-	<string name="credits_app_label">Smooth Clicker</string>
-	<string name="credits_app_desc">Aplicació realitzada per pylapp</string>
-	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
-	<string name="credits_app_license">Sota Llicència MIT</string>
-	<string name="credits_app_personal_page">https://Twitter.com/pylapp</string>
-
-	<string name="credits_logo_label">Logotip de l\'aplicació</string>
-	<string name="credits_logo_desc">Icona confeccionada per Freepik www.flaticon.com</string>
-	<string name="credits_logo_url">http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726#Term=Monkey</string>
-	<string name="credits_logo_license">Sota llicència bàsica Flaticon</string>
-
-	<string name="credits_mam_label">Material Arc menú</string>
-	<string name="credits_mam_desc">Biblioteca fet per Saurabh Arora</string>
-	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
-	<string name="credits_mam_license">Sota la llicència Apache v2</string>
-
-	<string name="credits_switchbutton_label">SwitchButton</string>
-	<string name="credits_switchbutton_desc">Biblioteca fet per kyleduo</string>
-	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
-	<string name="credits_switchbutton_license">Sota la llicència Apache v2</string>
-
-	<string name="credits_appintro_label">AppIntro</string>
-	<string name="credits_appintro_desc">Biblioteca de Paolo Rotolo</string>
-	<string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
-	<string name="credits_appintro_license">Sota la llicència Apache v2</string>
-
-	<string name="credits_icon_flaticon_freepik_label">Icones</string>
-	<string name="credits_icon_flaticon_freepik_desc">Icones confeccionada per Freepik www.flaticon.com</string>
-	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
-	<string name="credits_icon_flaticon_freepik_license">Sota llicència bàsica Flaticon</string>
-	<string name="credits_icon_flaticon_elegantthemes_label">Icones</string>
-	<string name="credits_icon_flaticon_elegantthemes_desc">Icones confeccionada per Elegant temes www.flaticon.com</string>
-	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-Themes</string>
-	<string name="credits_icon_flaticon_elegantthemes_license">Sota CC 3.0 llicència per</string>
-	<string name="credits_icon_flaticon_yannick_label">Icones</string>
-	<string name="credits_icon_flaticon_yannick_desc">Icones confeccionada per Yannick www.flaticon.com</string>
-	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/Yannick</string>
-	<string name="credits_icon_flaticon_yannick_license">Sota CC 3.0 llicència per</string>
-
-    <!-- Splash screen -->
+	<string name="widget_standalone_dialog_title">Mode independent</string>
+	<string name="widget_sounds">Anell de cada clic</string>
 	<string name="splashscreen_description">Smooth Clicker</string>
-
-    <!-- Notifications -->
 	<string name="notif_content_title">Smooth Clicker</string>
 	<string name="notif_content_text_click_made">Feu clic a nou </string>
-	<string name="notif_content_text_clicks_on_going_app">S\'està executant el procés fa clic (a través de l\'app)&#8230; </string>
-	<string name="notif_content_text_clicks_on_going_service">S\'està executant el procés fa clic (a través del servei)&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_standalone">S\'està executant el procés fa clic (standalone)&#8230; </string>
-	<string name="notif_content_text_clicks_stop">S\'ha aturat el procés fent clic a</string>
+	<string name="notif_content_text_clicks_on_going_app">S\'està executant el procés de clic (a través de l\'app)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">S\'està executant el procés de clic (a través del servei)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_standalone">El procés de clic està funcionant (independent)&#8230;</string>
+	<string name="notif_content_text_clicks_stop">S\'ha aturat el procés de clic</string>
 	<string name="notif_content_text_clicks_over">El procés de clic</string>
 	<string name="notif_content_text_su_granted">S\'ha concedit el permís de superusuari</string>
 	<string name="notif_content_text_countdown">Iniciar en:</string>
-
-    <!-- Settings / Preferences -->
-	<string name="pref_settings_title">Configuració</string>
+	<string name="notif_content_text_watch_over">El procés de veure</string>
+	<string name="pref_settings_title">Principal</string>
 	<string name="pref_settings_shaketoclean_title">Sacsejada per netejar</string>
 	<string name="pref_settings_shaketoclean_summary">Sacsegi el seu mecanisme per fer la configuració buit</string>
-
+	<string name="pref_picture_recognition_title">Reconeixement de pantalla</string>
+	<string name="pref_settings_prthreshold_title">Llindar</string>
+	<string name="pref_settings_prthreshold_summary">És el més el llindar, més acceptades són les diferències entre la imatge gallet i la captura de pantalla últim fet</string>
+	<string name="pref_settings_prfrequency_title">Temps per a la captura</string>
+	<string name="pref_settings_prfrequency_summary">Més alt és el moment de la captura, el més lent serà el sistema de prendre captures de pantalla de l\'aparell per activar el procés de clic</string>
+	<string name="pref_app_files">Emmagatzematge</string>
+	<string name="pref_app_files_title">Fitxers utilitzats per l\'aplicació</string>
+	<string name="pref_app_files_summary">Feu clic per administrar els arxius en ús</string>
+	<string name="pref_app_files_points_title">Punts</string>
+	<string name="pref_app_files_points_name">Fitxer que conté els punts</string>
+	<string name="pref_app_files_points_content">Lectura</string>
+	<string name="pref_app_files_config_title">Configuració</string>
+	<string name="pref_app_files_config_name">Fitxer que conté la configuració</string>
+	<string name="pref_app_files_config_content">Lectura</string>
+	<string name="pref_app_files_unlock_title">Obrir guió</string>
+	<string name="pref_app_files_unlock_name">Que conté l\'obrir escriptura arxiu</string>
+	<string name="pref_app_files_unlock_content">Lectura</string>
+	<string name="pref_app_files_trigger_title">Imatge de gallet</string>
+	<string name="pref_app_files_trigger_name">Arxiu d\'imatge que s\'inicia el procés de clic</string>
+	<string name="pref_app_files_trigger_content">Lectura</string>
 	<string name="pref_credits_title">Crèdits</string>
 	<string name="pref_key_credit_title">Aquest app utilitza continguts de tercers</string>
 	<string name="pref_key_credit_summary">Feu clic aquí per mostrar les llicències</string>
-
 	<string name="pref_about_title">Sobre</string>
+	<string name="pref_about_subtitle">Smooth Clicker</string>
+	<string name="pref_about_summary">Feu clic per obtenir més</string>
 	<string name="pref_about_version_title">Versió</string>
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">escrit pylapp - Llicència MIT</string>
-
 	<string name="pref_play_store_title">Google Play</string>
 	<string name="pref_play_store_summary">★ Dubti valorar i comentar l\'app ★</string>
-
-    <!-- Snackbars -->
+	<string name="pref_wakescreenbattery_title">Despert i bateria</string>
+	<string name="pref_key_wakelock_title">Wakelock</string>
+	<string name="pref_key_wakelock_summary">Utilitzar wakelocks per fer mecanisme pantalla sempre en (pot reduir molt la bateria)</string>
+	<string name="pref_key_forcescreenon_battery_title">Pantalla de força en</string>
+	<string name="pref_key_forcescreenon_battery_summary">Quan la pantalla està fora, engegar-lo si el dispositiu utilitza la bateria i no l\'alimentació</string>
+	<string name="pref_unlockscript_title">Obrir</string>
+	<string name="pref_key_unlockscript_title">Escriptura ADB</string>
+	<string name="pref_key_unlockscript_summary">Utilitzar una escriptura de costum dedicat tenir comandaments per desbloquejar el dispositiu del sistema</string>
+	<string name="pref_root_title">Arrel</string>
+	<string name="pref_root_subtitle">Com arrel meu dispositiu?</string>
+	<string name="pref_root_summary">Feu clic per obtenir més</string>
+	<string name="pref_key_root_heimdall_title">Heimdall</string>
+	<string name="pref_key_root_heimdall_summary">Anar a Heimdall arrelar el dispositiu amb Linux</string>
+	<string name="pref_key_root_odin_title">Odin</string>
+	<string name="pref_key_root_odin_summary">Anar a Odin per eradicar el dispositiu amb Windows</string>
+	<string name="pref_key_root_chainfire_title">Chainfire XDA</string>
+	<string name="pref_key_root_chainfire_summary">Anar a Chainfire per obtenir més coneixements sobre el procés d\'arrel</string>
+	<string name="pref_heimdall_url">https://doc.Ubuntu-fr.org/Heimdall</string>
+	<string name="pref_odin_url">http://odindownload.com/</string>
+	<string name="pref_chainfire_url">https://www.Chainfire.eu/</string>
+	<string name="pref_key_help_title">Ajuda</string>
+	<string name="pref_key_help_summary">Començar la classe</string>
 	<string name="snackbar_action_dismiss">Desfer</string>
-
-    <!-- Intro screens -->
-	<string name="intro_welcome_label">Hola!</string>
-	<string name="intro_welcome_desc">Benvinguts a Smooth Clicker</string>
-	<string name="intro_root_label">Arrel</string>
-	<string name="intro_root_desc">Vostè necessita tenir un dispositiu Android plantat per utilitzar això app</string>
-	<string name="intro_clicks_label">Clics</string>
-	<string name="intro_clicks_desc">Definir uns quants clics per processar&#8230; </string>
-	<string name="intro_notifications_label">Configurable</string>
-	<string name="intro_notifications_desc">&#8230; i configurar el procés amb notificacions, vibracions o retards</string>
-	<string name="intro_free_label">Nascut per ser lliures</string>
-	<string name="intro_free_desc">Smooth Clicker és lliure i codi obert!</string>
-
-    <!-- Misc. -->
+	<string name="permission_write_external_storage_title">Permís d\'escriptura d\'emmagatzematge extern</string>
+	<string name="permission_write_external_storage_summary">L\'app necessita aquest permís per escriure els fitxers de configuració en una carpeta dedicada</string>
+	<string name="permission_read_external_storage_title">Permís d\'emmagatzematge extern llegir</string>
+	<string name="permission_read_external_storage_summary">L\'app necessita aquest permís per llegir els fitxers de configuració en una carpeta dedicada</string>
 	<string name="error_not_implemented">No implementat encara!</string>
 	<string name="message_reinit_config">Netejar&#8230; </string>
 	<string name="message_confirm_exit_label">Sortida</string>
 	<string name="message_confirm_exit_content">Voleu abandonar l\'app?</string>
-	<string name="app_intro">Benvinguts a Smooth Clicker</string>
-
+	<string name="app_intro">Benvinguts a el Smooth Clicker</string>
+	<string name="snackbar_see_config_file">Lectura</string>
+	<string name="dialog_negative_button">Cancel·la</string>
+	<string name="dialog_positive_button">Correcte</string>
 </resources>

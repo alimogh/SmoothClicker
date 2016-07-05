@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     MIT License
 
@@ -24,143 +26,146 @@
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
-
-    <!-- For the app -->
     <string name="app_name">Smooth Clicker</string>
     <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+    <string name="app_author">https://twitter.com/pylapp</string>
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-
-    <!-- Menus -->
-    <string name="action_exit">Dejar</string>
-    <string name="action_settings">Ajustes</string>
-    <string name="action_clean_points">Elimina los puntos seleccionados</string>
+    <string name="app_name_standalone">Clicker lisa (independiente)</string>
+    <string name="standalone_init_config">Se recogen valores de config&#8230;</string>
+    <string name="standalone_init_points">Se recogen los puntos para hacer clic en&#8230;</string>
+    <string name="standalone_start_click_process">Es a partir del modo independiente&#8230;</string>
+    <string name="standalone_bad_action">Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad!</string>
+    <string name="app_name_ninja">Clicker lisa (independiente)</string>
+    <string name="action_exit">Salida</string>
+    <string name="action_settings">Configuración</string>
+    <string name="action_clean_points">Eliminar los puntos seleccionados</string>
     <string name="action_clean_all">Restablecer los valores y eliminar los puntos seleccionados</string>
-
-    <!-- Messages -->
-    <string name="info_message_start">Guardar la configuración e inicia el proceso de clic</string>
-    <string name="info_message_stop">Detiene el proceso de clic</string>
-    <string name="info_message_request_su">Demanda de acceso SU</string>
-    <string name="info_message_su_granted">Se ha concedido el acceso SU</string>
-    <string name="info_message_new_point">Selección de puntos en la pantalla</string>
-    <string name="info_message_invite_new_points">Seleccionar varios elementos y luego de vuelta</string>
-    <string name="error_message_su_not_granted">En El acceso fue denegado x-(</string>
-    <string name="error_su_missing">¿Se rienda suelta a su dispositivo Android de antemano? Esto es obligatorio.</string>
-    <string name="error_message_no_click_defined">¯\\_(ツ)_/¯ No tiene sentido hacer clic se ha definido</string>
-    <string name="error_message_was_not_working">(－‸ლ) Haga clic en No se ha iniciado el proceso de</string>
-
-    <string name="warning_hazard_repeat_endless_title">Arriesgada operación</string>
-    <string name="warning_hazard_repeat_endless_content">¿Está seguro de que quiere hacer una repetición sin fin? Esto puede ser peligroso para su dispositivo.</string>
-    <string name="warning_hazard_repeat_endless_no">Me rindo!</string>
-    <string name="warning_hazard_repeat_endless_yes">Go!</string>
-
-    <!-- Widgets -->
-    <string name="widget_type_of_start">Salida retrasada</string>
-    <string name="widget_delay">Retraso</string>
-    <string name="widget_delay_hint">&#8230; en segundo</string>
-    <string name="widget_speed">Tiempo antes de cada clic</string>
-    <string name="widget_speed_hint">&#8230; en segundo</string>
-    <string name="widget_repeat">Repetición</string>
-    <string name="widget_repeat_hint">&#8230; tiempo</string>
-    <string name="widget_repeat_endless">Sin fin</string>
-    <string name="widget_vibrate_on_start">Sway para empezar</string>
-    <string name="widget_vibrate_on_click">Vibra con cada clic</string>
+    <string name="action_export">Exportar a un archivo JSON</string>
+    <string name="action_import">Importar desde archivo JSON</string>
+    <string name="action_configuration">Configuración</string>
+    <string name="action_standalone">Modo autónomo</string>
+    <string name="info_message_start">Guardar la configuración y comienza el procesus</string>
+    <string name="info_message_stop">Detener todo el proceso</string>
+    <string name="info_message_request_su">Solicitar la concesión SU</string>
+    <string name="info_message_su_granted">:-) Se otorgó la autorización de SU</string>
+    <string name="info_message_new_point">Seleccionar nuevos puntos en la pantalla</string>
+    <string name="info_message_invite_new_points">Haga clic en la pantalla para seleccionar el punto, luego de nuevo</string>
+    <string name="info_message_invite_new_random_points">Largo en la pantalla para seleccionar un punto al azar, haga clic en nuevo</string>
+    <string name="info_export_success">Exportación se ha</string>
+    <string name="info_export_fail">Exportación ha fallado</string>
+    <string name="info_import_success">Importación se ha</string>
+    <string name="info_import_fail">Importación ha fallado</string>
+    <string name="info_standalone_activated">Se iniciará el modo standalone</string>
+    <string name="info_standalone_disactivated">Dejará del modo independiente</string>
+    <string name="error_message_su_not_granted">La autorización de SU no se ha concedido () x</string>
+    <string name="error_su_missing">¿Raíz su Android antes de usar esta aplicación? Es obligatorio.</string>
+    <string name="error_message_no_click_defined">¯\\_ (ツ) _ / ̄ No clics definido</string>
+    <string name="error_message_was_not_working">(－‸ლ) No se inicia el proceso de</string>
+    <string name="error_nothing_to_open_json">Woops nada puede abrir el archivo .Groovy</string>
+    <string name="error_nothing_to_open_file">Woops nada puede abrir este archivo</string>
+    <string name="warning_hazard_repeat_endless_title">Operaciones peligrosas</string>
+    <string name="warning_hazard_repeat_endless_content">¿Está seguro de hacer una repetición sin fin? Esta operación puede ser peligrosa para su dispositivo.</string>
+    <string name="warning_hazard_repeat_endless_no">Nope!</string>
+    <string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+    <string name="widget_no_points">Sin embargo ningún punto seleccionado</string>
+    <string name="widget_type_of_start">Inicio</string>
+    <string name="widget_unit_time">Tiempo</string>
+    <string name="widget_unit_time_ms">milisegundo</string>
+    <string name="widget_unit_time_s">segundo</string>
+    <string name="widget_unit_time_m">minutos</string>
+    <string name="widget_unit_time_h">hora</string>
+    <string name="widget_delay">Retardo de</string>
+    <string name="widget_speed">Antes de cada clic</string>
+    <string name="widget_repeat">Repetir</string>
+    <string name="widget_repeat_hint">&#8230; veces</string>
+    <string name="widget_repeat_endless">Repetición sin fin</string>
+    <string name="widget_vibrate_on_start">Vibrar en el arranque</string>
+    <string name="widget_vibrate_on_click">Vibrar en haga clic en</string>
     <string name="widget_delayed_starts">Retrasado</string>
-    <string name="widget_immediate_starts">Inmediato</string>
-    <string name="widget_xy_coordinates">Puntos para hacer clic</string>
+    <string name="widget_immediate_starts">Ahora</string>
+    <string name="widget_xy_coordinates">Puntos para hacer clic en</string>
     <string name="widget_notifications">Notificaciones</string>
-
-    <!-- Credits -->
-    <string name="credits_app_label">Smooth Clicker</string>
-    <string name="credits_app_desc">Aplicación creado por pylapp</string>
-    <string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
-    <string name="credits_app_license">Licencia MIT</string>
-    <string name="credits_app_personal_page">https://twitter.com/pylapp</string>
-
-    <string name="credits_logo_label">Aplicaciones logotipo</string>
-    <string name="credits_logo_desc">Icono creado por Freepik de www.flaticon.com </string>
-    <string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726</string>
-    <string name="credits_logo_license">Licencia Flaticon Basic</string>
-
-    <string name="credits_mam_label">Material Arc Menu</string>
-    <string name="credits_mam_desc">Biblioteca creado por Saurabh Arora</string>
-    <string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
-    <string name="credits_mam_license">Licencia Apache v2</string>
-
-    <string name="credits_switchbutton_label">SwitchButton</string>
-    <string name="credits_switchbutton_desc">Biblioteca creado por kyleduo</string>
-    <string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
-    <string name="credits_switchbutton_license">Licencia Apache v2</string>
-
-    <string name="credits_appintro_label">AppIntro</string>
-    <string name="credits_appintro_desc">Biblioteca creado por Paolo Rotolo</string>
-    <string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
-    <string name="credits_appintro_license">Licencia Apache v2</string>
-
-    <string name="credits_icon_flaticon_freepik_label">Iconos</string>
-    <string name="credits_icon_flaticon_freepik_desc">Los iconos realizados por Freepik de www.flaticon.com</string>
-    <string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
-    <string name="credits_icon_flaticon_freepik_license">Licencia Flaticon Basic</string>
-
-    <string name="credits_icon_flaticon_elegantthemes_label">Iconos</string>
-    <string name="credits_icon_flaticon_elegantthemes_desc">Los iconos realizados por Elegant Themes de www.flaticon.com</string>
-    <string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-themes</string>
-    <string name="credits_icon_flaticon_elegantthemes_license">Licencia CC 3.0 BY</string>
-
-    <string name="credits_icon_flaticon_yannick_label">Iconos</string>
-    <string name="credits_icon_flaticon_yannick_desc">Los iconos realizados por Yannick de www.flaticon.com</string>
-    <string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/yannick</string>
-    <string name="credits_icon_flaticon_yannick_license">Licencia CC 3.0 BY</string>
-
-    <!-- Splash screen -->
-    <string name="splashscreen_description">Smooth Clicker</string>
-
-    <!-- Notifications -->
-    <string name="notif_content_title">Smooth Clicker</string>
-    <string name="notif_content_text_click_made">Haga clic de nuevo</string>
-    <string name="notif_content_text_clicks_on_going_app">Haga clic en el proceso de trabajo (a través de la aplicación)&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_service">El proceso de trabajo de clic (a través del servicio)&#8230; </string>
-    <string name="notif_content_text_clicks_stop">Hacer un clic se detuvo el proceso de</string>
-    <string name="notif_content_text_clicks_over">Haga clic en el proceso se completa</string>
-    <string name="notif_content_text_su_granted">Se obtuvo acceso de superusuario</string>
-    <string name="notif_content_text_countdown">Se comenzará en:</string>
-
-    <!-- Settings / Preferences -->
-    <string name="pref_settings_title">Ajustes</string>
-    <string name="pref_settings_shaketoclean_title">Agitar para vaciar</string>
-    <string name="pref_settings_shaketoclean_summary">Agitar el dispositivo para restablecer la configuración de la aplicación</string>
-
-    <string name="pref_credits_title">A propósito</string>
-    <string name="pref_key_credit_title">Esta aplicación utiliza herramientas externas</string>
-    <string name="pref_key_credit_summary">Haga clic en el acceso a las licencias</string>
-
-    <string name="pref_about_title">A propósito</string>
+    <string name="widget_standalone_dialog_title">Modo autónomo</string>
+    <string name="widget_sounds">Anillo en cada clic</string>
+    <string name="splashscreen_description">Clicker liso</string>
+    <string name="notif_content_title">Clicker liso</string>
+    <string name="notif_content_text_click_made">Haga clic en nuevo </string>
+    <string name="notif_content_text_clicks_on_going_app">(A través de la aplicación) se ejecuta el proceso de clic&#8230;</string>
+    <string name="notif_content_text_clicks_on_going_service">Se ejecuta el proceso de clic (a través del servicio)&#8230;</string>
+    <string name="notif_content_text_clicks_on_going_standalone">Ejecuta el proceso de clic (independiente)&#8230;</string>
+    <string name="notif_content_text_clicks_stop">Se ha detenido el proceso haga clic en</string>
+    <string name="notif_content_text_clicks_over">El proceso haga clic en</string>
+    <string name="notif_content_text_su_granted">Se ha concedido el permiso de superusuario</string>
+    <string name="notif_content_text_countdown">Iniciar en:</string>
+    <string name="notif_content_text_watch_over">El proceso de vigilancia</string>
+    <string name="pref_settings_title">Principal</string>
+    <string name="pref_settings_shaketoclean_title">Agitar para limpiar</string>
+    <string name="pref_settings_shaketoclean_summary">Agitar el dispositivo para realizar la configuración vacía</string>
+    <string name="pref_picture_recognition_title">Reconocimiento de la pantalla</string>
+    <string name="pref_settings_prthreshold_title">Umbral de</string>
+    <string name="pref_settings_prthreshold_summary">El umbral es, las más aceptada son las diferencias entre la imagen del gatillo y la última captura de pantalla hechas</string>
+    <string name="pref_settings_prfrequency_title">Tiempo de captura</string>
+    <string name="pref_settings_prfrequency_summary">El mayor es el momento de la captura, más lento será el sistema para tomar capturas de pantalla del dispositivo para activar el proceso haga clic en</string>
+    <string name="pref_app_files">Almacenamiento de información</string>
+    <string name="pref_app_files_title">Archivos utilizados por la aplicación</string>
+    <string name="pref_app_files_summary">Haga clic para administrar los archivos en uso</string>
+    <string name="pref_app_files_points_title">Puntos</string>
+    <string name="pref_app_files_points_name">Archivo que contiene los puntos</string>
+    <string name="pref_app_files_points_content">Leer</string>
+    <string name="pref_app_files_config_title">Configuración</string>
+    <string name="pref_app_files_config_name">Archivo que contiene la configuración</string>
+    <string name="pref_app_files_config_content">Leer</string>
+    <string name="pref_app_files_unlock_title">Desbloquear la secuencia de comandos</string>
+    <string name="pref_app_files_unlock_name">Archivo que contiene la secuencia de desbloqueo</string>
+    <string name="pref_app_files_unlock_content">Leer</string>
+    <string name="pref_app_files_trigger_title">Imagen de gatillo</string>
+    <string name="pref_app_files_trigger_name">Archivo de la imagen que inicia el proceso haga clic en</string>
+    <string name="pref_app_files_trigger_content">Leer</string>
+    <string name="pref_credits_title">Créditos</string>
+    <string name="pref_key_credit_title">Esta aplicación utiliza contenido de terceros</string>
+    <string name="pref_key_credit_summary">Haga clic aquí para mostrar las licencias</string>
+    <string name="pref_about_title">Acerca de</string>
+    <string name="pref_about_subtitle">Clicker liso</string>
+    <string name="pref_about_summary">Haga clic para obtener más</string>
     <string name="pref_about_version_title">Versión</string>
-    <string name="pref_about_version_app_title">Smooth Clicker</string>
-    <string name="pref_about_version_app_summary">Escribir pylapp - MIT License</string>
+    <string name="pref_about_version_app_title">Clicker liso</string>
+    <string name="pref_about_version_app_summary">escrito por pylapp - licencia MIT</string>
     <string name="pref_play_store_title">Google Play</string>
-    <string name="pref_play_store_summary">&#9733; No dude en calificar y comentar la aplicación &#9733;</string>
-
-    <!-- Snackbars -->
-    <string name="snackbar_action_dismiss">Cancelar</string>
-
-    <!-- Intro screens -->
-    <string name="intro_welcome_label">Hola !</string>
-    <string name="intro_welcome_desc">Bienvenido a Smooth Clicker</string>
-    <string name="intro_root_label">Root</string>
-    <string name="intro_root_desc">El dispositivo Android debe ser ilimitada para utilizar esta aplicación</string>
-    <string name="intro_clicks_label">Clics</string>
-    <string name="intro_clicks_desc">Definición de una secuencia de clics para realizar&#8230;</string>
-    <string name="intro_notifications_label">Esto es configurable</string>
-    <string name="intro_notifications_desc">&#8230; y añadir las notificaciones necesarias, vibración o plazo.</string>
-    <string name="intro_free_label">Born to be free</string>
-    <string name="intro_free_desc">Smooth Clicker es libre y open source !</string>
-
-    <!-- Misc. -->
-    <string name="error_not_implemented">Aún no está disponible!</string>
-    <string name="message_reinit_config">Limpieza&#8230; </string>
-    <string name="message_confirm_exit_label">Dejar</string>
-    <string name="message_confirm_exit_content">¿Quieres salir?</string>
-    <string name="app_intro">Bienvenido a Smooth Clicker</string>
-
+    <string name="pref_play_store_summary">No dude en calificar y comentar la aplicación ★ ★</string>
+    <string name="pref_wakescreenbattery_title">Despierto y batería</string>
+    <string name="pref_key_wakelock_title">Wakelock</string>
+    <string name="pref_key_wakelock_summary">Utilice wakelocks para siempre la pantalla en el dispositivo (puede reducir mucho la batería)</string>
+    <string name="pref_key_forcescreenon_battery_title">Pantalla de fuerza en</string>
+    <string name="pref_key_forcescreenon_battery_summary">Cuando la pantalla está apagada, enciéndala si el dispositivo utiliza su batería y no la fuente de alimentación</string>
+    <string name="pref_unlockscript_title">Desbloquear</string>
+    <string name="pref_key_unlockscript_title">Secuencia de comandos ADB</string>
+    <string name="pref_key_unlockscript_summary">Utilizar un script personalizado dedicado con comandos del sistema para desbloquear el dispositivo</string>
+    <string name="pref_root_title">Raíz</string>
+    <string name="pref_root_subtitle">¿Cómo a raíz de mi dispositivo?</string>
+    <string name="pref_root_summary">Haga clic para obtener más</string>
+    <string name="pref_key_root_heimdall_title">Heimdall</string>
+    <string name="pref_key_root_heimdall_summary">Ir a Heimdall para tu dispositivo con Linux</string>
+    <string name="pref_key_root_odin_title">Odin</string>
+    <string name="pref_key_root_odin_summary">Ir a Odin a raíz de su dispositivo con Windows</string>
+    <string name="pref_key_root_chainfire_title">Chainfire XDA</string>
+    <string name="pref_key_root_chainfire_summary">Ir a Chainfire para obtener más conocimiento sobre el proceso de raíz</string>
+    <string name="pref_heimdall_url">https://doc.Ubuntu-fr.org/Heimdall</string>
+    <string name="pref_odin_url">http://odindownload.com/</string>
+    <string name="pref_chainfire_url">https://www.Chainfire.eu/</string>
+    <string name="pref_key_help_title">Ayuda</string>
+    <string name="pref_key_help_summary">Empezar el tutorial</string>
+    <string name="snackbar_action_dismiss">Deshacer</string>
+    <string name="permission_write_external_storage_title">Permiso de escritura de almacenamiento externo</string>
+    <string name="permission_write_external_storage_summary">La aplicación necesita este permiso para escribir archivos de configuración en una carpeta dedicada</string>
+    <string name="permission_read_external_storage_title">Permiso de lectura de almacenamiento externo</string>
+    <string name="permission_read_external_storage_summary">La aplicación necesita este permiso para leer archivos de configuración en una carpeta dedicada</string>
+    <string name="error_not_implemented">Aun no implementado.</string>
+    <string name="message_reinit_config">Limpiar&#8230; </string>
+    <string name="message_confirm_exit_label">Salida</string>
+    <string name="message_confirm_exit_content">¿Quieres salir de la aplicación?</string>
+    <string name="app_intro">Bienvenido a Lisa Clicker</string>
+    <string name="snackbar_see_config_file">Leer</string>
+    <string name="dialog_negative_button">Cancelar</string>
+    <string name="dialog_positive_button">Vale</string>
 </resources>

@@ -29,7 +29,6 @@ import org.junit.Test;
 
 import pylapp.smoothclicker.android.AbstractTest;
 import pylapp.smoothclicker.android.tools.config.ConfigExporter;
-import pylapp.smoothclicker.android.tools.config.ConfigImporter;
 import pylapp.smoothclicker.android.utils.Config;
 
 /**
