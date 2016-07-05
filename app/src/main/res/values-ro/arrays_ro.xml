@@ -33,8 +33,8 @@
     </string-array>
 
     <string-array name="standalone_mode_descriptions">
-        <item>Utilizaţi sc_points.json şi sc_config.json dosar</item>
-        <item>Utilizaţi fişierele sc_points.json, sc_config.json şi sc_trigger.png</item>
+        <item>Utilizarea celor două fişiere JSON pentru a seta tup procesul de clic</item>
+        <item>Utilizaţi două fişiere JSON şi captura de ecran pentru a configura şi a începe procesul de clic</item>
     </string-array>
 
     <string-array name="introscreen_titles">

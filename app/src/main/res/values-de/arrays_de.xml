@@ -31,10 +31,10 @@
         <item>JSON-Dateien</item>
         <item>JSON-Dateien und Boot nach dem Bildschirm</item>
     </string-array>
-    
+
     <string-array name="standalone_mode_descriptions">
-        <item>Verwenden Sie sc_points.json und sc_config.json Dateien</item>
-        <item>Verwenden Sie sc_points.json, sc_config.json und sc_trigger.png Dateien</item>
+        <item>Verwendung der beiden JSON-Dateien festlegen tup Klick-Prozess</item>
+        <item>Verwenden Sie die beiden JSON-Dateien und der Screen-Capture einrichten und starten Sie den Klick-Prozess</item>
     </string-array>
     
     <string-array name="introscreen_titles">

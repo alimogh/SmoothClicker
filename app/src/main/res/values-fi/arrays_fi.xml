@@ -31,10 +31,10 @@
         <item>JSON tiedostot</item>
         <item>JSON tiedostot ja boot näytön mukaan</item>
     </string-array>
-    
+
     <string-array name="standalone_mode_descriptions">
-        <item>Käyttää sc_points.json ja sc_config.json-tiedostoja</item>
-        <item>Käyttää sc_points.json, sc_config.json ja sc_trigger.png-tiedostoja</item>
+        <item>Käyttää kaksi JSON tiedostoja asettaa tup napin painalluksella</item>
+        <item>Kaksi JSON-tiedostoa ja irtoseinä kaapata avulla asento jalkeilla ja alku napin painalluksella</item>
     </string-array>
     
     <string-array name="introscreen_titles">

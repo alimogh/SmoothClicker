@@ -432,9 +432,12 @@ What:
     chore: new run of IT, UT and code analysis
     doc: new build of HTML JavaDoc
 ###################################################
-Date:
+Date: 05/07/2016
 What:
-
+    feat: more i18n
+    doc: generate HTML JavaDoc
+    chore: new run of unit tests with JUnit, instrumented tests with UIAutoataor and Espresso, code analysis and Lint
+    chore: closed task #79
 ###################################################
 Date:
 What:
