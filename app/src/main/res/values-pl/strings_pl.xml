@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     MIT License
 
@@ -24,149 +26,146 @@
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
-
-    <!-- For the app -->
     <string name="app_name">Smooth Clicker</string>
     <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+    <string name="app_author">https://twitter.com/pylapp</string>
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-
-	<!-- The standalone activity -->
+	<string name="app_name_standalone">Smooth Clicker (standalone)</string>
+	<string name="standalone_init_config">Wartości są pobierane&#8230;</string>
+	<string name="standalone_init_points">Zbierane są punkty kliknij na&#8230;</string>
+	<string name="standalone_start_click_process">Tryb autonomiczny zaczyna&#8230;</string>
+	<string name="standalone_bad_action">Woops&#8230;, nie używasz dobre działanie do wyzwolenia tej działalności!</string>
 	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
-	<string name="ninja_init_config">Standalone : Wartości konfiguracyjne są zbierane &#8230;</string>
-	<string name="ninja_init_points">Standalone : Punkty do kliknięcia są zbierane &#8230;</string>
-	<string name="ninja_start_click_process">Standalone : Proces kliknięcie zaczyna &#8230;</string>
-
-    <!-- Menu -->
-	<string name="action_exit">Zjazd</string>
+	<string name="action_exit">Wyjścia</string>
 	<string name="action_settings">Ustawienia</string>
 	<string name="action_clean_points">Usuń wybrane punkty</string>
-	<string name="action_clean_all">Zresetować wartości i usunąć wybrane punkty</string>
-
-	<string name="info_message_start">Zapisz konfigurację i rozpoczyna się proces klikając</string>
-	<string name="info_message_stop">Zatrzymaj proces klikając</string>
-	<string name="info_message_request_su">Proszę o przyznanie SU</string>
-	<string name="info_message_su_granted">SU zezwolenie zostało udzielone :-)</string>
+	<string name="action_clean_all">Resetowanie wartości i usunąć wybrane punkty</string>
+	<string name="action_export">Eksportowanie do pliku JSON</string>
+	<string name="action_import">Importowanie z pliku JSON</string>
+	<string name="action_configuration">Konfiguracja</string>
+	<string name="action_standalone">Tryb autonomiczny</string>
+	<string name="info_message_start">Zapisz konfigurację i uruchamia procesus</string>
+	<string name="info_message_stop">Zatrzymanie wszystkich procesów</string>
+	<string name="info_message_request_su">Poprosić o przyznanie SU</string>
+	<string name="info_message_su_granted">Autoryzacji SU została przyznana :-)</string>
 	<string name="info_message_new_point">Wybierz nowe punkty na ekranie</string>
-	<string name="info_message_invite_new_points">Wybierz kilka punktów, a następnie ponownie</string>
-
-	<string name="error_message_su_not_granted">SU nie dopuszczenie do x -)</string>
-	<string name="error_su_missing">Czy główny Android przed rozpoczęciem korzystania z tej aplikacji? To jest obowiązkowe.</string>
-	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ nie kliknięć zdefiniowane</string>
-	<string name="error_message_was_not_working">(－‸ლ) Proces nie jest uruchomiony</string>
-
-	<string name="warning_hazard_repeat_endless_title">Niebezpieczną</string>
+	<string name="info_message_invite_new_points">Kliknij na ekranie, aby wybrać punkt, a następnie ponownie</string>
+	<string name="info_message_invite_new_random_points">Długie kliknij na ekranie, aby wybrać punkt losowo, a następnie ponownie</string>
+	<string name="info_export_success">Dokonano wywozu</string>
+	<string name="info_export_fail">Eksport nie powiodło się</string>
+	<string name="info_import_success">Dokonano importu</string>
+	<string name="info_import_fail">Importowanie nie powiodło się</string>
+	<string name="info_standalone_activated">Rozpocznie się w trybie standalone</string>
+	<string name="info_standalone_disactivated">Zatrzyma się w trybie standalone</string>
+	<string name="error_message_su_not_granted">Nie udzielono autoryzacji SU x –)</string>
+	<string name="error_su_missing">Czy korzeń Android przed użyciem tej aplikacji? Jest to obowiązkowe.</string>
+	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ żadnych kliknięć zdefiniowane</string>
+	<string name="error_message_was_not_working">(－‸ლ) Proces nie jest uruchomiony.</string>
+	<string name="error_nothing_to_open_json">Woops nic nie można otworzyć plik .json</string>
+	<string name="error_nothing_to_open_file">Woops nic nie może otworzyć tego pliku</string>
+	<string name="warning_hazard_repeat_endless_title">Niebezpieczne</string>
 	<string name="warning_hazard_repeat_endless_content">Czy na pewno chcesz uczynić niekończące się powtórzyć? Ta operacja może być niebezpieczne dla Twojego urządzenia.</string>
-	<string name="warning_hazard_repeat_endless_no">Blossom: nie!</string>
+	<string name="warning_hazard_repeat_endless_no">O nie!</string>
 	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
-
-    <!-- Widgets -->
-	<string name="widget_type_of_start">Opóźniony start</string>
+	<string name="widget_no_points">Jeszcze nie wybrany punkt</string>
+	<string name="widget_type_of_start">Początek</string>
+	<string name="widget_unit_time">Czas</string>
+	<string name="widget_unit_time_ms">milisekundy</string>
+	<string name="widget_unit_time_s">drugi</string>
+	<string name="widget_unit_time_m">minut</string>
+	<string name="widget_unit_time_h">godziny</string>
 	<string name="widget_delay">Opóźnienie</string>
-	<string name="widget_delay_hint">&#8230; w kilka sekund</string>
 	<string name="widget_speed">Czas przed każdym kliknięciu</string>
-	<string name="widget_speed_hint">&#8230; w kilka sekund</string>
-	<string name="widget_repeat">Powtórzyć</string>
+	<string name="widget_repeat">Powtórz</string>
 	<string name="widget_repeat_hint">&#8230; razy</string>
-	<string name="widget_repeat_endless">Niekończące się</string>
+	<string name="widget_repeat_endless">Nieskończone powtarzanie</string>
 	<string name="widget_vibrate_on_start">Wibracje na start</string>
-	<string name="widget_vibrate_on_click">Wibracje na kliknięcia</string>
+	<string name="widget_vibrate_on_click">Wibracje na kliknięcie</string>
 	<string name="widget_delayed_starts">Opóźnione</string>
 	<string name="widget_immediate_starts">Teraz</string>
-	<string name="widget_xy_coordinates">Punkty do kliknięcia na</string>
+	<string name="widget_xy_coordinates">Punkty do klikania</string>
 	<string name="widget_notifications">Powiadomienia</string>
-
-    <!-- Credits -->
-	<string name="credits_app_label">Smooth Clicker</string>
-	<string name="credits_app_desc">Aplikacja wykonana przez pylapp</string>
-	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
-	<string name="credits_app_license">Na licencji MIT</string>
-	<string name="credits_app_personal_page">https://Twitter.com/pylapp</string>
-
-	<string name="credits_logo_label">Stosowania logo</string>
-	<string name="credits_logo_desc">Ikona wykonana przez Freepik z www.flaticon.com</string>
-	<string name="credits_logo_url">http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726#Term=Monkey</string>
-	<string name="credits_logo_license">Licencji Flaticon Basic</string>
-
-	<string name="credits_mam_label">Arc materiał Menu</string>
-	<string name="credits_mam_desc">Biblioteki przez Saurabh Arora</string>
-	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
-	<string name="credits_mam_license">Na licencji Apache v2</string>
-
-	<string name="credits_switchbutton_label">SwitchButton</string>
-	<string name="credits_switchbutton_desc">Biblioteka, wykonane przez kyleduo</string>
-	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
-	<string name="credits_switchbutton_license">Na licencji Apache v2</string>
-
-	<string name="credits_appintro_label">AppIntro</string>
-	<string name="credits_appintro_desc">Przez Paolo Rotolo biblioteki</string>
-	<string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
-	<string name="credits_appintro_license">Na licencji Apache v2</string>
-
-	<string name="credits_icon_flaticon_freepik_label">Ikony</string>
-	<string name="credits_icon_flaticon_freepik_desc">Ikony wykonane przez Freepik z www.flaticon.com</string>
-	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
-	<string name="credits_icon_flaticon_freepik_license">Licencji Flaticon Basic</string>
-	<string name="credits_icon_flaticon_elegantthemes_label">Ikony</string>
-	<string name="credits_icon_flaticon_elegantthemes_desc">Ikony wykonane przez Elegant Themes z www.flaticon.com</string>
-	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/Elegant-Themes</string>
-	<string name="credits_icon_flaticon_elegantthemes_license">W CC 3.0 Licencja</string>
-	<string name="credits_icon_flaticon_yannick_label">Ikony</string>
-	<string name="credits_icon_flaticon_yannick_desc">Ikony wykonane przez Yannick z www.flaticon.com</string>
-	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/Yannick</string>
-	<string name="credits_icon_flaticon_yannick_license">W CC 3.0 Licencja</string>
-
-    <!-- Splash screen -->
+	<string name="widget_standalone_dialog_title">Tryb autonomiczny</string>
+	<string name="widget_sounds">Pierścień na każde kliknięcie</string>
 	<string name="splashscreen_description">Smooth Clicker</string>
-
-    <!-- Notifications -->
 	<string name="notif_content_title">Smooth Clicker</string>
 	<string name="notif_content_text_click_made">Kliknij przycisk Nowy </string>
-	<string name="notif_content_text_clicks_on_going_app">Klikając proces jest uruchomiony (poprzez aplikację)&#8230; </string>
-	<string name="notif_content_text_clicks_on_going_service">Klikając proces jest uruchomiony (poprzez usługę)&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_standalone">Klikając proces jest uruchomiony (poprzez usługę)&#8230;</string>
-    <string name="notif_content_text_clicks_stop">Klikając proces został zatrzymany</string>
-	<string name="notif_content_text_clicks_over">Klikając procesu</string>
+	<string name="notif_content_text_clicks_on_going_app">Kliknij proces jest uruchomiony (poprzez aplikację)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">Kliknij proces jest uruchomiony (poprzez usługę)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_standalone">Kliknij proces jest uruchomiony (standalone)&#8230;</string>
+	<string name="notif_content_text_clicks_stop">Kliknij proces został zatrzymany</string>
+	<string name="notif_content_text_clicks_over">Zakończeniu procesu kliknij przycisk</string>
 	<string name="notif_content_text_su_granted">Udzielono uprawnienia administratora</string>
-	<string name="notif_content_text_countdown">Początkowa:</string>
-
-    <!-- Settings / Preferences -->
-	<string name="pref_settings_title">Ustawienia</string>
+	<string name="notif_content_text_countdown">Start:</string>
+	<string name="notif_content_text_watch_over">Proces ten zegarek jest nad</string>
+	<string name="pref_settings_title">Główne</string>
 	<string name="pref_settings_shaketoclean_title">Wstrząsnąć do czyszczenia</string>
-	<string name="pref_settings_shaketoclean_summary">Wstrząsnąć urządzenie aby konfiguracja pusty</string>
-
+	<string name="pref_settings_shaketoclean_summary">Wstrząsnąć urządzenie, aby opróżnić konfiguracji</string>
+	<string name="pref_picture_recognition_title">Rozpoznawania ekranu</string>
+	<string name="pref_settings_prthreshold_title">Próg</string>
+	<string name="pref_settings_prthreshold_summary">Próg jest, bardziej akceptowane są różnice między obraz wyzwalacza i ostatni zrzut ekranu wykonany</string>
+	<string name="pref_settings_prfrequency_title">Czas do przechwytywania</string>
+	<string name="pref_settings_prfrequency_summary">Im wyższy jest czas do przechwytywania, tym wolniejszy będzie system wobec wziąć tęcza pociski urządzenia do uruchomienia procesu kliknij przycisk</string>
+	<string name="pref_app_files">Pamięci masowej</string>
+	<string name="pref_app_files_title">Pliki używane przez aplikację</string>
+	<string name="pref_app_files_summary">Kliknij, aby zarządzać plikami w użyciu</string>
+	<string name="pref_app_files_points_title">Punkty</string>
+	<string name="pref_app_files_points_name">Plik zawierający punkty</string>
+	<string name="pref_app_files_points_content">Czytaj</string>
+	<string name="pref_app_files_config_title">Konfiguracja</string>
+	<string name="pref_app_files_config_name">Plik zawierający konfigurację</string>
+	<string name="pref_app_files_config_content">Czytaj</string>
+	<string name="pref_app_files_unlock_title">Odblokować skryptu</string>
+	<string name="pref_app_files_unlock_name">Plik zawierający skrypt unlock</string>
+	<string name="pref_app_files_unlock_content">Czytaj</string>
+	<string name="pref_app_files_trigger_title">Wyzwalacz obraz</string>
+	<string name="pref_app_files_trigger_name">Plik obrazu, który rozpoczyna się proces kliknij</string>
+	<string name="pref_app_files_trigger_content">Czytaj</string>
 	<string name="pref_credits_title">Kredyty</string>
-	<string name="pref_key_credit_title">Ta aplikacja korzysta z treści stron trzecich</string>
-	<string name="pref_key_credit_summary">Kliknij tutaj, aby pokazać licencje</string>
-
+	<string name="pref_key_credit_title">Ta aplikacja wykorzystuje zawartość osób trzecich</string>
+	<string name="pref_key_credit_summary">Kliknij tutaj, aby wyświetlić licencje</string>
 	<string name="pref_about_title">O</string>
+	<string name="pref_about_subtitle">Smooth Clicker</string>
+	<string name="pref_about_summary">Kliknij, aby uzyskać więcej</string>
 	<string name="pref_about_version_title">Wersja</string>
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">napisane przez pylapp - licencja MIT</string>
-
-	<string name="pref_play_store_title">Google Odtwarzanie</string>
-	<string name="pref_play_store_summary">★ Zapraszam do Oceń i komentarz app ★</string>
-
-    <!-- Snackbars -->
+	<string name="pref_play_store_title">Google Play</string>
+	<string name="pref_play_store_summary">★ Zapraszam do ocenić i skomentować ★ aplikacja</string>
+	<string name="pref_wakescreenbattery_title">Czujny i baterii</string>
+	<string name="pref_key_wakelock_title">Wakelock</string>
+	<string name="pref_key_wakelock_summary">Użyj wakelock aby zawsze ekranu na urządzenie (może zmniejszyć dużo baterii)</string>
+	<string name="pref_key_forcescreenon_battery_title">Na ekranie życie</string>
+	<string name="pref_key_forcescreenon_battery_summary">Kiedy ekran jest wyłączony, włącz go, jeśli urządzenie używa baterii i nie zasilania</string>
+	<string name="pref_unlockscript_title">Odblokować</string>
+	<string name="pref_key_unlockscript_title">ADB skryptu</string>
+	<string name="pref_key_unlockscript_summary">Za pomocą dedykowanego skrypt niestandardowy, posiadające system poleceń do odblokowania urządzenia</string>
+	<string name="pref_root_title">Korzeń</string>
+	<string name="pref_root_subtitle">Jak korzeń mojego urządzenia?</string>
+	<string name="pref_root_summary">Kliknij, aby uzyskać więcej</string>
+	<string name="pref_key_root_heimdall_title">Heimdall</string>
+	<string name="pref_key_root_heimdall_summary">Przejdź do Heimdall wykorzenić swoje urządzenie z systemem Linux</string>
+	<string name="pref_key_root_odin_title">Odin</string>
+	<string name="pref_key_root_odin_summary">Przejdź do Odyna, aby wykorzenić urządzenie z systemem Windows</string>
+	<string name="pref_key_root_chainfire_title">Chainfire XDA</string>
+	<string name="pref_key_root_chainfire_summary">Przejdź do Chainfire uzyskać więcej wiedzy na temat procesu głównego</string>
+	<string name="pref_heimdall_url">https://doc.Ubuntu-fr.org/Heimdall</string>
+	<string name="pref_odin_url">http://odindownload.com/</string>
+	<string name="pref_chainfire_url">https://www.Chainfire.eu/</string>
+	<string name="pref_key_help_title">Pomoc</string>
+	<string name="pref_key_help_summary">Uruchom samouczek</string>
 	<string name="snackbar_action_dismiss">Cofnij</string>
-
-    <!-- Intro screens -->
-	<string name="intro_welcome_label">Hej!</string>
-	<string name="intro_welcome_desc">Zapraszamy do sprawnego zatrzaskowe</string>
-	<string name="intro_root_label">Korzeń</string>
-	<string name="intro_root_desc">Musisz mieć Ukorzenione Android urządzenia aby korzystać z tej aplikacji</string>
-	<string name="intro_clicks_label">Kliknięć</string>
-	<string name="intro_clicks_desc">Zdefiniować kilka kliknięć, aby proces&#8230; </string>
-	<string name="intro_notifications_label">Konfigurowalne</string>
-	<string name="intro_notifications_desc">&#8230; i skonfigurować proces z powiadomień, wibracje lub opóźnienia</string>
-	<string name="intro_free_label">Rodzi się wolna</string>
-	<string name="intro_free_desc">Gładkie klekoczący jest darmowe i open source!</string>
-
-    <!-- Misc. -->
+	<string name="permission_write_external_storage_title">ZEWNĘTRZNEJ pamięci masowej zapisu uprawnienie</string>
+	<string name="permission_write_external_storage_summary">Aplikacja potrzebuje to uprawnienie do zapisu plików konfiguracyjnych w osobnym folderze</string>
+	<string name="permission_read_external_storage_title">ZEWNĘTRZNEJ pamięci masowej odczytu uprawnienia</string>
+	<string name="permission_read_external_storage_summary">Aplikacja wymaga tego uprawnienia do odczytu plików konfiguracyjnych w osobnym folderze</string>
 	<string name="error_not_implemented">Jeszcze nie zaimplementowane!</string>
 	<string name="message_reinit_config">Oczyścić&#8230; </string>
-	<string name="message_confirm_exit_label">Zjazd</string>
+	<string name="message_confirm_exit_label">Wyjścia</string>
 	<string name="message_confirm_exit_content">Czy chcesz zamknąć aplikację?</string>
 	<string name="app_intro">Zapraszamy do sprawnego zatrzaskowe</string>
-
+	<string name="snackbar_see_config_file">Czytaj</string>
+	<string name="dialog_negative_button">Anuluj</string>
+	<string name="dialog_positive_button">Ok</string>
 </resources>

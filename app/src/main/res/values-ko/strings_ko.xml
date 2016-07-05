@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     MIT License
 
@@ -24,146 +26,146 @@
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
-
-    <!-- For the app -->
-    <string name="app_name">Smooth Clicker</string>
-    <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
-    <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
-    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-
-	<!-- The standalone activity -->
-	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
-	<string name="ninja_init_config">독립형 : 구성 값이 선택됩니다  &#8230;</string>
-	<string name="ninja_init_points">독립형 : 클릭하는 포인트가 선택됩니다 &#8230;</string>
-	<string name="ninja_start_click_process">독립형 : 독립 다음 클릭 프로세스가 시작 &#8230;</string>
-
-    <!-- Menus -->
+	<string name="app_name">Smooth Clicker</string>
+	<string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+	<string name="app_author">https://twitter.com/pylapp</string>
+	<string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+	<string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
+	<string name="app_name_standalone">부드러운 식자 (독립 실행형)</string>
+	<string name="standalone_init_config">구성 값 선택 됩니다&#8230;</string>
+	<string name="standalone_init_points">클릭 하 여 포인트 선택 됩니다&#8230;</string>
+	<string name="standalone_start_click_process">독립 실행형 모드 시작입니다&#8230;</string>
+	<string name="standalone_bad_action">Woops&#8230;, 좋은 작업 사용 하 여이 활동 하지 않았다!</string>
+	<string name="app_name_ninja">부드러운 식자 (독립 실행형)</string>
 	<string name="action_exit">출구</string>
 	<string name="action_settings">설정</string>
 	<string name="action_clean_points">선택한 점 삭제</string>
 	<string name="action_clean_all">값을 다시 설정 하 고 선택한 점 삭제</string>
-
-	<string name="info_message_start">구성을 저장 하 고 클릭 하 여 프로세스를 시작</string>
-	<string name="info_message_stop">클릭 프로세스 중지</string>
+	<string name="action_export">JSON 파일 내보내기</string>
+	<string name="action_import">JSON 파일에서 가져오기</string>
+	<string name="action_configuration">구성</string>
+	<string name="action_standalone">독립 실행형 모드</string>
+	<string name="info_message_start">구성을 저장 하 고 시작 하는 procesus</string>
+	<string name="info_message_stop">모든 프로세스를 중지</string>
 	<string name="info_message_request_su">SU 그랜트에 대 한 질문</string>
 	<string name="info_message_su_granted">SU 권한 부여:-) 부여</string>
 	<string name="info_message_new_point">화면에 새로운 점 선택</string>
-	<string name="info_message_invite_new_points">몇 가지 포인트를 선택 하 고 다시</string>
-
+	<string name="info_message_invite_new_points">여 점을 선택한 다음 백업 화면에서 클릭</string>
+	<string name="info_message_invite_new_random_points">긴 임의의 점을 선택 하는 화면에서 클릭 한 다음 다시</string>
+	<string name="info_export_success">수출이 했다</string>
+	<string name="info_export_fail">내보내기 실패</string>
+	<string name="info_import_success">수입이 했다</string>
+	<string name="info_import_fail">가져오기 실패</string>
+	<string name="info_standalone_activated">독립 실행형 모드 시작 됩니다.</string>
+	<string name="info_standalone_disactivated">독립 실행형 모드 중지 됩니다.</string>
 	<string name="error_message_su_not_granted">SU 권한 부여 x-(부여 되지 않은</string>
 	<string name="error_su_missing">이 응용 프로그램을 사용 하기 전에 안 드 로이드를 뿌리 나요? 그것은 필수입니다.</string>
 	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ 아니 클릭 정의</string>
 	<string name="error_message_was_not_working">(－‸ლ) 프로세스가 시작 되지 않습니다.</string>
-
+	<string name="error_nothing_to_open_json">Woops 아무것도.json 파일을 열 수 있습니다.</string>
+	<string name="error_nothing_to_open_file">Woops 아무것도이 파일을 열 수 있습니다.</string>
 	<string name="warning_hazard_repeat_endless_title">위험한 작업</string>
 	<string name="warning_hazard_repeat_endless_content">당신은 끝 없는 반복을? 이 작업은 장치에 대 한 위험 수 있습니다.</string>
 	<string name="warning_hazard_repeat_endless_no">아니!</string>
 	<string name="warning_hazard_repeat_endless_yes">Feur 프라이!</string>
-
-    <!-- Widgets -->
-	<string name="widget_type_of_start">지연 된 시작</string>
+	<string name="widget_no_points">아직 아무 선택된 포인트</string>
+	<string name="widget_type_of_start">시작</string>
+	<string name="widget_unit_time">시간</string>
+	<string name="widget_unit_time_ms">밀리초</string>
+	<string name="widget_unit_time_s">두 번째</string>
+	<string name="widget_unit_time_m">분</string>
+	<string name="widget_unit_time_h">시간</string>
 	<string name="widget_delay">지연</string>
-	<string name="widget_delay_hint">초에&#8230;</string>
 	<string name="widget_speed">각 클릭 하기 전에 시간</string>
-	<string name="widget_speed_hint">초에&#8230;</string>
 	<string name="widget_repeat">반복</string>
 	<string name="widget_repeat_hint">&#8230; 시간</string>
-	<string name="widget_repeat_endless">끝 없는</string>
+	<string name="widget_repeat_endless">끝 없는 반복</string>
 	<string name="widget_vibrate_on_start">시작 진동</string>
 	<string name="widget_vibrate_on_click">클릭에 진동</string>
 	<string name="widget_delayed_starts">지연</string>
 	<string name="widget_immediate_starts">지금</string>
 	<string name="widget_xy_coordinates">클릭 하 여 포인트</string>
 	<string name="widget_notifications">알림</string>
-
-    <!-- Credits -->
-	<string name="credits_app_label">Smooth Clicker</string>
-	<string name="credits_app_desc">Pylapp에 의해 응용 프로그램</string>
-	<string name="credits_app_url">https://github.com/pylapp/SmoothClicker</string>
-	<string name="credits_app_license">MIT 허가서</string>
-	<string name="credits_app_personal_page">https://twitter.com/pylapp</string>
-
-	<string name="credits_logo_label">응용 프로그램 로고</string>
-	<string name="credits_logo_desc">Www.flaticon.com에서 Freepik에 의해 만들어진 아이콘</string>
-	<string name="credits_logo_url">http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726#term=monkey</string>
-	<string name="credits_logo_license">Flaticon 기본 라이센스</string>
-
-	<string name="credits_mam_label">소재 호 메뉴</string>
-	<string name="credits_mam_desc">Saurabh Arora 만든 라이브러리</string>
-	<string name="credits_mam_url">https://github.com/saurabharora90/MaterialArcMenu</string>
-	<string name="credits_mam_license">아파치 라이선스 v 2에서</string>
-
-	<string name="credits_switchbutton_label">SwitchButton</string>
-	<string name="credits_switchbutton_desc">Kyleduo에 의해 만들어진 라이브러리</string>
-	<string name="credits_switchbutton_url">https://github.com/kyleduo/SwitchButton</string>
-	<string name="credits_switchbutton_license">아파치 라이선스 v 2에서</string>
-
-	<string name="credits_appintro_label">AppIntro</string>
-	<string name="credits_appintro_desc">파올로 Rotolo 만든 라이브러리</string>
-	<string name="credits_appintro_url">https://github.com/PaoloRotolo/AppIntro</string>
-	<string name="credits_appintro_license">아파치 라이선스 v 2에서</string>
-
-	<string name="credits_icon_flaticon_freepik_label">아이콘</string>
-	<string name="credits_icon_flaticon_freepik_desc">Www.flaticon.com에서 Freepik에 의해 만들어진 아이콘</string>
-	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/authors/freepik</string>
-	<string name="credits_icon_flaticon_freepik_license">Flaticon 기본 라이센스</string>
-	<string name="credits_icon_flaticon_elegantthemes_label">아이콘</string>
-	<string name="credits_icon_flaticon_elegantthemes_desc">우아한 테마에 의해 www.flaticon.com에서 만든 아이콘</string>
-	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/authors/elegant-themes</string>
-	<string name="credits_icon_flaticon_elegantthemes_license">CC 라이센스 3.0에서</string>
-	<string name="credits_icon_flaticon_yannick_label">아이콘</string>
-	<string name="credits_icon_flaticon_yannick_desc">야 닉 www.flaticon.com에서 만든 아이콘</string>
-	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/authors/yannick</string>
-	<string name="credits_icon_flaticon_yannick_license">CC 라이센스 3.0에서</string>
-
-    <!-- Splash screen -->
+	<string name="widget_standalone_dialog_title">독립 실행형 모드</string>
+	<string name="widget_sounds">각 클릭에 반지</string>
 	<string name="splashscreen_description">Smooth Clicker</string>
-
-    <!-- Notifications -->
 	<string name="notif_content_title">Smooth Clicker</string>
 	<string name="notif_content_text_click_made">새 클릭 </string>
 	<string name="notif_content_text_clicks_on_going_app">클릭 프로세스 (응용 프로그램)를 통해 실행&#8230; </string>
 	<string name="notif_content_text_clicks_on_going_service">클릭 프로세스 (서비스)를 통해 실행&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_standalone">클릭 프로세스 (서비스) 독립형&#8230;</string>
+	<string name="notif_content_text_clicks_on_going_standalone">클릭 프로세스 (독립 실행형)를 실행 하 고&#8230;</string>
 	<string name="notif_content_text_clicks_stop">클릭 프로세스 중지 되었습니다.</string>
 	<string name="notif_content_text_clicks_over">클릭 과정이 끝났습니다.</string>
 	<string name="notif_content_text_su_granted">슈퍼 사용자 권한이 부여 되었는지</string>
 	<string name="notif_content_text_countdown">시작:</string>
-
-    <!-- Settings / Preferences -->
-	<string name="pref_settings_title">설정</string>
+	<string name="notif_content_text_watch_over">시계 프로세스가 끝났습니다.</string>
+	<string name="pref_settings_title">메인</string>
 	<string name="pref_settings_shaketoclean_title">흔들어 청소</string>
 	<string name="pref_settings_shaketoclean_summary">구성 빈 수 있도록 장치를 흔들어</string>
+	<string name="pref_picture_recognition_title">스크린 인식</string>
+	<string name="pref_settings_prthreshold_title">임계값</string>
+	<string name="pref_settings_prthreshold_summary">더 많은 임계값은, 트리거 사진과 마지막 스크린 샷 사이의 차이 했다 더 허용된 됩니다.</string>
+	<string name="pref_settings_prfrequency_title">캡처 시간</string>
+	<string name="pref_settings_prfrequency_summary">높은 캡처에 대 한 시간, 느린 시스템을 클릭 프로세스를 실행 하는 장치의 스크린 샷의 받을 것</string>
+	<string name="pref_app_files">스토리지</string>
+	<string name="pref_app_files_title">응용 프로그램에 의해 사용 되는 파일</string>
+	<string name="pref_app_files_summary">사용 중인 파일을 관리 하려면 클릭 하십시오</string>
+	<string name="pref_app_files_points_title">포인트</string>
+	<string name="pref_app_files_points_name">포인트를 포함 하는 파일</string>
+	<string name="pref_app_files_points_content">읽기</string>
+	<string name="pref_app_files_config_title">구성</string>
+	<string name="pref_app_files_config_name">구성을 포함 하는 파일</string>
+	<string name="pref_app_files_config_content">읽기</string>
+	<string name="pref_app_files_unlock_title">스크립트를 잠금 해제</string>
+	<string name="pref_app_files_unlock_name">잠금 해제 스크립트를 포함 하는 파일</string>
+	<string name="pref_app_files_unlock_content">읽기</string>
+	<string name="pref_app_files_trigger_title">트리거 그림</string>
+	<string name="pref_app_files_trigger_name">그림 파일을 클릭 하 여 프로세스를 시작</string>
+	<string name="pref_app_files_trigger_content">읽기</string>
 	<string name="pref_credits_title">크레딧</string>
 	<string name="pref_key_credit_title">이 응용 프로그램 사용 하 여 타사 내용</string>
 	<string name="pref_key_credit_summary">라이센스를 표시 하려면 여기를 클릭 하십시오.</string>
 	<string name="pref_about_title">에 대 한</string>
+	<string name="pref_about_subtitle">Smooth Clicker</string>
+	<string name="pref_about_summary">좀 더 클릭</string>
 	<string name="pref_about_version_title">버전</string>
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">pylapp-라이센스 MIT에 의해 작성 된</string>
-	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">&#9733; 평가 자유롭게 앱 코멘트 &#9733;</string>
-
-    <!-- Snack bars -->
+	<string name="pref_play_store_title">구글 플레이</string>
+	<string name="pref_play_store_summary">★ 자유롭게 평가 하 여 애플 리 케이 션 ★ 의견</string>
+	<string name="pref_wakescreenbattery_title">깨어 및 배터리</string>
+	<string name="pref_key_wakelock_title">Wakelock</string>
+	<string name="pref_key_wakelock_summary">항상 화면에 장치를 (줄일 수 많은 배터리) wakelocks를 사용 하 여</string>
+	<string name="pref_key_forcescreenon_battery_title">에 포스 화면</string>
+	<string name="pref_key_forcescreenon_battery_summary">때 화면 꺼져, 배터리 및 전원 공급 장치 하지 장치 사용 하는 경우 그것을 설정합니다</string>
+	<string name="pref_unlockscript_title">잠금 해제</string>
+	<string name="pref_key_unlockscript_title">ADB 스크립트</string>
+	<string name="pref_key_unlockscript_summary">시스템 명령을 장치 잠금을 해제 하는 데는 전용된 사용자 지정 스크립트를 사용 하 여</string>
+	<string name="pref_root_title">루트</string>
+	<string name="pref_root_subtitle">내 장치를 근절 하는 방법?</string>
+	<string name="pref_root_summary">좀 더 클릭</string>
+	<string name="pref_key_root_heimdall_title">헤임달</string>
+	<string name="pref_key_root_heimdall_summary">헤임달 리눅스 장치 루트에 이동</string>
+	<string name="pref_key_root_odin_title">오 딘</string>
+	<string name="pref_key_root_odin_summary">오 딘 윈도우 장치 루트에 이동</string>
+	<string name="pref_key_root_chainfire_title">Chainfire XDA</string>
+	<string name="pref_key_root_chainfire_summary">루트 프로세스에 대 한 더 많은 지식을 얻으려면 Chainfire에가 서</string>
+	<string name="pref_heimdall_url">https://doc.ubuntu-fr.org/heimdall</string>
+	<string name="pref_odin_url">http://odindownload.com/</string>
+	<string name="pref_chainfire_url">https://www.chainfire.eu/</string>
+	<string name="pref_key_help_title">도움말</string>
+	<string name="pref_key_help_summary">자습서 시작</string>
 	<string name="snackbar_action_dismiss">실행 취소</string>
-
-    <!-- Intro screen -->
-	<string name="intro_welcome_label">이 봐!</string>
-	<string name="intro_welcome_desc">오신 것을 환영 합니다 식자를 부드럽게</string>
-	<string name="intro_root_label">루트</string>
-	<string name="intro_root_desc">이 애플 리 케이이 션을 사용 하 여 뿌리 안 드 로이드 장치를가지고 해야</string>
-	<string name="intro_clicks_label">클릭</string>
-	<string name="intro_clicks_desc">처리를 여러 번 클릭을 정의&#8230; </string>
-	<string name="intro_notifications_label">구성 가능</string>
-	<string name="intro_notifications_desc">&#8230; 및 알림, 진동 또는 지연 과정 구성</string>
-	<string name="intro_free_label">자유롭기 위하여 태어난</string>
-	<string name="intro_free_desc">부드러운 식자는 무료 이며 오픈 소스!</string>
-
-    <!-- Misc. -->
+	<string name="permission_write_external_storage_title">외부 저장소 쓰기 권한</string>
+	<string name="permission_write_external_storage_summary">응용 프로그램 전용된 폴더에 구성 파일을 작성 하려면이 권한이 필요</string>
+	<string name="permission_read_external_storage_title">외부 스토리지 읽기 권한</string>
+	<string name="permission_read_external_storage_summary">응용 프로그램 전용된 폴더에 있는 구성 파일을 읽을 수 있는이 권한이 필요</string>
 	<string name="error_not_implemented">아직 구현 되지 않았습니다!</string>
 	<string name="message_reinit_config">정리&#8230; </string>
 	<string name="message_confirm_exit_label">출구</string>
 	<string name="message_confirm_exit_content">응용 프로그램을 종료 하 시겠습니까?</string>
 	<string name="app_intro">오신 것을 환영 합니다 식자를 부드럽게</string>
-
+	<string name="snackbar_see_config_file">읽기</string>
+	<string name="dialog_negative_button">취소</string>
+	<string name="dialog_positive_button">괜찮았던 것</string>
 </resources>

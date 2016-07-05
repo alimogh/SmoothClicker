@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     MIT License
 
@@ -41,9 +43,6 @@
 
     <!-- The standalone activity -->
     <string name="app_name_ninja">Smooth Clicker (standalone)</string>
-    <string name="ninja_init_config">Standalone: Config values are picked &#8230;</string>
-    <string name="ninja_init_points">Standalone: Points to click on are picked &#8230;</string>
-    <string name="ninja_start_click_process">Standalone: The click process is starting &#8230;</string>
 
     <!-- Menus -->
     <string name="action_exit">Exit</string>
@@ -198,7 +197,7 @@
     <string name="permission_read_external_storage_title">EXTERNAL STORAGE READ permission</string>
     <string name="permission_read_external_storage_summary">The app needs this permission to read configuration files in a dedicated folder</string>
     <string name="permission_wakelock_title">WAKE LOCK permission</string>
-    <string name="permission_wakelock_summary">Lhe app needs this permissions to keep the screen of the device on to make clicks</string>
+    <string name="permission_wakelock_summary">The app needs this permissions to keep the screen of the device on to make clicks</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>

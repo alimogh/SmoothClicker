@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    MIT License
+
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
+
+<resources>
+
+    <string-array name="standalone_mode_titles">
+        <item>Pliki JSON</item>
+        <item>Pliki JSON i rozruchu zgodnie z ekranu</item>
+    </string-array>
+
+    <string-array name="standalone_mode_descriptions">
+        <item>Korzystanie z plików sc_points.json i sc_config.json</item>
+        <item>Korzystanie z plików sc_points.json, sc_config.json i sc_trigger.png</item>
+    </string-array>
+
+    <string-array name="introscreen_titles">
+        <item>Hej!</item>
+        <item>Korzeń</item>
+        <item>Kliknięć</item>
+        <item>Powiadomienia</item>
+        <item>Konfiguracja</item>
+        <item>Autonomiczny</item>
+        <item>Rozpoznawania ekranu</item>
+        <item>Urodził się być wolna</item>
+    </string-array>
+
+    <string-array name="introscreen_summaries">
+        <item>Zapraszamy do Smooth Clicker !</item>
+        <item>Musisz mieć zakorzenione Android urządzenie, aby korzystać z tej aplikacji.</item>
+        <item>Zdefiniować kilka kliknięć, aby przetworzyć&#8230; </item>
+        <item>&#8230; i skonfigurować proces z powiadomienia, wibracje itp.</item>
+        <item>Niektóre pliki JSON może służyć do przechowywania konfiguracji kliknij przycisk proces.</item>
+        <item>Tryb autonomiczny można rozpocząć proces kliknij za pomocą plików konfiguracji JSON.</item>
+        <item>Tryb autonomiczny można również rozpocząć proces kliknij według obrazu ekranu.</item>
+        <item>Gładkie klekoczący jest darmowe i open source!</item>
+    </string-array>
+
+    <string-array name="credits_labels">
+        <item>Smooth Clicker</item>
+        <item>Logo aplikacji</item>
+        <item>Materiał łuku Menu</item>
+        <item>SwitchButton</item>
+        <item>AppIntro</item>
+        <item>Przesuń przełącznik</item>
+        <item>Materiał SeekBar preferencji</item>
+        <item>Dexter</item>
+        <item>Ikony</item>
+        <item>Ikony</item>
+        <item>Ikony</item>
+        <item>Ikony</item>
+        <item>Ikony</item>
+    </string-array>
+
+    <string-array name="credits_descriptions">
+        <item>Aplikacja wykonana przez pylapp</item>
+        <item>Ikona wykonana przez Freepik from www.flaticon.com</item>
+        <item>Biblioteka, wykonane przez Saurabh Arora</item>
+        <item>Biblioteka, wykonane przez kyleduo</item>
+        <item>Przez Paolo Rotolo biblioteki</item>
+        <item>Biblioteka, wykonane przez Iiro Krankka</item>
+        <item>Biblioteka, wykonane przez Pavel Sikun</item>
+        <item>Biblioteka, wykonane przez Karumi</item>
+        <item>Ikony wykonane przez Freepik from www.flaticon.com</item>
+        <item>Ikony wykonane przez Elegant Themes from www.flaticon.com</item>
+        <item>Ikony wykonane przez Yannick from www.flaticon.com</item>
+        <item>Ikony wykonane przez Vaadin from www.flaticon.com</item>
+        <item>Ikony wykonane przez Madebyoliver from www.flaticon.com</item>
+    </string-array>
+
+    <string-array name="credits_urls">
+        <item>https://github.com/pylapp/SmoothClicker</item>
+        <item>http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726</item>
+        <item>https://github.com/saurabharora90/MaterialArcMenu</item>
+        <item>https://github.com/kyleduo/SwitchButton</item>
+        <item>https://github.com/PaoloRotolo/AppIntro</item>
+        <item>https://github.com/roughike/SwipeSelector</item>
+        <item>https://github.com/MrBIMC/MaterialSeekBarPreference</item>
+        <item>https://github.com/Karumi/Dexter</item>
+        <item>http://www.flaticon.com/Authors/Freepik</item>
+        <item>http://www.flaticon.com/Authors/Elegant-Themes</item>
+        <item>http://www.flaticon.com/Authors/Yannick</item>
+        <item>http://www.flaticon.com/Authors/Vaadin</item>
+        <item>http://www.flaticon.com/Authors/madebyoliver</item>
+    </string-array>
+
+    <string-array name="credits_licenses">
+        <item>Licencja MIT</item>
+        <item>Licencja Flaticon Basic</item>
+        <item>Licencja Apache v2</item>
+        <item>Licencja Apache v2</item>
+        <item>Licencja Apache v2</item>
+        <item>Licencja Apache v2</item>
+        <item>Licencja Apache v2</item>
+        <item>Licencja Apache v2</item>
+        <item>Licencja Flaticon Basic</item>
+        <item>Licencja CC 3.0 przez</item>
+        <item>Licencja CC 3.0 przez</item>
+        <item>Licencja CC 3.0 przez</item>
+        <item>Licencja Flaticon Basic</item>
+    </string-array>
+
+</resources>

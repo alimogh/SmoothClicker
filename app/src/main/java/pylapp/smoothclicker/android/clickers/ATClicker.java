@@ -162,23 +162,23 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         switch ( unitTime ){
             case R.id.rbUnitTimeMs:
                 mUnitTime = ConfigImporter.UnitTime.MILLISECOND;
-                mUnitTimeFactor = 1 * 0;
+                mUnitTimeFactor = 0 ; // 1 * 0;
                 break;
             case R.id.rbUnitTimeS:
                 mUnitTime = ConfigImporter.UnitTime.SECOND;
-                mUnitTimeFactor = 1 * 1;
+                mUnitTimeFactor = 1 ; // 1 * 1;
                 break;
             case R.id.rbUnitTimeM:
                 mUnitTime = ConfigImporter.UnitTime.MINUTE;
-                mUnitTimeFactor = 1 * 60;
+                mUnitTimeFactor = 60; // 1 * 60;
                 break;
             case R.id.rbUnitTimeH:
                 mUnitTime = ConfigImporter.UnitTime.HOUR;
-                mUnitTimeFactor = 1 * 60 * 60;
+                mUnitTimeFactor = 3600; //  1 * 60 * 60;
                 break;
             default:
                 mUnitTime = ConfigImporter.UnitTime.SECOND;
-                mUnitTimeFactor = 1 * 1;
+                mUnitTimeFactor = 1; // 1 * 1;
                 break;
         }
         mIsStartDelayed = sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);

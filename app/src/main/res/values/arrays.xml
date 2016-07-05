@@ -74,7 +74,7 @@
 
     <string-array name="credits_labels">
         <item>Smooth Clicker</item>
-        <item>App\'s logo</item>
+        <item>App logo</item>
         <item>Material Arc Menu</item>
         <item>SwitchButton</item>
         <item>AppIntro</item>
@@ -121,19 +121,19 @@
     </string-array>
 
     <string-array name="credits_licenses">
-        <item>Under Licence MIT</item>
-        <item>Under Licence Flaticon Basic</item>
-        <item>Under Licence Apache v2</item>
-        <item>Under License Apache v2</item>
-        <item>Under License Apache v2</item>
-        <item>Under License Apache v2</item>
-        <item>Under License Apache v2</item>
-        <item>Under License Apache v2</item>
-        <item>Under License Flaticon Basic</item>
-        <item>Under License CC 3.0 BY</item>
-        <item>Under License CC 3.0 BY</item>
-        <item>Under License CC 3.0 BY</item>
-        <item>Under License Flaticon Basic</item>
+        <item>Licence MIT</item>
+        <item>Licence Flaticon Basic</item>
+        <item>Licence Apache v2</item>
+        <item>Licence Apache v2</item>
+        <item>Licence Apache v2</item>
+        <item>Licence Apache v2</item>
+        <item>Licence Apache v2</item>
+        <item>Licence Apache v2</item>
+        <item>Licence Flaticon Basic</item>
+        <item>Licence CC 3.0 BY</item>
+        <item>Licence CC 3.0 BY</item>
+        <item>Licence CC 3.0 BY</item>
+        <item>Licence Flaticon Basic</item>
     </string-array>
 
 </resources>

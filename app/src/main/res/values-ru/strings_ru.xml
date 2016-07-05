@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
     MIT License
 
@@ -24,148 +25,146 @@
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
 <resources>
-
-    <!-- For the app -->
-    <string name="app_name">Smooth Clicker</string>
-    <string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
-    <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
-    <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-
-	<!-- The standalone activity -->
-	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
-	<string name="ninja_init_config">Standalone: Значения конфигурации выбраны &#8230;</string>
-	<string name="ninja_init_points">Standalone: Очки нажать на подбираются &#8230;</string>
-	<string name="ninja_start_click_process">Standalone: Процесс начинается нажмите &#8230;</string>
-
-    <!-- Menus -->
+	<string name="app_name">Smooth Clicker</string>
+	<string name="app_sharedUserId">pylapp.smoothclicker.android.sharedUserId</string>
+	<string name="app_author">https://twitter.com/pylapp</string>
+	<string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
+	<string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
+	<string name="app_name_standalone">Гладкая кликер (standalone)</string>
+	<string name="standalone_init_config">Значения конфигурации выбираются&#8230;</string>
+	<string name="standalone_init_points">Выбраны точки нажмите на&#8230;</string>
+	<string name="standalone_start_click_process">Автономный режим начинает&#8230;</string>
+	<string name="standalone_bad_action">Woops&#8230;, вы не использовать хорошее действие для запуска этой деятельности!</string>
+	<string name="app_name_ninja">Гладкая кликер (standalone)</string>
 	<string name="action_exit">Выход</string>
 	<string name="action_settings">Параметры</string>
 	<string name="action_clean_points">Удаление выбранной точки</string>
 	<string name="action_clean_all">Сброс значений и удаление выбранных точек</string>
-	<string name="info_message_start">Сохраните конфигурацию и запускает процесс, нажав кнопку</string>
-
-    <!-- Messages -->
-	<string name="info_message_stop">Остановить процесс нажатие</string>
+	<string name="action_export">Экспорт в файл JSON</string>
+	<string name="action_import">Импорт из файла JSON</string>
+	<string name="action_configuration">Конфигурация</string>
+	<string name="action_standalone">Автономный режим</string>
+	<string name="info_message_start">Сохраните конфигурацию и начинает procesus</string>
+	<string name="info_message_stop">Остановить весь процесс</string>
 	<string name="info_message_request_su">Просите Грант Су</string>
 	<string name="info_message_su_granted">Су разрешение было предоставлено :-)</string>
 	<string name="info_message_new_point">Выберите новые точки на экране</string>
-	<string name="info_message_invite_new_points">Выберите несколько точек, а затем обратно</string>
+	<string name="info_message_invite_new_points">Щелкните на экране, чтобы выбрать точку, а затем обратно</string>
+	<string name="info_message_invite_new_random_points">Долго нажмите кнопку на экране, чтобы выбрать случайную точку, а затем обратно</string>
+	<string name="info_export_success">Экспорт был достигнут</string>
+	<string name="info_export_fail">Ошибка экспорта</string>
+	<string name="info_import_success">Импорт был достигнут</string>
+	<string name="info_import_fail">Ошибка импорта</string>
+	<string name="info_standalone_activated">Начнется в автономный режим</string>
+	<string name="info_standalone_disactivated">Остановится в автономный режим</string>
 	<string name="error_message_su_not_granted">Су разрешение не было предоставлено x -)</string>
 	<string name="error_su_missing">Ли вы корень вашего андроида перед использованием этого app? Оно является обязательным.</string>
 	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ кликов не определен</string>
 	<string name="error_message_was_not_working">(－‸ლ) Процесс не запускается</string>
-
+	<string name="error_nothing_to_open_json">Woops, ничего не может открыть файл .json</string>
+	<string name="error_nothing_to_open_file">Woops, ничто не может открыть этот файл</string>
 	<string name="warning_hazard_repeat_endless_title">Опасные операции</string>
 	<string name="warning_hazard_repeat_endless_content">Вы уверены сделать бесконечный повтор? Эта операция может быть опасным для вашего устройства.</string>
 	<string name="warning_hazard_repeat_endless_no">Нету!</string>
 	<string name="warning_hazard_repeat_endless_yes">Feur Фрей!</string>
-
-    <!-- Widgets -->
-    <string name="widget_type_of_start">Отложенный запуск</string>
+	<string name="widget_no_points">Еще не выбранной точки</string>
+	<string name="widget_type_of_start">Начало</string>
+	<string name="widget_unit_time">Время</string>
+	<string name="widget_unit_time_ms">миллисекунды</string>
+	<string name="widget_unit_time_s">второй</string>
+	<string name="widget_unit_time_m">минута</string>
+	<string name="widget_unit_time_h">стойка</string>
 	<string name="widget_delay">Задержка</string>
-	<string name="widget_delay_hint">&#8230;, в секундах</string>
 	<string name="widget_speed">Время перед каждый клик</string>
-	<string name="widget_speed_hint">&#8230;, в секундах</string>
 	<string name="widget_repeat">Повторите</string>
 	<string name="widget_repeat_hint">&#8230; раз</string>
-	<string name="widget_repeat_endless">Бесконечные</string>
+	<string name="widget_repeat_endless">Бесконечное повторение</string>
 	<string name="widget_vibrate_on_start">Вибрируйте на старте</string>
 	<string name="widget_vibrate_on_click">Вибрируйте на нажмите</string>
 	<string name="widget_delayed_starts">Отложено</string>
 	<string name="widget_immediate_starts">Теперь</string>
 	<string name="widget_xy_coordinates">Очки, чтобы нажать на</string>
 	<string name="widget_notifications">Уведомления</string>
-
-    <!-- Credits -->
-    <string name="credits_app_label">Гладкая зазывала</string>
-	<string name="credits_app_desc">App, сделанные pylapp</string>
-	<string name="credits_app_url">HTTPS://GitHub.com/pylapp/SmoothClicker</string>
-	<string name="credits_app_license">Под лицензией MIT</string>
-	<string name="credits_app_personal_page">HTTPS://Twitter.com/pylapp</string>
-
-	<string name="credits_logo_label">Логотип приложения</string>
-	<string name="credits_logo_desc">Икона, сделанные Freepik от www.flaticon.com</string>
-	<string name="credits_logo_url">http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726#Term=Monkey</string>
-	<string name="credits_logo_license">Лицензии Flaticon Basic</string>
-
-	<string name="credits_mam_label">Материал дуги меню</string>
-	<string name="credits_mam_desc">Библиотека, сделанные Saurabh Арора</string>
-	<string name="credits_mam_url">HTTPS://GitHub.com/saurabharora90/MaterialArcMenu</string>
-	<string name="credits_mam_license">По лицензии Apache v2</string>
-
-	<string name="credits_switchbutton_label">SwitchButton</string>
-	<string name="credits_switchbutton_desc">Библиотека, сделанные kyleduo</string>
-	<string name="credits_switchbutton_url">HTTPS://GitHub.com/kyleduo/SwitchButton</string>
-	<string name="credits_switchbutton_license">По лицензии Apache v2</string>
-
-	<string name="credits_appintro_label">AppIntro</string>
-	<string name="credits_appintro_desc">Библиотека, сделанные Ротоло Паоло</string>
-	<string name="credits_appintro_url">HTTPS://GitHub.com/PaoloRotolo/AppIntro</string>
-	<string name="credits_appintro_license">По лицензии Apache v2</string>
-
-	<string name="credits_icon_flaticon_freepik_label">Значки</string>
-	<string name="credits_icon_flaticon_freepik_desc">Значки, сделанные Freepik от www.flaticon.com</string>
-	<string name="credits_icon_flaticon_freepik_url">http://www.flaticon.com/Authors/FreePik</string>
-	<string name="credits_icon_flaticon_freepik_license">Лицензии Flaticon Basic</string>
-	<string name="credits_icon_flaticon_elegantthemes_label">Значки</string>
-	<string name="credits_icon_flaticon_elegantthemes_desc">Иконки от элегантная темы от www.flaticon.com</string>
-	<string name="credits_icon_flaticon_elegantthemes_url">http://www.flaticon.com/Authors/Elegant-Themes</string>
-	<string name="credits_icon_flaticon_elegantthemes_license">Под CC 3.0 лицензии</string>
-	<string name="credits_icon_flaticon_yannick_label">Значки</string>
-	<string name="credits_icon_flaticon_yannick_desc">Значки, сделанные Янник от www.flaticon.com</string>
-	<string name="credits_icon_flaticon_yannick_url">http://www.flaticon.com/Authors/Yannick</string>
-	<string name="credits_icon_flaticon_yannick_license">Под CC 3.0 лицензии</string>
-
-    <!-- Splash screen -->
-	<string name="splashscreen_description">Гладкая зазывала</string>
-
-    <!-- Notifications -->
-	<string name="notif_content_title">Гладкая зазывала</string>
+	<string name="widget_standalone_dialog_title">Автономный режим</string>
+	<string name="widget_sounds">Кольцо на каждый клик</string>
+	<string name="splashscreen_description">Smooth Clicker</string>
+	<string name="notif_content_title">Smooth Clicker</string>
 	<string name="notif_content_text_click_made">Новый щелчок </string>
-	<string name="notif_content_text_clicks_on_going_app">(Через приложение) выполняется щелчок процесс&#8230; </string>
-	<string name="notif_content_text_clicks_on_going_service">(Через службу) выполняется щелчок процесс&#8230; </string>
-    <string name="notif_content_text_clicks_on_going_standalone">(standalone) выполняется щелчок процесс&#8230;</string>
-    <string name="notif_content_text_clicks_stop">Щелкая процесс был остановлен</string>
-	<string name="notif_content_text_clicks_over">Щелкая процесс завершен</string>
+	<string name="notif_content_text_clicks_on_going_app">Щелкните процесс выполняется (через приложение)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_service">Щелкните процесс выполняется (через службу)&#8230; </string>
+	<string name="notif_content_text_clicks_on_going_standalone">Щелкните процесс выполняется (standalone)&#8230;</string>
+	<string name="notif_content_text_clicks_stop">Щелкните процесс был остановлен</string>
+	<string name="notif_content_text_clicks_over">Щелкните процесс завершен</string>
 	<string name="notif_content_text_su_granted">Супер-пользователя разрешение</string>
 	<string name="notif_content_text_countdown">Начало:</string>
-
-    <!-- Settings / Preferences -->
-	<string name="pref_settings_title">Параметры</string>
+	<string name="notif_content_text_watch_over">Процесс смотреть</string>
+	<string name="pref_settings_title">Главная</string>
 	<string name="pref_settings_shaketoclean_title">Встряхнуть, чтобы очистить</string>
 	<string name="pref_settings_shaketoclean_summary">Встряхните устройство, чтобы сделать настройки пустой</string>
-
+	<string name="pref_picture_recognition_title">Признание экрана</string>
+	<string name="pref_settings_prthreshold_title">Порог</string>
+	<string name="pref_settings_prthreshold_summary">Является больше порога, более признанными являются различия между картину триггера и последний экран shot сделал</string>
+	<string name="pref_settings_prfrequency_title">Время для захвата</string>
+	<string name="pref_settings_prfrequency_summary">Выше, это время для захвата, тем медленнее будет системы принять снимки экрана устройства, чтобы запустить процесс нажмите кнопку</string>
+	<string name="pref_app_files">Хранения</string>
+	<string name="pref_app_files_title">Файлы, используемые приложением</string>
+	<string name="pref_app_files_summary">Нажмите, чтобы управлять файлами</string>
+	<string name="pref_app_files_points_title">Очки</string>
+	<string name="pref_app_files_points_name">Файл, содержащий точки</string>
+	<string name="pref_app_files_points_content">Чтение</string>
+	<string name="pref_app_files_config_title">Конфигурация</string>
+	<string name="pref_app_files_config_name">Файл, содержащий конфигурацию</string>
+	<string name="pref_app_files_config_content">Чтение</string>
+	<string name="pref_app_files_unlock_title">Разблокировать сценарий</string>
+	<string name="pref_app_files_unlock_name">Файл, содержащий скрипт разблокировки</string>
+	<string name="pref_app_files_unlock_content">Чтение</string>
+	<string name="pref_app_files_trigger_title">Триггер фотография</string>
+	<string name="pref_app_files_trigger_name">Файл рисунка, который запускает процесс нажмите кнопку</string>
+	<string name="pref_app_files_trigger_content">Чтение</string>
 	<string name="pref_credits_title">Кредиты</string>
 	<string name="pref_key_credit_title">Это приложение использует третьей стороной содержание</string>
 	<string name="pref_key_credit_summary">Нажмите здесь, чтобы показать лицензии</string>
-
 	<string name="pref_about_title">О</string>
+	<string name="pref_about_subtitle">Smooth Clicker</string>
+	<string name="pref_about_summary">Нажмите, чтобы получить больше</string>
 	<string name="pref_about_version_title">Версия</string>
-	<string name="pref_about_version_app_title">Гладкая зазывала</string>
+	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">Автор pylapp - Лицензия MIT</string>
 	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">&#9733; Не стесняйтесь оценивать и комментировать приложение &#9733;</string>
-
-    <!-- Snackbars -->
+	<string name="pref_play_store_summary">★ Вы можете оценить и прокомментировать app ★</string>
+	<string name="pref_wakescreenbattery_title">Просыпаются и батарея</string>
+	<string name="pref_key_wakelock_title">Wakelock</string>
+	<string name="pref_key_wakelock_summary">Используйте wakelocks, чтобы всегда экран на устройство (можно уменьшить много батареи)</string>
+	<string name="pref_key_forcescreenon_battery_title">Силу экран на</string>
+	<string name="pref_key_forcescreenon_battery_summary">Когда экран выключен, включите его, если устройство использует свою батарею и не блок питания</string>
+	<string name="pref_unlockscript_title">Разблокировать</string>
+	<string name="pref_key_unlockscript_title">АБР сценарий</string>
+	<string name="pref_key_unlockscript_summary">Использовать выделенный пользовательский сценарий, имеющие системные команды для разблокировки устройства</string>
+	<string name="pref_root_title">Корень</string>
+	<string name="pref_root_subtitle">Как корень мое устройство?</string>
+	<string name="pref_root_summary">Нажмите, чтобы получить больше</string>
+	<string name="pref_key_root_heimdall_title">Heimdall</string>
+	<string name="pref_key_root_heimdall_summary">Перейти к Heimdall искоренить устройства с Linux</string>
+	<string name="pref_key_root_odin_title">Одина</string>
+	<string name="pref_key_root_odin_summary">Перейти к Одина, чтобы искоренить устройства с Windows</string>
+	<string name="pref_key_root_chainfire_title">Дойдёт XDA</string>
+	<string name="pref_key_root_chainfire_summary">Перейти к дойдёт, чтобы получить больше знаний о корневого процесса</string>
+	<string name="pref_heimdall_url">HTTPS://doc.Ubuntu-fr.org/Heimdall</string>
+	<string name="pref_odin_url">http://odindownload.com/</string>
+	<string name="pref_chainfire_url">HTTPS://www.Chainfire.eu/</string>
+	<string name="pref_key_help_title">Справка</string>
+	<string name="pref_key_help_summary">Начало учебника</string>
 	<string name="snackbar_action_dismiss">Отменить</string>
-
-    <!-- Intro screens -->
-	<string name="intro_welcome_label">Эй!</string>
-	<string name="intro_welcome_desc">Добро пожаловать на Smooth Clicker</string>
-	<string name="intro_root_label">Корень</string>
-	<string name="intro_root_desc">Вы должны иметь корни андроид устройства использовать этот app</string>
-	<string name="intro_clicks_label">Кликов</string>
-	<string name="intro_clicks_desc">Определите несколько кликов для обработки&#8230; </string>
-	<string name="intro_notifications_label">Конфигурируемые</string>
-	<string name="intro_notifications_desc">&#8230; и настройте процесс уведомления, вибрация или задержки</string>
-	<string name="intro_free_label">Рожден, чтобы быть свободной</string>
-	<string name="intro_free_desc">Гладкая Clicker является бесплатным и открытым исходным кодом!</string>
-
-    <!-- Misc -->
+	<string name="permission_write_external_storage_title">Разрешение внешних хранения записи</string>
+	<string name="permission_write_external_storage_summary">Приложение требует это разрешение для записи файлов конфигурации в выделенную папку</string>
+	<string name="permission_read_external_storage_title">Разрешение чтение внешнего хранения</string>
+	<string name="permission_read_external_storage_summary">Приложение требует это разрешение на чтение файлов конфигурации в выделенную папку</string>
 	<string name="error_not_implemented">Еще не реализовано!</string>
 	<string name="message_reinit_config">Очистить&#8230; </string>
 	<string name="message_confirm_exit_label">Выход</string>
 	<string name="message_confirm_exit_content">Вы хотите выйти из приложения?</string>
-	<string name="app_intro">Добро пожаловать на Smooth Clicker</string>
-
+	<string name="app_intro">Добро пожаловать на гладкой зазывала</string>
+	<string name="snackbar_see_config_file">Чтение</string>
+	<string name="dialog_negative_button">Отмена</string>
+	<string name="dialog_positive_button">Хорошо</string>
 </resources>

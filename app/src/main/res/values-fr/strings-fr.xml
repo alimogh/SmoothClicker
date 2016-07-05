@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     MIT License
 
@@ -185,14 +187,10 @@
     <string name="snackbar_action_dismiss">Annuler</string>
 
     <!-- Permissions -->
-    <string name="permission_vibrate_title">Permission VIBRER</string>
-    <string name="permission_vibrate_summary">L\'application à besoin de cette permissions pour faire vibrer le téléphone à chaque click</string>
     <string name="permission_write_external_storage_title">Permission ECRITURE EXTERNE</string>
     <string name="permission_write_external_storage_summary">L\'application a besoin de cette permission pour écrire des fichiers de configuration dans un dossier dédié</string>
     <string name="permission_read_external_storage_title">Permission LECTURE EXTERNE</string>
     <string name="permission_read_external_storage_summary">L\'application a besoin de cette permission pour lire des fichiers de configuration dans un dossier dédié</string>
-    <string name="permission_wakelock_title">Permission WAKE LOCK</string>
-    <string name="permission_wakelock_summary">L\'application a besoin de cette permission pour garder l\'écran allumé pour pouvoir cliquer</string>
 
 
     <!-- Misc. -->
