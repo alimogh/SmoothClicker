@@ -36,7 +36,6 @@
 	<string name="standalone_init_points">Zbierane są punkty kliknij na&#8230;</string>
 	<string name="standalone_start_click_process">Tryb autonomiczny zaczyna&#8230;</string>
 	<string name="standalone_bad_action">Woops&#8230;, nie używasz dobre działanie do wyzwolenia tej działalności !</string>
-	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
 	<string name="action_exit">Wyjścia</string>
 	<string name="action_settings">Preferencje</string>
 	<string name="action_clean_points">Usuń wybrane punkty</string>

@@ -31,12 +31,11 @@
     <string name="app_author">https://twitter.com/pylapp</string>
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-    <string name="app_name_standalone">Clicker lisa (independiente)</string>
+    <string name="app_name_standalone">Smooth Clicker (independiente)</string>
     <string name="standalone_init_config">Se recogen valores de config&#8230;</string>
     <string name="standalone_init_points">Se recogen los puntos para hacer clic en&#8230;</string>
     <string name="standalone_start_click_process">Es a partir del modo independiente&#8230;</string>
     <string name="standalone_bad_action">¡ Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad !</string>
-    <string name="app_name_ninja">Smooth Clicker (independiente)</string>
     <string name="action_exit">Salida</string>
     <string name="action_settings">Preferencias</string>
     <string name="action_clean_points">Eliminar los puntos seleccionados</string>
