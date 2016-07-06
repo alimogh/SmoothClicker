@@ -26,7 +26,7 @@
 <!--
     Note:
         320dp: a typical phone screen (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc).
-        Samsung Galaxy A3, Samsung Galaxy S3
+        Samsung Galaxy A3, Samsung Galaxy S3, ...
 -->
 <resources>
 
