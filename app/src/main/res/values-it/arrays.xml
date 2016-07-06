@@ -38,7 +38,7 @@
     </string-array>
 
     <string-array name="introscreen_titles">
-        <item>Ehi!</item>
+        <item>Hello !</item>
         <item>Radice</item>
         <item>Click</item>
         <item>Notifiche</item>
@@ -49,14 +49,14 @@
     </string-array>
 
     <string-array name="introscreen_summaries">
-        <item>Benvenuto a Smooth Clicker!</item>
+        <item>Benvenuto a Smooth Clicker! </item>
         <item>È necessario disporre di un radicata dispositivo Android per usare questa app.</item>
         <item>Definire parecchi scatti per elaborare&#8230; </item>
         <item>&#8230; e configurare il processo con notifiche, vibrazioni ecc.</item>
         <item>Alcuni file JSON possono essere utilizzati per memorizzare la configurazione del processo fare clic su.</item>
         <item>La modalità stand-alone può avviare il processo di clic utilizzando solo i file di configurazione di JSON.</item>
         <item>La modalità stand-alone può anche avviare il processo di clic secondo un\'immagine dello schermo.</item>
-        <item>Clicker liscia è gratuito e open-source!</item>
+        <item>Clicker liscia è gratuito e open-source !</item>
     </string-array>
 
     <string-array name="credits_labels">

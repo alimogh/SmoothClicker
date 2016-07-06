@@ -38,7 +38,7 @@
     </string-array>
     
     <string-array name="introscreen_titles">
-        <item>Hallöchen!</item>
+        <item>Hallo !</item>
         <item>Wurzel</item>
         <item>Klicks</item>
         <item>Benachrichtigungen</item>
@@ -56,7 +56,7 @@
         <item>Einige JSON-Dateien können verwendet werden, um die Konfiguration des Prozesses klicken Sie auf speichern.</item>
         <item>Standalone-Modus kann mit dem Klick verwenden nur die JSON-Konfigurations-Dateien beginnen.</item>
         <item>Die Standalone-Modus kann auch Klick Verfahren ein Bild auf dem Bildschirm starten.</item>
-        <item>Glatte Clicker ist kostenlos und Open-Source!</item>
+        <item>Glatte Clicker ist kostenlos und Open-Source !</item>
     </string-array>
 
     <string-array name="credits_labels">

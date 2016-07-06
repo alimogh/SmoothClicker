@@ -38,7 +38,7 @@
     </string-array>
 
     <string-array name="introscreen_titles">
-        <item>이 봐!</item>
+        <item>Hello !</item>
         <item>루트</item>
         <item>클릭</item>
         <item>알림</item>
@@ -49,14 +49,14 @@
     </string-array>
 
     <string-array name="introscreen_summaries">
-        <item>오신 것을 환영 합니다 식자를 부드럽게!</item>
+        <item>오신 것을 환영 합니다 식자를 부드럽게 !</item>
         <item>이 애플 리 케이이 션을 사용 하 여 뿌리 안 드 로이드 장치를가지고 해야 합니다.</item>
         <item>처리를 여러 번 클릭을 정의&#8230; </item>
         <item>&#8230;, 알림 프로세스를 구성 하 고 진동 등.</item>
         <item>일부 JSON 파일 클릭 과정의 구성을 저장 하는 데 사용할 수 있습니다.</item>
         <item>독립 실행형 모드는 JSON 구성 파일을 사용 하 여 클릭 프로세스를 시작할 수 있습니다.</item>
         <item>독립 실행형 모드는 화면에 따라 클릭 프로세스를 시작할 수도 있습니다.</item>
-        <item>Smooth Clicker 식자는 무료 이며 오픈 소스!</item>
+        <item>Smooth Clicker 식자는 무료 이며 오픈 소스 !</item>
     </string-array>
 
     <string-array name="credits_labels">

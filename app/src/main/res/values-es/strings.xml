@@ -35,7 +35,7 @@
     <string name="standalone_init_config">Se recogen valores de config&#8230;</string>
     <string name="standalone_init_points">Se recogen los puntos para hacer clic en&#8230;</string>
     <string name="standalone_start_click_process">Es a partir del modo independiente&#8230;</string>
-    <string name="standalone_bad_action">Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad !</string>
+    <string name="standalone_bad_action">¡ Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad !</string>
     <string name="app_name_ninja">Smooth Clicker (independiente)</string>
     <string name="action_exit">Salida</string>
     <string name="action_settings">Preferencias</string>
@@ -66,8 +66,8 @@
     <string name="error_nothing_to_open_file">Woops nada puede abrir este archivo</string>
     <string name="warning_hazard_repeat_endless_title">Operaciones peligrosas</string>
     <string name="warning_hazard_repeat_endless_content">¿ Está seguro de hacer una repetición sin fin ? Esta operación puede ser peligrosa para su dispositivo.</string>
-    <string name="warning_hazard_repeat_endless_no">No !</string>
-    <string name="warning_hazard_repeat_endless_yes">Yes !</string>
+    <string name="warning_hazard_repeat_endless_no">No</string>
+    <string name="warning_hazard_repeat_endless_yes">Si</string>
     <string name="widget_no_points">Sin embargo ningún punto seleccionado</string>
     <string name="widget_type_of_start">Inicio</string>
     <string name="widget_unit_time">Tiempo</string>
