@@ -35,7 +35,7 @@
 	<string name="standalone_init_config">Wartości są pobierane&#8230;</string>
 	<string name="standalone_init_points">Zbierane są punkty kliknij na&#8230;</string>
 	<string name="standalone_start_click_process">Tryb autonomiczny zaczyna&#8230;</string>
-	<string name="standalone_bad_action">Woops&#8230;, nie używasz dobre działanie do wyzwolenia tej działalności!</string>
+	<string name="standalone_bad_action">Woops&#8230;, nie używasz dobre działanie do wyzwolenia tej działalności !</string>
 	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
 	<string name="action_exit">Wyjścia</string>
 	<string name="action_settings">Preferencje</string>
@@ -58,16 +58,16 @@
 	<string name="info_import_fail">Importowanie nie powiodło się</string>
 	<string name="info_standalone_activated">Rozpocznie się w trybie standalone</string>
 	<string name="info_standalone_disactivated">Zatrzyma się w trybie standalone</string>
-	<string name="error_message_su_not_granted">Nie udzielono autoryzacji SU x –)</string>
+	<string name="error_message_su_not_granted">Nie udzielono autoryzacji SU x–)</string>
 	<string name="error_su_missing">Czy korzeń Android przed użyciem tej aplikacji? Jest to obowiązkowe.</string>
-	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ żadnych kliknięć zdefiniowane</string>
+	<string name="error_message_no_click_defined">¯\\_(ツ)_/¯ żadnych kliknięć zdefiniowane</string>
 	<string name="error_message_was_not_working">(－‸ლ) Proces nie jest uruchomiony.</string>
 	<string name="error_nothing_to_open_json">Woops nic nie można otworzyć plik .json</string>
 	<string name="error_nothing_to_open_file">Woops nic nie może otworzyć tego pliku</string>
 	<string name="warning_hazard_repeat_endless_title">Niebezpieczne</string>
 	<string name="warning_hazard_repeat_endless_content">Czy na pewno chcesz uczynić niekończące się powtórzyć? Ta operacja może być niebezpieczne dla Twojego urządzenia.</string>
-	<string name="warning_hazard_repeat_endless_no">O nie!</string>
-	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+	<string name="warning_hazard_repeat_endless_no">No !</string>
+	<string name="warning_hazard_repeat_endless_yes">Yes !</string>
 	<string name="widget_no_points">Jeszcze nie wybrany punkt</string>
 	<string name="widget_type_of_start">Początek</string>
 	<string name="widget_unit_time">Czas</string>
@@ -132,7 +132,7 @@
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">napisane przez pylapp - licencja MIT</string>
 	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ Zapraszam do ocenić i skomentować aplikacja ★</string>
+	<string name="pref_play_store_summary">★ Zapraszam do ocenić i skomentować aplikacja</string>
 	<string name="pref_wakescreenbattery_title">Czujny i baterii</string>
 	<string name="pref_key_wakelock_title">Wakelock</string>
 	<string name="pref_key_wakelock_summary">Użyj wakelock aby zawsze ekranu na urządzenie (może zmniejszyć dużo baterii)</string>
@@ -160,7 +160,7 @@
 	<string name="permission_write_external_storage_summary">Aplikacja potrzebuje to uprawnienie do zapisu plików konfiguracyjnych w osobnym folderze</string>
 	<string name="permission_read_external_storage_title">ZEWNĘTRZNEJ pamięci masowej odczytu uprawnienia</string>
 	<string name="permission_read_external_storage_summary">Aplikacja wymaga tego uprawnienia do odczytu plików konfiguracyjnych w osobnym folderze</string>
-	<string name="error_not_implemented">Jeszcze nie zaimplementowane!</string>
+	<string name="error_not_implemented">Jeszcze nie zaimplementowane !</string>
 	<string name="message_reinit_config">Oczyścić&#8230; </string>
 	<string name="message_confirm_exit_label">Wyjścia</string>
 	<string name="message_confirm_exit_content">Czy chcesz zamknąć aplikację?</string>

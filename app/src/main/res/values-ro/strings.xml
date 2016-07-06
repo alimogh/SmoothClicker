@@ -35,8 +35,8 @@
 	<string name="standalone_init_config">Configurare valori sunt culese&#8230;</string>
 	<string name="standalone_init_points">Se culeg puncte să faceţi clic pe&#8230;</string>
 	<string name="standalone_start_click_process">Mod independent este începând&#8230;</string>
-	<string name="standalone_bad_action">Woops&#8230;, nu a folosit o acţiune bună pentru a declanşa această activitate!</string>
-	<string name="app_name_ninja">Smooth Clickerr (independent)</string>
+	<string name="standalone_bad_action">Woops&#8230;, nu a folosit o acţiune bună pentru a declanşa această activitate !</string>
+	<string name="app_name_ninja">Smooth Clicker (independent)</string>
 	<string name="action_exit">Ieşire</string>
 	<string name="action_settings">Preferinţe</string>
 	<string name="action_clean_points">Sterge punctele selectate</string>
@@ -58,16 +58,16 @@
 	<string name="info_import_fail">Importul nu a reuşit</string>
 	<string name="info_standalone_activated">Mod independent va începe</string>
 	<string name="info_standalone_disactivated">Mod independent va opri</string>
-	<string name="error_message_su_not_granted">Nu a fost acordată autorizaţia SU x -)</string>
+	<string name="error_message_su_not_granted">Nu a fost acordată autorizaţia SU x-)</string>
 	<string name="error_su_missing">A făcut root Android dumneavoastră înainte de a utiliza acest app? Este obligatorie.</string>
-	<string name="error_message_no_click_defined">¯\\_ (Miss_pisy) _ / ¯ clicuri nu definit</string>
+	<string name="error_message_no_click_defined">¯\\_(ツ)_/¯ clicuri nu definit</string>
 	<string name="error_message_was_not_working">(－‸ლ) Procesul nu este pornit</string>
 	<string name="error_nothing_to_open_json">Woops nimic nu poate deschide fişierul .json</string>
 	<string name="error_nothing_to_open_file">Woops nimic nu poate deschide acest fişier</string>
 	<string name="warning_hazard_repeat_endless_title">Operațiunea periculoase</string>
 	<string name="warning_hazard_repeat_endless_content">Sunteţi sigur de a face o repetare fără sfârşit? Această operaţiune poate fi periculos pentru aparatul dvs.</string>
-	<string name="warning_hazard_repeat_endless_no">Nope!</string>
-	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+	<string name="warning_hazard_repeat_endless_no">No !</string>
+	<string name="warning_hazard_repeat_endless_yes">Yes !</string>
 	<string name="widget_no_points">Nici un punct selectat încă</string>
 	<string name="widget_type_of_start">Începe</string>
 	<string name="widget_unit_time">Timp</string>
@@ -132,7 +132,7 @@
 	<string name="pref_about_version_app_title">Smooth Clickerr</string>
 	<string name="pref_about_version_app_summary">scris de pylapp - licenta MIT</string>
 	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ Simţiţi-vă liber pentru a evalua şi de a comenta app ★</string>
+	<string name="pref_play_store_summary">★ Simţiţi-vă liber pentru a evalua şi de a comenta app</string>
 	<string name="pref_wakescreenbattery_title">Treaz si baterie</string>
 	<string name="pref_key_wakelock_title">Wakelock</string>
 	<string name="pref_key_wakelock_summary">Utilizaţi wakelocks pentru a face aparatul mereu ecran pe (poate reduce mult bateria)</string>
@@ -160,12 +160,12 @@
 	<string name="permission_write_external_storage_summary">App are nevoie de această permisiune să scrie fişiere de configurare într-un folder dedicat</string>
 	<string name="permission_read_external_storage_title">CITIT de stocare externe permisiunea</string>
 	<string name="permission_read_external_storage_summary">App are nevoie de această permisiune pentru a citi fişierele de configurare într-un folder dedicat</string>
-	<string name="error_not_implemented">Nu a fost implementată încă!</string>
+	<string name="error_not_implemented">Nu a fost implementată încă !</string>
 	<string name="message_reinit_config">Curat&#8230; </string>
 	<string name="message_confirm_exit_label">Ieşire</string>
 	<string name="message_confirm_exit_content">Vrei să renunţe la app?</string>
 	<string name="app_intro">Bine ati venit pentru a netezi Clicker</string>
 	<string name="snackbar_see_config_file">Citeste</string>
 	<string name="dialog_negative_button">Revocare</string>
-	<string name="dialog_positive_button">ok</string>
+	<string name="dialog_positive_button">OK</string>
 </resources>

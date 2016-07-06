@@ -31,12 +31,12 @@
     <string name="app_author">https://twitter.com/pylapp</string>
     <string name="app_sharedUserLabel">ID to access to the Smooth Clicker\'s world</string>
     <string name="service_label_serviceclicker">Service Clicker of Smooth Clicker</string>
-	<string name="app_name_standalone">Clicker suave (standalone)</string>
+	<string name="app_name_standalone">Smooth Clicker (standalone)</string>
 	<string name="standalone_init_config">Valores de configuração são escolhidos&#8230;</string>
 	<string name="standalone_init_points">Pontos para clicar em são escolhidos&#8230;</string>
 	<string name="standalone_start_click_process">O modo standalone está começando&#8230;</string>
-	<string name="standalone_bad_action">Ops&#8230;, você não usou uma boa ação para desencadear esta actividade!</string>
-	<string name="app_name_ninja">Clicker suave (standalone)</string>
+	<string name="standalone_bad_action">Ops&#8230;, você não usou uma boa ação para desencadear esta actividade !</string>
+	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
 	<string name="action_exit">Saída</string>
 	<string name="action_settings">Preferências</string>
 	<string name="action_clean_points">Excluir os pontos selecionados</string>
@@ -58,16 +58,16 @@
 	<string name="info_import_fail">Importação falhou</string>
 	<string name="info_standalone_activated">O modo standalone começará</string>
 	<string name="info_standalone_disactivated">O modo standalone vai parar</string>
-	<string name="error_message_su_not_granted">A SU não foi emitida autorização (x-</string>
+	<string name="error_message_su_not_granted">A SU não foi emitida autorização x-)</string>
 	<string name="error_su_missing">Você root seu Android antes de usar este aplicativo? É obrigatório.</string>
-	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ não cliques definido</string>
+	<string name="error_message_no_click_defined">¯\\_(ツ)_/¯ não cliques definido</string>
 	<string name="error_message_was_not_working">(－‸ლ) O processo não é iniciado</string>
 	<string name="error_nothing_to_open_json">Ops nada pode abrir o arquivo JSON</string>
 	<string name="error_nothing_to_open_file">Ops, nada pode abrir este arquivo</string>
 	<string name="warning_hazard_repeat_endless_title">Operações perigosas</string>
 	<string name="warning_hazard_repeat_endless_content">Tens a certeza de fazer uma repetição interminável? Esta operação pode ser perigosa para o seu dispositivo.</string>
-	<string name="warning_hazard_repeat_endless_no">!</string>
-	<string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+	<string name="warning_hazard_repeat_endless_no">No !</string>
+	<string name="warning_hazard_repeat_endless_yes">Yes !</string>
 	<string name="widget_no_points">Nenhum ponto selecionado ainda</string>
 	<string name="widget_type_of_start">Início</string>
 	<string name="widget_unit_time">Tempo</string>
@@ -132,7 +132,7 @@
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">escrito por pylapp - licença MIT</string>
 	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ Sinta-se livre para avaliar e comentar o app ★</string>
+	<string name="pref_play_store_summary">★ Sinta-se livre para avaliar e comentar o app</string>
 	<string name="pref_wakescreenbattery_title">Acordado e bateria</string>
 	<string name="pref_key_wakelock_title">Wakelock</string>
 	<string name="pref_key_wakelock_summary">Use wakelocks tornar o dispositivo sempre ecrã na (pode reduzir muito a bateria)</string>
@@ -167,5 +167,5 @@
 	<string name="app_intro">Bem-vindo ao suavizar o Clicker</string>
 	<string name="snackbar_see_config_file">Leitura</string>
 	<string name="dialog_negative_button">Cancelar</string>
-	<string name="dialog_positive_button">Okey</string>
+	<string name="dialog_positive_button">OK</string>
 </resources>

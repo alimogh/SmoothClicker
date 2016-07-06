@@ -35,7 +35,7 @@
 	<string name="standalone_init_config">구성 값 선택 됩니다&#8230;</string>
 	<string name="standalone_init_points">클릭 하 여 포인트 선택 됩니다&#8230;</string>
 	<string name="standalone_start_click_process">독립 실행형 모드 시작입니다&#8230;</string>
-	<string name="standalone_bad_action">Woops&#8230;, 좋은 작업 사용 하 여이 활동 하지 않았다!</string>
+	<string name="standalone_bad_action">Woops&#8230;, 좋은 작업 사용 하 여이 활동 하지 않았다 !</string>
 	<string name="app_name_ninja">부드러운 식자 (독립 실행형)</string>
 	<string name="action_exit">출구</string>
 	<string name="action_settings">환경 설정</string>
@@ -58,16 +58,16 @@
 	<string name="info_import_fail">가져오기 실패</string>
 	<string name="info_standalone_activated">독립 실행형 모드 시작 됩니다.</string>
 	<string name="info_standalone_disactivated">독립 실행형 모드 중지 됩니다.</string>
-	<string name="error_message_su_not_granted">SU 권한 부여 x-(부여 되지 않은</string>
+	<string name="error_message_su_not_granted">SU 권한 부여 부여 되지 않은 x-(</string>
 	<string name="error_su_missing">이 응용 프로그램을 사용 하기 전에 안 드 로이드를 뿌리 나요? 그것은 필수입니다.</string>
-	<string name="error_message_no_click_defined">¯\\_ (ツ) _ / ¯ 아니 클릭 정의</string>
+	<string name="error_message_no_click_defined">¯\\_(ツ)_/¯ 아니 클릭 정의</string>
 	<string name="error_message_was_not_working">(－‸ლ) 프로세스가 시작 되지 않습니다.</string>
 	<string name="error_nothing_to_open_json">Woops 아무것도.json 파일을 열 수 있습니다.</string>
 	<string name="error_nothing_to_open_file">Woops 아무것도이 파일을 열 수 있습니다.</string>
 	<string name="warning_hazard_repeat_endless_title">위험한 작업</string>
 	<string name="warning_hazard_repeat_endless_content">당신은 끝 없는 반복을? 이 작업은 장치에 대 한 위험 수 있습니다.</string>
-	<string name="warning_hazard_repeat_endless_no">아니!</string>
-	<string name="warning_hazard_repeat_endless_yes">Feur 프라이!</string>
+	<string name="warning_hazard_repeat_endless_no">아니 !</string>
+	<string name="warning_hazard_repeat_endless_yes">Feur 프라이 !</string>
 	<string name="widget_no_points">아직 아무 선택된 포인트</string>
 	<string name="widget_type_of_start">시작</string>
 	<string name="widget_unit_time">시간</string>
@@ -132,7 +132,7 @@
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">pylapp-라이센스 MIT에 의해 작성 된</string>
 	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ 자유롭게 평가 하 여 애플 리 케이 션 의견 ★</string>
+	<string name="pref_play_store_summary">★ 자유롭게 평가 하 여 애플 리 케이 션 의견</string>
 	<string name="pref_wakescreenbattery_title">깨어 및 배터리</string>
 	<string name="pref_key_wakelock_title">Wakelock</string>
 	<string name="pref_key_wakelock_summary">항상 화면에 장치를 (줄일 수 많은 배터리) wakelocks를 사용 하 여</string>
@@ -142,7 +142,7 @@
 	<string name="pref_key_unlockscript_title">ADB 스크립트</string>
 	<string name="pref_key_unlockscript_summary">시스템 명령을 장치 잠금을 해제 하는 데는 전용된 사용자 지정 스크립트를 사용 하 여</string>
 	<string name="pref_root_title">루트</string>
-	<string name="pref_root_subtitle">내 장치를 근절 하는 방법?</string>
+	<string name="pref_root_subtitle">내 장치를 근절 하는 방법 ?</string>
 	<string name="pref_root_summary">좀 더 클릭</string>
 	<string name="pref_key_root_heimdall_title">헤임달</string>
 	<string name="pref_key_root_heimdall_summary">헤임달 리눅스 장치 루트에 이동</string>
@@ -160,7 +160,7 @@
 	<string name="permission_write_external_storage_summary">응용 프로그램 전용된 폴더에 구성 파일을 작성 하려면이 권한이 필요</string>
 	<string name="permission_read_external_storage_title">외부 스토리지 읽기 권한</string>
 	<string name="permission_read_external_storage_summary">응용 프로그램 전용된 폴더에 있는 구성 파일을 읽을 수 있는이 권한이 필요</string>
-	<string name="error_not_implemented">아직 구현 되지 않았습니다!</string>
+	<string name="error_not_implemented">아직 구현 되지 않았습니다 !</string>
 	<string name="message_reinit_config">정리&#8230; </string>
 	<string name="message_confirm_exit_label">출구</string>
 	<string name="message_confirm_exit_content">응용 프로그램을 종료 하 시겠습니까?</string>

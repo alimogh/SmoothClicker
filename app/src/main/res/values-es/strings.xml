@@ -35,7 +35,7 @@
     <string name="standalone_init_config">Se recogen valores de config&#8230;</string>
     <string name="standalone_init_points">Se recogen los puntos para hacer clic en&#8230;</string>
     <string name="standalone_start_click_process">Es a partir del modo independiente&#8230;</string>
-    <string name="standalone_bad_action">Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad!</string>
+    <string name="standalone_bad_action">Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad !</string>
     <string name="app_name_ninja">Smooth Clicker (independiente)</string>
     <string name="action_exit">Salida</string>
     <string name="action_settings">Preferencias</string>
@@ -48,7 +48,7 @@
     <string name="info_message_start">Guardar la configuración y comienza el procesus</string>
     <string name="info_message_stop">Detener todo el proceso</string>
     <string name="info_message_request_su">Solicitar la concesión SU</string>
-    <string name="info_message_su_granted">:-) Se otorgó la autorización de SU</string>
+    <string name="info_message_su_granted">Se otorgó la autorización de SU :-)</string>
     <string name="info_message_new_point">Seleccionar nuevos puntos en la pantalla</string>
     <string name="info_message_invite_new_points">Haga clic en la pantalla para seleccionar el punto, luego de nuevo</string>
     <string name="info_message_invite_new_random_points">Largo en la pantalla para seleccionar un punto al azar, haga clic en nuevo</string>
@@ -58,16 +58,16 @@
     <string name="info_import_fail">Importación ha fallado</string>
     <string name="info_standalone_activated">Se iniciará el modo standalone</string>
     <string name="info_standalone_disactivated">Dejará del modo independiente</string>
-    <string name="error_message_su_not_granted">La autorización de SU no se ha concedido () x</string>
+    <string name="error_message_su_not_granted">La autorización de SU no se ha concedido x-(</string>
     <string name="error_su_missing">¿Raíz su Android antes de usar esta aplicación? Es obligatorio.</string>
-    <string name="error_message_no_click_defined">¯\\_ (ツ) _ / ̄ No clics definido</string>
+    <string name="error_message_no_click_defined">¯\\_(ツ)_/̄  No clics definido</string>
     <string name="error_message_was_not_working">(－‸ლ) No se inicia el proceso de</string>
     <string name="error_nothing_to_open_json">Woops nada puede abrir el archivo .Groovy</string>
     <string name="error_nothing_to_open_file">Woops nada puede abrir este archivo</string>
     <string name="warning_hazard_repeat_endless_title">Operaciones peligrosas</string>
-    <string name="warning_hazard_repeat_endless_content">¿Está seguro de hacer una repetición sin fin? Esta operación puede ser peligrosa para su dispositivo.</string>
-    <string name="warning_hazard_repeat_endless_no">Nope!</string>
-    <string name="warning_hazard_repeat_endless_yes">Feur frei!</string>
+    <string name="warning_hazard_repeat_endless_content">¿ Está seguro de hacer una repetición sin fin ? Esta operación puede ser peligrosa para su dispositivo.</string>
+    <string name="warning_hazard_repeat_endless_no">No !</string>
+    <string name="warning_hazard_repeat_endless_yes">Yes !</string>
     <string name="widget_no_points">Sin embargo ningún punto seleccionado</string>
     <string name="widget_type_of_start">Inicio</string>
     <string name="widget_unit_time">Tiempo</string>
@@ -91,7 +91,7 @@
     <string name="splashscreen_description">Smooth Clicker</string>
     <string name="notif_content_title">Smooth Clicker</string>
     <string name="notif_content_text_click_made">Haga clic en nuevo </string>
-    <string name="notif_content_text_clicks_on_going_app">(A través de la aplicación) se ejecuta el proceso de clic&#8230;</string>
+    <string name="notif_content_text_clicks_on_going_app">Se ejecuta el proceso de clic (A través de la aplicación)&#8230;</string>
     <string name="notif_content_text_clicks_on_going_service">Se ejecuta el proceso de clic (a través del servicio)&#8230;</string>
     <string name="notif_content_text_clicks_on_going_standalone">Ejecuta el proceso de clic (independiente)&#8230;</string>
     <string name="notif_content_text_clicks_stop">Se ha detenido el proceso haga clic en</string>
@@ -132,7 +132,7 @@
     <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">escrito por pylapp - licencia MIT</string>
     <string name="pref_play_store_title">Google Play</string>
-    <string name="pref_play_store_summary">★ No dude en calificar y comentar la aplicación ★</string>
+    <string name="pref_play_store_summary">★ No dude en calificar y comentar la aplicación</string>
     <string name="pref_wakescreenbattery_title">Despierto y batería</string>
     <string name="pref_key_wakelock_title">Wakelock</string>
     <string name="pref_key_wakelock_summary">Utilice wakelocks para siempre la pantalla en el dispositivo (puede reducir mucho la batería)</string>
@@ -163,7 +163,7 @@
     <string name="error_not_implemented">Aun no implementado.</string>
     <string name="message_reinit_config">Limpiar&#8230; </string>
     <string name="message_confirm_exit_label">Salida</string>
-    <string name="message_confirm_exit_content">¿Quieres salir de la aplicación?</string>
+    <string name="message_confirm_exit_content">¿ Quieres salir de la aplicación ?</string>
     <string name="app_intro">Bienvenido a Smooth Clicker</string>
     <string name="snackbar_see_config_file">Leer</string>
     <string name="dialog_negative_button">Cancelar</string>
