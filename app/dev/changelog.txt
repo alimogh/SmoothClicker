@@ -439,7 +439,7 @@ What:
     chore: new run of unit tests with JUnit, instrumented tests with UIAutoataor and Espresso, code analysis and Lint
     chore: closed task #79
 ###################################################
-Date: 06/07/2016
+Date: 07/07/2016
 What:
     chore: deal with several screens configurations: Nexus S, Galaxy A3, Nexus 5, Nexus 6, Nexus 6, Nexus 7, Nexus 10, OnePlus One
     chore: refactor string and array resources (mistakes with i18n about punctuation, smileys, licences, name of the app, Google Play and other trade marks ...)
