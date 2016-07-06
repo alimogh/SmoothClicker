@@ -131,8 +131,8 @@
 	<string name="pref_about_version_title">Versió</string>
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">escrit pylapp - Llicència MIT</string>
-	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ Dubti valorar i comentar l\'app</string>
+	<string name="pref_play_store_title">&#9733; Google Play &#9733;</string>
+	<string name="pref_play_store_summary">Dubti valorar i comentar l\'app</string>
 	<string name="pref_wakescreenbattery_title">Despert i bateria</string>
 	<string name="pref_key_wakelock_title">Wakelock</string>
 	<string name="pref_key_wakelock_summary">Utilitzar wakelocks per fer mecanisme pantalla sempre en (pot reduir molt la bateria)</string>

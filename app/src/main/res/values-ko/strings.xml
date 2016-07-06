@@ -131,7 +131,7 @@
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">pylapp-라이센스 MIT에 의해 작성 된</string>
 	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ 자유롭게 평가 하 여 애플 리 케이 션 의견</string>
+	<string name="pref_play_store_summary">자유롭게 평가 하 여 애플 리 케이 션 의견</string>
 	<string name="pref_wakescreenbattery_title">깨어 및 배터리</string>
 	<string name="pref_key_wakelock_title">Wakelock</string>
 	<string name="pref_key_wakelock_summary">항상 화면에 장치를 (줄일 수 많은 배터리) wakelocks를 사용 하 여</string>
