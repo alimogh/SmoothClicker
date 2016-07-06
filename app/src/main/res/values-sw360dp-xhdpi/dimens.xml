@@ -25,7 +25,7 @@
 
 <!--
     Note:
-        Samsung Galaxy A3 (which have a lower pixels density than the Nexus 5)
+        Samsung Galaxy S3 (which have a lower pixels density than the Nexus 5)
 -->
 <resources>
 
@@ -43,8 +43,8 @@
     <!-- ****************** -->
     <!-- Then intro screens -->
     <!-- ****************** -->
-    <dimen name="introscreens_title_text_size">16sp</dimen>
-    <dimen name="introscreens_desc_text_size">12sp</dimen>
+    <dimen name="introscreens_title_text_size">12sp</dimen>
+    <dimen name="introscreens_desc_text_size">10sp</dimen>
 
 
     <!-- ***************** -->
