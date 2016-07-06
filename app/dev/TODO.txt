@@ -27,11 +27,6 @@ LAST TASK : #92
 
 TO DO
 
-    *Task #78 : [v2.0.0] Better support for tablets and devices: check intro screen, splash screen, landscape, portrait, layout, texts size, dimensions of pictures
-    Task #91 : [v2.0.0] Update readme and wiki (new features, use the modes, the files, ...)
-    Task #60 : [memo] ==> new tests and runs of Lint, UT and IT ; update the readme, the wiki, the what's new and the repo, new release after git tag
-
-
 
     Task #93 : [vx.x.x] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
     Task #16 : [vx.x.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
@@ -40,7 +35,6 @@ TO DO
     Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU : JNI ?
                         (avoid use of Instrumentation and system-permission-signed-app for security reasons)
     Task #61 : [vx.x.x] More Unit tests with JUnit and Mockito
-
 
 
     Task #36 : Date picker to define a time period when clicks process can be done

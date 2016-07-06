@@ -444,6 +444,7 @@ What:
     chore: deal with several screens configurations: Nexus S, Galaxy A3, Nexus 5, Nexus 6, Nexus 6, Nexus 7, Nexus 10, OnePlus One
     chore: refactor string and array resources (mistakes with i18n about punctuation, smileys, licences, name of the app, Google Play and other trade marks ...)
     chore: new run of IT, UT, code analysis, Lint
+    chore: closed tasks #78, #91, #60
     doc: new generation of HTML JavaDoc
 ###################################################
 Date:

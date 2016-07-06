@@ -46,15 +46,21 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 * intro screen to introduce the app
 * define a sequence of clicks to make
 * several points can be selected
+* random points can be selected
 * a sequence of clicks can be repeated, endlessly if needed
+* the unit time can be ms, s, m or h
 * a delay can be defined before each sequence of clicks
 * a pause can me made between each click
 * device may vibrate on start and on each click
 * device may display notifications when the process is on going, on clicks and when the countdown is running
+* device may play a sound when a new click is done
 * the configuration can be reset to defaults values
 * a shake to clean feature can reset the configuration
+* the configuration of the click process and the coordinates of the points to use can be saved/loaded in/from JSON files
 * support for portrait / landscape modes, for tablets and handsets
 * standalone mode with an empty activity loading points and config files before finishing and starting the click process
+* standalone mode which can use these points and config files and a picture file which will trigger the click process if the device's screen matches this picture
+* options which can force the screen to be on, keep it on, unlock it thanks to a dedicated Shell script to execute
 * supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish, finnish, italian and catalan
 
 ***
