@@ -37,7 +37,6 @@
 	<string name="standalone_start_click_process">독립 실행형 모드 시작입니다&#8230;</string>
 	<string name="standalone_bad_action">Woops&#8230;, 좋은 작업 사용 하 여이 활동 하지 않았다 !</string>
 	<string name="app_name_ninja">부드러운 식자 (독립 실행형)</string>
-	<string name="action_exit">출구</string>
 	<string name="action_settings">환경 설정</string>
 	<string name="action_clean_points">선택한 점 삭제</string>
 	<string name="action_clean_all">값을 다시 설정 하 고 선택한 점 삭제</string>

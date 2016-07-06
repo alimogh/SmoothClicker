@@ -36,7 +36,6 @@
 	<string name="standalone_init_points">Vengono raccolte punti per fare clic su&#8230;</string>
 	<string name="standalone_start_click_process">La modalità standalone sta iniziando&#8230;</string>
 	<string name="standalone_bad_action">Woops&#8230;, non sono state utilizzate una buona azione per innescare questa attività !</string>
-	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
 	<string name="action_exit">Uscita</string>
 	<string name="action_settings">Preferenze</string>
 	<string name="action_clean_points">Elimina i punti selezionati</string>

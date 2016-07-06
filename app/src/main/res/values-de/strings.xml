@@ -35,7 +35,6 @@
 	<string name="standalone_init_points">Punkte zum Anklicken werden abgeholt&#8230;</string>
 	<string name="standalone_start_click_process">Die Standalone-Modus wird gestartet&#8230;</string>
 	<string name="standalone_bad_action">Woops&#8230;, Sie haben eine gute Wirkung nicht verwendet, um diese Aktivität auslösen!</string>
-	<string name="app_name_ninja">Smooth Clicker (Standalone)</string>
 	<string name="action_exit">Ausfahrt</string>
 	<string name="action_settings">Einstellungen</string>
 	<string name="action_clean_points">Die ausgewählten Punkte löschen</string>

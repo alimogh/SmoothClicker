@@ -36,7 +36,6 @@
 	<string name="standalone_init_points">Kerätään pisteitä napsauttamalla&#8230;</string>
 	<string name="standalone_start_click_process">Standalone-tilassa alkaa&#8230;</string>
 	<string name="standalone_bad_action">Woops&#8230;, et käytä hyvä toiminta käynnistää tätä toimintaa!</string>
-	<string name="app_name_ninja">Smooth Clicker (standalone)</string>
 	<string name="action_exit">Exit</string>
 	<string name="action_settings">Asetukset</string>
 	<string name="action_clean_points">Poistaa valitun pisteen</string>

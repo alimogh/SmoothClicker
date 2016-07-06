@@ -190,14 +190,10 @@
     <string name="snackbar_action_dismiss">Undo</string>
 
     <!-- Permissions -->
-    <string name="permission_vibrate_title">VIBRATE permission</string>
-    <string name="permission_vibrate_summary">The app needs this permission to notify you a new click is made</string>
     <string name="permission_write_external_storage_title">EXTERNAL STORAGE WRITE permission</string>
     <string name="permission_write_external_storage_summary">The app needs this permission to write configuration files in a dedicated folder</string>
     <string name="permission_read_external_storage_title">EXTERNAL STORAGE READ permission</string>
     <string name="permission_read_external_storage_summary">The app needs this permission to read configuration files in a dedicated folder</string>
-    <string name="permission_wakelock_title">WAKE LOCK permission</string>
-    <string name="permission_wakelock_summary">The app needs this permissions to keep the screen of the device on to make clicks</string>
 
     <!-- Misc. -->
     <string name="error_not_implemented">Not implemented yet!</string>
