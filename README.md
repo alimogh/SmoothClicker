@@ -39,7 +39,6 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 </tr>
 </table>
 
-
 ***
 ## Features
 * still need to have a rooted Android device...
