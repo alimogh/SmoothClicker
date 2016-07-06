@@ -10,7 +10,7 @@ _Why this app? Because I wanted to build my own autoclicker to make some tricks 
 
 The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
 
-The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit tests with _JUnit_ and the instrumented tests with _Espresso_ and _UIAutomator_.
+The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit tests with _JUnit_ and the instrumented tests with _Espresso_ and _UI Automator_.
 
 ***
 ## Features
@@ -18,15 +18,21 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 * intro screen to introduce the app
 * define a sequence of clicks to make
 * several points can be selected
+* random points can be selected
 * a sequence of clicks can be repeated, endlessly if needed
+* the unit time can be ms, s, m or h
 * a delay can be defined before each sequence of clicks
 * a pause can me made between each click
 * device may vibrate on start and on each click
 * device may display notifications when the process is on going, on clicks and when the countdown is running
+* device may play a sound when a new click is done
 * the configuration can be reset to defaults values
 * a shake to clean feature can reset the configuration
+* the configuration of the click process and the coordinates of the points to use can be saved/loaded in/from JSON files
 * support for portrait / landscape modes, for tablets and handsets
 * standalone mode with an empty activity loading points and config files before finishing and starting the click process
+* standalone mode which can use these points and config files and a picture file which will trigger the click process if the device's screen matches this picture
+* options which can force the screen to be on, keep it on, unlock it thanks to a dedicated Shell script to execute
 * supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish, finnish, italian and catalan
 
 
@@ -35,28 +41,27 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 <table>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_intro_1_framed.png" alt="Introduction screen" title="Welcome to Smooth Clicker guys!" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_intro_1.framed.png" alt="Introduction screen" title="Welcome to Smooth Clicker guys!" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_clicker_activity_2_framed.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_clickeractivity_2.framed.png" alt="Set up the sequence of clicks you want to process" title="Set up the sequence of clicks you want to process" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_multipoint_3_framed.png" alt="Select some points everywhere" title="Select some points everywhere" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_multipoint_1.framed.png" alt="Select some points everywhere" title="Select some points everywhere" width="200">
 </td>
 </tr>
 <tr>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_multipoint_2_framed.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_multipoint_2.framed.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_notifications_on_going_framed.png" alt="The app can display notifications about what its state" title="The app can display notifications about what it is doing" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_settings.framed.png" alt="Settings can provide cool features" title="Settings can provide cool features" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/ui_v1.10.0_en_framed/v1.10.0_en_settings_framed.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_credits.framed.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
 </td>
 </tr>
 </table>
-
 
 ***
 ## How to use Smooth Clicker?
@@ -65,10 +70,16 @@ _<em>Case 1</em> : You can simply use the app itself and select manually the poi
 
 <br/>or<br/>
 
-_<em>Case 2</em> : You can start the app is standalone mode which will use JSON files (<a href="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/smoothclicker_points.json">smoothclicker_points.json</a> and <a href="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/smoothclicker_config.json">smoothclicker_config.json</a>) in Download folder to set up and start the click process_<br/>
+_<em>Case 2</em> : You can start the app in standalone mode which will use JSON files (<a href="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/jsonFiles/sc_points.json">sc_points.json</a> and <a href="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/jsonFiles/sc_config.json">sc_config.json</a>) in the app folder (at the root of the external storage, so /storage/emulated/legacy/Smooth_Clicker) to set up and start the click process_<br/>
 
 ```shell
-    am start -n pylapp.smoothclicker.android/pylapp.smoothclicker.android.views.NinjaActivity
+    am start -a pylapp.smoothclicker.android.CLICK_ON_ALL_POINTS -n pylapp.smoothclicker.android/pylapp.smoothclicker.android.views.StandaloneActivity
+```
+or
+
+```shell
+    am start -a pylapp.smoothclicker.android.CLICK_ON_ALL_POINTS_ACCORDING_SCREEN -n pylapp.smoothclicker.android/pylapp.smoothclicker.android.views.StandaloneActivity
+
 ```
 
 <br/>or<br/>
@@ -166,13 +177,26 @@ startService(intentServiceSmoothClicker);
     * fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
     * fixed bug which may make a white icons bar for full screen views
     * support for romanian, polish and finnish languages
-* _v1.10.0 : Incredible Indri_
-    * support for landscape mode for handsets and tablets
-    * more support for 6", 7" and 10" screens devices
-    * standalone mode with an empty activity loading points and config file before starting the click process
+* _v2.0.0 : Incredible Indri_
     * support for italian and catalan
+    * refactored components
+    * add some references to tutorials about how to root the device
     * fixed some bugs
-    * improved the credits view and other UI components
+    * update and optimize the credits view
+    * update the intro screens
+    * refactor the preferences screen
+    * deal with the new system which manage permissions for Android 6.0+
+    * the intro screen is available from the settings screen as an help
+    * import / export the configuration of the app (process and points) from / to JSON files
+    * play a sound if a click is made
+    * possible to choose its time unit for the click process (ms, s, m or h)
+    * standalone mode using only predefined configuration in JSON files
+    * standalone mode using predefined configuration in JSON files and a screen-recognition-pattern
+    * force the screen to be on if off
+    * keep the screen on if needed
+    * use a Shell script using ADB commands to unlock the screen if needed
+    * possible to define random points when long click on the screen
+    * support for landscape mode for handsets and tablets, for 6", 7" and 10" screens devices
 
 ***
 ## Licence
