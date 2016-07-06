@@ -23,14 +23,18 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
+<!--
+    Note:
+        320dp: a typical phone screen (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc).
+        Samsung Galaxy A3, Samsung Galaxy S3
+-->
 <resources>
 
-    <!-- Customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 720dp of available width. This
-         would include 10" devices. -->
-
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="spinner_points_padding">10dp</dimen>
 
     <!-- ***************** -->
     <!-- The splash screen -->
@@ -40,13 +44,17 @@
     <!-- ****************** -->
     <!-- Then intro screens -->
     <!-- ****************** -->
-    <dimen name="introscreens_title_text_size">30sp</dimen>
-    <dimen name="introscreens_desc_text_size">15sp</dimen>
+    <dimen name="introscreens_title_text_size">16sp</dimen>
+    <dimen name="introscreens_desc_text_size">12sp</dimen>
+
 
     <!-- ***************** -->
     <!-- The main activity -->
     <!-- ***************** -->
-    <dimen name="widget_label_text_size">24sp</dimen>
+    <dimen name="widget_label_text_size">16sp</dimen>
+    <dimen name="widget_text_field_padding">8dp</dimen>
+    <dimen name="widget_radio_button_padding">8dp</dimen>
+    <dimen name="widget_margin_bottom_padder">40dp</dimen>
 
     <!-- **************** -->
     <!-- The credits view -->
