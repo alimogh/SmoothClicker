@@ -38,7 +38,7 @@
     </string-array>
 
     <string-array name="introscreen_titles">
-        <item>Hej!</item>
+        <item>Hello !</item>
         <item>Korzeń</item>
         <item>Kliknięć</item>
         <item>Powiadomienia</item>
@@ -56,7 +56,7 @@
         <item>Niektóre pliki JSON może służyć do przechowywania konfiguracji kliknij przycisk proces.</item>
         <item>Tryb autonomiczny można rozpocząć proces kliknij za pomocą plików konfiguracji JSON.</item>
         <item>Tryb autonomiczny można również rozpocząć proces kliknij według obrazu ekranu.</item>
-        <item>Gładkie klekoczący jest darmowe i open source!</item>
+        <item>Gładkie klekoczący jest darmowe i open source !</item>
     </string-array>
 
     <string-array name="credits_labels">

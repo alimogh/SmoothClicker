@@ -38,7 +38,7 @@
     </string-array>
 
     <string-array name="introscreen_titles">
-        <item>hei!</item>
+        <item>Hello !</item>
         <item>Rădăcină</item>
         <item>Click-uri</item>
         <item>Notificări</item>
@@ -49,14 +49,14 @@
     </string-array>
 
     <string-array name="introscreen_summaries">
-        <item>Bine ati venit pentru a Smooth Clicker!</item>
+        <item>Bine ati venit pentru a Smooth Clicker !</item>
         <item>Trebuie să aveţi un dispozitiv Android înrădăcinate pentru a utiliza acest app.</item>
         <item>Defini mai multe clicuri pentru a procesa&#8230; </item>
         <item>&#8230; şi a configura procesul cu notificările, vibratiile etc.</item>
         <item>Unele fişiere JSON poate fi utilizat pentru a stoca configuraţia de procesul de clic.</item>
         <item>Mod independent puteţi începe procesul de clic folosind numai fişierele de configurare JSON.</item>
         <item>Mod independent, de asemenea, puteţi începe procesul de clic în conformitate cu o imagine a ecranului.</item>
-        <item>Buna Clicker este gratuit şi open-source!</item>
+        <item>Buna Clicker este gratuit şi open-source !</item>
     </string-array>
 
     <string-array name="credits_labels">

@@ -38,7 +38,7 @@
     </string-array>
     
     <string-array name="introscreen_titles">
-        <item>Hei siellä!</item>
+        <item>Hello !</item>
         <item>Root</item>
         <item>Napsautukset</item>
         <item>Ilmoitukset</item>
@@ -49,14 +49,14 @@
     </string-array>
     
     <string-array name="introscreen_summaries">
-        <item>Tervetuloa Smooth Clicker!</item>
+        <item>Tervetuloa Smooth Clicker !</item>
         <item>Sinun täytyy olla juurtunut Android laite käyttää tätä app.</item>
         <item>Määritä useita napsautuksia käsitellä&#8230; </item>
         <item>&#8230; ja määritä prosessin ilmoitukset, tärinä jne.</item>
         <item>Joitakin JSON-tiedostoja voidaan tallentaa napin painalluksella kokoonpano.</item>
         <item>Standalone-tilassa aloittaa napsauttamalla prosessia käyttämällä vain JSON-asetustiedostot.</item>
         <item>Standalone-tilassa käynnistää napin painalluksella mukaan kuva näytöstä.</item>
-        <item>Sileä Clicker on sekä vapaan ja avoimen lähdekoodin!</item>
+        <item>Sileä Clicker on sekä vapaan ja avoimen lähdekoodin !</item>
     </string-array>
     
     <string-array name="credits_labels">

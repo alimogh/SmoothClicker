@@ -38,7 +38,7 @@
     </string-array>
     
     <string-array name="introscreen_titles">
-        <item>¡ Hola!</item>
+        <item>¡ Hola !</item>
         <item>Raíz</item>
         <item>Haga clic en</item>
         <item>Notificaciones</item>
@@ -49,14 +49,14 @@
     </string-array>
     
     <string-array name="introscreen_summaries">
-        <item>¡ Bienvenido a Smooth Clicker!</item>
+        <item>¡ Bienvenido a Smooth Clicker !</item>
         <item>Usted necesita tener un dispositivo Android raíces para utilizar esta aplicación.</item>
         <item>Definir varios clics para procesar&#8230; </item>
         <item>&#8230; y configurar el proceso de notificaciones, vibraciones etc..</item>
         <item>Algunos archivos JSON pueden utilizarse para almacenar la configuración del proceso haga clic en.</item>
         <item>El modo standalone puede iniciar el proceso haga clic en utilizando sólo los archivos de configuración JSON.</item>
         <item>El modo autónomo también puede iniciar el proceso haga clic según una imagen de la pantalla.</item>
-        <item>Clicker lisa es libre y de código abierto!</item>
+        <item>¡ Clicker lisa es libre y de código abierto !</item>
     </string-array>
     
     <string-array name="credits_labels">
