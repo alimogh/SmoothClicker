@@ -46,7 +46,7 @@
 
     <!-- Menus -->
     <string name="action_exit">Exit</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Preferences</string>
     <string name="action_clean_points">Delete the selected points</string>
     <string name="action_clean_all">Reset the values and delete the selected points</string>
     <string name="action_export">Export to JSON file</string>

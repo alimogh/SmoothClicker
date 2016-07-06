@@ -38,7 +38,7 @@
 	<string name="standalone_bad_action">Ops&#8230;, você não usou uma boa ação para desencadear esta actividade!</string>
 	<string name="app_name_ninja">Clicker suave (standalone)</string>
 	<string name="action_exit">Saída</string>
-	<string name="action_settings">Configurações</string>
+	<string name="action_settings">Preferências</string>
 	<string name="action_clean_points">Excluir os pontos selecionados</string>
 	<string name="action_clean_all">Redefinir os valores e excluir os pontos selecionados</string>
 	<string name="action_export">Exportar para arquivo. JSON</string>
