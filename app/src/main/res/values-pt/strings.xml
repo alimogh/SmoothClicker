@@ -130,8 +130,8 @@
 	<string name="pref_about_version_title">Versão</string>
 	<string name="pref_about_version_app_title">Smooth Clicker</string>
 	<string name="pref_about_version_app_summary">escrito por pylapp - licença MIT</string>
-	<string name="pref_play_store_title">Google Play</string>
-	<string name="pref_play_store_summary">★ Sinta-se livre para avaliar e comentar o app</string>
+	<string name="pref_play_store_title">&#9733; Google Play &#9733;</string>
+	<string name="pref_play_store_summary">Sinta-se livre para avaliar e comentar o app</string>
 	<string name="pref_wakescreenbattery_title">Acordado e bateria</string>
 	<string name="pref_key_wakelock_title">Wakelock</string>
 	<string name="pref_key_wakelock_summary">Use wakelocks tornar o dispositivo sempre ecrã na (pode reduzir muito a bateria)</string>
