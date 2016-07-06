@@ -31,7 +31,7 @@ The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit
 <img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_multipoint_2.framed.png" alt="You can make long sequence of clicks to trigger" title="You can make long sequence of clicks to trigger" width="200">
 </td>
 <td>
-<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_settings.framed.png" alt="Settings can provide cool features" title="The app can display notifications about what it is doing" width="200">
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_settings.framed.png" alt="Settings can provide cool features" title="Settings can provide cool features" width="200">
 </td>
 <td>
 <img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/pictures/ui_v2.0.0_en_framed/v2.0.0_en_credits.framed.png" alt="The app uses thir party libs !" title="The app uses third party libs !" width="200">
