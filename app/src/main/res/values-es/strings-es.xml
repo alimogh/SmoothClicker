@@ -36,7 +36,7 @@
     <string name="standalone_init_points">Se recogen los puntos para hacer clic en&#8230;</string>
     <string name="standalone_start_click_process">Es a partir del modo independiente&#8230;</string>
     <string name="standalone_bad_action">Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad!</string>
-    <string name="app_name_ninja">Clicker lisa (independiente)</string>
+    <string name="app_name_ninja">Smooth Clicker (independiente)</string>
     <string name="action_exit">Salida</string>
     <string name="action_settings">Configuración</string>
     <string name="action_clean_points">Eliminar los puntos seleccionados</string>
@@ -88,8 +88,8 @@
     <string name="widget_notifications">Notificaciones</string>
     <string name="widget_standalone_dialog_title">Modo autónomo</string>
     <string name="widget_sounds">Anillo en cada clic</string>
-    <string name="splashscreen_description">Clicker liso</string>
-    <string name="notif_content_title">Clicker liso</string>
+    <string name="splashscreen_description">Smooth Clicker</string>
+    <string name="notif_content_title">Smooth Clicker</string>
     <string name="notif_content_text_click_made">Haga clic en nuevo </string>
     <string name="notif_content_text_clicks_on_going_app">(A través de la aplicación) se ejecuta el proceso de clic&#8230;</string>
     <string name="notif_content_text_clicks_on_going_service">Se ejecuta el proceso de clic (a través del servicio)&#8230;</string>
@@ -126,13 +126,13 @@
     <string name="pref_key_credit_title">Esta aplicación utiliza contenido de terceros</string>
     <string name="pref_key_credit_summary">Haga clic aquí para mostrar las licencias</string>
     <string name="pref_about_title">Acerca de</string>
-    <string name="pref_about_subtitle">Clicker liso</string>
+    <string name="pref_about_subtitle">Smooth Clicker</string>
     <string name="pref_about_summary">Haga clic para obtener más</string>
     <string name="pref_about_version_title">Versión</string>
-    <string name="pref_about_version_app_title">Clicker liso</string>
+    <string name="pref_about_version_app_title">Smooth Clicker</string>
     <string name="pref_about_version_app_summary">escrito por pylapp - licencia MIT</string>
     <string name="pref_play_store_title">Google Play</string>
-    <string name="pref_play_store_summary">No dude en calificar y comentar la aplicación ★ ★</string>
+    <string name="pref_play_store_summary">★ No dude en calificar y comentar la aplicación ★</string>
     <string name="pref_wakescreenbattery_title">Despierto y batería</string>
     <string name="pref_key_wakelock_title">Wakelock</string>
     <string name="pref_key_wakelock_summary">Utilice wakelocks para siempre la pantalla en el dispositivo (puede reducir mucho la batería)</string>
@@ -164,7 +164,7 @@
     <string name="message_reinit_config">Limpiar&#8230; </string>
     <string name="message_confirm_exit_label">Salida</string>
     <string name="message_confirm_exit_content">¿Quieres salir de la aplicación?</string>
-    <string name="app_intro">Bienvenido a Lisa Clicker</string>
+    <string name="app_intro">Bienvenido a Smooth Clicker</string>
     <string name="snackbar_see_config_file">Leer</string>
     <string name="dialog_negative_button">Cancelar</string>
     <string name="dialog_positive_button">Vale</string>

@@ -38,7 +38,7 @@
 	<string name="standalone_bad_action">Woops&#8230;, nu a folosit o acţiune bună pentru a declanşa această activitate!</string>
 	<string name="app_name_ninja">Smooth Clickerr (independent)</string>
 	<string name="action_exit">Ieşire</string>
-	<string name="action_settings">Setări</string>
+	<string name="action_settings">Preferinţe</string>
 	<string name="action_clean_points">Sterge punctele selectate</string>
 	<string name="action_clean_all">Resetarea valorilor şi şterge punctele selectate</string>
 	<string name="action_export">Export în fişierul JSON</string>

@@ -43,11 +43,11 @@
 
     <!-- Menus -->
     <string name="action_exit">Quitter</string>
-    <string name="action_settings">Paramètres</string>
+    <string name="action_settings">Préférences</string>
     <string name="action_clean_points">Supprime les points sélectionnés</string>
     <string name="action_clean_all">Réinitialise les valeurs et supprime les points sélectionnés</string>
-    <string name="action_export">Exporter vers fichier JSON</string>
-    <string name="action_import">Importer depuis fichier JSON</string>
+    <string name="action_export">Exporter vers fichiers JSON</string>
+    <string name="action_import">Importer depuis fichiers JSON</string>
     <string name="action_configuration">Configuration</string>
     <string name="action_standalone">Mode standalone</string>
 

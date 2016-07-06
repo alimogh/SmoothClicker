@@ -37,7 +37,7 @@
 	<string name="standalone_bad_action">Woops&#8230;, вы не использовать хорошее действие для запуска этой деятельности!</string>
 	<string name="app_name_ninja">Гладкая кликер (standalone)</string>
 	<string name="action_exit">Выход</string>
-	<string name="action_settings">Параметры</string>
+	<string name="action_settings">Предпочтения</string>
 	<string name="action_clean_points">Удаление выбранной точки</string>
 	<string name="action_clean_all">Сброс значений и удаление выбранных точек</string>
 	<string name="action_export">Экспорт в файл JSON</string>

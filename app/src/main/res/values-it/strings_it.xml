@@ -38,7 +38,7 @@
 	<string name="standalone_bad_action">Woops&#8230;, non sono state utilizzate una buona azione per innescare questa attività!</string>
 	<string name="app_name_ninja">Clicker liscia (standalone)</string>
 	<string name="action_exit">Uscita</string>
-	<string name="action_settings">Impostazioni</string>
+	<string name="action_settings">Preferenze</string>
 	<string name="action_clean_points">Elimina i punti selezionati</string>
 	<string name="action_clean_all">Reimpostare i valori ed eliminare i punti selezionati</string>
 	<string name="action_export">Esportare in file JSON</string>
