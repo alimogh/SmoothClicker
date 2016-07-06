@@ -38,7 +38,7 @@
     <string name="standalone_bad_action">Woops&#8230;, no utilizas una buena acción para desencadenar esta actividad!</string>
     <string name="app_name_ninja">Smooth Clicker (independiente)</string>
     <string name="action_exit">Salida</string>
-    <string name="action_settings">PConfiguraciónreferencias</string>
+    <string name="action_settings">Preferencias</string>
     <string name="action_clean_points">Eliminar los puntos seleccionados</string>
     <string name="action_clean_all">Restablecer los valores y eliminar los puntos seleccionados</string>
     <string name="action_export">Exportar a un archivo JSON</string>
