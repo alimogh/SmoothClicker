@@ -449,9 +449,10 @@ What:
 ###################################################
 Date: 26/07/2016
 What:
-    fix: improve the sleep management system and the frequency of the clicks if the unit itme is ms
+    feat: now when the users starts the click process in manual mode by clicking no the "start" floating button, the arc menu will close itself
+    fix: improve the sleep management system and the frequency of the clicks if the unit time is ms
     fix: bug where several radio buttons may be selected as the same time if the devices has been rotated
-    chore: close tasks #94 ad #95
+    chore: close tasks #94, #95, #96
 ###################################################
 Date:
 What:

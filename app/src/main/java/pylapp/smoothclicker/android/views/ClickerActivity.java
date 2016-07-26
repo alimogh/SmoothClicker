@@ -83,7 +83,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.30.0
+ * @version 2.31.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -946,6 +946,8 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             public void onClick(View v) {
                 updateConfig();
                 NotificationsManager.getInstance(ClickerActivity.this).refresh(ClickerActivity.this);
+                ArcMenu arcMenu = (ArcMenu) findViewById(R.id.fabAction);
+                arcMenu.toggleMenu();
                 startClickingProcess();
             }
         });
