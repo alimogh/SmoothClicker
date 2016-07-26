@@ -41,9 +41,6 @@
     <string name="standalone_start_click_process">The standalone mode is starting &#8230;</string>
     <string name="standalone_bad_action">Woops &#8230;, you did not use a good action to trigger this activity!</string>
 
-    <!-- The standalone activity -->
-    <string name="app_name_ninja">Smooth Clicker (standalone)</string>
-
     <!-- Menus -->
     <string name="action_exit">Exit</string>
     <string name="action_settings">Preferences</string>

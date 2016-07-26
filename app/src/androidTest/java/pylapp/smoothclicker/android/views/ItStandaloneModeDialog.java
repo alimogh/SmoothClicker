@@ -389,6 +389,7 @@ public class ItStandaloneModeDialog extends AbstractTest {
 
             mDevice.openNotification();
             notification.waitForExists(2000);
+            w(10000);
             assertTrue(notification.exists());
 
         } catch ( UiObjectNotFoundException uonfe ){
