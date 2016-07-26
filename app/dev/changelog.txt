@@ -447,9 +447,11 @@ What:
     chore: closed tasks #78, #91, #60
     doc: new generation of HTML JavaDoc
 ###################################################
-Date:
+Date: 26/07/2016
 What:
-
+    fix: improve the sleep management system and the frequency of the clicks if the unit itme is ms
+    fix: bug where several radio buttons may be selected as the same time if the devices has been rotated
+    chore: close tasks #94 ad #95
 ###################################################
 Date:
 What:

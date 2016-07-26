@@ -28,8 +28,6 @@ LAST TASK : #96
 TO DO
 
 
-    *Task #94 : [v2.1.0] Find a way to make a lot of clicks per seconds (i.e. 10, 100, 1000 clicks per second). Here with millisecond option, we reach only two of three click per second and this is not enough (see comment of Gael Augeat in Play Store in 24/07/2016
-    *Task #95 : [v2.1.0] When rotation, some radio button are still checked
     *Task #96 : [v2.1.0] Fold the arc menu when click on "play" button
 
     
