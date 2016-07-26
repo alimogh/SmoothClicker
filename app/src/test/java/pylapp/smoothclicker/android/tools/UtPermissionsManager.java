@@ -26,9 +26,6 @@
 
 package pylapp.smoothclicker.android.tools;
 
-
-import android.content.Context;
-
 import org.junit.Test;
 
 import pylapp.smoothclicker.android.AbstractTest;

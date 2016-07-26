@@ -79,7 +79,7 @@ v1.9.3
     - Fixed bug which may produce a force close (NullPointerException on main activity's SwitchButton)
     - Fixed bug which may make a white icons bar for full screen views
     - Support for languages romanian, polish and finnish
-V2.0.0 : Incredible Indri
+v2.0.0 : Incredible Indri
     - Support for italian and catalan
     - Improved some components to make them more material
     - Refactor main view
@@ -101,8 +101,8 @@ V2.0.0 : Incredible Indri
     - Use a Shell script using ADB commands to unlock the screen if needed
     - Possible to define random points when long click on the screen
     - Support for landscape mode for handsets and tablets, for 6", 7" and 10" screens devices
-V2.1.0 : Juicy Jellyfish
-    - The click process has been improved if unit time in use is millisecond, but it may be not very accurate due to thread performances and sleep times
+v2.1.0 : Juicy Jellyfish
+    - The click process has been improved if unit time in use is millisecond, but it may be not fully accurate due to thread performances and sleep times
     - The arc menu will be closed if the user clicks on the "start" floating button
     - A bug with several selected radio buttons on rotation has been fixed
 

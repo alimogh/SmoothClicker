@@ -481,7 +481,7 @@ public class ItSettingsActivity extends AbstractTest {
             UiObject2 field2 = summaries.get( index * 4 + 2 );
             assertEquals(DUMMY_TEXT, field2.getText());
             // Reset the value
-            resetFieldWithText( text, BACKUP_TEXT);
+            resetFieldWithText( DUMMY_TEXT, BACKUP_TEXT );
         } catch ( UiObjectNotFoundException uonfe ){
             uonfe.printStackTrace();
             fail(uonfe.getMessage());

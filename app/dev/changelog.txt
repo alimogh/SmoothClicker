@@ -452,6 +452,8 @@ What:
     feat: now when the users starts the click process in manual mode by clicking no the "start" floating button, the arc menu will close itself
     fix: improve the sleep management system and the frequency of the clicks if the unit time is ms
     fix: bug where several radio buttons may be selected as the same time if the devices has been rotated
+    chore; add missing Korean verbatims
+    chore: clean up sources and assets
     chore: close tasks #94, #95, #96
     chore: new run of instrumented tests and unit tests
     chore: new run of Lint and code analysis

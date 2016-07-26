@@ -36,7 +36,6 @@
 	<string name="standalone_init_points">Es recullen els punts per fer clic a&#8230;</string>
 	<string name="standalone_start_click_process">El mode independent està començant&#8230;</string>
 	<string name="standalone_bad_action">Woops&#8230;, no vas utilitzar una bona acció per provocar aquesta activitat !</string>
-	<string name="app_name_ninja">Smooth Clicker (independent)</string>
 	<string name="action_exit">Sortida</string>
 	<string name="action_settings">Preferències</string>
 	<string name="action_clean_points">Suprimeix els punts seleccionats</string>
