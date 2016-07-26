@@ -46,7 +46,7 @@ import java.util.List;
  * Async Task which consists on executing the click task
  *
  * @author pylapp
- * @version 3.1.0
+ * @version 4.0.0
  * @since 02/03/2016
  * @see android.os.AsyncTask
  */
@@ -74,10 +74,6 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      * The list of points to click on
      */
     private List<PointsListAdapter.Point> mPoints;
-    /**
-     * A factor to apply to the sleep time according to the unit time in use
-     */
-    private long mUnitTimeFactor;
     /**
      * The unit time in use
      */
@@ -119,11 +115,6 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
      * ********* */
 
     /**
-     * The time to sleep for the task
-     */
-    private static final int SLEEP_TIME = 1000;
-
-    /**
      * A token the command line to execute the click should display so as to free the async task and let it make notifications
      */
     private static final String KEYWORD_SHELL_CLICK_DONE = "SMOOTHCLICKER_CLICK_DONE";
@@ -162,23 +153,18 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         switch ( unitTime ){
             case R.id.rbUnitTimeMs:
                 mUnitTime = ConfigImporter.UnitTime.MILLISECOND;
-                mUnitTimeFactor = 0 ; // 1 * 0;
                 break;
             case R.id.rbUnitTimeS:
                 mUnitTime = ConfigImporter.UnitTime.SECOND;
-                mUnitTimeFactor = 1 ; // 1 * 1;
                 break;
             case R.id.rbUnitTimeM:
                 mUnitTime = ConfigImporter.UnitTime.MINUTE;
-                mUnitTimeFactor = 60; // 1 * 60;
                 break;
             case R.id.rbUnitTimeH:
                 mUnitTime = ConfigImporter.UnitTime.HOUR;
-                mUnitTimeFactor = 3600; //  1 * 60 * 60;
                 break;
             default:
                 mUnitTime = ConfigImporter.UnitTime.SECOND;
-                mUnitTimeFactor = 1; // 1 * 1;
                 break;
         }
         mIsStartDelayed = sp.getBoolean(Config.SP_KEY_START_TYPE_DELAYED, Config.DEFAULT_START_DELAYED);
@@ -257,35 +243,35 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         // Should we delay the execution ?
         if ( mIsStartDelayed ){
             Logger.d(LOG_TAG, "The start is delayed, will sleep : "+mDelay);
-            // In case we use the unit time s / m or h, use "seconds"-based count for delays
-            if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ){
-                final long count = mDelay * mUnitTimeFactor;
-                // Loop for each unit time
-                for (int i = 1; i <= count; i++) {
-                    try {
-                        if (checkIfCancelled()) return null;
-                        NotificationsManager.getInstance(mContext).makeCountDownNotification(count - i);
-                        Thread.sleep(SLEEP_TIME);
-                    } catch (InterruptedException ie) {
-                        ie.printStackTrace();
-                    }
-                }
-            // In case we use the unit time ms
-            } else {
-                final long count = mDelay;
-                // Loop for each unit time
-                for ( int i = 1; i <= count; i++ ){
-                    try {
-                        if (checkIfCancelled()) return null;
-                        NotificationsManager.getInstance(mContext).makeCountDownNotification(count - i);
-                        Thread.sleep(1);
-                    } catch (InterruptedException ie) {
-                        ie.printStackTrace();
-                    }
+            int factor = 0;
+            switch ( mUnitTime ){
+                case MILLISECOND:
+                    factor = 1; // milliseconds
+                    break;
+                case SECOND:
+                    factor = 1; // seconds
+                    break;
+                case MINUTE:
+                    factor = 60; // seconds
+                    break;
+                case HOUR:
+                    factor = 3600; // seconds
+                    break;
+            }
+            final long count = mDelay * factor;
+            final int threadSleepTime = ( mUnitTime == ConfigImporter.UnitTime.MILLISECOND ? 1 : 1000 );
+            // Loop for each unit time
+            for ( int i = 1; i <= count; i++ ){
+                try {
+                    if (checkIfCancelled()) return null;
+                    NotificationsManager.getInstance(mContext).makeCountDownNotification(count - i);
+                    Thread.sleep(threadSleepTime);
+                } catch (InterruptedException ie) {
+                    ie.printStackTrace();
                 }
             }
             NotificationsManager.getInstance(mContext).stopAllNotifications();
-        }
+        } // End of  if ( mIsStartDelayed )
 
         if ( mIsStandalone ){
             NotificationsManager.getInstance(mContext).stopClicksOnGoingNotification();
@@ -304,16 +290,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                 Logger.d(LOG_TAG, "Should repeat the process ENDLESSLY");
                 forceScreenState();
                 executeTap();
-                // Should we wait before the next action ?
-                if ( mTimeGap > 0 ){
-                    try {
-                        Logger.d(LOG_TAG, "Should wait before each process occurrences : " + mTimeGap);
-                        if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ) Thread.sleep(mTimeGap * SLEEP_TIME);
-                        Thread.sleep(mTimeGap * (SLEEP_TIME/1000));
-                    } catch ( InterruptedException ie ){ie.printStackTrace();}
-                } else {
-                    Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
-                }
+                waitIfNeeded();
             }
 
         /*
@@ -326,19 +303,7 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                 if ( checkIfCancelled() ) return null;
                 forceScreenState();
                 executeTap();
-                // Should we wait before the next action ?
-                if ( mTimeGap > 0 ){
-                    // Loop for each unit time
-                    for ( int j = 1; j <= mTimeGap*mUnitTimeFactor; j++ ){
-                        try {
-                            if ( checkIfCancelled() ) return null;
-                            if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ) Thread.sleep(SLEEP_TIME);
-                            else Thread.sleep(SLEEP_TIME/1000);
-                        } catch ( InterruptedException ie ){ie.printStackTrace();}
-                    }
-                } else {
-                    Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
-                }
+                waitIfNeeded();
             }
 
         /*
@@ -453,22 +418,59 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
                 }
             }
 
-            // Should we wait before the next action ?
-            if ( mTimeGap > 0 ){
-                Logger.d(LOG_TAG, "Should wait before each process occurrences : "+mTimeGap);
-                for ( int k = 1; k <= mTimeGap*mUnitTimeFactor; k++ ){
-                    try {
-                        if ( checkIfCancelled() ) return;
-                        if ( mUnitTime != ConfigImporter.UnitTime.MILLISECOND ) Thread.sleep(SLEEP_TIME);
-                        else Thread.sleep(SLEEP_TIME/1000);
-                    } catch ( InterruptedException ie ){ie.printStackTrace();}
-                }
-            } else {
-                Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : "+mTimeGap);
+            // Wait before the next point to click if there is some points to click
+            // We deal with the TIME GAP option
+            if ( i < NUMBER_OF_POINTS - 1 ) {
+                waitIfNeeded();
             }
 
         } // End of for ( PointsListAdapter.Point p : mPoints )
 
+    }
+
+    /**
+     * Waits according to the time gap, the unit time and, the unit time factor etc if needed
+     */
+    private void waitIfNeeded(){
+        if ( mTimeGap > 0 ){
+            Logger.d(LOG_TAG, "Should wait before each process occurrences : " + mTimeGap);
+            switch ( mUnitTime ){
+                case MILLISECOND:
+                    for ( int k = 1; k <= mTimeGap; k++ ){
+                        try {
+                            if ( checkIfCancelled() ) return;
+                            Thread.sleep( 1 );
+                        } catch ( InterruptedException ie ){ie.printStackTrace();}
+                    }
+                    break;
+                case SECOND:
+                    for ( int k = 1; k <= mTimeGap; k++ ){
+                        try {
+                            if ( checkIfCancelled() ) return;
+                            Thread.sleep( 1000 ); // 1 second * 1000 milliseconds = 1000 ms
+                        } catch ( InterruptedException ie ){ie.printStackTrace();}
+                    }
+                    break;
+                case MINUTE:
+                    for ( int k = 1; k <= mTimeGap*60; k++ ){ // Higher frequency
+                        try {
+                            if ( checkIfCancelled() ) return;
+                            Thread.sleep( 1000 ); // If the task is canceled, prevents from check if stopped each minute, better than Thread.sleep( 1 * 60 * 1000); // 1 m * 60 s * 1000 ms
+                        } catch ( InterruptedException ie ){ie.printStackTrace();}
+                    }
+                    break;
+                case HOUR:
+                    for ( int k = 1; k <= mTimeGap*60*60; k++ ){ // Higher frequency
+                        try {
+                            if ( checkIfCancelled() ) return;
+                            Thread.sleep( 1000 ); // If the task is canceled, prevents from check if stopped each hour, better than Thread.sleep( 1 * 60 * 60 * 1000); // 1 h * 60 m * 60 s * 1000 ms
+                        } catch ( InterruptedException ie ){ie.printStackTrace();}
+                    }
+                    break;
+            } // End of  if (mTimeGap > 0)
+        } else {
+            Logger.d(LOG_TAG, "Should NOT wait before each process occurrences : " + mTimeGap);
+        }
     }
 
     /**
@@ -480,7 +482,6 @@ public class ATClicker extends AsyncTaskForScreen<List<PointsListAdapter.Point>,
         sb.append("*****************************************\n");
         sb.append("ATClicker Clicking process with config: \n");
         sb.append("*****************************************\n");
-        sb.append("\t time factor........: ").append(mUnitTimeFactor).append("\n");
         sb.append("\t delayed start......: ").append(mIsStartDelayed).append("\n");
         sb.append("\t delay..............: ").append(mDelay).append("\n");
         sb.append("\t time gap...........: ").append(mTimeGap).append("\n");

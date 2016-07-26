@@ -23,13 +23,15 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #94
+LAST TASK : #96
 
 TO DO
 
 
-    Task #94 : [v2.1.0] Find a way to make a lot of clicks per seconds (i.e. 10, 100, 1000 clicks per second). Here with millisecond option, we reach only two of three click per second and this is not enough (see comment of Gael Augeat in Play Store in 24/07/2016 
-    
+    *Task #94 : [v2.1.0] Find a way to make a lot of clicks per seconds (i.e. 10, 100, 1000 clicks per second). Here with millisecond option, we reach only two of three click per second and this is not enough (see comment of Gael Augeat in Play Store in 24/07/2016
+    *Task #95 : [v2.1.0] When rotation, some radio button are still checked
+    *Task #96 : [v2.1.0] Fold the arc menu when click on "play" button
+
     
     Task #93 : [vx.x.x] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
     Task #16 : [vx.x.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
