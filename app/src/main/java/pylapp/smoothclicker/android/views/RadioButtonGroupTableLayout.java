@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.R;
  * in a radio button group/
  *
  * @author pylapp
- * @version 1.1.0
+ * @version 1.2.0
  * @since 01/07/2016
  */
 public class RadioButtonGroupTableLayout extends TableLayout implements View.OnClickListener {
@@ -67,7 +67,6 @@ public class RadioButtonGroupTableLayout extends TableLayout implements View.OnC
      */
     public RadioButtonGroupTableLayout( Context context ){
         super(context);
-
     }
 
     /**
@@ -91,6 +90,7 @@ public class RadioButtonGroupTableLayout extends TableLayout implements View.OnC
     @Override
     public void onClick( View v ){
         final RadioButton rb = (RadioButton) v;
+        resetExcept(rb.getId());
         if ( mActiveRadioButton != null ) {
             mActiveRadioButton.setChecked(false);
         }
@@ -122,7 +122,7 @@ public class RadioButtonGroupTableLayout extends TableLayout implements View.OnC
     @Override
     public void addView( View child, ViewGroup.LayoutParams params ){
         super.addView(child, params);
-        setChildrenOnClickListener((TableRow)child);
+        setChildrenOnClickListener((TableRow) child);
     }
 
 
@@ -143,13 +143,28 @@ public class RadioButtonGroupTableLayout extends TableLayout implements View.OnC
      */
     public void reset(){
         RadioButton rb = (RadioButton) findViewById(R.id.rbUnitTimeH);
-        rb.setChecked(false);
+        if ( rb != null ) rb.setChecked(false);
         rb = (RadioButton) findViewById(R.id.rbUnitTimeM);
-        rb.setChecked(false);
+        if ( rb != null ) rb.setChecked(false);
         rb = (RadioButton) findViewById(R.id.rbUnitTimeS);
-        rb.setChecked(false);
+        if ( rb != null ) rb.setChecked(false);
         rb = (RadioButton) findViewById(R.id.rbUnitTimeMs);
-        rb.setChecked(false);
+        if ( rb != null ) rb.setChecked(false);
+    }
+
+    /**
+     * Uncheck all buttons except the button which has this id
+     * @param id - The id of the button to keep
+     */
+    public void resetExcept( int id ){
+        RadioButton rb = (RadioButton) findViewById(R.id.rbUnitTimeH);
+        if ( rb != null && rb.getId() != id ) rb.setChecked(false);
+        rb = (RadioButton) findViewById(R.id.rbUnitTimeM);
+        if ( rb != null && rb.getId() != id ) rb.setChecked(false);
+        rb = (RadioButton) findViewById(R.id.rbUnitTimeS);
+        if ( rb != null && rb.getId() != id ) rb.setChecked(false);
+        rb = (RadioButton) findViewById(R.id.rbUnitTimeMs);
+        if ( rb != null && rb.getId() != id ) rb.setChecked(false);
     }
 
     /**

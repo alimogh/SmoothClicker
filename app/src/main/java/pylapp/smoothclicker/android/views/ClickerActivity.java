@@ -83,7 +83,7 @@ import java.util.List;
  * It shows the configuration widgets to set up the click actions
  *
  * @author pylapp
- * @version 2.29.0
+ * @version 2.30.0
  * @since 02/03/2016
  * @see AppCompatActivity
  * @see pylapp.smoothclicker.android.tools.ShakeToClean.ShakeToCleanCallback
@@ -99,6 +99,7 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      * Is the standalone mode activated ?
      */
     public static boolean isStandalone = false;
+
 
     /* ********* *
      * CONSTANTS *
@@ -271,7 +272,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
      */
     @Override
     protected void onActivityResult( int requestCode, int resultCode, Intent data ){
-
         switch ( requestCode ){
             case SELECT_POINTS_ACTIVITY_RESULT_CODE:
                 if ( resultCode == Activity.RESULT_OK ) {
@@ -282,7 +282,6 @@ public class ClickerActivity extends AppCompatActivity implements ShakeToClean.S
             default:
                 break;
         }
-
     }
 
     /**
