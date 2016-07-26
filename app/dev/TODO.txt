@@ -28,8 +28,8 @@ LAST TASK : #96
 TO DO
 
     
-    Task #93 : [vx.x.x] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
-    Task #16 : [vx.x.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
+    Task #93 : [v2.2.0] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
+    Task #16 : [v2.3.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
     Task #2  : [vx.x.x] Movable floating action button
     Task #34 : [vx.x.x] Load LUA scripts to make the clicks
     Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU : JNI ?

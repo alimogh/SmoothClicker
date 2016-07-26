@@ -453,6 +453,9 @@ What:
     fix: improve the sleep management system and the frequency of the clicks if the unit time is ms
     fix: bug where several radio buttons may be selected as the same time if the devices has been rotated
     chore: close tasks #94, #95, #96
+    chore: new run of instrumented tests and unit tests
+    chore: new run of Lint and code analysis
+    doc: new generation of HTML JavaDoc
 ###################################################
 Date:
 What:
