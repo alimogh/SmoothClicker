@@ -197,6 +197,11 @@ startService(intentServiceSmoothClicker);
     * use a Shell script using ADB commands to unlock the screen if needed
     * possible to define random points when long click on the screen
     * support for landscape mode for handsets and tablets, for 6", 7" and 10" screens devices
+* _v2.1.0 : Juicy Jellyfish_
+    * improved the behavior of the click process if milliseconds are in use
+    * improved UI
+    * fixed some bugs
+
 
 ***
 ## Licence

@@ -101,7 +101,10 @@ V2.0.0 : Incredible Indri
     - Use a Shell script using ADB commands to unlock the screen if needed
     - Possible to define random points when long click on the screen
     - Support for landscape mode for handsets and tablets, for 6", 7" and 10" screens devices
-
+V2.1.0 : Juicy Jellyfish
+    - The click process has been improved if unit time in use is millisecond, but it may be not very accurate due to thread performances and sleep times
+    - The arc menu will be closed if the user clicks on the "start" floating button
+    - A bug with several selected radio buttons on rotation has been fixed
 
 
 
