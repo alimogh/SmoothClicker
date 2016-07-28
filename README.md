@@ -8,9 +8,12 @@ The app possesses a dedicated Android service you can reach and trigger to make 
 
 _Why this app? Because I wanted to build my own auto clicker / auto touch to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>, <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a> or <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans&">Clash of Clans</a>)._
 
-The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>.
-
 The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit tests with _JUnit_ and the instrumented tests with _Espresso_ and _UIAutomator_.
+
+The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>, or with the following QR-Code :
+
+<img src="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/SmoothClicker_PlayStore_QRCode.png" alt="QR Code to go to the Play Store" title="Flash to go to the Play Store" width="200"/>
+
 
 ***
 ## Screen shots
