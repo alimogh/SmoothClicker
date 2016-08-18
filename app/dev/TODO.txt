@@ -23,11 +23,13 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #96
+LAST TASK : #98
 
 TO DO
 
     
+    Task #97 : [v2.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
+    Task #98 : [v2.2.0] Click each ms / improve the click speed
     Task #93 : [v2.2.0] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
 
 
