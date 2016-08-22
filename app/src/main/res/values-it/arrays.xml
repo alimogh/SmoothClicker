@@ -50,13 +50,13 @@
 
     <string-array name="introscreen_summaries">
         <item>Benvenuto a Smooth Clicker! </item>
-        <item>È necessario disporre di un radicata dispositivo Android per usare questa app.</item>
-        <item>Definire parecchi scatti per elaborare&#8230; </item>
+        <item>È necessario disporre di accesso root sul dispositivo Android per usare questa app.</item>
+        <item>Effettuare parecchi tocchi per procedere&#8230; </item>
         <item>&#8230; e configurare il processo con notifiche, vibrazioni ecc.</item>
-        <item>Alcuni file JSON possono essere utilizzati per memorizzare la configurazione del processo fare clic su.</item>
-        <item>La modalità stand-alone può avviare il processo di clic utilizzando solo i file di configurazione di JSON.</item>
+        <item>Alcuni file JSON possono essere utilizzati per memorizzare la configurazione del processo di click automatico.</item>
+        <item>La modalità stand-alone può avviare il processo di clic automatico utilizzando solo i file di configurazione di JSON.</item>
         <item>La modalità stand-alone può anche avviare il processo di clic secondo un\'immagine dello schermo.</item>
-        <item>Clicker liscia è gratuito e open-source !</item>
+        <item>Smooth Clicker è gratuito e open-source!</item>
     </string-array>
 
     <string-array name="credits_labels">
@@ -76,19 +76,19 @@
     </string-array>
 
     <string-array name="credits_descriptions">
-        <item>App fatta da pylapp</item>
-        <item>Icona fatta da Freepik da www.flaticon.com</item>
-        <item>Biblioteca fatta da Saurabh Arora</item>
-        <item>Biblioteca di kyleduo</item>
-        <item>Biblioteca fatta da Paolo Rotolo</item>
-        <item>Biblioteca fatta da Iiro Krankka</item>
-        <item>Biblioteca di Pavel Sikun</item>
-        <item>Biblioteca fatta da Karumi</item>
-        <item>Icone fatte da Freepik da www.flaticon.com</item>
-        <item>Icone fatte da Elegant Themes da www.flaticon.com</item>
-        <item>Icone fatte da Yannick da www.flaticon.com</item>
-        <item>Icone fatte da Vaadin da www.flaticon.com</item>
-        <item>Icone fatte da Madebyoliver da www.flaticon.com</item>
+        <item>App creata da pylapp</item>
+        <item>Icona creata da Freepik da www.flaticon.com</item>
+        <item>Libreria scritta da Saurabh Arora</item>
+        <item>Libreria di kyleduo</item>
+        <item>Libreria scritta da Paolo Rotolo</item>
+        <item>Libreria scritta da Iiro Krankka</item>
+        <item>Libreria di Pavel Sikun</item>
+        <item>Libreria scritta da Karumi</item>
+        <item>Icone create da Freepik da www.flaticon.com</item>
+        <item>Icone create da Elegant Themes da www.flaticon.com</item>
+        <item>Icone create da Yannick da www.flaticon.com</item>
+        <item>Icone create da Vaadin da www.flaticon.com</item>
+        <item>Icone create da Madebyoliver da www.flaticon.com</item>
     </string-array>
 
     <string-array name="credits_urls">
