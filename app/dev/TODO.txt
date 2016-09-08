@@ -23,15 +23,18 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #99
+LAST TASK : #101
 
 TO DO
 
     
+    Task #100 : [v2.2.0] Make the app over others app, kind of transparent over all view
     Task #97 : [v2.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
     Task #98 : [v2.2.0] Click each ms / improve the click speed
     Task #93 : [v2.2.0] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
     Task #99 : [v2.2.0] Add tap-targets to the app to introduce some features (standalone modes, floating button, JSON things, threshold, frequency)
+    Task #101 : [v2.2.0] Use Kotlin
+    
 
 
     Task #16 : [v2.3.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
