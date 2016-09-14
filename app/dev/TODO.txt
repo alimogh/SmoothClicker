@@ -23,11 +23,12 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #102
+LAST TASK : #103
 
 TO DO
 
     
+    Task #103 : [v2.2.0] Make a feature in settings screen to report a bug
     Task #102 : [v2.2.0] Set up a system with Shell script to execute pon the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
     Task #100 : [v2.2.0] Make the app over others app, kind of transparent over all view
     Task #97 : [v2.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
