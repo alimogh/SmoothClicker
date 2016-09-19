@@ -23,11 +23,13 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #103
+LAST TASK : #104
 
 TO DO
 
     
+    Task #104 : [v2.2.0] Manage splash screen / first launch status with SharedPreferences
+    Task #105 : [v2.2.0] Use design pattern( Facade ?) to create an object which deals with SharedPreferences (if we need soemday to store data outside the shared preferences)
     Task #103 : [v2.2.0] Make a feature in settings screen to report a bug
     Task #102 : [v2.2.0] Set up a system with Shell script to execute pon the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
     Task #100 : [v2.2.0] Make the app over others app, kind of transparent over all view
