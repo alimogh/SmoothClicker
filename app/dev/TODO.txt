@@ -28,21 +28,27 @@ LAST TASK : #105
 TO DO
 
 
-    Task #105 : [v2.2.0] Improve notifications with a 'stop process' button inside
-    Task #104 : [v2.2.0] Manage splash screen / first launch status with SharedPreferences
-    Task #105 : [v2.2.0] Use design pattern( Facade ?) to create an object which deals with SharedPreferences (if we need soemday to store data outside the shared preferences)
-    Task #103 : [v2.2.0] Make a feature in settings screen to report a bug / contact the dev (Twitter or mail)
-    Task #102 : [v2.2.0] Set up a system with Shell script to execute pon the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
-    Task #100 : [v2.2.0] Make the app over others app, kind of transparent over all view
-    Task #97 : [v2.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
-    Task #98 : [v2.2.0] Click each ms / improve the click speed
-    Task #93 : [v2.2.0] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
-    Task #99 : [v2.2.0] Add tap-targets to the app to introduce some features (standalone modes, floating button, JSON things, threshold, frequency)
-    Task #101 : [v2.2.0] Use Kotlin
+    Task #106 : [3.0.0] Set up new system with Tray lib yo store shared preferences and settings/preferences data for multi-process-context, with a design apttern Facade
+    Task #107 : [v3.0.0] Replace AsyncTasks by Services
+    Task #108 : [v3.0.0] Use a deisgn pattern Mediator to make the processes communicate between themselves
+    Task #109 : [v3.0.0] Enhance the sources with annotations (e.g. @NonNull, @Nullable, etc.)
+    Task #105 : [v3.0.0] Improve notifications with a 'stop process' button inside
+    Task #104 : [v3.0.0] Manage splash screen / first launch status with SharedPreferences
+    Task #103 : [v3.0.0] Make a feature in settings screen to report a bug / contact the dev (Twitter or mail)
+    Task #100 : [v3.0.0] Make the app over others app, kind of transparent over all view
+    Task #97 : [v3.0.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
+    Task #98 : [v3.0.0] Click each ms / improve the click speed
+    Task #99 : [v3.0.0] Add tap-targets to the app to introduce some features (standalone modes, floating button, JSON things, threshold, frequency)
+    Task #101 : [v3.0.0] Use Kotlin
     
-
-
-    Task #16 : [v2.3.x] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
+    
+    Task #102 : [v3.1.0] Set up a system with Shell script to execute on the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
+    
+    
+    Task #93 : [v3.2.0] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
+    
+    
+    Task #16 : [v3.3.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
 
 
     Task #2  : [vx.x.x] Movable floating action button
