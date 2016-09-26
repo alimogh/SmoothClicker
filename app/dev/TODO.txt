@@ -23,11 +23,12 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #111
+LAST TASK : #112
 
 TO DO
 
 
+    Task #112 ; Improve German translation
     Task #111 : [v3.0.0] Change language of the app (if translations are very bad, go to english)
     Task #110 : [v3.0.0] Set up feature with a dialog/screen displayed if the device is not rooted and does not coply with the minVersion
     Task #106 : [v3.0.0] Set up new system with Tray lib yo store shared preferences and settings/preferences data for multi-process-context, with a design apttern Facade
