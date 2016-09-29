@@ -48,7 +48,7 @@ TO DO
     Task #101 : [v3.1.0] Use Kotlin
     
  
-     Task #97 : [v3.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
+    Task #97 : [v3.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
     Task #102 : [v3.2.0] Set up a system with Shell script to execute on the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
     
     
