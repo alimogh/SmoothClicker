@@ -37,7 +37,7 @@ package pylapp.smoothclicker.android.utils;
  * The version tag is a code name, easy to remember. It should be changed each time the XX or YY part is modified.
  *
  * @author pylapp
- * @version 1.6.0
+ * @version 1.6.1
  * @since 16/03/2016
  */
 public final class AppConfigVersions {
@@ -80,7 +80,7 @@ public final class AppConfigVersions {
      */
     public static final String VERSION_TAG_2_0_0 = "Incredible Indri";
     /**
-     * Version tag for v2.1.0
+     * Version tag for v2.1.x
      */
     public static final String VERSION_TAG_2_1_0 = "Juicy Jellyfish";
 

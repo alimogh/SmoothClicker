@@ -23,14 +23,15 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #115
+LAST TASK : #118
 
 TO DO
 
 
-    Task #111 : [v3.0.0] Delete non-verified languages (keep fr, en and it)
-    Task #112 : [v3.0.0] Improve German translation
-    Task #115 : [v3.0.0] Add a feature which allows the user to give some help about a missing language
+    Task #111 : [v2.1.1] Delete non-verified languages (keep fr, en, it, ru, de)
+    Task #116 : [v2.1.1] Add a section in the credits views with the names of the people who have braought help for i19n (it, ru, de)
+
+    Task #115 : [v3.0.0] Add a feature to contact the dev for bugs, comments or i18n fails
     Task #114 : [v3.0.0] Add some triggers to start/stop the process: shake device, sound up/down
     Task #110 : [v3.0.0] Set up feature with a dialog/screen displayed if the device is not rooted and does not coply with the minVersion
     Task #106 : [v3.0.0] Set up new system with Tray lib to store shared preferences and settings/preferences data for multi-process-context, with a design apttern Facade
@@ -43,12 +44,14 @@ TO DO
     Task #99 : [v3.0.0] Add tap-targets to the app to introduce some features (standalone modes, floating button, JSON things, threshold, frequency)
     
     
+    Task #117 : |v3.1.0] Sound UP to start the process, sound DOWN to stop the process
     Task #100 : [v3.1.0] Make the app over others app, kind of transparent over all view    
     Task #109 : [v3.1.0] Enhance the sources with annotations (e.g. @NonNull, @Nullable, etc.)    
     Task #113 : [v3.1.0] Use AsyncTasks for JSON import / export
     Task #101 : [v3.1.0] Use Kotlin
     
  
+    Task #118 : [v3.2.0] Widget to place in the home screen to load config, start and stop config
     Task #97 : [v3.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
     Task #102 : [v3.2.0] Set up a system with Shell script to execute on the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
     
@@ -63,11 +66,10 @@ TO DO
     Task #34 : [vx.x.x] Load LUA scripts to make the clicks
     Task #52 : [vx.x.x] Make the clicks and the other actions without root nor SU : JNI ?
                         (avoid use of Instrumentation and system-permission-signed-app for security reasons)
-    Task #61 : [vx.x.x] More Unit tests with JUnit and Mockito
 
 
-    Task #36 : Date picker to define a time period when clicks process can be done
     Task #48 : Check if ProGuard can rise errors or make unexpected behaviours in the app because of ClassNotFound of bad optimization
                         (http://developer.android.com/tools/help/proguard.html)
     Task #35 : Fabric.io, Crashlytics or other tools for bug tracking
     Task #37 : Android Wear support
+
