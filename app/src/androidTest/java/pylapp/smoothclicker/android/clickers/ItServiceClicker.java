@@ -60,7 +60,7 @@ import static org.junit.Assert.assertTrue;
  * Class to use to make instrumented tests with Espresso and UIAutomator of the ServiceClicker.
  *
  *  @author pylapp
- *  @version 1.2.0
+ *  @version 2.0.0
  *  @since 22/03/2016
  *  @see AbstractTest
  */
@@ -160,6 +160,8 @@ public class ItServiceClicker extends AbstractTest {
 
         // Test the new click notification
         testNotification(mContext.getString(R.string.notif_content_text_click_made));
+
+        w(5000);
 
         // Test the on going process notification
         testNotification(mContext.getString(R.string.notif_content_text_clicks_on_going_service));

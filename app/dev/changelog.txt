@@ -459,7 +459,11 @@ What:
     chore: new run of Lint and code analysis
     doc: new generation of HTML JavaDoc
 ###################################################
-Date:
+Date: 25/10/2016
 What:
-
+    fix: not well translated languages which have been deleted (keep only ru, en, fr and it)
+    chore: update credits view
+    chore: closed tasks #111 and #116
+    chore: new run of instrumented tests and unit tests
+    chore: new run of Lint and code analysis
 ###################################################

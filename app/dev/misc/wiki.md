@@ -36,7 +36,7 @@ The app can be found in Google Play <a href="https://play.google.com/store/apps/
 * standalone mode with an empty activity loading points and config files before finishing and starting the click process
 * standalone mode which can use these points and config files and a picture file which will trigger the click process if the device's screen matches this picture
 * options which can force the screen to be on, keep it on, unlock it thanks to a dedicated Shell script to execute
-* supported languages: english, french, klingon, spanish, portuguese, german, russian, korean, romanian, polish, finnish, italian and catalan
+* supported languages: english, french, russian, italian
 
 
 ***
@@ -204,6 +204,9 @@ startService(intentServiceSmoothClicker);
     * improved the behavior of the click process if milliseconds are in use
     * improved UI
     * fixed some bugs
+* _v2.1.2_
+    * deleted languages which were not well translated
+    * updated the credits view with references to people who have brought some help for translations
 
 
 ***

@@ -28,9 +28,6 @@ LAST TASK : #118
 TO DO
 
 
-    Task #111 : [v2.1.1] Delete non-verified languages (keep fr, en, it, ru, de)
-    Task #116 : [v2.1.1] Add a section in the credits views with the names of the people who have braought help for i19n (it, ru, de)
-
     Task #115 : [v3.0.0] Add a feature to contact the dev for bugs, comments or i18n fails
     Task #114 : [v3.0.0] Add some triggers to start/stop the process: shake device, sound up/down
     Task #110 : [v3.0.0] Set up feature with a dialog/screen displayed if the device is not rooted and does not coply with the minVersion

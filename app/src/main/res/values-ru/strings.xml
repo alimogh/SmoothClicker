@@ -170,7 +170,7 @@
     <string name="pref_root_subtitle">Как получить рут на мой девайс?</string>
     <string name="pref_root_summary">Нажмите, что-бы получить больше</string>
     <string name="pref_key_root_heimdall_title">Heimdall</string>
-    <string name="pref_key_root_heimdall_summary">Перейти на Heimdall что-бы рутануть ваш девайс с помощью Linux'а</string>
+    <string name="pref_key_root_heimdall_summary">Перейти на Heimdall что-бы рутануть ваш девайс с помощью Linux\'а</string>
     <string name="pref_key_root_odin_title">Odin</string>
     <string name="pref_key_root_odin_summary">Перейти на Odin что-бы рутануть ваш самсунг с помощью Windows</string>
     <string name="pref_key_root_chainfire_title">Chainfire XDA</string>
