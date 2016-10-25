@@ -27,86 +27,99 @@
 
 <resources>
 
+    <!-- ******************** -->
+    <!-- The standalone modes -->
+    <!-- ******************** -->
+
     <string-array name="standalone_mode_titles">
-        <item>JSON файлов</item>
-        <item>JSON файлов и загрузки согласно экрана</item>
+        <item>JSON файлы</item>
+        <item>JSON файлы и загрузка вместе с экраном</item>
     </string-array>
 
     <string-array name="standalone_mode_descriptions">
-        <item>Использование двух JSON файлов чтобы задать туп процесса нажмите</item>
-        <item>Используйте два файла JSON и захвата экрана для установки и запуска процесса нажмите</item>
+        <item>Использовать два JSON файла, что-бы настроить процесс тапов</item>
+        <item>Использовать два JSON файла и захват экрана, что-бы настроить и запустить процесс кликов</item>
     </string-array>
-    
+
+    <!-- ********************** -->
+    <!-- The intro screen pages -->
+    <!-- ********************** -->
+
     <string-array name="introscreen_titles">
-        <item>Hello !</item>
-        <item>Корень</item>
-        <item>Кликов</item>
+        <item>Эй!</item>
+        <item>Рут</item>
+        <item>Клики</item>
         <item>Уведомления</item>
-        <item>Конфигурация</item>
-        <item>Автономные</item>
-        <item>Признание экрана</item>
-        <item>Рожден, чтобы быть свободной</item>
+        <item>Настройки</item>
+        <item>Автоматический</item>
+        <item>Распознание экрана</item>
+        <item>Рожден что бы быть свободным</item>
     </string-array>
-    
+
     <string-array name="introscreen_summaries">
-        <item>Добро пожаловать на гладкой кликер !</item>
-        <item>Вы должны иметь корни Android устройства, чтобы использовать это приложение.</item>
-        <item>Определите несколько кликов для обработки&#8230; </item>
-        <item>&#8230; и настройте процесс уведомления, вибрация и т.д.</item>
-        <item>Некоторые файлы JSON может использоваться для хранения конфигурации нажмите кнопку процесса.</item>
-        <item>Автономный режим можно начать процесс нажмите кнопку, используя только файлы конфигурации, JSON.</item>
-        <item>Автономный режим можно также запустить процесс нажмите кнопку согласно снимок экрана.</item>
-        <item>Гладкая Clicker является бесплатным и открытым исходным кодом !</item>
+        <item>Добро пожаловать в Smooth Clicker!</item>
+        <item>Вам нужен рутованный смартфон что-бы использовать приложенние</item>
+        <item>Определите несколько кликов, что бы запустить процесс&#8230; </item>
+        <item>&#8230; и настройте процесс с уведомлениями, вибрацией и тд.</item>
+        <item>Некоторые JSON файлы могут быть для настройки конфига процесса тапов.</item>
+        <item>Автоматический режим может начать процесс тапов используя только JSON Файл для конфига.</item>
+        <item>Автоматический режим может так же начать процесс тапов в зависимости от картинки на экране.</item>
+        <item>Smooth Clicker полностью бесплатное ПО с открытым исходным кодом!</item>
     </string-array>
-    
+
+
+    <!-- *********** -->
+    <!-- The credits -->
+    <!-- *********** -->
+
     <string-array name="credits_labels">
         <item>Smooth Clicker</item>
-        <item>App логотип</item>
-        <item>Материал дуги меню</item>
+        <item>Logo de l\'application</item>
+        <item>Material Arc Menu</item>
         <item>SwitchButton</item>
         <item>AppIntro</item>
-        <item>Смахните селектор</item>
-        <item>Материальный компонент SeekBar предпочтения</item>
-        <item>Декстер</item>
-        <item>Значки</item>
-        <item>Значки</item>
-        <item>Значки</item>
-        <item>Значки</item>
-        <item>Значки</item>
+        <item>Swipe Selector</item>
+        <item>Material SeekBar Preference</item>
+        <item>Dexter</item>
+        <item>Иконки</item>
+        <item>Иконки</item>
+        <item>Иконки</item>
+        <item>Иконки</item>
+        <item>Иконки</item>
     </string-array>
-    
+
     <string-array name="credits_descriptions">
-        <item>App, сделанные pylapp</item>
-        <item>Икона, сделанные Freepik от www.flaticon.com</item>
-        <item>Библиотека, сделанные Saurabh Арора</item>
-        <item>Библиотека, сделанные kyleduo</item>
-        <item>Библиотека, сделанные Ротоло Паоло</item>
-        <item>Библиотека, сделанные ИМОП Krankka</item>
-        <item>Библиотека, сделанные Павел Sikun</item>
-        <item>Библиотека, сделанные Karumi</item>
-        <item>Значки, сделанные Freepik от www.flaticon.com</item>
-        <item>Иконки от элегантная темы от www.flaticon.com</item>
-        <item>Значки, сделанные Янник от www.flaticon.com</item>
-        <item>Значки, сделанные Vaadin от www.flaticon.com</item>
-        <item>Значки, сделанные Madebyoliver от www.flaticon.com</item>
+        <item>Автор: pylapp</item>
+        <item>Иконки сделаны: Freepik из www.flaticon.com</item>
+        <item>Библиотеку сделал: Saurabh Arora</item>
+        <item>Библиотеку сделал: kyleduo</item>
+        <item>Библиотеку сделал: Paolo Rotolo</item>
+        <item>Библиотеку сделал: Iiro Krankka</item>
+        <item>Библиотеку сделал: Pavel Sikun</item>
+        <item>Библиотеку сделал: Karumi</item>
+        <item>Иконки сделаны: Freepik из www.flaticon.com</item>
+        <item>Иконки сделаны: Elegant Темы из www.flaticon.com</item>
+        <item>Иконки сделаны: Yannick из www.flaticon.com</item>
+        <item>Иконки сделаны: Vaadin из www.flaticon.com</item>
+        <item>Иконки сделаны: Madebyoliver из www.flaticon.com</item>
     </string-array>
-    
+
     <string-array name="credits_urls">
         <item>https://github.com/pylapp/SmoothClicker</item>
-        <item>http://www.flaticon.com/Free-Icon/Small-Monkey-with-Long-tail_28726</item>
+        <item>http://www.flaticon.com/free-icon/small-monkey-with-long-tail_28726</item>
         <item>https://github.com/saurabharora90/MaterialArcMenu</item>
         <item>https://github.com/kyleduo/SwitchButton</item>
         <item>https://github.com/PaoloRotolo/AppIntro</item>
         <item>https://github.com/roughike/SwipeSelector</item>
         <item>https://github.com/MrBIMC/MaterialSeekBarPreference</item>
         <item>https://github.com/Karumi/Dexter</item>
-        <item>http://www.flaticon.com/Authors/FreePik</item>
-        <item>http://www.flaticon.com/Authors/Elegant-Themes</item>
-        <item>http://www.flaticon.com/Authors/Yannick</item>
-        <item>http://www.flaticon.com/Authors/Vaadin</item>
-        <item>http://www.flaticon.com/Authors/madebyoliver</item>
+        <item>http://www.flaticon.com/authors/freepik</item>
+        <item>http://www.flaticon.com/authors/elegant-themes</item>
+        <item>http://www.flaticon.com/authors/yannick</item>
+        <item>http://www.flaticon.com/authors/vaadin</item>
+        <item>http://www.flaticon.com/authors/madebyoliver</item>
     </string-array>
-    
+
     <string-array name="credits_licenses">
         <item>Лицензия MIT</item>
         <item>Лицензия Flaticon Basic</item>
