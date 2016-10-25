@@ -32,6 +32,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,7 +43,7 @@ import pylapp.smoothclicker.android.R;
  * The activity which displays the credits / third-parties licences.
  *
  * @author pylapp
- * @version 2.0.0
+ * @version 3.0.0
  * @since 15/03/2016
  */
 public class CreditsActivity extends AppCompatActivity {
@@ -68,7 +69,10 @@ public class CreditsActivity extends AppCompatActivity {
         String[] descriptions = getApplicationContext().getResources().getStringArray(R.array.credits_descriptions);
         String[] urls = getApplicationContext().getResources().getStringArray(R.array.credits_urls);
         String[] licenses = getApplicationContext().getResources().getStringArray(R.array.credits_licenses);
-        lv.setAdapter(new CreditsBaseAdapter( labels, descriptions, urls, licenses, this));
+        String[] thanksLabels = getApplicationContext().getResources().getStringArray(R.array.thanks_labels);
+        String[] thanksFlags = getApplicationContext().getResources().getStringArray(R.array.thanks_flags);
+        String[] thanksWhos = getApplicationContext().getResources().getStringArray(R.array.thanks_whos);
+        lv.setAdapter(new CreditsBaseAdapter( labels, descriptions, urls, licenses, thanksLabels, thanksFlags, thanksWhos, this));
     }
 
     /* *********** *
@@ -80,32 +84,42 @@ public class CreditsActivity extends AppCompatActivity {
      */
     public static class CreditsBaseAdapter extends BaseAdapter {
 
-        String [] labels;
-        String [] descriptions;
-        String [] urls;
-        String [] licenses;
+        String [] creditsLabels;
+        String [] creditsDescriptions;
+        String [] creditsUrls;
+        String [] creditsLicenses;
+        String [] thanksLabels;
+        String [] thanksFlags;
+        String [] thanksWhos;
+
         Context context;
         LayoutInflater layoutInflater;
 
-        public CreditsBaseAdapter( String [] labels, String[] descriptions,
-                                   String [] urls, String[] licenses, Context context ){
+        public CreditsBaseAdapter( String [] creditsLabels, String[] creditsDescriptions, String [] creditsUrls, String[] creditsLicenses,
+                                   String [] thanksLabels, String [] thanksFlags, String[] thanksWhos, Context context ){
             super();
-            if ( labels == null ) throw new IllegalArgumentException("Labels cannot be null!");
-            if ( descriptions == null ) throw new IllegalArgumentException("Descriptions cannot be null!");
-            if ( urls == null ) throw new IllegalArgumentException("URLs cannot be null!");
-            if ( licenses == null ) throw new IllegalArgumentException("Licenses cannot be null!");
+            if ( creditsLabels == null ) throw new IllegalArgumentException("Labels cannot be null!");
+            if ( creditsDescriptions == null ) throw new IllegalArgumentException("Descriptions cannot be null!");
+            if ( creditsUrls == null ) throw new IllegalArgumentException("URLs cannot be null!");
+            if ( creditsLicenses == null ) throw new IllegalArgumentException("Licenses cannot be null!");
+            if ( thanksLabels == null ) throw new IllegalArgumentException("Thanks labels cannot be null!");
+            if ( thanksWhos == null ) throw new IllegalArgumentException("Thanks whoes cannot be null!");
+            if ( thanksFlags == null ) throw new IllegalArgumentException("Thanks flags cannot be null!");
             if ( context == null ) throw new IllegalArgumentException("Context cannot be null!");
-            this.labels = labels;
-            this.descriptions = descriptions;
-            this.urls = urls;
-            this.licenses = licenses;
+            this.creditsLabels = creditsLabels;
+            this.creditsDescriptions = creditsDescriptions;
+            this.creditsUrls = creditsUrls;
+            this.creditsLicenses = creditsLicenses;
+            this.thanksLabels = thanksLabels;
+            this.thanksFlags = thanksFlags;
+            this.thanksWhos = thanksWhos;
             this.context = context;
             layoutInflater = LayoutInflater.from(this.context);
         }
 
         @Override
         public int getCount(){
-            return labels.length;
+            return creditsLabels.length + thanksLabels.length;
         }
 
         @Override
@@ -121,27 +135,87 @@ public class CreditsActivity extends AppCompatActivity {
         @Override
         public View getView( int position, View convertView, ViewGroup parent ){
 
-            // Get the data
-            String label = labels[position];
-            String description = descriptions[position];
-            String url = urls[position];
-            String license = licenses[position];
+            // First case, we have not displayed all the common credits
+            if ( position < creditsLabels.length ) {
 
-            // Build a view
-            convertView = layoutInflater.inflate(R.layout.content_credit_row, null);
-            TextView tv = (TextView) convertView.findViewById(R.id.tv_credits_label);
-            tv.setText(label);
-            tv = (TextView) convertView.findViewById(R.id.tv_credits_description);
-            tv.setText(description);
-            tv = (TextView) convertView.findViewById(R.id.tv_credits_url);
-            tv.setText(url);
-            tv = (TextView) convertView.findViewById(R.id.tv_credits_license);
-            tv.setText(license);
+                // Get the data
+                String label = creditsLabels[position];
+                String description = creditsDescriptions[position];
+                String url = creditsUrls[position];
+                String license = creditsLicenses[position];
+
+                // Build a view
+                convertView = layoutInflater.inflate(R.layout.content_credit_row, null);
+                TextView tv = (TextView) convertView.findViewById(R.id.tv_credits_label);
+                tv.setText(label);
+                tv = (TextView) convertView.findViewById(R.id.tv_credits_description);
+                tv.setText(description);
+                tv = (TextView) convertView.findViewById(R.id.tv_credits_url);
+                tv.setText(url);
+                tv = (TextView) convertView.findViewById(R.id.tv_credits_license);
+                tv.setText(license);
+
+            // Other case, we can now display the thanks credits
+            } else {
+
+                // Get the data
+                int fixedPosition = position - creditsLabels.length;
+                String label = thanksLabels[fixedPosition];
+                String who = thanksWhos[fixedPosition];
+                String flag = thanksFlags[fixedPosition];
+
+                // Build a view
+                convertView = layoutInflater.inflate(R.layout.content_thanks_row, null);
+                TextView tv = (TextView) convertView.findViewById(R.id.tv_thanks_label);
+                tv.setText(label);
+
+                tv = (TextView) convertView.findViewById(R.id.tv_thanks_who);
+                tv.setText(who);
+
+                ImageView iv = (ImageView) convertView.findViewById(R.id.iv_thanks_flag);
+                switch ( Flags.valueOf(flag) ){
+                    case RU:
+                        iv.setImageResource(R.drawable.credits_flag_ru);
+                        break;
+                    case IT:
+                        iv.setImageResource(R.drawable.credits_flag_it);
+                        break;
+                    case FR:
+                        iv.setImageResource(R.drawable.credits_flag_fr);
+                        break;
+                    case EN:
+                        iv.setImageResource(R.drawable.credits_flag_en);
+                        break;
+                }
+
+            }
 
             return convertView;
 
-        }
+        } // End of public View getView( int position, View convertView, ViewGroup parent )
+
+        /**
+         * An enumeration of flags to display
+         */
+        private enum Flags {
+            /**
+             * Russia - Russian - ru
+             */
+            RU,
+            /**
+             * Italy - Italian - it
+             */
+            IT,
+            /**
+             * France - French - fr
+             */
+            FR,
+            /**
+             * United-Kingdom - English - en
+             */
+            EN
+        } // End of private enum Flags
 
     } // End of public static class CreditsBaseAdapter extends BaseAdapter
 
-}
+} // End of public class CreditsActivity extends AppCompatActivity
