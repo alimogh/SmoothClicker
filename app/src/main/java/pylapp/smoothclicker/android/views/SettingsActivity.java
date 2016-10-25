@@ -51,7 +51,7 @@ import pylapp.smoothclicker.android.utils.Config;
  * The preferences activity of this SmoothClicker app.
  *
  * @author pylapp
- * @version 1.12.0
+ * @version 2.0.0
  * @since 17/03/2016
  */
 public class SettingsActivity extends AppCompatActivity {
@@ -115,11 +115,11 @@ public class SettingsActivity extends AppCompatActivity {
 
         // Builds the release string
         StringBuilder sb = new StringBuilder();
-        sb.append(AppConfigVersions.VERSION_TAG_CURRENT);
+        //sb.append(AppConfigVersions.VERSION_TAG_CURRENT);
         try {
             PackageInfo pi = getPackageManager().getPackageInfo(getPackageName(), 0);
             String versionName = pi.versionName;
-            sb.append(" - v").append(versionName);
+            sb.append("v").append(versionName);
             int versionCode = pi.versionCode;
             sb.append(" - ").append(versionCode);
         } catch ( PackageManager.NameNotFoundException e ){
