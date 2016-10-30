@@ -34,8 +34,8 @@ android {
         applicationId "pylapp.smoothclicker.android"
         minSdkVersion 18
         targetSdkVersion 23
-        versionCode 32
-        versionName "2.1.2 - Juicy Jellyfish"
+        versionCode 33
+        versionName "2.1.3 - Juicy Jellyfish"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" // For UIAutomator
     }
 
