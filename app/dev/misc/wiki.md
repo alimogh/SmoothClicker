@@ -204,8 +204,8 @@ startService(intentServiceSmoothClicker);
     * improved the behavior of the click process if milliseconds are in use
     * improved UI
     * fixed some bugs
-* _v2.1.2_
-    * deleted languages which were not well translated
+* _v2.1.3_
+    * deleted languages which were not well translated and kept well translated ones (fr, en, it, ru)
     * updated the credits view with references to people who have brought some help for translations
 
 
