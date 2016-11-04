@@ -23,7 +23,7 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #118
+LAST TASK : #119
 
 TO DO
 
@@ -49,15 +49,16 @@ TO DO
     
  
     Task #118 : [v3.2.0] Widget to place in the home screen to load config, start and stop config
-    Task #97 : [v3.2.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
-    Task #102 : [v3.2.0] Set up a system with Shell script to execute on the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
-    
+    Task #119 : [v3.2.0] Add feature to usr to make a differed screen-shot (with a countdown) so as to define the "reference" picture
+   
     
     Task #93 : [v3.3.0] Replace material arc menu by bottom action bar / add option to use one of them or the other one?
     
     
     Task #16 : [v3.4.0] Handle swipes (so new verbatims, new notifications, ...) : /system/bin/input swipe x1 y1 x2 y2
-
+    Task #97 : [v3.4.0] Create a mechanism which keeps the SU access to prevent the device to grant the root access after a long time
+    Task #102 : [v3.4.0] Set up a system with Shell script to execute on the computer to get config files and process clicks in the device (so no need to root device) (check if possible)
+    
 
     Task #2  : [vx.x.x] Movable floating action button
     Task #34 : [vx.x.x] Load LUA scripts to make the clicks
