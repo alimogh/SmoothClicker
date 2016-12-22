@@ -23,11 +23,12 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #119
+LAST TASK : #120
 
 TO DO
 
 
+    Task #120 : [v3.0.0] Check if the "dangerous" features are still avaialble if system is under Android 6 (Android M, API 23)
     Task #115 : [v3.0.0] Add a feature to contact the dev for bugs, comments or i18n fails
     Task #114 : [v3.0.0] Add some triggers to start/stop the process: shake device, sound up/down
     Task #110 : [v3.0.0] Set up feature with a dialog/screen displayed if the device is not rooted and does not coply with the minVersion
