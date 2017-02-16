@@ -8,7 +8,7 @@ The app possesses a dedicated Android service you can reach and trigger to make 
 
 _Why this app? Because I wanted to build my own auto clicker / auto touch to make some tricks on games or on apps (like <a href="https://play.google.com/store/apps/details?id=com.mlt.woy&hl=fr">Woy !</a>, <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a> or <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans&">Clash of Clans</a>)._
 
-The project contains the _Java 8_ sources, the _JavaDoc_ as HTML pages, the unit tests with _JUnit_ and the instrumented tests with _Espresso_ and _UIAutomator_.
+The project contains the _Java 7_ sources, the _JavaDoc_ as HTML pages, the unit tests with _JUnit_ and _Robolectric_ and the instrumented tests with _Espresso_ and _UIAutomator_.
 
 The app can be found in Google Play <a href="https://play.google.com/store/apps/details?id=pylapp.smoothclicker.android">here</a>, or with the following QR-Code :
 
@@ -73,7 +73,7 @@ _<em>Case 1</em> : You can simply use the app itself and select manually the poi
 
 <br/>or<br/>
 
-_<em>Case 2</em> : You can start the app in standalone mode which will use JSON files (<a href="https://github.com/pylapp/SmoothClicker/blob/master/dev/misc/jsonFiles/sc_points.json">sc_points.json</a> and <a href="https://github.com/pylapp/SmoothClicker/blob/master/app/dev/misc/jsonFiles/sc_config.json">sc_config.json</a>) in the app folder (at the root of the external storage, so /storage/emulated/legacy/Smooth_Clicker) to set up and start the click process_<br/>
+_<em>Case 2</em> : You can start the app in standalone mode which will use JSON files (<a href="https://github.com/pylapp/SmoothClicker/blob/master/dev/misc/jsonFiles/sc_points.json">sc_points.json</a> and <a href="https://github.com/pylapp/SmoothClicker/blob/master/dev/misc/jsonFiles/sc_config.json">sc_config.json</a>) in the app folder (at the root of the external storage, so /storage/emulated/legacy/Smooth_Clicker) to set up and start the click process_<br/>
 
 ```shell
     am start -a pylapp.smoothclicker.android.CLICK_ON_ALL_POINTS -n pylapp.smoothclicker.android/pylapp.smoothclicker.android.views.StandaloneActivity
