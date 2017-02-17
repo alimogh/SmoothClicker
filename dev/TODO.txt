@@ -23,7 +23,7 @@
 -->
 <!-- ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一 -->
 
-LAST TASK : #121
+LAST TASK : #125
 
 TO DO
 
@@ -31,7 +31,7 @@ TO DO
     Task #121 : [v3.0.0] Fix the path to the external folders: use methods from Context, not hard code path
     Task #120 : [v3.0.0] Check if the "dangerous" features are still avaialble if system is under Android 6 (Android M, API 23)
     Task #115 : [v3.0.0] Add a feature to contact the dev for bugs, comments or i18n fails
-    Task #114 : [v3.0.0] Add some triggers to start/stop the process: shake device, sound up/down
+    Task #114 : [v3.0.0] Add some triggers to start/stop the process: shake device, sound volume up (select points)/down (start)
     Task #110 : [v3.0.0] Set up feature with a dialog/screen displayed if the device is not rooted and does not coply with the minVersion
     Task #106 : [v3.0.0] Set up new system with Tray lib to store shared preferences and settings/preferences data for multi-process-context, with a design apttern Facade
     Task #107 : [v3.0.0] Replace AsyncTasks by Services
@@ -41,9 +41,12 @@ TO DO
     Task #103 : [v3.0.0] Make a feature in settings screen to report a bug / contact the dev (Twitter or mail)
     Task #98 : [v3.0.0] Click each ms / improve the click speed
     Task #99 : [v3.0.0] Add tap-targets to the app to introduce some features (standalone modes, floating button, JSON things, threshold, frequency)
+    Task #122 : [v3.0.0] Floating overlay to start
+    Task #123 : [v3.0.0] Quick actions for Android 7+ (start, stop)
+    Task #125 : [v3.0.0] Draw the points in the select screen to see where they are
     
-    
-    Task #117 : |v3.1.0] Sound UP to start the process, sound DOWN to stop the process
+  
+    Task #124 : [v3.1.0] Landscape mode
     Task #100 : [v3.1.0] Make the app over others app, kind of transparent over all view    
     Task #109 : [v3.1.0] Enhance the sources with annotations (e.g. @NonNull, @Nullable, etc.)    
     Task #113 : [v3.1.0] Use AsyncTasks for JSON import / export
