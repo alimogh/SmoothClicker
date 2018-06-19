@@ -68,3 +68,16 @@ The app can be found in Google Play <a href="https://play.google.com/store/apps/
 ***
 ## Licence
 Under MIT License
+
+***
+## Warning
+_Smooth Clciker_ is not maintained anymore, but feel free to fork the project and submit pull requests if you want.
+Several steps I wanted to reach:
+* replace not enough convenient AsyncTask by Background or Foreground services
+* use design patterns (e.g. Mediator) to deal with the processes
+* draw on the grid the selected points
+* deal with landscape mode
+* add shortcuts on app icons to start/stop processes
+* trigger click process with physical buttons
+* schedule clicks for dedicated dates or screenshots
+* ...
