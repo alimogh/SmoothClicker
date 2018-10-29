@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,7 @@ package pylapp.smoothclicker.android.utils;
  * The ZZ is incremented for minor upgrades, i.e. updates for refactoring or cleaning facts.
  * The version tag is a code name, easy to remember. It should be changed each time the XX or YY part is modified.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.6.1
  * @since 16/03/2016
  */

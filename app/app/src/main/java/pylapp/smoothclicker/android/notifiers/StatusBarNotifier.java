@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +41,7 @@ import pylapp.smoothclicker.android.views.ClickerActivity;
  * Utility class which manages notifications in the status bar.
  * It is based on a wrapper design pattern.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 2.2.0
  * @since 16/03/2016
  */

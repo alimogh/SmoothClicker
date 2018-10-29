@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +32,7 @@ import pylapp.smoothclicker.android.tools.Logger;
 /**
  * Class which makes pixel by pixel comparisons between pictures
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 02/06/2016
  */

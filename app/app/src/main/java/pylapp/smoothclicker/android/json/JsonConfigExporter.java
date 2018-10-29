@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -40,7 +40,7 @@ import pylapp.smoothclicker.android.views.PointsListAdapter;
 /**
  * Class which consists on exporting the configuration of the app in a JSON file
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.6.0
  * @since 26/05/2016
  * @see ConfigExporter

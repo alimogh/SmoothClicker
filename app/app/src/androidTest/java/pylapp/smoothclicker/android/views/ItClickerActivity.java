@@ -56,7 +56,7 @@ import static android.support.test.InstrumentationRegistry.getInstrumentation;
 /**
  * Class to use to make UI tests with UIAutomator and Espresso of the ClickerActivity.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.2.0
  * @since 11/04/2016
  * @see AbstractTest

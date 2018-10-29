@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -59,7 +59,7 @@ import static org.junit.Assert.fail;
  *
  * <i> <b>Warning:</b> The intro screens activity is displayed only one time, so we should run these tests before all other tests cases </i>
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.2.0
  * @since 22/03/2016
  * @see AbstractTest

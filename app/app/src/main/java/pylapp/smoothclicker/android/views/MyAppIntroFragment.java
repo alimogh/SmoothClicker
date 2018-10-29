@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +45,7 @@ import pylapp.smoothclicker.android.R;
  * The intro screen.
  * This is an override of the AppIntroFragment so as to set a font size for the TextViews inside
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 18/05/2016
  * @see com.github.paolorotolo.appintro.AppIntroFragment

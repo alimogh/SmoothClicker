@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,7 @@ import android.graphics.Bitmap;
  * For example, if a screen shot is the same picture as the base picture (e.g. the home screen), do nothing.
  * If a screen shot is the same picture has the home screen with a specific item, start the click process.
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 02/06/2016
  */

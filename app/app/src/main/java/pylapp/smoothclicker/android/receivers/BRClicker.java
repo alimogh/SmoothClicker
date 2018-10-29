@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,7 @@ import pylapp.smoothclicker.android.tools.Logger;
 /**
  * Broadcast receiver which receives broadcasts about the battery state and the boot state so as to start or stop the service making clicks..
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 18/03/2016
  * @see android.content.BroadcastReceiver

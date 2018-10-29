@@ -1,7 +1,7 @@
 /*
     MIT License
 
-    Copyright (c) 2016  Pierre-Yves Lapersonne (Twitter: @pylapp, Mail: pylapp(dot)pylapp(at)gmail(dot)com)
+    Copyright (c) 2016  Pierre-Yves Lapersonne (Mail: dev@pylapersonne.info)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@ import static junit.framework.Assert.assertTrue;
 /**
  * Class to use to make instrumented / unit tests with on the PixelByPixelPicturesComparator class
  *
- *  @author pylapp
+ *  @author Pierre-Yves Lapersonne
  *  @version 1.1.0
  *  @since 13/062016
  *  @see AbstractTest

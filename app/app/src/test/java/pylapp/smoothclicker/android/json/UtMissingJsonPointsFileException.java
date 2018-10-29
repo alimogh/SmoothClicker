@@ -9,7 +9,7 @@ import static junit.framework.Assert.assertEquals;
 /**
  * Class to test the MissingJsonPointsFileException
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 20/05/2016
  */

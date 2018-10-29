@@ -9,7 +9,7 @@ import org.junit.Test;
 /**
  * Class to test the ShakeToClean
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 21/03/2016
  * @see UtShakeToClean

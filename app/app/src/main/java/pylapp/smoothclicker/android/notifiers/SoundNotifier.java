@@ -10,7 +10,7 @@ import pylapp.smoothclicker.android.R;
  * Utility class which manages sound notifications
  *
  *
- * @author pylapp
+ * @author Pierre-Yves Lapersonne
  * @version 1.0.0
  * @since 22/06/2016
  */
